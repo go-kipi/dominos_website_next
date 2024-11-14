@@ -85,11 +85,11 @@ export default function PizzaSpecialRequests(props) {
 			payload,
 			(res) => {
 				dispatch(Actions.setCartItem(payload.item));
+				mealAnalytics();
+				handleOnClosePress();
 			},
 			trigger,
 		);
-		mealAnalytics();
-		handleOnClosePress();
 	};
 
 	function mealAnalytics() {
@@ -166,7 +166,7 @@ export default function PizzaSpecialRequests(props) {
 					<Button
 						className={styles["save-btn"]}
 						text={translate(btnLabel)}
-						animated={false}
+						animated
 						onClick={onContinueButtonPress}
 					/>
 				</div>

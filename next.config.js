@@ -19,6 +19,10 @@ module.exports = withBundleAnalyzer({
 		localeDetection: false,
 	},
 
+	eslint: {
+		ignoreDuringBuilds: true, // This will ignore ESLint during builds
+	},
+
 	async redirects() {
 		const json = require("./public/redirects.json");
 

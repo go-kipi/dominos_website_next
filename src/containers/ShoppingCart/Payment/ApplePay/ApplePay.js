@@ -16,7 +16,7 @@ function ApplePay(props) {
 
 	function onApplePaymentSuccess(appleSession, data) {
 		const applePayMethod = paymentMethods.filter(
-			(paymentMethod) => paymentMethod.id === PAYMENT_METHODS.APPPLE_PAY,
+			(paymentMethod) => paymentMethod.id === PAYMENT_METHODS.APPLE_PAY,
 		)[0];
 		console.log("got apay data", data);
 		const payload = {

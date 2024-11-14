@@ -42,7 +42,7 @@ function getCSPHeaders() {
     img-src 'self' *.heilasystems.com data: https://www.facebook.com ${google}
     https://ad.doubleclick.net https://www.googletagmanager.com https://c.clarity.ms
     https://c.bing.com https://www.gstatic.com *.dominos.co.il https://cdn.glassix.com/ 
-    https://maps.gstatic.com https://www.google.co.il/; 
+    https://maps.gstatic.com https://www.google.co.il/ https://cdn.aboohi.net/; 
     media-src 'self' *.heilasystems.com *.dominos.co.il data:;
     form-action 'self';
     frame-ancestors 'none';

@@ -1,123 +1,124 @@
 @import "src/styles/imports.scss";
 $current: 375;
 :global(.popup) {
-    .minimum-price {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      :global(.popup_wrapper) {
-        height: 60vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        :global(.popup_content) {
-          height: 100%;
-          .minimum-price-wrapper {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            .minimum-price-icon {
-                width: vw_size(107, $current);
-                height: vw_size(107, $current);
-            }
-            .minimum-price-text {
-                color: black;
-                font-family: $font-medium;
-                font-size: vw_size(22, $current);
-                line-height: vw_size(28, $current);
-                text-align: center;
-            }
-            .minimum-price-btn {}
-          }
-        }
-      }
-    }
+	.minimum-price {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		:global(.popup_wrapper) {
+			height: 60vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			:global(.popup_content) {
+				height: 100%;
+				.minimum-price-wrapper {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-evenly;
+					.minimum-price-icon {
+						width: vw_size(107, $current);
+						height: vw_size(107, $current);
+					}
+					.minimum-price-text {
+						color: black;
+						font-family: $font-medium;
+						font-size: vw_size(22, $current);
+						line-height: vw_size(28, $current);
+						text-align: center;
+					}
+					.minimum-price-btn {
+					}
+				}
+			}
+		}
+	}
 }
-
 
 @media (min-width: $media-tablet) {
-    $current: $tablet;
-    :global(.popup) {
-      .minimum-price {
-        :global(.popup_wrapper) {
-          min-width: vw_size(512, $current);
-          min-height: vw_size(512, $current);
-          border-radius: vw_size(10, $current);
-          :global(.popup_content) {
-            .minimum-price-wrapper {
-                .minimum-price-icon {
-                    width: vw_size(107, $current);
-                    height: vw_size(107, $current);
-                }
-                .minimum-price-text {
-                    font-size: vw_size(22, $current);
-                    line-height: vw_size(28, $current);
-                }
-                .minimum-price-btn {}
-              }
-          }
-        }
-      }
-    }
+	$current: $tablet;
+	:global(.popup) {
+		.minimum-price {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				min-height: vw_size(512, $current);
+				border-radius: vw_size(10, $current);
+				:global(.popup_content) {
+					.minimum-price-wrapper {
+						.minimum-price-icon {
+							width: vw_size(107, $current);
+							height: vw_size(107, $current);
+						}
+						.minimum-price-text {
+							font-size: vw_size(22, $current);
+							line-height: vw_size(28, $current);
+						}
+						.minimum-price-btn {
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
-
 @media (min-width: $media-desktop) {
-    $current: $desktop;
-    :global(.popup) {
-      .minimum-price {
-        :global(.popup_wrapper) {
-          min-width: vw_size(512, $current);
-          min-height: vw_size(512, $current);
-          border-radius: vw_size(10, $current);
-          :global(.popup_content) {
-            width: vw_size(512, $current);
-            height: vw_size(512, $current);
-            .minimum-price-wrapper {
-                .minimum-price-icon {
-                    width: vw_size(107, $current);
-                    height: vw_size(107, $current);
-                }
-                .minimum-price-text {
-                    width: 45%;
-                    font-size: vw_size(22, $current);
-                    line-height: vw_size(28, $current);
-                }
-                .minimum-price-btn {}
-              }
-          }
-        }
-      }
-    }
+	$current: $desktop;
+	:global(.popup) {
+		.minimum-price {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				min-height: vw_size(512, $current);
+				border-radius: vw_size(10, $current);
+				:global(.popup_content) {
+					width: vw_size(512, $current);
+					height: vw_size(512, $current);
+					.minimum-price-wrapper {
+						.minimum-price-icon {
+							width: vw_size(107, $current);
+							height: vw_size(107, $current);
+						}
+						.minimum-price-text {
+							width: 45%;
+							font-size: vw_size(22, $current);
+							line-height: vw_size(28, $current);
+						}
+						.minimum-price-btn {
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: $media-desktop_large) {
-    $current: $desktop_max;
-    :global(.popup) {
-      .minimum-price {
-        :global(.popup_wrapper) {
-          min-width: vw_size(512, $current);
-          min-height: vw_size(512, $current);
-          border-radius: vw_size(10, $current);
-          :global(.popup_content) {
-            width: vw_size(512, $current);
-            height: vw_size(512, $current);
-            .minimum-price-wrapper {
-                margin-top: vw_size(64, $current);
-                .minimum-price-icon {
-                    width: vw_size(107, $current);
-                    height: vw_size(107, $current);
-                }
-                .minimum-price-text {
-                    font-size: vw_size(22, $current);
-                    line-height: vw_size(28, $current);
-                }
-                .minimum-price-btn {}
-              }
-          }
-        }
-      }
-    }
+	$current: $desktop_max;
+	:global(.popup) {
+		.minimum-price {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				min-height: vw_size(512, $current);
+				border-radius: vw_size(10, $current);
+				:global(.popup_content) {
+					width: vw_size(512, $current);
+					height: vw_size(512, $current);
+					.minimum-price-wrapper {
+						.minimum-price-icon {
+							width: vw_size(107, $current);
+							height: vw_size(107, $current);
+						}
+						.minimum-price-text {
+							font-size: vw_size(22, $current);
+							line-height: vw_size(28, $current);
+						}
+						.minimum-price-btn {
+						}
+					}
+				}
+			}
+		}
+	}
 }

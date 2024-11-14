@@ -171,15 +171,12 @@ const SideDish = (props) => {
 				className={styles["button"]}
 				onClick={onAddToCartPress}
 				text={translate("addToCart")}
-				animated={false}
 				extraStyles={styles}
 				ariaDescription={"side-dish-" + id}
 				tabIndex={buttonTabIndex}
 			/>
 		);
 	};
-
-	console.log("priceOverride", priceOverride);
 
 	const clickedClass = clicked ? styles["clicked"] : "";
 	const isRTL = LanguageDirectionService.isRTL() ? styles["rtl"] : "";

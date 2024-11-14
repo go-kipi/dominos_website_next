@@ -57,9 +57,12 @@
 		.switched-phone-btn {
 			margin-top: vw_size(97, $mobile);
 		}
-		.phone-submit-btn {
-			margin: 0 auto;
-			margin-top: vw_size(39, $mobile);
+		.animated-btn-wrapper {
+			position: relative;
+			.phone-submit-btn {
+				margin: 0 auto;
+				margin-top: vw_size(39, $mobile);
+			}
 		}
 		.opt_send_voicemail_btn {
 			margin: vw_size(10, $mobile) auto 0;
@@ -94,9 +97,11 @@
 			.subtitle-label {
 				font-size: vw_size(16, $tablet);
 			}
-			.phone-submit-btn {
-				margin-top: vw_size(39, $tablet);
-				margin-bottom: vw_size(20, $tablet);
+			.animated-btn-wrapper {
+				position: relative;
+				.phone-submit-btn {
+					margin-top: vw_size(39, $tablet);
+				}
 			}
 			.switched-phone-btn {
 				margin-top: vw_size(80, $tablet);
@@ -136,12 +141,15 @@
 			.switched-phone-btn {
 				margin-top: vw_size(80, $desktop);
 			}
-			.phone-submit-btn {
-				width: vw_size(300, $desktop);
-				margin-top: vw_size(70, $desktop);
-				margin-bottom: unset;
-				&-voicemessage {
-					width: vw_size(340, $desktop);
+			.animated-btn-wrapper {
+				position: relative;
+				.phone-submit-btn {
+					width: vw_size(300, $desktop);
+					margin-top: vw_size(70, $desktop);
+
+					&-voicemessage {
+						width: vw_size(340, $desktop);
+					}
 				}
 			}
 			.opt_send_voicemail_btn {
@@ -173,11 +181,14 @@
 			.subtitle-label {
 				font-size: vw_size(16, $desktop_large);
 			}
-			.phone-submit-btn {
-				width: vw_size(300, $desktop_large);
-				margin-top: vw_size(70, $desktop_large);
-				&-voicemessage {
-					width: vw_size(340, $desktop_large);
+			.animated-btn-wrapper {
+				position: relative;
+				.phone-submit-btn {
+					width: vw_size(300, $desktop_large);
+					margin-top: vw_size(40, $desktop_large);
+					&-voicemessage {
+						width: vw_size(340, $desktop_large);
+					}
 				}
 			}
 			.switched-phone-btn {

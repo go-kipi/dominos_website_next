@@ -58,9 +58,9 @@ export default function ToolTipOption(props) {
 						className={styles("option-changes-text")}>{`(${changesCount})`}</span>
 				)}
 
-				{extraData ? (
+				{/* {extraData ? (
 					<span className={styles("extra-data")}>{extraData}</span>
-				) : null}
+				) : null} */}
 			</div>
 		</button>
 	);

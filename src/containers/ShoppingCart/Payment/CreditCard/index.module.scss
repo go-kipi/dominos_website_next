@@ -143,6 +143,13 @@ $current: 375;
 		position: relative;
 		margin-right: unset;
 		margin-left: unset;
+		.actions {
+			position: relative;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
 		.swiper-wrapper {
 			// pointer-events: none;
 		}
@@ -245,9 +252,6 @@ $current: 375;
 		}
 		.add-new-card-btn {
 			margin: vw_size(25, $current) 0;
-		}
-		.pay-btn {
-			margin-bottom: unset;
 		}
 		.lottie-anim {
 			width: vw_size(50, $current);

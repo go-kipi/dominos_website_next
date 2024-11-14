@@ -21,7 +21,6 @@ $current: 375;
 	margin-top: vw_size(45, $current);
 	height: vw_size(150, $current);
 	z-index: 0;
-	
 }
 
 .shopping-cart-body {
@@ -45,27 +44,17 @@ $current: 375;
 		margin-bottom: vw_size(200, $current);
 	}
 
-
-
 	.actions {
 		position: fixed;
 		bottom: vw_size(60, $current);
-		// bottom: 0;
-		width: 100%;
 		display: flex;
 		align-items: center;
-		// margin-bottom: vw_size(30, $current);
 		flex-direction: column;
+		width: 100%;
 
 		.blue-btn-wrap {
-			margin-top: vw_size(26, $current);
-
-			width: 90%;
+			position: relative;
 			z-index: 1000;
-
-			.blue-btn-wrap-inner {
-				justify-content: center !important;
-			}
 		}
 	}
 

@@ -168,7 +168,6 @@ export default function RemainingUpgradesModal(props) {
 					<Button
 						className={styles["continue-add-btn"]}
 						text={translate("remainingUpgradesModal_addUpgrade_btnLabel")}
-						animated={false}
 						onClick={handleOnUpgrade}
 					/>
 					<TextOnlyButton

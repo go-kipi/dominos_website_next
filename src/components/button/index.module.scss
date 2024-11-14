@@ -9,7 +9,16 @@
 	align-items: center;
 }
 
-.btn-wrapper {
+.loader-wrapper {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	transform: translateY(25%);
+	height: vw_size(60, $mobile);
+	width: vw_size(60, $mobile);
+}
+.btn {
+	position: relative;
 	background: $blue;
 	width: vw_size(284, $mobile);
 	height: vw_size(44, $mobile);
@@ -71,6 +80,14 @@
 			color: rgba(255, 242, 244, 1);
 		}
 	}
+
+	&.placeholder {
+		border: 1px solid red;
+	}
+}
+
+.disappear {
+	opacity: 0;
 }
 
 @media (min-width: $media-tablet) {
@@ -80,7 +97,12 @@
 		height: vw_size(44, $tablet);
 	}
 
-	.btn-wrapper {
+	.loader-wrapper {
+		height: vw_size(60, $tablet);
+		width: vw_size(60, $tablet);
+	}
+
+	.btn {
 		border-radius: vw_size(22, $tablet);
 		width: vw_size(284, $tablet);
 		height: vw_size(44, $tablet);
@@ -100,11 +122,17 @@
 		width: vw_size(256, $desktop);
 		height: vw_size(51, $desktop);
 	}
-	.btn-wrapper {
-		border-radius: vw_size(35, $desktop);
+
+	.loader-wrapper {
+		height: vw_size(60, $desktop);
+		width: vw_size(60, $desktop);
+	}
+
+	.btn {
+		background-repeat: 1px;
+		border-radius: vw_size(26, $desktop);
 		width: vw_size(256, $desktop);
 		height: vw_size(51, $desktop);
-		padding-block: vw_size(17, $desktop);
 
 		.btn-text {
 			font-size: vw_size(16, $desktop);
@@ -125,11 +153,17 @@
 		width: vw_size(256, $current);
 		height: vw_size(51, $current);
 	}
-	.btn-wrapper {
-		border-radius: vw_size(35, $current);
+
+	.loader-wrapper {
+		height: vw_size(60, $current);
+		width: vw_size(60, $current);
+	}
+
+	.btn {
+		border-radius: vw_size(25, $current);
 		width: vw_size(256, $current);
 		height: vw_size(50, $current);
-		padding-block: vw_size(15, $current);
+		padding-block: vw_size(12, $current);
 
 		.btn-text {
 			font-size: vw_size(20, $current);

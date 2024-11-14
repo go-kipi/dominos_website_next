@@ -685,7 +685,6 @@ function Tracker(props) {
 				</div>
 				{!showSavedPizzaAnim ? (
 					<Button
-						animated={false}
 						onClick={() => showSavePizzaPopup()}
 						className={styles["save-pizza-btn"]}
 						text={translate(
@@ -724,7 +723,6 @@ function Tracker(props) {
 				</div>
 				{!showSavedPizzaAnim ? (
 					<Button
-						animated={false}
 						onClick={() => showSavePizzaPopup()}
 						className={styles["save-pizza-btn"]}
 						text={translate(

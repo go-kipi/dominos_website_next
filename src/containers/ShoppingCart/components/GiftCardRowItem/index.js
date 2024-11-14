@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import Api from "api/requests";
 import GiftCardWhiteIcon from "/public/assets/icons/gift-card-item.svg";
@@ -11,10 +11,12 @@ import AcceptBlueIcon from "/public/assets/icons/blue-checkmark-icon.svg";
 import CancelBlueIcon from "/public/assets/icons/blue-cancel-icon.svg";
 import AcceptWhiteIcon from "/public/assets/icons/white-checkmark-icon.svg";
 import CancelWhiteIcon from "/public/assets/icons/white-cancel-icon.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import TextInput from "components/forms/textInput";
 import Price from "components/Price";
 import useTranslate from "hooks/useTranslate";
+import Button from "components/button";
+import Actions from "redux/actions";
 
 const GIFT_CARD_MINIMUM = 0.09;
 
@@ -30,23 +32,24 @@ export default function GiftCardRowItem(props) {
 	const translate = useTranslate();
 	const [isEdit, setIsEdit] = useState(false);
 	const [currentPrice, setCurrentPrice] = useState(price ?? 0);
+	const [balance, setBalance] = useState(currentPrice);
 	const deviceState = useSelector((store) => store.deviceState);
+	const paymentsPaid = useSelector((store) => store.payments?.paid);
+	const totalBasket = useSelector((store) => store.cartData?.total);
+	const [isErrorStyle, setIsErrorStyle] = useState(false);
+	const dispatch = useDispatch();
 	const GiftCardIcon =
 		deviceState.isMobile || deviceState.isTablet
 			? GiftCardWhiteIcon
 			: GiftCardBlackIcon;
-	const EditIcon =
-		deviceState.isMobile || deviceState.isTablet ? EditWhiteIcon : EditBlueIcon;
-	const TrashIcon =
-		deviceState.isMobile || deviceState.isTablet ? TrashWhiteIcon : TrashBlueIcon;
+
+	const EditIcon = EditBlueIcon;
+	const TrashIcon = TrashBlueIcon;
 	const AcceptIcon =
 		deviceState.isMobile || deviceState.isTablet
-			? AcceptWhiteIcon
-			: AcceptBlueIcon;
-	const CancelIcon =
-		deviceState.isMobile || deviceState.isTablet
-			? CancelWhiteIcon
-			: CancelBlueIcon;
+			? AcceptBlueIcon
+			: AcceptWhiteIcon;
+	const CancelIcon = CancelBlueIcon;
 	const displayDecimalPoint = useSelector(
 		(store) =>
 			store.globalParams?.displayDecimalPoints?.result?.displayDecimalPoints,
@@ -54,15 +57,65 @@ export default function GiftCardRowItem(props) {
 	const giftCardPrice = Number(currentPrice);
 	const isAboveMinimum = GIFT_CARD_MINIMUM < giftCardPrice;
 	const isBelowMaximum = total >= giftCardPrice;
+	const isPriceOverrunByGC =
+		paymentsPaid.length > 1 ? checkIsAboveLeftToPay() : false;
+
 	const errorMessage = !isAboveMinimum
 		? translate("giftCartRow_errorMessage_belowMinimum")
 		: !isBelowMaximum
 		? translate("giftCartRow_errorMessage_aboveMaximum")
+		: isPriceOverrunByGC
+		? translate("giftCartRow_errorMessage_aboveLeftToPatWithGC")
 		: "";
 
-	const onEditPress = () => {
+	useEffect(() => {
+		const balanceValue = findBalanceById();
+		setBalance(balanceValue);
+	}, [paymentsPaid.length, paymentsPaid]);
+
+	useEffect(() => {
+		dispatch(Actions.setIsEditGiftCardMode({ uuid, isEdit }));
+
+		return () => {
+			if (isEdit) {
+				dispatch(Actions.setIsEditGiftCardMode({ uuid, isEdit: false }));
+			}
+		};
+	}, [isEdit, uuid, dispatch]);
+
+	useEffect(() => {
+		if (giftCardPrice > balance) {
+			setIsErrorStyle(true);
+		} else {
+			setIsErrorStyle(false);
+		}
+	}, [currentPrice]);
+
+	function checkIsAboveLeftToPay() {
+		const rowPrice = findCurrPayment().total;
+		const leftToPayByTotal = paymentsPaid.reduce(
+			(acc, payment) => acc + payment.total,
+			0,
+		);
+		const calcPriceOverrun =
+			Number(leftToPayByTotal) - Number(rowPrice) + Number(currentPrice);
+		return calcPriceOverrun > totalBasket;
+	}
+
+	function findBalanceById() {
+		const currPayment = findCurrPayment();
+
+		return currPayment ? currPayment.extra.balance : null;
+	}
+
+	function findCurrPayment() {
+		const currPayment = paymentsPaid?.find((payment) => payment.uuid === uuid);
+		return currPayment;
+	}
+
+	function onEditPress() {
 		setIsEdit(true);
-	};
+	}
 
 	const onDeclinePress = () => {
 		setCurrentPrice(`${price}`);
@@ -79,7 +132,12 @@ export default function GiftCardRowItem(props) {
 	};
 
 	const onUpdatePrice = () => {
-		if (isAboveMinimum && isBelowMaximum) {
+		if (
+			isAboveMinimum &&
+			isBelowMaximum &&
+			!isPriceOverrunByGC &&
+			!isErrorStyle
+		) {
 			typeof onUpdate === "function" &&
 				onUpdate(uuid, currentPrice, () => setIsEdit(false));
 		}
@@ -91,36 +149,54 @@ export default function GiftCardRowItem(props) {
 	const floatingPrice = Number(currentPrice).toFixed(displayDecimalPoint);
 
 	return (
-		<div className={styles["gift-card-row-item"]}>
+		<div
+			className={styles["gift-card-row-item"]}
+			style={{ backgroundColor: !isEdit ? "#f6f6f6" : "" }}>
 			<div className={styles["gift-card-right"]}>
 				<div className={styles["gift-card-icon-digits"]}>
-					<div className={styles["gift-card-icon"]}>
+					<div className={styles["card-brand-icon"]}>
 						<img
-							src={GiftCardIcon.src}
+							src={"https://cdn.aboohi.net/media/buyme.png"}
 							alt=""
 						/>
 					</div>
-					<span className={styles["gift-card-digits"]}>{lastFourDigits}</span>
+					{!isEdit ? (
+						<>
+							<span className={styles["gift-card-digits"]}>{lastFourDigits}</span>
+							<Price
+								value={floatingPrice}
+								extraStyles={styles}
+							/>
+						</>
+					) : (
+						<div className={styles["price-input-container"]}>
+							<div>
+								<TextInput
+									autoFocus
+									showError={!isAboveMinimum || !isBelowMaximum || isPriceOverrunByGC}
+									errorMessage={errorMessage}
+									className={styles["price-input-wrapper"]}
+									inputClassName={styles["price-input"]}
+									onChange={(e) => handleChangeText(e)}
+									type="number"
+									value={currentPrice}
+									name={"price-input"}
+									extraStyles={styles}
+								/>
+								<span className={styles["text-input-currency-icon"]}>₪</span>
+							</div>
+							<span
+								className={`${styles["amount-of-money-in-card"]} ${
+									isErrorStyle ? styles["error-style"] : ""
+								}`}>
+								{isAboveMinimum &&
+									isBelowMaximum &&
+									!isPriceOverrunByGC &&
+									translate("amount_of_money_in_gc").replace("{balance}", balance)}
+							</span>
+						</div>
+					)}
 				</div>
-				{!isEdit ? (
-					<Price
-						value={floatingPrice}
-						extraStyles={styles}
-					/>
-				) : (
-					<TextInput
-						autoFocus
-						showError={!isAboveMinimum || !isBelowMaximum}
-						errorMessage={errorMessage}
-						className={styles["price-input-wrapper"]}
-						inputClassName={styles["price-input"]}
-						onChange={(e) => handleChangeText(e)}
-						type="number"
-						value={currentPrice}
-						name={"price-input"}
-						extraStyles={styles}
-					/>
-				)}
 			</div>
 			<div className={styles["gift-card-left"]}>
 				{!isEdit ? (
@@ -138,11 +214,13 @@ export default function GiftCardRowItem(props) {
 					</>
 				) : (
 					<>
-						<div
+						<Button
+							text={translate("confirm_amount_of_money")}
 							onClick={onUpdatePrice}
-							className={styles["gift-card-edit"]}>
-							<img src={AcceptIcon.src} />
-						</div>
+							className={styles["confrim-btn"]}
+							animated={false}
+						/>
+
 						<div
 							onClick={onDeclinePress}
 							className={styles["gift-card-delete"]}>

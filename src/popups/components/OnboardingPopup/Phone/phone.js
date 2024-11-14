@@ -157,20 +157,24 @@ function Phone(props) {
 				</span>
 			)}
 
-			{hasValidPhoneNum &&
-				(isMobilePhone ? (
-					<Button
-						className={styles["phone-submit-btn"]}
-						text={translate("otp_send_sms_btn_label")}
-						onClick={() => onSubmitPhoneNum(OTP_METHODS.TEXT)}
-					/>
-				) : (
-					<Button
-						className={`${styles["phone-submit-btn"]} ${styles["phone-submit-btn-voicemessage"]}`}
-						text={translate("otp_send_voicemail_btn_label")}
-						onClick={() => onSubmitPhoneNum(OTP_METHODS.VOICE_MESSAGE)}
-					/>
-				))}
+			<div className={styles["animated-btn-wrapper"]}>
+				{hasValidPhoneNum &&
+					(isMobilePhone ? (
+						<Button
+							className={styles["phone-submit-btn"]}
+							text={translate("otp_send_sms_btn_label")}
+							onClick={() => onSubmitPhoneNum(OTP_METHODS.TEXT)}
+							animated
+						/>
+					) : (
+						<Button
+							className={`${styles["phone-submit-btn"]} ${styles["phone-submit-btn-voicemessage"]}`}
+							text={translate("otp_send_voicemail_btn_label")}
+							onClick={() => onSubmitPhoneNum(OTP_METHODS.VOICE_MESSAGE)}
+							animated
+						/>
+					))}
+			</div>
 			{!hasValidPhoneNum && (
 				<TextOnlyButton
 					className={styles["switched-phone-btn"]}

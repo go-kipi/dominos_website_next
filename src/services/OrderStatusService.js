@@ -6,6 +6,7 @@ import ORDER_STATUS from "constants/OrderStatus";
 import * as Routes from "constants/routes";
 
 import Router from "next/router";
+import Actions from "redux/actions";
 
 const OrderStatusService = (function () {
 	function getStatus(allowed, onAllowed, onDisallowed) {
@@ -35,7 +36,7 @@ const OrderStatusService = (function () {
 		}
 	}
 
-	function goToScreen() {
+	function goToScreen(callback) {
 		let timeout;
 		const user = Store.getState().userData;
 		const userOrders = user.submittedOrders ?? [];
@@ -45,6 +46,7 @@ const OrderStatusService = (function () {
 			case ORDER_STATUS.BASKET:
 				timeout = setTimeout(() => {
 					Router.push(Routes.cart).then(() => {
+						callback();
 						clearTimeout(timeout);
 					});
 				}, 250);
@@ -52,6 +54,7 @@ const OrderStatusService = (function () {
 
 			case ORDER_STATUS.IN_PAYMENT:
 				timeout = setTimeout(() => {
+					Store.dispatch(Actions.setCartApproved(true));
 					Router.push(
 						{
 							pathname: Routes.cart,
@@ -60,6 +63,7 @@ const OrderStatusService = (function () {
 						undefined,
 						{ shallow: true },
 					).then(() => {
+						callback();
 						clearTimeout(timeout);
 					});
 				}, 250);
@@ -68,6 +72,7 @@ const OrderStatusService = (function () {
 			case ORDER_STATUS.IN_MENU:
 				timeout = setTimeout(() => {
 					Router.push(Routes.menu).then(() => {
+						callback();
 						clearTimeout(timeout);
 					});
 				}, 250);
@@ -80,6 +85,7 @@ const OrderStatusService = (function () {
 						`${Routes.tracker}/[orderHash]`,
 						`${Routes.tracker}/${saleHash}`,
 					).then(() => {
+						callback();
 						clearTimeout(timeout);
 					});
 				}, 250);

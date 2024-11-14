@@ -25,18 +25,31 @@ const CounterButton = (props) => {
 		extraStyles = {},
 		focusOnLayout = false,
 		btnStyle = {},
+		pressedClass,
 	} = props;
-
+  
 	const styles = (className) => {
-		return (basic[className] ?? "") + " " + (extraStyles[className] ?? "");
+	  	return (basic[className] ?? "") + " " + (extraStyles[className] ?? "");
 	};
+  
+	const chosenPressedClass = pressedClass || styles("action-btn-pressed");
+	
 	const translate = useTranslate();
 	const pressedButton = useRef();
 	const addButtonRef = useRef();
 	const removeButtonRef = useRef();
 	const [currentCount, setCurrentCount] = useState(value);
 	const [debounceDisabled, setDebounceDisabled] = useState(false);
-
+	const [pressedState, setPressedState] = useState("none");
+	
+	const handleTouch = (type) => {
+		setPressedState(type);
+	};
+	
+	const handleTouchEnd = () => {
+		setPressedState("none");
+	};
+	
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setCurrentCount(value);
@@ -71,6 +84,13 @@ const CounterButton = (props) => {
 			addButtonRef.current?.focus();
 		}
 	}, [focusOnLayout]);
+	
+    const getPressedStyle = (buttonType) => {
+        if (pressedState === buttonType) {
+            return chosenPressedClass;
+        }
+        return "";
+    };
 
 	const debounceButtonClick = (type) => {
 		setDebounceDisabled(true);
@@ -105,12 +125,18 @@ const CounterButton = (props) => {
 			className={clsx(styles("counter-button-wrapper"), className, disabledClass)}>
 			<button
 				ref={addButtonRef}
-				className={clsx(styles("action-btn"), btnStyle)}
+				const className = {clsx(
+					styles("action-btn"), btnStyle,
+					getPressedStyle("increment")
+				)}
 				onClick={(e) => increase(e)}
 				disabled={disabled || (max && value >= max) || debounceDisabled}
 				aria-label={`${baseAriaLabel} ${accessibility_counterCurrent}${ariaLabelAdd}`}
 				aria-selected={true}
-				aria-describedby={ariaDescription}>
+				aria-describedby={ariaDescription}
+				onTouchStart={() => handleTouch("increment")}
+				onTouchEnd={handleTouchEnd}
+				onTouchCancel={handleTouchEnd}>
 				<div className={styles("img-container")}>
 					<img src={PlusIcon.src} />
 				</div>
@@ -124,12 +150,18 @@ const CounterButton = (props) => {
 			/>
 			<button
 				ref={removeButtonRef}
-				className={clsx(styles("action-btn"), btnStyle)}
+				const className = {clsx(
+					styles("action-btn"), btnStyle,
+					getPressedStyle("decrement")
+				)}
 				onClick={(e) => decrease(e)}
 				disabled={disabled || (min && value <= min) || debounceDisabled}
 				aria-label={`${baseAriaLabel} ${accessibility_counterCurrent}${ariaLabelRemove}`}
 				aria-selected={true}
-				aria-describedby={ariaDescription}>
+				aria-describedby={ariaDescription}
+				onTouchStart={() => handleTouch("decrement")}
+				onTouchEnd={handleTouchEnd}
+				onTouchCancel={handleTouchEnd}>
 				<div className={styles("img-container")}>
 					<img src={MinusIcon.src} />
 				</div>

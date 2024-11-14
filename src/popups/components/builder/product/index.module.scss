@@ -93,7 +93,7 @@ $current: 375;
 				display: flex;
 				width: 100%;
 				justify-content: space-between;
-				margin-top: vw_size(15, $current);
+				margin-top: vw_size(20, $current);
 
 				.option-checkbox {
 					align-items: center;
@@ -111,6 +111,9 @@ $current: 375;
 						width: vw_size(30, $current);
 						height: unset;
 						margin: auto;
+						position: absolute;
+						top: vw_size(-4, $current);
+						
 					}
 
 					&.selecetd {
@@ -127,7 +130,7 @@ $current: 375;
 
 					.label {
 						color: #d1d1d1;
-						margin-inline-start: vw_size(0, $current);
+						margin-inline-start: vw_size(30, $current);
 						font-size: vw_size(13, $current);
 						line-height: vw_size(20, $current);
 						font-family: $font;
@@ -266,9 +269,12 @@ $current: 375;
 					margin-top: vw_size(12, $current);
 
 					.option-checkbox {
-						padding-inline-end: vw_size(20, $current);
+						padding-inline-end: vw_size(40, $current);
+						
 
 						.img {
+							position: relative;
+							top: vw_size(0, $current);;
 							width: vw_size(30, $current);
 						}
 
@@ -408,12 +414,15 @@ $current: 375;
 					gap: 10px;
 					.item-container {
 						margin-top: vw_size(15, $current);
+						
 
 						.option-checkbox {
 							padding-inline-end: vw_size(20, $current);
 
 							.img {
 								width: vw_size(44, $current);
+								position: relative;
+								top: vw_size(0, $current);;
 								padding-inline-end: unset;
 							}
 

@@ -1,0 +1,188 @@
+{
+	"leftToPay": 86.9,
+	"paid": [],
+	"paymentsMenu": [
+		{
+			"defaultElement": "",
+			"id": "digitalPayments",
+			"maxElementsToDisplay": 0,
+			"meta": "someMetaHere",
+			"nameUseCases": {
+				"name": "digitalPayments"
+			},
+			"elements": [
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "creditCard",
+					"label": "creditCard",
+					"maxElementsToDisplay": 0
+				},
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "applePay",
+					"label": "applePay",
+					"maxElementsToDisplay": 0
+				},
+				{
+					"actionType": "subMenu",
+					"assetVersion": 1,
+					"id": "giftMenu",
+					"label": "giftMenu",
+					"maxElementsToDisplay": 0
+				},
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "bit",
+					"label": "Bit",
+					"maxElementsToDisplay": 0
+				},
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "googlePay",
+					"label": "googlePay",
+					"maxElementsToDisplay": 0
+				},
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "cash",
+					"label": "cash",
+					"maxElementsToDisplay": 0
+				}
+			]
+		},
+		{
+			"defaultElement": "",
+			"id": "giftMenu",
+			"maxElementsToDisplay": 0,
+			"meta": "someMetaHere",
+			"nameUseCases": {
+				"name": "giftMenu"
+			},
+			"elements": [
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "giftCard",
+					"label": "giftCard",
+					"maxElementsToDisplay": 0
+				},
+				{
+					"actionType": "payment",
+					"assetVersion": 1,
+					"id": "bit",
+					"label": "10Bis",
+					"maxElementsToDisplay": 0
+				}
+			]
+		}
+	],
+	"paymentTypes": [
+		{
+			"id": "creditCard",
+			"action": "creditCardPayment",
+			"uImeta": "creditCard",
+			"defaultCurrency": "ILS",
+			"minAllowed": 0,
+			"maxAllowed": 9999,
+			"extraData": null,
+			"blockedReason": "",
+			"sortOrder": 5900,
+			"popups": null,
+			"name": "כרטיס אשראי"
+		},
+		{
+			"id": "applePay",
+			"action": "applePay",
+			"uImeta": "creditCard",
+			"defaultCurrency": "ILS",
+			"minAllowed": 0,
+			"maxAllowed": 9999,
+			"extraData": {
+				"countryCode": "IL",
+				"currencyCode": "ILS",
+				"merchantCapabilities": ["supports3DS"],
+				"supportedNetworks": ["visa", "masterCard", "privateLabel", "amex"],
+				"total": {
+					"amount": "{{amount}}",
+					"label": "Dominos"
+				}
+			},
+			"blockedReason": "",
+			"sortOrder": 6445,
+			"popups": null,
+			"name": "applePay"
+		},
+		{
+			"id": "googlePay",
+			"action": "googlePay",
+			"uImeta": "creditCard",
+			"defaultCurrency": "ILS",
+			"minAllowed": 0,
+			"maxAllowed": 9999,
+			"extraData": {
+				"baseCardPaymentMethod": {
+					"parameters": {
+						"allowedAuthMethods": ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+						"allowedCardNetworks": [
+							"AMEX",
+							"DISCOVER",
+							"INTERAC",
+							"JCB",
+							"MASTERCARD",
+							"VISA"
+						]
+					},
+					"type": "CARD"
+				},
+				"businessName": "Dominos",
+				"environment": "PRODUCTION",
+				"merchantId": "BCR2DN4T6DPMXXCK",
+				"tokenizationSpecification": {
+					"parameters": {
+						"gateway": "hyp",
+						"gatewayMerchantId": "9014348010"
+					},
+					"type": "PAYMENT_GATEWAY"
+				}
+			},
+			"blockedReason": "",
+			"sortOrder": 6995,
+			"popups": null,
+			"name": "googlePay"
+		},
+		{
+			"id": "bit",
+			"action": "bitPayment",
+			"uImeta": "bit",
+			"defaultCurrency": "ILS",
+			"minAllowed": 1,
+			"maxAllowed": 9999,
+			"extraData": {
+				"terminalNumber": "160"
+			},
+			"blockedReason": "",
+			"sortOrder": 7415,
+			"popups": null,
+			"name": "bit"
+		},
+		{
+			"id": "giftCard",
+			"action": "giftCardPayment",
+			"uImeta": "creditCard",
+			"defaultCurrency": "ILS",
+			"minAllowed": 0,
+			"maxAllowed": 9999,
+			"extraData": null,
+			"blockedReason": "",
+			"sortOrder": 7775,
+			"popups": null,
+			"name": "giftCard"
+		}
+	],
+	"popups": null
+}

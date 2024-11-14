@@ -20,7 +20,7 @@ function TrackerMessage({ status }) {
 	const timerId = useRef();
 	const parentTi = useRef();
 	const isMobile = deviceState.isMobile;
-	const isHigherMessages = isMobile && isIOS;
+	const isHigherMessages = isMobile;
 	const { values = {}, changeTextEverySecond = 20 } = trackerMessagesObject;
 
 	const messages = values[lang] ?? [];

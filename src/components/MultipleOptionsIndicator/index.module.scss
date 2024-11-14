@@ -12,7 +12,6 @@ $current: 375;
 		position: absolute;
 		left: vw_size(-4, $current);
 		top: vw_size(-1, $current);
-		// height: vw_size(12, $current);
 		height: auto;
 		width: vw_size(13, $current);
 	}
@@ -44,6 +43,7 @@ $current: 375;
 		}
 	}
 }
+
 @media (min-width: $media-desktop) {
 	$current: $desktop;
 	.multiple-options-indicator-wrapper {

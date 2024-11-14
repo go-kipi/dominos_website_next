@@ -6,7 +6,10 @@ import basic from "./SelectLang.module.scss";
 import useTranslate from "hooks/useTranslate";
 import { useRouter } from "next/router";
 import { LANGUAGES } from "constants/Languages";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Api from "api/requests";
+import { Store } from "redux/store";
+import Actions from "redux/actions";
 
 const NO_HIGHLIGHT = -1;
 
@@ -25,8 +28,10 @@ function SelectLang(props) {
 	const mainContainer = useRef();
 	const translate = useTranslate();
 	const lang = useSelector((store) => store.generalData.lang);
+	const generalData = useSelector((store) => store.generalData);
 	const label = translate(lang);
 	const router = useRouter();
+	const dispatch = useDispatch();
 
 	const options = [
 		{
@@ -140,6 +145,24 @@ function SelectLang(props) {
 		setIsOpen(false);
 	}
 
+	const updateAppLang = (lang) => {
+		const onSuccessCustomerDetails = (res) => {
+			dispatch(Actions.setUser(res.data));
+		};
+
+		const onSuccessSetLang = () => {
+			Api.getCustomerDetails({
+				payload: { gpsstatus: generalData?.gpsstatus ?? GPS_STATUS.OFF },
+				onSuccessCB: onSuccessCustomerDetails,
+			});
+		};
+
+		Api.setLang({
+			payload: { lang },
+			onSuccess: onSuccessSetLang,
+		});
+	};
+
 	const activeClass = isOpen ? styles("active") : "";
 	return (
 		<div
@@ -204,21 +227,36 @@ function SelectLang(props) {
 							key={index}
 							aria-hidden={!isOpen}
 							aria-label={item.text}>
-							<a
-								href={href}
+							<span
 								className={clsx(
 									styles("select-option"),
 									activeOption,
 									hightlightedOption,
 								)}
 								onClick={(e) => {
-									if (href === window.location.pathname) {
-										e.preventDefault();
-										setIsOpen(false);
+									e.preventDefault();
+									if (
+										// hebrew
+										item.locale === router.defaultLocale &&
+										router.locale !== router.defaultLocale
+									) {
+										router.replace(href, undefined, {
+											shallow: false,
+											locale: router.defaultLocale,
+										});
+									} else if (item.locale !== router.locale) {
+										// english
+
+										router.push(href, undefined, {
+											shallow: false,
+											locale: item.locale,
+										});
 									}
+									updateAppLang(item.id);
+									setIsOpen(false);
 								}}>
 								{item.text}
-							</a>
+							</span>
 						</li>
 					);
 

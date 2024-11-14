@@ -6,13 +6,12 @@ import clsx from "clsx";
 import LottieAnimation from "components/LottieAnimation";
 
 import UnfoldAnimation from "animations/blue-button-open1.json";
-import FoldAnimation from "animations/blue-button-close.json";
+import FoldAnimation from "animations/buttonToBall";
 import SRContent from "../accessibility/srcontent";
-import { useSelector } from "react-redux";
-import { subscribe, unsubscribe } from "services/events";
 import { EVENTS } from "constants/events";
 import { HTTP_STATUS } from "constants/httpStatus";
 import useEventEmitter from "hooks/useEventEmitter";
+import DominosLoader from "components/DominosLoader/DominosLoader";
 
 const ButtonRef = (props, ref) => {
 	const {
@@ -26,7 +25,7 @@ const ButtonRef = (props, ref) => {
 		isError = false,
 		costumeError = false,
 		errorText = "",
-		animated = true,
+		animated = false,
 		isBtnOnForm = false,
 		show = true,
 		type = "",
@@ -40,9 +39,9 @@ const ButtonRef = (props, ref) => {
 
 	const buttonRef = useRef();
 	const cachedEvent = useRef(null);
-	// const isRequesting = useSelector((store) => store.requestingState);
 	const [animationState, setAnimationState] = useState();
 	const [isRequesting, setIsRequesting] = useState(false);
+	const [showLoader, setShowLoader] = useState(false);
 	useEventEmitter(EVENTS.HTTP_REQUEST, handleHttpEvent, animated);
 
 	const hasText = text.length > 0 ? text : undefined;
@@ -74,28 +73,33 @@ const ButtonRef = (props, ref) => {
 	}
 
 	function onFoldAnimation() {
-		setTimeout(() => {
-			if (animationState === "fold") {
+		if (animationState === "fold") {
+			typeof onClick === "function" && onClick();
+			setTimeout(() => {
+				setShowLoader(true);
+			}, 150);
+		}
+		const timeout = setTimeout(() => {
+			// handle the the case of uncatched error
+			if (animationState !== "unfold") {
+				setShowLoader(false);
 				setAnimationState("unfold");
+				clearTimeout(timeout);
 			}
-		}, 3000);
-		typeof onClick === "function" && onClick();
+		}, 4000);
 	}
 
 	function handleHttpEvent(event) {
 		if (cachedEvent.current !== event.detail) {
 			cachedEvent.current = event.detail;
 
-			if (event.detail === HTTP_STATUS.START) {
-				setIsRequesting(true);
-			} else {
-				setIsRequesting(false);
-			}
 			if (
 				event.detail === HTTP_STATUS.FAILED ||
 				event.detail === HTTP_STATUS.REJECT
 			) {
 				setAnimationState("unfold");
+				setShowLoader(false);
+				return;
 			}
 		}
 	}
@@ -145,6 +149,7 @@ const ButtonRef = (props, ref) => {
 				className={clsx(
 					styles("animation-folding-wrapper"),
 					conditionalClass(className),
+					showLoader && styles("disappear"),
 				)}>
 				<LottieAnimation
 					animation={FoldAnimation}
@@ -166,7 +171,7 @@ const ButtonRef = (props, ref) => {
 				aria-disabled={disabled}
 				tabIndex={tabIndex}
 				className={clsx(
-					styles("btn-wrapper"),
+					styles("btn"),
 					conditionalClass(disabledClassName),
 					conditionalClass(errorClass),
 					conditionalClass(className),
@@ -194,7 +199,17 @@ const ButtonRef = (props, ref) => {
 			return null;
 		}
 	}
-	return RenderAnimation();
+
+	return (
+		<>
+			{showLoader && (
+				<div className={basic["loader-wrapper"]}>
+					<DominosLoader extraStyles={basic} />
+				</div>
+			)}
+			{RenderAnimation()}
+		</>
+	);
 };
 
 const Button = React.forwardRef(ButtonRef);

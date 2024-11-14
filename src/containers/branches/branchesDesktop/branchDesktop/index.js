@@ -105,7 +105,6 @@ export default function BranchDesktop({
 							className={styles["custom-button"]}
 							onClick={order}
 							text={translate("branchScreen_submitBtn_toOrder")}
-							animated={false}
 							textClassName={styles["custom-text"]}
 						/>
 					</div>

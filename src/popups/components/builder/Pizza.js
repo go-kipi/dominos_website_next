@@ -83,7 +83,7 @@ const PizzaRef = (props, ref) => {
 		const res = [];
 
 		Object.keys(coverages)?.map((topping) => {
-			const { assetVersion = 0, meta } = catalogProducts[topping];
+			const { assetVersion = 0, meta } = catalogProducts[topping] || {};
 			const isMixTopping = meta === META_ENUM.MIX_TOPPING_ITEM;
 			if (coverages[topping]?.coverage) {
 				const { q1 = 0, q2 = 0, q3 = 0, q4 = 0 } = coverages[topping].coverage;

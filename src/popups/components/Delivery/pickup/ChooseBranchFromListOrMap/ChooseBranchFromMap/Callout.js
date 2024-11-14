@@ -42,8 +42,16 @@ export default function Callout(props) {
 			className={basic["callout-wrapper"]}>
 			<div className={basic["container"]}>
 				<div className={basic["text-wrapper"]}>
-					<div className={basic["branch-name"]} tabIndex={0}>{name}</div>
-					<div className={basic["branch-address"]} tabIndex={0}>{storeAddress}</div>
+					<div
+						className={basic["branch-name"]}
+						tabIndex={0}>
+						{name}
+					</div>
+					<div
+						className={basic["branch-address"]}
+						tabIndex={0}>
+						{storeAddress}
+					</div>
 				</div>
 
 				<div className={basic["separator"]} />
@@ -57,7 +65,8 @@ export default function Callout(props) {
 								/>
 							</div>
 							<span
-								className={clsx(basic["time-text"], !isOpen ? basic["closed"] : "")} tabIndex={0}>
+								className={clsx(basic["time-text"], !isOpen ? basic["closed"] : "")}
+								tabIndex={0}>
 								{translate(statusMessage?.message)?.replace(
 									"{time}",
 									statusMessage?.values?.time,
@@ -72,7 +81,9 @@ export default function Callout(props) {
 										alt={""}
 									/>
 								</div>
-								<span className={basic["distance-text"]} tabIndex={0}>
+								<span
+									className={basic["distance-text"]}
+									tabIndex={0}>
 									{parseFloat(distance).toFixed(1)} <span>&nbsp;</span>
 									{translate("km")}
 								</span>
@@ -84,7 +95,6 @@ export default function Callout(props) {
 					style={btnStyle}
 					className={basic["callout-button-wrapper"]}>
 					<Button
-						animated={false}
 						onClick={handleOnClick}
 						className={basic["callout-btn"]}
 						textClassName={basic["callout-btn-text"]}

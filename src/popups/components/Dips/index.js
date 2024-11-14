@@ -95,20 +95,8 @@ function Dips(props) {
 
 	const renderDips = () => {
 		return (
-			<div className={styles["dips-container"]}>
-				<div className={styles["header"]}>
-					<h3 className={styles["main-title"]}>{translate("dip_main_header")}</h3>
-
-					<MaxFreeDipsMessage
-						components={currentProductTemplate.components}
-						overrides={currentProductTemplate.priceOverrides}
-						styles={styles}
-					/>
-				</div>
-
-				<div className={styles["list-container"]}>
-					{items.map((item, index) => RenderItem(item, index))}
-				</div>
+			<div className={styles["list-container"]}>
+				{items.map((item, index) => RenderItem(item, index))}
 			</div>
 		);
 	};
@@ -159,12 +147,29 @@ function Dips(props) {
 		);
 	};
 
+	const renderHeader = () => {
+		return (
+			<div className={styles["header"]}>
+				<h3 className={styles["main-title"]}>{translate("dip_main_header")}</h3>
+
+				<MaxFreeDipsMessage
+					components={currentProductTemplate.components}
+					overrides={currentProductTemplate.priceOverrides}
+					styles={styles}
+				/>
+
+				{renderCloseButton()}
+			</div>
+		);
+	};
+
 	return (
 		<BlurPopup
 			id={id}
 			ref={ref}
-			withBackground={!deviceState.isDesktop}>
-			{renderCloseButton()}
+			withBackground={!deviceState.isDesktop}
+			className={styles["container"]}>
+			{renderHeader()}
 			{renderDips()}
 			{renderDipsLeftTitle()}
 			{(isQuantityChanged || dipsAmountInCart) && renderActionButton()}

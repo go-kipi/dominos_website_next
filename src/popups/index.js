@@ -70,11 +70,19 @@ export default function Popups() {
 
 	// Note: Saving the position of the screen to prevent ui shifting of the background
 	const disableSafariScroll = () => {
+		scrollPosition = window.scrollY;
 		document.body.style.overflow = "hidden";
+		document.body.style.position = "fixed";
+		document.body.style.top = `-${scrollPosition}px`;
+		document.body.style.width = "100%";
 	};
 
 	const enableSafariScroll = () => {
 		document.body.style.overflow = "";
+		document.body.style.position = "";
+		document.body.style.top = "";
+		document.body.style.width = "";
+		window.scrollTo(0, scrollPosition);
 	};
 
 	// Note: stop body from scrolling while popup is open

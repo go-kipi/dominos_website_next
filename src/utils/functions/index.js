@@ -16,6 +16,7 @@ import { Store } from "redux/store";
 import { MEDIA_ENUM } from "constants/media-enum";
 
 export function getFullMediaUrl(item, displayType, useCase, mime = "png") {
+	const lang = Store.getState().generalData.lang ?? "he";
 	if (
 		typeof item === "object" &&
 		notEmptyObject(item) &&
@@ -26,16 +27,24 @@ export function getFullMediaUrl(item, displayType, useCase, mime = "png") {
 		useCase.length > 0
 	) {
 		const mediaPath = Store.getState().apiData.cdn;
-		const url = `${mediaPath}${displayType}/${item.id}/V${item.assetVersion}/${useCase}.${mime}`;
+		const url = `${mediaPath}${lang}/${displayType}/${item.id}/V${item.assetVersion}/${useCase}.${mime}`;
 		return url;
 	}
 	return "";
 }
 
+export function getSimpleMediaUrl(suffix) {
+	const mediaPath = Store.getState().apiData.cdn;
+	const { lang } = Store.getState().generalData;
+	const url = `${mediaPath}${lang}/${suffix}`;
+	return url;
+}
+
 export function getDoughImage(item) {
 	if (item) {
+		const { lang } = Store.getState().generalData;
 		const mediaPath = Store.getState().apiData.cdn;
-		const url = `${mediaPath}Dough/${item}/V0/dough.svg`;
+		const url = `${mediaPath}${lang}/Dough/${item}/V0/dough.svg`;
 
 		return url;
 	}
@@ -277,12 +286,6 @@ export function getMobileOperatingSystem() {
 		}
 	}
 	return undefined;
-}
-
-export function getSimpleMediaUrl(suffix) {
-	const mediaPath = Store.getState().apiData.cdn;
-	const url = `${mediaPath}${suffix}`;
-	return url;
 }
 
 export const parser = {
@@ -626,11 +629,23 @@ export function getPizzaImage(type, size = "family") {
 	return pizzaImage;
 }
 
+// export function isSafariBrowser() {
+// 	const browser = navigator.userAgent.match(
+// 		/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i,
+// 	)[1];
+// 	return browser.toLocaleLowerCase() === "safari";
+// }
+
 export function isSafariBrowser() {
-	const browser = navigator.userAgent.match(
-		/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i,
-	)[1];
-	return browser.toLocaleLowerCase() === "safari";
+	const userAgent = typeof navigator !== "undefined" && navigator.userAgent;
+	if (userAgent) {
+		const match = userAgent.match(
+			/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i,
+		);
+		const browser = match ? match[1] : "";
+		return browser.toLowerCase() === "safari";
+	}
+	return false;
 }
 
 async function getActions() {

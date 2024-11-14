@@ -65,8 +65,8 @@ $current: 375;
 			margin: vw_size(15, $current) 0;
 		}
 		.actions {
-			margin-top: auto;
-			margin-bottom: vw_size(35, $current);
+			position: relative;
+			margin-top: vw_size(50, $current);
 		}
 	}
 }

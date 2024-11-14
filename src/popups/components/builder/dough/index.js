@@ -166,6 +166,7 @@ const DoughBuilder = (props) => {
 			shouldFadeIn ? styles["fade-in"] : "",
 		),
 		focus: true,
+		animated: false,
 		extraStyles: styles,
 		isInternal: true,
 		callback: () =>
@@ -539,6 +540,7 @@ const DoughBuilder = (props) => {
 					title: translate("edit_reset_toppings"),
 					mainBtnText: translate("edit_reset_toppings_main_button"),
 					subBtnText: translate("edit_reset_toppings_secondary_button"),
+					capsuleButton: true,
 					mainBtnFunc: () => {
 						dispatch(Actions.setIsUserAgreeToReset(true));
 						callback();

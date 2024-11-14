@@ -285,10 +285,10 @@ const SavePizza = (props) => {
 							}`,
 						)}
 						onClick={() => onSavePizza(currentPizza?.uuid)}
+						animated
 					/>
 				</div>
 				<Button
-					animated={false}
 					isPrimary={false}
 					className={styles["save-pizza-skip"]}
 					text={translate("savePizzaModal_skip_button")}

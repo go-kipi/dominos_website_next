@@ -1,0 +1,121 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.choose-gift-card-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	margin-inline: vw_size(45, $current);
+	margin-bottom: auto;
+
+	.choose-gift-card-title {
+		font-family: $font;
+		color: $red;
+		font-size: vw_size(20, $current);
+		margin-top: vw_size(40, $current);
+	}
+	.gift_card_list {
+		width: 100%;
+
+		.gift_card_item {
+			width: 100%;
+			padding-block: vw_size(20, $current);
+			display: flex;
+			flex-direction: row;
+			border-bottom: 0.5px solid rgba(209, 209, 209, 1);
+			align-items: center;
+			justify-content: start;
+			.gift_card_item_img {
+				width: vw_size(37, $current);
+				height: vw_size(37, $current);
+			}
+
+			.gift_card_item_name {
+				margin-inline-start: vw_size(25, $current);
+				font-size: vw_size(14, $current);
+				font-family: $font-medium;
+				letter-spacing: vw_size(0.14, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.choose-gift-card-wrapper {
+		margin-bottom: 40%;
+		margin-inline: vw_size(90, $current);
+		.choose-gift-card-title {
+			margin-top: vw_size(60, $current);
+			font-size: vw_size(26, $current);
+		}
+		.gift_card_list {
+			.gift_card_item {
+				padding-block: vw_size(20, $current);
+				.gift_card_item_img {
+					width: vw_size(50, $current);
+					height: vw_size(50, $current);
+				}
+				.gift_card_item_name {
+					margin-inline-start: vw_size(30, $current);
+					font-size: vw_size(16, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.choose-gift-card-wrapper {
+		margin-bottom: 95%;
+		margin-inline: vw_size(45, $current);
+
+		.choose-gift-card-title {
+			font-size: vw_size(20, $current);
+			margin-top: vw_size(4, $current);
+		}
+		.gift_card_list {
+			.gift_card_item {
+				padding-block: vw_size(20, $current);
+				.gift_card_item_img {
+					width: vw_size(37, $current);
+					height: vw_size(37, $current);
+				}
+
+				.gift_card_item_name {
+					margin-inline-start: vw_size(25, $current);
+					font-size: vw_size(14, $current);
+					letter-spacing: vw_size(0.14, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.choose-gift-card-wrapper {
+		margin-inline: vw_size(45, $current);
+
+		.choose-gift-card-title {
+			font-size: vw_size(20, $current);
+		}
+		.gift_card_list {
+			.gift_card_item {
+				padding-block: vw_size(20, $current);
+				.gift_card_item_img {
+					width: vw_size(37, $current);
+					height: vw_size(37, $current);
+				}
+
+				.gift_card_item_name {
+					margin-inline-start: vw_size(25, $current);
+					font-size: vw_size(14, $current);
+					letter-spacing: vw_size(0.14, $current);
+				}
+			}
+		}
+	}
+}

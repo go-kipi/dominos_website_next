@@ -41,7 +41,6 @@ function CreditCard(props) {
 		userData.savedCreditCards ?? [],
 	);
 	const [shouldFadeTitle, setShouldFadeTitle] = useState(false);
-	const [showLoading, setShowLoading] = useState(newCardUsed);
 	const [showDone, setShowDone] = useState(false);
 	const [selectedCreditCard, setSelectedCreditCard] = useState(-1);
 	const creditCardListRef = useRef(null);
@@ -65,9 +64,6 @@ function CreditCard(props) {
 		if (savedCreditCards.length > 0) {
 			setSelectedCreditCard(savedCreditCards[0]);
 		}
-		return () => {
-			dispatch(Actions.setIsCreditModalOpen(false));
-		};
 	}, []);
 
 	function getCardIndex(offset, isSingleCard = false, cardsLength) {
@@ -103,7 +99,6 @@ function CreditCard(props) {
 			currency,
 			extraData: { token: card.token },
 		};
-		setShowLoading(true);
 
 		Api.addPayment({ payload, onSuccess });
 
@@ -155,7 +150,7 @@ function CreditCard(props) {
 	function onCreditCardSelect(card) {
 		setSelectedCreditCard(card);
 		if (typeof card === "object") {
-			if (!card.expired && !showLoading) {
+			if (!card.expired) {
 				payWithCreditCard(card);
 			}
 		}
@@ -213,24 +208,24 @@ function CreditCard(props) {
 	}
 
 	function renderButtonOrLottie() {
-		if (!showLoading) {
-			return (
-				<>
-					{selectedCreditCard?.expired && (
-						<SRContent
-							role={"alert"}
-							message={`${selectedCreditCard?.brand} ${
-								selectedCreditCard?.lastFourDigits
-							}, ${translate("creditCard_payment_addNewCard_btnErrorLabel")}`}
-						/>
-					)}
+		return (
+			<>
+				{selectedCreditCard?.expired && (
+					<SRContent
+						role={"alert"}
+						message={`${selectedCreditCard?.brand} ${
+							selectedCreditCard?.lastFourDigits
+						}, ${translate("creditCard_payment_addNewCard_btnErrorLabel")}`}
+					/>
+				)}
+				<div className={styles["actions"]}>
 					<Button
 						onClick={() =>
 							selectedCreditCard === -1
 								? onAddCreditCardPress()
 								: payWithCreditCard(selectedCreditCard)
 						}
-						className={styles["pay-btn"]}
+						// className={styles["pay-btn"]}
 						errorText={translate("creditCard_payment_addNewCard_btnErrorLabel")}
 						isError={selectedCreditCard !== -1 && selectedCreditCard?.expired}
 						disabled={selectedCreditCard?.expired}
@@ -242,16 +237,11 @@ function CreditCard(props) {
 										selectedCreditCard?.lastFourDigits,
 								  )
 						}
+						animated
 					/>
-				</>
-			);
-		} else
-			return (
-				<LottieAnimation
-					className={styles["lottie-anim"]}
-					{...loadingDefaultOptions}
-				/>
-			);
+				</div>
+			</>
+		);
 	}
 
 	function renderMobile() {

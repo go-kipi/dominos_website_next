@@ -177,7 +177,6 @@ function PizzasBuilder(props) {
 					Number(override.products[foundProductId]) > 0 &&
 					override.products[foundProductId]
 				);
-
 			}
 			return null;
 		}

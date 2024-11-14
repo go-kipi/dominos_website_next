@@ -94,7 +94,7 @@ function OneUpSaleProduct(props) {
 	}
 	const srText = createAccessibilityText(
 		product?.nameUseCases?.Title,
-		translate("upsale_product_inPrice"),
+		// translate("upsale_product_inPrice"),
 		`${price}${getCurrencySign(currency)}`,
 		showPriceBeforeDiscount &&
 			createAccessibilityText(

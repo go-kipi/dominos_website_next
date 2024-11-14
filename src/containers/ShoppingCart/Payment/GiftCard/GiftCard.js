@@ -7,6 +7,7 @@ import usePostMessage from "hooks/usePostMessage";
 
 export default function GiftCard(props) {
 	const { goBackToChoosePayment, leftToPay, method } = props;
+	console.log(", leftToPay, method ", leftToPay, method);
 	const [cgUrl, setCgUrl] = useState("");
 	const deviceState = useSelector((store) => store.deviceState);
 	const translate = useTranslate();

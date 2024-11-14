@@ -132,6 +132,7 @@ function PersonalAreaLang(props) {
 						<Button
 							text={text}
 							onClick={onClickHandler}
+							animated
 						/>
 					)}
 				</div>

@@ -60,7 +60,6 @@ function EnterCoupon(props) {
 				id={"desc"}
 				className={"visually-hidden"}
 				tabIndex={0}>
-				{" "}
 				{translate("accessibility_enterCoupon")}
 			</h1>
 			<TextInput
@@ -77,19 +76,17 @@ function EnterCoupon(props) {
 				showClearIcon={true}
 				ariaLabel={coupon}
 				onKeyDown={handleKeyDown}
-				// pattern="[A-Za-z0-9]*"
 				required
 			/>
 			<div className={styles["actions"]}>
 				<Button
-					isBtnOnForm
-					animated={false}
 					className={styles["accept-btn"]}
 					text={translate("couponPopup_enterCoupon_btn_label")}
 					errorText={translate("couponPopup_enterCoupon_errorBtn_label")}
 					disabled={isBtnDisabled}
 					onClick={onVerifyCoupon}
 					isError={!isValid}
+					animated
 				/>
 			</div>
 			{deviceState.isMobile && (

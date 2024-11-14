@@ -9,14 +9,27 @@ import useTranslate from "hooks/useTranslate";
 import clsx from "clsx";
 function Free(props) {
 	const deviceState = useSelector((store) => store.deviceState);
-	const { onClick = () => {}, hasGiftCards = false } = props;
+	const isDisabledOnEditMode = useSelector(
+		(store) => store.isEditGiftCardMode.isEditMode,
+	);
+	const { onClick = () => {}, hasGiftCards = false, params } = props;
 	const translate = useTranslate();
 
 	function onClickHandler() {
 		typeof onClick === "function" && onClick();
 	}
 
-	const buttonText = deviceState.isDesktop
+	const titleText = params?.fromPaid
+		? ""
+		: translate("shoppingCart_payment_free_title");
+
+	const subtitleText = params?.fromPaid
+		? translate("shoppingCart_payment_paid_full_subtitle")
+		: translate("shoppingCart_payment_free_subtitle");
+
+	const buttonText = params?.fromPaid
+		? translate("shoppingCart_payment_paid_full_send_order")
+		: deviceState.isDesktop
 		? translate("shoppingCart_payment_freeDesktop_accept")
 		: translate("shoppingCart_payment_free_accept");
 
@@ -33,13 +46,13 @@ function Free(props) {
 			<h2
 				className={styles["free-title"]}
 				aria-live={"polite"}>
-				{translate("shoppingCart_payment_free_title")}
+				{titleText}
 			</h2>
 
 			<h1
 				className={styles["free-subtitle"]}
 				aria-live={"polite"}>
-				{translate("shoppingCart_payment_free_subtitle")}
+				{subtitleText}
 			</h1>
 			<div
 				className={clsx(
@@ -50,6 +63,7 @@ function Free(props) {
 					className={styles["button-accept"]}
 					text={buttonText}
 					onClick={onClickHandler}
+					disabled={isDisabledOnEditMode}
 				/>
 			</div>
 		</div>

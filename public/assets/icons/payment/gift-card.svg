@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 36">
+  <g fill="none" fill-rule="evenodd" transform="translate(4.518 4.012)">
+    <line x1="10.366" x2="2.934" y1="8.631" y2="7.777" stroke="#017AFF" stroke-linejoin="round" stroke-width="2.627"/>
+    <line x1="19.997" x2="27.002" y1="3.639" y2="8.893" stroke="#F5002E" stroke-linejoin="round" stroke-width="2.627" transform="matrix(-1 0 0 1 46.999 0)"/>
+    <path stroke="#017AFF" stroke-linecap="round" stroke-width="2.627" d="M10.8399101,10.1682262 C13.2465726,7.71694935 14.4499039,5.8465958 14.4499039,4.55716555 C14.4499039,2.62302017 12.8819693,1.05508555 10.9478239,1.05508555 C9.01367854,1.05508555 7.44574392,2.62302017 7.44574392,4.55716555 C7.44574392,5.8465958 8.57713264,7.71694935 10.8399101,10.1682262 Z" transform="rotate(-50 10.948 5.612)"/>
+    <path stroke="#F5002E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.627" d="M18.0941502,10.1682262 C20.3569277,7.71694935 21.4883164,5.8465958 21.4883164,4.55716555 C21.4883164,2.62302017 19.9203818,1.05508555 17.9862364,1.05508555 C16.052091,1.05508555 14.4841564,2.62302017 14.4841564,4.55716555 C14.4841564,5.8465958 15.6874877,7.71694935 18.0941502,10.1682262 Z" transform="rotate(50 17.986 5.612)"/>
+    <rect width="27.204" height="4.309" y="14.356" fill="#017AFF"/>
+    <line x1="25.64" x2="21.501" y1="22.268" y2="22.268" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".659"/>
+    <line x1="25.64" x2="21.501" y1="23.642" y2="23.642" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".659"/>
+    <line x1="25.64" x2="21.501" y1="25.068" y2="25.068" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".659"/>
+    <line x1="27.955" x2=".751" y1="13.614" y2="13.614" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".741"/>
+    <line x1="27.955" x2=".751" y1="17.636" y2="17.636" stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".741"/>
+    <path stroke="#303030" stroke-linecap="round" stroke-linejoin="round" stroke-width=".741" d="M24.3388457,27.9765731 L4.36725535,27.9765731 C2.37021685,27.9765731 0.751178875,26.3919995 0.751178875,24.4374718 L0.751178875,13.1319306 C0.751178875,11.1774029 2.37021685,9.59282923 4.36725535,9.59282923 L24.3388457,9.59282923 C26.3360047,9.59282923 27.9549222,11.1774029 27.9549222,13.1319306 L27.9549222,24.4374718 C27.9549222,26.3919995 26.3360047,27.9765731 24.3388457,27.9765731 Z"/>
+  </g>
+</svg>

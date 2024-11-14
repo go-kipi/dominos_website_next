@@ -116,7 +116,6 @@ function DontantionUpSale(props) {
 					disabled={isBtnDiabled}
 					text={translate("upsale_dontantion_acceptBtn_label")}
 					onClick={onAcceptHandler}
-					animated={false}
 				/>
 			</div>
 			<TextOnlyButton

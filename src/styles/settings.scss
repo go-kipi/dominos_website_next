@@ -57,11 +57,11 @@ $font-medium: "EzerDoo-Medium";
 $soft-gray-opacity-hover: rgba(92, 106, 116, 0.45);
 
 /* break points */
-$mobile: 375;
-$tablet: 768;
-$desktop: 1200;
-$desktop_large: 1500;
-$desktop-max: 1920;
+$mobile: 375; // 375 x 667 iPhone SE, iPhone
+$tablet: 768; //  768 x 1024  iPad
+$desktop: 1200; //1200 x 800  Common Full HD screens
+$desktop_large: 1500; // 1500 x 900  Large desktop screens
+$desktop-max: 1920; // 1920 x 1080 Full HD resolution
 
 /* media queries */
 $media-tablet: $tablet + px;

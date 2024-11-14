@@ -25,7 +25,6 @@ import clsx from "clsx";
 import useIsSafari from "hooks/useIsSafari";
 import useTranslate from "hooks/useTranslate";
 import GiftCard from "./GiftCard/GiftCard";
-import GiftCardRowItem from "../components/GiftCardRowItem";
 import GeneralHeader from "components/GeneralHeader/GeneralHeader";
 import AnalyticsService from "../../../utils/analyticsService/AnalyticsService";
 import {
@@ -51,6 +50,8 @@ import { createAccessibilityText } from "../../../components/accessibility/acfun
 import ApplePay from "./ApplePay/ApplePay";
 import EmarsysService from "utils/analyticsService/EmarsysService";
 import { ITEM_CATEGORY, ITEM_CATEGORY2 } from "constants/AnalyticsTypes";
+import ChooseGiftCard from "./ChooseGiftCard/ChooseGiftCard";
+import DominosLoader from "components/DominosLoader/DominosLoader";
 
 function Payment(props) {
 	const deviceState = useSelector((store) => store.deviceState);
@@ -70,6 +71,7 @@ function Payment(props) {
 	const [paidGiftCards, setPayedGiftCards] = useState([]);
 	const [currency, setCurrency] = useState();
 	const user = useSelector((store) => store.userData);
+	const payments = useSelector((store) => store.payments);
 	const userOrders = user?.submittedOrders;
 	const order = useSelector((store) => store.order);
 	const specialRequestCart = useSelector((store) => store.specialRequestCart);
@@ -82,31 +84,44 @@ function Payment(props) {
 	const selectedMethod = useSelector((store) => store.selectedMethod);
 	const [shouldCheckStatus, setShouldCheckStatus] = useState(false);
 	const translate = useTranslate();
-	const isOnGiftCard = currentScreen.type === PAYMENT_SCREEN_TYPES.GIFT_CARD;
+	const isOnGiftCard =
+		currentScreen.type === PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS ||
+		currentScreen.type === PAYMENT_SCREEN_TYPES.GIFT_CARD;
 
 	const inPayment = !(
-		currentScreen.type === PAYMENT_SCREEN_TYPES.FREE ||
-		currentScreen.type === PAYMENT_SCREEN_TYPES.NO_USER ||
-		currentScreen.type === PAYMENT_SCREEN_TYPES.NO_BASKET
+		// currentScreen.type === PAYMENT_SCREEN_TYPES.FREE ||
+		(
+			currentScreen.type === PAYMENT_SCREEN_TYPES.NO_USER ||
+			currentScreen.type === PAYMENT_SCREEN_TYPES.NO_BASKET
+		)
 	);
 	const isFirstPage =
 		!inPayment ||
 		currentScreen.type === PAYMENT_SCREEN_TYPES.CHOSSE_PAYMENT ||
 		currentScreen.type === PAYMENT_SCREEN_TYPES.LOADER;
+
 	const bitUUID = currentScreen.params?.bitUUID ?? "";
-	const payments = useSelector((store) => store.payments);
-	const leftToPay = payments.leftToPay;
-	const paymentMethods = payments.paymentTypes || [];
+
+	const leftToPay = payments?.leftToPay;
+	const paymentMenu = payments.paymentsMenu || [];
+
 	const { itemWithDisclaimers } = useDisclaimers();
 	const didAddGetPaymentsPopups =
 		promoPopupsState === PROMO_POPUP_STATE_ENUM.GET_PAYMENTS;
 	const isEmptyBasket = cart?.itemCount === undefined || cart?.itemCount === 0;
 	const isCartApproved = useSelector((store) => store.cartApproved);
+	const total = cart.total;
+
+	useEffect(() => {
+		if (payments) {
+			dispatch(Actions.setPayments(payments));
+		}
+	}, [payments]);
 
 	useEffect(() => {
 		return () => {
 			dispatch(Actions.resetPromoPopupState());
-			// dispatch(Actions.removePromoPopup());
+			dispatch(Actions.removePromoPopup());
 		};
 	}, []);
 
@@ -114,16 +129,23 @@ function Payment(props) {
 		if (deviceState.isDesktop && isCartApproved) {
 			dispatch(Actions.setCartApproved(false));
 		}
-	}, [cartItems, deviceState]);
+	}, [cartItems.items]);
 
 	useEffect(() => {
 		const screen = currentScreen.type;
 		const isBitDone = screen === PAYMENT_SCREEN_TYPES.BIT_DONE;
 		if (!isBitDone && notEmptyObject(cart)) {
 			getPayments();
-			// Api.getCustomerActiveOrder();
+			Api.getCustomerActiveOrder();
 		}
 	}, [cart]);
+
+	// useEffect(() => {
+	// 	setStack({
+	// 		type: PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS,
+	// 		params: {},
+	// 	});
+	// }, []);
 
 	useEffect(() => {
 		if (!isEmptyBasket) {
@@ -133,9 +155,11 @@ function Payment(props) {
 				!itemWithDisclaimers &&
 				isCartApproved
 			) {
-				if (typeof leftToPay === "number") {
-					if (leftToPay === 0) {
+				if (typeof total === "number") {
+					if (total === 0) {
 						setStack({ type: PAYMENT_SCREEN_TYPES.FREE, params: {} });
+					} else if (leftToPay === 0) {
+						setStack({ type: PAYMENT_SCREEN_TYPES.FREE, params: { fromPaid: true } });
 					} else {
 						setStack({
 							type: PAYMENT_SCREEN_TYPES.CHOSSE_PAYMENT,
@@ -295,12 +319,14 @@ function Payment(props) {
 				const giftCards = data.paid.filter(
 					(paymentMethod) => paymentMethod.method === "giftCard",
 				);
+
 				setPayedGiftCards(giftCards);
 			}
-			let giftCardMethod = data.paymentTypes?.filter(
+			let filteredGiftCardMethod = data.paymentTypes?.filter(
 				(method) => method.action === PAYMENT_METHODS_ACTIONS.GIFT_CARD,
 			)[0];
-			setGiftCardMethod(giftCardMethod);
+			setGiftCardMethod(filteredGiftCardMethod);
+
 			if (
 				Array.isArray(promoPopups) &&
 				promoPopups.length > 0 &&
@@ -311,27 +337,6 @@ function Payment(props) {
 			}
 		}
 	};
-
-	function onGiftCardDelete(uuid) {
-		const payload = { id: uuid };
-		Api.deletePayment({
-			payload,
-			onSuccess: () => {
-				getPayments();
-			},
-		});
-	}
-
-	function onGiftCardUpdate(uuid, price, callback) {
-		const payload = { uuid, total: Number(price) };
-		Api.changePaymentSum({
-			payload,
-			onSuccess: () => {
-				typeof callback === "function" && callback();
-				getPayments();
-			},
-		});
-	}
 
 	const onAddCreditCardChange = (iframeUrl) => {
 		setStack({
@@ -372,7 +377,7 @@ function Payment(props) {
 		});
 	};
 
-	const onPaymentDone = (res) => {
+	const onPaymentDone = (res, callback) => {
 		const saleHash = res.saleIdHash;
 		const [items, listData] = getItemsAndListData();
 		const paymentList = JSON.parse(JSON.stringify(cartItems));
@@ -409,14 +414,17 @@ function Payment(props) {
 		handleUserPropertyEvents(hasPizza, hasCoupon);
 
 		const timeout = setTimeout(() => {
-			AnalyticsService.purchase(items, newList);
-			userOrders;
-			EmarsysService.setPurchase(res.guestCheckNo, paymentList.items);
-			dispatch(Actions.resetPromoPopupState());
+			// userOrders
 			goToTracker(res);
-			resetStack();
+			setTimeout(() => {
+				EmarsysService.setPurchase(res.guestCheckNo, paymentList.items);
+				AnalyticsService.purchase(items, newList);
+				dispatch(Actions.resetPromoPopupState());
+				// resetStack();
+				callback();
+			}, 500);
 			clearTimeout(timeout);
-		}, 500);
+		}, 100);
 	};
 
 	function getBitPaymentStatus(uuid, onSuccess, onFailure) {
@@ -450,11 +458,31 @@ function Payment(props) {
 		switch (currentScreen.type) {
 			case PAYMENT_SCREEN_TYPES.FREE:
 				return (
-					<Free
-						params={currentScreen.params}
-						hasGiftCards={hasGiftCards}
-						onClick={() => onClickFreeOrder()}
-					/>
+					<>
+						{paidGiftCards.length > 0 && (
+							<ChoosePayment
+								params={currentScreen.params}
+								setStack={setStack}
+								getPaymentsPopups={getPaymentsPopups}
+								paymentMenu={paymentMenu}
+								setCurrency={setCurrency}
+								currency={currency}
+								hasGiftCards={paidGiftCards.length > 0}
+								paidGiftCards={paidGiftCards}
+								leftToPay={leftToPay}
+								goToTracker={goToTracker}
+								onPaymentDone={(res) => onPaymentDone(res)}
+								onAddCreditCard={onAddCreditCardChange}
+								getItemsAndListData={getItemsAndListData}
+								submitOrder={submitOrder}
+							/>
+						)}
+						<Free
+							params={currentScreen.params}
+							hasGiftCards={hasGiftCards}
+							onClick={() => onClickFreeOrder()}
+						/>
+					</>
 				);
 			case PAYMENT_SCREEN_TYPES.BIT_DONE:
 				return <BitPaymentDone submitOrder={submitOrder} />;
@@ -481,10 +509,11 @@ function Payment(props) {
 						params={currentScreen.params}
 						setStack={setStack}
 						getPaymentsPopups={getPaymentsPopups}
-						paymentMethods={paymentMethods}
+						paymentMenu={paymentMenu}
 						setCurrency={setCurrency}
 						currency={currency}
 						hasGiftCards={paidGiftCards.length > 0}
+						paidGiftCards={paidGiftCards}
 						leftToPay={leftToPay}
 						goToTracker={goToTracker}
 						onPaymentDone={(res) => onPaymentDone(res)}
@@ -525,6 +554,12 @@ function Payment(props) {
 					/>
 				);
 			case PAYMENT_SCREEN_TYPES.GIFT_CARD:
+				//some time the giftCardMethod return undifined, but the currentScreen.
+				// params.method alwase return good.
+				// maybe need to refactore this tnd remove thr giftCardMethod
+
+				// console.log("vvv giftCardMethod", giftCardMethod);
+				// console.log("vvv currentScreen.params.method", currentScreen.params.method);
 				return (
 					<GiftCard
 						params={currentScreen.params}
@@ -532,7 +567,7 @@ function Payment(props) {
 							goBackToChoosePayment();
 							getPayments();
 						}}
-						method={giftCardMethod}
+						method={giftCardMethod || currentScreen.params.method}
 						leftToPay={leftToPay}
 					/>
 				);
@@ -550,40 +585,17 @@ function Payment(props) {
 						params={currentScreen.params}
 					/>
 				);
+			case PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS:
+				return (
+					<ChooseGiftCard
+						setStack={setStack}
+						params={currentScreen.params}
+					/>
+				);
 
 			default:
 				return null;
 		}
-	}
-
-	function renderGiftCards() {
-		if (
-			currentScreen.type === PAYMENT_SCREEN_TYPES.NO_USER &&
-			paidGiftCards.length === 0
-		)
-			return null;
-		return paidGiftCards.length > 0 ? (
-			<div className={styles["gift-cards-list"]}>
-				{paidGiftCards.map((gc, index) => {
-					const { cardMask } = gc.extra;
-					const lastIndex = cardMask?.length;
-					const lastFourDigits = cardMask?.substring(lastIndex - 4, lastIndex);
-					return (
-						<GiftCardRowItem
-							uuid={gc?.uuid}
-							price={gc?.total}
-							total={cartItems.total}
-							lastFourDigits={lastFourDigits}
-							onUpdate={(uuid, price, callback) =>
-								onGiftCardUpdate(uuid, price, callback)
-							}
-							onDelete={(uuid) => onGiftCardDelete(uuid)}
-							key={"gift-card-row" + index}
-						/>
-					);
-				})}
-			</div>
-		) : null;
 	}
 
 	function onBackClick() {
@@ -618,17 +630,19 @@ function Payment(props) {
 				specialRequestCart.delivery_person;
 		}
 
-		dispatch(Actions.resetSpecialRequest());
-
 		Api.submitActiveOrder({
 			payload,
 			onSuccess: (res) => {
-				dispatch(Actions.setLoader(false));
-				dispatch(Actions.setDontShowMarketingModal(false));
-				dispatch(Actions.setDontShowPeresntMarketingModal(false));
-				typeof onPaymentDone === "function" && onPaymentDone(res);
+				function callback() {
+					dispatch(Actions.setLoader(false));
+					dispatch(Actions.setDontShowMarketingModal(false));
+					dispatch(Actions.setDontShowPeresntMarketingModal(false));
+					dispatch(Actions.resetSpecialRequest());
+				}
+				typeof onPaymentDone === "function" && onPaymentDone(res, callback);
 			},
 			onRejection: () => {
+				dispatch(Actions.setLoader(false));
 				setStack({
 					type: PAYMENT_SCREEN_TYPES.FREE,
 					params: {},
@@ -637,17 +651,20 @@ function Payment(props) {
 		});
 	}
 
-	const shouldHideTop =
-		currentScreen.type !== PAYMENT_SCREEN_TYPES.BIT_DONE &&
-		currentScreen.type !== PAYMENT_SCREEN_TYPES.GIFT_CARD &&
-		currentScreen.type !== PAYMENT_SCREEN_TYPES.ADD_CREDIT_CARD;
-
 	const shouldShowLogoOnDesktop =
 		currentScreen.type === PAYMENT_SCREEN_TYPES.NO_USER;
 
 	const shouldShowLogo =
 		deviceState.notDesktop || (deviceState.isDesktop && shouldShowLogoOnDesktop);
 	const hasGiftCards = paidGiftCards?.length >= 1;
+
+	const shouldHideTop = hasGiftCards
+		? false
+		: currentScreen.type !== PAYMENT_SCREEN_TYPES.BIT_DONE &&
+		  currentScreen.type !== PAYMENT_SCREEN_TYPES.GIFT_CARD &&
+		  currentScreen.type !== PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS &&
+		  currentScreen.type !== PAYMENT_SCREEN_TYPES.ADD_CREDIT_CARD;
+
 	const safariStyle = isSafari
 		? hasGiftCards
 			? styles["is-safari-with-gc"]
@@ -671,6 +688,12 @@ function Payment(props) {
 		leftToPay && `${leftToPay}${getCurrencySign("shekel")}`,
 	);
 
+	const shouldRenderDesktopHeader =
+		deviceState.isDesktop &&
+		((inPayment && !hasGiftCards) ||
+			currentScreen.type === PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS ||
+			currentScreen.type === PAYMENT_SCREEN_TYPES.GIFT_CARD);
+
 	return (
 		<div
 			className={clsx(
@@ -681,13 +704,19 @@ function Payment(props) {
 			<div className={styles["payment-conatiner"]}>
 				{deviceState.notDesktop && (
 					<GeneralHeader
-						title={!isOnGiftCard ? "" : translate("addGiftCard_screen_headerTitle")}
+						title={
+							isOnGiftCard
+								? translate("addGiftCard_screen_headerTitle")
+								: paidGiftCards.length > 0
+								? translate("payment_header")
+								: ""
+						}
 						back
 						backOnClick={onBackClick}
 					/>
 				)}
 
-				{deviceState.isDesktop && inPayment && (
+				{shouldRenderDesktopHeader && (
 					<div className={styles["header-desktop"]}>
 						{!isFirstPage && (
 							<button
@@ -704,7 +733,7 @@ function Payment(props) {
 					</div>
 				)}
 
-				{shouldHideTop ? (
+				{shouldHideTop || shouldShowLogoOnDesktop ? (
 					<>
 						{shouldShowLogo && (
 							<div className={styles["payment-logo-wrapper"]}>
@@ -755,18 +784,7 @@ function Payment(props) {
 						</button>
 					</>
 				) : null}
-
-				{deviceState.isMobile && isFirstPage ? renderGiftCards() : null}
-				<div
-					className={clsx(
-						styles["payment-content"],
-						hasGiftCards && !isSafari ? styles["has-gift-cards"] : "",
-						safariStyle,
-						isOnGiftCard ? styles["in-gift-card"] : "",
-					)}>
-					{deviceState.isDesktop && isFirstPage ? renderGiftCards() : null}
-					{RenderPayment()}
-				</div>
+				<div className={clsx(styles["payment-content"])}>{RenderPayment()}</div>
 			</div>
 		</div>
 	);

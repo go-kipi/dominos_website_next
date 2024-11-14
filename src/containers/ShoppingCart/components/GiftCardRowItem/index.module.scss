@@ -5,58 +5,86 @@ $current: 375;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgba(92, 106, 116, 0.4);
-	height: vw_size(53, $current);
-	width: vw_size(330, $current);
+	// background-color: #f6f6f6;
+	height: vw_size(47, $current);
+	width: vw_size(300, $current);
 	padding-inline: vw_size(15, $current);
-	border-radius: vw_size(14, $current);
+	border-radius: vw_size(23.5, $current);
 	margin: vw_size(15, $current) auto vw_size(15, $current) auto;
 	.gift-card-right {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 30%;
+
 		.gift-card-icon-digits {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 			position: relative;
-			height: vw_size(30, $current);
-			width: vw_size(30, $current);
-			top: vw_size(-3, $current);
-			.gift-card-icon {
-				height: vw_size(30, $current);
+
+			.card-brand-icon {
 				width: vw_size(30, $current);
+				height: vw_size(30, $current);
+				margin-inline-end: vw_size(8, $current);
 			}
+
 			.gift-card-digits {
-				position: absolute;
-				top: vw_size(14, $current);
-				right: vw_size(2, $current);
-				color: black;
-				font-size: vw_size(10.3, $current);
-				font-family: $font-bold;
+				font-size: vw_size(16, $current);
+				font-family: $font;
 				text-align: center;
-				letter-spacing: 0.1px;
+				letter-spacing: 0.16px;
+				padding-inline-end: vw_size(12, $current);
+				margin-inline-end: vw_size(12, $current);
+				line-height: 1;
+				vertical-align: middle;
+				border-inline-end: 2px solid #d1d1d1;
 			}
-		}
-		.price {
-			color: white;
-			font-size: vw_size(16, $current);
-			font-family: $font-medium;
-			padding-inline-start: vw_size(15, $current);
-		}
-		.price-input-wrapper {
-			margin-inline-start: vw_size(30, $current);
-			width: vw_size(163, $current);
-			color: white;
-			.price-input {
-				color: white;
-				width: vw_size(163, $current);
-				background-color: transparent;
-				caret-color: white;
-				border-color: rgba(1, 122, 255, 0.65);
+			.price {
+				color: $payneGrey;
+				font-size: vw_size(16, $current);
+				font-family: $font-medium;
+				.currency {
+					font-size: vw_size(16, $current);
+				}
 			}
-			.error_text {
-				width: 100%;
-				font-size: vw_size(14, $current);
-				white-space: nowrap;
+			.price-input-container {
+				position: relative;
+
+				.price-input-wrapper {
+					width: vw_size(106, $current);
+					.price-input {
+						font-size: vw_size(16, $current);
+						color: black;
+						width: vw_size(106, $current);
+						background-color: transparent;
+						caret-color: white;
+						border-color: rgba(1, 122, 255, 0.65);
+					}
+					.error_text {
+						width: 100%;
+						font-size: vw_size(14, $current);
+						white-space: nowrap;
+						margin-top: vw_size(3, $current);
+					}
+				}
+				.text-input-currency-icon {
+					position: absolute;
+					inset-inline-end: 0;
+					margin-top: vw_size(3, $current);
+					top: 0;
+					font-size: vw_size(15, $current);
+					font-family: $font;
+				}
+				.amount-of-money-in-card {
+					position: absolute;
+					margin-top: vw_size(5, $current);
+					font-size: vw_size(15, $current);
+					font-family: $font-book;
+					&.error-style {
+						color: $red;
+					}
+
+				}
 			}
 		}
 	}
@@ -64,69 +92,92 @@ $current: 375;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 20%;
 		.gift-card-edit {
 			cursor: pointer;
 			height: vw_size(20, $current);
 			width: vw_size(20, $current);
-			margin-bottom: vw_size(3, $current);
+			margin-inline-end: vw_size(10, $current);
 		}
 		.gift-card-delete {
 			cursor: pointer;
 			height: vw_size(20, $current);
 			width: vw_size(20, $current);
 		}
-	}
+		.confrim-btn {
+			cursor: pointer;
+			height: vw_size(32, $current);
+			width: vw_size(86, $current);
+			margin-inline-end: vw_size(7, $current);
+		}
+  }
 }
 
 @media (min-width: $media-tablet) {
 	$current: $tablet;
 	.gift-card-row-item {
-		height: vw_size(53, $current);
-		width: vw_size(330, $current);
+		height: vw_size(47, $current);
+		width: vw_size(300, $current);
 		padding-inline: vw_size(15, $current);
-		border-radius: vw_size(14, $current);
+
 		.gift-card-right {
-			width: 30%;
 			.gift-card-icon-digits {
-				height: vw_size(30, $current);
-				width: vw_size(30, $current);
-				top: vw_size(-3, $current);
-				.gift-card-icon {
-					height: vw_size(30, $current);
+				.card-brand-icon {
 					width: vw_size(30, $current);
+					height: vw_size(30, $current);
+					margin-inline-end: vw_size(8, $current);
 				}
+
 				.gift-card-digits {
-					top: vw_size(14, $current);
-					right: vw_size(2, $current);
-					font-size: vw_size(10.3, $current);
+					font-size: vw_size(16, $current);
+
+					padding-inline-end: vw_size(12, $current);
+					margin-inline-end: vw_size(12, $current);
 				}
-			}
-			.price {
-				font-size: vw_size(16, $current);
-				padding-inline-start: vw_size(15, $current);
-			}
-			.price-input-wrapper {
-				margin-inline-start: vw_size(30, $current);
-				width: vw_size(163, $current);
-				.price-input {
-					width: vw_size(163, $current);
+				.price {
+					font-size: vw_size(16, $current);
+					.currency {
+						font-size: vw_size(16, $current);
+					}
 				}
-				.error_text {
-					font-size: vw_size(14, $current);
+				.price-input-container {
+					.price-input-wrapper {
+						width: vw_size(106, $current);
+						.price-input {
+							font-size: vw_size(16, $current);
+							width: vw_size(106, $current);
+						}
+						.error_text {
+							width: 100%;
+							font-size: vw_size(14, $current);
+							white-space: nowrap;
+							margin-top: vw_size(3, $current);
+						}
+					}
+					.text-input-currency-icon {
+						margin-top: vw_size(3, $current);
+						font-size: vw_size(15, $current);
+					}
+					.amount-of-money-in-card {
+						font-size: vw_size(15, $current);
+						margin-top: vw_size(5, $current);
+					}
 				}
 			}
 		}
 		.gift-card-left {
-			width: 20%;
 			.gift-card-edit {
 				height: vw_size(20, $current);
 				width: vw_size(20, $current);
-				margin-bottom: vw_size(3, $current);
+				margin-inline-end: vw_size(10, $current);
 			}
 			.gift-card-delete {
 				height: vw_size(20, $current);
 				width: vw_size(20, $current);
+			}
+			.confrim-btn {
+				height: vw_size(32, $current);
+				width: vw_size(86, $current);
+				margin-inline-end: vw_size(7, $current);
 			}
 		}
 	}
@@ -135,57 +186,71 @@ $current: 375;
 @media (min-width: $media-desktop) {
 	$current: $desktop;
 	.gift-card-row-item {
-		background-color: rgba(209, 209, 209, 0.4);
 		height: vw_size(47, $current);
-		width: vw_size(273, $current);
+		width: vw_size(300, $current);
 		padding-inline: vw_size(15, $current);
-		border-radius: vw_size(23.5, $current);
-		margin: vw_size(15, $current) auto vw_size(15, $current) auto;
+		margin-top: vw_size(20, $current);
+		margin-bottom: vw_size(15, $current);
+
 		.gift-card-right {
-			width: 36%;
 			.gift-card-icon-digits {
-				height: vw_size(30, $current);
-				width: vw_size(30, $current);
-				top: vw_size(-3, $current);
-				.gift-card-icon {
-					height: vw_size(30, $current);
+				.card-brand-icon {
 					width: vw_size(30, $current);
+					height: vw_size(30, $current);
+					margin-inline-end: vw_size(8, $current);
 				}
+
 				.gift-card-digits {
-					top: vw_size(14, $current);
-					right: vw_size(2, $current);
-					font-size: vw_size(10.3, $current);
-					color: white;
-				}
-			}
-			.price {
-				color: #404042;
-				font-size: vw_size(16, $current);
-				padding-inline-start: vw_size(15, $current);
-			}
-			.price-input-wrapper {
-				margin-inline-start: vw_size(20, $current);
-				width: vw_size(127, $current);
-				.price-input {
-					width: vw_size(127, $current);
-					color: #404042;
 					font-size: vw_size(16, $current);
+
+					padding-inline-end: vw_size(12, $current);
+					margin-inline-end: vw_size(12, $current);
 				}
-				.error_text {
-					font-size: vw_size(14, $current);
+				.price {
+					font-size: vw_size(16, $current);
+					.currency {
+						font-size: vw_size(16, $current);
+					}
+				}
+				.price-input-container {
+					.price-input-wrapper {
+						width: vw_size(106, $current);
+						.price-input {
+							font-size: vw_size(16, $current);
+							width: vw_size(106, $current);
+						}
+						.error_text {
+							width: 100%;
+							font-size: vw_size(14, $current);
+							white-space: nowrap;
+							margin-top: vw_size(3, $current);
+						}
+					}
+					.text-input-currency-icon {
+						margin-top: vw_size(3, $current);
+						font-size: vw_size(15, $current);
+					}
+					.amount-of-money-in-card {
+						font-size: vw_size(15, $current);
+						margin-top: vw_size(5, $current);
+					}
 				}
 			}
 		}
 		.gift-card-left {
-			width: 23%;
 			.gift-card-edit {
 				height: vw_size(20, $current);
 				width: vw_size(20, $current);
-				margin-bottom: unset;
+				margin-inline-end: vw_size(10, $current);
 			}
 			.gift-card-delete {
 				height: vw_size(20, $current);
 				width: vw_size(20, $current);
+			}
+			.confrim-btn {
+				height: vw_size(32, $current);
+				width: vw_size(86, $current);
+				margin-inline-end: vw_size(7, $current);
 			}
 		}
 	}
@@ -195,38 +260,53 @@ $current: 375;
 	$current: $desktop-max;
 	.gift-card-row-item {
 		height: vw_size(47, $current);
-		width: vw_size(273, $current);
+		width: vw_size(300, $current);
 		padding-inline: vw_size(15, $current);
-		border-radius: vw_size(23.5, $current);
-		margin: vw_size(15, $current) auto vw_size(15, $current) auto;
+		margin-top: vw_size(20, $current);
+		margin-bottom: vw_size(15, $current);
+
 		.gift-card-right {
 			.gift-card-icon-digits {
-				height: vw_size(30, $current);
-				width: vw_size(30, $current);
-				top: vw_size(-3, $current);
-				.gift-card-icon {
-					height: vw_size(30, $current);
+				.card-brand-icon {
 					width: vw_size(30, $current);
+					height: vw_size(30, $current);
+					margin-inline-end: vw_size(8, $current);
 				}
+
 				.gift-card-digits {
-					top: vw_size(14, $current);
-					right: vw_size(2, $current);
-					font-size: vw_size(10.3, $current);
-				}
-			}
-			.price {
-				padding-inline-start: vw_size(15, $current);
-				font-size: vw_size(16, $current);
-			}
-			.price-input-wrapper {
-				margin-inline-start: vw_size(20, $current);
-				width: vw_size(127, $current);
-				.price-input {
-					width: vw_size(127, $current);
 					font-size: vw_size(16, $current);
+
+					padding-inline-end: vw_size(12, $current);
+					margin-inline-end: vw_size(12, $current);
 				}
-				.error_text {
-					font-size: vw_size(14, $current);
+				.price {
+					font-size: vw_size(16, $current);
+					.currency {
+						font-size: vw_size(16, $current);
+					}
+				}
+				.price-input-container {
+					.price-input-wrapper {
+						width: vw_size(106, $current);
+						.price-input {
+							font-size: vw_size(16, $current);
+							width: vw_size(106, $current);
+						}
+						.error_text {
+							width: 100%;
+							font-size: vw_size(14, $current);
+							white-space: nowrap;
+							margin-top: vw_size(3, $current);
+						}
+					}
+					.text-input-currency-icon {
+						margin-top: vw_size(3, $current);
+						font-size: vw_size(15, $current);
+					}
+					.amount-of-money-in-card {
+						font-size: vw_size(15, $current);
+						margin-top: vw_size(5, $current);
+					}
 				}
 			}
 		}
@@ -234,10 +314,16 @@ $current: 375;
 			.gift-card-edit {
 				height: vw_size(20, $current);
 				width: vw_size(20, $current);
+				margin-inline-end: vw_size(10, $current);
 			}
 			.gift-card-delete {
 				height: vw_size(20, $current);
 				width: vw_size(20, $current);
+			}
+			.confrim-btn {
+				height: vw_size(32, $current);
+				width: vw_size(86, $current);
+				margin-inline-end: vw_size(7, $current);
 			}
 		}
 	}

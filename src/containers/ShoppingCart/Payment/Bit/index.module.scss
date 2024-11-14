@@ -8,15 +8,14 @@ $current: 375;
 	align-items: center;
 	height: vw_size(350, $current);
 	.bit-logo {
-		height: vw_size(86, $current);
-		width: vw_size(172, $current);
+		width: vw_size(100, $current);
 	}
 	.pay-with-bit {
 		color: #383940;
 		font-family: $font-book;
 		font-size: vw_size(15, $current);
 		text-align: center;
-		margin-top: vw_size(8, $current);
+		margin-top: vw_size(20, $current);
 	}
 	.press-the-btn {
 		margin-top: vw_size(4, $current);
@@ -38,7 +37,7 @@ $current: 375;
 	.wrapper {
 		height: vw_size(450, $current);
 		.bit-logo {
-			height: vw_size(86, $current);
+			height: vw_size(150, $current);
 			width: vw_size(172, $current);
 		}
 		.pay-with-bit {
@@ -59,12 +58,14 @@ $current: 375;
 	.wrapper {
 		height: vw_size(480, $current);
 		.bit-logo {
+
 			height: vw_size(86, $current);
-			width: vw_size(172, $current);
+
+			width: vw_size(100, $current);
 		}
 		.pay-with-bit {
 			font-size: vw_size(15, $current);
-			margin-top: vw_size(8, $current);
+			margin-top: vw_size(30, $current);
 		}
 		.press-the-btn {
 			margin-top: vw_size(4, $current);
@@ -86,12 +87,11 @@ $current: 375;
 	.wrapper {
 		height: vw_size(541, $current);
 		.bit-logo {
-			height: vw_size(86, $current);
-			width: vw_size(172, $current);
+			width: vw_size(100, $current);
 		}
 		.pay-with-bit {
 			font-size: vw_size(15, $current);
-			margin-top: vw_size(8, $current);
+			margin-top: vw_size(30, $current);
 		}
 		.press-the-btn {
 			margin-top: vw_size(4, $current);

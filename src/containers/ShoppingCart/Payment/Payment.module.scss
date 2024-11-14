@@ -77,6 +77,7 @@ $current: 375;
 	}
 	.gift-cards-list {
 		width: 100%;
+		border: 1px solid red;
 		height: vw_size(155, $current);
 		padding-block: vw_size(10, $current);
 		overflow-y: scroll;
@@ -87,16 +88,13 @@ $current: 375;
 		border-top-left-radius: vw_size(17, $current);
 		border-top-right-radius: vw_size(17, $current);
 		width: 100%;
+		height: 100%;
 		margin-top: auto;
 		display: flex;
 		flex-direction: column;
+		margin-top: vw_size(30, $current);
+		// padding-bottom: max(vw_size(60, $current), 200px);
 
-		&.has-gift-cards {
-			height: vw_size(380, $current);
-		}
-		&.is-safari-with-gc {
-			height: vw_size(360, $current);
-		}
 		&.in-gift-card {
 			flex: 1;
 			margin-top: vw_size(30, $current);
@@ -171,7 +169,7 @@ $current: 375;
 
 		.payment-conatiner {
 			margin: auto;
-			padding-block: vw_size(20, $current);
+			padding-block-end: vw_size(20, $current);
 			height: unset;
 		}
 		.header-desktop {
@@ -179,10 +177,12 @@ $current: 375;
 			display: flex;
 			align-items: flex-start;
 			justify-content: flex-start;
-			width: 100%;
+			width: 85%;
+			position: absolute;
 		}
 
 		.payment-header-wrapper {
+			position: relative;
 			width: 100%;
 			padding-inline-start: vw_size(23, $current);
 			margin-top: vw_size(12, $current);
@@ -261,7 +261,7 @@ $current: 375;
 	$current: $desktop_max;
 
 	.payment-wrapper {
-		max-height: unset;
+		// max-height: unset; //in a long lisf of giftcards this is not looks good
 		.payment-conatiner {
 			padding-block: vw_size(20, $current);
 		}

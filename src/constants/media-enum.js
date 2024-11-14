@@ -17,4 +17,5 @@ export const MEDIA_ENUM = {
 	WEB_MOBILE: "web-responsive",
 	IN_POPUP: "InPopUp",
 	IN_TRACKER: "inTracker",
+	BUY_ME: "buyme",
 };

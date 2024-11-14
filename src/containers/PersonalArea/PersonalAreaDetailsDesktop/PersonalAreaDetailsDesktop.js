@@ -520,7 +520,6 @@ export default function PersonalAreaDetailsDesktop(props) {
 							isBtnOnForm={true}
 							errorText={errorMsg || translate("specialRequest_popup_error")}
 							isError={showButtonError}
-							animated={false}
 						/>
 					)}
 				</div>

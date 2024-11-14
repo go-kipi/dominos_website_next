@@ -10,9 +10,10 @@ import DuplicateIcon from "/public/assets/icons/duplicate_icon.svg";
 import TWO_ACTION_TYPES from "../../../constants/two-actions-popup-types";
 import Button from "../../../components/button";
 import SlidePopup from "popups/Presets/SlidePopup";
-import UpdateIcon from "/public/assets/icons/update-sales-icon.svg";
+import InfoIcon from "/public/assets/icons/info-icon.svg";
 import TextOnlyButton from "components/text_only_button";
 import clsx from "clsx";
+import { AnimatedCapsule } from "components/AnimatedCapsule/AnimatedCapsule";
 
 export default function TwoActionPopup(props) {
 	const { payload = {} } = props;
@@ -28,7 +29,9 @@ export default function TwoActionPopup(props) {
 		type,
 		mainBtnFunc = () => {},
 		subBtnFunc = () => {},
-		isLottie = true,
+		isLottie = false,
+		animatedBtn = false,
+		capsuleButton = false,
 	} = payload;
 
 	const ref = useRef();
@@ -71,7 +74,7 @@ export default function TwoActionPopup(props) {
 			case TWO_ACTION_TYPES.UPDATE:
 				return (
 					<img
-						src={UpdateIcon.src}
+						src={InfoIcon.src}
 						className={styles["update-icon"]}
 						alt={"duplicate"}
 					/>
@@ -82,12 +85,45 @@ export default function TwoActionPopup(props) {
 	};
 
 	const handleClick = (callback) => {
-		setSelectedCallback(callback);
-		setIsOpen(false);
-		if (!isLottie) {
-			callback();
+		if (isLottie) {
+			setSelectedCallback(callback);
+			setIsOpen(false);
+			return;
 		}
-		animateOut();
+		animateOut(callback);
+	};
+
+	const renderButton = () => {
+		if (capsuleButton) {
+			return (
+				<div className={styles["btn-wrap"]}>
+					<AnimatedCapsule
+						bluePillText={mainBtnText}
+						redPillText={subBtnText}
+						bluePillOnPress={() => handleClick(mainBtnFunc)}
+						redPillOnPress={() => handleClick(subBtnFunc)}
+					/>
+				</div>
+			);
+		} else {
+			return (
+				<div className={styles["btn-wrap"]}>
+					<div className={styles["animated-btn-wrapper"]}>
+						<Button
+							className={`${styles["btn"]} ${styles["main-btn"]}`}
+							onClick={() => handleClick(mainBtnFunc)}
+							text={mainBtnText}
+							animated={animatedBtn}
+						/>
+					</div>
+					<TextOnlyButton
+						className={` ${styles["sec-btn"]}`}
+						onClick={() => handleClick(subBtnFunc)}
+						text={subBtnText}
+					/>
+				</div>
+			);
+		}
 	};
 
 	function RenderPopup() {
@@ -122,18 +158,7 @@ export default function TwoActionPopup(props) {
 					) : null}
 				</div>
 
-				<div className={styles["btn-wrap"]}>
-					<Button
-						className={`${styles["btn"]} ${styles["main-btn"]}`}
-						onClick={() => handleClick(mainBtnFunc)}
-						text={mainBtnText}
-					/>
-					<TextOnlyButton
-						className={` ${styles["sec-btn"]}`}
-						onClick={() => handleClick(subBtnFunc)}
-						text={subBtnText}
-					/>
-				</div>
+				{renderButton()}
 			</>
 		);
 	}

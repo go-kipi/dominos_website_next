@@ -477,7 +477,7 @@ export default function PersonalAreaDetailsMobile(props) {
 						className={styles["btn"]}
 						text={translate("personalArea_personalDetails_save")}
 						onClick={onSubmit}
-						isBtnOnForm={true}
+						isBtnOnForm
 						errorText={errorMsg || translate("specialRequest_popup_error")}
 						isError={showButtonError}
 						show={!isFormValid}

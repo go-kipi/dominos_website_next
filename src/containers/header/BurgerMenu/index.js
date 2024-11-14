@@ -12,7 +12,6 @@ import LanguageDirectionService from "services/LanguageDirectionService";
 
 import * as popupTypes from "constants/popup-types";
 import * as popupsTypes from "constants/popup-types";
-import * as popups from "constants/popup-types";
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 
 import Menu from "/public/assets/icons/sidebar/menu.svg";
@@ -23,8 +22,6 @@ import HeilaLogo from "/public/assets/logos/heila-logo.svg";
 import clsx from "clsx";
 import Notification from "components/notification";
 import useBenefits from "hooks/useBenefits";
-import OrderStatusService from "services/OrderStatusService";
-import { NO_ORDER_STATUS } from "constants/OrderStatus";
 import useTranslate from "hooks/useTranslate";
 import DynamicLink from "components/dynamic_link";
 import { getFullMediaUrl } from "utils/functions";
@@ -59,7 +56,6 @@ export default function BurgerMenu(props) {
 	const cart = useSelector((store) => store.cartData);
 	const username = user ? user?.firstName : DEFAULT_NAME;
 	const benefits = useBenefits();
-	const generalData = useSelector((store) => store.generalData);
 	const userOrders = user.submittedOrders ?? [];
 	const hasOrders = userOrders.length > 0;
 	const greeting = translate(user?.greeting);
@@ -82,10 +78,10 @@ export default function BurgerMenu(props) {
 
 		if (state) {
 			const popupContainer = document.querySelector("#burger-menu");
+			popupContainer.scrollTop = 0;
 			if (!userAgent.match(/safari/i)) {
 				disableBodyScroll(popupContainer);
 			} else {
-				// document.documentElement.style.overflow = "hidden";
 				document.body.style.overflow = "hidden";
 				document.body.style.WebkitOverflowScrolling = "none";
 			}

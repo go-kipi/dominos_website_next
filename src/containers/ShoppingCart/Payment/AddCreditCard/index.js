@@ -14,20 +14,11 @@ function AddCreditCard(props) {
 
 	usePostMessage(onSuccess, onError);
 
-	useEffect(()=>{
-		return () => {
-			dispatch(Actions.setIsCreditModalOpen(false))
-		}
-	})
-
 	function onSuccess() {
 		setStack({
-			type: PAYMENT_SCREEN_TYPES.CREDIT_CARD,
-			params: {
-				newCardUsed: true,
-			},
+			type: PAYMENT_SCREEN_TYPES.LOADER,
+			params: {},
 		});
-
 		typeof submitOrder === "function" && submitOrder();
 	}
 

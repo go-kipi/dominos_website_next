@@ -40,7 +40,6 @@ function Page404() {
 					<h2 className={styles["subtitle"]}>{translate("404Page_subtitle")}</h2>
 					<Button
 						onClick={() => router.push(Routes.root)}
-						animated={false}
 						className={styles["button"]}
 						text={translate("404Page_btn_text")}
 					/>

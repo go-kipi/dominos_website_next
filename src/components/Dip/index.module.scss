@@ -71,10 +71,8 @@ $current: 375;
 			border: 1px solid rgba(255, 255, 255, 0.439);
 			border-radius: vw_size(50, $current);
 
-			.action-btn {
-				&:active {
-					background-color: rgba(255, 255, 255, 0.25);
-				}
+			.action-btn-pressed {
+				background-color: rgba(255, 255, 255, 0.25);
 			}
 		}
 

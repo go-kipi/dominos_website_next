@@ -44,8 +44,7 @@ const Price = (props) => {
 			<div
 				role={mark ? "insertion" : "deletion"}
 				className={styles("number-container")}>
-				{" "}
-				<span>{price[0]}.</span>
+				<span className={styles("dig-price")}>{price[0]}.</span>
 				<span className={styles("decimal-price")}>{price[1]}</span>
 			</div>
 		);

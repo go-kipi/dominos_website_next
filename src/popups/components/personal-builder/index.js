@@ -199,6 +199,7 @@ export default function ChooseSize(props) {
 					title: translate("edit_reset_toppings"),
 					mainBtnText: translate("edit_reset_toppings_main_button"),
 					subBtnText: translate("edit_reset_toppings_secondary_button"),
+					capsuleButton: true,
 					mainBtnFunc: () => {
 						dispatch(Actions.setIsUserAgreeToReset(true));
 						callback();
@@ -327,7 +328,6 @@ export default function ChooseSize(props) {
 					<Button
 						text={translate("builder_size_choose")}
 						className={styles["plus-btn-wrapper"]}
-						animated={false}
 						ariaLabel={srText}
 					/>
 				)}

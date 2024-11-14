@@ -9,8 +9,9 @@ $current: 375;
 .personal-builder {
 	font-size: vw_size(16, $current);
 	color: white;
-	height: 82vh;
+	height: 100vh;
 	overflow: auto;
+	padding-bottom: vw_size(16, $current);
 
 	.title-wrapper {
 		position: absolute;

@@ -331,6 +331,7 @@ function FutureOrder(props) {
 						ariaLabel={srText}
 						ariaLive={"off"}
 						onClick={onClick}
+						animated
 					/>
 				</div>
 			</div>

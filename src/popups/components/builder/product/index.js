@@ -29,6 +29,7 @@ import { createAccessibilityText } from "../../../../components/accessibility/ac
 import TransparentCounterButton from "components/TransparentCounterButton/TransparentCounterButton";
 import MaxFreeDipsMessage from "components/MaxFreeDipsMessage";
 import DipsExtraPrice from "components/DipsExtraPrice";
+import usePreventRageClick from "hooks/usePreventRageClick";
 
 export default function ProductDetails(props) {
 	const {
@@ -53,6 +54,7 @@ export default function ProductDetails(props) {
 		MEDIA_TYPES.PRODUCT,
 		MEDIA_ENUM.IN_MENU,
 	);
+	const [handleSubmit, isSubmitDisabled] = usePreventRageClick(onSubmit);
 	const [form, setForm] = useState({});
 	const [firstTry, setFirstTry] = useState(true);
 	const [isFormValid, setIsFormValid] = useState(false);
@@ -161,7 +163,7 @@ export default function ProductDetails(props) {
 
 	function onSubmit() {
 		setFirstTry(false);
-		if (isFormValid) {
+		if (isFormValid && !isSubmitDisabled) {
 			const productPayload = buildPayload();
 			const salePayload = JSON.parse(JSON.stringify(saleObj));
 			const temp = PizzaBuilderService.setSubItem(
@@ -327,13 +329,14 @@ export default function ProductDetails(props) {
 
 	const btnProps = {
 		animated: true,
-		callback: onSubmit,
+		callback: handleSubmit,
 		text: translate("builderModal_productDetails_continue_button"),
 		errorText: errorBtnText,
 		isError: showErrorBtn,
 		isBtnOnForm: true,
 		extraStyles: styles,
 		state: true,
+		disabled: isSubmitDisabled,
 	};
 
 	return (

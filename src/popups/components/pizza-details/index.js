@@ -502,13 +502,19 @@ export default function PizzaDetailsPopup(props) {
 						items={subItems}
 					/>
 				</span>
+				<div className={styles["linear-gradient-bottom"]}>
+					<Button
+						text={translate("savedPizzaPopup_addToCart_btnTitle")}
+						onClick={addToCart}
+					/>
+				</div>
 			</>
 		);
 	};
 
 	const renderDesktop = () => {
 		return (
-			<>
+			<div className={styles["content"]}>
 				<div className={styles["pizzas-details-wrapper"]}>
 					<div className={styles["details-right"]}>
 						{renderMiddleSection()}
@@ -533,7 +539,7 @@ export default function PizzaDetailsPopup(props) {
 					</div>
 					<div className={styles["details-left"]}>{renderTopSection()}</div>
 				</div>
-			</>
+			</div>
 		);
 	};
 
@@ -543,18 +549,7 @@ export default function PizzaDetailsPopup(props) {
 			className={styles["pizzas-details"]}
 			showCloseIcon
 			ref={ref}>
-			<div className={styles["content"]}>
-				{deviceState.notDesktop ? renderMobile() : renderDesktop()}
-			</div>
-			{deviceState.notDesktop && (
-				<div className={styles["linear-gradient-bottom"]}>
-					<Button
-						text={translate("savedPizzaPopup_addToCart_btnTitle")}
-						onClick={addToCart}
-						className={styles["add-to-cart-btn"]}
-					/>
-				</div>
-			)}
+			{deviceState.notDesktop ? renderMobile() : renderDesktop()}
 		</BlurPopup>
 	);
 }

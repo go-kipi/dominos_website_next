@@ -136,6 +136,9 @@ $current: 375;
 									margin-bottom: vw_size(2, $current);
 									cursor: pointer;
 									.img {
+										position: absolute;
+										top: vw_size(8, $current);
+										// border: 1px solid red;
 										width: vw_size(30, $current);
 										height: unset;
 									}
@@ -504,13 +507,16 @@ $current: 375;
 										width: 100%;
 										.option-checkbox {
 											width: 50%;
+											width: unset;
+											height: 100%;
 											font-size: vw_size(13, $current);
 											margin-top: vw_size(10, $current);
 											.img {
 												width: vw_size(44, $current);
 												position: absolute;
-												top: vw_size(-10, $current);
-												right: vw_size(-2, $current);
+												top: 50%;
+												transform: translateY(-50%);
+												@include right(vw_size(2, $current));
 											}
 
 											.label {

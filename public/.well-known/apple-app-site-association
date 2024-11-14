@@ -10,7 +10,9 @@
 					"NOT /menu",
 					"NOT /chef",
 					"NOT /jobs",
+					"NOT /jobs-mobile",
 					"NOT /branches/*",
+					"NOT /content/*",
 					"/*"
 				]
 			}

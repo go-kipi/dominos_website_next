@@ -7,9 +7,9 @@ import { useDispatch } from "react-redux";
 import Actions from "../../redux/actions";
 import clsx from "clsx";
 import useTranslate from "hooks/useTranslate";
-import {createAccessibilityText} from "../accessibility/acfunctions";
-import {getCurrencySign} from "../../utils/functions";
-import {TAB_INDEX_HIDDEN} from "../../constants/accessibility-types";
+import { createAccessibilityText } from "../accessibility/acfunctions";
+import { getCurrencySign } from "../../utils/functions";
+import { TAB_INDEX_HIDDEN } from "../../constants/accessibility-types";
 
 function SavedPizzaCard(props) {
 	const {
@@ -83,10 +83,12 @@ function SavedPizzaCard(props) {
 		);
 	}
 	const srText = createAccessibilityText(
-		translate('accessibility_savedPizza').replace('{pizzaName}', title),
+		translate("accessibility_savedPizza").replace("{pizzaName}", title),
 		!isInBuilder && `${price}${getCurrencySign(currency)}`,
-		(showPriceBeforeDiscount && !isInBuilder) && `${oldPrice}${getCurrencySign(currency)}`,
-		disabledReason && translate('accessibility_savedPizza_unavailable'),
+		showPriceBeforeDiscount &&
+			!isInBuilder &&
+			`${oldPrice}${getCurrencySign(currency)}`,
+		disabledReason && translate("accessibility_savedPizza_unavailable"),
 	);
 	return (
 		<button

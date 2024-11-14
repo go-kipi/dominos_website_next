@@ -64,7 +64,6 @@ function RenderSideDishComponent(props) {
 	const [disableClick, setDisableClick] = useState(false);
 	const Product = useMenus(item.id, item.actionType);
 	const saleObj = useSelector((store) => store.cartItem);
-	const userAgreedReset = useSelector((store) => store.userAgreeToReset);
 	const translate = useTranslate();
 	const catalogProducts = useSelector(
 		(store) => store.menusData.catalogProducts,
@@ -261,6 +260,7 @@ function RenderSideDishComponent(props) {
 					mainBtnText: translate("edit_reset_toppings_main_button"),
 					subBtnText: translate("edit_reset_toppings_secondary_button"),
 					mainBtnFunc: callback,
+					capsuleButton: true,
 				},
 			}),
 		);

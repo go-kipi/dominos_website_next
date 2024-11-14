@@ -10,6 +10,9 @@ const PAYMENT_SCREEN_TYPES = {
 	GIFT_CARD: "gift-card",
 	NO_BASKET: "NO-BASKET",
 	LOADER: "LOADER",
-	APPLE_PAY:'APPLE-PAY'
+	APPLE_PAY: "APPLE-PAY",
+	GIFT_CARD_OPTIONS: "gift-card-options",
+	TAV_PLUS: "tav-plus",
+	BUY_ME: "buy-me",
 };
 export default PAYMENT_SCREEN_TYPES;

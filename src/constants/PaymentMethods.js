@@ -1,8 +1,11 @@
 const PAYMENT_METHODS = {
-  APPPLE_PAY: 'applePay',
-  GOOGLE_PAY: 'googlePay',
-  CASH: 'cash',
-  CREDIT_CARD: 'creditCard',
-  BIT: 'bit',
+	APPLE_PAY: "applePay",
+	GOOGLE_PAY: "googlePay",
+	CASH: "cash",
+	CREDIT_CARD: "creditCard",
+	BIT: "bit",
+	GIFT_CARD: "giftMenu",
+	TAV_PLUS: "tavPlus",
+	BUY_ME: "buyMe",
 };
 export default PAYMENT_METHODS;

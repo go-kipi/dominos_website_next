@@ -85,9 +85,15 @@ $current: 375;
 					top: vw_size(30, $current);
 					width: vw_size(155, $current);
 					left: vw_size(-10, $current);
+					.options-tooltip-container {
+						background-color: rgba(56, 65, 79, 0.834);
+						border-radius: vw_size(5, $current);
+						color: white;
+					}
 					.tooltip-triangle {
 						left: vw_size(18, $current);
 						top: vw_size(-10, $current);
+						border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 					}
 					.toppings-actions-container {
 						width: vw_size(147, $current);
@@ -460,12 +466,16 @@ $current: 375;
 				.multiple-options-indicator-wrapper {
 					.options-tooltip-wrapper {
 						left: unset;
-
 						right: vw_size(-10, $current);
+						.options-tooltip-container {
+							background-color: rgba(56, 65, 79, 0.834);
+							border-radius: vw_size(5, $current);
+							color: white;
+						}
 						.tooltip-triangle {
 							left: unset;
-
 							right: vw_size(18, $current);
+							border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 						}
 					}
 				}
@@ -498,10 +508,12 @@ $current: 375;
 					right: vw_size(15, $current);
 					.multiple-options-indicator-wrapper {
 						.options-tooltip-wrapper {
+							left: unset;
 							right: vw_size(-10, $current);
 							width: vw_size(155, $current);
 							.tooltip-triangle {
 								right: vw_size(18, $current);
+								border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 							}
 						}
 					}
@@ -551,6 +563,7 @@ $current: 375;
 						.tooltip-triangle {
 							left: vw_size(18, $current);
 							top: vw_size(-10, $current);
+							border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 						}
 						.toppings-actions-container {
 							width: vw_size(147, $current);
@@ -993,9 +1006,16 @@ $current: 375;
 						.tooltip-hover {
 							display: none;
 							top: vw_size(30, $current);
+							.options-tooltip-container {
+								background-color: rgba(56, 65, 79, 0.834);
+								border-radius: vw_size(5, $current);
+								color: white;
+							}
+
 							.tooltip-triangle {
 								top: vw_size(-10, $current);
 								left: vw_size(10, $current);
+								border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 							}
 							.tool-tip-option-wrapper {
 								width: vw_size(127, $current);
@@ -1061,8 +1081,14 @@ $current: 375;
 						.topping-action-wrapper {
 							.tooltip-hover {
 								left: vw_size(-70, $current);
+								.options-tooltip-container {
+									border-radius: vw_size(5, $current);
+								}
+
 								.tooltip-triangle {
+									top: vw_size(-10, $current);
 									left: vw_size(70, $current);
+									border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 								}
 							}
 						}
@@ -1324,9 +1350,14 @@ $current: 375;
 
 						.tooltip-hover {
 							top: vw_size(25, $current);
+							.options-tooltip-container {
+								border-radius: vw_size(5, $current);
+							}
+
 							.tooltip-triangle {
 								top: vw_size(-7, $current);
 								left: vw_size(15, $current);
+								border-bottom: vw_size(10, $current) solid rgba(56, 65, 79, 0.808);
 							}
 							.tool-tip-option-wrapper {
 								width: vw_size(127, $current);
@@ -1392,5 +1423,24 @@ $current: 375;
 				}
 			}
 		}
+	}
+}
+
+/* Aspect Ratio Breakpoints */
+$aspect-ratio-dock-min: 2.05 / 1;   
+$aspect-ratio-dock-max: 2.3 / 1; 
+
+@media (min-aspect-ratio: #{$aspect-ratio-dock-min}) and (max-aspect-ratio: #{$aspect-ratio-dock-max}) {
+	.toppings-builder-wrapper {
+		.toppings-left-section {
+			.continue-btn {
+				.submit-button {
+					bottom: vw_size(12, $current) !important;
+				}
+			}				
+		}
+	}
+	.bottom-gradient {
+		opacity: 0.6;
 	}
 }

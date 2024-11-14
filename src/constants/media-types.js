@@ -9,4 +9,5 @@ export const MEDIA_TYPES = {
 	URL_LIST: "UrlList",
 	PROMO_ONE: "onePopup",
 	PROMO_TWO: "twoPopups",
+	GIFT_CARD: "media",
 };

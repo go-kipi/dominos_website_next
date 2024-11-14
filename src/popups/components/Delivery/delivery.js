@@ -78,9 +78,8 @@ export default function DeliveryPopup(props) {
 			animateOut();
 			const timeout = setTimeout(() => {
 				router.push(Routes.menu);
-
 				clearTimeout(timeout);
-			}, 300);
+			}, 100);
 		} else animateOut();
 	}
 

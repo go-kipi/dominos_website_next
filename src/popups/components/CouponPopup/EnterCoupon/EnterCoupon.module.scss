@@ -6,10 +6,8 @@ $current: 375;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
 
 	.coupon-animation-wrapper {
-
 		width: vw_size(250, $current);
 		height: vw_size(250, $current);
 		margin-top: vw_size(50, $current);
@@ -23,8 +21,8 @@ $current: 375;
 		}
 	}
 
-
 	.actions {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -63,7 +61,6 @@ $current: 375;
 
 	.enter-coupon-wrapper {
 		.coupon-animation-wrapper {
-
 			width: vw_size(250, $current);
 			height: vw_size(250, $current);
 			margin-top: vw_size(50, $current);
@@ -85,7 +82,6 @@ $current: 375;
 
 	.enter-coupon-wrapper {
 		.coupon-animation-wrapper {
-
 			width: vw_size(250, $current);
 			height: vw_size(250, $current);
 			margin-top: vw_size(50, $current);
@@ -107,7 +103,6 @@ $current: 375;
 
 	.enter-coupon-wrapper {
 		.coupon-animation-wrapper {
-
 			width: vw_size(350, $current);
 			height: vw_size(350, $current);
 			margin-top: vw_size(50, $current);
@@ -119,7 +114,7 @@ $current: 375;
 		}
 		.actions {
 			margin-top: vw_size(119, $current);
-			width: vw_size(1, $current);
+			width: vw_size(358, $current);
 		}
 	}
 }

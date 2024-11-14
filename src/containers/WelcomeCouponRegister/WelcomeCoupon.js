@@ -91,6 +91,7 @@ function WelcomeCouponRegister(props) {
 			<div className={styles["actions"]}>
 				<Button
 					text={btnText}
+					animated
 					onClick={accept}
 					className={styles["accept"]}
 				/>

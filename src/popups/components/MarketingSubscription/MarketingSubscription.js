@@ -30,6 +30,7 @@ export default function MarketingSubscription(props) {
 		mainBtnFunc = () => {},
 		subBtnFunc = () => {},
 		isLottie = true,
+		animatedBtn = true,
 	} = payload;
 
 	const ref = useRef();
@@ -136,13 +137,17 @@ export default function MarketingSubscription(props) {
 						{title}
 					</h1>
 
-					{formattedSubtitle && (
-						<h3
-							className={clsx(styles["sub-title"])}
-							tabIndex={0}>
-							{formattedSubtitle}
-						</h3>
-					)}
+					<div className={clsx(styles["content-wrapper"])}>
+						{formattedSubtitle && (
+							<h3
+								className={clsx(styles["content"])}
+								tabIndex={0}>
+								{formattedSubtitle}
+								{formattedSubtitle}
+								{formattedSubtitle}
+							</h3>
+						)}
+					</div>
 				</div>
 
 				<div className={styles["btn-wrap"]}>
@@ -150,6 +155,7 @@ export default function MarketingSubscription(props) {
 						className={`${styles["btn"]} ${styles["main-btn"]}`}
 						onClick={() => handleClick(mainBtnFunc)}
 						text={mainBtnText}
+						animated={animatedBtn}
 					/>
 					<TextOnlyButton
 						className={` ${styles["sec-btn"]}`}

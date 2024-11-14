@@ -106,9 +106,9 @@ $timeout: 300ms;
 	:global(.popup) {
 		.builder-popup-wrapper {
 			:global(.content) {
-				.scroll-area {
-					padding-bottom: vw_size(150, $current);
-				}
+				// .scroll-area {
+				// padding-bottom: vw_size(150, $current);
+				// }
 
 				.builder-button-wrapper {
 					bottom: vw_size(-80, $current);

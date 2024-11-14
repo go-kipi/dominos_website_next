@@ -560,7 +560,6 @@ function DifferentAddressForm(props) {
 									"deliveryPopup_addressTypeForm_acceptBtnError_title",
 								)}
 								isBtnOnForm={true}
-								animated={false}
 								text={translate("deliveryPopup_futureOrder_ButtonLabel")}
 								onClick={() => onSubmit(onFutureOrderPress)}
 							/>

@@ -138,7 +138,6 @@ function UpSaleProduct(props) {
 							/>
 						) : (
 							<Button
-								animated={false}
 								text={translate("upsalePopup_zigzag_choose")}
 								onClick={() => {
 									onChangeHandler(1);
@@ -193,7 +192,6 @@ function UpSaleProduct(props) {
 								/>
 							) : (
 								<Button
-									animated={false}
 									text={translate("upsalePopup_zigzag_choose")}
 									onClick={() => {
 										onChangeHandler(1);

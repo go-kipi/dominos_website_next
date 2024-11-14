@@ -6,12 +6,10 @@ import {
 	getFullMediaUrl,
 	getPizzaImageByMeta,
 	notEmptyObject,
-	parseCoverageToQuarters,
 	VibrateDevice,
 } from "utils/functions";
 import Actions from "redux/actions";
 import Api from "api/requests";
-import { MENUS } from "constants/menu-types";
 import * as popupTypes from "constants/popup-types";
 import { useDragDropManager, useDrop } from "react-dnd";
 import { ItemTypes } from "constants/draggable-types";
@@ -39,10 +37,8 @@ import { MEDIA_ENUM } from "constants/media-enum";
 import { VALIDATION_STATUS } from "constants/ValidationStatusEnum";
 import CartService from "services/CartService";
 import { STEPS } from "constants/validation-steps-enum";
-import { UPSALES_TYPES } from "constants/upsales-types";
 import doughMatrixEnum from "../../../../constants/doughMatrixEnum";
 
-import doughAnimationPhases from "../../../../constants/doughAnimationPhases";
 import PizzaTreeService from "../../../../services/PizzaTreeService";
 import CustomCollapse from "components/CustomCollapse";
 import clsx from "clsx";
@@ -169,15 +165,12 @@ export default function ToppingsBuilder(props) {
 		stepIndex = 0,
 		maxDuplicate = 1,
 		steps,
-		// hasUpgrades = false,
 		isEdit,
 		isSale,
-		isFromPizzas,
 		isLastTab = false,
 		nextTabText = "",
 		showButton,
 		fatherEntity,
-		priceOverrides,
 		trigger = "",
 	} = props;
 	const dispatch = useDispatch();
@@ -191,6 +184,7 @@ export default function ToppingsBuilder(props) {
 		isSquare = "",
 		isMixPizza = false,
 	} = params;
+
 	const isSquarePizza = !["classic", "", "spelt"].includes(isSquare);
 	const allowCopyToNextSteps = steps?.[stepIndex]?.allowCopyToNextSteps ?? false;
 	const [focusElement, setFocusElement] = useState(false);

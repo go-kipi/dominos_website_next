@@ -9,8 +9,8 @@ import useTranslate from "hooks/useTranslate";
 import ImageWithPlaceholder from "components/ImageWithPlaceholder";
 import DealPlaceholder from "/public/assets/placeholders/Deal.png";
 import Actions from "redux/actions";
-import {createAccessibilityText} from "../accessibility/acfunctions";
-import {getCurrencySign} from "../../utils/functions";
+import { createAccessibilityText } from "../accessibility/acfunctions";
+import { getCurrencySign } from "../../utils/functions";
 
 const Deal = (props) => {
 	const {
@@ -114,7 +114,6 @@ const Deal = (props) => {
 				className={styles["button"]}
 				textClassName={styles["button-text"]}
 				onClick={onClickHandler}
-				animated={false}
 				disabled={isDisabled}
 				extraStyles={styles}
 				ariaLabel={srText}
@@ -126,13 +125,14 @@ const Deal = (props) => {
 	const srText = createAccessibilityText(
 		title,
 		`${price}${getCurrencySign(currency)}`,
-		oldPrice !== price && createAccessibilityText(
-			translate('accessibility_srContent_insteadOf'),
-			oldPrice,
-			getCurrencySign(currency),
-		),
+		oldPrice !== price &&
+			createAccessibilityText(
+				translate("accessibility_srContent_insteadOf"),
+				oldPrice,
+				getCurrencySign(currency),
+			),
 	);
-	
+
 	return (
 		<div
 			id={`deal-${id}`}
@@ -154,7 +154,11 @@ const Deal = (props) => {
 						placeholderClassName={styles["placeholder-image"]}
 					/>
 				</div>
-				<div className={styles["title"]} aria-hidden={true}>{title}</div>
+				<div
+					className={styles["title"]}
+					aria-hidden={true}>
+					{title}
+				</div>
 			</div>
 			<Bottom
 				price={price}

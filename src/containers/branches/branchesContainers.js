@@ -21,6 +21,19 @@ import { skipToContent } from "../../utils/functions";
 export default function BranchesContainer({ children, isCityPage = false }) {
 	const router = useRouter();
 
+	useEffect(() => {
+		const timeoutId = setTimeout(() => {
+		  document.body.style.overflow = "hidden";
+		  document.body.style.WebkitOverflowScrolling = "none";
+		}, 500); 
+	  
+		return () => {
+		  clearTimeout(timeoutId);
+		  document.body.style.overflow = "";
+		  document.body.style.WebkitOverflowScrolling = "";
+		};
+	  }, []);  
+
 	const { isCity, isBranch } = useCityBranches(
 		router.query.city,
 		router.query?.branch,

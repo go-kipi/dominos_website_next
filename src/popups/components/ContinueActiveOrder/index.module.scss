@@ -40,11 +40,10 @@ $current: 375;
 					font-family: $font-medium;
 					font-size: vw_size(22, $current);
 				}
-				.continue-order-btn {
-					margin-top: vw_size(28, $current);
-				}
-				.start-over-order-btn {
-					margin-top: vw_size(31, $current);
+				.animated-btn-wrapper {
+					position: relative;
+					margin-block-start: vw_size(30, $current);
+					margin-block-end: vw_size(20, $current);
 				}
 			}
 		}
@@ -77,11 +76,9 @@ $current: 375;
 						margin-top: vw_size(2, $current);
 						font-size: vw_size(22, $current);
 					}
-					.continue-order-btn {
-						margin-top: vw_size(28, $current);
-					}
-					.start-over-order-btn {
-						margin-top: vw_size(31, $current);
+					.animated-btn-wrapper {
+						margin-block-start: vw_size(30, $current);
+						margin-block-end: vw_size(20, $current);
 					}
 				}
 			}
@@ -118,12 +115,9 @@ $current: 375;
 						margin-top: vw_size(2, $current);
 						font-size: vw_size(22, $current);
 					}
-					.continue-order-btn {
-						margin-top: vw_size(57, $current);
-					}
-					.start-over-order-btn {
-						height: vw_size(25, $current);
-						margin-top: vw_size(31, $current);
+					.animated-btn-wrapper {
+						margin-block-start: vw_size(30, $current);
+						margin-block-end: vw_size(20, $current);
 					}
 				}
 			}
@@ -156,12 +150,9 @@ $current: 375;
 						margin-top: vw_size(2, $current);
 						font-size: vw_size(22, $current);
 					}
-					.continue-order-btn {
-						margin-top: vw_size(57, $current);
-					}
-					.start-over-order-btn {
-						height: vw_size(25, $current);
-						margin-top: vw_size(31, $current);
+					.animated-btn-wrapper {
+						margin-block-start: vw_size(30, $current);
+						margin-block-end: vw_size(20, $current);
 					}
 				}
 			}

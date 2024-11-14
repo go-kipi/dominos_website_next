@@ -7,6 +7,7 @@ import GooglePayIcon from "/public/assets/icons/payment/google-pay.svg";
 import CreditCard from "/public/assets/icons/payment/credit-card.svg";
 import Cash from "/public/assets/icons/payment/cash.svg";
 import Bit from "/public/assets/icons/payment/bit.svg";
+import GiftCard from "/public/assets/icons/payment/gift-card.svg";
 
 import styles from "./MethodPaymentButtons.module.scss";
 import clsx from "clsx";
@@ -26,6 +27,11 @@ export default function PaymentButton(props) {
 		id,
 		className = "",
 	} = props;
+
+	const isDisabledOnEditMode = useSelector(
+		(store) => store.isEditGiftCardMode.isEditMode,
+	);
+
 	const isLarge = size === "large";
 	const isMedium = size === "medium";
 	const isSmall = size === "small";
@@ -45,6 +51,7 @@ export default function PaymentButton(props) {
 	return (
 		<button
 			onClick={onClickHandler}
+			disabled={isDisabledOnEditMode}
 			className={clsx(styles["payment-button-basic"], btnClassName)}>
 			<div
 				className={clsx(
@@ -87,7 +94,7 @@ export function ApplePayButton(props) {
 	const translate = useTranslate();
 	const title = translate("payment_method_applePay");
 	let data = extraData && typeof extraData === "object" ? extraData : null;
-	const id = PAYMENT_METHODS.APPPLE_PAY;
+	const id = PAYMENT_METHODS.APPLE_PAY;
 
 	function onClickHandler() {
 		let isStopper = false;
@@ -305,15 +312,15 @@ export function CreditCardButton(props) {
 	const dispatch = useDispatch();
 	const image = CreditCard;
 	const translate = useTranslate();
-	const isCreditModalOpen = useSelector(store => store.isCreditModalOpen)
+	// const isCreditModalOpen = useSelector((store) => store.isCreditModalOpen);
 	const title = translate("payment_method_credit_card");
-	const isMobile = useSelector(store => store.deviceState.isMobile)
+	const isMobile = useSelector((store) => store.deviceState.isMobile);
 
 	const id = PAYMENT_METHODS.CREDIT_CARD;
 
 	function onClickHandler() {
-		if(isCreditModalOpen) return;
-		 dispatch(Actions.setIsCreditModalOpen(true))
+		// if (isCreditModalOpen) return;
+		// dispatch(Actions.setIsCreditModalOpen(true));
 		let isStopper = false;
 		if (Array.isArray(promoPopups) && promoPopups.length > 0) {
 			dispatch(Actions.setPromoPopups(promoPopups));
@@ -348,3 +355,99 @@ export function CreditCardButton(props) {
 	};
 	return <PaymentButton {...btnProps} />;
 }
+
+export function GiftCardButton(props) {
+	const {
+		size,
+		isSelected,
+		onClick,
+		className = "",
+		paymentMethodElement,
+		onClickButton,
+		setShowGPay,
+		getItemsAndListData,
+		promoPopups,
+		paymentMenu,
+	} = props;
+
+	const dispatch = useDispatch();
+	const translate = useTranslate();
+	const image = GiftCard;
+	const title = translate("payment_giftCard_title");
+
+	const id = PAYMENT_METHODS.GIFT_CARD;
+
+	function onClickHandler() {
+		return onClickButton();
+	}
+
+	const btnProps = {
+		size,
+		isSelected,
+		image,
+		title,
+		id,
+		onClick: onClickHandler,
+		className,
+	};
+	return <PaymentButton {...btnProps} />;
+}
+
+// export function CibusButton(props) {
+// 	const {
+// 		size,
+// 		isSelected,
+// 		onClick,
+// 		className = "",
+// 		paymentMethodElement,
+// 		onClickButton,
+// 		setShowGPay,
+// 		promoPopups,
+// 		getItemsAndListData,
+// 	} = props;
+// 	const dispatch = useDispatch();
+// 	const image = CreditCard;
+// 	const translate = useTranslate();
+// 	const isCreditModalOpen = useSelector((store) => store.isCreditModalOpen);
+// 	const title = translate("payment_method_credit_card");
+// 	const isMobile = useSelector((store) => store.deviceState.isMobile);
+
+// 	const id = PAYMENT_METHODS.CREDIT_CARD;
+
+// 	// function onClickHandler() {
+// 	// 	if (isCreditModalOpen) return;
+// 	// 	dispatch(Actions.setIsCreditModalOpen(true));
+// 	// 	let isStopper = false;
+// 	// 	if (Array.isArray(promoPopups) && promoPopups.length > 0) {
+// 	// 		dispatch(Actions.setPromoPopups(promoPopups));
+// 	// 		isStopper = promoPopups.some((pp) => pp.flowStopper == true);
+// 	// 		dispatch(Actions.setIsFlowStopper(isStopper));
+// 	// 		dispatch(Actions.setPromoPopupState(PROMO_POPUP_STATE_ENUM.GET_PAYMENT));
+// 	// 	}
+// 	// 	if (isStopper) return;
+// 	// 	typeof setShowGPay === "function" && setShowGPay(false);
+// 	// 	typeof onClick === "function" &&
+// 	// 		onClick({ id, currency: paymentMethodElement.defaultCurrency });
+// 	// 	typeof onClickButton === "function" &&
+// 	// 		onClickButton({ currency: paymentMethodElement.defaultCurrency });
+
+// 		// const [items, listData] = getItemsAndListData();
+// 		// const newList = {
+// 		// 	...listData,
+// 		// 	payment_type: id,
+// 		// 	currency: paymentMethodElement.defaultCurrency,
+// 		// };
+// 		// AnalyticsService.addPaymentInfo(items, newList);
+// 	}
+
+// 	const btnProps = {
+// 		size,
+// 		isSelected,
+// 		image,
+// 		title,
+// 		id,
+// 		onClick: onClickHandler,
+// 		className,
+// 	};
+// 	return <PaymentButton {...btnProps} />;
+// }

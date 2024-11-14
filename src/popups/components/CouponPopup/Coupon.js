@@ -149,7 +149,6 @@ function CouponPopup(props) {
 	}
 
 	function VerifyCoupon(couponId) {
-		setStack({ type: COUPON_SCREEN_TYPES.LOADER, params: {} });
 		const onSuccess = (res) => {
 			navigateToGotCoupon(res);
 		};
@@ -201,7 +200,6 @@ function CouponPopup(props) {
 						<Loader params={currentScreen.params} />
 					</CSSTransition>
 				);
-
 			case COUPON_SCREEN_TYPES.GOT_COUPON:
 				return (
 					<CSSTransition

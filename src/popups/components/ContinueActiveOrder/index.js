@@ -40,20 +40,15 @@ function ContinueActiveOrderPopup(props) {
 
 		function onSuccess(data) {
 			const activeOrder = data;
-
 			const coupons = activeOrder?.approvedCoupons ?? [];
 			if (activeOrder.basket?.products) {
 				dispatch(Actions.addCatalogProducts(activeOrder.basket.products));
 			}
-
 			dispatch(Actions.setCart(activeOrder.basket));
-		}
-
-		animateOut(() => {
 			PizzaTreeService.init(() => {
-				OrderStatusService.goToScreen();
+				OrderStatusService.goToScreen(animateOut);
 			});
-		});
+		}
 	};
 
 	const handleStartOver = () => {
@@ -116,14 +111,15 @@ function ContinueActiveOrderPopup(props) {
 					tabIndex={0}>
 					{translate("continueOrderPopup_wantToContinue_title")}
 				</h1>
-				<Button
-					className={styles["continue-order-btn"]}
-					text={translate("continueOrderPopup_continueBtn_label")}
-					onClick={handleContinueOrder}
-					ariaDescribedBy={translate("continueOrderPopup_continueBtn_label")}
-				/>
+				<div className={styles["animated-btn-wrapper"]}>
+					<Button
+						text={translate("continueOrderPopup_continueBtn_label")}
+						onClick={handleContinueOrder}
+						ariaDescribedBy={translate("continueOrderPopup_continueBtn_label")}
+						animated
+					/>
+				</div>
 				<TextOnlyButton
-					className={styles["start-over-order-btn"]}
 					onClick={() => handleStartOver()}
 					text={translate("continueOrderPopup_startOverBtn_label")}
 					ariaDescribedBy={translate("continueOrderPopup_startOverBtn_label")}

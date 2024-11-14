@@ -59,7 +59,10 @@ const RenderPromoProduct = (props) => {
 					!isSingleProduct ? styles["multi"] : "",
 				)}>
 				{typeof product?.assetVersion === "number" ? (
-					<img src={productImg} alt={product?.nameUseCases?.Title} />
+					<img
+						src={productImg}
+						alt={product?.nameUseCases?.Title}
+					/>
 				) : null}
 				{isMobile && !isSingleProduct ? (
 					<Button
@@ -70,7 +73,6 @@ const RenderPromoProduct = (props) => {
 						)}
 						textClassName={styles["button-text"]}
 						onClick={handleOnClick}
-						animated={false}
 						extraStyles={styles}
 					/>
 				) : null}
@@ -81,7 +83,6 @@ const RenderPromoProduct = (props) => {
 					className={styles["product-button"]}
 					textClassName={styles["button-text"]}
 					onClick={handleOnClick}
-					animated={false}
 					extraStyles={styles}
 				/>
 			) : null}

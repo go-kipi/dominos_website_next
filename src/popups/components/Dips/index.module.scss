@@ -3,33 +3,17 @@
 @import "/src/components/MaxFreeDipsMessage/index.module.scss";
 
 $current: 375;
-
-.close-icon-wrapper {
-	position: absolute;
-	@include left(vw_size(25, $current));
-	top: vw_size(50, $current);
-}
-
-.confirm-btn-container {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	bottom: vw_size(30, $current);
-}
-
-.dips-container {
-	height: 100%;
-	width: 100%;
-	padding: vw_size(40, $current);
+.container {
+	padding-block: vw_size(30, $current);
 
 	.header {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		color: white;
 		gap: vw_size(10, $current);
+		margin-block-end: vw_size(30, $current);
 
 		& > * {
 			margin: 0;
@@ -40,56 +24,57 @@ $current: 375;
 			font-family: $font-medium;
 			font-size: vw_size(20, $current);
 		}
+
 		.sub-title {
 			font-family: $font;
 			font-size: vw_size(14, $current);
 			letter-spacing: vw_size(0.84, $current);
 		}
+
+		.close-icon-wrapper {
+			position: absolute;
+			@include left(vw_size(25, $current));
+			top: vw_size(5, $current);
+		}
 	}
 
 	.list-container {
-		margin-top: vw_size(30, $current);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin-block-end: vw_size(40, $current);
 		gap: vw_size(20, $current);
 	}
-}
 
-.dips-leftover-title {
-	p {
-		margin: 0;
+	.dips-leftover-title {
+		p {
+			margin: 0;
+		}
+
+		color: white;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		font-family: $font;
+		font-size: vw_size(14, $current);
+		letter-spacing: vw_size(0.34, $current);
+		margin-block-end: vw_size(20, $current);
 	}
 
-	position: absolute;
-	bottom: vw_size(100, $current);
-	color: white;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	font-family: $font;
-	font-size: vw_size(14, $current);
-	letter-spacing: vw_size(0.34, $current);
-	// margin-bottom: vw_size(10, $current);
+	.confirm-btn-container {
+		display: flex;
+		justify-content: center;
+	}
 }
 
 @media (min-width: $media-tablet) {
 	$current: $tablet;
-
-	.close-icon-wrapper {
-		left: vw_size(20, $current);
-		top: vw_size(50, $current);
-	}
-
-	.confirm-btn-container {
-		bottom: vw_size(30, $current);
-	}
-
-	.dips-container {
-		padding: vw_size(40, $current);
+	.container {
+		padding-block: vw_size(60, $current);
 
 		.header {
 			gap: vw_size(10, $current);
+			margin-block-end: vw_size(30, $current);
 
 			.main-title {
 				font-size: vw_size(20, $current);
@@ -98,39 +83,33 @@ $current: 375;
 				font-size: vw_size(14, $current);
 				letter-spacing: vw_size(0.84, $current);
 			}
+			.close-icon-wrapper {
+				@include left(vw_size(50, $current));
+				top: vw_size(5, $current);
+			}
 		}
 
 		.list-container {
-			margin-top: vw_size(30, $current);
+			margin-block-end: vw_size(40, $current);
 			gap: vw_size(20, $current);
 		}
-	}
 
-	.dips-leftover-title {
-		bottom: vw_size(90, $current);
-		font-size: vw_size(14, $current);
-		letter-spacing: vw_size(0.34, $current);
+		.dips-leftover-title {
+			font-size: vw_size(14, $current);
+			letter-spacing: vw_size(0.34, $current);
+			margin-block-end: vw_size(20, $current);
+		}
 	}
 }
 
 @media (min-width: $media-desktop) {
 	$current: $desktop;
+	.container {
+		padding-block: vw_size(60, $current);
 
-	.close-icon-wrapper {
-		left: vw_size(25, $current);
-		top: vw_size(25, $current);
-		height: vw_size(35, $current);
-		width: vw_size(35, $current);
-	}
-
-	.confirm-btn-container {
-		bottom: vw_size(72, $current);
-	}
-
-	.dips-container {
-		padding: vw_size(80, $current) vw_size(120, $current);
 		.header {
 			gap: vw_size(0, $current);
+			margin-block-end: vw_size(100, $current);
 
 			.main-title {
 				font-family: $font-bold;
@@ -154,43 +133,38 @@ $current: 375;
 					}
 				}
 			}
+			.close-icon-wrapper {
+				@include left(vw_size(50, $current));
+				top: vw_size(5, $current);
+				height: vw_size(35, $current);
+				width: vw_size(35, $current);
+			}
 		}
 
 		.list-container {
-			margin-top: vw_size(100, $current);
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
-			flex-wrap: wrap;
 			row-gap: vw_size(60, $current);
+			margin-block-end: vw_size(40, $current);
 		}
-	}
 
-	.dips-leftover-title {
-		bottom: vw_size(130, $current);
-		font-size: vw_size(14, $current);
-		letter-spacing: vw_size(0.34, $current);
+		.dips-leftover-title {
+			margin-block-end: vw_size(20, $current);
+			font-size: vw_size(14, $current);
+			letter-spacing: vw_size(0.34, $current);
+		}
 	}
 }
 
 @media (min-width: $media-desktop-large) {
 	$current: $desktop_max;
-
-	.close-icon-wrapper {
-		height: vw_size(25, $current);
-		width: vw_size(25, $current);
-		left: vw_size(35, $current);
-		top: vw_size(35, $current);
-	}
-
-	.confirm-btn-container {
-		bottom: vw_size(100, $current);
-	}
-	.dips-container {
-		padding: vw_size(80, $current) vw_size(180, $current);
+	.container {
+		padding-block: vw_size(60, $current);
 
 		.header {
 			gap: vw_size(10, $current);
+			margin-block-end: vw_size(100, $current);
 
 			.main-title {
 				font-size: vw_size(32, $current);
@@ -200,17 +174,23 @@ $current: 375;
 				font-size: vw_size(20, $current);
 				letter-spacing: vw_size(0.2, $current);
 			}
+			.close-icon-wrapper {
+				@include left(vw_size(50, $current));
+				top: vw_size(5, $current);
+				height: vw_size(35, $current);
+				width: vw_size(35, $current);
+			}
 		}
 
 		.list-container {
-			margin-top: vw_size(170, $current);
+			margin-block-end: vw_size(40, $current);
 			row-gap: vw_size(80, $current);
 		}
-	}
 
-	.dips-leftover-title {
-		bottom: vw_size(160, $current);
-		font-size: vw_size(16, $current);
-		letter-spacing: vw_size(0.34, $current);
+		.dips-leftover-title {
+			margin-block-end: vw_size(20, $current);
+			font-size: vw_size(16, $current);
+			letter-spacing: vw_size(0.34, $current);
+		}
 	}
 }

@@ -309,7 +309,6 @@ function MixedUpgradesPopup(props) {
 				<Button
 					className={styles["continue_button"]}
 					textClassName={styles["continue_button_text"]}
-					animated={false}
 					text={translate("mixedUpgrades_popup_accept_label")}
 					isError={showErrorBtn}
 					errorText={translate("mixedUpgrades_popup_error_label")}

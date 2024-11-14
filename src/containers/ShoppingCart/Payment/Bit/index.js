@@ -7,7 +7,7 @@ import PAYMENT_SCREEN_TYPES from "constants/PaymentScreenTypes";
 import { useSelector } from "react-redux";
 import BitService from "services/Bit";
 import Api from "api/requests";
-import BitIcon from "/public/assets/icons/payment/bit-icon.png";
+import BitIcon from "/public/assets/icons/payment/bit.svg";
 
 function Bit(props) {
 	const translate = useTranslate();

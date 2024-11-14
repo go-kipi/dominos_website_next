@@ -14,6 +14,7 @@ import { SHIPPING_OPTION } from "constants/emarsysTypes";
 const { publicRuntimeConfig } = getConfig();
 const version = publicRuntimeConfig?.version;
 
+// TODO: Send loader off with the api calls from continue order modal (getMenus,pizzaProductSelection)
 class ApiService extends ApiManager {
 	constructor() {
 		super();
@@ -534,9 +535,9 @@ class ApiService extends ApiManager {
 	};
 
 	getMenus = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
+		// if (isOnClient()) {
+		// 	this.global.store.dispatch(Actions.setLoader(true));
+		// }
 		const { isInBuilder = false } = props.payload;
 		const onSuccess = (res) => {
 			if (!Array.isArray(res.data.menus) || res.data.menus.length === 0) {
@@ -712,9 +713,9 @@ class ApiService extends ApiManager {
 	};
 
 	pizzaProductSelection = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
+		// if (isOnClient()) {
+		// 	this.global.store.dispatch(Actions.setLoader(true));
+		// }
 		const onSuccess = (res) => {
 			if (res.data) {
 				this.global.store.dispatch(Actions.setPizzaSelection(res.data.result));
@@ -728,7 +729,7 @@ class ApiService extends ApiManager {
 
 	getMenu = (props = {}) => {
 		const { config = {} } = props;
-		const { showLoader = true } = config;
+		const { showLoader = false } = config;
 		if (showLoader) {
 			if (isOnClient()) {
 				this.global.store.dispatch(Actions.setLoader(true));
@@ -942,9 +943,9 @@ class ApiService extends ApiManager {
 	};
 
 	getPayments = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
+		// if (isOnClient()) {
+		// 	this.global.store.dispatch(Actions.setLoader(true));
+		// }
 		const onSuccess = (res) => {
 			this.global.store.dispatch(Actions.setPayments(res.data));
 
@@ -973,9 +974,9 @@ class ApiService extends ApiManager {
 	};
 
 	getOneTimeBenefit = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
+		// if (isOnClient()) {
+		// 	this.global.store.dispatch(Actions.setLoader(true));
+		// }
 		const onSuccess = (res) => {
 			const phone = this.global.store.getState().generalData.phone || "no-user";
 			const user = this.global.store.getState().userData;
@@ -1099,9 +1100,9 @@ class ApiService extends ApiManager {
 	};
 
 	getProducts = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
+		// if (isOnClient()) {
+		// 	this.global.store.dispatch(Actions.setLoader(true));
+		// }
 		const onSuccess = (res) => {
 			this.global.store.dispatch(Actions.addCatalogProducts(res.data.product));
 
@@ -1112,9 +1113,9 @@ class ApiService extends ApiManager {
 	};
 
 	getCustomerSavedCards = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
+		// if (isOnClient()) {
+		// 	this.global.store.dispatch(Actions.setLoader(true));
+		// }
 		const onSuccess = (res) => {
 			this.global.store.dispatch(Actions.setUserCards(res.data.creditCards));
 			typeof props.onSuccess === "function" && props.onSuccess(res.data);
@@ -1124,9 +1125,6 @@ class ApiService extends ApiManager {
 	};
 
 	getCustomerActiveOrder = (props = {}) => {
-		if (isOnClient()) {
-			this.global.store.dispatch(Actions.setLoader(true));
-		}
 		const onSuccess = (res) => {
 			const activeOrder = res.data;
 

@@ -8,104 +8,121 @@ import UnfoldAnimation from "animations/blue-button-open1.json";
 import FoldAnimation from "animations/blue-button-close.json";
 import Price from "../../../../components/Price";
 import clsx from "clsx";
+import DominosLoader from "components/DominosLoader/DominosLoader";
 
 function BlueButton(props) {
-  const {
-    text = "",
-    onClick,
-    className = "",
-    classNameInner,
-    price,
-    priceAfterSale,
-    showPriceBeforeDiscount,
-  } = props;
+	const {
+		text = "",
+		onClick,
+		className = "",
+		classNameInner,
+		price,
+		priceAfterSale,
+		showPriceBeforeDiscount,
+	} = props;
 
-  const [animationState, setAnimationState] = useState("unfold");
+	const [animationState, setAnimationState] = useState("unfold");
+	const [showLoader, setShowLoader] = useState(false);
 
-  function onUnfoldAnimationFinish() {
-    setAnimationState("btn");
-  }
+	function onUnfoldAnimationFinish() {
+		setAnimationState("btn");
+	}
 
-  function onButtonClick() {
-    setAnimationState("fold");
+	function onButtonClick() {
+		setTimeout(() => {
+			setAnimationState("fold");
+		}, 100);
+	}
 
-    setTimeout(() => {
-      onClick();
-    }, 150);
-  }
+	function onFoldAnimationFinish() {
+		if (animationState === "fold") {
+			typeof onClick === "function" && onClick();
+			setTimeout(() => {
+				setShowLoader(true);
+			}, 150);
+		}
+		const timeout = setTimeout(() => {
+			// handle the the case of uncatched error
+			if (animationState === "fold") {
+				setShowLoader(false);
+				setAnimationState("unfold");
+				clearTimeout(timeout);
+			}
+		}, 4000);
+	}
 
-  function onFoldAnimationFinish() {
-    setAnimationState("unfold");
-  }
+	function RenderUnfoldAnimation() {
+		return (
+			<button className={styles["animation-unfolding-wrapper"]}>
+				<LottieAnimation
+					animation={UnfoldAnimation}
+					onComplete={onUnfoldAnimationFinish}
+				/>
+			</button>
+		);
+	}
+	function RenderFoldAnimation() {
+		return (
+			<button className={styles["animation-folding-wrapper"]}>
+				<LottieAnimation
+					animation={FoldAnimation}
+					onComplete={onFoldAnimationFinish}
+				/>
+			</button>
+		);
+	}
 
-  function RenderUnfoldAnimation() {
-    return (
-      <div className={styles["animation-unfolding-wrapper"]}>
-        <LottieAnimation
-          animation={UnfoldAnimation}
-          onComplete={onUnfoldAnimationFinish}
-        />
-      </div>
-    );
-  }
-  function RenderFoldAnimation() {
-    return (
-      <div className={styles["animation-folding-wrapper"]}>
-        <LottieAnimation
-          animation={FoldAnimation}
-          onComplete={onFoldAnimationFinish}
-        />
-      </div>
-    );
-  }
+	function RenderAnimation() {
+		if (animationState === "unfold") {
+			return RenderUnfoldAnimation();
+		} else if (animationState === "fold") {
+			return RenderFoldAnimation();
+		} else if (animationState === "btn") {
+			return RenderButton();
+		}
+	}
 
-  function RenderAnimation() {
-    if (animationState === "unfold") {
-      return RenderUnfoldAnimation();
-    } else if (animationState === "fold") {
-      return RenderFoldAnimation();
-    } else if (animationState === "btn") {
-      return RenderButton();
-    }
-  }
+	function RenderButton() {
+		return (
+			<button
+				className={clsx(styles["blue-btn"])}
+				onClick={onButtonClick}>
+				<div className={clsx(styles["btn-inner"], classNameInner || "")}>
+					<span className={styles["text"]}>{text}</span>
+					{typeof parseInt(price) === "number" && (
+						<div className={styles["prices-wrapper"]}>
+							{showPriceBeforeDiscount && (
+								<Price
+									className={clsx(styles["price"], styles["old-price"])}
+									value={price}
+									currency={"shekel"}
+									mark={true}
+									extraStyles={styles}
+								/>
+							)}
 
-  function RenderButton() {
-    return (
-      <button
-        className={clsx(
-          styles["blue-btn"],
-          styles["btn-wrapper"],
-          styles["blue-btn"]
-        )}
-        onClick={onButtonClick}
-      >
-        <div className={clsx(styles["btn-inner"], classNameInner || "")}>
-          <span className={styles["text"]}>{text}</span>
-          {typeof parseInt(price) === "number" && (
-            <div className={styles["prices-wrapper"]}>
-              {showPriceBeforeDiscount && (
-                <Price
-                  className={clsx(styles["price"], styles["old-price"])}
-                  value={price}
-                  currency={"shekel"}
-                  mark={true}
-                  extraStyles={styles}
-                />
-              )}
-
-              <Price
-                className={clsx(styles["price"], styles["new-price"])}
-                value={priceAfterSale}
-                currency={"shekel"}
-                extraStyles={styles}
-              />
-            </div>
-          )}
-        </div>
-      </button>
-    );
-  }
-  return <div className={className}>{RenderAnimation()}</div>;
+							<Price
+								className={clsx(styles["price"], styles["new-price"])}
+								value={priceAfterSale}
+								currency={"shekel"}
+								extraStyles={styles}
+							/>
+						</div>
+					)}
+				</div>
+			</button>
+		);
+	}
+	return (
+		<div className={className}>
+			{showLoader && (
+				<div className={styles["loader-wrapper"]}>
+					<DominosLoader />
+				</div>
+			)}
+			{RenderAnimation()}
+		</div>
+	);
 }
 
 export default BlueButton;

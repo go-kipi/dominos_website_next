@@ -141,8 +141,8 @@ function Spin(props) {
 			<div className={styles["desktop-wrapper"]}>
 				<div className={clsx(styles["right-side"], titleAnimationClass)}>
 					{RenderTitle()}
-					{RenderButton()}
 					{RenderSkip()}
+					{RenderButton()}
 				</div>
 
 				<div className={styles["left-side"]}>{RenderWheel()}</div>

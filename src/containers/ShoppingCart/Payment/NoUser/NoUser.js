@@ -91,7 +91,6 @@ function NoUser(props) {
 			<Button
 				text={translate("shoppignCart_payment_noUser")}
 				onClick={onBtnClick}
-				animated={false}
 			/>
 			<CartDisclaimer />
 		</div>

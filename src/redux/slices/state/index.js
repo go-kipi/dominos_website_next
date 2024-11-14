@@ -441,6 +441,29 @@ export const isEditMode = createSlice({
 Slices.push(isEditMode);
 
 /* --------------------------------------------------------------- */
+export const isEditGiftCardMode = createSlice({
+	name: "isEditGiftCardMode",
+	initialState: {
+		editStatus: {},
+		isEditMode: false,
+	},
+	reducers: {
+		setIsEditGiftCardMode: (state, action) => {
+			const { uuid, isEdit } = action.payload;
+			state.editStatus[uuid] = isEdit;
+
+			state.isEditMode = Object.values(state.editStatus).some((status) => status);
+		},
+		resetIsEditGiftCardMode: (state) => {
+			state.editStatus = {};
+			state.isEditMode = false;
+		},
+	},
+});
+
+Slices.push(isEditGiftCardMode);
+
+/* --------------------------------------------------------------- */
 export const isInitialRender = createSlice({
 	name: "isInitialRender",
 	initialState: true,

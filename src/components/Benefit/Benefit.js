@@ -148,7 +148,6 @@ function Benefit(props) {
 			<div className={styles["actions"]}>
 				<Button
 					text={translate("benefitsScreen_addBenefitToBasket")}
-					animated={false}
 					disabled={isDisabled}
 					extraStyles={styles}
 					onClick={onClick}

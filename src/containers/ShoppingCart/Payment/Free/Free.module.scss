@@ -1,33 +1,39 @@
 @import "src/styles/imports.scss";
 
 $current: 375;
+
 .free-wrapper {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	.pizza-box-hearts-wrapper {
 		width: vw_size(175, $current);
-		margin-top: vw_size(94, $current);
+		margin-top: vw_size(50, $current);
 	}
+
 	.free-title {
+		font-family: $font-medium;
+		color: #383940;
 		margin-top: vw_size(17, $current);
-		font-family: $font-book;
 		font-size: vw_size(15, $current);
 		line-height: vw_size(27, $current);
-		color: #383940;
 	}
+
 	.free-subtitle {
 		margin-top: vw_size(1, $current);
 		font-family: $font-medium;
 		color: #383940;
 		font-size: vw_size(21, $current);
 	}
+
 	.actions {
 		margin-top: vw_size(78, $current);
 		margin-bottom: vw_size(35, $current);
+
 		&.has-gift-card {
 			margin-top: unset;
 		}
+
 		.button-accept {
 			width: vw_size(284, $current);
 		}
@@ -36,21 +42,24 @@ $current: 375;
 
 @media (min-width: $media-tablet) {
 	$current: $tablet;
+
 	.free-wrapper {
 		.pizza-box-hearts-wrapper {
 			width: vw_size(230, $current);
 			margin-top: vw_size(50, $current);
 		}
+
 		.free-title {
 			margin-top: vw_size(17, $current);
 			font-size: vw_size(15, $current);
 			line-height: vw_size(27, $current);
 		}
+
 		.free-subtitle {
 			margin-top: vw_size(1, $current);
-
 			font-size: vw_size(21, $current);
 		}
+
 		.actions {
 			margin-top: vw_size(78, $current);
 			margin-bottom: vw_size(35, $current);
@@ -64,49 +73,65 @@ $current: 375;
 
 @media (min-width: $media-desktop) {
 	$current: $desktop;
+
 	.free-wrapper {
 		.pizza-box-hearts-wrapper {
-			display: none;
+			width: vw_size(230, $current);
+			margin-top: vw_size(50, $current);
 		}
+
 		.free-title {
-			display: none;
+			margin-top: vw_size(17, $current);
+			font-size: vw_size(15, $current);
+			line-height: vw_size(20, $current);
 		}
+
 		.free-subtitle {
-			display: none;
+			margin-top: vw_size(1, $current);
+			font-size: vw_size(21, $current);
 		}
+
 		&.has-giftcard {
 			.pizza-box-hearts-wrapper,
 			.free-subtitle,
 			.free-title {
 				display: block;
 			}
+
 			.pizza-box-hearts-wrapper {
-				width: vw_size(141, $current);
-				margin-top: vw_size(50, $current);
+				width: vw_size(140, $current);
+				margin-top: vw_size(15, $current);
 			}
+
 			.free-title {
 				margin-top: vw_size(15, $current);
 				font-size: vw_size(15, $current);
 				line-height: vw_size(27, $current);
 				margin-bottom: unset;
 			}
+
 			.free-subtitle {
 				margin-top: unset;
 				font-size: vw_size(21, $current);
 			}
+
 			.actions {
 				margin-bottom: unset;
+
 				.button-accept {
 					margin-top: vw_size(25, $current);
 				}
 			}
 		}
+
 		.actions {
 			&.has-gift-card {
 				margin-top: unset;
 			}
-			margin-top: vw_size(44, $current);
-			margin-bottom: vw_size(60, $current);
+
+			margin-top: vw_size(40, $current);
+			margin-bottom: vw_size(0, $current);
+
 			.button-accept {
 				width: vw_size(260, $current);
 			}
@@ -116,34 +141,57 @@ $current: 375;
 
 @media (min-width: $media-desktop_large) {
 	$current: $desktop_max;
+
 	.free-wrapper {
+		.pizza-box-hearts-wrapper {
+			width: vw_size(230, $current);
+			margin-top: vw_size(60, $current);
+		}
+
+		.free-title {
+			margin-top: vw_size(17, $current);
+			font-size: vw_size(15, $current);
+			line-height: vw_size(20, $current);
+		}
+
+		.free-subtitle {
+			margin-top: vw_size(1, $current);
+			font-size: vw_size(21, $current);
+		}
+
 		&.has-giftcard {
 			.pizza-box-hearts-wrapper,
 			.free-subtitle,
 			.free-title {
 				display: block;
 			}
+
 			.pizza-box-hearts-wrapper {
-				width: vw_size(141, $current);
-				margin-top: vw_size(50, $current);
+				width: vw_size(210, $current);
+				margin-top: vw_size(30, $current);
 			}
+
 			.free-title {
 				margin-top: vw_size(15, $current);
 				font-size: vw_size(15, $current);
 				line-height: vw_size(27, $current);
 			}
+
 			.free-subtitle {
 				font-size: vw_size(21, $current);
 			}
+
 			.actions {
 				.button-accept {
 					margin-top: vw_size(25, $current);
 				}
 			}
 		}
+
 		.actions {
 			margin-top: vw_size(44, $current);
 			margin-bottom: vw_size(60, $current);
+
 			.button-accept {
 				width: vw_size(260, $current);
 			}

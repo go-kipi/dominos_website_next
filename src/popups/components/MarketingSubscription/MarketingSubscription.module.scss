@@ -16,27 +16,29 @@ $current: 375;
 		}
 
 		.text-wrapper {
-			padding: 0 vw_size(10, $current);
 			display: flex;
-			gap: vw_size(50, $current);
 			margin-bottom: vw_size(30, $current);
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 
 			.add-title {
-				margin-bottom: vw_size(-45, $current);
 				font-family: $font-medium;
 				font-size: vw_size(14, $current);
 				color: #404042;
 			}
-			.sub-title {
-				color: #949494;
-				font-family: $font-book;
-				font-size: vw_size(14, $current);
-				text-align: center;
-				padding-inline: vw_size(50, $current);
-				line-height: vw_size(25, $current);
+			.content-wrapper {
+				height: vw_size(230, $current);
+				overflow: scroll;
+
+				.content {
+					color: #949494;
+					font-family: $font-book;
+					font-size: vw_size(14, $current);
+					text-align: center;
+					padding-inline: vw_size(50, $current);
+					line-height: vw_size(25, $current);
+				}
 			}
 			.title {
 				font-family: $font-medium;
@@ -44,6 +46,8 @@ $current: 375;
 				margin-top: 0;
 				text-align: center;
 				color: $blue;
+				margin-bottom: vw_size(10, $current);
+				padding-inline: vw_size(20, $current);
 			}
 			h1,
 			h3 {
@@ -72,22 +76,29 @@ $current: 375;
 			}
 
 			.text-wrapper {
-				padding: 0 vw_size(10, $current);
-				gap: vw_size(30, $current);
 				margin-bottom: vw_size(30, $current);
 
 				.add-title {
-					margin-bottom: vw_size(-25, $current);
 					font-size: vw_size(14, $current);
 				}
 
-				.sub-title {
-					font-size: vw_size(14, $current);
-					padding-inline: vw_size(50, $current);
-					line-height: vw_size(25, $current);
+				.content-wrapper {
+					height: vw_size(230, $current);
+					overflow: scroll;
+
+					.content {
+						color: #949494;
+						font-family: $font-book;
+						font-size: vw_size(14, $current);
+						text-align: center;
+						padding-inline: vw_size(50, $current);
+						line-height: vw_size(25, $current);
+					}
 				}
 				.title {
 					font-size: vw_size(28, $current);
+					margin-bottom: vw_size(10, $current);
+					padding-inline: vw_size(30, $current);
 				}
 				h1,
 				h3 {
@@ -108,7 +119,6 @@ $current: 375;
 		:global(.popup_content) {
 			width: vw_size(550, $current);
 			margin-bottom: vw_size(30, $current);
-			padding-inline: vw_size(80, $current);
 			.icon {
 				width: vw_size(229, $current);
 				margin-top: vw_size(40, $current);
@@ -120,21 +130,24 @@ $current: 375;
 					margin: 0;
 				}
 
-				gap: vw_size(30, $current);
-				margin-bottom: vw_size(30, $current);
-
 				.add-title {
-					margin-bottom: vw_size(-25, $current);
 					font-size: vw_size(14, $current);
 				}
 
-				.sub-title {
-					font-size: vw_size(14, $current);
-					padding-inline: vw_size(50, $current);
-					line-height: vw_size(25, $current);
+				.content-wrapper {
+					height: vw_size(230, $current);
+					overflow: scroll;
+
+					.content {
+						font-size: vw_size(14, $current);
+						padding-inline: vw_size(50, $current);
+						line-height: vw_size(25, $current);
+					}
 				}
 				.title {
 					font-size: vw_size(28, $current);
+					margin-bottom: vw_size(10, $current);
+					padding-inline: vw_size(25, $current);
 				}
 			}
 
@@ -151,7 +164,6 @@ $current: 375;
 		:global(.popup_content) {
 			width: vw_size(550, $current);
 			margin-bottom: vw_size(30, $current);
-			padding-inline: vw_size(80, $current);
 			.icon {
 				width: vw_size(229, $current);
 				margin-top: vw_size(40, $current);
@@ -163,21 +175,24 @@ $current: 375;
 					margin: 0;
 				}
 
-				gap: vw_size(30, $current);
-				margin-bottom: vw_size(30, $current);
-
 				.add-title {
-					margin-bottom: vw_size(-25, $current);
 					font-size: vw_size(14, $current);
 				}
 
-				.sub-title {
-					font-size: vw_size(14, $current);
-					padding-inline: vw_size(50, $current);
-					line-height: vw_size(25, $current);
+				.content-wrapper {
+					height: vw_size(230, $current);
+					overflow: scroll;
+
+					.content {
+						font-size: vw_size(14, $current);
+						padding-inline: vw_size(50, $current);
+						line-height: vw_size(25, $current);
+					}
 				}
 				.title {
 					font-size: vw_size(28, $current);
+					margin-bottom: vw_size(10, $current);
+					padding-inline: vw_size(25, $current);
 				}
 			}
 

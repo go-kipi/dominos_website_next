@@ -21,12 +21,6 @@ function AddCreditCardFullScreenPopup(props) {
 
 	usePostMessage(onSuccess, onError);
 
-	useEffect(() => {
-		return () => {
-			dispatch(Actions.setIsCreditModalOpen(false));
-		};
-	}, []);
-
 	const animateOut = (callback) => {
 		ref.current?.animateOut(callback);
 	};

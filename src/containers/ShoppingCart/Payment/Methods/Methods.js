@@ -7,6 +7,7 @@ import {
 	BitButton,
 	CashButton,
 	CreditCardButton,
+	GiftCardButton,
 	GooglePayButton,
 } from "../MethodPaymentButtons/MethodPaymentButtons";
 
@@ -21,13 +22,18 @@ import { getMobileOperatingSystem, isSafariBrowser } from "utils/functions";
 import Actions from "redux/actions";
 import BitService from "services/Bit";
 import { PROMO_POPUP_STATE_ENUM } from "constants/operational-promo-popups-state";
+import AnalyticsService from "utils/analyticsService/AnalyticsService";
 
 const PAYMENT_BOX_SIZES = {
-	2: { large: 2, medium: 0, small: 0 },
+	1: { large: 1, medium: 0, small: 0 },
+	2: { large: 0, medium: 2, small: 0 },
 	3: { large: 0, medium: 0, small: 3 },
 	4: { large: 0, medium: 4, small: 0 },
 	5: { large: 0, medium: 2, small: 3 },
 	6: { large: 0, medium: 0, small: 6 },
+	7: { large: 0, medium: 4, small: 3 },
+	8: { large: 0, medium: 2, small: 6 },
+	9: { large: 0, medium: 0, small: 9 },
 };
 
 function Methods(props) {
@@ -35,7 +41,8 @@ function Methods(props) {
 	const selectedMethod = useSelector((store) => store.selectedMethod);
 	const {
 		setStack,
-		paymentMethods = [],
+		digitalPaymentMenu = [],
+		paymentMenu = [],
 		setCurrency,
 		getPaymentsPopups = [],
 		leftToPay,
@@ -45,6 +52,8 @@ function Methods(props) {
 		setCurrentButton,
 		submitOrder,
 	} = props;
+	const payments = useSelector((store) => store.payments);
+	const paymentMethodElement = payments?.paymentTypes || [];
 	const deviceState = useSelector((store) => store.deviceState);
 	const userData = useSelector((store) => store.userData);
 	const order = useSelector((store) => store.order);
@@ -52,15 +61,9 @@ function Methods(props) {
 	const isSafari = isSafariBrowser();
 	const didAddGetPaymentsPopups =
 		promoPopupsState === PROMO_POPUP_STATE_ENUM.GET_PAYMENTS;
-	const [filteredPaymentList, setFilteredPaymentList] = useState(paymentMethods);
-
-	const actionClick = {
-		[PAYMENT_METHODS_ACTIONS.BIT]: () => onBitClick(),
-		[PAYMENT_METHODS_ACTIONS.CASH]: () => onCashClick(),
-		[PAYMENT_METHODS_ACTIONS.CREDIT_CARD]: onCreditCardClick,
-		[PAYMENT_METHODS_ACTIONS.GOOGLE_PAY]: (data) => onGooglePayPress(data),
-		[PAYMENT_METHODS_ACTIONS.APPLE_PAY]: (data) => onApplePayPress(data),
-	};
+	const [filteredPaymentList, setFilteredPaymentList] = useState(
+		digitalPaymentMenu.elements,
+	);
 
 	useEffect(() => {
 		if (
@@ -74,47 +77,87 @@ function Methods(props) {
 
 	useEffect(() => {
 		const filterByPlatform = () => {
-			let filteredList = paymentMethods.filter(
-				(method) => method.action !== PAYMENT_METHODS_ACTIONS.GIFT_CARD,
-			);
-			if (isSafari) {
-				filteredList = filteredList.filter(
-					(method) => method.action !== PAYMENT_METHODS_ACTIONS.GOOGLE_PAY,
-				);
-			} else {
-				filteredList = filteredList.filter(
-					(method) => method.action !== PAYMENT_METHODS_ACTIONS.APPLE_PAY,
-				);
+			let filteredList = digitalPaymentMenu?.elements || [];
+			if (filteredList.length > 0) {
+				filteredList = isSafari
+					? filteredList.filter(
+							(method) => method.id !== PAYMENT_METHODS_ACTIONS.GOOGLE_PAY,
+					  )
+					: filteredList.filter(
+							(method) => method.id !== PAYMENT_METHODS_ACTIONS.APPLE_PAY,
+					  );
 			}
 
 			setFilteredPaymentList(filteredList);
 		};
+
 		filterByPlatform();
-	}, [paymentMethods]);
+	}, [digitalPaymentMenu.length, isSafari]);
 
 	function RenderPaymentMethods() {
-		const numberOfMethods = filteredPaymentList.length;
-		const boxSizesObject = PAYMENT_BOX_SIZES[numberOfMethods];
+		const numberOfMethods = filteredPaymentList?.length;
+		if (!numberOfMethods) return;
+		const boxSizesObject = { ...PAYMENT_BOX_SIZES[numberOfMethods] };
 		const components = [];
-
+		const sizePriority = ["large", "medium", "small"];
 		let currentIndex = 0;
+		if (numberOfMethods === 1) {
+			return filteredPaymentList.map((item) => renderMethod(item, "large"));
+		}
 
-		Object.keys(boxSizesObject ?? {}).map((size, index) => {
-			const numberOfSizeItems = boxSizesObject[size];
-			for (let key = 0; key < numberOfSizeItems; key++) {
-				const paymentMethod = filteredPaymentList[currentIndex];
-				const component = RenderMethod(paymentMethod, size);
-				components.push(component);
-				currentIndex++;
+		filteredPaymentList.forEach((item) => {
+			let selectedSize = null;
+
+			// Select the size based on availability from large to small
+			for (let size of sizePriority) {
+				if (boxSizesObject[size] > 0) {
+					selectedSize = size;
+					boxSizesObject[size]--; // Decrement the count for this size
+					break;
+				}
 			}
-			return null;
+
+			if (!selectedSize) {
+				console.warn("No available sizes left, defaulting to small");
+				selectedSize = "small";
+			}
+
+			// Render the item with the selected size
+			const component = renderMethod(item, selectedSize);
+			components.push(component);
+			currentIndex++;
+
+			// Reset index if we've reached the maximum number of items per row
+			if (currentIndex % 3 === 0) {
+				currentIndex = 0;
+			}
 		});
+
 		return components;
 	}
 
-	function basicOnClick({ id, currency }) {
+	function basicOnClick({ id, currency, promoPopups }) {
 		dispatch(Actions.setSelectedMethod(id));
 		setCurrency(currency);
+
+		// ADD A GENERAL CODE:
+		let isStopper = false;
+		if (Array.isArray(promoPopups) && promoPopups.length > 0) {
+			dispatch(Actions.setPromoPopups(promoPopups));
+			isStopper = promoPopups.some((pp) => pp.flowStopper == true);
+			dispatch(Actions.setIsFlowStopper(isStopper));
+			dispatch(Actions.setPromoPopupState(PROMO_POPUP_STATE_ENUM.GET_PAYMENT));
+		}
+
+		if (isStopper) return;
+
+		const [items, listData] = getItemsAndListData();
+		const newList = {
+			...listData,
+			payment_type: id,
+			currency: paymentMethodElement.defaultCurrency,
+		};
+		AnalyticsService.addPaymentInfo(items, newList);
 	}
 
 	function onCashClick() {
@@ -123,15 +166,15 @@ function Methods(props) {
 	}
 
 	function onBitClick() {
-		const bitMethod = paymentMethods.filter(
-			(paymentMethod) => paymentMethod.id === PAYMENT_METHODS.BIT,
-		)[0];
+		const currency = paymentMethodElement.find(
+			(el) => el.id === PAYMENT_METHODS.BIT,
+		)?.defaultCurrency;
+
 		const payload = {
 			paymentMethod: PAYMENT_METHODS.BIT,
 			amount: leftToPay,
-			currency: bitMethod.defaultCurrency,
+			currency: currency,
 		};
-
 		dispatch(Actions.setLoader(true));
 		Api.addPayment({
 			payload,
@@ -168,7 +211,8 @@ function Methods(props) {
 		});
 	}
 
-	function onCreditCardClick({ currency }) {
+	function onCreditCardClick(props) {
+		const { currency } = props;
 		const payload = {
 			type: PAYMENT_SCREEN_TYPES.CREDIT_CARD,
 			params: {
@@ -219,13 +263,22 @@ function Methods(props) {
 	}
 
 	function onApplePayPress(requestData) {
+		const getApplePayPaymentData = (data) => {
+			let tempData = {};
+			if (data && typeof data === "object") {
+				tempData = JSON.parse(JSON.stringify(data));
+				tempData.total.amount = leftToPay;
+			}
+			return tempData;
+		};
+
 		ApplePayService.isApplePayAvailable().then((canMakePayments) => {
 			if (canMakePayments) {
 				ApplePayService.setTransactionInfo(requestData);
 				const payload = {
 					type: PAYMENT_SCREEN_TYPES.APPLE_PAY,
 					params: {
-						paymentMethods,
+						paymentMenu: paymentMethodElement,
 						leftToPay,
 					},
 				};
@@ -234,31 +287,69 @@ function Methods(props) {
 		});
 	}
 
-	function RenderMethod(paymentMethod, size) {
-		const method = paymentMethod.id;
-		const isSelected = method === selectedMethod;
-		const action = paymentMethod.action;
-		const extraData = paymentMethod.extraData;
-		const currency = paymentMethod.defaultCurrency;
-		const promoPopups = paymentMethod?.popups;
-		const onClickButton = actionClick[action];
+	function onGiftCardClick() {
+		const payload = { type: PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS, params: {} };
+		setStack(payload);
+	}
 
+	function onClickByActionType(actionType, id) {
+		const paymentActions = {
+			[PAYMENT_METHODS.CREDIT_CARD]: (data) => onCreditCardClick(data),
+			[PAYMENT_METHODS.BIT]: () => onBitClick(),
+			[PAYMENT_METHODS.GOOGLE_PAY]: (data) => onGooglePayPress(data),
+			[PAYMENT_METHODS.APPLE_PAY]: (data) => onApplePayPress(data),
+			[PAYMENT_METHODS.CASH]: () => onCashClick(),
+		};
+
+		switch (actionType) {
+			case "payment":
+				if (paymentActions[id]) {
+					return paymentActions[id]; // Return the appropriate function for the payment method
+				} else {
+					console.warn("Unknown payment method:", id);
+					return null;
+				}
+
+			case "subMenu":
+				return () => onGiftCardClick();
+
+			default:
+				return () => {
+					console.warn("Action type was not recognized:", actionType);
+				};
+		}
+	}
+
+	function renderMethod(paymentMethod, size) {
+		const { actionType, id: method, action } = paymentMethod;
+		const isSelected = method === selectedMethod;
+
+		const paymentMethodData = paymentMethodElement.find((el) => el.id === method);
+		const currency = paymentMethodData?.defaultCurrency;
+		const extraData = paymentMethodData?.extraData;
+
+		const promoPopups = paymentMethodData?.popups;
+		console.log("promoPopups", promoPopups);
+		const onClickButton = onClickByActionType(actionType, method);
 		const btnProps = {
 			size,
 			isSelected,
 			className: styles["method-payment-button"],
-			onClick: () => basicOnClick({ id: method, currency }),
+			onClick: () => basicOnClick({ id: method, currency }, promoPopups),
 			key: "method-" + method,
-			paymentMethod,
+			paymentMethodElement,
+			paymentMethod: paymentMethodData,
 			onClickButton,
 			extraData,
 			leftToPay,
 			setShowGPay,
 			promoPopups,
 			getItemsAndListData,
+			paymentMenu,
 		};
+
 		switch (method) {
-			case PAYMENT_METHODS.APPPLE_PAY:
+			case PAYMENT_METHODS.APPLE_PAY:
 				return <ApplePayButton {...btnProps} />;
 			case PAYMENT_METHODS.GOOGLE_PAY:
 				return <GooglePayButton {...btnProps} />;
@@ -273,6 +364,8 @@ function Methods(props) {
 						{...btnProps}
 					/>
 				);
+			case PAYMENT_METHODS.GIFT_CARD:
+				return <GiftCardButton {...btnProps} />;
 			default:
 				return null;
 		}

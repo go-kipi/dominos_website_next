@@ -8,18 +8,22 @@ $current: $mobile;
 	top: vw_size(50, $current);
 	@include right(vw_size(30, $current));
 	width: 85%;
+
 	:nth-child(1) {
 		margin-inline-end: auto;
 	}
+
 	:nth-child(2) {
 		margin-inline-start: auto;
 	}
+
 	.icon {
 		cursor: pointer;
 		width: vw_size(25, $current);
 		height: vw_size(25, $current);
 	}
 }
+
 .tracker-wrapper {
 	&::before {
 		content: "";
@@ -30,34 +34,38 @@ $current: $mobile;
 		width: 100%;
 		height: vw_size(100, $current);
 		pointer-events: none;
-		background: linear-gradient(
-			rgba(0, 0, 0, 0) 0%,
-			rgba(0, 0, 0, 0.93) 100%,
-			rgba(0, 0, 0, 1) 100%
-		);
+		background: linear-gradient(rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 0.93) 100%,
+				rgba(0, 0, 0, 1) 100%);
+
 		&.ios {
 			bottom: 60%;
 		}
 	}
+
 	.map-container {
 		position: fixed;
 		height: 53vh;
 		width: 100%;
 		top: 0;
 		left: 0;
+
 		.delivery-marker {
 			height: vw_size(41, $current);
 			width: vw_size(49, $current);
 		}
+
 		.target-marker {
 			height: vw_size(33, $current);
 			width: vw_size(33, $current);
 		}
+
 		.store-marker {
 			height: vw_size(33, $current);
 			width: vw_size(33, $current);
 		}
 	}
+
 	.video-background {
 		position: fixed;
 		top: 0;
@@ -68,6 +76,7 @@ $current: $mobile;
 		height: 52%;
 		object-fit: cover;
 	}
+
 	.tracker-modal {
 		position: fixed;
 		width: 100%;
@@ -79,25 +88,30 @@ $current: $mobile;
 		z-index: 350;
 		overflow: hidden;
 		transition: 350ms ease-in-out;
+
 		&.cancel {
 			height: 80%;
 		}
+
 		.order-finished-bonappetit {
 			font-family: $font-medium;
 			font-size: vw_size(23, $current);
 			text-align: center;
 			margin: vw_size(90, $current) auto;
 		}
+
 		.cancelled-order-wrapper {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			margin-top: vw_size(150, $current);
+
 			.cancelled-icon {
 				height: vw_size(104, $current);
 				width: vw_size(113, $current);
 			}
+
 			.cancelled-order-title {
 				margin-top: vw_size(33, $current);
 				font-family: $font-medium;
@@ -106,22 +120,26 @@ $current: $mobile;
 				text-align: center;
 				width: vw_size(204, $current);
 			}
+
 			.cancelled-order-btn {
 				margin-top: vw_size(55, $current);
 				width: vw_size(190, $current);
 				height: vw_size(44, $current);
 			}
 		}
+
 		.invalid-order-wrapper {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			margin-top: vw_size(50, $current);
+
 			.hourglass-icon {
 				height: vw_size(70, $current);
 				width: vw_size(70, $current);
 			}
+
 			.invalid-order-title {
 				margin-top: vw_size(30, $current);
 				font-family: $font-medium;
@@ -130,12 +148,14 @@ $current: $mobile;
 				text-align: center;
 				width: vw_size(204, $current);
 			}
+
 			.invalid-order-btn {
 				margin-top: vw_size(30, $current);
 				width: vw_size(190, $current);
 				height: vw_size(44, $current);
 			}
 		}
+
 		.wrapper {
 			position: relative;
 			height: 100%;
@@ -146,14 +166,17 @@ $current: $mobile;
 			.filler {
 				flex: 1;
 			}
+
 			.tracker-map-image {
 				width: 100%;
 				position: absolute;
 				bottom: 0;
+
 				img {
 					object-fit: cover;
 				}
 			}
+
 			.content {
 				height: 100%;
 				width: 100%;
@@ -162,6 +185,7 @@ $current: $mobile;
 				z-index: 100;
 			}
 		}
+
 		.linear-gradient {
 			z-index: 105;
 			position: absolute;
@@ -176,14 +200,17 @@ $current: $mobile;
 				display: flex;
 				align-items: flex-start;
 				justify-content: space-evenly;
+
 				.text-wrapper {
 					display: flex;
 					flex-direction: column;
+
 					.meanwhile-text {
 						font-family: $font-bold;
 						font-size: vw_size(18, $current);
 						margin-top: vw_size(25, $current);
 					}
+
 					.save-pizza-text {
 						color: #717171;
 						font-family: $font;
@@ -191,6 +218,7 @@ $current: $mobile;
 						width: 85%;
 					}
 				}
+
 				.save-pizza-btn {
 					display: flex;
 					justify-content: center;
@@ -199,35 +227,43 @@ $current: $mobile;
 					height: vw_size(38, $current);
 					margin: auto;
 				}
+
 				.save-pizza-lottie {
 					margin-top: vw_size(50, $current);
 					width: vw_size(40, $current);
+
 					&.saved {
 						margin-top: vw_size(20, $current);
 					}
 				}
 			}
 		}
+
 		&.done {
 			transition: 500ms ease-in-out;
 			height: vw_size(545, $current);
 		}
+
 		.tracker-top-section {
 			position: absolute;
 			top: vh_size(-10, $current);
 			width: 100%;
+
 			&.arriving {
 				top: vh_size(5, $current);
+
 				.icons-container {
 					top: vh_size(10, $current);
 				}
 			}
+
 			.pre-order-lottie {
 				margin: auto;
 				height: vw_size(67, $current);
 				width: vw_size(68, $current);
 				margin-bottom: vw_size(15, $current);
 			}
+
 			.arriving-title {
 				font-family: $font-book;
 				color: black;
@@ -236,6 +272,7 @@ $current: $mobile;
 				margin: unset;
 				margin-top: vw_size(20, $current);
 			}
+
 			.arriving-subtitle {
 				margin: unset;
 				margin-top: vw_size(12, $current);
@@ -244,6 +281,7 @@ $current: $mobile;
 				font-size: vw_size(40, $current);
 				text-align: center;
 			}
+
 			.title {
 				display: block;
 				font-weight: unset;
@@ -254,10 +292,12 @@ $current: $mobile;
 				width: 100%;
 				margin: auto;
 			}
+
 			.eta-wrapper {
 				display: flex;
 				justify-content: center;
 				align-items: baseline;
+
 				.eta-number-style {
 					display: block;
 					text-align: center;
@@ -265,6 +305,7 @@ $current: $mobile;
 					font-size: vw_size(75, $current);
 					margin: unset;
 				}
+
 				.minutes-style {
 					display: block;
 					text-align: center;
@@ -274,6 +315,7 @@ $current: $mobile;
 					margin-inline-start: vw_size(5, $current);
 				}
 			}
+
 			.eta-arrival {
 				display: block;
 				text-align: center;
@@ -281,6 +323,7 @@ $current: $mobile;
 				font-family: $font-medium;
 				color: #5f6a73;
 			}
+
 			.future-order-title {
 				font-size: vw_size(14, $current);
 				font-family: $font-book;
@@ -290,6 +333,7 @@ $current: $mobile;
 				margin: unset;
 				margin-bottom: vw_size(6, $current);
 			}
+
 			.future-order-subtitle {
 				font-family: $font-medium;
 				color: black;
@@ -301,16 +345,19 @@ $current: $mobile;
 				width: 90%;
 			}
 		}
+
 		.finished-order-wrapper {
 			position: absolute;
 			top: vw_size(165, $current);
 			left: 50%;
 			transform: translateX(-48%);
+
 			.finished-animation {
 				margin: auto;
 				width: vw_size(240, $current);
 				height: vw_size(240, $current);
 			}
+
 			.pickup-ready-wrapper {
 				.pickup-ready-text {
 					text-align: center;
@@ -319,6 +366,7 @@ $current: $mobile;
 					width: vw_size(200, $current);
 					margin: auto;
 				}
+
 				.pickup-ready-subtext {
 					text-align: center;
 					font-size: vw_size(16, $current);
@@ -326,6 +374,7 @@ $current: $mobile;
 					width: vw_size(200, $current);
 					margin: auto;
 				}
+
 				.navigation-wrapper {
 					cursor: pointer;
 					margin: auto;
@@ -335,10 +384,12 @@ $current: $mobile;
 					justify-content: center;
 					width: 100%;
 					height: 30%;
+
 					.navigation-icon {
 						width: vw_size(50, $current);
 						height: vw_size(50, $current);
 					}
+
 					.navigation-text {
 						font-family: $font;
 						font-size: vw_size(16, $current);
@@ -346,6 +397,7 @@ $current: $mobile;
 					}
 				}
 			}
+
 			&.pickup {
 				top: vw_size(120, $current);
 			}
@@ -355,59 +407,71 @@ $current: $mobile;
 
 @media (min-width: $media-tablet) {
 	$current: $tablet;
+
 	.icons-container {
 		display: flex;
 		position: relative;
 		top: vw_size(12, $current);
 		@include right(vw_size(30, $current));
+
 		:nth-child(1) {
 			margin-inline-end: auto;
 		}
+
 		:nth-child(2) {
 			margin-inline-start: auto;
 		}
+
 		.icon {
 			cursor: pointer;
 			width: vw_size(25, $current);
 			height: vw_size(25, $current);
 		}
 	}
+
 	.tracker-wrapper {
 		&::before {
 			display: none;
 		}
+
 		.video-background {
 			height: 100%;
 		}
+
 		.tracker-modal {
-			margin: vw_size(122, $current) vw_size(86, $current) vw_size(57, $current)
-				vw_size(0, $current);
+			margin: vw_size(122, $current) vw_size(86, $current) vw_size(57, $current) vw_size(0, $current);
 			margin-top: unset;
 			border-radius: vw_size(14, $current);
 			height: vh_size(450, $current);
 			max-height: vh_size(480, $current);
 			max-width: vw_size(541, $current);
+
 			.order-finished-bonappetit {
 				font-size: vw_size(23, $current);
 				margin: vw_size(50, $current) auto;
 			}
+
 			&.cancel {
 				height: unset;
 			}
+
 			.save-pizza-wrapper {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				padding-bottom: vh_size(15, $current);
+
 				.text-wrapper {
 					margin-bottom: vw_size(10, $current);
 					margin-top: vw_size(85, $current);
+
 					.meanwhile-text {
 						text-align: center;
 						font-family: $font-bold;
 						font-size: vw_size(18, $current);
 					}
+
 					.save-pizza-text {
 						font-size: vw_size(14, $current);
 						color: #717171;
@@ -418,67 +482,82 @@ $current: $mobile;
 						margin-top: vw_size(15, $current);
 					}
 				}
+
 				.save-pizza-btn {
 					width: vw_size(85, $current);
 					height: vw_size(38, $current);
 					margin: auto;
 				}
+
 				.save-pizza-lottie {
 					margin-top: 0;
 
 					width: vw_size(40, $current);
 				}
 			}
+
 			.tracker-top-section {
 				position: unset;
 				top: vw_size(-20, $current);
 				padding: vw_size(16, $current);
+
 				.pre-order-lottie {
 					height: vw_size(67, $current);
 					width: vw_size(68, $current);
 					margin-bottom: vw_size(25, $current);
 				}
+
 				.arriving-title {
 					font-size: vw_size(30, $current);
 					margin-top: vw_size(20, $current);
 				}
+
 				.arriving-subtitle {
 					margin-top: vw_size(12, $current);
 					font-size: vw_size(40, $current);
 				}
+
 				.title {
 					font-size: vw_size(15, $current);
 				}
+
 				.eta-wrapper {
 					.eta-number-style {
 						font-size: vw_size(75, $current);
 					}
+
 					.minutes-style {
 						font-size: vw_size(15, $current);
 						margin-inline-start: unset;
 					}
 				}
+
 				.eta-arrival {
 					font-size: vw_size(15, $current);
 					margin-top: vw_size(5, $current);
 				}
+
 				.future-order-title {
 					font-size: vw_size(14, $current);
 					line-height: vw_size(20, $current);
 				}
+
 				.future-order-subtitle {
 					font-size: vw_size(18, $current);
 					line-height: vw_size(20, $current);
 				}
 			}
+
 			.finished-order-wrapper {
 				position: absolute;
 				top: vw_size(130, $current);
+
 				.finished-animation {
 					margin: auto;
 					width: vw_size(240, $current);
 					height: vw_size(240, $current);
 				}
+
 				.pickup-ready-wrapper {
 					.pickup-ready-text {
 						text-align: center;
@@ -487,10 +566,12 @@ $current: $mobile;
 						width: vw_size(200, $current);
 						margin: auto;
 					}
+
 					.pickup-ready-subtext {
 						font-size: vw_size(16, $current);
 						width: vw_size(200, $current);
 					}
+
 					.navigation-wrapper {
 						margin: auto;
 						display: flex;
@@ -499,10 +580,12 @@ $current: $mobile;
 						justify-content: center;
 						width: 100%;
 						height: 30%;
+
 						.navigation-icon {
 							width: vw_size(50, $current);
 							height: vw_size(50, $current);
 						}
+
 						.navigation-text {
 							font-family: $font;
 							font-size: vw_size(16, $current);
@@ -510,42 +593,52 @@ $current: $mobile;
 						}
 					}
 				}
+
 				&.pickup {
 					top: vw_size(150, $current);
 				}
 			}
+
 			.wrapper {
 				height: 100%;
 				overflow: auto;
 			}
+
 			.cancelled-order-wrapper {
 				margin-top: vw_size(90, $current);
+
 				.cancelled-icon {
 					height: vw_size(104, $current);
 					width: vw_size(113, $current);
 				}
+
 				.cancelled-order-title {
 					margin-top: vw_size(33, $current);
 					font-size: vw_size(23, $current);
 					width: vw_size(204, $current);
 				}
+
 				.cancelled-order-btn {
 					margin-top: vw_size(55, $current);
 					width: vw_size(190, $current);
 					height: vw_size(44, $current);
 				}
 			}
+
 			.invalid-order-wrapper {
 				margin-top: vw_size(100, $current);
+
 				.hourglass-icon {
 					height: vw_size(70, $current);
 					width: vw_size(70, $current);
 				}
+
 				.invalid-order-title {
 					margin-top: vw_size(30, $current);
 					font-size: vw_size(23, $current);
 					width: vw_size(204, $current);
 				}
+
 				.invalid-order-btn {
 					margin-top: vw_size(30, $current);
 					width: vw_size(190, $current);
@@ -558,26 +651,32 @@ $current: $mobile;
 
 @media (min-width: $media-desktop) {
 	$current: $desktop;
+
 	.icons-container {
 		width: 84%;
 		display: flex;
 		position: relative;
 		top: vw_size(12, $current);
 		@include right(vw_size(30, $current));
+
 		:nth-child(1) {
 			margin-inline-end: auto;
 		}
+
 		:nth-child(2) {
 			margin-inline-start: auto;
 		}
+
 		.icon {
 			cursor: pointer;
 			width: vw_size(25, $current);
 			height: vw_size(25, $current);
 		}
 	}
+
 	.tracker-wrapper {
 		height: 100%;
+
 		.tracker-modal {
 			overflow: hidden;
 			position: relative;
@@ -588,135 +687,166 @@ $current: $mobile;
 			max-width: vw_size(384, $current);
 			margin: unset;
 			margin-inline-start: vw_size(86, $current);
+
 			&.done {
 				height: vw_size(545, $current);
 			}
+
 			.wrapper {
 				position: unset;
+
 				.content {
 					position: relative;
 				}
 			}
+
 			.order-finished-bonappetit {
 				font-family: $font;
 				font-size: vw_size(25, $current);
 				margin: vw_size(70, $current) auto;
 			}
+
 			.cancelled-order-wrapper {
-				background-color: white;
-				height: 100%;
-				margin-top: vw_size(45, $current);
+				margin-top: vw_size(20, $current);
 				.cancelled-icon {
 					height: vw_size(115, $current);
 					width: vw_size(124, $current);
 				}
+
 				.cancelled-order-title {
 					margin-top: vw_size(12, $current);
 					font-size: vw_size(23, $current);
+					font-family: $font-bold;
 					width: vw_size(204, $current);
 				}
+
 				.cancelled-order-btn {
 					margin-top: vw_size(44, $current);
 					width: vw_size(190, $current);
 					height: vw_size(44, $current);
 				}
 			}
+
 			.invalid-order-wrapper {
 				margin-top: vw_size(10, $current);
+
 				.hourglass-icon {
 					height: vw_size(70, $current);
 					width: vw_size(70, $current);
 				}
+
 				.invalid-order-title {
 					font-family: $font-bold;
 					margin-top: vw_size(55, $current);
 					font-size: vw_size(18, $current);
 					width: vw_size(204, $current);
 				}
+
 				.invalid-order-btn {
 					margin-top: vw_size(37, $current);
 					width: vw_size(190, $current);
 					height: vw_size(44, $current);
 				}
 			}
+
 			.tracker-top-section {
 				padding: vw_size(10, $current);
 				height: vw_size(130, $current);
+
 				// margin-top: vw_size(25, $current);
 				.arriving-title {
 					font-size: vw_size(30, $current);
 					margin-top: vw_size(20, $current);
 				}
+
 				.arriving-subtitle {
 					margin-top: vw_size(5, $current);
 					font-size: vw_size(40, $current);
 				}
+
 				.pre-order-lottie {
 					height: vw_size(67, $current);
 					width: vw_size(68, $current);
 					margin-bottom: vw_size(25, $current);
 				}
+
 				.title {
 					font-size: vw_size(15, $current);
 				}
+
 				.eta-wrapper {
 					flex-direction: column;
 					align-items: center;
+
 					.eta-number-style {
 						font-size: vw_size(75, $current);
 					}
+
 					.minutes-style {
 						font-size: vw_size(15, $current);
 					}
 				}
+
 				.eta-arrival {
 					font-size: vw_size(15, $current);
 					margin-top: vw_size(5, $current);
 				}
+
 				.future-order-title {
 					line-height: vw_size(20, $current);
 					font-size: vw_size(14, $current);
 				}
+
 				.future-order-subtitle {
 					font-family: $font-bold;
 					font-size: vw_size(18, $current);
 					line-height: vw_size(20, $current);
 				}
 			}
+
 			.finished-order-wrapper {
 				position: unset;
 				transform: unset;
+
 				.finished-animation {
 					top: vw_size(145, $current);
 					left: vw_size(78, $current);
 					width: vw_size(240, $current);
 					height: vw_size(190, $current);
 				}
+
 				&.pickup {
 					top: vw_size(150, $current);
 					transform: unset;
+
 					.finished-animation {
 						left: vw_size(72, $current);
 						height: vw_size(120, $current);
 					}
+
 					.pickup-ready-wrapper {
 						margin: auto;
+
 						.pickup-ready-text {
 							font-size: vw_size(16, $current);
 							width: vw_size(200, $current);
 						}
+
 						.pickup-ready-subtext {
 							font-size: vw_size(16, $current);
 							width: vw_size(200, $current);
 						}
+
 						.navigation-wrapper {
 							width: 100%;
 							height: 30%;
 							margin-top: vw_size(10, $current);
+
 							.navigation-icon {
 								width: vw_size(50, $current);
 								height: vw_size(50, $current);
 							}
+
 							.navigation-text {
 								font-family: $font;
 								font-size: vw_size(16, $current);
@@ -725,31 +855,38 @@ $current: $mobile;
 					}
 				}
 			}
+
 			.save-pizza-wrapper {
 				padding-bottom: vw_size(25, $current);
 				margin-top: vw_size(45, $current);
+
 				.text-wrapper {
 					margin-top: vw_size(20, $current);
 					margin-bottom: vw_size(10, $current);
+
 					.meanwhile-text {
 						font-size: vw_size(18, $current);
 					}
+
 					.save-pizza-text {
 						font-size: vw_size(14, $current);
 						margin-top: vw_size(5, $current);
 						width: 85%;
 					}
 				}
+
 				.save-pizza-btn {
 					margin-top: vw_size(15, $current);
 					width: vw_size(70, $current);
 					height: vw_size(38, $current);
 				}
+
 				.save-pizza-lottie {
 					width: vw_size(40, $current);
 				}
 			}
 		}
+
 		.map-container {
 			position: fixed;
 			height: 100vh;
@@ -757,14 +894,17 @@ $current: $mobile;
 			top: 0;
 			left: 0;
 			z-index: 0;
+
 			.delivery-marker {
 				height: vw_size(31, $current);
 				width: vw_size(46, $current);
 			}
+
 			.target-marker {
 				height: vw_size(33, $current);
 				width: vw_size(33, $current);
 			}
+
 			.store-marker {
 				height: vw_size(33, $current);
 				width: vw_size(33, $current);
@@ -775,113 +915,140 @@ $current: $mobile;
 
 @media (min-width: $media-desktop-large) {
 	$current: $desktop-large;
+
 	.icons-container {
 		display: flex;
 		position: relative;
 		top: vw_size(12, $current);
 		@include right(vw_size(30, $current));
+
 		:nth-child(1) {
 			margin-inline-end: auto;
 		}
+
 		:nth-child(2) {
 			margin-inline-start: auto;
 		}
+
 		.icon {
 			cursor: pointer;
 			width: vw_size(25, $current);
 			height: vw_size(25, $current);
 		}
 	}
+
 	.tracker-wrapper {
 		.tracker-modal {
 			border-radius: vw_size(14, $current);
 			max-width: vw_size(384, $current);
 			margin-inline-start: vw_size(86, $current);
+
 			.wrapper {
 				overflow: unset;
 			}
+
 			&.done {
 				height: vw_size(580, $current);
 			}
+
 			.cancelled-order-wrapper {
-				margin-top: vw_size(20, $current);
+				margin-top: vw_size(5, $current);
+
 				.cancelled-icon {
 					height: vw_size(115, $current);
 					width: vw_size(124, $current);
 				}
+
 				.cancelled-order-title {
 					margin-top: vw_size(12, $current);
 					font-size: vw_size(23, $current);
 					width: vw_size(204, $current);
 				}
+
 				.cancelled-order-btn {
 					margin-top: vw_size(44, $current);
 					width: vw_size(190, $current);
 					height: vw_size(44, $current);
 				}
 			}
+
 			.invalid-order-wrapper {
 				margin-top: vw_size(15, $current);
+
 				.hourglass-icon {
 					height: vw_size(70, $current);
 					width: vw_size(70, $current);
 				}
+
 				.invalid-order-title {
 					margin-top: vw_size(55, $current);
 					font-size: vw_size(18, $current);
 					width: vw_size(204, $current);
 				}
+
 				.invalid-order-btn {
 					margin-top: vw_size(37, $current);
 					width: vw_size(190, $current);
 					height: vw_size(44, $current);
 				}
 			}
+
 			.order-finished-bonappetit {
 				font-size: vw_size(25, $current);
 				margin: vw_size(70, $current) auto;
 			}
+
 			.tracker-top-section {
 				padding: vw_size(16, $current);
 				height: vw_size(130, $current);
+
 				// margin-top: vw_size(35, $current);
 				.arriving-title {
 					font-size: vw_size(30, $current);
 					margin-top: vw_size(20, $current);
 				}
+
 				.arriving-subtitle {
 					margin-top: vw_size(5, $current);
 					font-size: vw_size(40, $current);
 				}
+
 				.pre-order-lottie {
 					height: vw_size(67, $current);
 					width: vw_size(68, $current);
 					margin-bottom: vw_size(25, $current);
 				}
+
 				.title {
 					font-size: vw_size(15, $current);
 				}
+
 				.eta-wrapper {
 					.eta-number-style {
 						font-size: vw_size(75, $current);
 					}
+
 					.minutes-style {
 						font-size: vw_size(15, $current);
 					}
 				}
+
 				.eta-arrival {
 					font-size: vw_size(15, $current);
 					margin-top: vw_size(5, $current);
 				}
+
 				.future-order-title {
 					line-height: vw_size(20, $current);
 					font-size: vw_size(14, $current);
 				}
+
 				.future-order-subtitle {
 					font-size: vw_size(18, $current);
 					line-height: vw_size(20, $current);
 				}
 			}
+
 			.finished-order-wrapper {
 				.finished-animation {
 					top: vw_size(130, $current);
@@ -889,32 +1056,40 @@ $current: $mobile;
 					width: vw_size(240, $current);
 					height: vw_size(240, $current);
 				}
+
 				&.pickup {
 					top: vw_size(150, $current);
+
 					.finished-animation {
 						left: vw_size(75, $current);
 						top: vw_size(155, $current);
 						width: vw_size(240, $current);
 						height: vw_size(160, $current);
 					}
+
 					.pickup-ready-wrapper {
 						margin: auto;
+
 						.pickup-ready-text {
 							font-size: vw_size(16, $current);
 							font-family: $font-book;
 							width: vw_size(200, $current);
 						}
+
 						.pickup-ready-subtext {
 							font-family: $font-bold;
 							font-size: vw_size(16, $current);
 							width: vw_size(200, $current);
 						}
+
 						.navigation-wrapper {
 							margin-top: vw_size(10, $current);
+
 							.navigation-icon {
 								width: vw_size(50, $current);
 								height: vw_size(50, $current);
 							}
+
 							.navigation-text {
 								font-family: $font;
 								font-size: vw_size(16, $current);
@@ -923,40 +1098,49 @@ $current: $mobile;
 					}
 				}
 			}
+
 			.save-pizza-wrapper {
 				padding-bottom: unset;
 				margin-top: vw_size(40, $current);
+
 				.text-wrapper {
 					margin-top: vw_size(20, $current);
 					margin-bottom: vw_size(10, $current);
+
 					.meanwhile-text {
 						font-size: vw_size(18, $current);
 					}
+
 					.save-pizza-text {
 						font-size: vw_size(14, $current);
 						margin-top: vw_size(5, $current);
 						width: 85%;
 					}
 				}
+
 				.save-pizza-btn {
 					margin-top: vw_size(15, $current);
 					width: vw_size(70, $current);
 					height: vw_size(38, $current);
 				}
+
 				.save-pizza-lottie {
 					width: vw_size(40, $current);
 				}
 			}
 		}
+
 		.map-container {
 			.delivery-marker {
 				height: vw_size(31, $current);
 				width: vw_size(46, $current);
 			}
+
 			.target-marker {
 				height: vw_size(33, $current);
 				width: vw_size(33, $current);
 			}
+
 			.store-marker {
 				height: vw_size(33, $current);
 				width: vw_size(33, $current);

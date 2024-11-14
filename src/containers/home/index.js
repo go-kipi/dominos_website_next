@@ -36,6 +36,7 @@ import { TAB_INDEX_FOCUS } from "../../constants/accessibility-types";
 import SRContent from "../../components/accessibility/srcontent";
 import { createAccessibilityText } from "../../components/accessibility/acfunctions";
 import MARKETING_TYPES from "constants/Marketing-types";
+import { Store } from "redux/store";
 
 export default function HomePage() {
 	const translate = useTranslate();
@@ -53,8 +54,6 @@ export default function HomePage() {
 	const promotionalAndOperationalPopups = useSelector(
 		(store) => store.promoPopups,
 	);
-
-	const showOnboarding = !user.verifiedOTP;
 
 	const bthnLang = getBTHNLang(generalData.lang);
 	const isBlockedDeliveryPopup = useRef(false);
@@ -223,8 +222,8 @@ export default function HomePage() {
 		);
 	};
 
-	function openDeliveryPopup() {
-		if (showOnboarding) {
+	function openDeliveryPopup(verifiedOTP) {
+		if (!verifiedOTP) {
 			openOnBoardingPopup();
 		} else {
 			dispatch(
@@ -238,7 +237,9 @@ export default function HomePage() {
 	}
 
 	function onOrderButtonsClick(isPickup) {
-		const method = !showOnboarding ? "already_sign_up" : "first_time_on_app";
+		const { verifiedOTP } = Store.getState().userData; // For preventing user data clousre (getting prev user when login from drawer)
+
+		const method = !verifiedOTP ? "already_sign_up" : "first_time_on_app";
 		AnalyticsService.onBoardingMethod(method);
 		AnalyticsService.homepage("order funnel");
 		AnalyticsService.chooseShipping(isPickup ? "pickup" : "shipping");
@@ -265,7 +266,7 @@ export default function HomePage() {
 			dispatch(Actions.updateOrder({ isPickup: isPickup }));
 			const onSuccess = (res) => {
 				if (!Array.isArray(res.popups)) {
-					openDeliveryPopup();
+					openDeliveryPopup(verifiedOTP);
 				} else isBlockedDeliveryPopup.current = true;
 			};
 			const payload = { subService: isPickup ? "pu" : "dlv" };
@@ -311,8 +312,8 @@ export default function HomePage() {
 							bluePillText={translate("pickup_label")}
 							redPillText={translate("delivery_label")}
 							className={styles["animated-capsule-delivery-type"]}
-							redPillOnPress={onOrderButtonsClick.bind(this, false)} // Delivery
-							bluePillOnPress={onOrderButtonsClick.bind(this, true)} // Pickup
+							redPillOnPress={() => onOrderButtonsClick(false)} // Delivery
+							bluePillOnPress={() => onOrderButtonsClick(true)} // Pickup
 						/>
 					)}
 				</div>

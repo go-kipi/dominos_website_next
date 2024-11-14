@@ -6,13 +6,14 @@ $current: 375;
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
+	margin-top: vw_size(30, $current);
 	.choose-payment-title {
 		margin: 0;
-		margin-top: vw_size(31, $current);
 		color: $red;
-		font-family: $font-medium;
+		font-family: $font;
 		font-size: vw_size(20, $current);
-		margin-inline: vw_size(20, $current);
+		margin: vw_size(31, $current) vw_size(20, $current) vw_size(20, $current)
+			vw_size(20, $current);
 		text-align: center;
 	}
 	.gift-card-title {
@@ -22,6 +23,84 @@ $current: 375;
 		font-size: vw_size(14, $current);
 		margin: vw_size(51, $current) 0 vw_size(20, $current);
 	}
+
+	.left-to-pay-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: vw-size(45, $current);
+		// margin-bottom: vw-size(23, $current);
+		.left-to-pay-title {
+			font-family: $font-book;
+		}
+		.payment-price {
+			color: rgba(56, 57, 64, 1);
+			font-size: vw_size(38, $current);
+			letter-spacing: vw_size(0.38, $current);
+
+			.dig-price {
+				font-size: vw_size(38, $current);
+				letter-spacing: vw_size(0.24, $current);
+			}
+
+			.decimal-price {
+				font-size: vw_size(24, $current);
+				letter-spacing: vw_size(0.24, $current);
+			}
+
+			.currency {
+				font-size: vw_size(24, $current);
+				letter-spacing: vw_size(0.48, $current);
+				margin-bottom: vw_size(2, $current);
+			}
+		}
+	}
+	// .gift-cards-list {
+	// 	height: vh-size(80, $current);
+	// 	overflow-y: auto;
+	// 	border: 1px solid red;
+	// }
+
+	.gift-cards-list-container {
+		position: relative;
+		.gradient-top-list {
+			position: relative;
+			height: 25px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: 30;
+			background: linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 1),
+				rgba(255, 255, 255, 0)
+			);
+		}
+		.gift-cards-list {
+			height: vh-size(80, $current);
+			overflow-y: auto;
+			position: relative;
+			padding-block: vh-size(3, $current);
+		}
+
+		.gift-cards-list::-webkit-scrollbar {
+			display: none;
+		}
+		.gradient-bottom-list {
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 25px;
+			z-index: 30;
+			bottom: 0;
+			background: linear-gradient(
+				to top,
+				rgba(255, 255, 255, 1),
+				rgba(255, 255, 255, 0)
+			);
+		}
+	}
+
 	:global(.google-pay-button-container) {
 		margin-top: vw_size(35, $current);
 	}
@@ -30,14 +109,37 @@ $current: 375;
 @media (min-width: $media-tablet) {
 	$current: $tablet;
 	.choose-payment-wrapper {
+		padding-bottom: vw_size(50, $current);
+
 		.choose-payment-title {
-			margin-top: vw_size(31, $current);
 			font-size: vw_size(20, $current);
-			margin-inline: 0;
+			margin: vw_size(31, $current) vw_size(20, $current) vw_size(20, $current)
+				vw_size(20, $current);
 		}
-		.gift-card-title {
-			font-size: vw_size(14, $current);
-			margin: vw_size(51, $current) 0;
+
+		.left-to-pay-container {
+			margin-top: vw-size(45, $current);
+			// margin-bottom: vw-size(23, $current);
+			.payment-price {
+				font-size: vw_size(38, $current);
+				letter-spacing: vw_size(0.38, $current);
+
+				.dig-price {
+					font-size: vw_size(38, $current);
+					letter-spacing: vw_size(0.24, $current);
+				}
+
+				.decimal-price {
+					font-size: vw_size(24, $current);
+					letter-spacing: vw_size(0.24, $current);
+				}
+
+				.currency {
+					font-size: vw_size(24, $current);
+					letter-spacing: vw_size(0.48, $current);
+					margin-bottom: vw_size(2, $current);
+				}
+			}
 		}
 		:global(.google-pay-button-container) {
 			margin-top: vw_size(35, $current);
@@ -48,16 +150,48 @@ $current: 375;
 @media (min-width: $media-desktop) {
 	$current: $desktop;
 	.choose-payment-wrapper {
+		margin-top: vw_size(20, $current);
+		padding-bottom: vw_size(20, $current);
+
 		.choose-payment-title {
-			margin-top: vw_size(27, $current);
 			font-size: vw_size(20, $current);
-			margin-inline: vw_size(20, $current);
+			margin: vw_size(31, $current) vw_size(20, $current) vw_size(20, $current)
+				vw_size(20, $current);
 		}
 		.gift-card-title {
 			font-size: vw_size(14, $current);
 			margin-top: vw_size(51, $current);
 			margin-bottom: vw_size(20, $current);
 		}
+
+		.left-to-pay-container {
+			margin-top: unset;
+			// margin-bottom: vw-size(23, $current);
+			.left-to-pay-title {
+				font-family: $font-book;
+			}
+			.payment-price {
+				font-size: vw_size(38, $current);
+				letter-spacing: vw_size(0.38, $current);
+
+				.dig-price {
+					font-size: vw_size(38, $current);
+					letter-spacing: vw_size(0.24, $current);
+				}
+
+				.decimal-price {
+					font-size: vw_size(24, $current);
+					letter-spacing: vw_size(0.24, $current);
+				}
+
+				.currency {
+					font-size: vw_size(24, $current);
+					letter-spacing: vw_size(0.48, $current);
+					margin-bottom: vw_size(2, $current);
+				}
+			}
+		}
+
 		:global(.google-pay-button-container) {
 			margin-top: vw_size(35, $current);
 		}
@@ -68,9 +202,9 @@ $current: 375;
 	$current: $desktop_max;
 	.choose-payment-wrapper {
 		.choose-payment-title {
-			margin-top: vw_size(27, $current);
 			font-size: vw_size(20, $current);
-			margin-inline: vw_size(20, $current);
+			margin: vw_size(31, $current) vw_size(20, $current) vw_size(20, $current)
+				vw_size(20, $current);
 		}
 		.gift-card-title {
 			font-size: vw_size(14, $current);

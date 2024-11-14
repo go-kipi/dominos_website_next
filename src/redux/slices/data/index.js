@@ -508,16 +508,6 @@ export const defaultLocationSlice = createSlice({
 Slices.push(defaultLocationSlice);
 
 /* --------------------------------------------------------------- */
-export const isCreditModalOpen = createSlice({
-	name: "isCreditModalOpen",
-	initialState: false,
-	reducers: {
-		setIsCreditModalOpen: (state, action) => action.payload,
-	},
-});
-Slices.push(isCreditModalOpen);
-
-/* --------------------------------------------------------------- */
 export const priceListSlice = createSlice({
 	name: "priceList",
 	initialState: false,

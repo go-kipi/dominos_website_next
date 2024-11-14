@@ -1,0 +1,145 @@
+[
+    {
+        "id": "buyMe",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "buyMe"
+        },
+        "name": "buyMe"
+    },
+    {
+        "id": "max",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "מקס"
+        },
+        "name": "max"
+    },
+    {
+        "id": "tavPlus",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "תו פלוס"
+        },
+        "name": "tavPlus"
+    },
+    {
+        "id": "superDiscount",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Super Discount"
+        },
+        "name": "superDiscount"
+    },
+    {
+        "id": "coffeeClub",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Coffee Club"
+        },
+        "name": "coffeeClub"
+    },
+    {
+        "id": "fashionHub",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Fashion Hub"
+        },
+        "name": "fashionHub"
+    },
+    {
+        "id": "bookBarn",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Book Barn"
+        },
+        "name": "bookBarn"
+    },
+    {
+        "id": "techGiant",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Tech Giant"
+        },
+        "name": "techGiant"
+    },
+    {
+        "id": "homeEssentials",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Home Essentials"
+        },
+        "name": "homeEssentials"
+    },
+    {
+        "id": "fitnessZone",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Fitness Zone"
+        },
+        "name": "fitnessZone"
+    },
+    {
+        "id": "cinemaPass",
+        "action": "giftCardPayment",
+        "uImeta": "giftCardItem",
+        "defaultCurrency": "ILS",
+        "minAllowed": 0,
+        "maxAllowed": 9999,
+        "extraData": null,
+        "nameUseCases": {
+            "name": "Cinema Pass"
+        },
+        "name": "cinemaPass"
+    }
+]
