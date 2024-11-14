@@ -1,0 +1,105 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.wrapper {
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(101, 101, 101, 1);
+
+	.tabs-wrapper {
+		display: flex;
+
+		overflow: auto;
+		gap: vw_size(10, $current);
+		@include hide-scrollbar();
+		position: relative;
+		justify-content: center;
+
+		.tab {
+			font-size: vw_size(14, $current);
+			line-height: vw_size(34, $current);
+			font-family: $font;
+			color: #b0b0b0;
+			height: vw_size(40, $current);
+			padding: 0 vw_size(10, $current) vw_size(5, $current);
+			white-space: nowrap;
+
+			&.selected {
+				color: white;
+			}
+		}
+		.indicator {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: vw_size(3, $current);
+			background-color: $dominos-red;
+			width: vw_size(31, $current);
+			transition: 0.3s;
+			border-radius: 1.25px;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.wrapper {
+		.tabs-wrapper {
+			gap: vw_size(10, $current);
+
+			.tab {
+				font-size: vw_size(14, $current);
+				line-height: vw_size(34, $current);
+				height: vw_size(40, $current);
+				padding: 0 vw_size(10, $current) vw_size(5, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(31, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.wrapper {
+		.tabs-wrapper {
+			gap: vw_size(10, $current);
+
+			.tab {
+				font-size: vw_size(15, $current);
+				line-height: vw_size(34, $current);
+				height: vw_size(40, $current);
+				padding: 0 vw_size(10, $current) vw_size(5, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(31, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.wrapper {
+		.tabs-wrapper {
+			gap: vw_size(10, $current);
+
+			.tab {
+				font-size: vw_size(15, $current);
+				line-height: vw_size(34, $current);
+				height: vw_size(40, $current);
+				padding: 0 vw_size(10, $current) vw_size(5, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(31, $current);
+			}
+		}
+	}
+}

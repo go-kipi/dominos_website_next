@@ -1,0 +1,168 @@
+@import "src/styles/imports.scss";
+$current: 375;
+:global(.ltr) {
+  .personal-area-menu-mobile-wrapper {
+    .personal-area-menu-rows {
+      .menu-row-item-wrapper {
+        .arrow-wrapper {
+          transform: scaleX(-1);
+        }
+      }
+    }
+    .bottom-part {
+      .account-wrapper {
+        .logout {
+          .logout-icon-wrapper {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+  }
+}
+.personal-area-menu-mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  .divider {
+    background-color: rgba(230, 230, 230, 1);
+    height: 1px;
+    width: 100%;
+  }
+  .personal-area-menu-rows {
+    padding-top: vw_size(38, $current);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .menu-row-item-wrapper {
+      display: unset;
+      width: vw_size(304, $current);
+
+      .menu-row-item {
+        display: flex;
+        flex-direction: row;
+        height: vw_size(53, $current);
+        align-items: center;
+        justify-content: space-between;
+        .icon-text-wrapper {
+          display: flex;
+          flex-direction: row;
+          .icon-wrapper {
+            width: vw_size(20, $current);
+            height: vw_size(20, $current);
+          }
+          .menu-item-title {
+            color: #4d4d4d;
+            font-family: $font;
+            font-size: vw_size(15, $current);
+            margin-inline-start: vw_size(20, $current);
+          }
+          .block {
+            background-color: rgba(151, 151, 151, 1);
+            width: 1px;
+            height: vw_size(17, $current);
+            margin-inline: vw_size(11, $current);
+          }
+          .menu-item-bold-title {
+            font-family: $font-medium;
+            color: #4d4d4d;
+            font-size: vw_size(15, $current);
+          }
+        }
+        .arrow-wrapper {
+          width: vw_size(20, $current);
+          height: vw_size(20, $current);
+        }
+      }
+    }
+  }
+  .bottom-part {
+    width: vw_size(304, $current);
+
+    .account-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: vw_size(64, $current);
+      .logout {
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+
+        .logout-icon-wrapper {
+          width: vw_size(23, $current);
+          height: vw_size(20, $current);
+        }
+        .logout-text {
+          font-family: $font-medium;
+          font-size: vw_size(13, $current);
+          color: #404d57;
+          margin-inline-start: vw_size(14, $current);
+        }
+      }
+      .delete-account-btn {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .personal-area-menu-mobile-wrapper {
+    .personal-area-menu-rows {
+      padding-top: vw_size(38, $current);
+
+      .menu-row-item-wrapper {
+        width: vw_size(622, $current);
+
+        .menu-row-item {
+          height: vw_size(53, $current);
+
+          .icon-text-wrapper {
+            .icon-wrapper {
+              width: vw_size(20, $current);
+              height: vw_size(20, $current);
+            }
+            .menu-item-title {
+              font-size: vw_size(15, $current);
+              margin-inline-start: vw_size(20, $current);
+            }
+            .block {
+              height: vw_size(17, $current);
+              margin-inline: vw_size(11, $current);
+            }
+            .menu-item-bold-title {
+              font-size: vw_size(15, $current);
+            }
+          }
+          .arrow-wrapper {
+            width: vw_size(20, $current);
+            height: vw_size(20, $current);
+          }
+        }
+      }
+    }
+    .bottom-part {
+      width: vw_size(622, $current);
+
+      .account-wrapper {
+        height: vw_size(64, $current);
+        .logout {
+          .logout-icon-wrapper {
+            width: vw_size(23, $current);
+            height: vw_size(20, $current);
+          }
+          .logout-text {
+            font-size: vw_size(13, $current);
+
+            margin-inline-start: vw_size(14, $current);
+          }
+        }
+      }
+    }
+  }
+}

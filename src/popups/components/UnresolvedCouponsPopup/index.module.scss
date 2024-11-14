@@ -1,0 +1,145 @@
+@import "src/styles/imports";
+$current: 375;
+:global(.popup) {
+  :global(.backdrop) {
+    &:global(.slidePopup) {
+      &.unresolved-coupons-popup {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        :global(.popup_wrapper) {
+          height: 50vh;
+
+          :global(.popup_content) {
+            height: 100%;
+            .unresolved-coupons-wrapper {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              height: 100%;
+              .unresolved-coupons-img {
+                width: vw_size(142, $current);
+                height: vw_size(137, $current);
+                margin-top: vw_size(41, $current);
+              }
+              .unresolved-coupons-desc {
+                margin-top: vw_size(22, $current);
+                font-size: vw_size(22, $current);
+                text-align: center;
+                font-family: $font-medium;
+                width: vw_size(264, $current);
+              }
+              .go-to-menu-btn {
+                margin-top: auto;
+                margin-bottom: vw_size(35, $current);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  :global(.popup) {
+    :global(.backdrop) {
+      &:global(.slidePopup) {
+        &.unresolved-coupons-popup {
+          justify-content: center;
+          :global(.popup_wrapper) {
+            height: vw_size(412, $current);
+            width: vw_size(412, $current);
+
+            :global(.popup_content) {
+              .unresolved-coupons-wrapper {
+                .unresolved-coupons-img {
+                  width: vw_size(142, $current);
+                  height: vw_size(137, $current);
+                  margin-top: vw_size(41, $current);
+                }
+                .unresolved-coupons-desc {
+                  margin-top: vw_size(22, $current);
+                  font-size: vw_size(22, $current);
+                  width: vw_size(264, $current);
+                }
+                .go-to-menu-btn {
+                  margin-bottom: vw_size(35, $current);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  :global(.popup) {
+    :global(.backdrop) {
+      &:global(.slidePopup) {
+        &.unresolved-coupons-popup {
+          :global(.popup_wrapper) {
+            height: vw_size(512, $current);
+            width: vw_size(512, $current);
+
+            :global(.popup_content) {
+              .unresolved-coupons-wrapper {
+                .unresolved-coupons-img {
+                  width: vw_size(142, $current);
+                  height: vw_size(137, $current);
+                  margin-top: vw_size(57, $current);
+                }
+                .unresolved-coupons-desc {
+                  margin-top: vw_size(43, $current);
+                  font-size: vw_size(22, $current);
+                  width: vw_size(256, $current);
+                }
+                .go-to-menu-btn {
+                  margin-bottom: vw_size(92, $current);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  :global(.popup) {
+    :global(.backdrop) {
+      &:global(.slidePopup) {
+        &.unresolved-coupons-popup {
+          :global(.popup_wrapper) {
+            height: vw_size(512, $current);
+            width: vw_size(512, $current);
+
+            :global(.popup_content) {
+              .unresolved-coupons-wrapper {
+                .unresolved-coupons-img {
+                  width: vw_size(142, $current);
+                  height: vw_size(137, $current);
+                  margin-top: vw_size(57, $current);
+                }
+                .unresolved-coupons-desc {
+                  margin-top: vw_size(43, $current);
+                  font-size: vw_size(22, $current);
+                  width: vw_size(256, $current);
+                }
+                .go-to-menu-btn {
+                  margin-bottom: vw_size(92, $current);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

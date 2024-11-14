@@ -1,0 +1,128 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.store-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img-wrap {
+    margin-top: vw_size(55, $current);
+  }
+  .title {
+    font-family: $font-medium;
+    font-size: vw_size(22, $current);
+    line-height: vw_size(28, $current);
+    color: $black;
+
+  }
+  .subtitle {
+    margin: 0;
+
+    margin-top: vw_size(25, $current);
+    width: vw_size(225, $current);
+    color: #404042;
+    font-size: vw_size(14, $current);
+    font-family: $font-medium;
+    line-height: vw_size(23, $current);
+    text-align: center;
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: vw_size(35, $current);
+    .decline-btn {
+      margin-top: vw_size(22, $current);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .store-wrapper {
+    .img-wrap {
+      margin-top: vw_size(55, $current);
+    }
+    .title {
+      font-family: $font-medium;
+      font-size: vw_size(22, $current);
+      line-height: vw_size(28, $current);
+      color: $black;
+
+    }
+
+    .subtitle {
+      margin-top: vw_size(10, $current);
+      width: vw_size(225, $current);
+      font-size: vw_size(14, $current);
+      line-height: vw_size(25, $current);
+    }
+    .actions {
+      margin-top: vw_size(24, $current);
+      .decline-btn {
+        margin-top: vw_size(22, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .store-wrapper {
+    .img-wrap {
+      margin-top: vw_size(79, $current);
+    }
+    .title {
+      font-family: $font-medium;
+      font-size: vw_size(22, $current);
+      line-height: vw_size(28, $current);
+      color: $black;
+      margin-bottom: vw_size(89, $current);
+    }
+    .subtitle {
+      margin-top: vw_size(10, $current);
+      width: vw_size(225, $current);
+      font-size: vw_size(14, $current);
+      line-height: vw_size(25, $current);
+    }
+    .actions {
+      margin-top: vw_size(24, $current);
+      .decline-btn {
+        margin-top: vw_size(22, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  .store-wrapper {
+    .img-wrap {
+      margin-top: vw_size(79, $current);
+    }
+    .title {
+      font-family: $font-medium;
+      font-size: vw_size(22, $current);
+      line-height: vw_size(28, $current);
+      color: $black;
+      margin-bottom: vw_size(89, $current);
+    }
+    .subtitle {
+      margin-top: vw_size(10, $current);
+      width: vw_size(225, $current);
+      font-size: vw_size(14, $current);
+      line-height: vw_size(25, $current);
+    }
+    .actions {
+      margin-top: vw_size(24, $current);
+      .decline-btn {
+        margin-top: vw_size(22, $current);
+      }
+    }
+  }
+}
+

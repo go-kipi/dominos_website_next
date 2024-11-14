@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="78px" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 13</title>
+    <defs>
+        <circle id="path-1" cx="24" cy="24" r="24"></circle>
+        <filter x="-47.9%" y="-41.7%" width="204.2%" height="204.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="2" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.697006119 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-3" cx="38.8761905" cy="6.87619048" r="3.87619048"></circle>
+        <filter x="-67.1%" y="-41.3%" width="234.2%" height="234.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="1.20208153" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.801622689   0 0 0 0 0.885166228   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ui-style-guide_2-of-2" transform="translate(-775.000000, -1154.000000)">
+            <g id="Group-13" transform="translate(788.000000, 1164.000000)">
+                <g id="d-copy">
+                    <g id="Oval-Copy-6">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#F5002E" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <polyline id="Path-3" stroke="#FFFFFF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" points="27.0562277 15.7866667 14.5403509 15.7866667 21.2713769 24.8361718 21.2713769 33.1622055 25.9081158 33.1622055 25.9081158 24.8361718 32.3224059 17.0794667"></polyline>
+                </g>
+                <g id="Oval-Copy-7" stroke-linejoin="round">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <circle stroke="#FFFFFF" stroke-width="1.20208153" fill="#017AFF" fill-rule="evenodd" cx="38.8761905" cy="6.87619048" r="4.47723124"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

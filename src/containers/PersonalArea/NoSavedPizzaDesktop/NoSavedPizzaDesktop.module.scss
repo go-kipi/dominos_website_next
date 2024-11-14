@@ -1,0 +1,63 @@
+@import "src/styles/imports.scss";
+$current: $desktop;
+.no-saved-pizza-desktop-perosonal-area {
+	display: flex;
+	flex-direction: column;
+	.no-saved-pizzas-title {
+		font-size: vw_size(33, $current);
+		line-height: vw_size(35, $current);
+		font-family: $font;
+		width: vw_size(234, $current);
+		letter-spacing: -0.33px;
+		color: $white;
+		&.bold {
+			font-family: $font-bold;
+		}
+	}
+	.no-saved-pizzas-subtitle {
+		margin-top: vw_size(8, $current);
+		width: vw_size(288.5, $current);
+		color: #d1d1d1;
+		font-family: $font-book;
+		font-size: vw_size(14, $current);
+		line-height: vw_size(18, $current);
+
+		letter-spacing: 0.56px;
+	}
+	.no-saved-pizza-placeholders {
+		display: flex;
+		width: vw_size(772, $current);
+		justify-content: space-between;
+		margin-top: vw_size(29, $current);
+		.no-saved-pizzas-image-wrapper {
+			width: vw_size(102, $current);
+			height: vw_size(75, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.no-saved-pizza-desktop-perosonal-area {
+		.no-saved-pizzas-title {
+			font-size: vw_size(33, $current);
+			line-height: vw_size(35, $current);
+
+			width: vw_size(234, $current);
+		}
+		.no-saved-pizzas-subtitle {
+			margin-top: vw_size(8, $current);
+			width: vw_size(288.5, $current);
+			font-size: vw_size(14, $current);
+			line-height: vw_size(18, $current);
+		}
+		.no-saved-pizza-placeholders {
+			width: vw_size(850, $current);
+			margin-top: vw_size(29, $current);
+			.no-saved-pizzas-image-wrapper {
+				width: vw_size(102, $current);
+				height: vw_size(75, $current);
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+:global(.fullscreenPopup) {
+	.roleta-popup-wrapper {
+		:global(.popup_wrapper) {
+			:global(.popup_content) {
+				:global(.content.gradient:not(:has(.bottom-gradient))) {
+					display: flex;
+				}
+			}
+		}
+	}
+}
+:global(.popup) {
+	:global(.backdrop) {
+		&.roleta-popup-wrapper {
+			:global(.popup_wrapper) {
+				top: 0;
+			}
+		}
+	}
+}
+
+// @media (min-width: 1200px) {
+//   :global(.fullscreenPopup) {
+//     .roleta-popup-wrapper {
+//       :global(.popup_wrapper) {
+//         :global(.popup_content) {
+//           :global(.content) {
+//             &:global(.gradient:not(:has(.bottom-gradient))) {
+//               display: flex !important;
+//             }
+//             &:global(.gradient) {
+//               display: flex !important;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,180 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.credit-card-item-wrapper {
+  position: relative;
+  width: vw_size(284, $current);
+  height: vw_size(210, $current);
+  cursor: pointer;
+
+  &.not-selected {
+    pointer-events: none;
+  }
+
+  &.expired {
+    cursor: not-allowed;
+  }
+
+  flex: 1 0 auto;
+
+  .credit-card-expiry-date {
+    position: absolute;
+    bottom: vw_size(45, $current);
+    color: $white;
+    font-family: $font-bold;
+    left: vw_size(40, $current);
+    font-size: vw_size(12, $current);
+  }
+
+  .credit-card-brand {
+    position: absolute;
+    bottom: vw_size(30, $current);
+    height: vw_size(35, $current);
+    width: vw_size(35, $current);
+    right: vw_size(30, $current);
+  }
+  .cc-number {
+    position: absolute;
+
+    top: vw_size(92, $current);
+    right: vw_size(78, $current);
+
+    .last-four-digits {
+      font-family: $font-bold;
+      font-size: vw_size(14, $current);
+      color: white;
+    }
+  }
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: vw_size(8, $current);
+    align-items: center;
+    .selected-card-bottom-text {
+      color: #2b2b2b;
+      font-family: $font;
+      font-size: vw_size(14, $current);
+      text-align: center;
+    }
+    .delete-card-icon {
+      cursor: pointer;
+      height: vw_size(20, $current);
+      width: vw_size(20, $current);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .credit-card-item-wrapper {
+    width: vw_size(284, $current);
+    height: vw_size(210, $current);
+
+    .credit-card-expiry-date {
+      bottom: vw_size(45, $current);
+      left: vw_size(40, $current);
+      font-size: vw_size(12, $current);
+    }
+
+    .credit-card-brand {
+      bottom: vw_size(30, $current);
+      height: vw_size(35, $current);
+      width: vw_size(35, $current);
+      right: vw_size(30, $current);
+    }
+    .cc-number {
+      top: vw_size(92, $current);
+      right: vw_size(78, $current);
+
+      .last-four-digits {
+        font-size: vw_size(14, $current);
+      }
+    }
+    .bottom {
+      gap: vw_size(8, $current);
+
+      .selected-card-bottom-text {
+        font-size: vw_size(14, $current);
+      }
+      .delete-card-icon {
+        height: vw_size(20, $current);
+        width: vw_size(20, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .credit-card-item-wrapper {
+    height: vw_size(200, $current);
+    width: vw_size(272, $current);
+
+    &.not-selected {
+      opacity: 0.35;
+    }
+
+    margin: unset;
+    margin-inline-start: vw_size(43, $current);
+
+    .credit-card-expiry-date {
+      bottom: vw_size(40, $current);
+      left: vw_size(40, $current);
+      font-size: vw_size(12, $current);
+    }
+
+    .credit-card-brand {
+      bottom: vw_size(30, $current);
+      height: vw_size(35, $current);
+      width: vw_size(35, $current);
+      right: vw_size(30, $current);
+    }
+    .cc-number {
+      top: vw_size(86, $current);
+      right: vw_size(65, $current);
+
+      .last-four-digits {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  $current: $desktop-large;
+  .credit-card-item-wrapper {
+    height: vw_size(200, $current);
+    width: vw_size(272, $current);
+
+    &.not-selected {
+      opacity: 0.35;
+    }
+
+    margin: unset;
+    margin-inline-start: vw_size(41, $current);
+
+    .credit-card-expiry-date {
+      bottom: vw_size(40, $current);
+      left: vw_size(40, $current);
+      font-size: vw_size(12, $current);
+    }
+
+    .credit-card-brand {
+      bottom: vw_size(30, $current);
+      height: vw_size(35, $current);
+      width: vw_size(35, $current);
+      right: vw_size(30, $current);
+    }
+    .cc-number {
+      top: vw_size(87, $current);
+      right: vw_size(68, $current);
+
+      .last-four-digits {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}

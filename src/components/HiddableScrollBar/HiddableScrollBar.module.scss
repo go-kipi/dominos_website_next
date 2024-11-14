@@ -1,0 +1,89 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+:global(.ltr) {
+	.hiddable-scrollhost-container {
+		.scroll-bar {
+			right: unset;
+			left: 0;
+		}
+	}
+}
+.hiddable-scrollhost-container {
+	@include hide-scrollbar();
+
+	& > * {
+		@include hide-scrollbar();
+	}
+
+	width: 100%;
+	position: relative;
+	.scrollhost {
+		overflow-y: scroll;
+		transition: all 0.4s ease-in-out;
+		height: 100%;
+	}
+	.scroll-bar {
+		margin-inline-start: vw_size(3, $current);
+		width: 10px;
+		height: 100%;
+		right: 0;
+		position: absolute;
+		bottom: 0;
+		background-color: transparent;
+		opacity: 1;
+		.scroll-thumb {
+			width: 2px;
+			margin-inline-end: vw_size(1, $current);
+			position: absolute;
+			border-radius: 1px;
+			opacity: 1;
+			z-index: 99;
+
+			top: 0;
+			background-color: rgba(92, 106, 116, 1);
+			&:hover {
+				cursor: default;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.hiddable-scrollhost-container {
+		.scroll-bar {
+			margin-inline-start: vw_size(3, $current);
+
+			.scroll-thumb {
+				margin-inline-end: vw_size(1, $current);
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.hiddable-scrollhost-container {
+		.scroll-bar {
+			margin-inline-start: vw_size(3, $current);
+
+			.scroll-thumb {
+				margin-inline-end: vw_size(1, $current);
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.hiddable-scrollhost-container {
+		.scroll-bar {
+			margin-inline-start: vw_size(3, $current);
+
+			.scroll-thumb {
+				margin-inline-end: vw_size(1, $current);
+			}
+		}
+	}
+}

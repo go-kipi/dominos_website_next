@@ -1,0 +1,77 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.zig-zag-up-sale-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	.zig-zag-up-sale-products {
+		padding-inline-start: vw_size(40, $current);
+		padding-inline-end: vw_size(10, $current);
+		margin-bottom: vw_size(15, $current);
+	}
+	.actions {
+		z-index: 10;
+		margin-top: auto;
+		margin-bottom: vw_size(30, $current);
+		.decline-btn {
+			width: vw_size(302, $current);
+			height: vw_size(55, $current);
+			color: $white;
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.zig-zag-up-sale-wrapper {
+		flex: 1;
+		overflow: auto;
+		.zig-zag-up-sale-products {
+			display: flex;
+			flex-direction: row;
+			padding-inline-start: vw_size(230, $current);
+			padding-inline-end: vw_size(230, $current);
+			width: 100%;
+			justify-content: space-between;
+			margin-top: vw_size(30, $current);
+			margin-bottom: vw_size(15, $current);
+		}
+		.actions {
+			margin-top: auto;
+			margin-bottom: unset;
+			margin-bottom: vw_size(35, $current);
+			.decline-btn {
+				width: vw_size(256, $current);
+				height: vw_size(51, $current);
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.zig-zag-up-sale-wrapper {
+		.zig-zag-up-sale-products {
+			margin-top: vw_size(53, $current);
+			padding-inline-start: vw_size(520, $current);
+			padding-inline-end: vw_size(530, $current);
+			margin-bottom: vw_size(15, $current);
+		}
+		.actions {
+			margin-bottom: vw_size(35, $current);
+
+			.decline-btn {
+				width: vw_size(256, $current);
+				height: vw_size(51, $current);
+			}
+		}
+	}
+}

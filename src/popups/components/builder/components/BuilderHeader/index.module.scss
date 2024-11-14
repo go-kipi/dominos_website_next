@@ -1,0 +1,124 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+
+:global(.ltr) {
+  .icon-button {
+    img.back-btn {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.builder-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: vw_size(44, $current);
+  border-bottom: 1px solid rgb(101, 101, 101);
+  width: 100%;
+
+  .icon-button {
+    width: vw_size(50, $current);
+    padding: vw_size(10, $current);
+    img {
+      &.back-btn {
+        margin-left: vw_size(13, $current);
+        margin-right: vw_size(24, $current);
+      }
+      margin-left: vw_size(24, $current);
+      margin-right: vw_size(13, $current);
+      width: vw_size(22, $current);
+      height: vw_size(22, $current);
+      object-fit: contain;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .builder-header-wrapper {
+    height: vw_size(44, $current);
+
+    .icon-button {
+      width: vw_size(50, $current);
+      padding: unset;
+      img {
+        &.back-btn {
+          margin-left: vw_size(13, $current);
+          margin-right: vw_size(24, $current);
+        }
+        margin-left: vw_size(24, $current);
+        margin-right: vw_size(13, $current);
+        width: vw_size(22, $current);
+        height: vw_size(22, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: 1280;
+  .builder-header-wrapper {
+    margin-top: 0;
+    height: vw_size(66, $current);
+
+    .icon-button {
+      width: vw_size(50, $current);
+
+      img {
+        &.back-btn {
+          margin-left: vw_size(20, $current);
+          margin-right: vw_size(42, $current);
+        }
+        margin-left: vw_size(42, $current);
+        margin-right: vw_size(20, $current);
+        width: vw_size(26, $current);
+        height: vw_size(26, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-large;
+  .builder-header-wrapper {
+    height: vw_size(66, $current);
+
+    .icon-button {
+      width: vw_size(50, $current);
+
+      img {
+        &.back-btn {
+          margin-left: vw_size(20, $current);
+          margin-right: vw_size(42, $current);
+        }
+        margin-left: vw_size(42, $current);
+        margin-right: vw_size(20, $current);
+        width: vw_size(26, $current);
+        height: vw_size(26, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_max) {
+  $current: $desktop-max;
+  .builder-header-wrapper {
+    height: vw_size(66, $current);
+
+    .icon-button {
+      width: vw_size(50, $current);
+
+      img {
+        &.back-btn {
+          margin-left: vw_size(20, $current);
+          margin-right: vw_size(42, $current);
+        }
+        margin-left: vw_size(42, $current);
+        margin-right: vw_size(20, $current);
+        width: vw_size(26, $current);
+        height: vw_size(26, $current);
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "sass:math";
+@function vw_size($px_size, $design_width) {
+	$vw_size: (math.div($px_size, $design_width)) * 100;
+	@return $vw_size + vw;
+}
+@function vh_size($px_size, $design_height) {
+	$vw_size: (math.div($px_size, $design_height)) * 100;
+	@return $vw_size + vh;
+}

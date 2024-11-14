@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="80px" viewBox="0 0 60 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/big/1 copy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="משלוח--כתובת-אחרת---בית-פרטי" transform="translate(-608.000000, -201.000000)">
+            <g id="icons/big/1-copy" transform="translate(608.000000, 201.000000)">
+                <g id="Group-19" transform="translate(3.000000, 16.346154)">
+                    <polygon id="Rectangle-Copy-9" fill="#F5002E" style="mix-blend-mode: multiply;" points="38 2.15384615 44.5 2.15384615 44.5 15.1538462 38 9.82888638"></polygon>
+                    <rect id="Rectangle" fill="#017AFF" x="26" y="29.1538462" width="12.5" height="13"></rect>
+                    <polygon id="Path-5" fill="#D8D8D8" style="mix-blend-mode: multiply;" points="3 17.1449647 25 0.153846154 47 17.1449647 47 24.9398573 25.0186836 9.81680591 3 26.1538462"></polygon>
+                    <path d="M13,28.8956442 C15.2930963,29.7831606 16.4396445,31.4826717 16.4396445,33.9941774 C16.4396445,36.5056831 16.4396796,42.3922394 16.4397499,51.6538462 L21,51.6538462 L20.7561226,33.9941774 C19.9203155,28.713004 17.3349413,27.0134929 13,28.8956442 Z" id="Path-24" fill="#F5002E"></path>
+                    <line x1="23.5" y1="49.8387956" x2="44" y2="49.9688967" id="Path-25" stroke="#C2C2C2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <polyline id="Path-23" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" points="-1.4025326e-13 19.6538462 25.3374377 0.153846154 50.5 19.6538462"></polyline>
+                    <path d="M46.370812,20.8678803 L46.370812,51.8249879 L51,51.8249879 L41.313307,51.8249879 M46.370812,24.916735 L25.2559846,8.65384615 L3.98079169,24.916735 L3.98079169,51.8249879 L3.98079169,20.8678803 M36.8457722,51.8249879 L0,51.8249879 M9.51172977,47.6337434 C9.51172977,41.3555937 9.51172977,36.5372313 9.51172977,33.1786563 C9.51172977,30.239417 12.2667793,28.1370875 15.1291078,27.9445948 C17.8255123,27.7632604 20.6391101,30.239417 20.6391101,33.1786563 C20.6391101,38.0280946 20.6391101,44.2435384 20.6391101,51.8249879" id="Shape" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <line x1="23" y1="19.4038462" x2="27" y2="19.4038438" id="Path-28" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <polyline id="Path-30" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" points="25.5 31.2891827 25.5 28.6538462 40.3923281 28.863757 40.5 41.6538462 25.5 41.6538462 25.5 36.2649714"></polyline>
+                    <line x1="40" y1="35.4038462" x2="29.5" y2="35.4038462" id="Path-31" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <line x1="33.25" y1="29.6538462" x2="33.25" y2="42.1538462" id="Path-32" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <polyline id="Path-33" stroke="#2F383F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" points="38.305692 9.71455593 38.305692 1.65384615 37 1.65384615 45.5 1.65384615 44.1644076 1.65384615 44.1618648 14.1538462"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

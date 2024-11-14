@@ -1,0 +1,55 @@
+@import "src/styles/imports";
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.add-credit-card-wrapper {
+		.title {
+			text-align: center;
+			color: $dominos-red;
+			font-family: $font-medium;
+			font-size: vw_size(20, $current);
+			letter-spacing: -0.2px;
+		}
+		.iframe-wrapper {
+			padding: vw_size(20, $current);
+			& > iframe {
+				height: 50vh;
+				width: 100%;
+				border-style: unset;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.add-credit-card-wrapper {
+		.title {
+			font-size: vw_size(20, $current);
+		}
+		.iframe-wrapper {
+			padding: unset;
+			& > iframe {
+				height: 55vh;
+				width: 100%;
+				border-style: unset;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	.add-credit-card-wrapper {
+		.title {
+			font-size: vw_size(20, $current);
+		}
+		.iframe-wrapper {
+			& > iframe {
+				height: 48vh;
+				width: 100%;
+				border-style: unset;
+			}
+		}
+	}
+}

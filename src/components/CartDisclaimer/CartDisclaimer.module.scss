@@ -1,0 +1,62 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.disclaimer-wrapper {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	top: 12px;
+	text-align: center;
+
+	.disclaimer-text {
+		color: #d1d1d1;
+		font-family: $font-book;
+		font-size: vw_size(14, $current);
+		line-height: vw_size(17.5, $current);
+		letter-spacing: 0.14px;
+		margin-top: vw_size(14, $current);
+		.bold {
+			font-family: $font-medium;
+			margin-inline: 3px;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.disclaimer-wrapper {
+		padding: vw_size(0, $current);
+		padding-block-start: vw_size(5, $current);
+		.disclaimer-text {
+			font-size: vw_size(14, $current);
+			line-height: vw_size(17.5, $current);
+
+			margin-top: vw_size(14, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.disclaimer-wrapper {
+		.disclaimer-text {
+			color: #596b75;
+			font-size: vw_size(15, $current);
+			line-height: vw_size(20, $current);
+
+			margin-top: vw_size(14, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.disclaimer-wrapper {
+		.disclaimer-text {
+			font-size: vw_size(15, $current);
+			line-height: vw_size(20, $current);
+
+			margin-top: vw_size(14, $current);
+		}
+	}
+}

@@ -1,0 +1,203 @@
+@import "src/styles/imports.scss";
+$current: 375;
+:global(.ltr) {
+	.future-pickup-wrapper {
+		.future-pickup-header-wrapper {
+			.back-button-wrapper {
+				.icon-wrapper {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}
+.future-pickup-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: $white;
+	flex: 1;
+	.future-pickup-store-closed-wrapper {
+		background-color: rgba(255, 242, 244, 1);
+		width: 100%;
+		height: vw_size(26, $current);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.closed-branch-text {
+			color: #5f6a73;
+			font-family: $font-medium;
+			font-size: vw_size(13, $current);
+			line-height: vw_size(26, $current);
+		}
+	}
+	.future-pickup-header-wrapper {
+		width: 100%;
+		.back-button-wrapper {
+			width: 20%;
+			.icon-wrapper {
+				// width: vw_size(19, $current);
+				padding: vw_size(6, $current) vw_size(20, $current);
+				cursor: pointer;
+			}
+		}
+		.empty {
+			width: 80%;
+		}
+	}
+	.future-pickup-clock-animation-wrapper {
+		width: vw_size(103, $current);
+		height: vw_size(103, $current);
+	}
+	.future-pickup-content-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+		.future-pickup-title {
+			margin: 0;
+			color: $red;
+			font-size: vw_size(20, $current);
+			text-align: center;
+			font-family: $font-medium;
+		}
+		.future-pickup-time-picker {
+			margin: vw_size(15, $current) 0;
+		}
+		.actions {
+			margin-top: auto;
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.future-pickup-wrapper {
+		padding-bottom: vw_size(30, $current);
+
+		.future-pickup-store-closed-wrapper {
+			height: vw_size(26, $current);
+
+			.closed-branch-text {
+				font-size: vw_size(13, $current);
+				line-height: vw_size(26, $current);
+			}
+		}
+		.future-pickup-header-wrapper {
+			.back-button-wrapper {
+				padding-inline: vw_size(25, $current);
+				margin-top: vw_size(15, $current);
+
+				.icon-wrapper {
+					padding: unset;
+					width: vw_size(19, $current);
+				}
+			}
+		}
+		.future-pickup-clock-animation-wrapper {
+			width: vw_size(103, $current);
+			height: unset;
+		}
+		.future-pickup-content-wrapper {
+			.future-pickup-title {
+				font-size: vw_size(20, $current);
+				line-height: vw_size(34, $current);
+			}
+			.future-pickup-time-picker {
+				margin-top: vw_size(32, $current);
+				margin-bottom: unset;
+			}
+			.actions {
+				margin-top: vw_size(10, $current);
+				margin-bottom: unset;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.future-pickup-wrapper {
+		padding-bottom: 0;
+
+		.future-pickup-header-wrapper {
+			margin-top: vw_size(10, $current);
+			.back-button-wrapper {
+				padding-inline: vw_size(25, $current);
+				margin-top: unset;
+				.icon-wrapper {
+					width: vw_size(19, $current);
+				}
+			}
+		}
+		.future-pickup-clock-animation-wrapper {
+			width: vw_size(96, $current);
+		}
+		.future-pickup-content-wrapper {
+			.future-pickup-title {
+				font-size: vw_size(25, $current);
+				line-height: vw_size(31, $current);
+			}
+			.future-pickup-time-picker {
+				margin-top: vw_size(20, $current);
+			}
+			.actions {
+				margin-top: vw_size(10, $current);
+			}
+		}
+		.branch-is-closed-bottom {
+			width: 100%;
+			display: flex;
+			background-color: rgba(255, 242, 244, 1);
+			margin-top: vw_size(20, $current);
+
+			justify-content: center;
+			.closed-branch-text {
+				color: #5f6a73;
+				font-size: vw_size(13, $current);
+				font-family: $font-medium;
+				line-height: vw_size(26, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.future-pickup-wrapper {
+		.future-pickup-header-wrapper {
+			margin-top: vw_size(10, $current);
+			.back-button-wrapper {
+				padding-inline: vw_size(25, $current);
+
+				.icon-wrapper {
+					width: vw_size(19, $current);
+				}
+			}
+		}
+		.future-pickup-clock-animation-wrapper {
+			width: vw_size(96, $current);
+		}
+		.future-pickup-content-wrapper {
+			.future-pickup-title {
+				font-size: vw_size(25, $current);
+				line-height: vw_size(31, $current);
+			}
+			.future-pickup-time-picker {
+				margin-top: vw_size(20, $current);
+			}
+			.actions {
+				margin-top: vw_size(10, $current);
+			}
+		}
+		.branch-is-closed-bottom {
+			margin-top: vw_size(20, $current);
+
+			.closed-branch-text {
+				font-size: vw_size(13, $current);
+				line-height: vw_size(26, $current);
+			}
+		}
+	}
+}

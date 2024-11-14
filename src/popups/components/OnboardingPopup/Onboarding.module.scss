@@ -1,0 +1,126 @@
+@import "src/styles/imports.scss";
+
+//transitions
+$timing: 300ms;
+
+.onboarding {
+	:global(.popup_content) {
+		height: 100%;
+	}
+}
+
+$current: $mobile;
+.onboarding {
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	.header {
+		padding-top: vw_size(13, $current);
+		display: flex;
+		top: 0;
+		width: 100vw;
+		position: absolute;
+		flex-direction: row;
+
+		&.rtl {
+			direction: rtl;
+		}
+		&:global(.ltr) {
+			direction: ltr;
+			.back-wrapper {
+				.icon-wrapper {
+					transform: rotate(180deg);
+				}
+			}
+		}
+		.title-wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 60%;
+
+			.title {
+				color: $white;
+				font-size: vw_size(14, $current);
+				line-height: vw_size(16, $current);
+				font-family: $font;
+				text-align: center;
+				margin: 0;
+			}
+			.subtitle {
+				margin: 0;
+				color: $white;
+				font-size: vw_size(14, $current);
+				line-height: vw_size(22, $current);
+				font-family: $font-book;
+				text-align: center;
+				letter-spacing: 0;
+			}
+		}
+		.back-wrapper {
+			width: 20%;
+			padding-left: vw_size(15, $current);
+			padding-right: vw_size(15, $current);
+			cursor: pointer;
+			.icon-wrapper {
+				width: vw_size(19, $current);
+			}
+		}
+		.empty {
+			width: 20%;
+		}
+	}
+	:global(.popup_wrapper) {
+		position: relative;
+		height: 80vh;
+		background: #ffffff;
+		display: flex;
+		flex-direction: column;
+		transition: all 200ms ease-out;
+		justify-content: flex-start;
+		overflow: hidden;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.onboarding {
+		justify-content: center;
+
+		:global(.popup_wrapper) {
+			height: auto;
+			min-width: vw_size(450, $current);
+			height: vw_size(502, $current);
+
+			border-radius: vw_size(9, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		:global(.backdrop):global(.slidePopup).onboarding {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				height: vw_size(502, $current);
+
+				border-radius: vw_size(9, $current);
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	:global(.popup) {
+		:global(.backdrop):global(.slidePopup).onboarding {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				height: vw_size(600, $current);
+				border-radius: vw_size(9, $current);
+			}
+		}
+	}
+}

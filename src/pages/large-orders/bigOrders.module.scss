@@ -1,0 +1,117 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.bigOrders-page-wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	.background-image {
+		background-image: url("../../assets/bg-images/bigOrders-bg.png");
+	}
+	.liner-top {
+		height: vw_size(141, $current);
+		background-image: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 1) 100%
+		);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		pointer-events: none;
+	}
+	.custom-breadcrumbs {
+		margin-inline-start: vw_size(24, $current);
+		z-index: 2;
+	}
+	.big-orders-form-wrapper {
+		background-color: white;
+		height: 65vh;
+		border-top-left-radius: vw_size(25, $current);
+		border-top-right-radius: vw_size(25, $current);
+		margin-top: auto;
+		z-index: 100;
+
+		overflow: hidden;
+		position: relative;
+
+		width: 100%;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.bigOrders-page-wrapper {
+		.liner-top {
+			height: vw_size(141, $current);
+		}
+		.custom-breadcrumbs {
+			margin-inline-start: vw_size(24, $current);
+		}
+		.big-orders-form-wrapper {
+			border-top-left-radius: vw_size(25, $current);
+			border-top-right-radius: vw_size(25, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.bigOrders-page-wrapper {
+		.background-image {
+			background-image: url("../../assets/bg-images/bigOrders-Desktop-bg.png");
+		}
+		.custom-breadcrumbs {
+			margin-inline-start: vw_size(95, $current);
+			z-index: 5500;
+		}
+		.liner {
+			width: vw_size(365, $current);
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			&-right {
+				background-image: linear-gradient(
+					90deg,
+					rgba(0, 0, 0, 0) 0%,
+					rgba(0, 0, 0, 1) 100%
+				);
+				right: 0;
+			}
+			&-left {
+				background-image: linear-gradient(
+					-90deg,
+					rgba(0, 0, 0, 0) 0%,
+					rgba(0, 0, 0, 0.46) 100%
+				);
+				left: 0;
+			}
+		}
+		.big-orders-form-wrapper {
+			border-radius: vw_size(25, $current);
+			height: vw_size(541, $current);
+			width: vw_size(680, $current);
+			margin: vw_size(60, $current) auto 0;
+			z-index: 5001;
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.bigOrders-page-wrapper {
+		.custom-breadcrumbs {
+			margin-inline-start: vw_size(95, $current);
+		}
+
+		.big-orders-form-wrapper {
+			border-radius: vw_size(25, $current);
+			height: vw_size(541, $current);
+			width: vw_size(680, $current);
+			margin: vw_size(60, $current) auto 0;
+		}
+	}
+}

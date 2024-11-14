@@ -1,0 +1,175 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.personal-area-saved-pizza-card {
+	display: flex;
+	background-color: rgba(92, 106, 116, 0.4);
+	height: vw_size(65, $current);
+	width: vw_size(114, $current);
+	border-radius: vw_size(16, $current);
+	padding-top: vw_size(10, $current);
+	padding-inline-start: vw_size(13, $current);
+	position: relative;
+
+	.saved-pizza-name {
+		font-family: $font-medium;
+		color: $white;
+		font-size: vw_size(16, $current);
+		width: vw_size(100, $current);
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		padding-inline-end: vw_size(18, $current);
+	}
+	.saved-pizzas-options-wrapper {
+		position: relative;
+		top: 0;
+		left: 0;
+		.saved-pizzas-options.multiple-options-indicator-wrapper {
+			.options-tooltip-wrapper {
+				@include left(0);
+				top: vw_size(30, $current);
+
+				.tooltip-triangle {
+					top: vw_size(-10, $current);
+					@include left(vw_size(8, $current));
+					border-bottom-color: rgba(56, 65, 79, 1);
+				}
+				.options-wrapper {
+					.tool-tip-option-wrapper {
+						width: vw_size(120, $current);
+						height: vw_size(51, $current);
+						background-color: rgba(56, 65, 79, 1);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.personal-area-saved-pizza-card {
+		height: vw_size(65, $current);
+		width: vw_size(114, $current);
+		border-radius: vw_size(16, $current);
+		padding-top: vw_size(10, $current);
+		padding-inline-start: vw_size(13, $current);
+		.saved-pizza-name {
+			font-size: vw_size(16, $current);
+			width: vw_size(100, $current);
+			padding-inline-end: vw_size(18, $current);
+		}
+		.saved-pizzas-options-wrapper {
+			.saved-pizzas-options.multiple-options-indicator-wrapper {
+				.options-tooltip-wrapper {
+					top: vw_size(30, $current);
+					.tooltip-triangle {
+						top: vw_size(-10, $current);
+						@include left(vw_size(8, $current));
+					}
+					.options-wrapper {
+						.tool-tip-option-wrapper {
+							width: vw_size(120, $current);
+							height: vw_size(51, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.personal-area-saved-pizza-card {
+		height: vw_size(86, $current);
+		width: vw_size(117, $current);
+		border-radius: vw_size(16, $current);
+		padding-top: vw_size(19, $current);
+		padding-inline-start: vw_size(19, $current);
+		.saved-pizza-name {
+			font-size: vw_size(16, $current);
+
+			width: vw_size(100, $current);
+			padding-inline-end: vw_size(24, $current);
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			max-height: vw_size(60, $current);
+		}
+		.saved-pizzas-options-wrapper {
+			.saved-pizzas-options.multiple-options-indicator-wrapper {
+				.options-tooltip-wrapper {
+					top: vw_size(37, $current);
+
+					@include left(vw_size(-9, $current));
+
+					.tooltip-triangle {
+						top: vw_size(-10, $current);
+
+						@include left(vw_size(20, $current));
+					}
+					.options-wrapper {
+						.tool-tip-option-wrapper {
+							width: vw_size(120, $current);
+							height: vw_size(51, $current);
+							.option-wrapper {
+								margin-inline-start: vw_size(10, $current);
+								.option-text {
+									margin-inline-start: vw_size(6, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.personal-area-saved-pizza-card {
+		height: vw_size(86, $current);
+		width: vw_size(117, $current);
+		border-radius: vw_size(16, $current);
+		padding-top: vw_size(19, $current);
+		padding-inline-start: vw_size(19, $current);
+		.saved-pizza-name {
+			font-size: vw_size(16, $current);
+			width: vw_size(100, $current);
+			padding-inline-end: vw_size(24, $current);
+			max-height: vw_size(60, $current);
+		}
+		.saved-pizzas-options-wrapper {
+			.saved-pizzas-options.multiple-options-indicator-wrapper {
+				.options-tooltip-wrapper {
+					top: vw_size(40, $current);
+
+					@include left(vw_size(-15, $current));
+
+					.tooltip-triangle {
+						top: vw_size(-10, $current);
+						left: vw_size(26, $current);
+						@include left(vw_size(26, $current));
+					}
+					.options-wrapper {
+						.tool-tip-option-wrapper {
+							width: vw_size(120, $current);
+							height: vw_size(51, $current);
+							.option-wrapper {
+								margin-inline-start: vw_size(10, $current);
+								.option-text {
+									margin-inline-start: vw_size(6, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,304 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.collapse-wrap {
+	width: 100%;
+
+	.items-wrap {
+		border: 1px solid rgba(54, 63, 70, 1);
+		border-bottom-right-radius: 14px;
+		border-bottom-left-radius: 14px;
+		@include itemPaddingEnd();
+		padding-inline-start: vw_size(18, $current);
+		.item-wrap {
+			display: flex;
+			align-items: center;
+			padding-top: vw_size(18, $current);
+			padding-inline-end: vw_size(25, $current);
+
+			.img-wrap {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-inline-end: vw_size(19, $current);
+				margin-block-end: vw_size(20, $current);
+				width: vw_size(57, $current);
+				align-self: flex-start;
+			}
+
+			.details-content {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.details-wrap {
+				position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-bottom: vw_size(15, $current);
+
+				.edit-icon {
+					position: absolute;
+					cursor: pointer;
+					@include left(vw_size(-18, $current));
+					width: vw_size(15, $current);
+					height: vw_size(15, $current);
+					top: vw_size(2.5, $current);
+				}
+
+				.details {
+					display: flex;
+					flex-direction: column;
+
+					.title-wrapper {
+						width: 100%;
+
+						display: flex;
+					}
+
+					.title {
+						font-family: $font-bold;
+						font-size: vw_size(12, $current);
+						line-height: vw_size(21, $current);
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+
+	.quarters {
+		margin-inline-end: vw_size(5, $current);
+	}
+	.detail-request {
+		font-family: $font-medium;
+		color: #cecece;
+		font-size: vw_size(12, $current);
+		margin-top: vw_size(7.5, $current);
+	}
+
+	.additional {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: vw_size(19, $current);
+		justify-content: space-between;
+		.sub-text {
+			font-family: $font-medium;
+			font-size: vw_size(12, $current);
+			letter-spacing: 0.6px;
+			color: #cecece;
+		}
+		.icon {
+			position: absolute;
+			cursor: pointer;
+			@include left(vw_size(-20, $current));
+			width: vw_size(18, $current);
+			height: vw_size(18, $current);
+		}
+	}
+
+	.separator {
+		height: 1px;
+		background-color: $grey-border;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.collapse-wrap {
+		.items-wrap {
+			padding-inline-start: vw_size(18, $current);
+
+			.item-wrap {
+				padding-block: vw_size(18, $current);
+				padding-inline-end: vw_size(25, $current);
+
+				.img-wrap {
+					margin-inline-end: vw_size(22, $current);
+					margin-block-end: vw_size(20, $current);
+					width: vw_size(78, $current);
+				}
+
+				.details-wrap {
+					position: relative;
+					margin-bottom: vw_size(15, $current);
+					.edit-icon {
+						@include left(vw_size(-18, $current));
+						top: vw_size(2.5, $current);
+						width: vw_size(15, $current);
+						height: vw_size(15, $current);
+					}
+					.details {
+						.title {
+							font-size: vw_size(12, $current);
+							line-height: vw_size(21, $current);
+						}
+					}
+				}
+			}
+		}
+
+		.quarters {
+			margin-inline-end: vw_size(5, $current);
+		}
+
+		.detail-request {
+			font-family: $font-medium;
+			color: #cecece;
+			font-size: vw_size(12, $current);
+			margin-top: vw_size(7.5, $current);
+		}
+
+		.additional {
+			margin-bottom: vw_size(19, $current);
+
+			.sub-text {
+				font-size: vw_size(12, $current);
+			}
+
+			.icon {
+				@include left(vw_size(-20, $current));
+				width: vw_size(18, $current);
+				height: vw_size(18, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.collapse-wrap {
+		.items-wrap {
+			padding-inline-start: vw_size(37, $current);
+			.item-wrap {
+				padding-block: vw_size(18, $current);
+				padding-inline-end: vw_size(32, $current);
+				.img-wrap {
+					margin-inline-end: vw_size(13, $current);
+					margin-block-end: vw_size(20, $current);
+					width: vw_size(58, $current);
+				}
+
+				.details-wrap {
+					margin-bottom: vw_size(15, $current);
+					.edit-icon {
+						@include left(vw_size(-25, $current));
+						top: vw_size(2.5, $current);
+						width: vw_size(20, $current);
+						height: vw_size(20, $current);
+					}
+					.details {
+						.title {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(21, $current);
+						}
+					}
+				}
+			}
+		}
+
+		.detail-request {
+			font-size: vw_size(12, $current);
+			margin-top: vw_size(7.5, $current);
+		}
+
+		.quarters {
+			margin-inline-end: vw_size(5, $current);
+		}
+		.additional {
+			margin-bottom: vw_size(19, $current);
+
+			.sub-text {
+				font-family: $font-book;
+
+				font-size: vw_size(14, $current);
+			}
+			.icon {
+				@include left(vw_size(-24, $current));
+				width: vw_size(18, $current);
+				height: vw_size(18, $current);
+			}
+		}
+		.separator {
+			width: 93%;
+			margin: unset;
+			margin-inline-start: auto;
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+
+	.collapse-wrap {
+		.items-wrap {
+			padding-inline-start: vw_size(37, $current);
+
+			.item-wrap {
+				padding-block: vw_size(18, $current);
+				padding-inline-end: vw_size(32, $current);
+
+				.img-wrap {
+					width: vw_size(58, $currentSmall);
+					margin-block-end: vw_size(20, $current);
+					&.no-image-item {
+						margin-inline-start: vw_size(23, $current);
+					}
+					.image {
+						margin-inline-end: vw_size(19, $current);
+					}
+				}
+
+				.details-wrap {
+					margin-bottom: vw_size(15, $current);
+					.edit-icon {
+						@include left(vw_size(-25, $current));
+						top: vw_size(2.5, $current);
+						width: vw_size(20, $current);
+						height: vw_size(20, $current);
+					}
+
+					.details {
+						.title {
+							font-size: vw_size(14, $currentSmall);
+							line-height: vw_size(21, $currentSmall);
+						}
+					}
+				}
+			}
+		}
+
+		.include {
+			font-size: vw_size(15, $currentSmall);
+		}
+
+		.quarters {
+			margin-inline-end: vw_size(5, $current);
+		}
+
+		.detail-request {
+			font-size: vw_size(12, $currentSmall);
+			margin-top: vw_size(7.5, $currentSmall);
+		}
+		.additional {
+			margin-bottom: vw_size(19, $current);
+
+			.sub-text {
+				font-size: vw_size(14, $currentSmall);
+			}
+			.icon {
+				@include left(vw_size(-28, $current));
+				width: vw_size(20, $current);
+				height: vw_size(20, $current);
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+@import "src/styles/imports.scss";
+
+$current: $desktop;
+.personal-area-addresses-wrapper {
+  height: 100%;
+
+  .title {
+    margin-top: 0;
+
+    font-family: $font;
+    color: $payneGrey;
+    font-size: vw_size(33, $current);
+    letter-spacing: -vw_size(-0.33, $current);
+    line-height: vw_size(35, $current);
+    margin-bottom: vw_size(42, $current);
+  }
+  .addresses-list-wrapper {
+    .container {
+      overflow: auto;
+      height: vw_size(350, $current);
+    }
+  }
+  .no-addresses-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .no-addresses-icon {
+      height: vw_size(134, $current);
+      width: vw_size(249, $current);
+      margin-top: vw_size(35, $current);
+    }
+    .no-addresses-title {
+      text-align: center;
+      color: #596b75;
+      font-weight: unset;
+      font-size: vw_size(16, $current);
+      font-family: $font;
+      width: vw_size(152, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .personal-area-addresses-wrapper {
+    .title {
+      font-size: vw_size(46, $current);
+      letter-spacing: vw_size(-0.33, $current);
+      line-height: vw_size(48, $current);
+      margin-bottom: vw_size(70, $current);
+    }
+
+    .addresses-list-wrapper {
+      .container {
+        height: vw_size(520, $current);
+      }
+    }
+    .no-addresses-wrapper {
+      .no-addresses-icon {
+        height: vw_size(268, $current);
+        width: vw_size(360, $current);
+        margin-top: vw_size(35, $current);
+      }
+      .no-addresses-title {
+        font-size: vw_size(20, $current);
+        width: vw_size(152, $current);
+      }
+    }
+  }
+}

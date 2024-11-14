@@ -1,0 +1,29 @@
+@import "src/styles/imports";
+
+.text-only-btn {
+  background: transparent;
+  color: $blue;
+  font-family: EzerDoo-Regular;
+  font-size: vw_size(14, $mobile);
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .text-only-btn {
+    font-size: vw_size(14, $tablet);
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .text-only-btn {
+    font-size: vw_size(14, $desktop);
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  .text-only-btn {
+    font-size: vw_size(14, $desktop-large);
+  }
+}

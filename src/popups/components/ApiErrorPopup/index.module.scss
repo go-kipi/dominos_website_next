@@ -1,0 +1,146 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.general-api-error {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	:global(.popup_wrapper) {
+		min-height: 53vh;
+		max-height: 70vh;
+		position: relative;
+		padding: vw_size(20, $current);
+		overflow: auto;
+
+		:global(.popup_content) {
+			.general-api-error-wrapper {
+				margin-top: vw_size(25, $current);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.general-api-error-img {
+					width: vw_size(109, $current);
+					height: vw_size(107, $current);
+				}
+				.general-api-error-title {
+					margin-top: vw_size(15, $current);
+					color: black;
+					font-family: $font-medium;
+					font-size: vw_size(22, $current);
+				}
+				.general-api-error-message {
+					margin-top: vw_size(20, $current);
+					color: #596b75;
+					font-family: $font-book;
+				}
+				.confirm-message-btn {
+					margin-top: vw_size(42.5, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.general-api-error {
+		:global(.popup_wrapper) {
+			width: vw_size(512, $current);
+			padding: vw_size(20, $current);
+			min-height: unset;
+			max-height: unset;
+			height: vw_size(512, $current);
+
+			:global(.popup_content) {
+				.general-api-error-wrapper {
+					margin-top: vw_size(50, $current);
+					.general-api-error-img {
+						width: vw_size(109, $current);
+						height: vw_size(107, $current);
+					}
+					.general-api-error-title {
+						margin-top: vw_size(15, $current);
+						font-size: vw_size(22, $current);
+					}
+					.general-api-error-message {
+						margin-top: vw_size(20, $current);
+					}
+					.confirm-message-btn {
+						margin-top: vw_size(42.5, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	//  :global(.backdrop):global(.slidePopup) :global(.popup_wrapper) {
+	//   height: vw_size(512, $current);
+	//   width: vw_size(512, $current);
+	// }
+	:global(.popup) {
+		.general-api-error {
+			:global(.popup_wrapper) {
+				width: vw_size(512, $current);
+				padding: vw_size(20, $current);
+				height: vw_size(512, $current);
+
+				:global(.popup_content) {
+					.general-api-error-wrapper {
+						margin-top: vw_size(50, $current);
+						.general-api-error-img {
+							width: vw_size(109, $current);
+							height: vw_size(107, $current);
+						}
+						.general-api-error-title {
+							margin-top: vw_size(15, $current);
+							font-size: vw_size(22, $current);
+						}
+						.general-api-error-message {
+							margin-top: vw_size(20, $current);
+						}
+						.confirm-message-btn {
+							margin-top: vw_size(42.5, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	:global(.popup) {
+		.general-api-error {
+			:global(.popup_wrapper) {
+				height: vw_size(412, $current);
+				width: vw_size(412, $current);
+				padding: vw_size(20, $current);
+
+				:global(.popup_content) {
+					.general-api-error-wrapper {
+						margin-top: vw_size(50, $current);
+						.general-api-error-img {
+							width: vw_size(109, $current);
+							height: vw_size(107, $current);
+						}
+						.general-api-error-title {
+							margin-top: vw_size(15, $current);
+							font-size: vw_size(22, $current);
+						}
+						.general-api-error-message {
+							margin-top: vw_size(20, $current);
+						}
+						.confirm-message-btn {
+							margin-top: vw_size(42.5, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}

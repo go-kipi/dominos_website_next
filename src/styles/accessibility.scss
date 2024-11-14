@@ -1,0 +1,49 @@
+@import "./imports";
+
+#main {
+	fieldset {
+		border: 0;
+	}
+
+	input:focus:not(.focus-visible) {
+		outline: none;
+	}
+
+	textarea:focus:not(.focus-visible) {
+		outline: none;
+	}
+
+	li:focus:not(.focus-visible) {
+		outline: none;
+	}
+
+	//select:focus:not(.focus-visible) {
+	//  outline: none;
+	//}
+
+	.visually-hidden {
+		pointer-events: none;
+		position: absolute;
+		max-width: 100%;
+		padding: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		// white-space: nowrap;
+		border: 0;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	#main {
+		:focus-visible {
+			outline: 2px solid $dominos-red;
+
+			//position: relative;
+			outline-offset: 2px;
+		}
+
+		button:focus-visible {
+			outline: 2px solid $dominos-red;
+		}
+	}
+}

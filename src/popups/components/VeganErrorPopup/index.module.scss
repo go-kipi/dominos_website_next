@@ -1,0 +1,193 @@
+@import "src/styles/imports";
+$current: 375;
+:global(.popup) {
+	.vegan-error-popup {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		:global(.popup_wrapper) {
+			height: 86vh;
+			position: relative;
+			padding: vw_size(20, $current);
+			.close-icon-wrapper {
+				position: absolute;
+				top: vw_size(10, $current);
+				left: vw_size(20, $current);
+			}
+			:global(.popup_content) {
+				.vegan-error-wrapper {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					.vegan-error-img {
+						margin: auto;
+						margin-top: vw_size(20, $current);
+						width: vw_size(169, $current);
+						height: vw_size(132, $current);
+					}
+					.vegan-error-title {
+						font-family: $font-medium;
+						font-size: vw_size(22, $current);
+						text-align: center;
+						margin-top: vw_size(38, $current);
+						width: 90%;
+					}
+					.vegan-error-subtitle {
+						color: #5c6a74;
+						text-align: center;
+						font-family: $font-book;
+						font-size: vw_size(16, $current);
+						margin-top: vw_size(20, $current);
+						width: 85%;
+					}
+					.vegan-error-hint {
+						color: #5c6a74;
+						text-align: center;
+						font-family: $font-book;
+						margin-top: vw_size(40, $current);
+						font-size: vw_size(16, $current);
+					}
+					.ok-btn {
+						margin: auto;
+						margin-top: vw_size(40, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		.vegan-error-popup {
+			:global(.popup_wrapper) {
+				border-radius: vw_size(9, $current);
+				width: vw_size(512, $current);
+				height: vw_size(512, $current);
+				padding: vw_size(20, $current);
+				.close-icon-wrapper {
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+					top: vw_size(10, $current);
+					left: vw_size(20, $current);
+				}
+				:global(.popup_content) {
+					.vegan-error-wrapper {
+						.vegan-error-img {
+							margin-top: vw_size(20, $current);
+							width: vw_size(169, $current);
+							height: vw_size(132, $current);
+						}
+						.vegan-error-title {
+							font-size: vw_size(22, $current);
+							text-align: center;
+							margin-top: vw_size(15, $current);
+						}
+						.vegan-error-subtitle {
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(10, $current);
+						}
+						.vegan-error-hint {
+							margin-top: vw_size(40, $current);
+							font-size: vw_size(16, $current);
+						}
+						.ok-btn {
+							margin-top: vw_size(50, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		.vegan-error-popup {
+			:global(.popup_wrapper) {
+				border-radius: vw_size(9, $current);
+				width: vw_size(512, $current);
+				height: vw_size(512, $current);
+				padding: vw_size(20, $current);
+				:global(.close-icon-wrapper) {
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+					top: vw_size(35, $current);
+					left: vw_size(35, $current);
+				}
+				:global(.popup_content) {
+					.vegan-error-wrapper {
+						.vegan-error-img {
+							margin-top: vw_size(20, $current);
+							width: vw_size(169, $current);
+							height: vw_size(132, $current);
+						}
+						.vegan-error-title {
+							font-size: vw_size(22, $current);
+							margin-top: vw_size(15, $current);
+							width: 50%;
+						}
+						.vegan-error-subtitle {
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(30, $current);
+							width: 50%;
+						}
+						.vegan-error-hint {
+							margin-top: vw_size(35, $current);
+							font-size: vw_size(16, $current);
+						}
+						.ok-btn {
+							margin-top: vw_size(25, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	:global(.popup) {
+		.vegan-error-popup {
+			:global(.popup_wrapper) {
+				border-radius: vw_size(9, $current);
+				height: vw_size(512, $current);
+				width: vw_size(512, $current);
+				padding: vw_size(20, $current);
+				.close-icon-wrapper {
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+					top: vw_size(10, $current);
+					left: vw_size(20, $current);
+				}
+				:global(.popup_content) {
+					.vegan-error-wrapper {
+						.vegan-error-img {
+							margin-top: vw_size(20, $current);
+							width: vw_size(169, $current);
+							height: vw_size(132, $current);
+						}
+						.vegan-error-title {
+							font-size: vw_size(22, $current);
+							margin-top: vw_size(15, $current);
+						}
+						.vegan-error-subtitle {
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(10, $current);
+						}
+						.vegan-error-hint {
+							margin-top: vw_size(40, $current);
+							font-size: vw_size(16, $current);
+						}
+						.ok-btn {
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}

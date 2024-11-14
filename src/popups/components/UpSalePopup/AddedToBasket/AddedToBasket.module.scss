@@ -1,0 +1,169 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+:global(.ltr) {
+  .bundle-up-sale-added-to-basket {
+    .bundle-up-sale-added-to-basket-content {
+      .vi-wrapper {
+        right: unset;
+        left: vw_size(66, $current);
+      }
+
+      .added-to-basket {
+        right: unset;
+        left: vw_size(18.25, $current);
+      }
+    }
+  }
+}
+
+.bundle-up-sale-added-to-basket {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bundle-up-sale-added-to-basket-content {
+    height: vw_size(195, $current);
+    width: vw_size(192, $current);
+    position: relative;
+    .confetti-wrapper {
+      width: 100%;
+    }
+    .vi-wrapper {
+      height: vw_size(64, $current);
+      width: vw_size(65, $current);
+      top: vw_size(51, $current);
+      right: vw_size(66, $current);
+
+      position: absolute;
+    }
+    .added-to-basket {
+      position: absolute;
+      color: $white;
+      font-family: $font-medium;
+      font-size: vw_size(26, $current);
+      line-height: vw_size(37, $current);
+      text-align: center;
+      top: vw_size(121.5, $current);
+      right: vw_size(18.25, $current);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  :global(.ltr) {
+    .bundle-up-sale-added-to-basket {
+      .bundle-up-sale-added-to-basket-content {
+        .vi-wrapper {
+          right: unset;
+          left: vw_size(66, $current);
+        }
+
+        .added-to-basket {
+          right: unset;
+          left: vw_size(18.25, $current);
+        }
+      }
+    }
+  }
+
+  .bundle-up-sale-added-to-basket {
+    .bundle-up-sale-added-to-basket-content {
+      height: vw_size(195, $current);
+      width: vw_size(192, $current);
+
+      .vi-wrapper {
+        height: vw_size(64, $current);
+        width: vw_size(65, $current);
+        top: vw_size(51, $current);
+        right: vw_size(66, $current);
+      }
+      .added-to-basket {
+        font-size: vw_size(26, $current);
+        line-height: vw_size(37, $current);
+        top: vw_size(121.5, $current);
+        right: vw_size(18.25, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  :global(.ltr) {
+    .bundle-up-sale-added-to-basket {
+      .bundle-up-sale-added-to-basket-content {
+        .vi-wrapper {
+          right: unset;
+          left: vw_size(66, $current);
+        }
+
+        .added-to-basket {
+          right: unset;
+          left: vw_size(18.25, $current);
+        }
+      }
+    }
+  }
+
+  .bundle-up-sale-added-to-basket {
+    .bundle-up-sale-added-to-basket-content {
+      height: vw_size(195, $current);
+      width: vw_size(192, $current);
+
+      .vi-wrapper {
+        height: vw_size(64, $current);
+        width: vw_size(65, $current);
+        top: vw_size(51, $current);
+        right: vw_size(66, $current);
+      }
+      .added-to-basket {
+        font-size: vw_size(26, $current);
+        line-height: vw_size(37, $current);
+        top: vw_size(121.5, $current);
+        right: vw_size(18.25, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  :global(.ltr) {
+    .bundle-up-sale-added-to-basket {
+      .bundle-up-sale-added-to-basket-content {
+        .vi-wrapper {
+          right: unset;
+          left: vw_size(66, $current);
+        }
+
+        .added-to-basket {
+          right: unset;
+          left: vw_size(18.25, $current);
+        }
+      }
+    }
+  }
+
+  .bundle-up-sale-added-to-basket {
+    .bundle-up-sale-added-to-basket-content {
+      height: vw_size(195, $current);
+      width: vw_size(192, $current);
+
+      .vi-wrapper {
+        height: vw_size(64, $current);
+        width: vw_size(65, $current);
+        top: vw_size(51, $current);
+        right: vw_size(66, $current);
+      }
+      .added-to-basket {
+        font-size: vw_size(26, $current);
+        line-height: vw_size(37, $current);
+        top: vw_size(121.5, $current);
+        right: vw_size(18.25, $current);
+      }
+    }
+  }
+}

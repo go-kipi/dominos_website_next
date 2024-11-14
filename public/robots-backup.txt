@@ -1,0 +1,5 @@
+er-agent: * 
+Disallow: / 
+ 
+User-agent: Screaming Frog SEO Spider 
+Allow: /

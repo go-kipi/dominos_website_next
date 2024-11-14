@@ -1,0 +1,403 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.dontantion-up-sale-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	overflow-y: auto;
+
+	.dontantion-up-sale-content {
+		margin-top: vw_size(115, $current);
+		display: flex;
+		width: vw_size(282, $current);
+		height: vw_size(353, $current);
+		align-items: center;
+		border-radius: vw_size(20, $current);
+		flex-direction: column;
+
+		background-color: rgba(92, 106, 116, 0.4);
+		margin-bottom: vw_size(23, $current);
+
+		.dontantion-up-sale-image-wrapper {
+			height: vw_size(64, $current);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			position: relative;
+
+			.dontantion-up-sale-image {
+				position: absolute;
+				bottom: 0;
+				width: vw_size(135, $current);
+			}
+		}
+
+		.dontantion-up-sale-title-wrapper {
+			display: flex;
+			flex-direction: column;
+			margin-top: vw_size(11, $current);
+			align-items: center;
+
+			.title {
+				font-family: $font-bold;
+				color: $white;
+				text-align: center;
+				width: 100%;
+				margin: 0;
+				font-weight: unset;
+				&.title1 {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(24, $current);
+				}
+
+				&.title2 {
+					font-size: vw_size(25, $current);
+					line-height: vw_size(24, $current);
+				}
+			}
+		}
+
+		.price-list-wrapper {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			justify-content: center;
+			gap: vw_size(10, $current);
+			margin-top: vw_size(25, $current);
+
+			.price-btn-wrapper {
+				border-radius: vw_size(17, $current);
+				width: vw_size(68, $current);
+				height: vw_size(36, $current);
+				border: 1px solid $white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.3s ease-in;
+
+				&.selected {
+					background-color: $white;
+
+					.price-btn-text {
+						color: #656565;
+					}
+				}
+
+				.price-btn-text {
+					color: $white;
+
+					.price {
+						font-size: vw_size(18, $current);
+						line-height: vw_size(15, $current);
+
+						.currency {
+							font-size: vw_size(12, $current);
+						}
+					}
+				}
+			}
+		}
+
+		.price-text-input {
+			background-color: transparent;
+			width: vw_size(151, $current);
+			margin-top: vw_size(37, $current);
+
+			input {
+				color: $white;
+				background-color: transparent;
+				font-family: $font;
+				font-size: vw_size(17, $current);
+				border-color: rgba(148, 148, 148, 1);
+
+				&::placeholder {
+					color: $white;
+				}
+
+				&:valid {
+					border-color: rgba(148, 148, 148, 1);
+				}
+			}
+		}
+
+		.dontantion-up-sale-accept-btn {
+			width: vw_size(224, $current);
+
+			margin-top: vw_size(29, $current);
+		}
+	}
+
+	.dontantion-up-sale-decline-btn {
+		width: vw_size(224, $current);
+		color: $white;
+		margin-top: auto;
+		margin-bottom: vw_size(35, $current);
+		z-index: 10;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.dontantion-up-sale-wrapper {
+		.dontantion-up-sale-content {
+			margin-top: vw_size(115, $current);
+			width: vw_size(282, $current);
+			height: vw_size(353, $current);
+			border-radius: vw_size(20, $current);
+			margin-bottom: vw_size(23, $current);
+
+			.dontantion-up-sale-image-wrapper {
+				height: vw_size(64, $current);
+
+				.dontantion-up-sale-image {
+					width: vw_size(135, $current);
+				}
+			}
+
+			.dontantion-up-sale-title-wrapper {
+				margin-top: vw_size(11, $current);
+
+				.title {
+					&.title1 {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(24, $current);
+					}
+
+					&.title2 {
+						font-size: vw_size(25, $current);
+						line-height: vw_size(24, $current);
+					}
+				}
+			}
+
+			.price-list-wrapper {
+				margin-top: vw_size(25, $current);
+
+				gap: vw_size(10, $current);
+
+				.price-btn-wrapper {
+					border-radius: vw_size(17, $current);
+					width: vw_size(68, $current);
+					height: vw_size(36, $current);
+
+					.price-btn-text {
+						.price {
+							font-size: vw_size(18, $current);
+							line-height: vw_size(15, $current);
+
+							.currency {
+								font-size: vw_size(12, $current);
+							}
+						}
+					}
+				}
+			}
+
+			.price-text-input {
+				width: vw_size(151, $current);
+				margin-top: vw_size(37, $current);
+
+				input {
+					font-size: vw_size(17, $current);
+				}
+			}
+
+			.dontantion-up-sale-accept-btn {
+				width: vw_size(224, $current);
+				margin-top: vw_size(29, $current);
+			}
+		}
+
+		.dontantion-up-sale-decline-btn {
+			width: vw_size(224, $current);
+			margin-top: auto;
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.dontantion-up-sale-wrapper {
+		.dontantion-up-sale-content {
+			margin-top: vw_size(64, $current);
+			width: vw_size(282, $current);
+			height: vw_size(353, $current);
+			border-radius: vw_size(20, $current);
+			margin-bottom: vw_size(23, $current);
+
+			.dontantion-up-sale-image-wrapper {
+				height: vw_size(65, $current);
+
+				.dontantion-up-sale-image {
+					width: vw_size(135, $current);
+				}
+			}
+
+			.dontantion-up-sale-title-wrapper {
+				margin-top: vw_size(10, $current);
+
+				.title {
+					&.title1 {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(24, $current);
+					}
+
+					&.title2 {
+						font-size: vw_size(25, $current);
+						line-height: vw_size(24, $current);
+					}
+				}
+			}
+
+			.price-list-wrapper {
+				margin-top: vw_size(25, $current);
+
+				gap: vw_size(10, $current);
+
+				.price-btn-wrapper {
+					border-radius: vw_size(17, $current);
+					width: vw_size(68, $current);
+					height: vw_size(36, $current);
+
+					.price-btn-text {
+						.price {
+							font-size: vw_size(18, $current);
+							line-height: vw_size(15, $current);
+
+							.currency {
+								font-size: vw_size(12, $current);
+							}
+						}
+					}
+				}
+			}
+
+			.price-text-input {
+				width: vw_size(151, $current);
+				margin-top: vw_size(37, $current);
+
+				input {
+					font-size: vw_size(17, $current);
+
+					&::placeholder {
+						font-size: vw_size(17, $current);
+					}
+				}
+			}
+
+			.dontantion-up-sale-accept-btn {
+				margin-top: vw_size(29, $current);
+				width: vw_size(256, $current);
+				height: vw_size(51, $current);
+
+				.btn-text {
+					font-size: vw_size(20, $current);
+				}
+			}
+		}
+
+		.dontantion-up-sale-decline-btn {
+			width: vw_size(256, $current);
+			margin-top: auto;
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.dontantion-up-sale-wrapper {
+		.dontantion-up-sale-content {
+			margin-top: vw_size(128, $current);
+			width: vw_size(282, $current);
+			height: vw_size(353, $current);
+			border-radius: vw_size(20, $current);
+			margin-bottom: vw_size(23, $current);
+
+			.dontantion-up-sale-image-wrapper {
+				height: vw_size(65, $current);
+
+				.dontantion-up-sale-image {
+					width: vw_size(135, $current);
+				}
+			}
+
+			.dontantion-up-sale-title-wrapper {
+				margin-top: vw_size(10, $current);
+
+				.title {
+					&.title1 {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(24, $current);
+					}
+
+					&.title2 {
+						font-size: vw_size(25, $current);
+						line-height: vw_size(24, $current);
+					}
+				}
+			}
+
+			.price-list-wrapper {
+				margin-top: vw_size(25, $current);
+
+				gap: vw_size(10, $current);
+
+				.price-btn-wrapper {
+					border-radius: vw_size(17, $current);
+					width: vw_size(68, $current);
+					height: vw_size(36, $current);
+
+					.price-btn-text {
+						.price {
+							font-size: vw_size(18, $current);
+							line-height: vw_size(15, $current);
+
+							.currency {
+								font-size: vw_size(12, $current);
+							}
+						}
+					}
+				}
+			}
+
+			.price-text-input {
+				width: vw_size(151, $current);
+				margin-top: vw_size(37, $current);
+
+				input {
+					font-size: vw_size(17, $current);
+
+					&::placeholder {
+						font-size: vw_size(17, $current);
+					}
+				}
+			}
+
+			.dontantion-up-sale-accept-btn {
+				margin-top: vw_size(29, $current);
+				height: vw_size(51, $current);
+				width: vw_size(256, $current);
+
+				.btn-text {
+					font-size: vw_size(20, $current);
+				}
+			}
+		}
+
+		.dontantion-up-sale-decline-btn {
+			width: vw_size(256, $current);
+			margin-top: auto;
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}

@@ -1,0 +1,331 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+:global(.ltr) {
+	.payment-wrapper {
+		.payment-header-wrapper {
+			.payment-back-button {
+				transform: scaleX(-1);
+			}
+		}
+	}
+}
+.payment-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	.payment-conatiner {
+		overflow: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100%;
+	}
+
+	.payment-header-wrapper {
+		display: flex;
+		justify-content: flex-start;
+		padding-inline-start: vw_size(23, $current);
+		margin-top: vw_size(12, $current);
+		align-self: baseline;
+		.payment-back-button {
+			cursor: pointer;
+			width: vw_size(19, $current);
+		}
+	}
+	.payment-logo-wrapper {
+		margin-top: vw_size(21, $current);
+		width: vw_size(38, $current);
+	}
+	.payment-sum-title {
+		margin: 0;
+		font-family: $font-book;
+		font-size: vw_size(15, $current);
+		line-height: vw_size(27, $current);
+		margin-top: vw_size(9, $current);
+		color: $white;
+		font-weight: unset;
+	}
+	.payment-price-wrapper {
+		height: vw_size(46, $current);
+		.payment-price {
+			color: $white;
+			.price {
+				font-family: $font-bold;
+				font-size: vw_size(38, $current);
+				.number-container {
+					:nth-child(2) {
+						font-size: vw_size(24, $current);
+					}
+				}
+				.currency {
+					font-size: vw_size(26, $current);
+				}
+			}
+		}
+	}
+	.payment-details-wrapper {
+		margin-top: vw_size(14, $current);
+
+		.payment-details {
+			font-family: $font;
+			color: $white;
+			font-size: vw_size(14, $current);
+		}
+	}
+	.gift-cards-list {
+		width: 100%;
+		height: vw_size(155, $current);
+		padding-block: vw_size(10, $current);
+		overflow-y: scroll;
+		@include hide-scrollbar();
+	}
+	.payment-content {
+		background-color: $white;
+		border-top-left-radius: vw_size(17, $current);
+		border-top-right-radius: vw_size(17, $current);
+		width: 100%;
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+
+		&.has-gift-cards {
+			height: vw_size(380, $current);
+		}
+		&.is-safari-with-gc {
+			height: vw_size(360, $current);
+		}
+		&.in-gift-card {
+			flex: 1;
+			margin-top: vw_size(30, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.payment-wrapper {
+		.payment-logo-wrapper {
+			margin-top: vw_size(21, $current);
+			width: vw_size(38, $current);
+		}
+		.payment-sum-title {
+			font-size: vw_size(15, $current);
+			line-height: vw_size(27, $current);
+			margin-top: vw_size(9, $current);
+		}
+		.payment-price-wrapper {
+			height: vw_size(46, $current);
+			.payment-price {
+				.price {
+					font-size: vw_size(38, $current);
+					.number-container {
+						:nth-child(2) {
+							font-size: vw_size(24, $current);
+						}
+					}
+					.currency {
+						font-size: vw_size(26, $current);
+					}
+				}
+			}
+		}
+		.payment-details-wrapper {
+			margin-top: vw_size(14, $current);
+
+			.payment-details {
+				font-size: vw_size(14, $current);
+			}
+		}
+		.gift-cards-list {
+			height: vw_size(150, $current);
+			padding-block: vw_size(10, $current);
+		}
+		.payment-content {
+			border-top-left-radius: vw_size(17, $current);
+			border-top-right-radius: vw_size(17, $current);
+
+			&.in-gift-card,
+			&.is-safari-with-gc,
+			&.has-gift-cards {
+				height: unset;
+			}
+			&.in-gift-card {
+				margin-top: vw_size(30, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.payment-wrapper {
+		max-height: 75vh;
+		overflow: hidden;
+		border-radius: 14px;
+		min-height: 35vh;
+
+		.payment-conatiner {
+			margin: auto;
+			padding-block: vw_size(20, $current);
+			height: unset;
+		}
+		.header-desktop {
+			height: vw_size(50, $current);
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 100%;
+		}
+
+		.payment-header-wrapper {
+			width: 100%;
+			padding-inline-start: vw_size(23, $current);
+			margin-top: vw_size(12, $current);
+			.payment-back-button {
+				width: vw_size(19, $current);
+			}
+		}
+		.payment-logo-wrapper {
+			margin-top: unset;
+			width: vw_size(38, $current);
+		}
+		.payment-sum-title {
+			font-size: vw_size(15, $current);
+			line-height: vw_size(27, $current);
+			margin-top: unset;
+			color: $black;
+			&.payment-sum-title-with-logo {
+				margin-top: vw_size(5, $current);
+			}
+		}
+		.payment-old-price-wrapper {
+			.old-payment-price {
+				color: $pink;
+
+				.price {
+					font-size: vw_size(20, $current);
+					.number-container {
+						:nth-child(2) {
+							font-size: vw_size(20, $current);
+						}
+					}
+					.currency {
+						font-size: vw_size(16, $current);
+					}
+				}
+			}
+		}
+		.payment-price-wrapper {
+			height: vw_size(46, $current);
+			.payment-price {
+				color: $black;
+				.price {
+					font-size: vw_size(38, $current);
+					.number-container {
+						:nth-child(2) {
+							font-size: vw_size(24, $current);
+						}
+					}
+					.currency {
+						font-size: vw_size(24, $current);
+					}
+				}
+			}
+		}
+		.payment-details-wrapper {
+			display: none;
+		}
+		.gift-cards-list {
+			height: vw_size(135, $current);
+			padding-block: vw_size(10, $current);
+		}
+		.payment-content {
+			border-top-left-radius: unset;
+			border-top-right-radius: unset;
+			height: unset;
+			margin-top: unset;
+			border-radius: unset;
+			&.in-gift-card {
+				margin-top: vw_size(10, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.payment-wrapper {
+		max-height: unset;
+		.payment-conatiner {
+			padding-block: vw_size(20, $current);
+		}
+		.header-desktop {
+			height: vw_size(50, $current);
+		}
+
+		.payment-header-wrapper {
+			padding-inline-start: vw_size(23, $current);
+			margin-top: vw_size(12, $current);
+			.payment-back-button {
+				width: vw_size(19, $current);
+			}
+		}
+
+		.payment-sum-title {
+			font-size: vw_size(15, $current);
+			line-height: vw_size(27, $current);
+
+			&.payment-sum-title-with-logo {
+				margin-top: vw_size(5, $current);
+			}
+		}
+		.payment-old-price-wrapper {
+			.old-payment-price {
+				color: $pink;
+
+				.price {
+					font-size: vw_size(20, $current);
+					.number-container {
+						:nth-child(2) {
+							font-size: vw_size(20, $current);
+						}
+					}
+					.currency {
+						font-size: vw_size(16, $current);
+					}
+				}
+			}
+		}
+		.payment-price-wrapper {
+			height: vw_size(46, $current);
+			.payment-price {
+				.price {
+					font-size: vw_size(38, $current);
+					.number-container {
+						:nth-child(2) {
+							font-size: vw_size(24, $current);
+						}
+					}
+					.currency {
+						font-size: vw_size(24, $current);
+					}
+				}
+			}
+		}
+		.gift-cards-list {
+			height: vw_size(135, $current);
+			padding-block: vw_size(10, $current);
+		}
+		.payment-content {
+			&.in-gift-card {
+				margin-top: vw_size(10, $current);
+			}
+		}
+	}
+}

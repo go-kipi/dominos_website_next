@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="44px" viewBox="0 0 45 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/add branch</title>
+    <defs>
+        <filter x="-11.2%" y="-48.0%" width="122.3%" height="196.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter color-interpolation-filters="auto" id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.003922 0 0 0 0 0.478431 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="טרקר-אפשר-לאסוף" transform="translate(-207.000000, -450.000000)">
+            <g id="link/with-icon-copy" transform="translate(135.000000, 459.500000)" filter="url(#filter-1)">
+                <g id="tracker/icons/nav" transform="translate(81.702359, 0.000000)" filter="url(#filter-2)">
+                    <g transform="translate(0.515426, 0.500000)">
+                        <ellipse id="Oval" stroke="#707070" stroke-width="1.02" cx="12.3702359" cy="12" rx="11.8602359" ry="11.49"></ellipse>
+                        <path d="M17.2636599,7.60018815 L13.8679159,17.9468621 C13.753734,18.2947689 13.3791371,18.4842404 13.0312303,18.3700585 C12.8411809,18.3076849 12.689449,18.162844 12.6183159,17.9758966 L11.2150709,14.2879815 C11.1369135,14.0825734 10.9620466,13.9292448 10.7481858,13.8786024 L7.02989918,12.9981098 C6.67358812,12.9137351 6.45314014,12.5564887 6.53751482,12.2001777 C6.58452421,12.0016588 6.72030991,11.8358356 6.90565799,11.7505965 L16.8101818,7.19563833 C16.9765176,7.11914273 17.1733713,7.19197258 17.2498669,7.35830835 C17.2848176,7.43430691 17.2897446,7.5207091 17.2636599,7.60018815 Z" id="Path" stroke="#707070" stroke-width="0.9945" stroke-linecap="round" stroke-linejoin="round" transform="translate(11.328948, 13.301898) rotate(-7.000000) translate(-11.328948, -13.301898) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

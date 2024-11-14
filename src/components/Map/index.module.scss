@@ -1,0 +1,120 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+.map-wrapper {
+	position: relative;
+
+	.gps-no-active-wrapper {
+		width: 100%;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: 0;
+		z-index: 10003;
+		padding-top: vw_size(5, $current);
+		.gps-no-active-message {
+			font-size: vw_size(14, $current);
+			color: $red;
+			font-family: $font;
+		}
+	}
+
+	.back-to-location {
+		cursor: pointer;
+		position: absolute;
+		left: vw_size(10, $current);
+		bottom: vw_size(200, $current);
+		width: vw_size(55, $current);
+		height: vw_size(55, $current);
+		background-color: $white;
+		border-radius: 50%;
+		box-shadow: 0 vw_size(5, $current) vw_size(14, $current) vw_size(1, $current)
+			rgba(1, 122, 255, 0.19);
+		border: 1px solid $white;
+		transition: 0.2s;
+
+		.back-to-location-img {
+			width: vw_size(34, $current);
+			height: vw_size(34, $current);
+			object-fit: contain;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.map-wrapper {
+		.gps-no-active-wrapper {
+			padding-top: vw_size(5, $current);
+
+			.gps-no-active-message {
+				font-size: vw_size(14, $current);
+			}
+		}
+		.back-to-location {
+			left: vw_size(10, $current);
+			bottom: vw_size(200, $current);
+			width: vw_size(55, $current);
+			height: vw_size(55, $current);
+			box-shadow: 0 vw_size(5, $current) vw_size(14, $current) vw_size(1, $current)
+				rgba(1, 122, 255, 0.19);
+
+			.back-to-location-img {
+				width: vw_size(34, $current);
+				height: vw_size(34, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.map-wrapper {
+		.gps-no-active-wrapper {
+			padding-top: vw_size(5, $current);
+
+			.gps-no-active-message {
+				font-size: vw_size(16, $current);
+			}
+		}
+		.back-to-location {
+			left: vw_size(10, $current);
+			bottom: vw_size(200, $current);
+			width: vw_size(55, $current);
+			height: vw_size(55, $current);
+			box-shadow: 0 vw_size(5, $current) vw_size(14, $current) vw_size(1, $current)
+				rgba(1, 122, 255, 0.19);
+
+			.back-to-location-img {
+				width: vw_size(34, $current);
+				height: vw_size(34, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	.map-wrapper {
+		.gps-no-active-wrapper {
+			padding-top: vw_size(5, $current);
+
+			.gps-no-active-message {
+				font-size: vw_size(16, $current);
+			}
+		}
+		.back-to-location {
+			left: vw_size(10, $current);
+			bottom: vw_size(200, $current);
+			width: vw_size(55, $current);
+			height: vw_size(55, $current);
+			box-shadow: 0 vw_size(5, $current) vw_size(14, $current) vw_size(1, $current)
+				rgba(1, 122, 255, 0.19);
+
+			.back-to-location-img {
+				width: vw_size(34, $current);
+				height: vw_size(34, $current);
+			}
+		}
+	}
+}

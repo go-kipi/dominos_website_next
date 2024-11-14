@@ -1,0 +1,99 @@
+@import "src/styles/imports";
+
+$current: 375;
+.price-list-row-wrapper {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	.row-text {
+		font-size: vw_size(16, $current);
+		font-family: $font;
+		color: white;
+		letter-spacing: 1px;
+		line-height: vw_size(30, $current);
+		text-align: right;
+		margin-inline-end: vw_size(5, $current);
+	}
+	.row-old-price {
+		font-size: vw_size(11.8, $current);
+		color: $pink;
+		margin-inline-start: vw_size(10, $current);
+	}
+	.row-price {
+		margin-inline-start: vw_size(5, $current);
+	}
+	.row-dotted-line {
+		border-width: 3.5px;
+		border-spacing: 10px;
+		border-color: rgba(165, 165, 165, 1);
+		border-bottom-style: dotted;
+		padding: 5px;
+		color: #fff;
+		height: 1px;
+		flex: 1;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.price-list-row-wrapper {
+		.row-text {
+			font-size: vw_size(16, $current);
+			line-height: vw_size(30, $current);
+			margin-inline-end: vw_size(5, $current);
+		}
+		.row-old-price {
+			font-size: vw_size(11.8, $current);
+			margin-inline-start: vw_size(10, $current);
+		}
+		.row-price {
+			margin-inline-start: vw_size(5, $current);
+		}
+		.row-dotted-line {
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.price-list-row-wrapper {
+		width: 100%;
+		.row-text {
+			font-size: vw_size(16, $current);
+			line-height: vw_size(30, $current);
+			margin-inline-end: vw_size(5, $current);
+		}
+		.row-old-price {
+			font-size: vw_size(11.8, $current);
+			margin-inline-start: vw_size(10, $current);
+		}
+		.row-price {
+			margin-inline-start: vw_size(5, $current);
+		}
+		.row-dotted-line {
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	.price-list-row-wrapper {
+		.row-text {
+			font-size: vw_size(16, $current);
+			line-height: vw_size(30, $current);
+			margin-inline-end: vw_size(5, $current);
+		}
+		.row-old-price {
+			font-size: vw_size(11.8, $current);
+			margin-inline-start: vw_size(10, $current);
+		}
+		.row-price {
+			margin-inline-start: vw_size(5, $current);
+		}
+		.row-dotted-line {
+		}
+	}
+}

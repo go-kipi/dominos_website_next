@@ -1,0 +1,56 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.payment-loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: vw_size(450, $current);
+	.loader-text {
+		font-family: $font-medium;
+		color: #383940;
+		font-size: vw_size(25, $current);
+		text-align: center;
+	}
+	& > div {
+		height: 20%;
+		width: unset;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.payment-loader {
+		height: vw_size(450, $current);
+		.loader-text {
+			font-size: vw_size(25, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.payment-loader {
+		margin: vw_size(20, $current) auto;
+		height: vw_size(280, $current);
+		.loader-text {
+			font-size: vw_size(25, $current);
+		}
+		& > div {
+			height: 30%;
+			width: unset;
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.payment-loader {
+		margin: vw_size(20, $current) auto;
+		height: vw_size(350, $current);
+		.loader-text {
+			font-size: vw_size(25, $current);
+		}
+	}
+}

@@ -1,0 +1,61 @@
+@import "/src/styles/imports.scss";
+$current: $desktop;
+.personal-area-saved-pizza-desktop-wrapper {
+  .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    .saved-pizzas-title {
+      font-size: vw_size(33, $current);
+      line-height: vw_size(35, $current);
+      font-family: $font;
+      letter-spacing: -0.33px;
+      color: $white;
+      margin: 0;
+    }
+  }
+  .personal-area-saved-pizza-desktop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: vw_size(812, $current);
+    margin-top: vw_size(61, $current);
+    gap: vw_size(26, $current) vw_size(18, $current);
+    overflow-y: auto;
+    padding-bottom: vw_size(30, $current);
+    @include hide-scrollbar();
+    padding-inline-end: vw_size(20, $current);
+
+    .saved-pizza-item {
+      .placeholder {
+        height: vw_size(86, $current);
+        width: vw_size(117, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .personal-area-saved-pizza-desktop-wrapper {
+    .title-wrapper {
+      .saved-pizzas-title {
+        font-size: vw_size(33, $current);
+        line-height: vw_size(35, $current);
+      }
+    }
+    .personal-area-saved-pizza-desktop {
+      width: vw_size(1120, $current);
+      margin-top: vw_size(61, $current);
+      gap: vw_size(26, $current) vw_size(18, $current);
+      padding-bottom: vw_size(30, $current);
+      padding-inline-end: vw_size(20, $current);
+
+      .saved-pizza-item {
+        .placeholder {
+          height: vw_size(86, $current);
+          width: vw_size(117, $current);
+        }
+      }
+    }
+  }
+}

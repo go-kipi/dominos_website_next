@@ -1,0 +1,6 @@
+const BIG_ORDERS_SCREEN_TYPES = {
+  FORM: "FORM",
+  SUCCESS: "SUCCESS",
+};
+
+export default BIG_ORDERS_SCREEN_TYPES;

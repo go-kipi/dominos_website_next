@@ -1,0 +1,30 @@
+@import "/src/styles/imports";
+$current: 375;
+
+.hidden-content {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  &:focus-within {
+    font-family: $font-bold;
+    cursor: pointer;
+    top: 15px;
+    z-index: 9999;
+    background-color: $white;
+  }
+}
+.ltr {
+  .hidden-content {
+    &:focus-within {
+      left: 5px;
+    }
+  }
+}
+
+.rtl {
+  .hidden-content {
+    &:focus-within {
+      right: 5px;
+    }
+  }
+}

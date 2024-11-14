@@ -1,0 +1,125 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.enter-coupon-wrapper {
+	height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+
+	.coupon-animation-wrapper {
+
+		width: vw_size(250, $current);
+		height: vw_size(250, $current);
+		margin-top: vw_size(50, $current);
+		padding-right: 50px;
+	}
+	.coupon-text-input {
+		margin-top: vw_size(-30, $current);
+		width: vw_size(277, $current);
+		input {
+			padding-inline-end: unset;
+		}
+	}
+
+
+	.actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: vw_size(40, $current);
+		width: vw_size(284, $current);
+
+		.accept-btn {
+			display: flex;
+			justify-content: center;
+		}
+	}
+	.text-wrapper {
+		position: absolute;
+		top: vw_size(460, $current);
+		width: 100%;
+		padding-inline: vw_size(51, $current);
+		text-align: center;
+
+		.text {
+			font-size: vw_size(15, $current);
+			color: #5c6a74;
+			line-height: vw_size(27, $current);
+			&-book {
+				font-family: $font-book;
+			}
+			&-bold {
+				font-family: $font-bold;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.enter-coupon-wrapper {
+		.coupon-animation-wrapper {
+
+			width: vw_size(250, $current);
+			height: vw_size(250, $current);
+			margin-top: vw_size(50, $current);
+			padding-right: 50px;
+		}
+		.coupon-text-input {
+			margin-top: vw_size(-30, $current);
+			width: vw_size(277, $current);
+		}
+		.actions {
+			margin-top: vw_size(119, $current);
+			width: vw_size(358, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.enter-coupon-wrapper {
+		.coupon-animation-wrapper {
+
+			width: vw_size(250, $current);
+			height: vw_size(250, $current);
+			margin-top: vw_size(50, $current);
+			padding-right: 50px;
+		}
+		.coupon-text-input {
+			margin-top: vw_size(-30, $current);
+			width: vw_size(277, $current);
+		}
+		.actions {
+			margin-top: vw_size(119, $current);
+			width: vw_size(358, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.enter-coupon-wrapper {
+		.coupon-animation-wrapper {
+
+			width: vw_size(350, $current);
+			height: vw_size(350, $current);
+			margin-top: vw_size(50, $current);
+			padding-right: 50px;
+		}
+		.coupon-text-input {
+			margin-top: vw_size(-130, $current);
+			width: vw_size(277, $current);
+		}
+		.actions {
+			margin-top: vw_size(119, $current);
+			width: vw_size(1, $current);
+		}
+	}
+}

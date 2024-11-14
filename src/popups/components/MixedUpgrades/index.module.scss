@@ -1,0 +1,516 @@
+@import "/src/styles/imports";
+$current: 375;
+
+:global(.popup) {
+	.mixed-upgrades-popup {
+		:global(.popup_content) {
+			display: flex;
+			flex-direction: column;
+
+			align-items: center;
+			@include hide-scrollbar();
+
+			.upgrade-right-side {
+				text-align: center;
+				margin-top: vw_size(35, $current);
+
+				.header-title {
+					font-family: $font;
+					font-size: vw_size(20, $current);
+					line-height: vw_size(27, $current);
+					color: $white;
+					&.show {
+						transition: ease-in-out 250ms;
+						opacity: 1;
+					}
+					&.hide {
+						transition: ease-in-out 250ms;
+						opacity: 0;
+						height: 0;
+					}
+				}
+				.header-subtitle {
+					font-size: vw_size(13, $current);
+					font-family: $font-bold;
+					line-height: vw_size(30, $current);
+					color: $label-blue;
+					&.show {
+						transition: ease-in-out 250ms;
+						opacity: 1;
+					}
+					&.hide {
+						transition: ease-in-out 250ms;
+						opacity: 0;
+					}
+				}
+				.mama-mia-wrapper {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					&.show {
+						transition: ease-in-out 250ms;
+						opacity: 1;
+						height: unset;
+						margin-bottom: vw_size(50, $current);
+					}
+					&.hide {
+						transition: ease-in-out 250ms;
+						opacity: 0;
+					}
+					.mama-mia-text {
+						color: white;
+						font-size: vw_size(20, $current);
+						font-family: $font-book;
+						&.bold {
+							font-family: $font-medium;
+						}
+					}
+				}
+			}
+
+			.upgrade-left-side {
+				.single-upgrade-list {
+					display: flex;
+				}
+				.upgrade-list {
+					position: relative;
+					margin-top: vw_size(10, $current);
+					height: vw_size(140, $current);
+					overflow: scroll;
+					@include hide-scrollbar();
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: vw_size(280, $current);
+					margin: auto;
+
+					&::after {
+						position: absolute;
+						background: linear-gradient(
+							-180deg,
+							rgba(0, 0, 0, 0) 0%,
+							rgba(0, 0, 0, 1) 100%
+						);
+						height: vw_size(90, $current);
+						top: 0;
+						width: 100%;
+					}
+					&.show {
+						transition: ease-in-out 250ms;
+						opacity: 1;
+					}
+					&.hide {
+						transition: ease-in-out 250ms;
+						opacity: 0;
+						height: 0;
+					}
+				}
+				.toppings-pizza-img {
+					position: relative;
+					display: flex;
+					justify-content: center;
+
+					img {
+						width: vw_size(315, $current);
+						height: vw_size(315, $current);
+						object-fit: cover;
+						margin-block-start: vw_size(10, $current);
+					}
+
+					.topping-coverage-on-pizza {
+						position: absolute;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 100%;
+						height: 100%;
+						img {
+							object-fit: cover;
+							position: absolute;
+							transform-origin: center;
+							width: 85%;
+							height: 85%;
+							&.q1 {
+								transform: rotate(0deg);
+								height: auto;
+							}
+							&.q2 {
+								transform: rotate(90deg);
+							}
+							&.q3 {
+								transform: rotate(180deg);
+							}
+							&.q4 {
+								transform: rotate(-90deg);
+							}
+
+							&.q1,
+							&.q2,
+							&.q3,
+							&.q4 {
+								transition: ease-in-out 175ms;
+								scale: unset;
+								opacity: unset;
+								// height: auto;
+								&:global(.animated) {
+									scale: 1.45;
+									opacity: 0.5;
+									transition: ease-in-out 175ms;
+								}
+							}
+						}
+					}
+				}
+				.buttons-wrapper {
+					// margin-top: vw_size(50, $current);
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					transition: ease-in-out 250ms;
+					opacity: 1;
+					&.hide {
+						transition: ease-in-out 250ms;
+						opacity: 0;
+					}
+
+					.continue_button {
+						margin: auto;
+						position: relative;
+					}
+					.another-time {
+						text-align: center;
+						width: 100%;
+						color: $white;
+						font-family: $font;
+						font-size: vw_size(13, $current);
+						line-height: vw_size(28, $current);
+						margin-top: vw_size(12, $current);
+					}
+					.dont-ask-checkbox {
+						margin-top: vw_size(26, $current);
+						& > label > span {
+							color: #d1d1d1;
+							font-family: $font;
+							font-size: vw_size(13, $current);
+						}
+						& > label > .image-wrapper {
+							height: vw_size(22.5, $current);
+							width: vw_size(22.5, $current);
+						}
+					}
+				}
+			}
+
+			.buttons-wrapper {
+				.another-time {
+					cursor: pointer;
+					text-align: center;
+					width: 100%;
+					color: $white;
+					font-family: $font;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		.mixed-upgrades-popup {
+			:global(.popup_content) {
+				.upgrade-right-side {
+					margin-top: vw_size(30, $current);
+
+					.header-title {
+						font-size: vw_size(20, $current);
+						line-height: vw_size(27, $current);
+					}
+					.header-subtitle {
+						font-size: vw_size(13, $current);
+						line-height: vw_size(30, $current);
+					}
+					.mama-mia-wrapper {
+						.mama-mia-text {
+							font-size: vw_size(20, $current);
+						}
+					}
+				}
+				.upgrade-left-side {
+					.upgrade-list {
+						width: vw_size(280, $current);
+						margin-top: vw_size(10, $current);
+						height: vw_size(140, $current);
+
+						&::after {
+							position: absolute;
+							background: linear-gradient(
+								-180deg,
+								rgba(0, 0, 0, 0) 0%,
+								rgba(0, 0, 0, 1) 100%
+							);
+							height: vw_size(90, $current);
+							top: 0;
+							width: 100%;
+						}
+					}
+
+					.toppings-pizza-img {
+						img {
+							width: vw_size(300, $current);
+							height: vw_size(300, $current);
+							margin-block-start: vw_size(20, $current);
+						}
+						.topping-coverage-on-pizza {
+							img {
+								width: 85%;
+								height: 85%;
+							}
+						}
+					}
+				}
+				.buttons-wrapper {
+					.another-time {
+						font-size: vw_size(13, $current);
+						line-height: vw_size(28, $current);
+						margin-top: vw_size(20, $current);
+					}
+					.dont-ask-checkbox {
+						margin-top: vw_size(18, $current);
+						& > label > span {
+							font-size: vw_size(13, $current);
+						}
+						& > label > .image-wrapper {
+							height: vw_size(22.5, $current);
+							width: vw_size(22.5, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		.mixed-upgrades-popup {
+			:global(.popup_content) {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: space-between;
+				padding-inline: vw_size(100, $current);
+				gap: vw_size(60, $current);
+
+				.upgrade-right-side {
+					text-align: center;
+					margin-top: vw_size(140, $current);
+					.upgrade-list {
+						margin: auto;
+						position: relative;
+						width: vw_size(280, $current);
+						margin-top: vw_size(10, $current);
+						height: vw_size(140, $current);
+						padding-block-start: vw_size(10, $current);
+						overflow-y: scroll;
+						@include hide-scrollbar();
+						&.show {
+							transition: ease-in-out 250ms;
+							opacity: 1;
+						}
+						&.hide {
+							transition: ease-in-out 250ms;
+							opacity: 0;
+							height: 0;
+						}
+					}
+					.single-upgrade-list {
+						display: flex;
+					}
+
+					.header-title {
+						margin-top: vw_size(0, $current);
+						font-size: vw_size(24, $current);
+						line-height: vw_size(30, $current);
+					}
+
+					.header-subtitle {
+						font-size: vw_size(15, $current);
+						line-height: vw_size(30, $current);
+						letter-spacing: vw_size(1, $current);
+					}
+					.mama-mia-wrapper {
+						margin-top: vw_size(100, $current);
+						flex-direction: column;
+						margin-bottom: unset;
+						.mama-mia-text {
+							font-size: vw_size(30, $current);
+						}
+						&.hide {
+							margin-top: unset;
+						}
+						&.show {
+							margin-bottom: unset;
+						}
+					}
+					.buttons-wrapper {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						transition: ease-in-out 250ms;
+						opacity: 1;
+						&.hide {
+							transition: ease-in-out 250ms;
+							opacity: 0;
+						}
+
+						.continue_button {
+							margin-inline: auto;
+							margin-top: vw_size(20, $current);
+							position: relative;
+							left: 0;
+							right: 0;
+							height: vw_size(50, $current);
+							width: vw_size(256, $current);
+							.continue_button_text {
+								font-family: $font;
+								font-size: vw_size(20, $current);
+							}
+						}
+						.another-time {
+							font-size: vw_size(15, $current);
+							line-height: vw_size(10, $current);
+							margin-top: vw_size(38, $current);
+						}
+						.dont-ask-checkbox {
+							margin-top: vw_size(80, $current);
+							& > label > span {
+								color: #d1d1d1;
+								font-family: $font;
+								font-size: vw_size(13, $current);
+								margin-right: vw_size(5, $current);
+							}
+							& > label > .image-wrapper {
+								height: vw_size(22.5, $current);
+								width: vw_size(22.5, $current);
+							}
+						}
+					}
+				}
+
+				.upgrade-left-side {
+					margin-top: vw_size(70, $current);
+					.toppings-pizza-img {
+						img {
+							width: vw_size(500, $current);
+							height: vw_size(500, $current);
+							object-fit: cover;
+						}
+						.topping-coverage-on-pizza {
+							img {
+								width: 80%;
+								height: 80%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_large;
+	:global(.popup) {
+		.mixed-upgrades-popup {
+			:global(.popup_content) {
+				width: 100%;
+				padding-inline: vw_size(160, $current);
+
+				.upgrade-right-side {
+					margin-top: vw_size(200, $current);
+					.upgrade-list {
+						margin-top: vw_size(10, $current);
+						height: vw_size(100, $current);
+						width: vw_size(280, $current);
+						padding-block-start: vw_size(20, $current);
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+					}
+
+					.header-title {
+						margin-top: unset;
+						font-size: vw_size(24, $current);
+						line-height: vw_size(30, $current);
+					}
+					.header-subtitle {
+						font-size: vw_size(15, $current);
+						line-height: vw_size(30, $current);
+						letter-spacing: vw_size(1, $current);
+					}
+					.mama-mia-wrapper {
+						margin-top: vw_size(55, $current);
+						&.hide {
+							margin-top: unset;
+						}
+						.mama-mia-text {
+							font-size: vw_size(30, $current);
+						}
+					}
+
+					.buttons-wrapper {
+						margin-top: vw_size(25, $current);
+						.continue_button {
+							height: vw_size(50, $current);
+							width: vw_size(256, $current);
+							.continue_button_text {
+								font-size: vw_size(20, $current);
+							}
+						}
+
+						.another-time {
+							font-size: vw_size(15, $current);
+							line-height: vw_size(10, $current);
+							margin-top: vw_size(38, $current);
+						}
+						.dont-ask-checkbox {
+							margin-top: vw_size(90, $current);
+							& > label > span {
+								font-size: vw_size(13, $current);
+								margin-right: vw_size(5, $current);
+							}
+							& > label > .image-wrapper {
+								height: vw_size(22.5, $current);
+								width: vw_size(22.5, $current);
+							}
+						}
+					}
+				}
+
+				.upgrade-left-side {
+					margin-top: vw_size(70, $current);
+
+					.toppings-pizza-img {
+						width: vw_size(500, $current);
+						img {
+							width: vw_size(500, $current);
+							height: vw_size(500, $current);
+							object-fit: cover;
+						}
+
+						.topping-coverage-on-pizza {
+							img {
+								width: 80%;
+								height: 80%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,359 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+:global(.ltr) {
+	.coupons-wrap {
+		.add-coupon {
+			.icon {
+				transform: scaleX(-1);
+			}
+		}
+	}
+}
+.coupons-wrap {
+	margin-top: vw_size(10, $current);
+	width: 100%;
+	background-color: $soft-gray-opacity;
+	border-radius: 14px;
+
+	.custom-separator {
+		margin: 0 auto;
+		background-color: rgba(151, 151, 151, 0.65);
+		height: 1px;
+		width: 87%;
+	}
+
+	.add-coupon {
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		width: 100%;
+		.icon {
+			&.coupon {
+				width: vw_size(26, $current);
+				height: vw_size(22, $current);
+				margin-inline-end: vw_size(15, $current);
+			}
+			&.arrow {
+				width: vw_size(15, $current);
+				margin-inline-start: auto;
+			}
+		}
+
+		.add-coupon-text {
+			font-family: $font;
+			font-size: vw_size(14, $current);
+			line-height: vw_size(18, $current);
+			letter-spacing: 1px;
+			color: $white;
+		}
+	}
+}
+
+.coupon-ticket {
+	padding-top: vw_size(16, $current);
+	padding-bottom: vw_size(16, $current);
+	padding-inline: vw_size(20, $current);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.coupon-ticket-right {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		.image {
+			width: vw_size(65, $current);
+			margin-inline-end: vw_size(16, $current);
+		}
+
+		.text-wrap {
+			font-family: $font;
+			display: flex;
+			flex-direction: column;
+
+			.titles-wrap {
+				display: flex;
+
+				.coupon-title {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(22, $current);
+					color: $white;
+
+					&.marker {
+						color: $yellow-marker;
+					}
+				}
+			}
+
+			.coupon-sub-title {
+				font-size: vw_size(12, $current);
+				line-height: vw_size(18, $current);
+				color: $white;
+			}
+		}
+	}
+
+	.coupon-ticket-left {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		.price-wrap {
+			border-radius: 3px;
+			background-color: $yellow-marker;
+			padding: vw_size(2.5, $current);
+			margin-inline-end: vw_size(12, $current);
+
+			.price {
+				font-family: $font-bold;
+				color: $black;
+				font-size: vw_size(14, $current);
+			}
+		}
+		.icon {
+			cursor: pointer;
+			width: vw_size(15, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.coupons-wrap {
+		margin-top: vw_size(35, $current);
+		.custom-separator {
+			width: 94%;
+		}
+		.add-coupon {
+			.icon {
+				&.coupon {
+					width: vw_size(26, $current);
+					height: vw_size(22, $current);
+					margin-inline-end: vw_size(15, $current);
+				}
+				&.arrow {
+					width: vw_size(12, $current);
+				}
+			}
+
+			.add-coupon-text {
+				font-size: vw_size(14, $current);
+				line-height: vw_size(18, $current);
+			}
+		}
+	}
+
+	.coupon-ticket {
+		padding-top: vw_size(16, $current);
+		padding-bottom: vw_size(16, $current);
+		padding-inline: vw_size(20, $current);
+
+		.coupon-ticket-right {
+			.image {
+				width: vw_size(65, $current);
+				margin-inline-end: vw_size(16, $current);
+			}
+
+			.text-wrap {
+				.titles-wrap {
+					.coupon-title {
+						font-size: vw_size(14, $current);
+						line-height: vw_size(22, $current);
+					}
+				}
+
+				.coupon-sub-title {
+					font-size: vw_size(12, $current);
+					line-height: vw_size(18, $current);
+				}
+			}
+		}
+
+		.coupon-ticket-left {
+			.price-wrap {
+				padding: vw_size(2.5, $current);
+				margin-inline-end: vw_size(12, $current);
+
+				.price {
+					font-size: vw_size(14, $current);
+				}
+			}
+
+			.icon {
+				width: vw_size(15, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.custom-separator {
+		display: none;
+	}
+
+	.coupons-wrap {
+		margin-top: vw_size(26, $current);
+		border: 1px solid $grey-border;
+		background-color: transparent;
+		.add-coupon {
+			background-color: transparent;
+			.icon {
+				&.coupon {
+					width: vw_size(26, $current);
+					height: vw_size(22, $current);
+					margin-inline-end: vw_size(15, $current);
+				}
+				&.arrow {
+					width: vw_size(15, $current);
+				}
+			}
+
+			.add-coupon-text {
+				font-size: vw_size(14, $current);
+				line-height: vw_size(18, $current);
+				letter-spacing: 1px;
+			}
+		}
+	}
+
+	.coupon-ticket {
+		padding-top: vw_size(20, $current);
+		padding-bottom: vw_size(20, $current);
+		padding-inline: vw_size(40, $current);
+		height: vw_size(65, $current);
+		background-color: $soft-gray-opacity;
+		border-radius: 14px;
+		width: 100%;
+
+		&.coupon {
+			margin-top: vw_size(25, $current);
+		}
+		.coupon-ticket-right {
+			.image {
+				width: vw_size(65, $current);
+				margin-inline-end: vw_size(16, $current);
+			}
+
+			.text-wrap {
+				flex-direction: row;
+				align-items: center;
+				.titles-wrap {
+					.coupon-title {
+						font-size: vw_size(14, $current);
+						line-height: vw_size(22, $current);
+					}
+				}
+
+				.coupon-sub-title {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(22, $current);
+				}
+			}
+		}
+
+		.coupon-ticket-left {
+			.price-wrap {
+				background-color: transparent;
+				padding: 0;
+				margin-inline-end: vw_size(21, $current);
+				letter-spacing: 0;
+
+				.price {
+					font-size: vw_size(15, $current);
+					color: $yellow-marker;
+
+					&.donation-price {
+						.price {
+							color: $white;
+						}
+					}
+					.currency {
+						font-size: vw_size(12, $current);
+					}
+				}
+			}
+			.icon {
+				width: vw_size(20, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+
+	.coupons-wrap {
+		margin-top: vw_size(26, $current);
+
+		.add-coupon {
+			.icon {
+				&.coupon {
+					width: vw_size(26, $current);
+					height: vw_size(22, $current);
+					margin-inline-end: vw_size(15, $current);
+				}
+				&.arrow {
+					width: vw_size(15, $current);
+				}
+			}
+
+			.add-coupon-text {
+				font-size: vw_size(14, $current);
+				line-height: vw_size(18, $current);
+			}
+		}
+	}
+
+	.coupon-ticket {
+		padding-top: vw_size(20, $current);
+		padding-bottom: vw_size(20, $current);
+		padding-inline: vw_size(40, $current);
+		height: vw_size(65, $current);
+		&.coupon {
+			margin-top: vw_size(25, $current);
+		}
+		.coupon-ticket-right {
+			.image {
+				width: vw_size(65, $current);
+				margin-inline-end: vw_size(16, $current);
+			}
+
+			.text-wrap {
+				.titles-wrap {
+					.coupon-title {
+						font-size: vw_size(14, $current);
+						line-height: vw_size(22, $current);
+					}
+				}
+				.coupon-sub-title {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(22, $current);
+				}
+			}
+		}
+
+		.coupon-ticket-left {
+			.price-wrap {
+				margin-inline-end: vw_size(21, $current);
+
+				.price {
+					font-size: vw_size(15, $current);
+
+					.currency {
+						font-size: vw_size(12, $current);
+					}
+				}
+			}
+			.icon {
+				width: vw_size(20, $current);
+			}
+		}
+	}
+}

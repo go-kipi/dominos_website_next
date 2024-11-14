@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>credit cards/mastercard</title>
+    <g id="credit-cards/mastercard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(0.000000, 0.000000)">
+            <rect id="Rectangle-Copy-27" fill="#000000" x="0" y="0" width="32" height="24" rx="5"></rect>
+            <g id="Group-45" transform="translate(5.200000, 5.000000)" fill="#FFFFFF">
+                <circle id="Oval" cx="7" cy="7" r="7"></circle>
+                <circle id="Oval-Copy" opacity="0.601744186" cx="15" cy="7" r="7"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

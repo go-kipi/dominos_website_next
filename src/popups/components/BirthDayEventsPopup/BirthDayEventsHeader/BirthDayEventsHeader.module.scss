@@ -1,0 +1,49 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.birthday-header {
+  width: 100%;
+
+  padding-top: vw_size(25, $current);
+  padding-inline: vw_size(26, $current);
+  display: flex;
+  justify-content: space-between;
+  .icon-wrapper {
+    width: vw_size(18, $current);
+    &.flipped-icon {
+      transform: scaleX(-1);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .birthday-header {
+    padding-top: vw_size(25, $current);
+    padding-inline: vw_size(26, $current);
+    .icon-wrapper {
+      width: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .birthday-header {
+    padding-top: vw_size(25, $current);
+    padding-inline: vw_size(26, $current);
+    .icon-wrapper {
+      width: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .birthday-header {
+    padding-top: vw_size(25, $current);
+    padding-inline: vw_size(26, $current);
+    .icon-wrapper {
+      width: vw_size(18, $current);
+    }
+  }
+}

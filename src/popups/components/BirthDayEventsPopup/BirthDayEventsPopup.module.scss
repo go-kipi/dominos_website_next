@@ -1,0 +1,79 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+:global(.popup) {
+	.birthday-events-popup-wrapper {
+		&:global(.backdrop):global(.slidePopup) {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			height: 100%;
+			:global(.popup_wrapper) {
+				position: relative;
+				height: 80vh;
+				background: #ffffff;
+				display: flex;
+				flex-direction: column;
+				transition: all 200ms ease-out;
+				justify-content: flex-start;
+				overflow: hidden;
+
+				:global(.popup_content) {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	:global(.popup) {
+		.birthday-events-popup-wrapper {
+			&:global(.backdrop):global(.slidePopup) {
+				justify-content: center;
+
+				:global(.popup_wrapper) {
+					width: vw_size(500, $current);
+					height: vw_size(550, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	:global(.popup) {
+		.birthday-events-popup-wrapper {
+			&:global(.backdrop):global(.slidePopup) {
+				:global(.popup_wrapper) {
+					width: vw_size(680, $current);
+					height: vw_size(541, $current);
+					:global(.popup_content) {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	:global(.popup) {
+		.birthday-events-popup-wrapper {
+			&:global(.backdrop):global(.slidePopup) {
+				:global(.popup_wrapper) {
+					width: vw_size(680, $current);
+					height: vw_size(541, $current);
+				}
+			}
+		}
+	}
+}

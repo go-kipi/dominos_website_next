@@ -1,0 +1,103 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.switch-wrapper {
+  width: vw_size(21, $current);
+  height: vw_size(12, $current);
+  border-radius: vw_size(6, $current);
+  display: flex;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  align-items: center;
+  &.on {
+    background-color: rgba(1, 122, 255, 0.4);
+    .indicator {
+      background-color: rgba(1, 122, 255, 1);
+      @include right(vw_size(10, $current));
+    }
+  }
+  &.off {
+    background-color: rgba(161, 161, 161, 1);
+    .indicator {
+      background-color: rgba(167, 167, 167, 1);
+      @include right(vw_size(-5, $current));
+    }
+  }
+  .indicator {
+    width: vw_size(17, $current);
+    height: vw_size(17, $current);
+    border-radius: 100%;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .switch-wrapper {
+    width: vw_size(21, $current);
+    height: vw_size(12, $current);
+    border-radius: vw_size(6, $current);
+
+    &.on {
+      .indicator {
+        right: vw_size(10, $current);
+      }
+    }
+    &.off {
+      .indicator {
+        right: vw_size(-5, $current);
+      }
+    }
+    .indicator {
+      width: vw_size(17, $current);
+      height: vw_size(17, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .switch-wrapper {
+    width: vw_size(21, $current);
+    height: vw_size(12, $current);
+    border-radius: vw_size(6, $current);
+
+    &.on {
+      .indicator {
+        right: vw_size(10, $current);
+      }
+    }
+    &.off {
+      .indicator {
+        right: vw_size(-5, $current);
+      }
+    }
+    .indicator {
+      width: vw_size(17, $current);
+      height: vw_size(17, $current);
+    }
+  }
+}
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .switch-wrapper {
+    width: vw_size(21, $current);
+    height: vw_size(12, $current);
+    border-radius: vw_size(6, $current);
+
+    &.on {
+      .indicator {
+        right: vw_size(10, $current);
+      }
+    }
+    &.off {
+      .indicator {
+        right: vw_size(-5, $current);
+      }
+    }
+    .indicator {
+      width: vw_size(17, $current);
+      height: vw_size(17, $current);
+    }
+  }
+}

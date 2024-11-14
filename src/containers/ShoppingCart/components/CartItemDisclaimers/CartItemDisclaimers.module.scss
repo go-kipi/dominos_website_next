@@ -1,0 +1,43 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.disclaimers-wrap {
+	display: flex;
+	flex-direction: column;
+
+	.disclaimers {
+		font-family: $font-medium;
+		font-size: vw_size(14, $current);
+		color: $pink;
+	}
+}
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.disclaimers-wrap {
+		.disclaimers {
+			font-size: vw_size(14, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.disclaimers-wrap {
+		.disclaimers {
+			font-size: vw_size(14, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+
+	.disclaimers-wrap {
+		.disclaimers {
+			font-size: vw_size(14, $currentSmall);
+		}
+	}
+}

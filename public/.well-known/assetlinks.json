@@ -1,0 +1,13 @@
+[
+	{
+		"relation": ["delegate_permission/common.handle_all_urls"],
+		"target": {
+			"namespace": "android_app",
+			"package_name": "il.co.dominos.android",
+			"sha256_cert_fingerprints": [
+				"FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+				"F2:55:2F:5E:70:06:52:0E:09:B0:73:EA:CD:D2:8D:21:56:77:4F:D0:F7:D9:BE:C5:F7:F3:4F:6C:75:05:AE:3D"
+			]
+		}
+	}
+]

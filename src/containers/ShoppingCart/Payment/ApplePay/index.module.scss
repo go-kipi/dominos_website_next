@@ -1,0 +1,134 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.apple-pay-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	padding: vw_size(20, $current);
+	height: vw_size(370, $current);
+
+	.logo-icon {
+		height: vw_size(86, $current);
+		object-fit: contain;
+	}
+
+	.main-text {
+		margin-top: vw_size(25, $current);
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: vw_size(5, $current);
+		color: #383940;
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+		& > :first-child {
+			font-size: vw_size(15, $current);
+			font-family: $font-book;
+		}
+		& > :last-child {
+			font-size: vw_size(21, $current);
+			font-family: $font-medium;
+		}
+	}
+
+	& > :last-child {
+		font-family: $font;
+		color: $blue;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.apple-pay-wrapper {
+		padding: vw_size(20, $current);
+		height: auto;
+		margin-top: vw_size(100, $current);
+
+		.logo-icon {
+			height: vw_size(150, $current);
+		}
+
+		.main-text {
+			margin-top: vw_size(50, $current);
+
+			gap: vw_size(10, $current);
+
+			& > :first-child {
+				font-size: vw_size(30, $current);
+			}
+			& > :last-child {
+				font-size: vw_size(42, $current);
+			}
+		}
+
+		& > :last-child {
+			font-size: vw_size(22, $current);
+			font-family: $font;
+			color: $blue;
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.apple-pay-wrapper {
+		height: auto;
+		margin-top: vw_size(40, $current);
+
+		.logo-icon {
+			height: vw_size(86, $current);
+		}
+
+		.main-text {
+			margin-top: vw_size(25, $current);
+			gap: vw_size(5, $current);
+
+			& > :first-child {
+				font-size: vw_size(15, $current);
+			}
+			& > :last-child {
+				font-size: vw_size(21, $current);
+			}
+		}
+
+		& > :last-child {
+			font-size: vw_size(14, $current);
+			cursor: pointer;
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.apple-pay-wrapper {
+		margin-top: vw_size(40, $current);
+
+		.logo-icon {
+			height: vw_size(86, $current);
+		}
+
+		.main-text {
+			margin-top: vw_size(25, $current);
+			gap: vw_size(5, $current);
+
+			& > :first-child {
+				font-size: vw_size(15, $current);
+			}
+			& > :last-child {
+				font-size: vw_size(21, $current);
+			}
+		}
+
+		& > :last-child {
+			font-size: vw_size(14, $current);
+		}
+	}
+}

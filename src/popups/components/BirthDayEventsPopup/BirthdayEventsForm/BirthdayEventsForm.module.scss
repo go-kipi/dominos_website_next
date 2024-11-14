@@ -1,0 +1,280 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.birth-day-form-wrapper-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	padding-bottom: vw_size(35, $current);
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: vw_size(28, $current);
+			padding-inline: vw_size(15, $current);
+
+			.title {
+				font-family: $font-medium;
+				font-size: vw_size(20, $current);
+				color: $red;
+				margin: 0;
+				text-align: center;
+			}
+
+			.subtitle {
+				margin: 0;
+				margin-top: vw_size(10, $current);
+				color: $black;
+				font-family: $font;
+				font-size: vw_size(15, $current);
+				text-align: center;
+			}
+		}
+
+		.form-wrapper {
+			margin-top: vw_size(44, $current);
+			width: vw_size(286, $current);
+
+			.row-wrapper {
+				display: flex;
+				justify-content: space-between;
+				width: vw_size(286, $current);
+				margin-bottom: vw_size(52, $current);
+
+				.input-wrapper {
+					margin-bottom: 0;
+				}
+			}
+
+			.date-input-wrapper {
+				position: relative;
+
+				&.flipped-dir {
+					.icon-wrapper {
+						left: unset;
+						right: 0;
+					}
+				}
+
+				.input-wrapper {
+					pointer-events: none;
+				}
+
+				.icon-wrapper {
+					position: absolute;
+					width: vw_size(15, $current);
+					bottom: vw_size(3, $current);
+					left: 0;
+				}
+			}
+
+			.city-input-auto-complete {
+				position: relative;
+			}
+
+			.input-wrapper {
+				margin-bottom: vw_size(35, $current);
+
+				&.short-input {
+					width: vw_size(135, $current);
+				}
+			}
+
+			.checkbox-wrapper {
+				width: 108%;
+				display: flex;
+
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	.btn-wrapper {
+		margin-top: vw_size(35, $current);
+		margin-bottom: vw_size(35, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.birth-day-form-wrapper-content {
+		padding-bottom: vw_size(35, $current);
+
+		.content {
+			.header {
+				margin-top: vw_size(28, $current);
+				padding-inline: unset;
+
+				.title {
+					font-size: vw_size(20, $current);
+				}
+
+				.subtitle {
+					margin-top: vw_size(10, $current);
+
+					font-size: vw_size(15, $current);
+				}
+			}
+
+			.form-wrapper {
+				margin-top: vw_size(44, $current);
+				width: vw_size(286, $current);
+
+				.row-wrapper {
+					width: vw_size(286, $current);
+					margin-bottom: vw_size(52, $current);
+				}
+
+				.date-input-wrapper {
+					.icon-wrapper {
+						width: vw_size(15, $current);
+						bottom: vw_size(3, $current);
+					}
+				}
+
+				.input-wrapper {
+					margin-bottom: vw_size(35, $current);
+
+					&.short-input {
+						width: vw_size(135, $current);
+					}
+				}
+			}
+		}
+
+		.btn-wrapper {
+			margin-top: vw_size(35, $current);
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.birth-day-form-wrapper-content {
+		padding-bottom: vw_size(35, $current);
+
+		.content {
+			.header {
+				margin-top: vw_size(28, $current);
+
+				.title {
+					font-family: $font-bold;
+
+					font-size: vw_size(20, $current);
+				}
+
+				.subtitle {
+					margin-top: vw_size(10, $current);
+					color: #5c6a74;
+					font-family: $font-book;
+					font-size: vw_size(15, $current);
+				}
+			}
+
+			.form-wrapper {
+				margin-top: vw_size(61, $current);
+				width: vw_size(600, $current);
+
+				.autocomplete-list {
+					width: vw_size(280, $current);
+				}
+
+				.row-wrapper {
+					width: 100%;
+					margin-bottom: vw_size(45, $current);
+				}
+
+				.date-input-wrapper {
+					.icon-wrapper {
+						width: vw_size(15, $current);
+						bottom: vw_size(3, $current);
+					}
+				}
+
+				.input-wrapper {
+					width: vw_size(280, $current);
+					margin-bottom: unset;
+
+					&.short-input {
+						width: vw_size(280, $current);
+					}
+				}
+				.checkbox-wrapper {
+					width: 100%;
+				}
+			}
+		}
+
+		.btn-wrapper {
+			margin-top: vw_size(35, $current);
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.birth-day-form-wrapper-content {
+		padding-bottom: vw_size(35, $current);
+
+		.content {
+			.header {
+				margin-top: vw_size(28, $current);
+
+				.title {
+					font-size: vw_size(20, $current);
+				}
+
+				.subtitle {
+					margin-top: vw_size(10, $current);
+
+					font-size: vw_size(15, $current);
+				}
+			}
+
+			.form-wrapper {
+				margin-top: vw_size(61, $current);
+				width: vw_size(600, $current);
+
+				.autocomplete-list {
+					width: vw_size(280, $current);
+				}
+
+				.row-wrapper {
+					margin-bottom: vw_size(45, $current);
+				}
+
+				.date-input-wrapper {
+					.icon-wrapper {
+						width: vw_size(15, $current);
+						bottom: vw_size(3, $current);
+					}
+				}
+
+				.input-wrapper {
+					width: vw_size(280, $current);
+
+					&.short-input {
+						width: vw_size(280, $current);
+					}
+				}
+			}
+		}
+
+		.btn-wrapper {
+			margin-top: vw_size(35, $current);
+			margin-bottom: vw_size(35, $current);
+		}
+	}
+}

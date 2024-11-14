@@ -1,0 +1,376 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.address-type-form-wrapper {
+	display: none;
+	margin-top: vw_size(140, $current);
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 500ms ease-out;
+
+	&.active {
+		display: flex;
+		opacity: 1;
+	}
+
+	.form-wrapper {
+		height: 40vh;
+
+		.notes-container {
+			.notes-input-container {
+				width: vw_size(286, $current);
+			}
+
+			.notes-for-courier-tags {
+				margin-top: vw_size(40, $current);
+				width: vw_size(286, $current);
+			}
+		}
+
+		.form {
+			.apt-form-inputs {
+				display: flex;
+				justify-content: space-between;
+				margin-top: vw_size(30, $current);
+				width: vw_size(286, $current);
+				gap: vw_size(30, $current);
+
+				.apt-form-input-container {
+					width: vw_size(74, $current);
+
+					.form-error-text {
+						font-family: $font;
+						font-size: vw_size(13, $current);
+					}
+				}
+			}
+
+			.office-form-inputs {
+				display: flex;
+				justify-content: space-between;
+				margin-top: vw_size(25, $current);
+				width: vw_size(286, $current);
+
+				.office-form-input-container {
+					width: vw_size(137, $current);
+
+					.form-error-text {
+						font-family: $font;
+						font-size: vw_size(13, $current);
+					}
+				}
+			}
+
+			.bussiness-input-container {
+				width: vw_size(286, $current);
+				margin-top: vw_size(50, $current);
+
+				.form-error-text {
+					font-family: $font;
+					font-size: vw_size(13, $current);
+				}
+			}
+
+			.notes-for-courier-wrapper {
+				margin-top: vw_size(50, $current);
+			}
+		}
+	}
+
+	.form-bottom-part {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin-top: vw_size(20, $current);
+
+		.save-address-wrapper {
+			display: flex;
+			padding-inline: vw_size(50, $current);
+
+			.checkbox-wrapper {
+				width: vw_size(19, $current);
+			}
+
+			.save-address-title {
+				font-family: $font;
+				cursor: pointer;
+
+				color: #949494;
+				font-size: vw_size(15, $current);
+				margin-inline-start: vw_size(10, $current);
+			}
+		}
+
+		.actions {
+			width: 100%;
+
+			margin-top: vw_size(21, $current);
+
+			margin-bottom: vw_size(35, $current);
+			width: vw_size(285, $current);
+			height: vw_size(44, $current);
+			align-self: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.address-type-form-wrapper {
+		margin-top: vw_size(140, $current);
+
+		.form-wrapper {
+			height: vw_size(300, $current);
+
+			.notes-container {
+				.notes-input-container {
+					width: vw_size(286, $current);
+				}
+
+				.notes-for-courier-tags {
+					margin-top: vw_size(40, $current);
+					width: vw_size(286, $current);
+				}
+			}
+
+			.form {
+				.apt-form-inputs {
+					justify-content: space-evenly;
+					margin-top: vw_size(30, $current);
+					width: vw_size(286, $current);
+					gap: vw_size(30, $current);
+
+					.apt-form-input-container {
+						width: vw_size(74, $current);
+
+						.form-error-text {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.office-form-inputs {
+					margin-top: vw_size(25, $current);
+					width: vw_size(286, $current);
+
+					.office-form-input-container {
+						width: vw_size(137, $current);
+
+						.form-error-text {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.bussiness-input-container {
+					width: vw_size(286, $current);
+					margin-top: vw_size(50, $current);
+
+					.form-error-text {
+						font-size: vw_size(13, $current);
+					}
+				}
+
+				.notes-for-courier-wrapper {
+					margin-top: vw_size(50, $current);
+				}
+			}
+		}
+
+		.form-bottom-part {
+			margin-top: vw_size(20, $current);
+			padding-bottom: vw_size(20, $current);
+
+			.save-address-wrapper {
+				padding-inline: vw_size(75, $current);
+
+				.checkbox-wrapper {
+					width: vw_size(19, $current);
+				}
+
+				.save-address-title {
+					font-size: vw_size(15, $current);
+					margin-inline-start: vw_size(10, $current);
+				}
+			}
+
+			.actions {
+				margin-top: vw_size(21, $current);
+				margin-bottom: unset;
+				width: vw_size(285, $current);
+				height: vw_size(44, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.address-type-form-wrapper {
+		margin-top: vw_size(150, $current);
+
+		.form-wrapper {
+			height: vw_size(270, $current);
+
+			.notes-container {
+				.notes-input-container {
+					width: vw_size(343, $current);
+					margin-top: vw_size(20, $current);
+				}
+			}
+
+			.form {
+				.apt-form-inputs {
+					margin-top: vw_size(40, $current);
+					width: vw_size(343, $current);
+					gap: vw_size(30, $current);
+
+					.apt-form-input-container {
+						width: vw_size(90, $current);
+
+						.form-error-text {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.office-form-inputs {
+					margin-top: vw_size(40, $current);
+					width: vw_size(343, $current);
+
+					.office-form-input-container {
+						width: vw_size(143, $current);
+
+						.form-error-text {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.bussiness-input-container {
+					width: vw_size(343, $current);
+					margin-top: vw_size(50, $current);
+
+					.form-error-text {
+						font-size: vw_size(13, $current);
+					}
+				}
+
+				.notes-for-courier-wrapper {
+					margin-top: vw_size(50, $current);
+				}
+			}
+		}
+
+		.form-bottom-part {
+			margin-top: 0;
+			padding-bottom: vw_size(20, $current);
+
+			.save-address-wrapper {
+				padding-inline: vw_size(85, $current);
+
+				.checkbox-wrapper {
+					width: vw_size(19, $current);
+				}
+
+				.save-address-title {
+					font-size: vw_size(15, $current);
+					margin-inline-start: vw_size(10, $current);
+				}
+			}
+
+			.actions {
+				margin-top: vw_size(34, $current);
+				width: vw_size(341, $current);
+				height: vw_size(44, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.address-type-form-wrapper {
+		margin-top: vw_size(150, $current);
+
+		.form-wrapper {
+			height: vw_size(270, $current);
+
+			.notes-container {
+				.notes-input-container {
+					width: vw_size(343, $current);
+					margin-top: vw_size(20, $current);
+				}
+			}
+
+			.form {
+				.apt-form-inputs {
+					margin-top: vw_size(40, $current);
+					width: vw_size(343, $current);
+					gap: vw_size(30, $current);
+
+					.apt-form-input-container {
+						width: vw_size(90, $current);
+
+						.form-error-text {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.office-form-inputs {
+					margin-top: vw_size(40, $current);
+					width: vw_size(343, $current);
+
+					.office-form-input-container {
+						width: vw_size(143, $current);
+
+						.form-error-text {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.bussiness-input-container {
+					width: vw_size(343, $current);
+					margin-top: vw_size(50, $current);
+
+					.form-error-text {
+						font-size: vw_size(13, $current);
+					}
+				}
+
+				.notes-for-courier-wrapper {
+					margin-top: vw_size(60, $current);
+				}
+			}
+		}
+
+		.form-bottom-part {
+			padding-bottom: vw_size(20, $current);
+
+			.save-address-wrapper {
+				padding-inline: vw_size(85, $current);
+
+				.checkbox-wrapper {
+					width: vw_size(19, $current);
+				}
+
+				.save-address-title {
+					font-size: vw_size(15, $current);
+					margin-inline-start: vw_size(10, $current);
+				}
+			}
+
+			.actions {
+				margin-top: vw_size(34, $current);
+				width: vw_size(341, $current);
+				height: vw_size(44, $current);
+			}
+		}
+	}
+}

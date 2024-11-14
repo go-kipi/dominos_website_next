@@ -1,0 +1,129 @@
+@import "src/styles/imports.scss";
+
+$current: $desktop;
+
+.personal-area-credit-desktop {
+  height: 100%;
+
+  .title-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: vw_size(42, $current);
+    .title {
+      font-family: $font;
+      color: $payneGrey;
+      font-size: vw_size(33, $current);
+      letter-spacing: -vw_size(-0.33, $current);
+      line-height: vw_size(35, $current);
+      margin: 0;
+    }
+    :nth-child(2) {
+      font-family: $font-bold;
+    }
+  }
+
+  .body {
+    .container {
+      overflow: auto;
+      height: vw_size(300, $current);
+    }
+    .add-card-wrap {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-top: vw_size(20, $current);
+      transition: 300ms ease-out;
+      width: 100%;
+      .add-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed $blue;
+        border-radius: 8px;
+        width: vw_size(44, $current);
+        height: vw_size(34, $current);
+        margin-inline-end: vw_size(16, $current);
+        .plus-icon {
+          width: vw_size(15, $current);
+          height: vw_size(15, $current);
+        }
+      }
+
+      .add-text {
+        font-family: $font;
+        font-size: vw_size(16, $current);
+        letter-spacing: vw_size(0.32, $current);
+        line-height: vw_size(18, $current);
+        color: $blue;
+      }
+    }
+  }
+  .no-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: vw_size(150, $current);
+    .no-cards-title {
+      color: #596b75;
+      font-family: $font;
+      font-size: vw_size(16, $current);
+    }
+    .no-cards-image {
+      margin-top: vw_size(35, $current);
+      width: vw_size(250, $current);
+    }
+  }
+}
+
+@media (min-width: $media_desktop_large) {
+  $current: $desktop-max;
+
+  .personal-area-credit-desktop {
+    .title-wrap {
+      margin-bottom: vw_size(42, $current);
+      .title {
+        font-size: vw_size(33, $current);
+        letter-spacing: -vw_size(-0.33, $current);
+        line-height: vw_size(35, $current);
+      }
+    }
+
+    .body {
+      .container {
+        height: vw_size(450, $current);
+      }
+      .add-card-wrap {
+        margin-top: vw_size(20, $current);
+        .add-wrap {
+          width: vw_size(44, $current);
+          height: vw_size(34, $current);
+          margin-inline-end: vw_size(16, $current);
+          .plus-icon {
+            width: vw_size(15, $current);
+            height: vw_size(15, $current);
+          }
+        }
+        .add-text {
+          font-size: vw_size(16, $current);
+          letter-spacing: vw_size(0.32, $current);
+          line-height: vw_size(18, $current);
+        }
+      }
+    }
+
+    .no-cards-wrapper {
+      padding-bottom: vw_size(150, $current);
+
+      .no-cards-title {
+        font-size: vw_size(16, $current);
+      }
+      .no-cards-image {
+        margin-top: vw_size(35, $current);
+        width: vw_size(250, $current);
+      }
+    }
+  }
+}

@@ -1,0 +1,354 @@
+@import "/src/styles/imports";
+$current: 375;
+
+.dough-builder-wrapper {
+	height: 100%;
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	align-items: center;
+	padding-inline: vw_size(50, $current);
+	color: $white;
+	position: relative;
+
+	.title {
+		font-family: $font-medium;
+		font-size: vw_size(20, $current);
+		margin-top: vw_size(35, $current);
+		margin-bottom: vw_size(0, $current);
+		opacity: 0;
+		&.fade-in {
+			transition: 2000ms;
+			opacity: 1;
+		}
+		&.fade-out {
+			transition: 1000ms;
+			opacity: 0;
+		}
+	}
+
+	.dough-content-wrapper {
+		height: 100%;
+		width: 100%;
+
+		.left-side {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+
+			.dough-image-wrapper {
+				height: 35vh;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: -2%;
+				right: 0;
+				transition: all 500ms ease-in-out;
+
+				&.down {
+					top: 10.5%;
+					&-without-transition {
+						top: 10.5%;
+						transition: unset;
+					}
+				}
+
+				.image {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.right-side {
+			width: 100%;
+			margin-top: vw_size(120, $current);
+			// overflow-x: hidden;
+			padding: 0 vw_size(30, $current);
+			//margin-top: vw_size(35, $current);
+			opacity: 0;
+			&.fade-in {
+				transition: 2000ms;
+				opacity: 1;
+				pointer-events: unset;
+			}
+			&.fade-out {
+				pointer-events: none;
+				transition: 1000ms;
+				opacity: 0;
+			}
+
+			.divider {
+				width: 100%;
+				border-bottom: 1px solid $dominos-divider-gray;
+			}
+			.types-wrapper,
+			.extras-wrapper {
+				overflow: unset;
+			}
+			:global(.swiper) {
+				overflow: visible;
+				z-index: 0;
+
+				:global(.swiper-wrapper) {
+					padding: vw_size(20, $current) 0;
+				}
+			}
+
+			.vegan-friendly-checkbox {
+				cursor: pointer;
+				margin-top: vw_size(17, $current);
+
+				label {
+					span {
+						display: flex;
+						align-items: center;
+						font-size: vw_size(13, $current);
+						margin-right: vw_size(6, $current);
+
+						.vegan-friendly-icon {
+							width: vw_size(36, $current);
+							height: vw_size(36, $current);
+						}
+					}
+				}
+			}
+
+			div.submit-button {
+				position: absolute;
+				left: 0;
+				right: 0;
+				padding-inline: vw_size(50, $current);
+				bottom: vw_size(10, $current);
+				margin-inline: auto;
+				&.fade-in {
+					transition: 1000ms;
+					opacity: 1;
+				}
+				&.fade-out {
+					transition: 750ms;
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.dough-builder-wrapper {
+		padding-inline: vw_size(50, $current);
+
+		.title {
+			font-size: vw_size(20, $current);
+			margin-top: vw_size(28, $current);
+			&.fade-out {
+				transition: unset;
+				opacity: unset;
+			}
+			&.fade-in {
+				transition: unset;
+				opacity: unset;
+			}
+		}
+
+		.dough-content-wrapper {
+			.left-side {
+				margin-top: vw_size(42, $current);
+				width: auto;
+
+				.dough-image-wrapper {
+					height: vw_size(268, $current);
+				}
+			}
+
+			.right-side {
+				margin-top: vw_size(35, $current);
+				padding: 0 vw_size(30, $current);
+				&.fade-out {
+					transition: unset;
+					opacity: unset;
+				}
+				&.fade-in {
+					transition: unset;
+					opacity: unset;
+				}
+
+				:global(.swiper-wrapper) {
+					padding: vw_size(20, $current) 0;
+				}
+
+				.vegan-friendly-checkbox {
+					cursor: pointer;
+					margin-top: vw_size(17, $current);
+
+					label {
+						span {
+							font-size: vw_size(13, $current);
+							margin-right: vw_size(6, $current);
+
+							.vegan-friendly-icon {
+								width: vw_size(36, $current);
+								height: vw_size(36, $current);
+							}
+						}
+					}
+				}
+
+				.submit-button {
+					padding-inline: vw_size(50, $current);
+					bottom: vw_size(33, $current);
+					&.height {
+						bottom: vw_size(33, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop_large;
+	.dough-builder-wrapper {
+		padding-inline: unset;
+		align-items: stretch;
+
+		.title {
+			align-self: flex-start;
+			font-size: vw_size(35, $current);
+			margin-top: vw_size(44, $current);
+			margin-bottom: vw_size(53, $current);
+		}
+		.dough-content-wrapper {
+			align-items: center;
+			width: 100%;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+
+			.left-side {
+				margin-top: vw_size(25, $current);
+				width: 55%;
+
+				.dough-image-wrapper {
+					top: 7%;
+					right: unset;
+
+					height: vw_size(450, $current);
+					width: vw_size(660, $current);
+				}
+				.submit-button {
+					width: vw_size(255, $current);
+					height: vw_size(50, $current);
+					opacity: 0;
+					&.fade-in {
+						transition: 1000ms;
+						opacity: 1;
+					}
+					&.fade-out {
+						transition: 750ms;
+						opacity: 0;
+					}
+				}
+			}
+
+			.right-side {
+				margin-top: vw_size(100, $current);
+				align-self: flex-start;
+				width: 45%;
+				padding: 0 vw_size(60, $current);
+				margin-top: unset;
+				opacity: 0;
+				&.fade-in {
+					transition: 1000ms;
+					opacity: 1;
+				}
+				&.fade-out {
+					transition: 750ms;
+					opacity: 0;
+				}
+
+				:global(.swiper) {
+					//overflow: hidden;
+
+					:global(.swiper-wrapper) {
+						padding: vw_size(20, $current) 0;
+					}
+				}
+
+				.vegan-friendly-checkbox {
+					margin-top: vw_size(17, $current);
+					.label {
+						font-size: vw_size(13, $current);
+						margin-right: vw_size(6, $current);
+
+						.vegan-friendly-icon {
+							width: vw_size(36, $current);
+							height: vw_size(36, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_large;
+	.dough-builder-wrapper {
+		.title {
+			font-size: vw_size(35, $current);
+			margin-top: vw_size(44, $current);
+			margin-bottom: vw_size(53, $current);
+		}
+		.dough-content-wrapper {
+			.left-side {
+				margin-top: vw_size(50, $current);
+
+				.dough-image-wrapper {
+					height: vw_size(450, $current);
+					width: vw_size(660, $current);
+					top: 14.5%;
+				}
+				.submit-button {
+					width: vw_size(255, $current);
+					height: vw_size(50, $current);
+				}
+			}
+
+			.right-side {
+				margin-top: vw_size(100, $current);
+				padding: 0 vw_size(100, $current);
+
+				:global(.swiper) {
+					:global(.swiper-wrapper) {
+						padding: vw_size(20, $current) 0;
+					}
+				}
+
+				.vegan-friendly-checkbox {
+					margin-top: vw_size(17, $current);
+					.label {
+						font-size: vw_size(13, $current);
+						margin-right: vw_size(6, $current);
+
+						.vegan-friendly-icon {
+							width: vw_size(36, $current);
+							height: vw_size(36, $current);
+						}
+					}
+				}
+
+				.submit-button {
+					height: vw_size(50, $current);
+					width: vw_size(255, $current);
+					padding-inline: vw_size(50, $current);
+				}
+			}
+		}
+	}
+}

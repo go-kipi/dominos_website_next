@@ -1,0 +1,111 @@
+@import "src/styles/imports";
+
+.general-blur {
+  font-size: vw_size(16, $mobile);
+  color: white;
+
+  :global(.popup_wrapper) {
+    min-width: vw_size(290, $mobile);
+    height: auto;
+    border-radius: 4px;
+    padding: vw_size(50,$mobile) vw_size(15,$mobile) vw_size(30,$mobile);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all 200ms ease-out;
+    opacity: 0;
+    &.active {
+      //opacity: 1;
+    }
+    &.done {
+      opacity: 1;
+    }
+  }
+  .x_close_icon {
+    position: absolute;
+    cursor: pointer;
+    top: vw_size(35,$mobile);
+    left: vw_size(20,$mobile);
+    width: vw_size(18, $mobile);
+    height: vw_size(18, $mobile);
+
+  }
+  :global(.popup_content) {
+    text-align: center;
+    height: 100%;
+    //min-height: vw_size(130, $mobile);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .accept-btn {
+    padding:vw_size(5,$mobile);
+    margin:0 auto;
+  }
+}
+@media (min-width: $media-tablet) {
+  .general-blur {
+    font-size: vw_size(16, $tablet);
+
+    :global(.popup_wrapper) {
+      min-width: vw_size(290, $tablet);
+      padding: vw_size(50, $tablet) vw_size(15, $tablet) vw_size(30, $tablet);
+    }
+    .x_close_icon {
+      top: vw_size(5,$tablet);
+      left: vw_size(10,$tablet);
+      width: vw_size(18, $tablet);
+      height: vw_size(18, $tablet);
+    }
+    :global(.popup_content) {
+      min-height: vw_size(130,$tablet);
+    }
+    .accept-btn {
+      padding:vw_size(5,$tablet);
+    }
+  }
+}
+@media (min-width: $media-desktop) {
+  .general-blur {
+    font-size: vw_size(16, $desktop);
+
+    :global(.popup_wrapper) {
+      min-width: vw_size(290, $desktop);
+      padding: vw_size(50, $desktop) vw_size(15, $desktop) vw_size(30, $desktop);
+    }
+    .x_close_icon {
+      top: vw_size(5,$desktop);
+      left: vw_size(10,$desktop);
+      width: vw_size(30, $desktop);
+      height: vw_size(30, $desktop);
+    }
+    :global(.popup_content) {
+      min-height: vw_size(130,$desktop);
+    }
+    .accept-btn {
+      padding:vw_size(5,$desktop);
+    }
+  }
+}
+@media (min-width: $media-desktop-large) {
+  .general-blur {
+    font-size: vw_size(16, $desktop-large);
+
+    :global(.popup_wrapper) {
+      min-width: vw_size(290, $desktop-large);
+      padding: vw_size(50, $desktop-large) vw_size(15, $desktop-large) vw_size(30, $desktop-large);
+    }
+    .x_close_icon {
+      top: vw_size(5,$desktop-large);
+      left: vw_size(10,$desktop-large);
+      width: vw_size(30, $desktop-large);
+      height: vw_size(30, $desktop-large);
+    }
+    :global(.popup_content) {
+      min-height: vw_size(130,$desktop-large);
+    }
+    .accept-btn {
+      padding:vw_size(5,$desktop-large);
+    }
+  }
+}

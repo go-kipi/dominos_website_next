@@ -1,0 +1,52 @@
+@import "src/styles/imports.scss";
+
+$current: $mobile;
+
+.breadcrumbs-container {
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  .crumb {
+    cursor: pointer;
+    font-family: $font-book;
+    color: $white;
+    font-size: vw_size(12, $current);
+    letter-spacing: vw_size(.84, $current);
+    opacity: .7;
+    margin-inline-end: vw_size(3, $current);
+  }
+
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .crumb {
+    font-size: vw_size(12, $current);
+    letter-spacing: vw_size(.84, $current);
+    margin-inline-end: vw_size(3, $current);
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .breadcrumbs-container {
+    .crumb {
+      font-size: vw_size(12, $current);
+      letter-spacing: vw_size(.84, $current);
+      margin-inline-end: vw_size(3, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-max;
+
+  .breadcrumbs-container {
+    .crumb {
+      font-size: vw_size(14, $current);
+      letter-spacing: vw_size(.84, $current);
+      margin-inline-end: vw_size(3, $current);
+    }
+  }
+}

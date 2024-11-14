@@ -1,0 +1,275 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.conatiner {
+	width: 100%;
+
+	border-radius: 14px;
+
+	margin-top: vw_size(16, $current);
+	border: dashed rgba(255, 255, 255, 0.5);
+	border-width: 2px;
+}
+
+.item-ticket {
+	background-color: $soft-gray-opacity;
+	width: 100%;
+	padding-inline-start: vw_size(19, $current);
+	@include itemPaddingEnd();
+	padding-block: vw_size(10, $current);
+
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+	display: flex;
+
+	.item-ticket-inner {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+
+		.img-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: vw_size(81, $current);
+
+			.image {
+				object-fit: contain;
+				margin-inline-end: vw_size(12, $current);
+			}
+		}
+
+		.coupon-img-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: vw_size(51, $current);
+
+			.image {
+				object-fit: contain;
+				margin-inline-end: vw_size(12, $current);
+			}
+		}
+
+		.item-ticket-body {
+			display: flex;
+			align-items: center;
+			flex: 1;
+
+			.body-inner {
+				display: flex;
+				flex: 1;
+				justify-content: space-between;
+			}
+			.item-ticket-right {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				@include itemTextPaddingEnd();
+
+				.text-wrap {
+					display: flex;
+					flex-direction: column;
+
+					.coupon-text {
+						font-family: $font-book;
+						font-size: vw_size(14, $current);
+						line-height: vw_size(20, $current);
+						color: $white;
+						margin-inline-start: vw_size(20, $current);
+						.coupon-text-inner {
+							margin-inline-start: vw_size(5, $current);
+							color: #ffb200;
+							font-family: $font-book;
+							font-size: vw_size(14, $current);
+							line-height: vw_size(20, $current);
+						}
+					}
+
+					.text {
+						font-family: $font-book;
+						font-size: vw_size(14, $current);
+						line-height: vw_size(20, $current);
+						color: $white;
+
+						&.sub {
+						}
+					}
+				}
+			}
+
+			.item-ticket-left {
+				display: flex;
+				align-items: flex-end;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.conatiner {
+		margin-top: vw_size(16, $current);
+	}
+
+	.item-ticket {
+		padding-inline-start: vw_size(19, $current);
+		padding-block: vw_size(15, $current);
+
+		.item-ticket-inner {
+			.img-wrap {
+				width: vw_size(81, $current);
+
+				.image {
+					margin-inline-end: vw_size(12, $current);
+				}
+			}
+
+			.coupon-img-wrap {
+				width: vw_size(51, $current);
+
+				.image {
+					margin-inline-end: vw_size(12, $current);
+				}
+			}
+
+			.item-ticket-body {
+				.item-ticket-right {
+					.text-wrap {
+						.coupon-text {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(20, $current);
+							margin-inline-start: vw_size(20, $current);
+							.coupon-text-inner {
+								margin-inline-start: vw_size(5, $current);
+								font-size: vw_size(14, $current);
+								line-height: vw_size(20, $current);
+							}
+						}
+
+						.text {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.conatiner {
+		margin-top: vw_size(25, $current);
+	}
+
+	.item-ticket {
+		padding-inline-start: vw_size(19, $current);
+		padding-block: vw_size(15, $current);
+
+		.item-ticket-inner {
+			.img-wrap {
+				width: vw_size(68, $current);
+
+				.image {
+					margin-inline-end: vw_size(12, $current);
+				}
+			}
+
+			.coupon-img-wrap {
+				width: vw_size(51, $current);
+
+				.image {
+					margin-inline-end: vw_size(12, $current);
+				}
+			}
+
+			.item-ticket-body {
+				.item-ticket-right {
+					justify-content: center;
+
+					.disclaimers-wrap {
+						.disclaimers {
+							font-size: vw_size(14, $current);
+						}
+					}
+					.text-wrap {
+						.coupon-text {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(20, $current);
+							margin-inline-start: vw_size(20, $current);
+							.coupon-text-inner {
+								margin-inline-start: vw_size(5, $current);
+								font-size: vw_size(14, $current);
+								line-height: vw_size(20, $current);
+							}
+						}
+
+						.text {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+
+	.conatiner {
+		margin-top: vw_size(25, $current);
+	}
+
+	.item-ticket {
+		padding-inline-start: vw_size(19, $current);
+		padding-block: vw_size(15, $current);
+
+		.item-ticket-inner {
+			.img-wrap {
+				width: vw_size(68, $currentSmall);
+
+				.image {
+					margin-inline-end: vw_size(12, $current);
+				}
+			}
+
+			.coupon-img-wrap {
+				width: vw_size(51, $currentSmall);
+
+				.image {
+					margin-inline-end: vw_size(12, $current);
+				}
+			}
+
+			.item-ticket-body {
+				.item-ticket-right {
+					.text-wrap {
+						.coupon-text {
+							font-size: vw_size(14, $currentSmall);
+							line-height: vw_size(20, $currentSmall);
+							margin-inline-start: vw_size(20, $current);
+							.coupon-text-inner {
+								margin-inline-start: vw_size(5, $current);
+								font-size: vw_size(14, $currentSmall);
+								line-height: vw_size(20, $currentSmall);
+							}
+						}
+
+						.text {
+							font-size: vw_size(14, $currentSmall);
+							line-height: vw_size(20, $currentSmall);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,169 @@
+@import "src/styles/imports.scss";
+$current: 375;
+:global(.ltr) {
+	.branches-filter-wrapper {
+		.search-input-wrapper {
+			.search-icon-wrapper {
+				transform: scaleX(-1);
+			}
+			.branch-filter-icon-wrapper {
+				left: unset;
+				right: 0;
+			}
+		}
+	}
+}
+.branches-filter-wrapper {
+	margin-top: vw_size(36, $current);
+	padding-inline-start: vw_size(44, $current);
+	padding-inline-end: vw_size(31, $current);
+	width: 100%;
+	.search-input-wrapper {
+		position: relative;
+		width: 100%;
+		.search-icon-wrapper {
+			position: absolute;
+			width: vw_size(20, $current);
+			top: 1px;
+			z-index: 5;
+		}
+		.search-input {
+			input {
+				padding-inline-start: vw_size(25, $current);
+				font-size: vw_size(17, $current);
+				font-weight: unset;
+				&::placeholder {
+					font-size: vw_size(17, $current);
+				}
+			}
+			.fix-clear-icon {
+				margin-inline-end: vw_size(25, $current);
+			}
+		}
+		.branch-filter-icon-wrapper {
+			position: absolute;
+			width: vw_size(20, $current);
+			top: vw_size(3, $current);
+			left: 0;
+			cursor: pointer;
+		}
+	}
+	.branch-filter-list-wrapper {
+		margin-top: vw_size(15, $current);
+		width: 100%;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.branches-filter-wrapper {
+		margin-top: vw_size(36, $current);
+		padding-inline-start: vw_size(44, $current);
+		padding-inline-end: vw_size(50, $current);
+
+		.search-input-wrapper {
+			.search-icon-wrapper {
+				width: vw_size(20, $current);
+			}
+			.search-input {
+				input {
+					padding-inline-start: vw_size(25, $current);
+					font-size: vw_size(17, $current);
+					&::placeholder {
+						top: -vw_size(2, $current);
+						font-size: vw_size(17, $current);
+					}
+				}
+
+				.fix-clear-icon {
+					margin-inline-end: vw_size(25, $current);
+				}
+			}
+			.branch-filter-icon-wrapper {
+				width: vw_size(20, $current);
+			}
+		}
+		.branch-filter-list-wrapper {
+			margin-top: vw_size(21, $current);
+
+			width: vw_size(350, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.branches-filter-wrapper {
+		margin-top: vw_size(36, $current);
+		padding-inline: vw_size(84, $current);
+		&.on-branches-screen {
+			padding: 0;
+		}
+		.search-input-wrapper {
+			.search-icon-wrapper {
+				width: vw_size(21, $current);
+			}
+			.search-input {
+				input {
+					padding-inline-start: vw_size(42, $current);
+					font-size: vw_size(17, $current);
+					&::placeholder {
+						top: -vw_size(3, $current);
+						font-size: vw_size(17, $current);
+					}
+				}
+
+				.fix-clear-icon {
+					margin-inline-end: vw_size(5, $current);
+				}
+			}
+			.branch-filter-icon-wrapper {
+				top: vw_size(-7, $current);
+				width: vw_size(32, $current);
+			}
+		}
+		.branch-filter-list-wrapper {
+			margin-top: vw_size(15, $current);
+
+			width: vw_size(343, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.branches-filter-wrapper {
+		margin-top: vw_size(36, $current);
+		padding-inline: vw_size(84, $current);
+		.search-input-wrapper {
+			.search-icon-wrapper {
+				width: vw_size(21, $current);
+			}
+			.search-input {
+				input {
+					padding-inline-start: vw_size(42, $current);
+					font-size: vw_size(17, $current);
+					&::placeholder {
+						top: -vw_size(2, $current);
+						font-size: vw_size(17, $current);
+					}
+				}
+
+				.fix-clear-icon {
+					margin-inline-end: vw_size(35, $current);
+				}
+			}
+			.branch-filter-icon-wrapper {
+				top: vw_size(-7, $current);
+
+				width: vw_size(32, $current);
+			}
+		}
+		.branch-filter-list-wrapper {
+			margin-top: vw_size(15, $current);
+
+			width: vw_size(343, $current);
+		}
+	}
+}

@@ -1,0 +1,289 @@
+@import "src/styles/imports";
+
+$current: 375;
+
+.credit-card-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid $light-grey;
+  padding: vw_size(20, $current) 0;
+  color: $black;
+  transition: height 250ms ease-out, opacity 250ms ease-out;
+  height: vw_size(75, $current);
+  opacity: 1;
+
+  &.fade-out {
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    transition: height 250ms ease-out, opacity 250ms ease-out;
+  }
+
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-900%);
+      height: 0;
+      opacity: 0;
+      padding: 0;
+      border-bottom: 0;
+    }
+    100% {
+      transform: translateY(0);
+      height: vw_size(75, $current);
+      opacity: 1;
+      padding: vw_size(20, $current) 0;
+      border-bottom: 1px solid $light-grey;
+    }
+  }
+
+  &.new-card {
+    animation: slideInFromTop 300ms ease-out;
+  }
+
+  &.expired {
+
+    .icon {
+      background-color: $gray-disabled;
+    }
+
+    .details-wrap {
+      color: $gray-disabled;
+    }
+  }
+  .icon {
+    border-radius: 8px;
+    background-color: black;
+    width: vw_size(45, $current);
+    height: vw_size(34, $current);
+  }
+
+  .details-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: vw_size(17, $current);
+    .row {
+      display: flex;
+
+      .credit-detail {
+        font-family: $font-medium;
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.14, $current);
+      }
+      :nth-child(1) {
+        margin-inline-end: vw_size(4, $current);
+      }
+    }
+
+    .expired {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: vw_size(55, $current);
+      height: vw_size(17, $current);
+      background-color: $lavender-blush;
+      border-radius: 9px;
+      margin-top: vw_size(2, $current);
+      .expired-text {
+        font-family: $font;
+        font-size: vw_size(12, $current);
+        color: $red;
+        letter-spacing: vw_size(0.24, $current);
+      }
+    }
+  }
+
+  .delete-icon {
+    cursor: pointer;
+    margin-inline-start: auto;
+    width: vw_size(21, $current);
+    height: vw_size(21, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .credit-card-wrap {
+    padding: vw_size(20, $current) 0;
+    height: vw_size(75, $current);
+
+    &.new-card {
+      @keyframes slideInFromTop {
+        0% {
+          transform: translateY(-900%);
+          height: 0;
+          opacity: 0;
+          padding: 0;
+          border-bottom: 0;
+        }
+        100% {
+          transform: translateY(0);
+          height: vw_size(75, $current);
+          opacity: 1;
+          padding: vw_size(20, $current) 0;
+          border-bottom: 1px solid $light-grey;
+        }
+      }
+
+      &.new-card {
+        animation: slideInFromTop 300ms ease-out;
+      }
+    }
+    .icon {
+      width: vw_size(45, $current);
+      height: vw_size(34, $current);
+    }
+    .details-wrap {
+      margin-inline-start: vw_size(17, $current);
+      .row {
+        .credit-detail {
+          font-size: vw_size(14, $current);
+          letter-spacing: vw_size(0.14, $current);
+        }
+        :nth-child(1) {
+          margin-inline-end: vw_size(4, $current);
+        }
+      }
+      .expired {
+        width: vw_size(55, $current);
+        height: vw_size(17, $current);
+        margin-top: vw_size(2, $current);
+        .expired-text {
+          font-size: vw_size(12, $current);
+          letter-spacing: vw_size(0.24, $current);
+        }
+      }
+    }
+    .delete-icon {
+      width: vw_size(21, $current);
+      height: vw_size(21, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .credit-card-wrap {
+    padding: vw_size(20, $current) 0;
+    width: vw_size(285, $current);
+    height: vw_size(75, $current);
+
+    &.new-card {
+      @keyframes slideInFromTop {
+        0% {
+          transform: translateY(-900%);
+          height: 0;
+          opacity: 0;
+          padding: 0;
+          border-bottom: 0;
+        }
+        100% {
+          transform: translateY(0);
+          height: vw_size(75, $current);
+          opacity: 1;
+          padding: vw_size(20, $current) 0;
+          border-bottom: 1px solid $light-grey;
+        }
+      }
+
+      &.new-card {
+        animation: slideInFromTop 300ms ease-out;
+      }
+    }
+
+    .icon {
+      width: vw_size(45, $current);
+      height: vw_size(34, $current);
+    }
+    .details-wrap {
+      margin-inline-start: vw_size(17, $current);
+      .row {
+        .credit-detail {
+          font-size: vw_size(14, $current);
+          letter-spacing: vw_size(0.14, $current);
+        }
+        :nth-child(1) {
+          margin-inline-end: vw_size(4, $current);
+        }
+      }
+      .expired {
+        width: vw_size(55, $current);
+        height: vw_size(17, $current);
+        margin-top: vw_size(2, $current);
+        .expired-text {
+          font-size: vw_size(12, $current);
+          letter-spacing: vw_size(0.24, $current);
+        }
+      }
+    }
+    .delete-icon {
+      width: vw_size(21, $current);
+      height: vw_size(21, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-max;
+  .credit-card-wrap {
+    padding: vw_size(20, $current) 0;
+    width: vw_size(285, $current);
+    height: vw_size(75, $current);
+
+    &.new-card {
+      @keyframes slideInFromTop {
+        0% {
+          transform: translateY(-900%);
+          height: 0;
+          opacity: 0;
+          padding: 0;
+          border-bottom: 0;
+        }
+        100% {
+          transform: translateY(0);
+          height: vw_size(75, $current);
+          opacity: 1;
+          padding: vw_size(20, $current) 0;
+          border-bottom: 1px solid $light-grey;
+        }
+      }
+
+      &.new-card {
+        animation: slideInFromTop 300ms ease-out;
+      }
+    }
+
+    .icon {
+      width: vw_size(45, $current);
+      height: vw_size(34, $current);
+    }
+    .details-wrap {
+      margin-inline-start: vw_size(17, $current);
+      .row {
+        .credit-detail {
+          font-size: vw_size(14, $current);
+          letter-spacing: vw_size(0.14, $current);
+        }
+        :nth-child(1) {
+          margin-inline-end: vw_size(4, $current);
+        }
+      }
+      .expired {
+        width: vw_size(55, $current);
+        height: vw_size(17, $current);
+        margin-top: vw_size(2, $current);
+        .expired-text {
+          font-size: vw_size(12, $current);
+          letter-spacing: vw_size(0.24, $current);
+        }
+      }
+    }
+    .delete-icon {
+      width: vw_size(21, $current);
+      height: vw_size(21, $current);
+    }
+  }
+}
+
+

@@ -1,0 +1,92 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.address-list-item-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: vw_size(85, $current);
+  .address-text {
+    font-family: $font-medium;
+    color: black;
+    font-size: vw_size(14, $current);
+  }
+  .address-delete-icon {
+    cursor: pointer;
+    width: vw_size(21, $current);
+    height: vw_size(21, $current);
+  }
+  &:nth-child(n)::after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    height: 1px;
+    background-color: #d1d1d1;
+    width: vw_size(287, $current);
+    bottom: 0;
+  }
+  &:last-child::after {
+    content: "";
+    display: none;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .address-list-item-wrapper {
+    height: vw_size(85, $current);
+    .address-text {
+      font-size: vw_size(14, $current);
+    }
+    .address-delete-icon {
+      width: vw_size(21, $current);
+      height: vw_size(21, $current);
+    }
+    &:nth-child(n)::after {
+      width: vw_size(287, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .address-list-item-wrapper {
+    width: vw_size(287, $current);
+    height: vw_size(75, $current);
+    .address-text {
+      color: #828282;
+      font-family: $font;
+      line-height: vw_size(18, $current);
+      font-size: vw_size(15, $current);
+    }
+    .address-delete-icon {
+      width: vw_size(16, $current);
+      height: vw_size(16, $current);
+    }
+    &:nth-child(n)::after {
+      width: vw_size(287, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .address-list-item-wrapper {
+    width: vw_size(350, $current);
+    height: vw_size(76, $current);
+    .address-text {
+      line-height: vw_size(18, $current);
+      font-size: vw_size(16, $current);
+    }
+    .address-delete-icon {
+      width: vw_size(25, $current);
+      height: vw_size(25, $current);
+    }
+    &:nth-child(n)::after {
+      width: vw_size(350, $current);
+    }
+  }
+}

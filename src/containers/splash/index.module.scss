@@ -1,0 +1,32 @@
+@import "/src/styles/imports.scss";
+
+.splash-wrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgb(255, 255, 255);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000000000;
+	flex-direction: column;
+
+	.splash-animation {
+		width: 50%;
+	}
+	.loader {
+		width: 15%;
+	}
+}
+.credit {
+	font-size: 14px;
+	color: #656565;
+	position: fixed;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+}

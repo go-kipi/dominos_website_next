@@ -1,0 +1,322 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.pay-with-credit-card-wrapper {
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	.credit-card-title {
+		margin-top: vw_size(12, $current);
+		font-family: $font-medium;
+		font-size: vw_size(20, $current);
+		color: $dominos-red;
+		&.fade {
+			opacity: 0;
+			transition: ease-in-out 0.2s;
+		}
+	}
+	.add-credit-card-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		border: 2px dashed $blue;
+		width: vw_size(284, $current);
+		height: vw_size(165, $current);
+		border-radius: vw_size(10, $current);
+		flex: 1 0 auto;
+		margin-inline-start: vw_size(12, $current);
+		margin-top: vw_size(10, $current);
+		.add-credit-plus-sign {
+			color: $blue;
+			font-size: vw_size(36, $current);
+			text-align: center;
+			font-family: $font-book;
+		}
+	}
+	.credit-card-list-wrapper {
+		position: relative;
+		margin: vw_size(30, $current) 0 vw_size(10, $current);
+		width: 100%;
+		.credit-card-list {
+			padding-top: vw_size(20, $current);
+
+			height: vw_size(350, $current);
+			margin-bottom: vw_size(-100, $current);
+			position: relative;
+			display: flex;
+
+			overflow: auto;
+			margin-top: vw_size(10, $current);
+			@include hide-scrollbar;
+			&::before,
+			&::after {
+				flex: 0 0 vw_size(51, $current);
+				content: "";
+			}
+		}
+	}
+	.pay-btn {
+		margin-bottom: vw_size(40, $current);
+		z-index: 1000;
+	}
+	.lottie-anim {
+		width: vw_size(50, $current);
+		height: vw_size(38, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.pay-with-credit-card-wrapper {
+		.credit-card-list-wrapper {
+			.credit-card-list {
+				height: vw_size(350, $current);
+				margin-bottom: vw_size(-100, $current);
+				margin-top: vw_size(10, $current);
+				padding-top: vw_size(20, $current);
+
+				&::before,
+				&::after {
+					flex: 0 0 vw_size(250, $current);
+				}
+			}
+		}
+
+		.add-credit-card-wrapper {
+			width: vw_size(284, $current);
+			height: vw_size(165, $current);
+			border-radius: vw_size(10, $current);
+
+			margin-inline-start: vw_size(12, $current);
+			margin-top: vw_size(10, $current);
+			.add-credit-plus-sign {
+				font-size: vw_size(36, $current);
+			}
+		}
+
+		.credit-card-title {
+			margin-top: vw_size(12, $current);
+			font-family: $font-medium;
+			font-size: vw_size(20, $current);
+			color: $dominos-red;
+		}
+		.pay-btn {
+			margin-bottom: vw_size(40, $current);
+		}
+		.lottie-anim {
+			width: vw_size(50, $current);
+			height: vw_size(38, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.pay-with-credit-card-wrapper {
+			.prev-credit-card {
+				left: 3.5%;
+			}
+		}
+	}
+	:global(.swiper-slide-next) {
+		// transform: translate3d(125%, -20%, -100px) rotateZ(0deg) scale(0.65) !important;
+		& > .credit-card-item-wrapper > .credit-card-item {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+	}
+	:global(.swiper-slide-prev) {
+		// transform: translate3d(-25%, -20%, -200px) rotateZ(0deg) scale(0.65) !important;
+		& > .credit-card-item-wrapper > .credit-card-item {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+	}
+	.pay-with-credit-card-wrapper {
+		width: unset;
+		position: relative;
+		margin-right: unset;
+		margin-left: unset;
+		.swiper-wrapper {
+			// pointer-events: none;
+		}
+		.credit-card-title {
+			margin-top: vw_size(12, $current);
+			margin-bottom: vw_size(12, $current);
+			font-family: $font-medium;
+			font-size: vw_size(20, $current);
+			color: $dominos-red;
+		}
+		.cards-swiper-wrapper {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: vw_size(199, $current);
+			width: 100%;
+
+			.credit-card-swiper {
+				margin-top: vw_size(30, $current);
+				height: vw_size(199, $current);
+				width: vw_size(362, $current);
+				overflow: unset;
+
+				:global(.swiper-slide) {
+					transition: 300ms;
+					opacity: 0;
+					pointer-events: none;
+				}
+
+				:global(.swiper-slide-visible) {
+					.credit-card-item-wrapper {
+						box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
+					}
+				}
+
+				:global(.swiper-slide-next),
+				:global(.swiper-slide-prev) {
+					.credit-card-item-wrapper {
+						transform: scaleY(0.7);
+						opacity: 0.8;
+					}
+				}
+
+				:global(.swiper-slide-next),
+				:global(.swiper-slide-prev),
+				:global(.swiper-slide-visible) {
+					opacity: unset;
+					pointer-events: unset;
+				}
+			}
+		}
+		.card-pay-options {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			margin-bottom: vw_size(35, $current);
+			width: 35%;
+			z-index: 2;
+			.pay-with-description {
+				font-family: $font;
+				font-size: vw_size(14, $current);
+				color: rgb(43, 43, 43);
+				text-align: center;
+				line-height: vw_size(20, $current);
+			}
+			.delete-card {
+				cursor: pointer;
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+				& > img {
+					height: vw_size(16, $current);
+					width: vw_size(16, $current);
+				}
+			}
+		}
+		.arrow {
+			position: relative;
+			z-index: 300;
+			border: solid black;
+			border-width: 0 2px 2px 0;
+			display: inline-block;
+			padding: 3px;
+			cursor: pointer;
+		}
+		.next-credit-card,
+		.prev-credit-card {
+			position: absolute;
+			top: vw_size(80, $current);
+		}
+		.next-credit-card {
+			transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			right: 6%;
+		}
+		.prev-credit-card {
+			transform: rotate(135deg);
+			-webkit-transform: rotate(135deg);
+			left: 5.5%;
+		}
+		.add-new-card-btn {
+			margin: vw_size(25, $current) 0;
+		}
+		.pay-btn {
+			margin-bottom: unset;
+		}
+		.lottie-anim {
+			width: vw_size(50, $current);
+			height: vw_size(38, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	.pay-with-credit-card-wrapper {
+		.credit-card-title {
+			margin-top: vw_size(12, $current);
+			margin-bottom: vw_size(12, $current);
+			font-family: $font-medium;
+			font-size: vw_size(20, $current);
+			color: $dominos-red;
+		}
+
+		.cards-swiper-wrapper {
+			height: vw_size(199, $current);
+			.credit-card-swiper {
+				margin-top: vw_size(30, $current);
+				height: vw_size(199, $current);
+				width: vw_size(362, $current);
+			}
+		}
+		.card-pay-options {
+			margin-bottom: vw_size(15, $current);
+			align-items: flex-start;
+			width: 35%;
+			.pay-with-description {
+				font-size: vw_size(14, $current);
+				line-height: vw_size(20, $current);
+				margin-bottom: vw_size(35, $current);
+			}
+			.delete-card {
+				padding-top: vw_size(2, $current);
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+				& > img {
+					height: vw_size(16, $current);
+					width: vw_size(16, $current);
+				}
+			}
+		}
+		.arrow {
+			border: solid black;
+			border-width: 0 2px 2px 0;
+			display: inline-block;
+			padding: 3px;
+			cursor: pointer;
+		}
+		.next-credit-card,
+		.prev-credit-card {
+			top: vw_size(95, $current);
+		}
+		.next-credit-card {
+			right: 6.5%;
+		}
+		.prev-credit-card {
+			left: 7.5%;
+		}
+		.add-new-card-btn {
+			margin: vw_size(25, $current) 0;
+		}
+		.lottie-anim {
+			width: vw_size(50, $current);
+			height: vw_size(38, $current);
+		}
+	}
+}

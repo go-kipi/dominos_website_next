@@ -1,0 +1,232 @@
+@import "src/styles/imports.scss";
+
+$current: $mobile;
+.space {
+  unicode-bidi: bidi-override;
+  margin-left: -3.77px;
+}
+
+.ticket-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: vw_size(6, $current);
+
+  &.order-details-title {
+    margin-top: vw_size(30, $current);
+    margin-bottom: vw_size(15, $current);
+  }
+  .row {
+    display: flex;
+    align-items: baseline;
+    .key {
+      font-family: $font-medium;
+      font-size: vw_size(14, $current);
+      letter-spacing: vw_size(0.28, $current);
+      flex: 1;
+    }
+
+    .value {
+      font-family: $font;
+      font-size: vw_size(14, $current);
+      letter-spacing: vw_size(0.28, $current);
+      color: $soft-gray;
+    }
+    .price {
+      color: $black;
+      margin-inline-start: auto;
+      letter-spacing: vw_size(0.21, $current);
+      align-items: baseline;
+      font-size: vw_size(14.85, $current);
+
+      &.total {
+        font-size: vw_size(24, $current);
+        letter-spacing: vw_size(0.33, $current);
+        margin-bottom: vw_size(20, $current);
+      }
+      &.item-price {
+        width: vw_size(50, $current);
+      }
+    }
+  }
+
+  .sub-wrap {
+    margin-top: vw_size(10, $current);
+    .key {
+      font-family: $font-medium;
+      font-size: vw_size(12, $current);
+      letter-spacing: vw_size(0.36, $current);
+    }
+    .value {
+      font-family: $font;
+      font-size: vw_size(12, $current);
+      letter-spacing: vw_size(0.36, $current);
+      color: $soft-gray;
+    }
+  }
+  .separator {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.14);
+    margin-top: vw_size(20, $current);
+    margin-bottom: vw_size(11, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .ticket-wrap {
+    margin-bottom: vw_size(6, $current);
+
+    &.order-details-title {
+      margin-top: vw_size(30, $current);
+      margin-bottom: vw_size(15, $current);
+    }
+    .row {
+      .key {
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.28, $current);
+        min-width: vw_size(85, $current);
+      }
+
+      .value {
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.28, $current);
+      }
+      .price {
+        letter-spacing: vw_size(0.21, $current);
+        font-size: vw_size(14.85, $current);
+        &.total {
+          font-size: vw_size(24, $current);
+          letter-spacing: vw_size(0.33, $current);
+          margin-bottom: vw_size(20, $current);
+        }
+        &.item-price {
+          width: vw_size(50, $current);
+        }
+      }
+    }
+
+    .sub-wrap {
+      margin-top: vw_size(10, $current);
+      width: vw_size(208, $current);
+      .key {
+        font-size: vw_size(12, $current);
+        letter-spacing: vw_size(0.36, $current);
+      }
+      .value {
+        font-size: vw_size(12, $current);
+        letter-spacing: vw_size(0.36, $current);
+      }
+    }
+    .separator {
+      margin-top: vw_size(20, $current);
+      margin-bottom: vw_size(11, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .ticket-wrap {
+    margin-bottom: vw_size(6, $current);
+
+    &.order-details-title {
+      margin-top: vw_size(30, $current);
+      margin-bottom: vw_size(15, $current);
+    }
+    .row {
+      .key {
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.28, $current);
+        min-width: vw_size(85, $current);
+      }
+
+      .value {
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.28, $current);
+      }
+      .price {
+        letter-spacing: vw_size(0.21, $current);
+        font-size: vw_size(14.85, $current);
+        &.total {
+          font-size: vw_size(24, $current);
+          letter-spacing: vw_size(0.33, $current);
+          margin-bottom: vw_size(20, $current);
+        }
+        &.item-price {
+          width: vw_size(50, $current);
+        }
+      }
+    }
+
+    .sub-wrap {
+      margin-top: vw_size(10, $current);
+      width: vw_size(208, $current);
+      .key {
+        font-size: vw_size(12, $current);
+        letter-spacing: vw_size(0.36, $current);
+      }
+      .value {
+        font-size: vw_size(12, $current);
+        letter-spacing: vw_size(0.36, $current);
+      }
+    }
+    .separator {
+      margin-top: vw_size(20, $current);
+      margin-bottom: vw_size(6, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .ticket-wrap {
+    margin-bottom: vw_size(6, $current);
+
+    &.order-details-title {
+      margin-top: vw_size(30, $current);
+      margin-bottom: vw_size(15, $current);
+    }
+    .row {
+      .key {
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.28, $current);
+        min-width: vw_size(85, $current);
+      }
+
+      .value {
+        font-size: vw_size(14, $current);
+        letter-spacing: vw_size(0.28, $current);
+      }
+      .price {
+        letter-spacing: vw_size(0.21, $current);
+        font-size: vw_size(14.85, $current);
+        &.total {
+          font-size: vw_size(24, $current);
+          letter-spacing: vw_size(0.33, $current);
+          margin-bottom: vw_size(20, $current);
+        }
+        &.item-price {
+          width: vw_size(50, $current);
+        }
+      }
+    }
+
+    .sub-wrap {
+      margin-top: vw_size(10, $current);
+      width: vw_size(208, $current);
+      .key {
+        font-size: vw_size(12, $current);
+        letter-spacing: vw_size(0.36, $current);
+      }
+      .value {
+        font-size: vw_size(12, $current);
+        letter-spacing: vw_size(0.36, $current);
+      }
+    }
+    .separator {
+      margin-top: vw_size(20, $current);
+      margin-bottom: vw_size(6, $current);
+    }
+  }
+}

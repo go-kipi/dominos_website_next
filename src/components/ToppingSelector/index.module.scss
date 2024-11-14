@@ -1,0 +1,698 @@
+@use "sass:math";
+@import "src/styles/imports";
+
+.topping-selector-image {
+	position: relative;
+	pointer-events: all;
+}
+$current: 375;
+$size: 52;
+@mixin overlay($width, $height, $current) {
+	position: absolute;
+	pointer-events: none;
+	width: vw_size($width, $current);
+	height: vw_size($height, $current);
+	background-color: rgba(255, 255, 255, 0.3);
+	border-width: 1px;
+	border-color: $blue;
+}
+
+.topping-selector-wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 vw_size(13, $current);
+	width: vw_size(59, $current);
+	min-height: vw_size(87, $current);
+	.clear-topping-icon {
+		position: absolute;
+		cursor: pointer;
+		width: vw_size(18, $current);
+		height: vw_size(18, $current);
+		top: vw_size(-15, $current);
+		left: vw_size(-10, $current);
+		z-index: 10;
+	}
+	.mix-info-icon {
+		position: absolute;
+		cursor: pointer;
+		width: vw_size(17, $current);
+		height: vw_size(17, $current);
+		top: vw_size(35, $current);
+		right: vw_size(-3, $current);
+		z-index: 10;
+	}
+	.topping-img-wrapper {
+		position: relative;
+		background-color: black;
+		width: vw_size($size, $current);
+		height: vw_size($size, $current);
+		border-radius: vw_size($size, $current);
+		cursor: pointer;
+		user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+		&.no-touch {
+			touch-action: none;
+			-ms-touch-action: none;
+			-webkit-touch-callout: none;
+			pointer-events: none;
+		}
+
+		img {
+			width: vw_size($size - 15, $current);
+			height: vw_size($size - 15, $current);
+			object-fit: contain;
+		}
+
+		&.selected {
+			border: 1px $blue solid;
+		}
+
+		.full-circle {
+			@include overlay($size, $size, $current);
+			border-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.vertical-half-circle {
+			@include overlay(math.div($size, 2), $size, $current);
+			z-index: 1000;
+		}
+		.right-only {
+			border: 1px solid $blue;
+			right: vw_size(-1, $current);
+			top: vw_size(-1.5, $current);
+			border-bottom-right-radius: vw_size($size, $current);
+			border-top-right-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.left-only {
+			border: 1px solid $blue;
+			left: vw_size(-1, $current);
+			top: vw_size(-1.5, $current);
+			border-top-left-radius: vw_size($size, $current);
+			border-bottom-left-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.horizontal-half-circle {
+			@include overlay($size, math.div($size, 2), $current);
+			z-index: 1000;
+		}
+		.top-only {
+			border: 1px solid $blue;
+			top: 0;
+			border-top-left-radius: vw_size($size, $current);
+			border-top-right-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.bottom-only {
+			border: 1px solid $blue;
+			bottom: 0;
+			border-bottom-left-radius: vw_size($size, $current);
+			border-bottom-right-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.quarter {
+			@include overlay(math.div($size, 2), math.div($size, 2), $current);
+			position: absolute;
+			background-color: rgba(255, 255, 255, 0.3);
+			border-width: 1px;
+			border-color: $blue;
+			z-index: 1000;
+		}
+		.top-left {
+			top: vw_size(-1.5, $current);
+			left: 0;
+			border: 1px solid $blue;
+			border-top-left-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.top-right {
+			top: vw_size(-1.5, $current);
+			right: 0;
+			border: 1px solid $blue;
+			border-top-right-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.bottom-right {
+			bottom: vw_size(-1, $current);
+			right: 0;
+			border: 1px solid $blue;
+			border-bottom-right-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+		.bottom-left {
+			bottom: vw_size(-1, $current);
+			left: 0;
+			border: 1px solid $blue;
+			border-bottom-left-radius: vw_size($size, $current);
+			z-index: 1000;
+		}
+
+		.topping-quantity {
+			background-color: $white;
+			position: absolute;
+			padding: vw_size(1, $current) vw_size(3, $current);
+			border-radius: vw_size(10, $current);
+			letter-spacing: vw_size(2, $current);
+			font-size: vw_size(11, $current);
+			font-family: $font-bold;
+
+			.topping-quantity-duplicator {
+				font-size: vw_size(8, $current);
+			}
+
+			&.topping-quantity-all-over {
+				bottom: vw_size(-5, $current);
+				width: fit-content;
+				margin-inline: auto;
+				left: 0;
+				right: 0;
+			}
+
+			&.topping-quantity-top-half {
+				top: vw_size(2, $current);
+				width: fit-content;
+				margin-inline: auto;
+				left: 0;
+				right: 0;
+			}
+
+			&.topping-quantity-bottom-half {
+				bottom: vw_size(2, $current);
+				width: fit-content;
+				margin-inline: auto;
+				left: 0;
+				right: 0;
+			}
+
+			&.topping-quantity-left-half {
+				left: vw_size(-5, $current);
+				height: fit-content;
+				margin: auto;
+				top: 0;
+				bottom: 0;
+			}
+
+			&.topping-quantity-right-half {
+				right: vw_size(-5, $current);
+				height: fit-content;
+				margin: auto;
+				top: 0;
+				bottom: 0;
+			}
+
+			&.topping-quantity-q1 {
+				top: vw_size(5, $current);
+				left: vw_size(2, $current);
+			}
+
+			&.topping-quantity-q2 {
+				top: vw_size(5, $current);
+				right: vw_size(2, $current);
+			}
+
+			&.topping-quantity-q3 {
+				bottom: vw_size(5, $current);
+				right: vw_size(2, $current);
+			}
+
+			&.topping-quantity-q4 {
+				bottom: vw_size(5, $current);
+				left: vw_size(2, $current);
+			}
+		}
+	}
+	&.out-of-stock {
+		pointer-events: none;
+		opacity: 0.3;
+	}
+
+	.topping-name {
+		display: block;
+		width: vw_size(50, $current);
+		margin-top: vw_size(5, $current);
+		font-family: $font-medium;
+		font-size: vw_size(13, $current);
+		color: #bbbbbb;
+		text-align: center;
+		text-wrap: wrap;
+		&.selected {
+			color: white;
+			font-family: $font-bold;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.topping-selector-wrapper {
+		margin: auto vw_size(13, $current);
+		width: vw_size(59, $current);
+		min-height: unset;
+		height: vw_size(87, $current);
+		.clear-topping-icon {
+			width: vw_size(18, $current);
+			height: vw_size(18, $current);
+			top: vw_size(-15, $current);
+			left: vw_size(-10, $current);
+		}
+		.mix-info-icon {
+			width: vw_size(17, $current);
+			height: vw_size(17, $current);
+			top: vw_size(35, $current);
+			right: vw_size(-3, $current);
+		}
+		.topping-img-wrapper {
+			width: vw_size($size, $current);
+			height: vw_size($size, $current);
+			border-radius: vw_size($size, $current);
+
+			img {
+				width: vw_size($size - 15, $current);
+				height: vw_size($size - 15, $current);
+			}
+
+			.full-circle {
+				@include overlay($size, $size, $current);
+				border-radius: vw_size($size, $current);
+			}
+
+			.vertical-half-circle {
+				@include overlay(math.div($size, 2), $size, $current);
+			}
+
+			.right-only {
+				border-bottom-right-radius: vw_size($size, $current);
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.left-only {
+				border-top-left-radius: vw_size($size, $current);
+				border-bottom-left-radius: vw_size($size, $current);
+			}
+
+			.horizontal-half-circle {
+				@include overlay($size, math.div($size, 2), $current);
+			}
+
+			.top-only {
+				border-top-left-radius: vw_size($size, $current);
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.bottom-only {
+				border-bottom-left-radius: vw_size($size, $current);
+				border-bottom-right-radius: vw_size($size, $current);
+			}
+
+			.quarter {
+				@include overlay(math.div($size, 2), math.div($size, 2), $current);
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			.top-left {
+				border-top-left-radius: vw_size($size, $current);
+			}
+
+			.top-right {
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.bottom-right {
+				border-bottom-right-radius: vw_size($size, $current);
+			}
+			.bottom-left {
+				border-bottom-left-radius: vw_size($size, $current);
+			}
+
+			.topping-quantity {
+				padding: vw_size(1, $current) vw_size(3, $current);
+				border-radius: vw_size(10, $current);
+				letter-spacing: vw_size(2, $current);
+				font-size: vw_size(11, $current);
+
+				.topping-quantity-duplicator {
+					font-size: vw_size(8, $current);
+				}
+
+				&.topping-quantity-all-over {
+					bottom: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-top-half {
+					top: vw_size(2, $current);
+				}
+
+				&.topping-quantity-bottom-half {
+					bottom: vw_size(2, $current);
+				}
+
+				&.topping-quantity-left-half {
+					left: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-right-half {
+					right: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-q1 {
+					top: vw_size(5, $current);
+					left: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q2 {
+					top: vw_size(5, $current);
+					right: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q3 {
+					bottom: vw_size(5, $current);
+					right: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q4 {
+					bottom: vw_size(5, $current);
+					left: vw_size(2, $current);
+				}
+			}
+		}
+
+		.topping-name {
+			width: vw_size(50, $current);
+			margin-top: vw_size(5, $current);
+			font-size: vw_size(12, $current);
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	$size: 68;
+	.topping-selector-wrapper {
+		margin: 0 vw_size(13, $current);
+		width: vw_size(59, $current);
+		height: vw_size(100, $current);
+		.clear-topping-icon {
+			width: vw_size(18, $current);
+			height: vw_size(18, $current);
+			top: vw_size(-15, $current);
+			left: vw_size(-10, $current);
+		}
+		.mix-info-icon {
+			width: vw_size(17, $current);
+			height: vw_size(17, $current);
+			top: vw_size(45, $current);
+			right: vw_size(3, $current);
+		}
+		.topping-img-wrapper {
+			width: vw_size($size, $current);
+			height: vw_size($size, $current);
+			border-radius: vw_size($size, $current);
+
+			img {
+				width: vw_size($size - 15, $current);
+				height: vw_size($size - 15, $current);
+			}
+
+			.full-circle {
+				@include overlay($size, $size, $current);
+				border-radius: vw_size($size, $current);
+			}
+
+			.vertical-half-circle {
+				@include overlay(math.div($size, 2), $size, $current);
+				top: 0;
+			}
+
+			.right-only {
+				border-bottom-right-radius: vw_size($size, $current);
+				border-top-right-radius: vw_size($size, $current);
+				top: vw_size(-1, $current);
+				right: vw_size(-1, $current);
+			}
+
+			.left-only {
+				border-top-left-radius: vw_size($size, $current);
+				border-bottom-left-radius: vw_size($size, $current);
+				top: vw_size(-1, $current);
+				left: vw_size(-1, $current);
+			}
+
+			.horizontal-half-circle {
+				@include overlay($size, math.div($size, 2), $current);
+			}
+
+			.top-only {
+				border-top-left-radius: vw_size($size, $current);
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.bottom-only {
+				border-bottom-left-radius: vw_size($size, $current);
+				border-bottom-right-radius: vw_size($size, $current);
+			}
+
+			.quarter {
+				@include overlay(math.div($size, 2), math.div($size, 2), $current);
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			.top-left {
+				border-top-left-radius: vw_size($size, $current);
+				top: vw_size(-1.5, $current);
+				left: 0;
+			}
+
+			.top-right {
+				top: vw_size(-1.5, $current);
+				right: 0;
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.bottom-right {
+				border-bottom-right-radius: vw_size($size, $current);
+				bottom: vw_size(-1, $current);
+				right: 0;
+			}
+			.bottom-left {
+				border-bottom-left-radius: vw_size($size, $current);
+				bottom: vw_size(-1, $current);
+				left: 0;
+			}
+
+			.topping-quantity {
+				padding: vw_size(1, $current) vw_size(3, $current);
+				border-radius: vw_size(10, $current);
+				letter-spacing: vw_size(2, $current);
+				font-size: vw_size(11, $current);
+
+				.topping-quantity-duplicator {
+					font-size: vw_size(8, $current);
+				}
+
+				&.topping-quantity-all-over {
+					bottom: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-top-half {
+					top: vw_size(2, $current);
+				}
+
+				&.topping-quantity-bottom-half {
+					bottom: vw_size(2, $current);
+				}
+
+				&.topping-quantity-left-half {
+					left: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-right-half {
+					right: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-q1 {
+					top: vw_size(5, $current);
+					left: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q2 {
+					top: vw_size(5, $current);
+					right: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q3 {
+					bottom: vw_size(5, $current);
+					right: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q4 {
+					bottom: vw_size(5, $current);
+					left: vw_size(2, $current);
+				}
+			}
+		}
+
+		.topping-name {
+			width: vw_size(50, $current);
+			margin-top: vw_size(5, $current);
+			font-size: vw_size(12, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-large;
+	$size: 64;
+	.topping-selector-wrapper {
+		position: relative;
+		margin: 0 vw_size(13, $current);
+		width: vw_size(59, $current);
+		height: vw_size(100, $current);
+		.clear-topping-icon {
+			width: vw_size(18, $current);
+			height: vw_size(18, $current);
+			top: vw_size(-15, $current);
+			left: vw_size(-10, $current);
+		}
+		.mix-info-icon {
+			width: vw_size(17, $current);
+			height: vw_size(17, $current);
+			top: vw_size(45, $current);
+			right: vw_size(3, $current);
+		}
+		.topping-img-wrapper {
+			width: vw_size($size, $current);
+			height: vw_size($size, $current);
+			border-radius: vw_size($size, $current);
+
+			img {
+				width: vw_size($size - 15, $current);
+				height: vw_size($size - 15, $current);
+			}
+
+			.full-circle {
+				@include overlay($size, $size, $current);
+				border-radius: vw_size($size, $current);
+			}
+
+			.vertical-half-circle {
+				@include overlay(math.div($size, 2), $size, $current);
+			}
+
+			.right-only {
+				border-bottom-right-radius: vw_size($size, $current);
+				border-top-right-radius: vw_size($size, $current);
+				top: vw_size(-0.8, $current);
+				right: 0;
+			}
+
+			.left-only {
+				border-top-left-radius: vw_size($size, $current);
+				border-bottom-left-radius: vw_size($size, $current);
+				top: vw_size(-0.8, $current);
+				left: 0;
+			}
+
+			.horizontal-half-circle {
+				@include overlay($size, math.div($size, 2), $current);
+			}
+
+			.top-only {
+				border-top-left-radius: vw_size($size, $current);
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.bottom-only {
+				border-bottom-left-radius: vw_size($size, $current);
+				border-bottom-right-radius: vw_size($size, $current);
+			}
+
+			.quarter {
+				@include overlay(math.div($size, 2), math.div($size, 2), $current);
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+
+			.top-left {
+				border-top-left-radius: vw_size($size, $current);
+				top: 0;
+				left: vw_size(-0.5, $current);
+			}
+
+			.top-right {
+				top: 0;
+				right: vw_size(-0.5, $current);
+				border-top-right-radius: vw_size($size, $current);
+			}
+
+			.bottom-right {
+				border-bottom-right-radius: vw_size($size, $current);
+				bottom: 0;
+				right: vw_size(-1, $current);
+			}
+			.bottom-left {
+				border-bottom-left-radius: vw_size($size, $current);
+				bottom: 0;
+				left: vw_size(-1, $current);
+			}
+
+			.topping-quantity {
+				padding: vw_size(1, $current) vw_size(3, $current);
+				border-radius: vw_size(10, $current);
+				letter-spacing: vw_size(2, $current);
+				font-size: vw_size(11, $current);
+
+				.topping-quantity-duplicator {
+					font-size: vw_size(8, $current);
+				}
+
+				&.topping-quantity-all-over {
+					bottom: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-top-half {
+					top: vw_size(2, $current);
+				}
+
+				&.topping-quantity-bottom-half {
+					bottom: vw_size(2, $current);
+				}
+
+				&.topping-quantity-left-half {
+					left: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-right-half {
+					right: vw_size(-5, $current);
+				}
+
+				&.topping-quantity-q1 {
+					top: vw_size(5, $current);
+					left: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q2 {
+					top: vw_size(5, $current);
+					right: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q3 {
+					bottom: vw_size(5, $current);
+					right: vw_size(2, $current);
+				}
+
+				&.topping-quantity-q4 {
+					bottom: vw_size(5, $current);
+					left: vw_size(2, $current);
+				}
+			}
+		}
+
+		.topping-name {
+			width: vw_size(50, $current);
+			margin-top: vw_size(5, $current);
+			font-size: vw_size(12, $current);
+		}
+	}
+}

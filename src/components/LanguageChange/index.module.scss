@@ -1,0 +1,86 @@
+@import '/src/styles/imports.scss';
+$current: 375;
+.change-language-cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: $white;
+  top:  0;
+  left: -100%;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.enter {
+    animation: enter 500ms ease-in-out forwards;
+  }
+
+  &.exit {
+    animation: exit 500ms ease-in-out forwards;
+  }
+
+  .logo-wrapper {
+    width: vw_size(200, $current);
+    height: vw_size(200, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .change-language-cover {
+    .logo-wrapper {
+      width: vw_size(200, $current);
+      height: vw_size(200, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .change-language-cover {
+    .logo-wrapper {
+      width: vw_size(200, $current);
+      height: vw_size(200, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+  .change-language-cover {
+    .logo-wrapper {
+      width: vw_size(300, $current);
+      height: vw_size(300, $current);
+    }
+  }
+}
+
+
+@media (min-width: $media-desktop_max) {
+  $current: $desktop-max;
+  .change-language-cover {
+    .logo-wrapper {
+      width: vw_size(300, $current);
+      height: vw_size(300, $current);
+    }
+  }
+}
+
+@keyframes enter {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@keyframes exit {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}

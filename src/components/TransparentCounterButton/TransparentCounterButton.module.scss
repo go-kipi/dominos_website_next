@@ -1,0 +1,101 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.transparent-counter-button-wrapper {
+	display: flex;
+	background-color: transparent;
+	border-radius: vw_size(22, $current);
+	user-select: none;
+	font-family: $font-bold;
+	color: $white;
+	border: 1px solid rgba(122, 132, 140, 1);
+	align-items: center;
+	direction: rtl;
+
+	& > * {
+		flex: 1;
+		text-align: center;
+	}
+
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.3;
+	}
+
+	.action-btn {
+		font-size: vw_size(20, $current);
+		height: 100%;
+		width: vw_size(30, $current);
+
+		border-radius: 100%;
+
+		&:disabled {
+			opacity: 0.5;
+		}
+
+		&:active {
+			background-color: black;
+		}
+	}
+
+	.value {
+		background-color: transparent;
+		color: $white;
+		font-size: vw_size(16, $current);
+		font-family: $font-bold;
+		margin-inline: vw_size(7, $current);
+		padding-inline: vw_size(5, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.transparent-counter-button-wrapper {
+		border-radius: vw_size(22, $current);
+
+		.action-btn {
+			font-size: vw_size(20, $current);
+			width: vw_size(30, $current);
+		}
+
+		.value {
+			font-size: vw_size(16, $current);
+			margin-inline: vw_size(7, $current);
+			padding-inline: vw_size(5, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.transparent-counter-button-wrapper {
+		border-radius: vw_size(22, $current);
+
+		.action-btn {
+			font-size: vw_size(20, $current);
+			width: 100%;
+			&:hover {
+				background-color: $grey-hover;
+				border-radius: 50%;
+			}
+		}
+
+		.value {
+			font-size: vw_size(16, $current);
+			margin-inline: vw_size(7, $current);
+			padding-inline: vw_size(5, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	.transparent-counter-button-wrapper {
+		.action-btn {
+			font-size: vw_size(25, $current);
+
+			&:hover {
+				border-radius: 50%;
+			}
+		}
+	}
+}

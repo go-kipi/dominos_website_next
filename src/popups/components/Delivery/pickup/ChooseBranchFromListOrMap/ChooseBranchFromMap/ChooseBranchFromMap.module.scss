@@ -1,0 +1,257 @@
+@import "src/styles/imports";
+$current: 375;
+:global(.ltr) {
+	.choose-branch-from-map-wrapper {
+		.map-wrapper {
+			.back-to-location {
+				left: unset;
+				right: vw_size(15, $current);
+			}
+		}
+		.toggle-list-wrapper {
+			right: 0;
+			left: unset;
+		}
+	}
+}
+
+.choose-branch-from-map-wrapper {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	height: 100%;
+
+	.map-wrapper {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		&.with-filter {
+			height: 60.4vh;
+			.back-to-location {
+				transition: none;
+				bottom: vw_size(190, $current);
+			}
+		}
+
+		.back-to-location {
+			transition: none;
+			left: vw_size(15, $current);
+			bottom: vw_size(120, $current);
+		}
+
+		.loader-wrapper {
+			position: absolute;
+			top: 0;
+			background-color: rgba(255, 255, 255, 0.4);
+			backdrop-filter: 14px;
+			width: 100%;
+			height: 100%;
+			z-index: 100000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.loader {
+				width: 50%;
+				height: 50%;
+			}
+		}
+	}
+
+	.linear-gradient-top {
+		position: absolute;
+		width: 100%;
+		z-index: 10001; // go over popup z-index
+		height: vw_size(50, $current);
+		top: 0;
+		background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+		pointer-events: none;
+	}
+
+	.linear-gradient-bottom {
+		position: absolute;
+		width: 100%;
+		z-index: 10001; // go over popup z-index
+		height: vw_size(50, $current);
+		bottom: 0;
+		background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+		pointer-events: none;
+	}
+
+	.search-branch-wrapper {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		.autocomplete-list {
+			width: vw_size(301, $current);
+			margin-inline-start: vw_size(44, $current);
+			margin-inline-end: vw_size(31, $current);
+		}
+	}
+	#my_map {
+		width: 100%;
+		height: 69vh; // nice
+		overflow: revert;
+	}
+	.toggle-list-wrapper {
+		position: absolute;
+		bottom: vw_size(30, $current);
+		left: 0;
+		width: vw_size(85, $current);
+		z-index: 10002;
+		cursor: pointer;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.ltr) {
+		.choose-branch-from-map-wrapper {
+			.map-wrapper {
+				.back-to-location {
+					right: vw_size(20, $current);
+				}
+			}
+		}
+		.toggle-list-wrapper {
+			right: vw_size(20, $current);
+		}
+	}
+	.choose-branch-from-map-wrapper {
+		.map-wrapper {
+			height: vw_size(500, $current);
+			&.with-filter {
+				height: vw_size(438, $current);
+				.back-to-location {
+					bottom: vw_size(162, $current);
+				}
+			}
+
+			.back-to-location {
+				left: vw_size(35, $current);
+				bottom: vw_size(100, $current);
+			}
+		}
+		.linear-gradient-top {
+			height: vw_size(50, $current);
+		}
+		.linear-gradient-bottom {
+			height: vw_size(50, $current);
+		}
+		.search-branch-wrapper {
+			.autocomplete-list {
+				width: vw_size(674, $current);
+				margin-inline-start: vw_size(44, $current);
+				margin-inline-end: vw_size(50, $current);
+			}
+		}
+		#my_map {
+		}
+		.toggle-list-wrapper {
+			bottom: vw_size(15, $current);
+			width: vw_size(85, $current);
+			left: vw_size(20, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.choose-branch-from-map-wrapper {
+			.map-wrapper {
+				.back-to-location {
+					right: vw_size(15, $current);
+				}
+			}
+		}
+		.toggle-list-wrapper {
+			right: vw_size(15, $current);
+		}
+	}
+	.choose-branch-from-map-wrapper {
+		.map-wrapper {
+			height: vw_size(490, $current);
+			&.with-filter {
+				height: vw_size(437, $current);
+				.back-to-location {
+					bottom: vw_size(153, $current);
+				}
+			}
+
+			.back-to-location {
+				left: vw_size(35, $current);
+				bottom: vw_size(100, $current);
+			}
+		}
+		.linear-gradient-top {
+			height: vw_size(40, $current);
+		}
+		.linear-gradient-bottom {
+			height: vw_size(40, $current);
+		}
+		.search-branch-wrapper {
+			.autocomplete-list {
+				width: vw_size(346, $current);
+				margin-inline-start: unset;
+				margin-inline-end: unset;
+			}
+		}
+		#my_map {
+		}
+		.toggle-list-wrapper {
+			bottom: vw_size(15, $current);
+			width: vw_size(85, $current);
+			left: vw_size(20, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-max;
+	:global(.ltr) {
+		.choose-branch-from-map-wrapper {
+			.map-wrapper {
+				.back-to-location {
+					right: vw_size(15, $current);
+				}
+			}
+		}
+		.toggle-list-wrapper {
+			right: vw_size(15, $current);
+		}
+	}
+	.choose-branch-from-map-wrapper {
+		.map-wrapper {
+			height: vw_size(490, $current);
+			&.with-filter {
+				height: vw_size(437, $current);
+				.back-to-location {
+					bottom: vw_size(100, $current);
+				}
+			}
+			.back-to-location {
+				left: vw_size(35, $current);
+				bottom: vw_size(100, $current);
+			}
+		}
+		.linear-gradient-top {
+			height: vw_size(40, $current);
+		}
+		.linear-gradient-bottom {
+			height: vw_size(40, $current);
+		}
+		.search-branch-wrapper {
+			.autocomplete-list {
+				width: vw_size(346, $current);
+			}
+		}
+		#my_map {
+		}
+		.toggle-list-wrapper {
+			bottom: vw_size(15, $current);
+			width: vw_size(85, $current);
+			left: vw_size(20, $current);
+		}
+	}
+}

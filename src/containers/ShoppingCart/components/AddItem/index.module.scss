@@ -1,0 +1,113 @@
+@import "../../../../styles/imports";
+
+$current: 375;
+
+.add-item-wrap {
+  .add-item-inner {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: vw_size(25, $current);
+      height: vw_size(25, $current);
+      border: 1px solid $white;
+      border-radius: 50px;
+      margin-inline-end: vw_size(14, $current);
+      .icon{
+        width: vw_size(15, $current);
+      }
+    }
+
+    .text{
+      font-family: $font-medium;
+      font-size: vw_size(14, $current);
+      line-height: vw_size(21, $current);
+      color: $white;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .add-item-wrap {
+
+    .add-item-inner {
+      .icon-wrap {
+        width: vw_size(25, $current);
+        height: vw_size(25, $current);
+        margin-inline-end: vw_size(14, $current);
+        .icon{
+          width: vw_size(15, $current);
+        }
+      }
+      .text{
+        font-size: vw_size(14, $current);
+        line-height: vw_size(21, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .add-item-wrap {
+
+    .add-item-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid $grey-border;
+      border-radius: 14px;
+      width: 100%;
+      height: vw_size(85, $current);
+      padding-inline-start: vw_size(45, $current);
+      .icon-wrap {
+        width: vw_size(25, $current);
+        height: vw_size(25, $current);
+        margin-inline-end: vw_size(14, $current);
+        .icon{
+          width: vw_size(15, $current);
+        }
+      }
+
+      .text{
+        font-size: vw_size(14, $current);
+        line-height: vw_size(21, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-max;
+
+  .add-item-wrap {
+
+    .add-item-inner {
+      display: flex;
+      align-items: center;
+      border: 1px solid $grey-border;
+      border-radius: 14px;
+      width: 100%;
+      height: vw_size(85, $current);
+      padding-inline-start: vw_size(45, $current);
+      .icon-wrap {
+        width: vw_size(25, $current);
+        height: vw_size(25, $current);
+        margin-inline-end: vw_size(14, $current);
+        .icon{
+          width: vw_size(15, $current);
+        }
+      }
+
+      .text{
+        font-size: vw_size(14, $current);
+        line-height: vw_size(21, $current);
+      }
+    }
+  }
+}

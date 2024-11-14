@@ -1,0 +1,109 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: vw_size(350, $current);
+	.bit-logo {
+		height: vw_size(86, $current);
+		width: vw_size(172, $current);
+	}
+	.pay-with-bit {
+		color: #383940;
+		font-family: $font-book;
+		font-size: vw_size(15, $current);
+		text-align: center;
+		margin-top: vw_size(8, $current);
+	}
+	.press-the-btn {
+		margin-top: vw_size(4, $current);
+		color: black;
+		font-family: $font-medium;
+		font-size: vw_size(21, $current);
+		text-align: center;
+	}
+	.bit-btn > img {
+		width: unset;
+	}
+	.go-back {
+		margin-top: vw_size(21, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.wrapper {
+		height: vw_size(450, $current);
+		.bit-logo {
+			height: vw_size(86, $current);
+			width: vw_size(172, $current);
+		}
+		.pay-with-bit {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(8, $current);
+		}
+		.press-the-btn {
+			margin-top: vw_size(4, $current);
+			font-size: vw_size(21, $current);
+		}
+		.go-back {
+			margin-top: vw_size(21, $current);
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.wrapper {
+		height: vw_size(480, $current);
+		.bit-logo {
+			height: vw_size(86, $current);
+			width: vw_size(172, $current);
+		}
+		.pay-with-bit {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(8, $current);
+		}
+		.press-the-btn {
+			margin-top: vw_size(4, $current);
+			font-size: vw_size(21, $current);
+		}
+		.bit-btn {
+			width: vw_size(275, $current);
+			height: vw_size(46, $current);
+			margin-top: vw_size(62, $current);
+		}
+		.go-back {
+			margin-top: vw_size(21, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.wrapper {
+		height: vw_size(541, $current);
+		.bit-logo {
+			height: vw_size(86, $current);
+			width: vw_size(172, $current);
+		}
+		.pay-with-bit {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(8, $current);
+		}
+		.press-the-btn {
+			margin-top: vw_size(4, $current);
+			font-size: vw_size(21, $current);
+		}
+		.bit-btn {
+			width: vw_size(275, $current);
+			height: vw_size(46, $current);
+			margin-top: vw_size(62, $current);
+		}
+		.go-back {
+			margin-top: vw_size(21, $current);
+		}
+	}
+}

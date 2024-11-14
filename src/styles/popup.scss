@@ -1,0 +1,114 @@
+@import "../styles/imports";
+
+.popup {
+	position: relative;
+	.backdrop {
+		display: flex;
+		align-items: center;
+		position: fixed;
+		z-index: 10000;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.5);
+		opacity: 0;
+		transition: all 200ms ease-out;
+		&.blur {
+			.popup_wrapper {
+				top: 0;
+			}
+		}
+		.popup_wrapper {
+			top: 100%;
+			transition: all 200ms ease-out;
+			position: relative;
+
+			&.active {
+				top: 0;
+			}
+			&.done {
+				top: 0;
+			}
+		}
+
+		&.active {
+			opacity: 1;
+		}
+		&.done {
+			opacity: 1;
+		}
+	}
+}
+
+$current: $mobile;
+
+.close-icon-wrapper {
+	cursor: pointer;
+	position: absolute;
+	z-index: 10000;
+	top: vw_size(15, $current);
+	left: vw_size(15, $current);
+	width: vw_size(22, $current);
+	height: vw_size(22, $current);
+}
+
+.ltr {
+	.close-icon-wrapper {
+		right: vw_size(15, $current);
+		left: unset;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.ltr {
+		.close-icon-wrapper {
+			right: vw_size(15, $current);
+			left: unset;
+		}
+	}
+
+	.close-icon-wrapper {
+		top: vw_size(15, $current);
+		left: vw_size(15, $current);
+		width: vw_size(22, $current);
+		height: vw_size(22, $current);
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.ltr {
+		.close-icon-wrapper {
+			right: vw_size(15, $current);
+			left: unset;
+		}
+	}
+
+	.close-icon-wrapper {
+		top: vw_size(15, $current);
+		left: vw_size(15, $current);
+		width: vw_size(26, $current);
+		height: vw_size(26, $current);
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.ltr {
+		.close-icon-wrapper {
+			right: vw_size(15, $current);
+			left: unset;
+		}
+	}
+
+	.close-icon-wrapper {
+		top: vw_size(15, $current);
+		left: vw_size(15, $current);
+		width: vw_size(26, $current);
+		height: vw_size(26, $current);
+	}
+}

@@ -1,0 +1,370 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+.beverage-select-external-wrapper {
+	text-align: left;
+	&.rtl {
+		text-align: right;
+	}
+	.beverage-select-wrapper {
+		cursor: pointer;
+		color: $white;
+		display: flex;
+		position: relative;
+		width: vw_size(330, $current);
+		height: vw_size(108, $current);
+		background-color: $soft-gray-opacity;
+		border-radius: vw_size(20, $current);
+		&:active {
+			background-color: rgba(39, 44, 47, 1);
+		}
+
+		.expand-icon {
+			position: absolute;
+			top: vw_size(5, $current);
+			right: vw_size(5, $current);
+			height: vw_size(40, $current);
+			width: vw_size(40, $current);
+		}
+
+		&.rtl {
+			.expand-icon {
+				right: unset;
+				left: vw_size(5, $current);
+			}
+		}
+
+		.beverage-image-wrapper {
+			width: vw_size(87, $current);
+			position: relative;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+
+			.beverage-image {
+				position: absolute;
+				left: -vw_size(20, $current);
+				bottom: vw_size(10, $current);
+				height: vw_size(119, $current);
+				width: auto;
+			}
+		}
+
+		.beverage-left-side {
+			flex: 1;
+			padding: vw_size(15, $current) vw_size(10, $current) vw_size(10, $current);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			position: relative;
+
+			.beverage-top {
+				.title {
+					font-family: $font-medium;
+					font-size: vw_size(16, $current);
+					margin-bottom: vw_size(5, $current);
+				}
+
+				.description {
+					font-size: vw_size(12, $current);
+					font-family: $font-medium;
+				}
+			}
+
+			.beverage-bottom {
+				position: absolute;
+				left: vw_size(10, $current);
+				bottom: vw_size(10, $current);
+				width: vw_size(20, $current);
+				height: vw_size(20, $current);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.beverage-select-radio {
+					// width: vw_size(20, $current);
+					// height: vw_size(20, $current);
+				}
+			}
+		}
+	}
+}
+:global(.ltr) {
+	.beverage-select-external-wrapper {
+		.beverage-select-wrapper {
+			.beverage-left-side {
+				.beverage-bottom {
+					left: unset;
+					right: vw_size(13, $current);
+				}
+			}
+			.beverage-image-wrapper {
+				.beverage-image {
+					left: unset;
+					right: -vw_size(20, $current);
+					bottom: vw_size(10, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.beverage-select-external-wrapper {
+		display: flex;
+		align-items: flex-end;
+		height: vw_size(290, $current);
+
+		.beverage-select-wrapper {
+			align-items: unset;
+			width: vw_size(297, $current);
+			height: vw_size(182, $current);
+			border-radius: vw_size(28, $current);
+			flex-direction: column;
+			transition: 0.3s;
+
+			.expand-icon {
+				top: vw_size(5, $current);
+				right: vw_size(5, $current);
+				height: vw_size(40, $current);
+				width: vw_size(40, $current);
+			}
+
+			&.rtl {
+				.expand-icon {
+					left: vw_size(5, $current);
+				}
+			}
+
+			&.selected {
+				box-shadow: 0 vw_size(1, $current) vw_size(10, $current) $black;
+			}
+
+			&:hover {
+				box-shadow: 0 vw_size(1, $current) vw_size(18, $current)
+					vw_size(8, $current) $black;
+			}
+
+			.beverage-image-wrapper {
+				width: unset;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				height: vw_size(109, $current);
+
+				.beverage-image {
+					left: unset;
+					height: vw_size(198, $current);
+					bottom: vw_size(0, $current);
+				}
+			}
+
+			.beverage-left-side {
+				margin-top: unset;
+				padding: vw_size(15, $current) vw_size(25, $current) vw_size(20, $current)
+					vw_size(15, $current);
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+
+				.beverage-top {
+					.title {
+						font-family: $font-medium;
+						font-size: vw_size(20, $current);
+						line-height: vw_size(28, $current);
+						margin-bottom: vw_size(2, $current);
+					}
+
+					.description {
+						line-height: vw_size(18, $current);
+						font-size: vw_size(14, $current);
+						font-family: $font-book;
+					}
+				}
+
+				.beverage-bottom {
+					width: vw_size(30, $current);
+					height: vw_size(30, $current);
+					bottom: vw_size(17, $current);
+					left: vw_size(13, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.beverage-select-external-wrapper {
+		height: vw_size(290, $current);
+
+		.beverage-select-wrapper {
+			width: vw_size(297, $current);
+			height: vw_size(182, $current);
+			border-radius: vw_size(28, $current);
+
+			.expand-icon {
+				top: vw_size(5, $current);
+				right: vw_size(5, $current);
+				height: vw_size(40, $current);
+				width: vw_size(40, $current);
+			}
+
+			&.rtl {
+				.expand-icon {
+					left: vw_size(5, $current);
+				}
+			}
+
+			&.selected {
+				box-shadow: 0 vw_size(1, $current) vw_size(10, $current) $black;
+			}
+
+			&:hover {
+				box-shadow: 0 vw_size(1, $current) vw_size(18, $current)
+					vw_size(8, $current) $black;
+				background-color: rgba(37, 42, 46, 1);
+			}
+
+			.beverage-image-wrapper {
+				height: vw_size(109, $current);
+
+				.beverage-image {
+					height: vw_size(198, $current);
+					bottom: vw_size(0, $current);
+				}
+			}
+
+			.beverage-left-side {
+				padding: vw_size(15, $current) vw_size(25, $current) vw_size(20, $current)
+					vw_size(15, $current);
+
+				.beverage-top {
+					.title {
+						font-size: vw_size(20, $current);
+						line-height: vw_size(28, $current);
+						margin-bottom: vw_size(2, $current);
+					}
+
+					.description {
+						line-height: vw_size(18, $current);
+						font-size: vw_size(14, $current);
+					}
+				}
+
+				.beverage-bottom {
+					width: vw_size(30, $current);
+					height: vw_size(30, $current);
+					bottom: vw_size(10, $current);
+					left: vw_size(10, $current);
+				}
+			}
+		}
+	}
+	:global(.ltr) {
+		.beverage-select-external-wrapper {
+			.beverage-select-wrapper {
+				.beverage-left-side {
+					.beverage-bottom {
+						bottom: vw_size(27, $current);
+						right: vw_size(13, $current);
+					}
+				}
+				.beverage-image-wrapper {
+					.beverage-image {
+						left: unset;
+						right: vw_size(35, $current);
+						bottom: vw_size(10, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	.beverage-select-external-wrapper {
+		height: vw_size(290, $current);
+
+		.beverage-select-wrapper {
+			width: vw_size(297, $current);
+			height: vw_size(182, $current);
+			border-radius: vw_size(28, $current);
+
+			.expand-icon {
+				top: vw_size(5, $current);
+				right: vw_size(5, $current);
+				height: vw_size(40, $current);
+				width: vw_size(40, $current);
+			}
+
+			&.rtl {
+				.expand-icon {
+					left: vw_size(5, $current);
+				}
+			}
+
+			&.selected {
+				box-shadow: 0 vw_size(1, $current) vw_size(10, $current) $black;
+			}
+
+			&:hover {
+				box-shadow: 0 vw_size(1, $current) vw_size(18, $current)
+					vw_size(8, $current) $black;
+			}
+
+			.beverage-image-wrapper {
+				height: vw_size(109, $current);
+
+				.beverage-image {
+					height: vw_size(198, $current);
+					bottom: vw_size(0, $current);
+				}
+			}
+
+			.beverage-left-side {
+				padding: vw_size(15, $current) vw_size(25, $current) vw_size(20, $current)
+					vw_size(15, $current);
+
+				.beverage-top {
+					.title {
+						font-size: vw_size(20, $current);
+						line-height: vw_size(28, $current);
+						margin-bottom: vw_size(2, $current);
+					}
+
+					.description {
+						line-height: vw_size(18, $current);
+						font-size: vw_size(14, $current);
+					}
+				}
+
+				.beverage-bottom {
+					width: vw_size(30, $current);
+					height: vw_size(30, $current);
+					bottom: vw_size(17, $current);
+					left: vw_size(13, $current);
+				}
+			}
+		}
+	}
+	:global(.ltr) {
+		.beverage-select-external-wrapper {
+			.beverage-select-wrapper {
+				.beverage-left-side {
+					.beverage-bottom {
+						bottom: vw_size(17, $current);
+						right: vw_size(13, $current);
+					}
+				}
+				.beverage-image-wrapper {
+					.beverage-image {
+						left: unset;
+						right: vw_size(40, $current);
+						bottom: vw_size(10, $current);
+					}
+				}
+			}
+		}
+	}
+}

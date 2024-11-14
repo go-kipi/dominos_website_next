@@ -1,0 +1,245 @@
+@import "src/styles/imports";
+@import "../../../../components/recaptcha/recap.module";
+
+.recaptcha-text {
+	//position: absolute;
+	bottom: 0;
+	padding: 20px 0 40px;
+	width: 280px;
+}
+
+:global(.popup_content) {
+	.otp {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.image-wrapper {
+			margin-top: vw_size(13, $mobile);
+			width: vw_size(108, $mobile);
+		}
+
+		.title-label {
+			text-align: center;
+			color: $red;
+			font-family: EzerDoo-Medium;
+			font-size: vw_size(24, $mobile);
+			margin: 0;
+		}
+
+		.subtitle-label {
+			text-align: center;
+			font-family: EzerDoo-Regular;
+			color: #404042;
+			font-size: vw_size(16, $mobile);
+			margin: 0;
+			margin-top: vw_size(4, $mobile);
+		}
+
+		.otp-wrapper {
+			margin: vw_size(31.5, $mobile) auto 0;
+			width: vw_size(198, $mobile);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			transition: all 1s ease-in-out;
+			position: relative;
+			direction: ltr;
+
+			&.active {
+				width: vw_size(230, $mobile);
+			}
+
+			.otp-input {
+				width: vw_size(33, $mobile);
+				padding-bottom: 1px;
+
+				&.focus {
+					input {
+						border-color: $blue;
+						border-bottom-width: 2px;
+						padding-bottom: 0px;
+					}
+				}
+
+				&.error {
+					input {
+						border-color: $red;
+					}
+				}
+
+				input {
+					width: 100%;
+					direction: ltr;
+					border-color: $black;
+				}
+				input:disabled {
+					background-color: white;
+				}
+			}
+
+			.placeHolder {
+				width: 100%;
+				position: absolute;
+				top: vw_size(-7, $mobile);
+				font-size: vw_size(18, $mobile);
+				left: 50%;
+				transform: translate(-50%, 0);
+				color: #383940;
+				font-family: $font;
+				z-index: 1000;
+			}
+		}
+
+		.eta-wrapper {
+			margin-top: vw_size(98, $mobile);
+
+			.otp-eta {
+				color: #404042;
+				font-size: vw_size(14, $mobile);
+				font-family: $font;
+			}
+
+			.send-again {
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	:global(.popup_content) {
+		.otp {
+			.image-wrapper {
+				margin-top: vw_size(13, $tablet);
+				width: vw_size(108, $tablet);
+			}
+
+			.title-label {
+				font-size: vw_size(24, $tablet);
+			}
+
+			.subtitle-label {
+				font-size: vw_size(16, $tablet);
+			}
+
+			.otp-wrapper {
+				margin-top: vw_size(31.5, $tablet);
+				width: vw_size(198, $tablet);
+
+				&.active {
+					width: vw_size(230, $tablet);
+				}
+
+				.otp-input {
+					width: vw_size(33, $tablet);
+				}
+
+				.placeHolder {
+					top: vw_size(-7, $tablet);
+					font-size: vw_size(18, $tablet);
+				}
+			}
+
+			.eta-wrapper {
+				margin-top: vw_size(98, $tablet);
+
+				.otp-eta {
+					font-size: vw_size(14, $tablet);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	:global(.popup_content) {
+		.otp {
+			.image-wrapper {
+				margin-top: vw_size(45, $desktop_max);
+				width: vw_size(108, $desktop);
+			}
+
+			.title-label {
+				font-size: vw_size(24, $desktop);
+			}
+
+			.subtitle-label {
+				font-size: vw_size(16, $desktop);
+			}
+
+			.otp-wrapper {
+				margin-top: vw_size(65, $desktop);
+				width: vw_size(198, $desktop);
+
+				&.active {
+					width: vw_size(256, $desktop);
+				}
+
+				.otp-input {
+					width: vw_size(33, $desktop);
+				}
+
+				.placeHolder {
+					top: vw_size(-7, $desktop);
+					font-size: vw_size(18, $desktop);
+				}
+			}
+
+			.eta-wrapper {
+				margin-top: vw_size(137, $desktop_large);
+				margin-bottom: 0;
+
+				.otp-eta {
+					font-size: vw_size(15, $desktop);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.popup_content) {
+		.otp {
+			.image-wrapper {
+				width: vw_size(108, $current);
+			}
+
+			.title-label {
+				font-size: vw_size(24, $current);
+			}
+
+			.subtitle-label {
+				font-size: vw_size(16, $current);
+			}
+
+			.otp-wrapper {
+				margin-top: vw_size(65, $current);
+				width: vw_size(198, $current);
+
+				&.active {
+					width: vw_size(256, $current);
+				}
+
+				.otp-input {
+					width: vw_size(33, $current);
+				}
+
+				.placeHolder {
+					top: vw_size(-7, $current);
+					font-size: vw_size(18, $current);
+				}
+			}
+
+			.eta-wrapper {
+				margin-top: vw_size(40, $current);
+
+				.otp-eta {
+					font-size: vw_size(15, $current);
+				}
+			}
+		}
+	}
+}

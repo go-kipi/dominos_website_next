@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="15px" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/outline/duplicate</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="סל-4-טולטיפ-ארוחה" transform="translate(-90.000000, -308.000000)" stroke="#FFFFFF" stroke-width="0.7">
+            <g id="icons/outline/duplicate" transform="translate(90.000000, 308.000000)">
+                <rect id="Rectangle" x="3.1037381" y="3.96222989" width="9.3799728" height="9.05652546" rx="1"></rect>
+                <path d="M2.0615189,10.754624 L1.29722569,10.754624 C1.08530827,10.754624 0.882070446,10.673343 0.732222205,10.528662 C0.582373965,10.3839809 0.4981901,10.1877513 0.4981901,9.98314135 L0.4981901,2.21801101 C0.4981901,1.79193291 0.855930518,1.44652837 1.29722569,1.44652837 L9.33968211,1.44652837 C9.55159974,1.44652837 9.75483797,1.52780846 9.90468636,1.67248967 C10.0545347,1.81717087 10.1387177,2.01340089 10.1387177,2.21801101 L10.1387177,2.95594928" id="Path"></path>
+                <line x1="7.78246853" y1="6.22636126" x2="7.78246853" y2="10.754624" id="Path"></line>
+                <line x1="10.1274617" y1="8.49049262" x2="5.43747533" y2="8.49049262" id="Path"></line>
+            </g>
+        </g>
+    </g>
+</svg>

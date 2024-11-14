@@ -1,0 +1,51 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+
+.transparent-button-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: vw_size(32, $current);
+	min-width: vw_size(82, $current);
+	border: 2px solid rgba(255, 255, 255, 0.25);
+	border-radius: vw_size(16, $current);
+	cursor: pointer;
+	padding-inline: vw_size(10, $current);
+	.inner-container {
+		.icon {
+			height: vw_size(13, $current);
+			width: vw_size(13, $current);
+			margin-inline-end: vw_size(7, $current);
+		}
+		.text {
+			font-family: $font;
+			letter-spacing: vw_size(0.45, $current);
+			line-height: vw_size(35, $current);
+			font-size: vw_size(15, $current);
+			color: $white;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.transparent-button-container {
+		height: vw_size(32, $current);
+		min-width: vw_size(82, $current);
+		border-radius: vw_size(16, $current);
+		padding-inline: vw_size(10, $current);
+
+		.inner-container {
+			.icon {
+				height: vw_size(13, $current);
+				width: vw_size(13, $current);
+				margin-inline-end: vw_size(7, $current);
+			}
+			.text {
+				letter-spacing: vw_size(0.45, $current);
+				line-height: vw_size(35, $current);
+				font-size: vw_size(15, $current);
+			}
+		}
+	}
+}

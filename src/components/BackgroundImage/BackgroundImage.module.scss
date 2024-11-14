@@ -1,0 +1,13 @@
+@import "src/styles/imports";
+.background-img {
+	background-color: #202832;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include preventScrollingGapInSafari;
+	.img {
+		object-fit: cover;
+	}
+}

@@ -1,0 +1,22 @@
+@import "src/styles/imports.scss";
+
+:global(.popup) {
+  .dev-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    :global(.popup_wrapper) {
+      overflow: hidden;
+      height: 50vh;
+      width: 20vw !important;
+      :global(.popup_content) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+}

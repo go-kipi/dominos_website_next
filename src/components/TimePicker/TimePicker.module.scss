@@ -1,0 +1,157 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.time-picker-container {
+  position: relative;
+  .arrow {
+    display: block;
+    height: vw_size(26, $current);
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &.up {
+      transform: translateX(-50%);
+      top: 0;
+    }
+    &.down {
+      transform: translateX(-50%) rotateX(180deg);
+      bottom: 0;
+    }
+  }
+}
+.time-picker-wrapper {
+  height: vw_size(250, $current);
+  direction: rtl;
+  position: relative;
+  overflow: hidden;
+
+  .time-picker-select {
+    width: vw_size(176, $current);
+    height: vw_size(50, $current);
+    bottom: 50%;
+    transform: translateY(50%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    .time-picker-border-top {
+      background-color: $red;
+      height: 2px;
+      width: 100%;
+    }
+    .time-picker-border-bottom {
+      width: 100%;
+    }
+  }
+  .time-picker-container {
+    overflow: hidden;
+    height: 100%;
+
+    .time-picker {
+      height: 100%;
+      user-select: none;
+      padding-top: vw_size(100, $current);
+      padding-bottom: vw_size(100, $current);
+
+      overflow: auto;
+      @include hide-scrollbar();
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .time-picker-container {
+    .arrow {
+      height: vw_size(26, $current);
+
+      &.up {
+        top: vw_size(-10, $current);
+      }
+
+      &.down {
+        bottom: vw_size(-5, $current);
+      }
+    }
+  }
+  .time-picker-wrapper {
+    height: vw_size(260, $current);
+    .time-picker-select {
+      width: vw_size(176, $current);
+      height: vw_size(50, $current);
+    }
+    .time-picker-container {
+      .time-picker {
+        padding-top: vw_size(100, $current);
+        padding-bottom: vw_size(100, $current);
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .time-picker-container {
+    height: vw_size(250, $current);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .arrow {
+      height: unset;
+      width: vw_size(26, $current);
+
+      &.up {
+        top: 0;
+      }
+
+      &.down {
+        bottom: 0;
+      }
+    }
+  }
+  .time-picker-wrapper {
+    height: vw_size(200, $current);
+
+    .time-picker-select {
+      width: vw_size(186, $current);
+      height: vw_size(40, $current);
+    }
+    .time-picker-container {
+      .time-picker {
+        padding-top: vw_size(80, $current);
+        padding-bottom: vw_size(80, $current);
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .time-picker-container {
+    height: vw_size(250, $current);
+
+    .arrow {
+      width: vw_size(26, $current);
+    }
+  }
+  .time-picker-wrapper {
+    height: vw_size(200, $current);
+    .time-picker-select {
+      width: vw_size(186, $current);
+      height: vw_size(40, $current);
+    }
+    .time-picker-container {
+      .time-picker {
+        padding-top: vw_size(80, $current);
+        padding-bottom: vw_size(80, $current);
+      }
+    }
+  }
+}

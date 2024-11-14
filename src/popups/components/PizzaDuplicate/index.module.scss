@@ -1,0 +1,547 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+:global(.popup) {
+	.pizzas-duplicate-popup {
+		:global(.popup_content) {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			.content {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.duplicate-right-side {
+				text-align: center;
+				.do-not-ask-again {
+					color: $white;
+					font-family: $font;
+				}
+				.description {
+					margin-top: vw_size(35, $current);
+					font-size: vw_size(13, $current);
+					font-family: $font-bold;
+					line-height: vw_size(30, $current);
+					color: $label-blue;
+					&.safari {
+						margin-top: vw_size(35, $current);
+					}
+				}
+				.header-title {
+					font-family: $font-book;
+					font-size: vw_size(20, $current);
+					line-height: vw_size(27, $current);
+					color: $white;
+				}
+			}
+
+			.duplicate-left-side {
+				margin-top: vw_size(20, $current);
+				.pizza {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-inline: auto;
+					width: vw_size(266, $current);
+					height: vw_size(266, $current);
+					border: 2px dashed $white;
+					background-color: $black;
+
+					&.circle {
+						border-radius: 50%;
+					}
+
+					&.square {
+						border-radius: 5%;
+					}
+
+					.horizontal-line {
+						top: 0;
+						left: 0;
+						position: absolute;
+						border-bottom: 3px solid red;
+						width: 100%;
+						height: 50%;
+						border-top-left-radius: 50%;
+						border-top-right-radius: 50%;
+					}
+					.vertical-line {
+						top: 0;
+						left: 0;
+						position: absolute;
+						border-right: 3px solid red;
+						width: 50%;
+						height: 100%;
+						border-top-left-radius: 50%;
+						border-bottom-left-radius: 50%;
+					}
+
+					.additional-text {
+						font-family: $font;
+						font-size: vw_size(14, $current);
+						position: absolute;
+						color: $white;
+						bottom: vw_size(85, $current);
+					}
+					.duplicate-counter {
+						position: absolute;
+						width: vw_size(110, $current);
+						height: vw_size(100, $current);
+						border: unset;
+						border-radius: unset;
+						background-color: unset;
+						.value {
+							&:hover {
+								background-color: unset;
+							}
+							padding: unset;
+						}
+						.action-btn {
+							font-family: $font;
+							flex: unset;
+							height: vw_size(40, $current);
+							width: vw_size(40, $current);
+							-webkit-tap-highlight-color: transparent;
+							& > img {
+								width: vw_size(17, $current);
+								height: vw_size(17, $current);
+							}
+							&:active {
+								background-color: rgba($color: #000000, $alpha: 0.5);
+							}
+						}
+						.value {
+							font-size: vw_size(25, $current);
+						}
+					}
+
+					.toppings-pizza-img {
+						opacity: 0.4;
+						position: relative;
+						width: 108%;
+						height: 108%;
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+
+						.topping-coverage-on-pizza {
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin: auto;
+
+							img {
+								width: 90%;
+								height: 90%;
+								object-fit: cover;
+								position: absolute;
+								transform-origin: center;
+								&.q1 {
+									transform: rotate(0deg);
+								}
+								&.q2 {
+									transform: rotate(90deg);
+								}
+								&.q3 {
+									transform: rotate(180deg);
+								}
+								&.q4 {
+									transform: rotate(-90deg);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.buttons-wrapper {
+				margin-top: vw_size(50, $current);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.continue_button {
+					margin-inline: auto;
+					position: relative;
+					left: 0;
+					right: 0;
+				}
+				.continue-button-wrapper {
+					height: vw_size(50, $current);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.continue-button-link {
+					color: white;
+				}
+				.do-not-ask-again {
+					color: $white;
+					font-family: $font;
+					font-size: vw_size(13, $current);
+					line-height: vw_size(28, $current);
+					margin-top: vw_size(50, $current);
+					label .label {
+						padding: vw_size(10, $current);
+						margin-inline-start: vw_size(5, $current);
+					}
+					label > div {
+						width: vw_size(20, $current);
+						height: vw_size(20, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		.pizzas-duplicate-popup {
+			:global(.popup_content) {
+				.x_close_icon {
+					left: vw_size(23, $current);
+					top: vw_size(34, $current);
+					height: vw_size(18, $current);
+					width: vw_size(18, $current);
+				}
+
+				.duplicate-right-side {
+					.description {
+						margin-top: vw_size(55, $current);
+						font-size: vw_size(13, $current);
+						line-height: vw_size(30, $current);
+					}
+					.header-title {
+						font-size: vw_size(20, $current);
+						line-height: vw_size(27, $current);
+					}
+				}
+
+				.duplicate-left-side {
+					margin-top: vw_size(35, $current);
+					.pizza {
+						width: vw_size(266, $current);
+						height: vw_size(266, $current);
+
+						.additional-text {
+							font-size: vw_size(12, $current);
+							bottom: vw_size(85, $current);
+						}
+
+						.toppings-pizza-img {
+							width: 100%;
+							height: 100%;
+						}
+
+						.duplicate-counter {
+							width: vw_size(110, $current);
+							height: vw_size(50, $current);
+							.action-btn {
+								height: vw_size(40, $current);
+								width: vw_size(40, $current);
+								& > img {
+									width: vw_size(17, $current);
+									height: vw_size(17, $current);
+								}
+							}
+							.value {
+								font-size: vw_size(25, $current);
+							}
+						}
+					}
+				}
+
+				.buttons-wrapper {
+					margin-top: vw_size(50, $current);
+					.continue-button-wrapper {
+						height: vw_size(50, $current);
+					}
+					.do-not-ask-again {
+						font-size: vw_size(13, $current);
+						line-height: vw_size(28, $current);
+						margin-top: vw_size(20, $current);
+
+						label .label {
+							padding: unset;
+							margin-inline-start: vw_size(5, $current);
+						}
+						label > div {
+							width: vw_size(20, $current);
+							height: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	$size: 435;
+	$margin-to-button: 32;
+	:global(.popup) {
+		.pizzas-duplicate-popup {
+			:global(.popup_content) {
+				justify-content: flex-start;
+				align-items: center;
+				padding-top: unset;
+				.x_close_icon {
+					position: fixed;
+					left: vw_size(23, $current);
+					top: vw_size(34, $current);
+					height: vw_size(18, $current);
+					width: vw_size(18, $current);
+				}
+				.content {
+					width: unset;
+					display: flex;
+					flex-direction: row;
+					margin-top: vw_size(32, $current);
+				}
+
+				.duplicate-right-side {
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					align-self: center;
+
+					margin-inline-end: vw_size(100, $current);
+					align-items: center;
+
+					.right-side-texts {
+						width: vw_size($size, $current);
+						height: vw_size($size, $current);
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						margin-bottom: vw_size($margin-to-button, $current);
+					}
+
+					.description {
+						letter-spacing: vw_size(1, $current);
+						margin-top: unset;
+						font-size: vw_size(15, $current);
+						line-height: vw_size(30, $current);
+					}
+					.header-title {
+						font-family: $font-medium;
+						font-size: vw_size(32, $current);
+						line-height: vw_size(49, $current);
+					}
+					.do-not-ask-again {
+						font-size: vw_size(15, $current);
+						line-height: vw_size(10, $current);
+
+						label .label {
+							margin-inline-start: vw_size(5, $current);
+						}
+						label > div {
+							width: vw_size(20, $current);
+							height: vw_size(20, $current);
+						}
+					}
+				}
+
+				.duplicate-left-side {
+					margin-top: unset;
+					margin-right: unset;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					.pizza {
+						width: vw_size($size, $current);
+						height: vw_size($size, $current);
+						margin-bottom: vw_size($margin-to-button, $current);
+
+						.additional-text {
+							font-size: vw_size(16, $current);
+							bottom: vw_size(160, $current);
+						}
+
+						.duplicate-counter {
+							width: vw_size(164, $current);
+							height: vw_size(55, $current);
+							.action-btn {
+								height: vw_size(60, $current);
+								width: vw_size(60, $current);
+								cursor: pointer;
+								.img-container {
+									img {
+										width: vw_size(25, $current);
+										height: vw_size(25, $current);
+									}
+								}
+								&:disabled {
+									&:hover {
+										opacity: 1;
+									}
+								}
+								&:disabled {
+									&:hover {
+										opacity: 1;
+									}
+								}
+								&:hover {
+									background-color: rgba($color: #000000, $alpha: 0.5);
+								}
+								font-size: vw_size(50, $current);
+							}
+							.value {
+								font-size: vw_size(42, $current);
+							}
+						}
+					}
+					.continue-button-wrapper {
+						height: vw_size(50, $current);
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						.continue-button-link {
+							color: white;
+							width: 100%;
+							font-size: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-large;
+
+	$size: 435;
+	$margin-to-button: 32;
+	:global(.popup) {
+		.pizzas-duplicate-popup {
+			:global(.popup_content) {
+				justify-content: flex-start;
+				align-items: center;
+				padding-top: unset;
+				.x_close_icon {
+					position: fixed;
+					left: vw_size(23, $current);
+					top: vw_size(34, $current);
+					height: vw_size(18, $current);
+					width: vw_size(18, $current);
+				}
+				.content {
+					width: unset;
+					display: flex;
+					flex-direction: row;
+					margin-top: vw_size(160, $current);
+				}
+
+				.duplicate-right-side {
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					align-self: center;
+
+					margin-inline-end: vw_size(240, $current);
+					align-items: center;
+
+					.right-side-texts {
+						width: vw_size($size, $current);
+						height: vw_size($size, $current);
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						margin-bottom: vw_size($margin-to-button, $current);
+					}
+
+					.description {
+						letter-spacing: vw_size(1, $current);
+						font-size: vw_size(15, $current);
+						line-height: vw_size(30, $current);
+					}
+					.header-title {
+						font-family: $font-medium;
+						font-size: vw_size(32, $current);
+						line-height: vw_size(49, $current);
+					}
+					.do-not-ask-again {
+						font-size: vw_size(15, $current);
+						line-height: vw_size(10, $current);
+
+						label .label {
+							margin-inline-start: vw_size(5, $current);
+						}
+						label > div {
+							width: vw_size(20, $current);
+							height: vw_size(20, $current);
+						}
+					}
+				}
+
+				.duplicate-left-side {
+					margin-top: unset;
+					margin-right: unset;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+
+					.pizza {
+						width: vw_size($size, $current);
+						height: vw_size($size, $current);
+						margin-bottom: vw_size($margin-to-button, $current);
+
+						.additional-text {
+							font-size: vw_size(16, $current);
+							bottom: vw_size(160, $current);
+						}
+
+						.duplicate-counter {
+							width: vw_size(164, $current);
+							height: vw_size(55, $current);
+							.action-btn {
+								height: vw_size(60, $current);
+								width: vw_size(60, $current);
+								margin-top: vw_size(5, $current);
+								.img-container {
+									img {
+										width: vw_size(25, $current);
+										height: vw_size(25, $current);
+									}
+								}
+							}
+							.value {
+								font-size: vw_size(42, $current);
+							}
+						}
+					}
+					.continue-button-wrapper {
+						height: vw_size(50, $current);
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						.continue-button-link {
+							color: white;
+							width: 100%;
+							font-size: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}

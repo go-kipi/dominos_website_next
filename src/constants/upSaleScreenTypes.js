@@ -1,0 +1,4 @@
+export const UP_SALE_SCREEN_TYPES = {
+  UP_SALE: 'UPSALE',
+  BUILDER: 'BUILDER',
+};

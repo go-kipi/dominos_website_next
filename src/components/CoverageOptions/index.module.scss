@@ -1,0 +1,302 @@
+@import "/src/styles/imports.scss";
+$current: $mobile;
+:global(.ltr) {
+	.coverage-options-wrapper {
+		flex-direction: row;
+	}
+}
+.coverage-options-wrapper {
+	bottom: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-inline: auto;
+	background-color: $charcoal;
+	width: vw_size(335, $current);
+	height: 0;
+	border-radius: vw_size(37, $current);
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+
+	justify-content: space-between;
+	padding-inline: vw_size(19, $current);
+	overflow: hidden;
+	box-shadow: 0 vw_size(10, $current) vw_size(10, $current) 0 rgba(0, 0, 0, 0.74);
+	transform-origin: top;
+	transition: all 0.2s ease-in;
+
+	&.open {
+		height: vw_size(79, $current);
+		overflow: visible;
+	}
+
+	.coverage-option-wrapper {
+		position: relative;
+		cursor: pointer;
+		width: vw_size(47, $current);
+		height: vw_size(47, $current);
+		border-radius: 50%;
+		background-color: $coverage-gray;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.coverage-option {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.35);
+			border: 1px solid $white;
+
+			&.none {
+				background-color: unset;
+				border: unset;
+				font-size: vw_size(13, $current);
+				color: $white;
+				font-family: $font;
+			}
+
+			&.quarter {
+				position: absolute;
+				width: vw_size(22, $current);
+				height: vw_size(22, $current);
+				bottom: 0;
+				left: 0;
+				border-bottom-left-radius: vw_size(50, $current);
+			}
+
+			&.right-half {
+				position: absolute;
+				width: vw_size(22, $current);
+				height: 100%;
+				right: 0;
+				border-radius: 0 vw_size(100, $current) vw_size(100, $current) 0;
+			}
+
+			&.left-half {
+				position: absolute;
+				width: vw_size(22, $current);
+				height: 100%;
+				left: 0;
+				border-radius: vw_size(100, $current) 0 0 vw_size(100, $current);
+			}
+
+			&.all-over {
+				border-radius: 50%;
+			}
+		}
+
+		&.square {
+			border-radius: unset;
+			.coverage-option {
+				&.quarter {
+					border-bottom-left-radius: unset;
+				}
+
+				&.right-half,
+				&.left-half,
+				&.all-over {
+					border-radius: unset;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.coverage-options-wrapper {
+		width: vw_size(335, $current);
+		border-radius: vw_size(37, $current);
+		padding-inline: vw_size(19, $current);
+		box-shadow: 0 vw_size(15, $current) vw_size(15, $current) 0
+			rgba(0, 0, 0, 0.74);
+
+		&.open {
+			height: vw_size(79, $current);
+		}
+
+		.coverage-option-wrapper {
+			width: vw_size(47, $current);
+			height: vw_size(47, $current);
+
+			.coverage-option {
+				background-color: rgba(255, 255, 255, 0.35);
+
+				&.none {
+					font-size: vw_size(13, $current);
+				}
+
+				&.quarter {
+					width: vw_size(22, $current);
+					height: vw_size(22, $current);
+					border-bottom-left-radius: vw_size(50, $current);
+				}
+
+				&.right-half {
+					width: vw_size(22, $current);
+					border-radius: 0 vw_size(100, $current) vw_size(100, $current) 0;
+				}
+
+				&.left-half {
+					width: vw_size(22, $current);
+					border-radius: vw_size(100, $current) 0 0 vw_size(100, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.custom-focus {
+		display: contents;
+	}
+
+	.coverage-options-wrapper {
+		position: unset;
+		background-color: $black;
+		width: vw_size(384, $current);
+		height: 0;
+		border-radius: vw_size(34, $current);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 vw_size(17, $current);
+		box-shadow: unset;
+		transform-origin: bottom;
+		transition: 0.2s;
+		margin: unset;
+		margin-top: vw_size(25, $current);
+		.triangle {
+			display: none;
+			position: absolute;
+			width: 0;
+			height: 0;
+			top: -18px;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-bottom: 2.6666666667vw solid $black;
+		}
+
+		&.open {
+			position: relative;
+			height: vw_size(76, $current);
+			overflow: visible;
+			.triangle {
+				display: block;
+			}
+		}
+
+		.coverage-option-wrapper {
+			position: relative;
+			cursor: pointer;
+			width: vw_size(41, $current);
+			height: vw_size(41, $current);
+			border-radius: 50%;
+			background-color: $coverage-gray;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.coverage-option {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(255, 255, 255, 0.35);
+				border: 1px solid $white;
+
+				&.none {
+					background-color: unset;
+					border: unset;
+					font-size: vw_size(13, $current);
+					color: $white;
+					font-family: $font;
+				}
+
+				&.quarter {
+					position: absolute;
+					width: vw_size(22, $current);
+					height: vw_size(22, $current);
+					bottom: 0;
+					left: 0;
+					border-bottom-left-radius: vw_size(50, $current);
+				}
+
+				&.right-half {
+					position: absolute;
+					width: vw_size(22, $current);
+					height: 100%;
+					right: 0;
+					border-radius: 0 vw_size(100, $current) vw_size(100, $current) 0;
+				}
+
+				&.left-half {
+					position: absolute;
+					width: vw_size(22, $current);
+					height: 100%;
+					left: 0;
+					border-radius: vw_size(100, $current) 0 0 vw_size(100, $current);
+				}
+
+				&.all-over {
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-large;
+	.coverage-options-wrapper {
+		width: vw_size(410, $current);
+		border-radius: vw_size(34, $current);
+		padding: 0 vw_size(17, $current);
+		margin: unset;
+		margin-top: vw_size(18, $current);
+		.triangle {
+			top: -20px;
+			border-left: 38px solid transparent;
+			border-right: 38px solid transparent;
+		}
+
+		&.open {
+			height: vw_size(76, $current);
+		}
+
+		.coverage-option-wrapper {
+			width: vw_size(41, $current);
+			height: vw_size(41, $current);
+
+			.coverage-option {
+				background-color: rgba(255, 255, 255, 0.35);
+
+				&.none {
+					font-size: vw_size(13, $current);
+				}
+
+				&.quarter {
+					width: vw_size(22, $current);
+					height: vw_size(22, $current);
+					border-bottom-left-radius: vw_size(50, $current);
+				}
+
+				&.right-half {
+					width: vw_size(22, $current);
+					border-radius: 0 vw_size(100, $current) vw_size(100, $current) 0;
+				}
+
+				&.left-half {
+					width: vw_size(22, $current);
+					border-radius: vw_size(100, $current) 0 0 vw_size(100, $current);
+				}
+			}
+		}
+	}
+}

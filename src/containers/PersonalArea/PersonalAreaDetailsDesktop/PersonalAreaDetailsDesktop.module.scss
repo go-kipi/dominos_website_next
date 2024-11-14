@@ -1,0 +1,425 @@
+@import "src/styles/imports.scss";
+$current: $desktop;
+
+.personal-area-details-desktop {
+	.separator {
+		background-color: rgba(209, 209, 209, 0.3);
+		width: 100%;
+		height: vw_size(1, $current);
+
+		&.top {
+			margin: vw_size(35, $current) 0;
+		}
+
+		&.bottom {
+			margin: vw_size(53, $current) 0 vw_size(28, $current) 0;
+		}
+	}
+
+	.title-wrap {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: vw_size(42, $current);
+
+		.title {
+			font-family: $font;
+			color: $payneGrey;
+			font-size: vw_size(33, $current);
+			letter-spacing: -vw_size(-0.33, $current);
+			line-height: vw_size(35, $current);
+			margin: 0;
+		}
+
+		:nth-child(2) {
+			font-family: $font-bold;
+		}
+	}
+
+	.row-wrap {
+		display: flex;
+		align-items: center;
+
+		.field {
+			width: vw_size(165, $current);
+
+			input {
+				font-family: $font-medium;
+				font-size: vw_size(17, $current);
+				color: $black;
+				letter-spacing: vw_size(0.17, $current);
+			}
+
+			.animated {
+				font-size: vw_size(13, $current);
+			}
+
+			&.data {
+				display: flex;
+				flex-direction: column;
+
+				.data-title {
+					font-family: $font;
+					font-size: vw_size(13, $current);
+					letter-spacing: vw_size(0.91, $current);
+					color: $placeholder-gray;
+				}
+
+				.data-value {
+					font-family: $font-medium;
+					font-size: vw_size(18, $current);
+					line-height: vw_size(18, $current);
+					color: $placeholder-gray;
+				}
+			}
+		}
+
+		.first {
+			margin-inline-end: vw_size(25, $current);
+		}
+
+		.second {
+			margin-inline-end: vw_size(72, $current);
+		}
+
+		.third {
+			width: vw_size(320, $current);
+		}
+
+		.gender-container {
+			display: flex;
+			flex-direction: column;
+
+			.gender-title {
+				font-family: $font;
+				font-size: vw_size(13, $current);
+				letter-spacing: vw_size(0.91, $current);
+				margin-bottom: vw_size(8, $current);
+				color: $placeholder-gray;
+			}
+
+			.gender-checkboxes {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+
+				.gender-checkbox {
+					cursor: pointer;
+
+					&.bold {
+						label {
+							font-family: $font-bold;
+							color: $black;
+						}
+					}
+
+					label {
+						font-family: $font;
+						display: flex;
+						align-items: baseline;
+						font-size: vw_size(14, $current);
+						color: rgba(130, 130, 130, 1);
+
+						div {
+							height: vw_size(18, $current);
+						}
+
+						span {
+							display: block;
+							margin-inline-start: vw_size(15, $current);
+						}
+					}
+
+					img {
+						width: vw_size(26, $current);
+						height: vw_size(26, $current);
+					}		
+				}
+			}
+		}
+	}
+
+	.phone-date-wrapper {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.note-wrap {
+		display: flex;
+
+		.icon {
+			height: vw_size(15, $current);
+			width: vw_size(15, $current);
+			margin-inline-end: vw_size(8, $current);
+		}
+
+		.note-text {
+			font-family: $font;
+			font-size: vw_size(14, $current);
+			line-height: vw_size(18, $current);
+			color: $placeholder-gray;
+		}
+	}
+
+	:nth-child(3) {
+		margin-bottom: 0;
+	}
+
+	.kosher-checkbox {
+		display: flex;
+		align-items: center;
+
+		&.bold {
+			label {
+				font-family: $font-bold;
+				color: $black;
+			}
+		}
+
+		label {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			font-family: $font;
+			color: $placeholder-gray;
+
+			.image-wrapper {
+				width: vw_size(26, $current);
+				height: vw_size(26, $current);
+				margin-inline-end: vw_size(6, $current);
+
+			}
+
+			span {
+				margin-inline-start: vw_size(5, $current);
+			}
+
+		}
+
+
+	}
+
+	.btn-container {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+
+		.btn-container-inner {
+			display: flex;
+			justify-content: center;
+			width: vw_size(285, $current);
+		}
+
+		.btn {
+			width: vw_size(285, $current);
+			height: vw_size(44, $current);
+
+			.btn-text {
+				font-size: vw_size(16, $current);
+			}
+		}
+
+		.saved-btn-container {
+			display: flex;
+			align-items: center;
+			gap: vw_size(4, $current);
+
+			.icon {
+				width: vw_size(21, $current);
+				height: vw_size(21, $current);
+				margin-inline-end: vw_size(7, $current);
+			}
+
+			.saved-text {
+				font-family: $font-medium;
+				line-height: vw_size(23, $current);
+				font-size: vw_size(16, $current);
+				color: $blue-btn;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.personal-area-details-desktop {
+		.separator {
+			background-color: rgba(209, 209, 209, 0.3);
+			width: 100%;
+			height: vw_size(1, $current);
+
+			&.top {
+				margin: vw_size(45, $current) 0;
+			}
+
+			&.bottom {
+				margin: vw_size(80, $current) 0 vw_size(120, $current) 0;
+			}
+		}
+
+		.title-wrap {
+			margin-bottom: vw_size(70, $current);
+
+			.title {
+				font-size: vw_size(46, $current);
+				letter-spacing: -vw_size(-0.33, $current);
+				line-height: vw_size(48, $current);
+			}
+
+			:nth-child(2) {}
+		}
+
+		.row-wrap {
+			.field {
+				width: vw_size(270, $current);
+
+				.animated {
+					font-size: vw_size(13, $current);
+				}
+
+				input {
+					font-size: vw_size(17, $current);
+					letter-spacing: vw_size(0.17, $current);
+				}
+
+				&.data {
+					.data-title {
+						font-size: vw_size(18, $current);
+						letter-spacing: vw_size(0.91, $current);
+					}
+
+					.data-value {
+						font-family: $font-medium;
+						font-size: vw_size(18, $current);
+						line-height: vw_size(18, $current);
+					}
+				}
+			}
+
+			.first {
+				margin-inline-end: vw_size(40, $current);
+			}
+
+			.second {
+				margin-inline-end: vw_size(130, $current);
+			}
+
+			.third {
+				width: vw_size(450, $current);
+			}
+
+			.gender-container {
+				display: flex;
+				flex-direction: column;
+
+				.gender-title {
+					font-family: $font;
+					font-size: vw_size(18, $current);
+					letter-spacing: vw_size(0.91, $current);
+					margin-bottom: vw_size(22, $current);
+				}
+
+				.gender-checkboxes {
+					.gender-checkbox {
+						label {
+							font-size: vw_size(14, $current);
+
+							span {
+								margin-inline-start: vw_size(15, $current);
+							}
+
+							div {
+								height: vw_size(18, $current);
+							}
+						}
+
+						img {
+							width: vw_size(26, $current);
+							height: vw_size(26, $current);
+						}
+					}
+				}
+			}
+		}
+
+		.note-wrap {
+
+			//margin-bottom: vw_size(175, $current);
+			//margin-top: vw_size(20, $current);
+			.icon {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+				margin-inline-end: vw_size(12, $current);
+			}
+
+			.note-text {
+				font-family: $font;
+				font-size: vw_size(18, $current);
+				line-height: vw_size(18, $current);
+				color: $placeholder-gray;
+			}
+		}
+
+		:nth-child(3) {
+			margin-bottom: 0;
+		}
+
+		.kosher-checkbox {
+			&.bold {
+				label {
+					font-family: $font-bold;
+					color: $black;
+				}
+			}
+
+			label {
+				.image-wrapper {
+					width: vw_size(31, $current);
+					height: vw_size(31, $current);
+					margin-inline-end: vw_size(8, $current);
+	
+				}
+
+				span {
+					margin-inline-start: vw_size(5, $current);
+				}
+				
+			}
+		}
+
+		.btn-container {
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+
+			.btn-container-inner {
+				width: vw_size(285, $current);
+			}
+
+			.btn {
+				width: vw_size(285, $current);
+				height: vw_size(48, $current);
+
+				.btn-text {
+					font-size: vw_size(18, $current);
+				}
+			}
+
+			.saved-btn-container {
+				gap: vw_size(4, $current);
+
+				.icon {
+					width: vw_size(35, $current);
+					height: vw_size(35, $current);
+					margin-inline-end: vw_size(20, $current);
+				}
+
+				.saved-text {
+					font-family: $font-medium;
+					line-height: vw_size(23, $current);
+					font-size: vw_size(20, $current);
+				}
+			}
+		}
+	}
+}

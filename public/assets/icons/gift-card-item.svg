@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="31px" viewBox="0 0 30 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>payment/giftcard</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="גיפט-קארד---תשלום-חלקי-תיקון" transform="translate(-308.000000, -186.000000)">
+            <g id="Group-7" transform="translate(22.000000, 10.000000)">
+                <g id="Group-6" transform="translate(0.000000, 169.000000)">
+                    <g id="payment/giftcard" transform="translate(286.000000, 9.369398)">
+                        <rect id="Rectangle-Copy-27" fill="#FFFFFF" x="0" y="7.63060167" width="30" height="20" rx="4.483953"></rect>
+                        <path d="M11.6490621,9.96590763 C14.007839,7.56340417 15.1872274,5.7302653 15.1872274,4.46649102 C15.1872274,2.57082959 13.6504902,1.03409237 11.7548287,1.03409237 C9.85916731,1.03409237 8.3224301,2.57082959 8.3224301,4.46649102 C8.3224301,5.7302653 9.43130743,7.56340417 11.6490621,9.96590763 Z" id="Oval" stroke="#017AFF" stroke-width="2.544" stroke-linecap="round" transform="translate(11.754829, 5.500000) rotate(-50.000000) translate(-11.754829, -5.500000) "></path>
+                        <path d="M18.7589637,9.96590763 C20.9767183,7.56340417 22.0855957,5.7302653 22.0855957,4.46649102 C22.0855957,2.57082959 20.5488584,1.03409237 18.653197,1.03409237 C16.7575356,1.03409237 15.2207984,2.57082959 15.2207984,4.46649102 C15.2207984,5.7302653 16.4001868,7.56340417 18.7589637,9.96590763 Z" id="Oval-Copy" stroke="#F5002E" stroke-width="2.544" stroke-linecap="round" stroke-linejoin="round" transform="translate(18.653197, 5.500000) rotate(50.000000) translate(-18.653197, -5.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

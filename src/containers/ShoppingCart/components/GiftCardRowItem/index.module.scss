@@ -1,0 +1,244 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.gift-card-row-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(92, 106, 116, 0.4);
+	height: vw_size(53, $current);
+	width: vw_size(330, $current);
+	padding-inline: vw_size(15, $current);
+	border-radius: vw_size(14, $current);
+	margin: vw_size(15, $current) auto vw_size(15, $current) auto;
+	.gift-card-right {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 30%;
+		.gift-card-icon-digits {
+			position: relative;
+			height: vw_size(30, $current);
+			width: vw_size(30, $current);
+			top: vw_size(-3, $current);
+			.gift-card-icon {
+				height: vw_size(30, $current);
+				width: vw_size(30, $current);
+			}
+			.gift-card-digits {
+				position: absolute;
+				top: vw_size(14, $current);
+				right: vw_size(2, $current);
+				color: black;
+				font-size: vw_size(10.3, $current);
+				font-family: $font-bold;
+				text-align: center;
+				letter-spacing: 0.1px;
+			}
+		}
+		.price {
+			color: white;
+			font-size: vw_size(16, $current);
+			font-family: $font-medium;
+			padding-inline-start: vw_size(15, $current);
+		}
+		.price-input-wrapper {
+			margin-inline-start: vw_size(30, $current);
+			width: vw_size(163, $current);
+			color: white;
+			.price-input {
+				color: white;
+				width: vw_size(163, $current);
+				background-color: transparent;
+				caret-color: white;
+				border-color: rgba(1, 122, 255, 0.65);
+			}
+			.error_text {
+				width: 100%;
+				font-size: vw_size(14, $current);
+				white-space: nowrap;
+			}
+		}
+	}
+	.gift-card-left {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 20%;
+		.gift-card-edit {
+			cursor: pointer;
+			height: vw_size(20, $current);
+			width: vw_size(20, $current);
+			margin-bottom: vw_size(3, $current);
+		}
+		.gift-card-delete {
+			cursor: pointer;
+			height: vw_size(20, $current);
+			width: vw_size(20, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.gift-card-row-item {
+		height: vw_size(53, $current);
+		width: vw_size(330, $current);
+		padding-inline: vw_size(15, $current);
+		border-radius: vw_size(14, $current);
+		.gift-card-right {
+			width: 30%;
+			.gift-card-icon-digits {
+				height: vw_size(30, $current);
+				width: vw_size(30, $current);
+				top: vw_size(-3, $current);
+				.gift-card-icon {
+					height: vw_size(30, $current);
+					width: vw_size(30, $current);
+				}
+				.gift-card-digits {
+					top: vw_size(14, $current);
+					right: vw_size(2, $current);
+					font-size: vw_size(10.3, $current);
+				}
+			}
+			.price {
+				font-size: vw_size(16, $current);
+				padding-inline-start: vw_size(15, $current);
+			}
+			.price-input-wrapper {
+				margin-inline-start: vw_size(30, $current);
+				width: vw_size(163, $current);
+				.price-input {
+					width: vw_size(163, $current);
+				}
+				.error_text {
+					font-size: vw_size(14, $current);
+				}
+			}
+		}
+		.gift-card-left {
+			width: 20%;
+			.gift-card-edit {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+				margin-bottom: vw_size(3, $current);
+			}
+			.gift-card-delete {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.gift-card-row-item {
+		background-color: rgba(209, 209, 209, 0.4);
+		height: vw_size(47, $current);
+		width: vw_size(273, $current);
+		padding-inline: vw_size(15, $current);
+		border-radius: vw_size(23.5, $current);
+		margin: vw_size(15, $current) auto vw_size(15, $current) auto;
+		.gift-card-right {
+			width: 36%;
+			.gift-card-icon-digits {
+				height: vw_size(30, $current);
+				width: vw_size(30, $current);
+				top: vw_size(-3, $current);
+				.gift-card-icon {
+					height: vw_size(30, $current);
+					width: vw_size(30, $current);
+				}
+				.gift-card-digits {
+					top: vw_size(14, $current);
+					right: vw_size(2, $current);
+					font-size: vw_size(10.3, $current);
+					color: white;
+				}
+			}
+			.price {
+				color: #404042;
+				font-size: vw_size(16, $current);
+				padding-inline-start: vw_size(15, $current);
+			}
+			.price-input-wrapper {
+				margin-inline-start: vw_size(20, $current);
+				width: vw_size(127, $current);
+				.price-input {
+					width: vw_size(127, $current);
+					color: #404042;
+					font-size: vw_size(16, $current);
+				}
+				.error_text {
+					font-size: vw_size(14, $current);
+				}
+			}
+		}
+		.gift-card-left {
+			width: 23%;
+			.gift-card-edit {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+				margin-bottom: unset;
+			}
+			.gift-card-delete {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	.gift-card-row-item {
+		height: vw_size(47, $current);
+		width: vw_size(273, $current);
+		padding-inline: vw_size(15, $current);
+		border-radius: vw_size(23.5, $current);
+		margin: vw_size(15, $current) auto vw_size(15, $current) auto;
+		.gift-card-right {
+			.gift-card-icon-digits {
+				height: vw_size(30, $current);
+				width: vw_size(30, $current);
+				top: vw_size(-3, $current);
+				.gift-card-icon {
+					height: vw_size(30, $current);
+					width: vw_size(30, $current);
+				}
+				.gift-card-digits {
+					top: vw_size(14, $current);
+					right: vw_size(2, $current);
+					font-size: vw_size(10.3, $current);
+				}
+			}
+			.price {
+				padding-inline-start: vw_size(15, $current);
+				font-size: vw_size(16, $current);
+			}
+			.price-input-wrapper {
+				margin-inline-start: vw_size(20, $current);
+				width: vw_size(127, $current);
+				.price-input {
+					width: vw_size(127, $current);
+					font-size: vw_size(16, $current);
+				}
+				.error_text {
+					font-size: vw_size(14, $current);
+				}
+			}
+		}
+		.gift-card-left {
+			.gift-card-edit {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+			}
+			.gift-card-delete {
+				height: vw_size(20, $current);
+				width: vw_size(20, $current);
+			}
+		}
+	}
+}

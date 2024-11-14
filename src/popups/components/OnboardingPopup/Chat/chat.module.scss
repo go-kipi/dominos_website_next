@@ -1,0 +1,159 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+:global(.ltr) {
+	:global(.popup_content) {
+		.chat-wrapper {
+			.back-icon-wrapper {
+				right: unset;
+
+				left: vw_size(15, $current);
+				transform: scaleX(-1);
+			}
+		}
+	}
+}
+
+:global(.popup_content) {
+	.chat-wrapper {
+		height: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.back-icon-wrapper {
+			position: absolute;
+			top: vw_size(12, $current);
+			right: vw_size(15, $current);
+			width: vw_size(20, $current);
+			height: vw_size(20, $current);
+		}
+		.chat-btn {
+			margin-top: auto;
+			margin-bottom: vw_size(35, $current);
+		}
+		.icon-wrapper {
+			width: vw_size(108, $current);
+			height: vw_size(108, $current);
+			margin-top: auto;
+		}
+		.title-label {
+			text-align: center;
+			color: $black;
+			font-family: $font-medium;
+			font-size: vw_size(22, $current);
+			margin-top: vw_size(24, $current);
+			width: vw_size(350, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	:global(.ltr) {
+		:global(.popup_content) {
+			.chat-wrapper {
+				.back-icon-wrapper {
+					left: vw_size(15, $current);
+				}
+			}
+		}
+	}
+	:global(.popup_content) {
+		.chat-wrapper {
+			.back-icon-wrapper {
+				top: vw_size(15, $current);
+				right: vw_size(15, $current);
+				width: vw_size(20, $current);
+				height: vw_size(20, $current);
+			}
+			.chat-btn {
+				margin-bottom: vw_size(35, $current);
+			}
+			.icon-wrapper {
+				width: vw_size(108, $current);
+				height: vw_size(108, $current);
+			}
+			.title-label {
+				font-size: vw_size(22, $current);
+				margin-top: vw_size(24, $current);
+				width: vw_size(350, $current);
+				text-align: center;
+				margin-top: vw_size(24, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	:global(.ltr) {
+		:global(.popup_content) {
+			.chat-wrapper {
+				.back-icon-wrapper {
+					left: vw_size(15, $current);
+				}
+			}
+		}
+	}
+	:global(.popup_content) {
+		.chat-wrapper {
+			.back-icon-wrapper {
+				top: vw_size(15, $current);
+				right: vw_size(15, $current);
+				width: vw_size(26, $current);
+				height: vw_size(26, $current);
+			}
+			.icon-wrapper {
+				width: vw_size(108, $current);
+				height: vw_size(108, $current);
+			}
+			.title-label {
+				font-size: vw_size(22, $current);
+				margin-top: vw_size(24, $current);
+				width: vw_size(350, $current);
+			}
+			.chat-btn {
+				margin-bottom: vw_size(35, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop_max;
+
+	:global(.ltr) {
+		:global(.popup_content) {
+			.chat-wrapper {
+				.back-icon-wrapper {
+					left: vw_size(15, $current);
+				}
+			}
+		}
+	}
+	:global(.popup_content) {
+		.chat-wrapper {
+			.back-icon-wrapper {
+				top: vw_size(15, $current);
+				right: vw_size(15, $current);
+				width: vw_size(26, $current);
+				height: vw_size(26, $current);
+			}
+			.chat-btn {
+				margin-bottom: vw_size(35, $current);
+			}
+			.icon-wrapper {
+				width: vw_size(108, $current);
+				height: vw_size(108, $current);
+			}
+			.title-label {
+				font-size: vw_size(22, $current);
+				margin-top: vw_size(24, $current);
+				width: vw_size(350, $current);
+			}
+		}
+	}
+}

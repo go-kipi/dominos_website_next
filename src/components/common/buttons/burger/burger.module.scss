@@ -1,0 +1,104 @@
+@import "src/styles/imports.scss";
+$current: 375;
+:global(.ltr) {
+	.burger-icon {
+		.additional {
+			top: vw_size(-11.5, $current);
+			left: unset;
+			right: vw_size(10, $current);
+		}
+	}
+}
+
+.burger-icon {
+	width: vw_size(20, $current);
+	cursor: pointer;
+	position: relative;
+	pointer-events: all;
+
+	.additional {
+		position: absolute;
+		top: vw_size(-9, $current);
+		left: vw_size(10, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.ltr) {
+		.burger-icon {
+			.additional {
+				top: vw_size(-11.5, $current);
+				left: unset;
+				right: vw_size(10, $current);
+			}
+		}
+	}
+
+	.burger-icon {
+		width: vw_size(20, $current);
+
+		cursor: pointer;
+		position: relative;
+
+		.additional {
+			position: absolute;
+			top: vw_size(-10, $current);
+			left: vw_size(10, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.burger-icon {
+			.additional {
+				top: vw_size(-11.5, $current);
+				left: unset;
+				right: vw_size(10, $current);
+			}
+		}
+	}
+
+	.burger-icon {
+		width: vw_size(20, $current);
+		height: vw_size(20, $current);
+
+		cursor: pointer;
+		position: relative;
+
+		.additional {
+			position: absolute;
+			top: vw_size(-7.7, $current);
+			left: vw_size(10, $current);
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	:global(.ltr) {
+		.burger-icon {
+			.additional {
+				top: vw_size(-11, $current);
+				left: unset;
+				right: vw_size(10, $current);
+			}
+		}
+	}
+
+	.burger-icon {
+		width: vw_size(20, $current);
+		height: vw_size(20, $current);
+
+		cursor: pointer;
+		position: relative;
+
+		.additional {
+			position: absolute;
+			top: vw_size(-10, $current);
+			left: vw_size(10, $current);
+		}
+	}
+}

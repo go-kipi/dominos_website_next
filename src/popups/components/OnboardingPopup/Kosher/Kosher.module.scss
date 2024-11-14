@@ -1,0 +1,118 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.kosher-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding-bottom: vw_size(20, $current);
+  .lottie-wrapper {
+    margin-top: vw_size(98, $current);
+    width: vw_size(217, $current);
+  }
+  .title {
+    color: $blue;
+    font-size: vw_size(26, $current);
+    line-height: vw_size(36, $current);
+    font-family: $font-medium;
+    width: vw_size(210, $current);
+    text-align: center;
+    font-weight: unset;
+  }
+  .actions-wrapper {
+    margin-top: vw_size(100, $current);
+    .actions {
+      width: vw_size(345, $current);
+      height: vw_size(44, $current);
+    }
+    .subtitle {
+      font-family: $font;
+      font-size: vw_size(14, $current);
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .kosher-wrapper {
+    width: vw_size(450, $current);
+    padding-bottom: unset;
+
+    .lottie-wrapper {
+      margin-top: vw_size(98, $current);
+      width: vw_size(217, $current);
+    }
+    .title {
+      font-size: vw_size(26, $current);
+      line-height: vw_size(36, $current);
+      width: vw_size(210, $current);
+    }
+    .actions-wrapper {
+      margin-top: vw_size(113, $current);
+      margin-bottom: vw_size(40, $current);
+      .actions {
+        width: vw_size(345, $current);
+        height: vw_size(44, $current);
+      }
+      .subtitle {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .kosher-wrapper {
+    width: vw_size(512, $current);
+    .lottie-wrapper {
+      margin-top: vw_size(130, $current);
+      width: vw_size(123, $current);
+    }
+    .title {
+      font-size: vw_size(28, $current);
+      line-height: vw_size(36, $current);
+      width: vw_size(210, $current);
+    }
+    .actions-wrapper {
+      margin-top: vw_size(75, $current);
+      margin-bottom: vw_size(76, $current);
+      .actions {
+        width: vw_size(345, $current);
+        height: vw_size(55, $current);
+      }
+      .subtitle {
+        font-size: vw_size(14, $current);
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .kosher-wrapper {
+    width: vw_size(512, $current);
+    .lottie-wrapper {
+      margin-top: vw_size(130, $current);
+      width: vw_size(123, $current);
+    }
+    .title {
+      font-size: vw_size(28, $current);
+      line-height: vw_size(36, $current);
+      width: vw_size(210, $current);
+    }
+    .actions-wrapper {
+      margin-top: vw_size(75, $current);
+      margin-bottom: vw_size(76, $current);
+      .actions {
+        width: vw_size(345, $current);
+        height: vw_size(60, $current);
+      }
+      .subtitle {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}

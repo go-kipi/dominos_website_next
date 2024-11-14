@@ -1,0 +1,54 @@
+@import "../../styles/imports";
+
+$current: $mobile;
+
+.footer-container {
+  position: relative;
+  z-index: 2;
+
+  .horizontal-container {
+    width: 100%;
+    background-color: black;
+    padding: 0 vw_size(33, $current);
+    height: 1px;
+
+    .horizontal-line {
+      width: 100%;
+
+      border: 1px solid white;
+      opacity: 0.2;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .footer-container {
+    .horizontal-container {
+      padding: 0 vw_size(33, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .footer-container {
+    .horizontal-container {
+      padding: 0 vw_size(88, $current);
+      padding-bottom: vw_size(20, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-max;
+
+  .footer-container {
+    .horizontal-container {
+      padding: 0 vw_size(88, $current);
+      padding-bottom: vw_size(20, $current);
+    }
+  }
+}

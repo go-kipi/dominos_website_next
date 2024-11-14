@@ -1,0 +1,10 @@
+@import "../../styles/imports";
+
+$current: 375;
+
+.collapse {
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.25s max-height;
+  width: 100%;
+}

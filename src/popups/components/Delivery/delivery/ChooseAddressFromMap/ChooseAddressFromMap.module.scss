@@ -1,0 +1,301 @@
+@import "src/styles/imports";
+
+$current: 375;
+.current-location-label {
+	// ClassName for the current location label
+	position: absolute;
+	bottom: 20px;
+	left: -43px;
+}
+
+.choose-address-from-map-wrapper {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	.map-wrapper {
+		position: relative;
+		height: 65vh;
+		width: 100%;
+
+		.loader-wrapper {
+			position: absolute;
+			top: 0;
+			background-color: rgba(255, 255, 255, 0.4);
+			backdrop-filter: 14px;
+			width: 100%;
+			height: 100%;
+			z-index: 100000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.loader {
+				width: 50%;
+				height: 50%;
+			}
+		}
+
+		.back-to-location {
+			left: vw_size(20, $current);
+			bottom: vw_size(100, $current);
+			z-index: 10008;
+		}
+
+		.center-of-the-screen {
+			z-index: 100;
+			width: vw_size(50, $current);
+			pointer-events: none;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			.remove-glow {
+				filter: unset;
+			}
+
+			.current-location-label {
+				background-color: unset;
+				bottom: unset;
+				left: 0;
+				right: 0;
+				margin-inline: auto;
+				top: 120%;
+				width: vw_size(50, $current);
+				font-family: $font-bold;
+				font-size: vw_size(13, $current);
+				padding: unset;
+				border-radius: unset;
+			}
+		}
+
+		.branch-marker-wrapper {
+			&.selected {
+				z-index: 10008;
+			}
+
+			.branch-marker-label {
+				max-width: vw_size(70, $current);
+			}
+		}
+
+		.map {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.linear-gradient-top {
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		z-index: 10001; // go over popup z-index
+		height: vw_size(50, $current);
+		top: 0;
+		left: 0;
+		background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+	}
+	.linear-gradient-bottom {
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		z-index: 10001; // go over popup z-index
+		height: vw_size(70, $current);
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+	}
+	.continue-btn {
+		width: vw_size(285, $current);
+		position: absolute;
+		bottom: vw_size(55, $current);
+		z-index: 100000;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		// transform: translate(-12%, -55%);
+	}
+	.search-address-wrapper {
+		width: vw_size(284, $current);
+		margin-inline: auto;
+		margin-bottom: vw_size(10, $current);
+		margin-top: vw_size(26, $current);
+		position: relative;
+		input {
+			padding-bottom: vw_size(10, $current);
+		}
+	}
+	.search-address-suggestion {
+		display: block;
+		font-size: vw_size(15, $current);
+		font-family: $font-book;
+		padding-inline: vw_size(50, $current);
+		color: #949494;
+		z-index: 10002; // go over linear-gradient
+		text-align: center;
+		margin-bottom: vw_size(10, $current);
+		margin-inline: auto;
+		width: vw_size(340, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.choose-address-from-map-wrapper {
+		.map-wrapper {
+			height: vw_size(500, $current);
+
+			.back-to-location {
+				left: vw_size(20, $current);
+				bottom: vw_size(50, $current);
+			}
+
+			.center-of-the-screen {
+				width: vw_size(50, $current);
+
+				.current-location-label {
+					width: vw_size(50, $current);
+					font-size: vw_size(13, $current);
+				}
+			}
+		}
+
+		.linear-gradient-top {
+			height: vw_size(50, $current);
+		}
+		.linear-gradient-bottom {
+			height: vw_size(50, $current);
+		}
+
+		.continue-btn {
+			height: vw_size(50, $current);
+			width: vw_size(341, $current);
+			bottom: vw_size(15, $current);
+		}
+
+		.search-address-wrapper {
+			width: vw_size(284, $current);
+			margin-bottom: vw_size(10, $current);
+			margin-top: vw_size(26, $current);
+			input {
+				padding-bottom: vw_size(10, $current);
+			}
+		}
+
+		.search-address-suggestion {
+			font-size: vw_size(15, $current);
+			margin-bottom: vw_size(10, $current);
+			padding-inline: 0;
+			width: vw_size(260, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.choose-address-from-map-wrapper {
+		.map-wrapper {
+			height: 100%;
+			.back-to-location {
+				left: vw_size(20, $current);
+				bottom: vw_size(20, $current);
+			}
+
+			.center-of-the-screen {
+				width: vw_size(50, $current);
+
+				.current-location-label {
+					width: vw_size(50, $current);
+					font-size: vw_size(13, $current);
+				}
+			}
+		}
+		.linear-gradient-top {
+			height: vw_size(40, $current);
+		}
+		.linear-gradient-bottom {
+			height: vw_size(40, $current);
+		}
+		.continue-btn {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			width: vw_size(341, $current);
+			height: vw_size(50, $current);
+			bottom: vw_size(30, $current);
+		}
+		.continue-btn-text {
+			font-size: vw_size(20, $current);
+		}
+
+		.search-address-wrapper {
+			width: vw_size(340, $current);
+			margin-bottom: vw_size(10, $current);
+			margin-top: vw_size(35, $current);
+			input {
+				padding-bottom: vw_size(10, $current);
+			}
+		}
+
+		.search-address-suggestion {
+			font-size: vw_size(15, $current);
+			margin-bottom: vw_size(10, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-max;
+	.choose-address-from-map-wrapper {
+		.map-wrapper {
+			height: vw_size(400, $current);
+
+			.back-to-location {
+				left: vw_size(20, $current);
+				bottom: vw_size(20, $current);
+			}
+
+			.center-of-the-screen {
+				width: vw_size(50, $current);
+
+				.current-location-label {
+					width: vw_size(50, $current);
+					font-size: vw_size(13, $current);
+				}
+			}
+		}
+		.linear-gradient-top {
+			height: vw_size(40, $current);
+		}
+		.linear-gradient-bottom {
+			height: vw_size(40, $current);
+		}
+
+		.search-address-wrapper {
+			width: vw_size(340, $current);
+			margin-bottom: vw_size(10, $current);
+			input {
+				padding-bottom: vw_size(10, $current);
+			}
+		}
+
+		.continue-btn {
+			width: vw_size(285, $current);
+			bottom: vw_size(30, $current);
+			height: vw_size(50, $current);
+		}
+
+		.continue-btn-text {
+			font-size: vw_size(20, $current);
+		}
+
+		.search-address-suggestion {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(10, $current);
+			margin-bottom: vw_size(10, $current);
+			width: max-content;
+		}
+	}
+}

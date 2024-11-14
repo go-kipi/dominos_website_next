@@ -1,0 +1,208 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+:global(.ltr) {
+	.shopping-cart-body {
+		.more-items {
+			.icon-wrapper {
+				margin-inline-end: unset;
+				margin-inline-start: vw_size(15, $current);
+			}
+		}
+	}
+}
+
+.gradient {
+	position: fixed;
+	background-image: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
+	bottom: 0;
+	width: 100%;
+	margin-top: vw_size(45, $current);
+	height: vw_size(150, $current);
+	z-index: 0;
+	
+}
+
+.shopping-cart-body {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-inline: vw_size(22, $current);
+	margin-top: vw_size(18, $current);
+	margin-bottom: vw_size(40, $current);
+	flex: 1;
+
+	&.has-items {
+		margin-bottom: vw_size(200, $current);
+	}
+
+	&.has-items {
+		align-items: center;
+		width: 100%;
+		margin-bottom: vw_size(200, $current);
+	}
+
+
+
+	.actions {
+		position: fixed;
+		bottom: vw_size(60, $current);
+		// bottom: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		// margin-bottom: vw_size(30, $current);
+		flex-direction: column;
+
+		.blue-btn-wrap {
+			margin-top: vw_size(26, $current);
+
+			width: 90%;
+			z-index: 1000;
+
+			.blue-btn-wrap-inner {
+				justify-content: center !important;
+			}
+		}
+	}
+
+	.item {
+		display: flex;
+		justify-content: flex-start;
+		width: 100%;
+		margin-top: vw_size(32, $current);
+		margin-bottom: vw_size(63, $current);
+	}
+
+	.more-items {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 3000;
+		height: vw_size(38, $current);
+		width: vw_size(150, $current);
+		position: fixed;
+		margin-inline-start: 80%;
+		bottom: vw_size(130, $current);
+		margin-top: vw_size(50, $current);
+
+		.icon-wrapper {
+			margin-inline-end: vw_size(7, $current);
+			height: vw_size(21, $current);
+			width: vw_size(21, $current);
+		}
+
+		.more-items-label {
+			margin-inline-end: vw_size(40, $current);
+			color: white;
+			font-family: $font-medium;
+			font-size: vw_size(14, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.shopping-cart-body {
+		.gradient {
+			display: none;
+		}
+		padding-inline: vw_size(22, $current);
+		margin-top: vw_size(18, $current);
+
+		overflow-x: hidden;
+		&.has-items {
+			margin-bottom: vw_size(150, $current);
+		}
+
+		.more-items {
+			height: vw_size(38, $current);
+			width: vw_size(140, $current);
+			margin-inline-start: 95%;
+			bottom: vw_size(130, $current);
+			margin-top: vw_size(110, $current);
+
+			.icon-wrapper {
+				margin-inline-end: vw_size(7, $current);
+				height: vw_size(21, $current);
+				width: vw_size(21, $current);
+			}
+
+			.more-items-label {
+				margin-inline-end: vw_size(15, $current);
+				font-size: vw_size(14, $current);
+			}
+		}
+
+		.item {
+			margin-top: vw_size(32, $current);
+			margin-bottom: vw_size(63, $current);
+		}
+
+		.actions {
+			bottom: vw_size(50, $current);
+			margin-bottom: vw_size(10, $current);
+			.blue-btn-wrap {
+				margin-top: vw_size(26, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.shopping-cart-body {
+		margin-inline: vw_size(65, $current);
+		align-items: baseline;
+		margin-top: 0;
+		padding: 0;
+		flex: unset;
+		overflow-x: unset;
+		width: 100%;
+		margin: auto;
+		&.has-order,
+		&.has-items {
+			width: vw_size(640, $current);
+			margin: unset;
+			margin-inline: vw_size(65, $current);
+		}
+
+		.item {
+			margin-top: vw_size(32, $current);
+			margin-bottom: vw_size(63, $current);
+		}
+
+		.blue-btn-wrap {
+			display: flex;
+			justify-content: center;
+			margin-bottom: vw_size(26, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+
+	.shopping-cart-body {
+		margin-inline: unset;
+		&.has-items,
+		&.has-order {
+			margin-inline-start: vw_size(320, $current);
+			margin-inline-end: vw_size(85, $current);
+			width: vw_size(850, $current);
+		}
+		.item {
+			margin-top: vw_size(32, $current);
+			margin-bottom: vw_size(63, $current);
+		}
+
+		.blue-btn-wrap {
+			margin-bottom: vw_size(26, $current);
+		}
+	}
+}

@@ -1,0 +1,8 @@
+const TWO_ACTION_TYPES = {
+    GARBAGE: 'GARBAGE',
+    DUPLICATE: 'DUPLICATE',
+    UPDATE: 'UPDATE',
+    DELETE_USER: 'DELETE_USER',
+};
+
+export default TWO_ACTION_TYPES;

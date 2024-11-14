@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/header/arrow right copy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="טרקר-בחירת-הזמנה" transform="translate(-843.000000, -454.000000)">
+            <g id="Group-9" transform="translate(810.000000, 122.000000)">
+                <g id="Group-2" transform="translate(33.000000, 306.000000)">
+                    <g id="arrow" transform="translate(0.000000, 26.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                        <path d="M15.4747993,7.38992068 C15.7355723,7.65461545 15.7488901,8.07051117 15.5168943,8.35065918 L15.4672249,8.40479379 L10.6109827,13.1890847 C10.3543013,13.4419631 9.9535636,13.4631688 9.67272476,13.248996 L9.61823385,13.203022 L4.48119487,8.41873104 C4.19115645,8.14860886 4.17501115,7.69450896 4.44513334,7.40447054 C4.69837289,7.13255952 5.1133116,7.10137488 5.40317401,7.32111277 L5.45939384,7.36840901 L10.0936458,11.6841638 L14.4599262,7.38234626 C14.724621,7.12157328 15.1405167,7.10825549 15.4206647,7.3402513 L15.4747993,7.38992068 Z" id="Combined-Shape" fill="#017AFF" transform="translate(9.966934, 10.285714) rotate(-270.000000) translate(-9.966934, -10.285714) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

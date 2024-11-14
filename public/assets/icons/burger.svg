@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Menu" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-1{fill:#FFFFFF}.cls-2{fill:none}
+        </style>
+    </defs>
+    <path id="Menu-2" d="M-6160 15v-3h16v3zm0-6V6h16v3zm0-6V0h16v3z" class="cls-1" data-name="Menu" transform="translate(6160 1)"/>
+    <path id="Rectangle_1446" d="M0 0h16v16H0z" class="cls-2" data-name="Rectangle 1446"/>
+</svg>

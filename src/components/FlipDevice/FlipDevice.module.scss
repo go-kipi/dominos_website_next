@@ -1,0 +1,61 @@
+@import "src/styles/imports.scss";
+$current: 667;
+.flip-device-wrapper {
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000000;
+  transition: opacity 0.4s ease-in-out;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    .image-wrapper {
+      width: vw_size(141, $current);
+      margin-bottom: vw_size(10, $current);
+    }
+    .text {
+      font-size: vw_size(22, $current);
+      line-height: vw_size(30, $current);
+      color: $white;
+      letter-spacing: 0.44px;
+      &.title {
+        font-family: $font;
+      }
+      &.subtitle {
+        font-family: $font-bold;
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) and (min-aspect-ratio: 16/9) {
+  //enter code here
+  .flip-device-wrapper {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .flip-device-wrapper {
+    display: none;
+    pointer-events: none;
+  }
+}

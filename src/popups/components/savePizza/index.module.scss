@@ -1,0 +1,412 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+$timeout: 300ms;
+
+:global(.popup) {
+	.save-pizza-popup {
+		&:global(.backdrop) {
+			align-items: unset;
+			background-color: rgba(0, 0, 0, 0.95);
+			&:global(.blur) {
+				backdrop-filter: blur(35px);
+				-webkit-backdrop-filter: blur(35px);
+			}
+		}
+		overflow-y: scroll;
+		overflow-x: hidden;
+		@include hide-scrollbar;
+		.save-pizzas-header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: vw_size(46, $current);
+			margin-bottom: vw_size(33, $current);
+			.close-icon-wrapper {
+				position: absolute;
+				left: vw_size(24, $current);
+				width: vw_size(18, $current);
+				height: vw_size(18, $current);
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+
+		:global(.popup_content) {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			padding-bottom: vw_size(30, $current);
+			.save-pizza-image-wrapper {
+				width: vw_size(146, $current);
+				height: vw_size(146, $current);
+				:global(.pizza-wrapper) {
+					width: 100%;
+					height: 100%;
+					img {
+						object-fit: cover;
+					}
+				}
+			}
+			.save-pizza-wrapper {
+				.save-pizza-left-side {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.save-pizza-right-side {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin-top: vw_size(17, $current);
+
+					.save-pizza-title {
+						color: $white;
+						font-family: $font-medium;
+						letter-spacing: vw_size(0.42, $current);
+						line-height: vw_size(24, $current);
+						font-size: vw_size(14, $current);
+					}
+
+					.save-pizza-comments {
+						font-size: vw_size(12, $current);
+						font-family: $font;
+						letter-spacing: vw_size(0.84, $current);
+						color: $white;
+					}
+
+					.save-pizza-toppings-list {
+						margin-top: vw_size(30, $current);
+						width: 100vw;
+						display: flex;
+						white-space: nowrap;
+						overflow-x: scroll;
+						overflow-y: hidden;
+						padding-inline: vw_size(46, $current);
+						padding-top: vw_size(5, $current);
+						@include hide-scrollbar;
+
+						.disabled-toppings-selector {
+							display: inline-flex;
+							width: vw_size(59, $current);
+							height: vw_size(87, $current);
+							margin-inline-end: vw_size(14, $current);
+							background: red;
+
+							&:last-of-type {
+								margin-inline-end: unset;
+							}
+						}
+					}
+
+					.save-pizza-name-input {
+						margin-top: vw_size(76, $current);
+						width: vw_size(273, $current);
+						height: vw_size(27, $current);
+
+						input {
+							color: $white;
+							text-align: center;
+						}
+					}
+
+					.actions {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						align-self: center;
+					}
+					.save-pizza-continue-button-wrapper {
+						width: vw_size(330, $current);
+						height: vw_size(48, $current);
+						margin-top: vw_size(35, $current);
+						display: flex;
+						justify-content: center;
+
+						.save-pizza-continue-button {
+							width: 100%;
+							height: 100%;
+						}
+					}
+
+					.save-pizza-skip {
+						background: unset;
+						width: fit-content;
+						padding: 0;
+						.btn-text {
+							padding: 0;
+							font-size: vw_size(14, $current);
+							line-height: vw_size(10, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		.save-pizza-popup {
+			.save-pizzas-header {
+				height: vw_size(46, $current);
+				margin-bottom: vw_size(33, $current);
+				.close-icon-wrapper {
+					left: vw_size(24, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+			}
+
+			:global(.popup_content) {
+				padding-bottom: vw_size(30, $current);
+				.save-pizza-image-wrapper {
+					width: vw_size(146, $current);
+					height: vw_size(146, $current);
+				}
+				.save-pizza-wrapper {
+					.save-pizza-right-side {
+						margin-top: vw_size(17, $current);
+
+						.save-pizza-title {
+							letter-spacing: vw_size(0.42, $current);
+							line-height: vw_size(24, $current);
+							font-size: vw_size(14, $current);
+						}
+
+						.save-pizza-comments {
+							font-size: vw_size(12, $current);
+							letter-spacing: vw_size(0.84, $current);
+						}
+
+						.save-pizza-toppings-list {
+							margin-top: vw_size(30, $current);
+							padding-inline: vw_size(46, $current);
+							padding-top: vw_size(5, $current);
+
+							.disabled-toppings-selector {
+								width: vw_size(59, $current);
+								height: vw_size(87, $current);
+								margin-inline-end: vw_size(14, $current);
+							}
+						}
+
+						.save-pizza-name-input {
+							margin-top: vw_size(76, $current);
+							width: vw_size(273, $current);
+							height: vw_size(27, $current);
+						}
+
+						.save-pizza-continue-button-wrapper {
+							width: vw_size(330, $current);
+							height: vw_size(48, $current);
+							margin-top: vw_size(35, $current);
+						}
+
+						.save-pizza-skip {
+							.btn-text {
+								font-size: vw_size(14, $current);
+								line-height: vw_size(10, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		:global(.popup) {
+			.save-pizza-popup {
+				:global(.popup_content) {
+					.save-pizza-image-wrapper {
+						.toppings-pizza-img {
+							.topping-coverage-on-pizza {
+								left: vw_size(457, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	:global(.popup) {
+		.save-pizza-popup {
+			.save-pizzas-header {
+				height: vw_size(50, $current);
+				margin-bottom: vw_size(26, $current);
+				.close-icon-wrapper {
+					cursor: pointer;
+					left: vw_size(26, $current);
+					height: vw_size(25, $current);
+					width: vw_size(25, $current);
+				}
+			}
+
+			:global(.popup_content) {
+				flex-direction: row-reverse;
+				justify-content: center;
+				align-items: unset;
+				padding-bottom: vw_size(30, $current);
+				.save-pizza-image-wrapper {
+					width: vw_size(457, $current);
+					height: vw_size(457, $current);
+					margin-inline-start: vw_size(95, $current);
+				}
+				.save-pizza-wrapper {
+					display: flex;
+					flex-direction: row-reverse;
+					margin: auto;
+					.save-pizza-left-side {
+						display: unset;
+						justify-content: unsafe;
+						align-items: unset;
+					}
+					.save-pizza-right-side {
+						align-items: flex-start;
+						margin-top: unset;
+						padding: vw_size(0, $current) vw_size(10, $current);
+						:global(.swiper-wrapper) {
+							width: vw_size(340, $current);
+						}
+						.save-pizza-title {
+							margin-top: vw_size(31, $current);
+							letter-spacing: vw_size(0.48, $current);
+							line-height: vw_size(24, $current);
+							font-size: vw_size(16, $current);
+						}
+
+						.save-pizza-comments {
+							margin-top: vw_size(5, $current);
+							color: $silver;
+							font-size: vw_size(14, $current);
+							letter-spacing: vw_size(1.68, $current);
+						}
+
+						.save-pizza-toppings-list {
+							margin-top: 0;
+							width: vw_size(450, $current);
+							padding-inline: vw_size(50, $current);
+							padding-top: vw_size(5, $current);
+							.disabled-toppings-selector {
+								width: vw_size(85, $current);
+								height: vw_size(115, $current);
+								margin-inline-end: vw_size(14, $current);
+							}
+						}
+
+						.save-pizza-name-input {
+							margin: auto;
+							margin-bottom: unset;
+							margin-top: vw_size(18, $current);
+							width: vw_size(342, $current);
+							height: vw_size(20, $current);
+							border-bottom: 1px solid rgb(148, 148, 148);
+
+							&.save-pizza-wrapper-focus {
+								border-bottom-color: $blue;
+							}
+
+							input {
+								background-color: transparent;
+								color: $white;
+								font-family: $font-medium;
+								text-align: start;
+								font-size: vw_size(17, $current);
+								border-bottom: unset;
+							}
+
+							.save-pizza-name-placeholder {
+								color: rgb(148, 148, 148);
+								font-family: $font;
+								font-size: vw_size(17, $current);
+
+								&.save-pizza-name-focus {
+									color: $blue;
+								}
+							}
+							.clear-icon {
+								width: vw_size(20, $current);
+							}
+						}
+
+						.save-pizza-continue-button-wrapper {
+							width: vw_size(340, $current);
+							height: vw_size(51, $current);
+							margin-top: vw_size(66, $current);
+							justify-content: center;
+							align-items: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+
+	:global(.popup) {
+		.save-pizza-popup {
+			.save-pizzas-header {
+				.close-icon-wrapper {
+					left: vw_size(26, $current);
+					height: vw_size(25, $current);
+					width: vw_size(25, $current);
+				}
+			}
+			:global(.popup_content) {
+				.save-pizza-wrapper {
+					margin-top: unset;
+					.save-pizza-right-side {
+						:global(.swiper-wrapper) {
+							width: vw_size(460, $current);
+						}
+						.save-pizza-title {
+							margin-top: vw_size(31, $current);
+						}
+						.save-pizza-toppings-list {
+							margin-top: vw_size(20, $current);
+							width: vw_size(650, $current);
+							padding-inline: vw_size(85, $current);
+							padding-top: vw_size(5, $current);
+						}
+						.save-pizza-name-input {
+							height: vw_size(33, $current);
+
+							.save-pizza-name-placeholder {
+								top: vw_size(-5, $current);
+							}
+							.clear-icon {
+								width: vw_size(30, $current);
+							}
+						}
+
+						.save-pizza-continue-button-wrapper {
+							width: 100%;
+							height: vw_size(51, $current);
+							margin-top: vw_size(66, $current);
+							.save-pizza-continue-button {
+								width: vw_size(340, $current);
+								height: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,199 @@
+@import "../../../../styles/imports";
+
+$current: 375;
+
+.blue-btn {
+  background-color: $blue-btn;
+  width: 100%;
+  height: vw_size(44, $current);
+  border-radius: 50px;
+  box-shadow: 0 0 30px 3px rgba(0, 0, 0, 1);
+  cursor: pointer;
+
+  .btn-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: vw_size(13, $current) vw_size(23, $current) vw_size(11, $current)
+      vw_size(29, $current);
+
+    .text {
+      margin-left: vw_size(10, $current);
+      font-family: $font-medium;
+      font-size: vw_size(16, $current);
+      line-height: vw_size(20, $current);
+      color: $white;
+    }
+
+    .prices-wrapper {
+      display: flex;
+
+      .price {
+        font-family: $font-bold;
+        font-size: vw_size(17, $current);
+
+        .currency {
+          font-size: vw_size(12, $current);
+        }
+        &.old-price {
+          color: $darker-white;
+        }
+
+        &.new-price {
+          margin-inline-start: vw_size(9, $current);
+        }
+      }
+    }
+  }
+  &.disabled {
+    .btn-text {
+      opacity: 0.3;
+    }
+    &:hover {
+      box-shadow: revert;
+    }
+  }
+
+  &:hover {
+    background-color: rgba(0, 104, 218, 1);
+  }
+  &:active {
+    background-color: rgba(0, 88, 186, 1);
+  }
+  &.error {
+    background-color: rgba(255, 242, 244, 1);
+    .btn-text {
+      color: $red;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .blue-btn {
+    bottom: vw_size(26, $current);
+    height: vw_size(44, $current);
+    .btn-inner {
+      padding: vw_size(13, $current) vw_size(23, $current) vw_size(11, $current)
+        vw_size(29, $current);
+
+      .text {
+        font-size: vw_size(16, $current);
+        line-height: vw_size(20, $current);
+      }
+
+      .prices-wrapper {
+        display: flex;
+
+        .price {
+          font-family: $font-bold;
+          font-size: vw_size(17, $current);
+
+          .currency {
+            font-size: vw_size(12, $current);
+          }
+          &.old-price {
+            color: $darker-white;
+          }
+
+          &.new-price {
+            margin-inline-start: vw_size(9, $current);
+          }
+        }
+      }
+    }
+    &.left {
+      transform: translateX(vw_size(-50, $tablet));
+    }
+
+    &.right {
+      transform: translateX(vw_size(50, $tablet));
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .blue-btn {
+    bottom: vw_size(26, $current);
+    height: vw_size(51, $current);
+    width: vw_size(255, $current);
+    position: unset;
+    .btn-inner {
+      width: unset;
+      padding: vw_size(13, $current) vw_size(23, $current) vw_size(11, $current)
+        vw_size(29, $current);
+
+      .text {
+        font-size: vw_size(16, $current);
+        line-height: vw_size(20, $current);
+        margin-left: unset;
+      }
+    }
+    &.left {
+      transform: translateX(vw_size(-50, $desktop));
+    }
+  }
+
+  @media (min-width: $media-desktop-large) {
+    $current: $desktop_max;
+
+    $current: $desktop-max;
+
+    .blue-btn {
+      bottom: vw_size(26, $current);
+      height: vw_size(51, $current);
+      width: vw_size(255, $current);
+      position: unset;
+      .btn-inner {
+        padding: vw_size(13, $current) vw_size(23, $current)
+          vw_size(11, $current) vw_size(29, $current);
+
+        .text {
+          font-size: vw_size(16, $current);
+          line-height: vw_size(20, $current);
+        }
+      }
+    }
+
+    .animated-button-wrapper {
+      min-width: vw_size(190, $current);
+      max-height: vw_size(45, $current);
+
+      &.button {
+        border-radius: vw_size(30, $current);
+      }
+
+      .animation-wrapper {
+        .animation {
+          &.first {
+            top: vw_size(2.5, $current);
+          }
+
+          &.second {
+            top: vw_size(-4, $current);
+          }
+        }
+      }
+
+      .text-wrapper {
+        top: vw_size(3, $current);
+        padding: vw_size(8, $current) vw_size(20, $current);
+        font-size: vw_size(20, $current);
+      }
+    }
+    .blue-btn-btn-wrapper {
+      border-radius: vw_size(35, $current);
+      height: vw_size(50, $current);
+      .btn-text {
+        font-size: vw_size(20, $current);
+      }
+      &.left {
+        transform: translateX(vw_size(-50, $current));
+      }
+    }
+  }
+}

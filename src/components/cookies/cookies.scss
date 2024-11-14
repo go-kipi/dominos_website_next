@@ -1,0 +1,70 @@
+@import '../../../scss/imports';
+
+.cookies_layer {
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.2);
+    font-size: vw_size(12,320);
+    padding:vw_size(10,320) vw_size(15,320);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000000;
+
+    .msg {
+        margin-bottom: vw_size(15,320);
+    }
+    .accept {
+        background: $blue;
+        padding:vw_size(10,320) vw_size(15,320);
+        color:#ffffff;
+    }
+}
+@media (min-width: $tablet) {
+    .cookies_layer {
+        font-size: vw_size(12,768);
+        padding:vw_size(10,768) vw_size(100,768);
+        align-items: center;
+
+        .msg {
+            margin-bottom: vw_size(15,768);
+        }
+        .accept {
+            width: 50%;
+            font-size: vw_size(14,768);
+            padding:vw_size(10,768) vw_size(15,768);
+        }
+    }
+}
+@media (min-width: $desktop) {
+    .cookies_layer {
+        font-size: vw_size(14,1200);
+        padding:vw_size(10,1200) vw_size(300,1200);
+
+        .msg {
+            margin-bottom: vw_size(15,1200);
+        }
+        .accept {
+            width: 30%;
+            font-size: vw_size(14,1200);
+            padding:vw_size(10,1200) vw_size(15,1200);
+        }
+    }
+}
+@media (min-width: $desktop-large) {
+    .cookies_layer {
+        font-size: vw_size(14,1500);
+        padding:vw_size(10,1500) vw_size(400,1500);
+
+        .msg {
+            margin-bottom: vw_size(15,1500);
+        }
+        .accept {
+            width: 30%;
+            font-size: vw_size(14,1500);
+            padding:vw_size(10,1500) vw_size(15,1500);
+        }
+    }
+}

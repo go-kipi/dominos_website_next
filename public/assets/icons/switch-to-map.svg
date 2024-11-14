@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="85px" viewBox="0 0 85 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/fab list</title>
+    <defs>
+        <path d="M27.586053,0.7977015 C42.4654365,0.7977015 54.527196,12.8597385 54.527196,27.7390665 L54.527196,27.807831 C54.527196,42.687159 42.4654365,54.749196 27.586053,54.749196 C12.706725,54.749196 0.6444105,42.687159 0.6444105,27.807831 L0.6444105,27.7390665 C0.6444105,12.8597385 12.706725,0.7977015 27.586053,0.7977015 Z" id="path-1"></path>
+        <filter x="-43.9%" y="-34.6%" width="187.2%" height="187.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.959461987   0 0 0 0 0   0 0 0 0 0.182184726  0 0 0 0.36 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="איסוף-עצמי--סניף-אחר---רשימה" transform="translate(-410.000000, -593.000000)">
+            <g id="icons/fab-list" transform="translate(425.000000, 603.000000)">
+                <g id="Rectangle-1065-copy-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F5002E" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group" transform="translate(19.000000, 14.500000)" stroke="#FFFFFF" stroke-width="1.25">
+                    <path d="M6.61080344,20.3631947 C4.99407256,18.7105942 3.48537985,16.9673029 2.23894837,15.009494 C1.32379651,13.5720616 0.568910609,12.0610269 0.203402358,10.3793238 C-0.816464075,5.686698 2.10647968,1.22997212 6.56224454,0.217931544 C10.8925763,-0.765613677 15.1263946,1.65926747 16.5150066,5.8917171 C17.0942603,7.65721482 17.0298604,9.42947856 16.5103018,11.2015688 C15.8739859,13.3719435 14.7967984,15.3085435 13.4462566,17.1021028 C12.5004875,18.3581828 10.8665488,20.0304988 8.5444405,22.119051 C7.65501407,21.3570148 7.01046838,20.7717294 6.61080344,20.3631947 Z" id="Fill-1"></path>
+                    <circle id="Oval" cx="8.48159046" cy="8.4966728" r="3.85528253"></circle>
+                    <line x1="0.75" y1="26.25" x2="17.75" y2="26.25" id="Line-11" stroke-linecap="round" stroke-linejoin="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

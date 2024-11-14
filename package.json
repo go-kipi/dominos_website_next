@@ -1,0 +1,49 @@
+{
+	"name": "dominos-website",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"analyze": "ANALYZE=true yarn build",
+		"start-proxy": "npx local-ssl-proxy --key localhost-key.pem --cert localhost.pem --source 3001 --target 3000"
+	},
+	"dependencies": {
+		"@google-pay/button-react": "3.0.1",
+		"@lottiefiles/react-lottie-player": "3.4.7",
+		"@react-spring/web": "9.5.2",
+		"@reduxjs/toolkit": "1.6.2",
+		"axios": "0.24.0",
+		"body-scroll-lock": "4.0.0-beta.0",
+		"clsx": "1.1.1",
+		"focus-trap-react": "8.11.3",
+		"formdata-node": "4.3.1",
+		"google-map-react": "https://github.com/garyi-inmanage/google-map-react-react-18.git",
+		"html-react-parser": "5.0.6",
+		"jwt-decode": "3.1.2",
+		"logrocket": "6.0.0",
+		"moment": "2.29.4",
+		"nats.ws": "1.10.2",
+		"next": "13.5.6",
+		"next-redux-wrapper": "8.1.0",
+		"react": "18.2.0",
+		"react-datepicker": "4.16.0",
+		"react-dnd": "16.0.0",
+		"react-dnd-html5-backend": "16.0.1",
+		"react-dnd-multi-backend": "8.0.3",
+		"react-dnd-preview": "8.0.3",
+		"react-dnd-touch-backend": "16.0.1",
+		"react-dom": "18.2.0",
+		"react-redux": "7.2.6",
+		"react-transition-group": "4.4.5",
+		"sass": "1.43.5",
+		"swiper": "8.4.2"
+	},
+	"devDependencies": {
+		"@next/bundle-analyzer": "14.0.4",
+		"eslint": "7",
+		"eslint-config-next": "12.0.4"
+	},
+	"version": "1.2.4"
+}

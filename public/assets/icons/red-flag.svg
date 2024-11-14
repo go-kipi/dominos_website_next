@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="63px" viewBox="0 0 96 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/illustrat</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="בילדר-1--מסך-מקדים-ללא-קבועות" transform="translate(-458.000000, -261.000000)">
+            <g id="cards-copy-2" transform="translate(130.000000, 235.000000)">
+                <g id="icons/illustrat" transform="translate(328.000000, 26.000000)">
+                    <g id="iconfinder_flag_1168869" transform="translate(18.906863, 1.000000)">
+                        <g id="bottom_lines" transform="translate(0.000000, 55.000000)" stroke-linecap="round">
+                            <line x1="2.86193486" y1="0.0555555556" x2="0" y2="0.0555555556" id="Path" stroke="#FFFFFF"></line>
+                            <line x1="53.7805258" y1="0.0555555556" x2="5.72386971" y2="0.0555555556" id="Path" stroke="#FFFFFF"></line>
+                            <line x1="57.7156863" y1="0.0555555556" x2="56.6424607" y2="0.0555555556" id="Path" stroke="#FFFFFF"></line>
+                            <line x1="22.0607479" y1="2.5" x2="22.0607479" y2="2.5" id="Path" stroke="#151440" stroke-width="8"></line>
+                        </g>
+                        <path d="M40.3828877,52 C41.1625922,52 41.7941176,52.7004348 41.7941176,53.5652174 L41.7941176,55 L15.9215686,55 L15.9215686,53.5652174 C15.9215686,52.7004348 16.553094,52 17.3327986,52 L40.3828877,52 Z" id="fill_base_2_" fill="#017AFF" fill-rule="nonzero"></path>
+                        <path d="M40.7990196,55 L40.7990196,53.5652174 C40.7990196,52.7004348 39.9769155,52 38.9619155,52 L38.8088235,52" id="shadow_1_" stroke="#0064D2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M19.9200535,52 L17.3327986,52 C16.553094,52 15.9215686,52.7004348 15.9215686,53.5652174 L15.9215686,55 L41.7941176,55 L41.7941176,53.5652174 C41.7941176,52.7004348 41.1625922,52 40.3828877,52 L22.7425134,52" id="base_1_" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <g id="flagpole" transform="translate(27.862745, 4.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="0.5" y1="37.5036855" x2="0.5" y2="0" id="Path"></line>
+                            <line x1="0.5" y1="40.5700246" x2="0.5" y2="40.3341523" id="Path"></line>
+                            <line x1="0.5" y1="48" x2="0.5" y2="43.5184275" id="Path"></line>
+                        </g>
+                        <ellipse id="end" stroke="#FFFFFF" fill="#017AFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" cx="28.8578431" cy="2" rx="1.99019608" ry="2"></ellipse>
+                        <g id="flag_part_2" transform="translate(38.808824, 10.000000)" fill="#4A5056" fill-rule="nonzero">
+                            <polygon id="Path" points="0 0 18.9068627 0 10.9521461 12 18.9068627 24 0 24 0 21.6"></polygon>
+                        </g>
+                        <g id="shadow" transform="translate(39.803922, 11.000000)">
+                            <rect id="Rectangle" fill="#000000" fill-rule="nonzero" x="0" y="0" width="5.81550802" height="22.4732824"></rect>
+                            <line x1="5.81550802" y1="22.9414758" x2="5.81550802" y2="22.9414758" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="8.49064171" y1="22.0050891" x2="5.81550802" y2="22.0050891" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="21.0687023" x2="5.81550802" y2="21.0687023" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.97860963" y1="20.1323155" x2="5.81550802" y2="20.1323155" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="19.1959288" x2="5.81550802" y2="19.1959288" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.1644385" y1="18.259542" x2="5.81550802" y2="18.259542" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="17.3231552" x2="5.81550802" y2="17.3231552" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="7.67647059" y1="16.3867684" x2="5.81550802" y2="16.3867684" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="15.4503817" x2="5.81550802" y2="15.4503817" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.97860963" y1="14.5139949" x2="5.81550802" y2="14.5139949" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="13.5776081" x2="5.81550802" y2="13.5776081" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="8.95588235" y1="12.6412214" x2="5.81550802" y2="12.6412214" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="11.7048346" x2="5.81550802" y2="11.7048346" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.1644385" y1="10.7684478" x2="5.81550802" y2="10.7684478" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="9.83206107" x2="5.81550802" y2="9.83206107" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.1644385" y1="8.8956743" x2="5.81550802" y2="8.8956743" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="7.95928753" x2="5.81550802" y2="7.95928753" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="7.32754011" y1="7.02290076" x2="5.81550802" y2="7.02290076" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="6.08651399" x2="5.81550802" y2="6.08651399" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="8.25802139" y1="5.15012723" x2="5.81550802" y2="5.15012723" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="4.21374046" x2="5.81550802" y2="4.21374046" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.28074866" y1="3.27735369" x2="5.81550802" y2="3.27735369" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="2.34096692" x2="5.81550802" y2="2.34096692" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="5.81550802" y1="0.468193384" x2="5.81550802" y2="0.468193384" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="6.97860963" y1="1.40458015" x2="5.81550802" y2="1.40458015" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                            <line x1="8.37433155" y1="20.1323155" x2="8.37433155" y2="20.1323155" id="Path" stroke="#000000" stroke-linecap="round"></line>
+                        </g>
+                        <g id="flag_part_2_1_" transform="translate(38.808824, 10.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline id="Path" points="8.99228838 23.9401496 0 23.9401496 0 21.5461347"></polyline>
+                            <line x1="11.9897178" y1="23.9401496" x2="11.7591463" y2="23.9401496" id="Path"></line>
+                            <polyline id="Path" points="4.38085844 0 18.9068627 0 10.9521461 11.9700748 18.9068627 23.9401496 14.7565758 23.9401496"></polyline>
+                        </g>
+                        <rect id="fill_flag_part_1_2_" fill="#F5002E" fill-rule="nonzero" x="28.8578431" y="7" width="14.9264706" height="25"></rect>
+                        <polyline id="flag_part_1_1_" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="41.7704248 7 43.7843137 7 43.7843137 32 28.8578431 32 28.8578431 7 38.9272876 7"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

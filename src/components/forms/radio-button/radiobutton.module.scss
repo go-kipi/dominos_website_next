@@ -1,0 +1,130 @@
+@import "../../../styles/imports.scss";
+$margin-size: 2;
+$radio-size: 15;
+$dot-size: 8;
+$radio-color: black;
+
+.radios-wrapper {
+  .radio-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 -vw_size($margin-size, $mobile);
+    margin-bottom: vw_size($margin-size, $mobile);
+    .radio {
+      margin: 0 vw_size($margin-size, $mobile);
+      display: none;
+
+      &:checked ~ .label-radio .default-radio .dot {
+        display: inline-block;
+      }
+    }
+    .label-radio {
+      display: flex;
+      align-items: center;
+      margin-bottom: vw_size($margin-size, $mobile);
+      .radio-img,
+      .default-radio {
+        margin: 0 vw_size($margin-size, $mobile);
+        width: vw_size($radio-size, $mobile);
+        height: vw_size($radio-size, $mobile);
+      }
+      .default-radio {
+        display: grid;
+        place-items: center;
+        border: 1px $radio-color solid;
+        border-radius: 50%;
+        .dot {
+          display: none;
+          width: vw_size($dot-size, $mobile);
+          height: vw_size($dot-size, $mobile);
+          background-color: $radio-color;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  .radios-wrapper {
+    .radio-wrapper {
+      margin: 0 -vw_size($margin-size, $tablet);
+      margin-bottom: vw_size($margin-size, $mobile);
+
+      .radio {
+        margin: 0 vw_size($margin-size, $tablet);
+      }
+      .label-radio {
+        margin-bottom: vw_size($margin-size, $tablet);
+        .radio-img,
+        .default-radio {
+          margin: 0 vw_size($margin-size, $tablet);
+          width: vw_size($radio-size, $tablet);
+          height: vw_size($radio-size, $tablet);
+        }
+        .default-radio {
+          .dot {
+            width: vw_size($dot-size, $tablet);
+            height: vw_size($dot-size, $tablet);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  .radios-wrapper {
+    .radio-wrapper {
+      margin: 0 -vw_size($margin-size, $desktop);
+      margin-bottom: vw_size($margin-size, $mobile);
+
+      .radio {
+        margin: 0 vw_size($margin-size, $desktop);
+      }
+      .label-radio {
+        margin-bottom: vw_size($margin-size, $desktop);
+        .radio-img,
+        .default-radio {
+          margin: 0 vw_size($margin-size, $desktop);
+          width: vw_size($radio-size, $desktop);
+          height: vw_size($radio-size, $desktop);
+        }
+        .default-radio {
+          .dot {
+            width: vw_size($dot-size, $desktop);
+            height: vw_size($dot-size, $desktop);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop-large) {
+  .radios-wrapper {
+    .radio-wrapper {
+      margin: 0 -vw_size($margin-size, $desktop-large);
+      margin-bottom: vw_size($margin-size, $mobile);
+ 
+      .radio {
+        margin: 0 vw_size($margin-size, $desktop-large);
+      }
+      .label-radio {
+        margin-bottom: vw_size($margin-size, $desktop-large);
+        .radio-img,
+        .default-radio {
+          margin: 0 vw_size($margin-size, $desktop-large);
+          width: vw_size($radio-size, $desktop-large);
+          height: vw_size($radio-size, $desktop-large);
+        }
+        .default-radio {
+          .dot {
+            width: vw_size($dot-size, $desktop-large);
+            height: vw_size($dot-size, $desktop-large);
+          }
+        }
+      }
+    }
+  }
+}

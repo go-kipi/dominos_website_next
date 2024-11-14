@@ -1,0 +1,166 @@
+@import "src/styles/imports";
+$current: $mobile;
+:global(.popup) {
+  .pizza-special-requests-popup {
+    :global(.popup_wrapper) {
+      height: 100%;
+      width: 80%;
+      //padding: vw_size(50, $current) vw_size(15, $current) vw_size(30, $current);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      transition: all 200ms ease-out;
+      opacity: 0;
+
+      &:global(.done) {
+        opacity: 1;
+      }
+    }
+    :global(.popup_content) {
+      .content {
+        height: 100%;
+        overflow: hidden;
+        .scroll-area {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          overflow: auto;
+        }
+      }
+      .special-requests-header-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: vw_size(35, $current);
+
+        .header-title {
+          color: white;
+          font-family: $font-bold;
+          font-size: vw_size(14, $current);
+          margin-inline-start: vw_size(10, $current);
+        }
+        .header-icon {
+          height: vw_size(14, $current);
+          width: vw_size(14, $current);
+        }
+      }
+      .requests-wrapper {
+        margin-bottom: vw_size(35, $current);
+        .bottom-requests {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .save-btn {
+        margin-top: auto;
+        margin-bottom: vw_size(35, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .pizza-special-requests-popup {
+    :global(.popup_content) {
+      .special-requests-header-wrapper {
+        margin-top: vw_size(35, $current);
+
+        .header-title {
+          font-size: vw_size(14, $current);
+          margin-inline-start: vw_size(10, $current);
+        }
+        .header-icon {
+          height: vw_size(14, $current);
+          width: vw_size(14, $current);
+        }
+      }
+      .requests-wrapper {
+        margin-bottom: vw_size(35, $current);
+
+        .bottom-requests {
+        }
+      }
+      .save-btn {
+        margin-bottom: vw_size(35, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  :global(.popup) {
+    .pizza-special-requests-popup {
+      :global(.popup_content) {
+        .special-requests-header-wrapper {
+          margin-top: vw_size(25, $current);
+
+          .header-title {
+            font-size: vw_size(14, $current);
+            margin-inline-start: unset;
+          }
+        }
+        .requests-wrapper {
+          max-width: vw_size(341, $current);
+          margin-bottom: vw_size(35, $current);
+          .bottom-requests {
+            max-width: vw_size(341, $current);
+
+            .request-selector-wrapper {
+              &:last-child {
+                width: vw_size(202, $current);
+              }
+              width: vw_size(125, $current);
+            }
+          }
+          .request-selector-wrapper {
+            width: vw_size(341, $current);
+          }
+        }
+        .save-btn {
+          margin-bottom: vw_size(25, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-large;
+  :global(.popup) {
+    .pizza-special-requests-popup {
+      :global(.popup_content) {
+        .special-requests-header-wrapper {
+          margin-top: vw_size(25, $current);
+
+          .header-title {
+            font-size: vw_size(14, $current);
+          }
+        }
+        .requests-wrapper {
+          max-width: vw_size(341, $current);
+          margin-bottom: vw_size(35, $current);
+
+          .bottom-requests {
+            max-width: vw_size(341, $current);
+            .request-selector-wrapper {
+              &:last-child {
+                width: vw_size(202, $current);
+              }
+              width: vw_size(125, $current);
+            }
+          }
+          .request-selector-wrapper {
+            width: vw_size(341, $current);
+          }
+        }
+        .save-btn {
+          margin-bottom: vw_size(25, $current);
+        }
+      }
+    }
+  }
+}

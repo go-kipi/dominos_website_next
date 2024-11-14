@@ -1,0 +1,107 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.conatiner {
+	width: 100%;
+
+	margin-top: vw_size(20, $current);
+	background-color: $soft-gray-opacity;
+	width: 100%;
+	padding-inline-start: vw_size(27, $current);
+	@include itemPaddingEnd();
+	border-radius: 14px;
+	height: vw_size(45, $current);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.left-side {
+		display: flex;
+		align-items: center;
+		.icon-wrapper {
+			width: vw_size(25, $current);
+		}
+		.text {
+			margin-inline-start: vw_size(7, $current);
+			color: white;
+			font-family: $font;
+			font-size: vw_size(14, $current);
+		}
+	}
+	.right-side {
+		padding-inline-end: vw_size(25, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.conatiner {
+		margin-top: vw_size(20, $current);
+		padding-inline-start: vw_size(27, $current);
+		padding-inline-end: vw_size(17, $current);
+		height: vw_size(45, $current);
+
+		.left-side {
+			.icon-wrapper {
+				width: vw_size(25, $current);
+			}
+			.text {
+				margin-inline-start: vw_size(7, $current);
+				font-size: vw_size(14, $current);
+			}
+		}
+		.right-side {
+			padding-inline-end: vw_size(25, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.conatiner {
+		margin-top: vw_size(20, $current);
+		padding-inline-start: vw_size(50, $current);
+		padding-inline-end: vw_size(53, $current);
+		height: unset;
+		padding-block: vw_size(12, $current);
+
+		.left-side {
+			.icon-wrapper {
+				width: vw_size(25, $current);
+			}
+			.text {
+				margin-inline-start: vw_size(25, $current);
+				font-size: vw_size(14, $current);
+			}
+		}
+		.right-side {
+			padding-inline-end: 0;
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+	$current: $desktop-max;
+
+	.conatiner {
+		margin-top: vw_size(20, $current);
+		padding-inline-start: vw_size(50, $current);
+		padding-inline-end: vw_size(53, $current);
+		padding-block: vw_size(12, $current);
+		.left-side {
+			.icon-wrapper {
+				width: vw_size(25, $currentSmall);
+			}
+			.text {
+				margin-inline-start: vw_size(25, $current);
+				font-size: vw_size(14, $currentSmall);
+			}
+		}
+		.right-side {
+			padding-inline-end: vw_size(10, $current);
+		}
+	}
+}

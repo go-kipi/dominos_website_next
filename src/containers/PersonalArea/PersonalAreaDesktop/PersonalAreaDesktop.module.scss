@@ -1,0 +1,41 @@
+@import "src/styles/imports.scss";
+$current: $desktop;
+.perosnal-area-wrapper-desktop {
+  .personal-area-container {
+    display: flex;
+  }
+
+  .personal-area-main-container {
+    z-index: 1;
+    width: vw_size(880, $current);
+    height: vw_size(547, $current);
+    border-radius: 25px;
+    margin-top: vw_size(30, $current);
+    padding: vw_size(50, $current) vw_size(75, $current) 0 vw_size(75, $current);
+
+    &.white {
+      background-color: $white;
+    }
+  }
+
+  .personal-custom-header {
+    padding-inline-start: vw_size(40, $current);
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-max;
+  .perosnal-area-wrapper-desktop {
+    .personal-area-main-container {
+      width: vw_size(1450, $current);
+      height: vw_size(750, $current);
+      margin-top: vw_size(55, $current);
+      padding: vw_size(50, $current) vw_size(100, $current)
+      0 vw_size(135, $current);
+    }
+    .personal-custom-header {
+      padding-inline-start: vw_size(40, $current);
+      padding-inline-end: vw_size(50, $current);
+    }
+  }
+}

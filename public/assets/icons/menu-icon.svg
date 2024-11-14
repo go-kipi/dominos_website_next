@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="ui-style-guide-menu-&amp;-builder" transform="translate(-294.000000, -328.000000)" stroke="#FFFFFF" stroke-width="1.5">
+            <g id="Group" transform="translate(294.971429, 328.761039)">
+                <line x1="0.634482759" y1="7.55714286" x2="18.4" y2="7.55714286" id="Line" transform="translate(9.517241, 7.557143) rotate(-360.000000) translate(-9.517241, -7.557143) "></line>
+                <line x1="0.634482759" y1="14.7857143" x2="18.4" y2="14.7857143" id="Line-Copy" transform="translate(9.517241, 14.785714) rotate(-360.000000) translate(-9.517241, -14.785714) "></line>
+                <line x1="0.328571429" y1="0.328571429" x2="18.0714286" y2="0.328571429" id="Line-Copy-2" transform="translate(9.200000, 0.328571) rotate(-360.000000) translate(-9.200000, -0.328571) "></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,39 @@
+@import '../../../styles/imports';
+
+.desktop-menu {
+    display: none;
+}
+
+@media (min-width: $media-tablet) {
+    .desktop-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .desktop-menu-item {
+            text-align: center;
+            cursor: pointer;
+            padding:0 vw_size(10,$tablet);
+
+            &:first-child {
+                padding-right:0;
+            }
+
+            &:last-child {
+                padding-left:0;
+            }
+
+            &.active {
+                color:#ffa600;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+@media (min-width: $media-desktop) {
+    .desktop-menu {
+        .desktop-menu-item {
+            padding:0 vw_size(10,$desktop);
+        }
+    }
+}

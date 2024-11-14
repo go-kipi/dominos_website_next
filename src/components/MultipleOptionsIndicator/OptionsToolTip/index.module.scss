@@ -1,0 +1,78 @@
+@import "src/styles/imports";
+
+$current: 375;
+.options-tooltip-wrapper {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	z-index: 1000000;
+
+	.options-wrapper {
+		overflow: hidden;
+		background-color: #2d3540cc;
+		border-radius: vw_size(5, $current);
+		color: white;
+
+		&.data-exist {
+			background-color: yellow;
+		}
+	}
+	.tooltip-triangle {
+		position: absolute;
+		top: vw_size(22, $current);
+		left: vw_size(5, $current);
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-bottom: vw_size(10, $current) solid #2d3540;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.options-tooltip-wrapper {
+		.options-wrapper {
+			border-radius: vw_size(5, $current);
+		}
+		.tooltip-triangle {
+			top: vw_size(22, $current);
+			left: vw_size(5, $current);
+
+			border-bottom: vw_size(10, $current) solid #2d3540;
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.options-tooltip-wrapper {
+		top: vw_size(-45, $current);
+		left: vw_size(-8, $current);
+		.options-wrapper {
+			border-radius: vw_size(5, $current);
+		}
+		.tooltip-triangle {
+			top: vw_size(26, $current);
+			left: vw_size(5, $current);
+			border-bottom: vw_size(10, $current) solid #2d3540;
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.options-tooltip-wrapper {
+		top: vw_size(-45, $current);
+		left: vw_size(-18, $current);
+		.options-wrapper {
+			border-radius: vw_size(5, $current);
+		}
+		.tooltip-triangle {
+			top: vw_size(26, $current);
+			left: vw_size(5, $current);
+
+			border-bottom: vw_size(10, $current) solid #2d3540;
+		}
+	}
+}

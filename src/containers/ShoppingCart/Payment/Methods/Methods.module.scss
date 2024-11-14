@@ -1,0 +1,62 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.methods-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: vw_size(212, $current);
+  .methods {
+    margin-top: vw_size(14, $current);
+    display: flex;
+    flex-wrap: wrap;
+    width: vw_size(302, $current);
+    justify-content: space-between;
+    .method-payment-button {
+      margin-top: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .methods-wrapper {
+    height: vw_size(212, $current);
+    .methods {
+      margin-top: vw_size(14, $current);
+      width: vw_size(302, $current);
+      .method-payment-button {
+        margin-top: vw_size(18, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .methods-wrapper {
+    height: vw_size(212, $current);
+    .methods {
+      margin-top: vw_size(14, $current);
+      width: vw_size(302, $current);
+      .method-payment-button {
+        margin-top: vw_size(15, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .methods-wrapper {
+    height: vw_size(212, $current);
+    .methods {
+      margin-top: vw_size(14, $current);
+      width: vw_size(302, $current);
+      .method-payment-button {
+        margin-top: vw_size(15, $current);
+      }
+    }
+  }
+}

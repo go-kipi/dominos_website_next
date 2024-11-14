@@ -1,0 +1,94 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.time-item-wrapper:focus-visible {
+  outline: none !important;
+}
+
+.time-item-wrapper {
+  display: flex;
+  width: vw_size(176, $current);
+  padding-inline: vw_size(25, $current);
+  justify-content: space-between;
+  height: vw_size(50, $current);
+  align-items: center;
+
+  .time-text {
+    font-size: vw_size(12, $current);
+    font-family: $font;
+    color: #828282;
+    line-height: vw_size(25, $current);
+    width: vw_size(36, $current);
+    text-align: center;
+    &.nextorprev {
+      color: #686868;
+      font-size: vw_size(17, $current);
+    }
+    &.selected {
+      font-family: $font-medium;
+      color: $black;
+      font-size: vw_size(20, $current);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .time-item-wrapper {
+    width: vw_size(176, $current);
+    padding-inline: vw_size(25, $current);
+    height: vw_size(50, $current);
+    .time-text {
+      font-size: vw_size(12, $current);
+
+      line-height: vw_size(25, $current);
+      width: vw_size(36, $current);
+      &.nextorprev {
+        font-size: vw_size(17, $current);
+      }
+      &.selected {
+        font-size: vw_size(20, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .time-item-wrapper {
+    width: vw_size(183, $current);
+    padding-inline: vw_size(25, $current);
+    height: vw_size(40, $current);
+    .time-text {
+      font-size: vw_size(12, $current);
+
+      line-height: vw_size(25, $current);
+      width: vw_size(36, $current);
+      &.nextorprev {
+        font-size: vw_size(17, $current);
+      }
+      &.selected {
+        font-size: vw_size(20, $current);
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .time-item-wrapper {
+    width: vw_size(183, $current);
+    padding-inline: vw_size(25, $current);
+    height: vw_size(40, $current);
+    .time-text {
+      font-size: vw_size(12, $current);
+
+      line-height: vw_size(25, $current);
+      width: vw_size(36, $current);
+      &.nextorprev {
+        font-size: vw_size(17, $current);
+      }
+      &.selected {
+        font-size: vw_size(20, $current);
+      }
+    }
+  }
+}

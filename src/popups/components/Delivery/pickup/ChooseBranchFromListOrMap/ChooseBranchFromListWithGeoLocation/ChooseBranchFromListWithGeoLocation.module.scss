@@ -1,0 +1,320 @@
+@import "src/styles/imports.scss";
+
+.link {
+	pointer-events: none;
+}
+
+$current: 375;
+:global(.ltr) {
+	.choose-branch-with-geolocation-container {
+		.branchs-found-wrapper {
+			.toggle-list-icon-wrapper {
+				right: 0;
+				left: unset;
+			}
+		}
+	}
+}
+
+.choose-branch-with-geolocation-container {
+	background-color: transparent;
+
+	display: flex;
+	flex-direction: column;
+
+	position: relative;
+	flex: 1 1;
+	overflow: hidden;
+
+	.hiddable-scrollhost-container {
+		flex: 1 1;
+		overflow: hidden;
+
+		.scroll-bar {
+			width: 10px;
+			display: none;
+
+			.scroll-thumb {
+				cursor: default;
+				width: 5px;
+				border-radius: 3px;
+
+				background-color: rgba(217, 217, 217, 1);
+			}
+		}
+	}
+
+	&.show-scroll {
+		.hiddable-scrollhost-container {
+			.scroll-bar {
+				display: block;
+			}
+		}
+	}
+
+	.seperator {
+		height: 1px;
+		width: 100%;
+		background-color: rgba(209, 209, 209, 1);
+	}
+
+	.branchs-found-wrapper {
+		height: 100%;
+
+		.toggle-list-icon-wrapper {
+			position: absolute;
+			bottom: vw_size(15, $current);
+			left: 0;
+			width: vw_size(85, $current);
+			cursor: pointer;
+		}
+
+		.branches-found {
+			margin-top: vw_size(18, $current);
+			padding-inline-start: vw_size(44, $current);
+
+			.bracnh-item {
+				width: vw_size(292, $current);
+			}
+		}
+	}
+
+	.no-branches-found-container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		overflow: auto;
+		margin-top: vw_size(23, $current);
+
+		.no-branches-found-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: vw_size(292, $current);
+
+			.animation-wrapper {
+				margin-top: vw_size(43, $current);
+				width: vw_size(169, $current);
+			}
+		}
+
+		.title-wrapper {
+			width: vw_size(299, $current);
+			margin-top: vw_size(21, $current);
+			padding-inline-start: vw_size(10, $current);
+
+			.title {
+				color: $black;
+				font-family: $font-book;
+				font-size: vw_size(22, $current);
+				line-height: vw_size(29, $current);
+				text-align: center;
+
+				.bold {
+					font-family: $font-bold;
+				}
+			}
+		}
+
+		.no-branch-found-btn {
+			margin-top: vw_size(10, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	:global(.ltr) {
+		.choose-branch-with-geolocation-container {
+			.branchs-found-wrapper {
+				.toggle-list-icon-wrapper {
+					right: vw_size(10, $current);
+					left: unset;
+				}
+			}
+		}
+	}
+
+	.choose-branch-with-geolocation-container {
+		.branchs-found-wrapper {
+			.toggle-list-icon-wrapper {
+				bottom: vw_size(15, $current);
+				width: vw_size(85, $current);
+				left: vw_size(20, $current);
+			}
+
+			.branches-found {
+				margin-top: vw_size(18, $current);
+
+				padding-inline-start: vw_size(44, $current);
+				padding-inline-end: vw_size(50, $current);
+
+				.bracnh-item {
+					width: 100%;
+				}
+			}
+		}
+
+		.no-branches-found-container {
+			margin-top: vw_size(23, $current);
+
+			.no-branches-found-wrapper {
+				width: vw_size(292, $current);
+
+				.animation-wrapper {
+					margin-top: vw_size(43, $current);
+					width: vw_size(169, $current);
+				}
+			}
+
+			.title-wrapper {
+				width: vw_size(299, $current);
+				margin-top: vw_size(21, $current);
+				padding-inline-start: vw_size(10, $current);
+
+				.title {
+					font-size: vw_size(22, $current);
+					line-height: vw_size(29, $current);
+				}
+			}
+
+			.no-branch-found-btn {
+				margin-top: vw_size(45, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.choose-branch-with-geolocation-container {
+			.branchs-found-wrapper {
+				.toggle-list-icon-wrapper {
+					right: vw_size(20, $current);
+					left: unset;
+				}
+			}
+		}
+	}
+
+	.choose-branch-with-geolocation-container {
+		.branchs-found-wrapper {
+			&.on-branches-screen {
+				.branches-found {
+					padding-inline: 0;
+				}
+			}
+
+			.toggle-list-icon-wrapper {
+				bottom: vw_size(15, $current);
+				width: vw_size(85, $current);
+				left: vw_size(20, $current);
+			}
+
+			.branches-found {
+				margin-top: vw_size(18, $current);
+
+				padding-inline: vw_size(92, $current);
+
+				.bracnh-item {
+					width: 100%;
+				}
+			}
+		}
+
+		.no-branches-found-container {
+			margin-top: vw_size(23, $current);
+
+			.no-branches-found-wrapper {
+				.seperator-no-branches-found {
+					display: none;
+				}
+
+				width: vw_size(328, $current);
+
+				.animation-wrapper {
+					margin-top: unset;
+					width: vw_size(169, $current);
+				}
+			}
+
+			.title-wrapper {
+				width: vw_size(299, $current);
+				margin-top: vw_size(21, $current);
+				padding-inline-start: vw_size(10, $current);
+
+				.title {
+					font-size: vw_size(22, $current);
+					line-height: vw_size(29, $current);
+				}
+			}
+
+			.no-branch-found-btn {
+				margin-top: vw_size(15, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.ltr) {
+		.choose-branch-with-geolocation-container {
+			.branchs-found-wrapper {
+				.toggle-list-icon-wrapper {
+					right: vw_size(20, $current);
+					left: unset;
+				}
+			}
+		}
+	}
+	.choose-branch-with-geolocation-container {
+		.branchs-found-wrapper {
+			.toggle-list-icon-wrapper {
+				bottom: vw_size(15, $current);
+				width: vw_size(85, $current);
+				left: vw_size(20, $current);
+			}
+
+			.branches-found {
+				margin-top: vw_size(18, $current);
+
+				padding-inline: vw_size(92, $current);
+			}
+		}
+
+		.no-branches-found-container {
+			margin-top: vw_size(20, $current);
+
+			.no-branches-found-wrapper {
+				.seperator-no-branches-found {
+					display: none;
+				}
+
+				width: vw_size(328, $current);
+
+				.animation-wrapper {
+					width: vw_size(169, $current);
+				}
+			}
+
+			.title-wrapper {
+				width: vw_size(299, $current);
+				margin-top: vw_size(21, $current);
+				padding-inline-start: vw_size(10, $current);
+
+				.title {
+					font-size: vw_size(22, $current);
+					line-height: vw_size(29, $current);
+				}
+			}
+
+			.no-branch-found-btn {
+				margin-top: vw_size(15, $current);
+			}
+		}
+	}
+}

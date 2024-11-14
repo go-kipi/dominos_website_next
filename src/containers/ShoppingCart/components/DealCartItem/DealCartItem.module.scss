@@ -1,0 +1,107 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.conatiner {
+	width: 100%;
+
+	border-radius: 14px;
+
+	margin-top: vw_size(16, $current);
+
+	.item-ticket-body {
+		background-color: $soft-gray-opacity;
+		border-top-right-radius: 14px;
+		border-top-left-radius: 14px;
+		display: flex;
+
+		padding-inline-start: vw_size(19, $current);
+		@include itemPaddingEnd();
+		padding-block: vw_size(15, $current);
+		.content {
+			display: flex;
+
+			flex: 1;
+			flex-direction: column;
+			.price-text-wrap {
+				display: flex;
+				flex: 1;
+				justify-content: space-between;
+			}
+		}
+
+		.item-ticket-right {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			@include itemTextPaddingEnd();
+			.text {
+				font-family: $font-book;
+				font-size: vw_size(14, $current);
+				line-height: vw_size(20, $current);
+				color: $white;
+			}
+		}
+		.prices-wrap {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.conatiner {
+		margin-top: vw_size(16, $current);
+
+		.item-ticket-body {
+			padding-inline-start: vw_size(19, $current);
+			padding-block: vw_size(15, $current);
+			.item-ticket-right {
+				.text {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(20, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.conatiner {
+		margin-top: vw_size(24, $current);
+
+		.item-ticket-body {
+			padding-inline-start: vw_size(42, $current);
+			padding-block: vw_size(21, $current);
+			.item-ticket-right {
+				.text {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(20, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+
+	.conatiner {
+		margin-top: vw_size(24, $current);
+
+		.item-ticket-body {
+			padding-inline-start: vw_size(42, $current);
+			padding-block: vw_size(21, $currentSmall);
+			.item-ticket-right {
+				.text {
+					font-size: vw_size(14, $currentSmall);
+					line-height: vw_size(20, $currentSmall);
+				}
+			}
+		}
+	}
+}

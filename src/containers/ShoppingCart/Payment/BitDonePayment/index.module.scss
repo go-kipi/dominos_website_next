@@ -1,0 +1,72 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: vw_size(450, $current);
+	.confetti-wrapper {
+		width: 100%;
+	}
+	.payment-accepted {
+		text-align: center;
+		font-family: $font-medium;
+		font-size: vw_size(26, $current);
+		color: black;
+	}
+	.back-to-tab {
+		text-align: center;
+		font-family: $font-book;
+		font-size: vw_size(15, $current);
+		color: #383940;
+		margin-top: vw_size(10, $current);
+		margin-bottom: vw_size(50, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.wrapper {
+		height: vw_size(450, $current);
+		.payment-accepted {
+			font-size: vw_size(26, $current);
+		}
+		.back-to-tab {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(10, $current);
+			margin-bottom: vw_size(50, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.wrapper {
+		height: vw_size(480, $current);
+		.payment-accepted {
+			font-size: vw_size(26, $current);
+		}
+		.back-to-tab {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(10, $current);
+			margin-bottom: vw_size(50, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.wrapper {
+		height: vw_size(541, $current);
+		.payment-accepted {
+			font-size: vw_size(26, $current);
+		}
+		.back-to-tab {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(10, $current);
+			margin-bottom: vw_size(50, $current);
+		}
+	}
+}

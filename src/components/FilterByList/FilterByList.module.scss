@@ -1,0 +1,109 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.filter-by-list-wrapper {
+	width: 100%;
+	display: flex;
+	overflow-x: scroll;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	.filter-field-wrapper {
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */
+		-ms-user-select: none; /* IE 10 and IE 11 */
+		user-select: none; /* Standard syntax */
+		background-color: rgba(244, 244, 244, 1);
+		border-radius: vw_size(14, $current);
+		padding-inline: vw_size(9, $current);
+		height: vw_size(28, $current);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-inline-end: vw_size(13, $current);
+		position: relative;
+
+		&.selected {
+			background-color: $blue;
+			.filter-field-text {
+				visibility: hidden;
+				&.selected {
+					visibility: visible;
+				}
+			}
+		}
+		.filter-field-text {
+			font-family: $font;
+			font-size: vw_size(14, $current);
+			color: #656565;
+			text-align: center;
+			white-space: nowrap;
+			position: absolute;
+
+			&.selected {
+				color: white;
+				font-family: $font-bold;
+				visibility: hidden;
+				position: relative;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.filter-by-list-wrapper {
+		.filter-field-wrapper {
+			border-radius: vw_size(14, $current);
+			padding-inline: vw_size(9, $current);
+			height: vw_size(28, $current);
+			margin-inline-end: vw_size(13, $current);
+
+			.filter-field-text {
+				font-size: vw_size(14, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.filter-by-list-wrapper {
+		flex-wrap: wrap;
+		gap: vw_size(6, $current);
+		.filter-field-wrapper {
+			border-radius: vw_size(14, $current);
+			padding-inline: vw_size(9, $current);
+			height: vw_size(28, $current);
+			margin-inline-end: unset;
+
+			&:focus-visible {
+				outline-offset: -2px !important;
+			}
+			.filter-field-text {
+				font-size: vw_size(14, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.filter-by-list-wrapper {
+		gap: vw_size(6, $current);
+
+		.filter-field-wrapper {
+			border-radius: vw_size(14, $current);
+			padding-inline: vw_size(9, $current);
+			height: vw_size(28, $current);
+			margin-inline-end: unset;
+
+			.filter-field-text {
+				font-size: vw_size(14, $current);
+			}
+		}
+	}
+}

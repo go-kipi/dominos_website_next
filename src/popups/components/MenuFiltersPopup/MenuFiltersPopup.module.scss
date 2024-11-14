@@ -1,0 +1,205 @@
+@import "src/styles/imports";
+$current: 375;
+
+:global(.ltr) {
+	.menu-filters-popup {
+		.content {
+			.menu-filters-rows {
+				.menu-filter-row {
+					.radio-wrapper {
+						left: unset;
+						right: vw_size(29, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+.menu-filters-popup {
+	.content {
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+		.icon-wrapper {
+			width: vw_size(120, $current);
+			margin-top: vw_size(60, $current);
+		}
+		.title {
+			font-family: $font-medium;
+			font-size: vw_size(22, $current);
+			line-height: vw_size(32, $current);
+			margin-top: vw_size(13, $current);
+			color: white;
+		}
+		.menu-filters-rows {
+			width: 81%;
+			margin-top: vw_size(20, $current);
+			.menu-filter-row {
+				font-family: $font;
+				color: white;
+				font-size: vw_size(18, $current);
+				text-align: center;
+				width: 100%;
+				padding-block: vw_size(20, $current);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: 400ms ease-in-out all;
+				&:active {
+					background-color: rgba(255, 255, 255, 0.25);
+				}
+				.radio-wrapper {
+					width: vw_size(26, $current);
+					position: absolute;
+
+					left: vw_size(29, $current);
+				}
+				&.hide-border {
+					border-bottom: unset;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.ltr) {
+		.menu-filters-popup {
+			.content {
+				.menu-filters-rows {
+					.menu-filter-row {
+						.radio-wrapper {
+							right: vw_size(29, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.menu-filters-popup {
+		.content {
+			.icon-wrapper {
+				width: vw_size(120, $current);
+				margin-top: vw_size(120, $current);
+			}
+			.title {
+				font-size: vw_size(22, $current);
+				line-height: vw_size(32, $current);
+				margin-top: vw_size(13, $current);
+			}
+			.menu-filters-rows {
+				margin-top: vw_size(20, $current);
+				.menu-filter-row {
+					font-family: $font;
+					font-size: vw_size(18, $current);
+					padding-block: vw_size(20, $current);
+					.radio-wrapper {
+						width: vw_size(26, $current);
+
+						left: vw_size(29, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.menu-filters-popup {
+			.content {
+				.menu-filters-rows {
+					.menu-filter-row {
+						.radio-wrapper {
+							right: vw_size(94, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-filters-popup {
+		.content {
+			.icon-wrapper {
+				width: vw_size(120, $current);
+				margin-top: vw_size(120, $current);
+			}
+			.title {
+				font-size: vw_size(22, $current);
+				line-height: vw_size(32, $current);
+				margin-top: vw_size(33, $current);
+			}
+			.menu-filters-rows {
+				width: 39%;
+				margin-top: vw_size(20, $current);
+				.menu-filter-row {
+					font-family: $font;
+					font-size: vw_size(18, $current);
+					padding-block: vw_size(20, $current);
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.15);
+					}
+					&:active {
+						background-color: rgba(255, 255, 255, 0.25);
+					}
+					.radio-wrapper {
+						width: vw_size(26, $current);
+
+						left: vw_size(94, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.ltr) {
+		.menu-filters-popup {
+			.content {
+				.menu-filters-rows {
+					.menu-filter-row {
+						.radio-wrapper {
+							right: vw_size(94, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-filters-popup {
+		.content {
+			.icon-wrapper {
+				width: vw_size(120, $current);
+				margin-top: vw_size(120, $current);
+			}
+			.title {
+				font-size: vw_size(22, $current);
+				line-height: vw_size(32, $current);
+				margin-top: vw_size(33, $current);
+			}
+			.menu-filters-rows {
+				margin-top: vw_size(20, $current);
+				.menu-filter-row {
+					font-family: $font;
+					font-size: vw_size(18, $current);
+					padding-block: vw_size(20, $current);
+					.radio-wrapper {
+						width: vw_size(26, $current);
+
+						left: vw_size(94, $current);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,310 @@
+@import "/src/styles/imports.scss";
+$current: $mobile;
+.city-wrapper {
+	flex: 1;
+	display: flex;
+	.container {
+		z-index: 10000;
+		flex: 1;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.branch-icon-wrapper {
+			width: vw_size(77, $current);
+			margin-top: vw_size(14, $current);
+		}
+		.title {
+			margin-top: vw_size(18, $current);
+			color: $white;
+			font-size: vw_size(21, $current);
+			font-family: $font-bold;
+		}
+		.order-button {
+			margin-top: vw_size(24, $current);
+			width: vw_size(240, $current);
+		}
+		.popup-like {
+			z-index: 1;
+			margin-top: auto;
+			border-top-left-radius: vw_size(25, $current);
+			border-top-right-radius: vw_size(25, $current);
+			background-color: $white;
+			width: 100%;
+			height: 52vh;
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+		}
+		.about-wrapper {
+			margin-top: vw_size(37, $current);
+			margin-bottom: vw_size(90, $current);
+			.about-title {
+				font-size: vw_size(15, $current);
+				font-family: $font-bold;
+				margin: 0;
+			}
+			.content {
+				color: #717171;
+				font-family: $font-book;
+				font-size: vw_size(15, $current);
+				margin: 0;
+				margin-top: vw_size(8, $current);
+				padding-inline-end: vw_size(20, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.city-wrapper {
+		.container {
+			.branch-icon-wrapper {
+				width: vw_size(77, $current);
+				margin-top: vw_size(14, $current);
+			}
+			.title {
+				margin-top: vw_size(18, $current);
+				font-size: vw_size(21, $current);
+			}
+			.order-button {
+				margin-top: vw_size(24, $current);
+				width: vw_size(240, $current);
+			}
+			.popup-like {
+				border-top-left-radius: vw_size(25, $current);
+				border-top-right-radius: vw_size(25, $current);
+				height: 70vh;
+			}
+			.about-wrapper {
+				margin-top: vw_size(37, $current);
+				margin-bottom: vw_size(90, $current);
+				.about-title {
+					font-size: vw_size(15, $current);
+				}
+				.content {
+					font-size: vw_size(15, $current);
+					margin-top: vw_size(8, $current);
+					padding-inline-end: vw_size(20, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.city-wrapper {
+			.container-desktop {
+				.back-wrapper {
+					.back-icon-wrapper {
+						transform: scaleX(-1);
+					}
+				}
+			}
+		}
+	}
+	.city-wrapper {
+		height: 100%;
+
+		border-radius: vw_size(10, $current);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		.container {
+			display: none;
+		}
+		.container-desktop {
+			position: relative;
+			height: 100%;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			border-radius: vw_size(10, $current);
+
+			.gradient-top {
+				padding-inline: vw_size(32, $current);
+
+				background-image: -webkit-linear-gradient(
+					90deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 1) 45%,
+					rgba(255, 255, 255, 1) 100%
+				);
+
+				height: vw_size(200, $current);
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				z-index: 90;
+				pointer-events: none;
+			}
+			.header {
+				z-index: 100;
+				position: relative;
+				padding-inline: vw_size(20, $current);
+				height: vw_size(100, $current);
+
+				.back-wrapper {
+					display: flex;
+					margin-top: vw_size(15, $current);
+					.back-icon-wrapper {
+						width: vw_size(20, $current);
+					}
+				}
+				.title {
+					margin-inline-start: vw_size(15, $current);
+					color: $black;
+					font-size: vw_size(21, $current);
+					font-family: $font-bold;
+					margin: 0;
+					margin-top: vw_size(19, $current);
+				}
+				.subtitle {
+					margin-inline-start: vw_size(15, $current);
+
+					color: #717171;
+					font-family: $font;
+					margin-top: vw_size(13, $current);
+
+					font-size: vw_size(15, $current);
+				}
+			}
+			:global(.branchs-found-wrapper) {
+				z-index: 1;
+				&::before {
+					content: "";
+					background-image: linear-gradient(
+						0deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 255, 255, 1) 100%
+					);
+					height: vw_size(140, $current);
+					width: 100%;
+					position: absolute;
+					top: 0;
+					z-index: 3;
+					display: block;
+					transition: opacity 0.3s ease;
+					pointer-events: none;
+				}
+				&:global(.start) {
+					&::before {
+						opacity: 0;
+					}
+				}
+				:global(.branches-found) {
+					margin: 0;
+					padding-inline: vw_size(32, $current);
+				}
+			}
+
+			.about-wrapper {
+				margin-top: vw_size(37, $current);
+				padding-bottom: vw_size(129, $current);
+				.about-title {
+					font-size: vw_size(15, $current);
+					font-family: $font-bold;
+					margin: 0;
+				}
+				.content {
+					color: #717171;
+					font-family: $font-book;
+					font-size: vw_size(15, $current);
+					margin: 0;
+					margin-top: vw_size(8, $current);
+				}
+			}
+
+			.gradient-bottom {
+				background-image: -webkit-linear-gradient(
+					-90deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 1) 100%
+				);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: vw_size(129, $current);
+				.order-button {
+					width: vw_size(284, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.city-wrapper {
+		border-radius: vw_size(10, $current);
+
+		.container-desktop {
+			.header {
+				padding-inline: vw_size(20, $current);
+
+				.back-wrapper {
+					margin-top: vw_size(15, $current);
+					.back-icon-wrapper {
+						width: vw_size(20, $current);
+					}
+				}
+				.title {
+					margin-inline-start: vw_size(15, $current);
+
+					font-size: vw_size(21, $current);
+
+					margin-top: vw_size(19, $current);
+				}
+				.subtitle {
+					margin-inline-start: vw_size(15, $current);
+
+					margin-top: vw_size(13, $current);
+
+					font-size: vw_size(15, $current);
+				}
+			}
+			:global(.branchs-found-wrapper) {
+				:global(.branchs-found-wrapper) {
+					&::before {
+						height: vw_size(140, $current);
+					}
+				}
+				:global(.branches-found) {
+					padding-inline: vw_size(32, $current);
+				}
+			}
+
+			.about-wrapper {
+				margin-top: vw_size(37, $current);
+				padding-bottom: vw_size(129, $current);
+				.about-title {
+					font-size: vw_size(15, $current);
+				}
+				.content {
+					font-size: vw_size(15, $current);
+
+					margin-top: vw_size(8, $current);
+				}
+			}
+
+			.gradient-bottom {
+				height: vw_size(129, $current);
+				.order-button {
+					width: vw_size(284, $current);
+				}
+			}
+		}
+	}
+}

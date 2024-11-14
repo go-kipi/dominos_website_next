@@ -1,0 +1,8 @@
+User-agent: *
+
+Allow: /
+
+Disallow: /personal-area/
+
+# Sitemap location
+Sitemap: https://dominos.co.il/sitemap.xml

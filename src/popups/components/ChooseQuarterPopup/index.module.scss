@@ -1,0 +1,341 @@
+@import "src/styles/imports";
+
+$current: $mobile;
+:global(.popup) {
+	.choose-quarter-popup {
+		//$pizzaSize: 290;
+		$pizzaSize: 268;
+		:global(.popup_wrapper) {
+			height: 100%;
+			width: 85%;
+			:global(.popup_content) {
+				padding: vw_size(40, $current) 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				:global(.close-icon-wrapper) {
+					cursor: pointer;
+					position: absolute;
+					top: vw_size(45, $current);
+					left: 0;
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+				.choose-quarter-right-side {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					.topping-name {
+						font-size: vw_size(16, $current);
+						font-family: $font-book;
+						color: $white;
+						margin-block-end: vw_size(1, $current);
+					}
+					.title {
+						font-size: vw_size(20, $current);
+						font-family: $font-medium;
+						color: $white;
+						text-align: center;
+						margin-block-start: unset;
+					}
+				}
+
+				.choose-quarter-left-side {
+					margin-top: vw_size(10, $current);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					width: vw_size($pizzaSize, $current);
+					height: vw_size($pizzaSize, $current);
+					.toppings-pizza-img {
+						width: 100%;
+						height: 100%;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+
+						.topping-coverage-on-pizza {
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin: auto;
+
+							img {
+								width: 90%;
+								height: 90%;
+								object-fit: cover;
+								position: absolute;
+								transform-origin: center;
+
+								&.q1 {
+									transform: rotate(0deg);
+								}
+								&.q2 {
+									transform: rotate(90deg);
+								}
+								&.q3 {
+									transform: rotate(180deg);
+								}
+								&.q4 {
+									transform: rotate(-90deg);
+								}
+							}
+						}
+					}
+
+					.overlay {
+						cursor: pointer;
+						background-color: rgba(255, 255, 255, 0.35);
+						width: vw_size(130, $current);
+						height: vw_size(130, $current);
+						position: absolute;
+						border: vw_size(3, $current) solid $white;
+
+						&.overlay-quarter-top-left {
+							top: 0;
+							left: 0;
+							border-top-left-radius: vw_size(300, $current);
+							&.square {
+								border-top-left-radius: unset;
+							}
+						}
+						&.overlay-quarter-top-right {
+							top: 0;
+							right: 0;
+							border-top-right-radius: vw_size(300, $current);
+							&.square {
+								border-top-right-radius: unset;
+							}
+						}
+						&.overlay-quarter-bottom-left {
+							bottom: 0;
+							left: 0;
+							border-bottom-left-radius: vw_size(300, $current);
+							&.square {
+								border-bottom-left-radius: unset;
+							}
+						}
+						&.overlay-quarter-bottom-right {
+							bottom: 0;
+							right: 0;
+							border-bottom-right-radius: vw_size(300, $current);
+							&.square {
+								border-bottom-right-radius: unset;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	:global(.popup) {
+		:global(.backdrop) {
+			&.choose-quarter-popup {
+				//$pizzaSize: 290;
+				$pizzaSize: 268;
+				:global(.popup_wrapper) {
+					width: 100%;
+					:global(.popup_content) {
+						padding: vw_size(60, $current) 0;
+
+						.close-icon-wrapper {
+							top: vw_size(45, $current);
+							width: vw_size(18, $current);
+							height: vw_size(18, $current);
+						}
+						.choose-quarter-right-side {
+							.topping-name {
+								font-size: vw_size(16, $current);
+								margin-block-end: vw_size(5, $current);
+							}
+							.title {
+								font-size: vw_size(20, $current);
+							}
+						}
+
+						.choose-quarter-left-side {
+							margin-top: 0;
+							width: vw_size($pizzaSize, $current);
+							height: vw_size($pizzaSize, $current);
+
+							.overlay {
+								width: vw_size(130, $current);
+								height: vw_size(130, $current);
+								border: vw_size(3, $current) solid $white;
+
+								&.overlay-quarter-top-left {
+									border-top-left-radius: vw_size(300, $current);
+								}
+								&.overlay-quarter-top-right {
+									border-top-right-radius: vw_size(300, $current);
+								}
+								&.overlay-quarter-bottom-left {
+									border-bottom-left-radius: vw_size(300, $current);
+								}
+								&.overlay-quarter-bottom-right {
+									border-bottom-right-radius: vw_size(300, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		:global(.backdrop) {
+			&.choose-quarter-popup {
+				$pizzaSize: 450;
+				:global(.popup_wrapper) {
+					:global(.popup_content) {
+						padding: vw_size(100, $current);
+						flex-direction: row;
+						justify-content: space-between;
+						overflow-y: unset;
+						overflow: hidden;
+						align-items: flex-start;
+						.close-icon-wrapper {
+							top: vw_size(45, $current);
+							width: vw_size(18, $current);
+							height: vw_size(18, $current);
+						}
+						.choose-quarter-right-side {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							width: vw_size($pizzaSize, $current);
+							height: vw_size($pizzaSize, $current);
+							.topping-name {
+								font-size: vw_size(20, $current);
+								margin-block-end: vw_size(5, $current);
+							}
+							.title {
+								font-size: vw_size(35, $current);
+								line-height: vw_size(40, $current);
+								font-family: $font-bold;
+							}
+						}
+
+						.choose-quarter-left-side {
+							width: vw_size($pizzaSize, $current);
+							height: vw_size($pizzaSize, $current);
+
+							.overlay {
+								width: vw_size(220, $current);
+								height: vw_size(220, $current);
+								border: vw_size(3, $current) solid $white;
+
+								&.overlay-quarter-top-left {
+									border-top-left-radius: vw_size(300, $current);
+									&.square {
+										border-top-left-radius: unset;
+									}
+								}
+								&.overlay-quarter-top-right {
+									border-top-right-radius: vw_size(300, $current);
+									&.square {
+										border-top-right-radius: unset;
+									}
+								}
+								&.overlay-quarter-bottom-left {
+									border-bottom-left-radius: vw_size(300, $current);
+									&.square {
+										border-bottom-left-radius: unset;
+									}
+								}
+								&.overlay-quarter-bottom-right {
+									border-bottom-right-radius: vw_size(300, $current);
+									&.square {
+										border-bottom-right-radius: unset;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-large;
+	:global(.popup) {
+		:global(.backdrop) {
+			&.choose-quarter-popup {
+				$pizzaSize: 450;
+				:global(.popup_wrapper) {
+					// width: 85%;
+					:global(.close-icon-wrapper) {
+						top: vw_size(35, $current);
+						left: vw_size(55, $current);
+						width: vw_size(18, $current);
+						height: vw_size(18, $current);
+					}
+					:global(.popup_content) {
+						padding: vw_size(80, $current);
+						padding-inline: vw_size(200, $current);
+						padding-block: vw_size(117, $current);
+						.choose-quarter-right-side {
+							width: vw_size($pizzaSize, $current);
+							height: vw_size($pizzaSize, $current);
+							.topping-name {
+								font-size: vw_size(20, $current);
+								margin-block-end: vw_size(5, $current);
+							}
+							.title {
+								font-size: vw_size(35, $current);
+								line-height: vw_size(40, $current);
+							}
+						}
+
+						.choose-quarter-left-side {
+							margin-top: vw_size(35, $current);
+							width: vw_size($pizzaSize, $current);
+							height: vw_size($pizzaSize, $current);
+
+							.overlay {
+								width: vw_size(220, $current);
+								height: vw_size(220, $current);
+								border: vw_size(3, $current) solid $white;
+
+								&.overlay-quarter-top-left {
+									border-top-left-radius: vw_size(300, $current);
+								}
+								&.overlay-quarter-top-right {
+									border-top-right-radius: vw_size(300, $current);
+								}
+								&.overlay-quarter-bottom-left {
+									border-bottom-left-radius: vw_size(300, $current);
+								}
+								&.overlay-quarter-bottom-right {
+									border-bottom-right-radius: vw_size(300, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

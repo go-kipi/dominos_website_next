@@ -1,0 +1,87 @@
+@import "src/styles/imports.scss";
+
+//transitions
+$timout: 300ms;
+$function: linear;
+
+.up-sale-popup {
+	:global(.popup_content) {
+		.transition-wrapper {
+			position: relative;
+			display: flex;
+			flex: 1;
+			height: 100%;
+			width: 100%;
+			flex-direction: column;
+		}
+		.slide-right {
+			&:global(-enter) {
+				right: 100%;
+				position: relative;
+				&:global(-active) {
+					right: 0;
+					transition: right $timout $function;
+				}
+			}
+			&:global(-exit) {
+				left: 0;
+				position: absolute;
+
+				&:global(-active) {
+					left: 100%;
+					transition: left $timout $function;
+				}
+			}
+		}
+		.slide-left {
+			&:global(-enter) {
+				left: 100%;
+				position: relative;
+
+				&:global(-active) {
+					left: 0;
+					transition: left $timout $function;
+				}
+			}
+			&:global(-exit) {
+				right: 0;
+				position: absolute;
+
+				&:global(-active) {
+					right: 100%;
+					transition: right $timout $function;
+				}
+			}
+		}
+	}
+
+	.backward .animate-transition {
+		&:global(-enter) {
+			left: 100%;
+			&:global(-active) {
+				left: 0;
+				transition: left $timout $function;
+			}
+		}
+		&:global(-exit) {
+			right: 0;
+			&:global(-active) {
+				right: 100%;
+				transition: right $timout $function;
+			}
+		}
+	}
+	.transition-wrapper-bundle-up-sale {
+		height: 100%;
+	}
+}
+
+@media (min-width: $media-desktop) {
+	:global(.popup) {
+		:global(.backdrop).up-sale-popup {
+			background-color: rgba(0, 0, 0, 0.85);
+			backdrop-filter: blur(7px);
+			-webkit-backdrop-filter: blur(7px);
+		}
+	}
+}

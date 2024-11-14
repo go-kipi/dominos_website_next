@@ -1,0 +1,308 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.personal-area-mobile-details-wrap {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: vw_size(70, $current);
+		height: 80%;
+		border-top-left-radius: vw_size(25, $current);
+		border-top-right-radius: vw_size(25, $current);
+		background-color: $white;
+		width: 100%;
+		flex: 1;
+		padding-inline: vw_size(46, $current);
+
+		.gender-wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: vw_size(55, $current);
+			width: 100%;
+
+			.gender-checkbox {
+				cursor: pointer;
+
+				&.bold {
+					label {
+						font-family: $font-bold;
+						color: $black;
+					}
+				}
+				label {
+					font-family: $font;
+					display: flex;
+					align-items: flex-start;
+					font-size: vw_size(14, $current);
+					color: rgba(130, 130, 130, 1);
+					width: vw_size(65, $current);
+					span {
+						margin-inline-start: vw_size(32, $current);
+					}
+					div {
+						margin: unset;
+						width: unset;
+						height: vw_size(2, $current);
+					}
+				}
+				img {
+					width: vw_size(26, $current);
+					height: vw_size(35, $current);
+				}
+			}
+		}
+
+		.input-wrap {
+			display: flex;
+			flex-direction: column;
+			margin-top: vw_size(50, $current);
+			input {
+				font-family: $font-medium;
+				font-size: vw_size(17, $current);
+				color: $black;
+				letter-spacing: vw_size(0.17, $current);
+			}
+			.input-row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				width: vw_size(284, $current);
+
+				.field {
+					width: vw_size(135, $current);
+				}
+				&.second {
+					flex-direction: column;
+					justify-content: unset;
+					width: vw_size(184, $current);
+					.field {
+						width: 100%;
+					}
+				}
+			}
+
+			.focus-custom-placeholder {
+				font-size: vw_size(13, $current);
+			}
+			label {
+				font-family: $font;
+				font-size: vw_size(17, $current);
+				line-height: vw_size(20, $current);
+			}
+			.animated {
+				font-size: vw_size(13, $current);
+			}
+			.field {
+				&.email {
+					margin-top: vw_size(62, $current);
+				}
+				&.birthdate {
+					margin-top: vw_size(31, $current);
+				}
+			}
+
+			.birth-date-add-text {
+				font-family: $font;
+				font-size: vw_size(12, $current);
+				letter-spacing: vw_size(0.36, $current);
+				line-height: vw_size(25, $current);
+				color: $payneGrey;
+			}
+		}
+
+		.date-phone-wrapper {
+			display: flex;
+			align-items: flex-end;
+		}
+
+		.data-row {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			text-align: right;
+			margin-top: vw_size(40, $current);
+			.data {
+				display: flex;
+				flex-direction: column;
+				text-align: right;
+
+				.data-title {
+					font-family: $font;
+					font-size: vw_size(13, $current);
+					letter-spacing: vw_size(0.91, $current);
+					color: $placeholder-gray;
+				}
+				.data-value {
+					font-family: $font-medium;
+					font-size: vw_size(17, $current);
+					color: $black;
+					letter-spacing: vw_size(0.17, $current);
+					margin-top: vw_size(2.5, $current);
+				}
+			}
+		}
+		.btn {
+			margin-top: auto;
+			margin-bottom: vw_size(35, $current);
+		}
+
+		.saved-btn-container {
+			display: flex;
+			align-items: center;
+			margin-top: vw_size(50, $current);
+			.icon {
+				width: vw_size(21, $current);
+				height: vw_size(21, $current);
+				margin-inline-end: vw_size(7, $current);
+			}
+			.saved-text {
+				font-family: $font-medium;
+				line-height: vw_size(23, $current);
+				font-size: vw_size(16, $current);
+				color: $blue-btn;
+			}
+		}
+
+		.note-wrap {
+			display: flex;
+			justify-content: flex-start;
+			margin-top: vw_size(12, $current);
+			width: 100%;
+
+			.icon {
+				width: vw_size(17, $current);
+				height: vw_size(17, $current);
+				margin-inline-end: vw_size(8, $current);
+			}
+			.note-text {
+				font-family: $font;
+				font-size: vw_size(14, $current);
+				color: $placeholder-gray;
+				line-height: vw_size(18, $current);
+				letter-spacing: vw_size(0.14, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.personal-area-mobile-details-wrap {
+		.body {
+			margin-top: vw_size(70, $current);
+			height: 80%;
+			border-top-left-radius: vw_size(25, $current);
+			border-top-right-radius: vw_size(25, $current);
+			width: 100%;
+
+			.gender-wrap {
+				margin-top: vw_size(55, $current);
+				.gender-checkbox {
+					label {
+						font-size: vw_size(14, $current);
+						color: rgba(130, 130, 130, 1);
+						width: vw_size(65, $current);
+						span {
+							margin-inline-start: vw_size(15, $current);
+						}
+					}
+					img {
+						width: vw_size(26, $current);
+						height: vw_size(35, $current);
+					}
+				}
+			}
+
+			.input-wrap {
+				margin-top: vw_size(50, $current);
+				.input-row {
+					.field {
+					}
+					&.second {
+						width: vw_size(184, $current);
+						.field {
+						}
+					}
+				}
+				.focus-custom-placeholder {
+					font-size: vw_size(13, $current);
+				}
+				label {
+					font-size: vw_size(17, $current);
+					line-height: vw_size(20, $current);
+				}
+				.animated {
+					font-size: vw_size(13, $current);
+				}
+				.field {
+					input {
+						font-size: vw_size(17, $current);
+						letter-spacing: vw_size(0.17, $current);
+					}
+					&.email {
+						margin-top: vw_size(62, $current);
+					}
+					&.birthdate {
+						margin-top: vw_size(31, $current);
+					}
+				}
+				.birth-date-add-text {
+					font-size: vw_size(12, $current);
+					letter-spacing: vw_size(0.36, $current);
+					line-height: vw_size(25, $current);
+				}
+			}
+			.data-row {
+				margin-top: vw_size(40, $current);
+				.data {
+					.data-title {
+						font-size: vw_size(13, $current);
+						letter-spacing: vw_size(0.91, $current);
+					}
+					.data-value {
+						font-size: vw_size(17, $current);
+						letter-spacing: vw_size(0.17, $current);
+						margin-top: vw_size(2.5, $current);
+					}
+				}
+			}
+			.btn {
+				margin-bottom: vw_size(35, $current);
+			}
+
+			.saved-btn-container {
+				margin-top: vw_size(50, $current);
+				.icon {
+					width: vw_size(21, $current);
+					height: vw_size(21, $current);
+					margin-inline-end: vw_size(7, $current);
+				}
+				.saved-text {
+					line-height: vw_size(23, $current);
+					font-size: vw_size(16, $current);
+				}
+			}
+
+			.note-wrap {
+				margin-top: vw_size(12, $current);
+				.icon {
+					width: vw_size(17, $current);
+					height: vw_size(17, $current);
+					margin-inline-end: vw_size(8, $current);
+				}
+				.note-text {
+					font-family: $font;
+					font-size: vw_size(14, $current);
+					color: $placeholder-gray;
+					line-height: vw_size(18, $current);
+					letter-spacing: vw_size(0.14, $current);
+				}
+			}
+		}
+	}
+}

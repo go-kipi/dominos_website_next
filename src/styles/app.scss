@@ -1,0 +1,195 @@
+@import-normalize;
+@import "./imports";
+
+html {
+	background: $background-color;
+	box-sizing: border-box;
+	height: 100%;
+	white-space: pre-line; // please dont remove it, it is making the line break with \n
+	#bthn {
+		white-space: normal;
+		left: auto;
+		right: 15px;
+	}
+	#bthn[lang="he"] {
+		left: 15px;
+		right: auto;
+	}
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	-ms-overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	margin: 0;
+	padding: 0;
+	background: $background-color;
+	font-family: Arial, SansSerif;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	#glassix-whatsapp-widget-container {
+		display: none;
+	}
+}
+
+#__next,
+.rtl,
+.ltr {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	// height: 100%;
+}
+input {
+	border-width: 0 0 1px 0;
+	border-color: 1px solid $grey;
+	border-radius: 0;
+}
+input:focus {
+	border-color: inherit;
+}
+
+textarea {
+	padding: unset;
+	display: block;
+	outline: none;
+	resize: none;
+	overflow: auto;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	width: 100%;
+}
+input:focus,
+textarea:focus {
+	outline: none;
+}
+
+input,
+textarea {
+	direction: rtl;
+}
+
+.ltr {
+	input,
+	textarea {
+		direction: ltr;
+	}
+}
+
+button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+button:focus,
+button:hover,
+:focus {
+	outline: none;
+}
+a,
+a:focus,
+a:active {
+	color: inherit;
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+img {
+	display: block;
+	width: 100%;
+	user-select: none;
+}
+
+/* Fix webkit autofill background - Change the white to any color */
+input:-webkit-autofill {
+	box-shadow: 0 0 0 30px #ffffff inset;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.ltr {
+	direction: ltr;
+}
+.disable-click {
+	pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: unset;
+}
+
+@font-face {
+	font-family: "EzerDoo-Regular";
+	font-display: block;
+	src: url("/fonts/EzerDoo-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: "EzerDoo-Black";
+	font-display: block;
+	src: url("/fonts/EzerDoo-Black.woff") format("woff");
+}
+@font-face {
+	font-family: "EzerDoo-Book";
+	font-display: block;
+	src: url("/fonts/EzerDoo-Book.woff") format("woff");
+}
+@font-face {
+	font-family: "EzerDoo-Bold";
+	font-display: block;
+	src: url("/fonts/EzerDoo-Bold.woff") format("woff");
+}
+@font-face {
+	font-family: "EzerDoo-Medium";
+	font-display: block;
+	src: url("/fonts/EzerDoo-Medium.woff") format("woff");
+}
+
+@import "./device-state";
+@import "./styles";
+
+@media (min-width: $media-desktop) {
+	html {
+		&:has(.rtl) {
+			margin-inline-end: calc(100vw - 100%);
+			margin-inline-end: unset;
+			#main {
+				margin-inline-start: calc(-1 * (100vw - 100%));
+				margin-inline-end: unset;
+			}
+		}
+		margin-inline-end: calc(100vw - 100%);
+	}
+	body {
+		#glassix-whatsapp-widget-container {
+			display: unset;
+			.glassix-whatsapp-widget,
+			.glassix-whatsapp-container.glassix-slide-up {
+				z-index: 5000 !important;
+			}
+		}
+	}
+
+	#main {
+		margin-inline-end: calc(-1 * (100vw - 100%));
+	}
+}

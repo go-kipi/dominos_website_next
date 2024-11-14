@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons\vi copy</title>
+    <defs>
+        <path d="M7.66662,0.66642 C11.532225,0.66642 14.666415,3.800355 14.666415,7.6665 C14.666415,11.532435 11.532225,14.666475 7.66662,14.666475 C3.800505,14.666475 0.666495,11.532435 0.666495,7.6665 C0.666495,3.800355 3.800505,0.66642 7.66662,0.66642 Z" id="path-1"></path>
+        <filter x="-10.6%" y="-3.9%" width="123.3%" height="123.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.959461987   0 0 0 0 0   0 0 0 0 0.182184726  0 0 0 0.32 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ui-style-guide-menu-&amp;-builder" transform="translate(-166.000000, -1843.000000)">
+            <g id="icons\vi-copy" transform="translate(166.000000, 1843.000000)">
+                <rect id="Rectangle" x="0" y="0" width="21" height="21"></rect>
+                <g id="Group" transform="translate(3.000000, 3.000000)">
+                    <g id="Ellipse-1350-copy-3">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke="#F5002E" stroke-width="0.5" fill="#F5002E" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M13.7865639,0.662119089 C14.0521357,0.606817908 14.2770196,0.692304437 14.4291992,0.8515625 C14.5849594,1.01456764 14.6705217,1.26313484 14.6277416,1.55050873 C14.5983681,1.74782406 14.5065612,1.96647013 14.3250988,2.17861695 L7.61490261,10.5228746 C7.30817053,10.8511538 7.08477596,10.9924382 6.8716496,10.9996874 C6.67026099,11.0065373 6.45731574,10.9015697 6.17641511,10.6110103 L3.74634824,8.38238435 C3.5507837,8.17207249 3.46176762,7.9486794 3.44190791,7.74545932 C3.41646323,7.48508951 3.50296577,7.25048416 3.65517331,7.08740432 C3.80587205,6.92594106 4.02254208,6.8329174 4.26522277,6.8592594 C4.43930964,6.87815582 4.62969511,6.95938346 4.81416425,7.13348532 L6.87132595,8.9499951 L13.1623042,1.04973142 C13.379236,0.817955922 13.5959064,0.701820541 13.7865639,0.662119089 Z" id="Path-Copy" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

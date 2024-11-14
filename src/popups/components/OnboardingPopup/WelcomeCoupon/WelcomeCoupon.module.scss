@@ -1,0 +1,166 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.welcome-coupon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.lottie-wrapper {
+		margin-top: vw_size(30, $current);
+		width: vw_size(209, $current);
+		height: vw_size(172, $current);
+	}
+	.subtitle {
+		margin: 0;
+		color: $blue;
+		font-family: $font-medium;
+		font-size: vw_size(15, $current);
+		margin-top: vw_size(59, $current);
+		line-height: vw_size(24, $current);
+	}
+	.title {
+		margin: 0;
+		font-family: $font-medium;
+		color: $black;
+		font-size: vw_size(20, $current);
+		line-height: vw_size(28, $current);
+	}
+	.text {
+		color: $blue;
+		margin: 0;
+		font-family: $font-medium;
+		text-align: center;
+		width: vw_size(222, $current);
+		line-height: vw_size(33, $current);
+		font-size: vw_size(28, $current);
+		margin-top: vw_size(10, $current);
+	}
+	.actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: vw_size(44, $current);
+		margin-bottom: vw_size(20, $current);
+
+		.accept {
+			display: flex;
+			justify-content: center;
+		}
+		.decline {
+			margin-top: vw_size(22, $current);
+			width: vw_size(284, $current);
+			@include font-size(12, $current);
+		}
+	}
+}
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.welcome-coupon {
+		.lottie-wrapper {
+			margin-top: vw_size(30, $current);
+			width: vw_size(209, $current);
+			height: vw_size(172, $current);
+		}
+		.subtitle {
+			font-size: vw_size(15, $current);
+			margin-top: vw_size(59, $current);
+			line-height: vw_size(24, $current);
+		}
+		.title {
+			font-size: vw_size(20, $current);
+			line-height: vw_size(28, $current);
+		}
+		.text {
+			width: vw_size(222, $current);
+			line-height: vw_size(33, $current);
+			font-size: vw_size(28, $current);
+			margin-top: vw_size(22, $current);
+		}
+		.actions {
+			margin-top: vw_size(44, $current);
+			margin-bottom: vw_size(20, $current);
+
+			.decline {
+				margin-top: vw_size(22, $current);
+				width: vw_size(284, $current);
+				@include font-size(12, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.welcome-coupon {
+		.lottie-wrapper {
+			margin-top: vw_size(30, $current);
+			width: vw_size(152, $current);
+			height: vw_size(123, $current);
+		}
+		.subtitle {
+			@include font-size(15, $current);
+			margin-top: vw_size(59, $current);
+			line-height: vw_size(28, $current);
+		}
+		.title {
+			@include font-size(20, $current);
+
+			line-height: vw_size(39, $current);
+		}
+		.text {
+			width: vw_size(222, $current);
+			line-height: vw_size(33, $current);
+			@include font-size(28, $current);
+			margin-top: vw_size(22, $current);
+		}
+		.actions {
+			margin-top: vw_size(20, $current);
+			margin-bottom: vw_size(20, $current);
+
+			.decline {
+				margin-top: vw_size(34, $current);
+				width: vw_size(341, $current);
+				@include font-size(14, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.welcome-coupon {
+		.lottie-wrapper {
+			margin-top: vw_size(30, $current);
+			width: vw_size(152, $current);
+			height: vw_size(123, $current);
+		}
+		.subtitle {
+			@include font-size(15, $current);
+			margin-top: vw_size(59, $current);
+			line-height: vw_size(28, $current);
+		}
+		.title {
+			@include font-size(20, $current);
+
+			line-height: vw_size(39, $current);
+		}
+		.text {
+			width: vw_size(222, $current);
+			line-height: vw_size(33, $current);
+			@include font-size(28, $current);
+			margin-top: vw_size(22, $current);
+		}
+		.actions {
+			margin-top: vw_size(34, $current);
+			margin-bottom: vw_size(20, $current);
+			.accept {
+				width: vw_size(341, $current);
+			}
+			.decline {
+				margin-top: vw_size(34, $current);
+				width: vw_size(341, $current);
+				@include font-size(14, $current);
+			}
+		}
+	}
+}

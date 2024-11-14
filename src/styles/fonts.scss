@@ -1,0 +1,101 @@
+@import './imports';
+
+// @font-face {
+//     font-family: 'Heebo-Regular';
+//     src: url(/fonts/heebo/Heebo-Regular.ttf) format('truetype');
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+// body {
+//     -webkit-font-smoothing: antialiased;
+//     font-family: Heebo-Regular,'Arial', sans-serif;
+//     color:$text-color;
+//     font-size: vw_size(16,$mobile);
+// }
+// input {
+//     font-size:inherit;
+//     &::placeholder {
+//         color:inherit;
+//         opacity: inherit;
+//     }
+// }
+
+// h1 {
+//     font-size: vw_size(24,$mobile);
+//     @media (min-width: $media-tablet) {
+//         font-size: vw_size(28,$tablet);
+//     }
+//     @media (min-width: $media-desktop) {
+//         font-size: vw_size(28,$desktop);
+//     }
+//     @media (min-width: $media-desktop-large) {
+//         font-size: vw_size(28,$desktop_large);
+//     }
+// }
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+// @media (min-width: $media-tablet) {
+//     h1 {
+//         font-size: vw_size(28,$tablet);
+//     }
+//     h2 {}
+//     h3 {}
+//     h4 {}
+//     h5 {}
+//     h6 {}
+
+//     body {
+//         font-size: vw_size(16,$tablet);
+//     }
+//     input {
+//         &::placeholder {
+//             font-size: vw_size(16,$tablet);
+//         }
+//     }
+// }
+// @media (min-width: $media-desktop) {
+//     h1 {
+//         font-size: vw_size(28,$desktop);
+//         @media (min-width: $media-desktop-large) {
+//             font-size: vw_size(28,$desktop_large);
+//         }
+//     }
+//     h2 {}
+//     h3 {}
+//     h4 {}
+//     h5 {}
+//     h6 {}
+
+//     body {
+//         font-size: vw_size(16,$desktop);
+//     }
+//     input {
+//         &::placeholder {
+//             font-size: vw_size(16,$desktop);
+//         }
+//     }
+// }
+// @media (min-width: $media-desktop-large) {
+//     h1 {
+//         font-size: vw_size(28,$desktop_large);
+//     }
+//     h2 {}
+//     h3 {}
+//     h4 {}
+//     h5 {}
+//     h6 {}
+
+//     body {
+//         font-size: vw_size(16, $desktop-max);
+//     }
+//     input {
+//         &::placeholder {
+//             font-size: vw_size(16, $desktop-max);
+//         }
+//     }
+// }

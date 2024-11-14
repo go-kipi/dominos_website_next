@@ -1,0 +1,282 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.birthday-events-calenndar-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.header {
+		margin-top: vw_size(16, $current);
+		.title {
+			font-family: $font-medium;
+			color: $red;
+			font-size: vw_size(18, $current);
+		}
+	}
+
+	:global(.react-datepicker) {
+		margin-top: vw_size(70, $current);
+
+		border: none;
+		border-radius: unset;
+		:global(.react-datepicker__month-container) {
+			:global(.react-datepicker__header) {
+				border-radius: unset;
+				border: none;
+				background-color: white;
+				.calendar-header-wrapper {
+					display: flex;
+					justify-content: space-between;
+					padding-inline: vw_size(16, $current);
+
+					.month-year {
+						color: #282828;
+						font-family: $font-bold;
+						font-size: vw_size(20, $current);
+					}
+					.arrows {
+						display: flex;
+						width: vw_size(65, $current);
+						justify-content: space-between;
+						.arrow {
+							width: vw_size(19, $current);
+							&.flipped-icon {
+								transform: scaleX(-1);
+							}
+						}
+					}
+				}
+				:global(.react-datepicker__day-names) {
+					margin-top: vw_size(10, $current);
+					:global(.react-datepicker__day-name) {
+						font-family: $font-medium;
+						color: #949494;
+						opacity: 0.65;
+						margin: vw_size(10, $current) vw_size(6, $current);
+						font-size: vw_size(16, $current);
+					}
+				}
+			}
+			:global(.react-datepicker__month) {
+				:global(.react-datepicker__week) {
+					display: flex;
+
+					:global(.react-datepicker__day) {
+						user-select: none;
+						font-family: $font-medium;
+						font-size: vw_size(15, $current);
+						color: #282828;
+						margin: vw_size(10, $current) vw_size(3, $current);
+						width: vw_size(33, $current);
+						height: vw_size(33, $current);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						&:global(.react-datepicker__day--keyboard-selected) {
+							background-color: white;
+						}
+
+						&:global(.react-datepicker__day--disabled),
+						&:global(.react-datepicker__day--outside-month) {
+							color: #cacaca;
+						}
+						&:hover {
+							background-color: white;
+						}
+						&:global(.react-datepicker__day--selected) {
+							background-color: $red;
+							border-radius: 100%;
+							color: $white;
+						}
+						&:global(.react-datepicker__day--today) {
+							position: relative;
+							&::after {
+								content: "";
+								width: 5px;
+								height: 5px;
+								position: absolute;
+								background-color: $red;
+								border-radius: 100%;
+								bottom: vw_size(-3, $current);
+								left: 50%;
+								transform: translateX(-50%);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.birthday-events-calenndar-wrapper {
+		.header {
+			margin-top: vw_size(16, $current);
+			.title {
+				font-size: vw_size(18, $current);
+			}
+		}
+
+		:global(.react-datepicker) {
+			margin-top: vw_size(70, $current);
+
+			:global(.react-datepicker__month-container) {
+				:global(.react-datepicker__header) {
+					.calendar-header-wrapper {
+						padding-inline: vw_size(16, $current);
+
+						.month-year {
+							font-size: vw_size(20, $current);
+						}
+						.arrows {
+							width: vw_size(65, $current);
+							.arrow {
+								width: vw_size(19, $current);
+							}
+						}
+					}
+					:global(.react-datepicker__day-names) {
+						margin-top: vw_size(10, $current);
+						:global(.react-datepicker__day-name) {
+							margin: vw_size(10, $current) vw_size(6, $current);
+							font-size: vw_size(16, $current);
+						}
+					}
+				}
+				:global(.react-datepicker__month) {
+					:global(.react-datepicker__week) {
+						:global(.react-datepicker__day) {
+							font-size: vw_size(15, $current);
+							margin: vw_size(10, $current) vw_size(3, $current);
+							width: vw_size(33, $current);
+							height: vw_size(33, $current);
+
+							&:global(.react-datepicker__day--today) {
+								&::after {
+									bottom: vw_size(-3, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.birthday-events-calenndar-wrapper {
+		.header {
+			margin-top: vw_size(16, $current);
+			.title {
+				font-family: $font-bold;
+				font-size: vw_size(18, $current);
+			}
+		}
+
+		:global(.react-datepicker) {
+			margin-top: vw_size(58, $current);
+
+			:global(.react-datepicker__month-container) {
+				:global(.react-datepicker__header) {
+					.calendar-header-wrapper {
+						padding-inline: vw_size(16, $current);
+
+						.month-year {
+							font-size: vw_size(20, $current);
+						}
+						.arrows {
+							width: vw_size(65, $current);
+							.arrow {
+								width: vw_size(19, $current);
+							}
+						}
+					}
+					:global(.react-datepicker__day-names) {
+						margin-top: vw_size(10, $current);
+						:global(.react-datepicker__day-name) {
+							margin: vw_size(10, $current) vw_size(8, $current);
+							font-size: vw_size(16, $current);
+						}
+					}
+				}
+				:global(.react-datepicker__month) {
+					:global(.react-datepicker__week) {
+						:global(.react-datepicker__day) {
+							font-size: vw_size(15, $current);
+							margin: vw_size(10, $current) vw_size(3, $current);
+							width: vw_size(33, $current);
+							height: vw_size(33, $current);
+
+							&:global(.react-datepicker__day--today) {
+								&::after {
+									bottom: vw_size(-3, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.birthday-events-calenndar-wrapper {
+		.header {
+			margin-top: vw_size(16, $current);
+			.title {
+				font-size: vw_size(18, $current);
+			}
+		}
+
+		:global(.react-datepicker) {
+			margin-top: vw_size(58, $current);
+
+			:global(.react-datepicker__month-container) {
+				:global(.react-datepicker__header) {
+					.calendar-header-wrapper {
+						padding-inline: vw_size(16, $current);
+
+						.month-year {
+							font-size: vw_size(20, $current);
+						}
+						.arrows {
+							width: vw_size(65, $current);
+							.arrow {
+								width: vw_size(19, $current);
+							}
+						}
+					}
+					:global(.react-datepicker__day-names) {
+						margin-top: vw_size(10, $current);
+						:global(.react-datepicker__day-name) {
+							margin: vw_size(10, $current) vw_size(3, $current);
+							font-size: vw_size(16, $current);
+						}
+					}
+				}
+				:global(.react-datepicker__month) {
+					:global(.react-datepicker__week) {
+						:global(.react-datepicker__day) {
+							font-size: vw_size(15, $current);
+							margin: vw_size(10, $current) vw_size(3, $current);
+							width: vw_size(33, $current);
+							height: vw_size(33, $current);
+
+							&:global(.react-datepicker__day--today) {
+								&::after {
+									bottom: vw_size(-3, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

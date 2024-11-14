@@ -1,0 +1,10 @@
+@import "src/styles/imports";
+.recaptcha-text {
+    direction: rtl;
+    font-size: 12px;
+
+    a {
+        color:$blue;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,431 @@
+@import "src/styles/imports";
+
+$current: 375;
+:global(.ltr) {
+	.menu-header-wrapper {
+		.header {
+			.header-inner {
+				.header-right {
+					.burger-icon {
+						.additional {
+							left: unset;
+							right: vw_size(10, $current);
+						}
+					}
+				}
+
+				.header-left {
+					.cart-img-wrapper {
+						.cart-img {
+							.additional {
+								left: unset;
+
+								right: vw_size(16, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.menu-header-wrapper {
+	height: vw_size(110, $current);
+
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding-top: vw_size(27, $current);
+		padding-inline: vw_size(14, $current);
+		z-index: 100;
+		height: vw_size(110, $current);
+
+		background-image: linear-gradient(
+			-180deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 1) 30%,
+			rgba(0, 0, 0, 0) 100%
+		);
+
+		.header-inner {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+
+			.header-right {
+				width: 33%;
+				display: flex;
+				justify-content: flex-start;
+
+				position: relative;
+				padding: 0 vw_size(20, $current) 0; // vw_size(20, $current)
+				.burger-icon {
+					cursor: pointer;
+					width: vw_size(20, $current);
+
+					.additional {
+						position: absolute;
+						top: vw_size(-6, $current);
+						left: vw_size(10, $current);
+					}
+				}
+			}
+
+			.header-middle {
+				width: 33%;
+
+				display: flex;
+				justify-content: center;
+
+				.header-title {
+					margin: 0;
+					font-family: $font;
+					color: $white;
+					font-size: vw_size(14, $current);
+					line-height: vw_size(16, $current);
+				}
+			}
+
+			.header-left {
+				width: 33%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
+				.coupon-btn {
+					padding: vw_size(3, $current) vw_size(6, $current) 0;
+					margin-inline-end: vw_size(6, $current);
+
+					.coupon-img {
+						width: vw_size(30, $current);
+					}
+				}
+
+				.cart-img-wrapper {
+					padding: 0 vw_size(8, $current);
+
+					.cart-img {
+						width: vw_size(26, $current);
+						position: relative;
+
+						cursor: pointer;
+
+						.additional {
+							position: absolute;
+							top: vw_size(-4, $current);
+							left: vw_size(15, $current);
+							transition: all 300ms ease-in-out;
+
+							&.scale {
+								transform: scale(1.5);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.ltr) {
+		.menu-header-wrapper {
+			.header {
+				.header-inner {
+					.header-right {
+						.burger-icon {
+							.additional {
+								right: vw_size(10, $current);
+							}
+						}
+					}
+
+					.header-left {
+						.cart-img-wrapper {
+							.cart-img {
+								.additional {
+									right: vw_size(16, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-header-wrapper {
+		height: vw_size(110, $current);
+
+		.header {
+			padding-top: vw_size(34, $current);
+			height: vw_size(110, $current);
+
+			padding-inline: vw_size(34, $current);
+
+			.header-inner {
+				.header-right {
+					padding: unset;
+
+					.burger-icon {
+						width: vw_size(20, $current);
+
+						.additional {
+							top: vw_size(-6, $current);
+							left: vw_size(10, $current);
+						}
+					}
+				}
+
+				.header-middle {
+					.header-title {
+						font-size: vw_size(14, $current);
+						line-height: vw_size(16, $current);
+					}
+				}
+
+				.header-left {
+					gap: vw_size(35, $current);
+
+					.coupon-btn {
+						height: unset;
+						padding: unset;
+						margin-inline-end: unset;
+
+						.coupon-img {
+							width: vw_size(38, $current);
+						}
+					}
+
+					.cart-img-wrapper {
+						//margin-top: vw_size(-8, $current);
+
+						padding: unset;
+
+						.cart-img {
+							width: vw_size(25, $current);
+
+							.additional {
+								top: vw_size(-5, $current);
+								left: vw_size(14, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.menu-header-wrapper {
+			.header {
+				.header-inner {
+					.header-right {
+						.burger-icon {
+							.additional {
+								right: vw_size(10, $current);
+							}
+						}
+					}
+
+					.header-left {
+						.cart-img-wrapper {
+							.cart-img {
+								.additional {
+									right: vw_size(14, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-header-wrapper {
+		height: vw_size(134, $current);
+
+		.hiddable {
+			opacity: 1;
+			transition: all 0.3s ease-in;
+
+			&.hide {
+				opacity: 0;
+			}
+		}
+
+		.header {
+			padding-top: vw_size(34, $current);
+			padding-inline: vw_size(34, $current);
+			height: vw_size(134, $current);
+
+			.header-inner {
+				.header-right {
+					.burger-icon {
+						width: vw_size(20, $current);
+
+						.additional {
+							top: vw_size(-6, $current);
+							left: vw_size(10, $current);
+						}
+					}
+				}
+
+				.header-middle {
+					align-items: center;
+					flex-direction: column;
+
+					.logo {
+						width: vw_size(34, $current);
+					}
+				}
+
+				.header-left {
+					gap: vw_size(40, $current);
+
+					.coupon-btn {
+						display: flex;
+						gap: vw_size(7, $current);
+						align-items: center;
+
+						.coupon-img {
+							display: flex;
+							width: unset;
+
+							.coupon-menu-img {
+								width: vw_size(26, $current);
+							}
+
+							.coupon-text {
+								font-family: $font;
+								font-size: vw_size(17.56, $current);
+								letter-spacing: vw_size(1.23, $current);
+								margin-inline-start: vw_size(7, $current);
+								color: $white;
+							}
+						}
+					}
+
+					.cart-img-wrapper {
+						margin-top: unset;
+
+						.cart-img {
+							width: vw_size(25, $current);
+
+							.additional {
+								top: vw_size(-5, $current);
+								left: vw_size(14, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.ltr) {
+		.menu-header-wrapper {
+			.header {
+				.header-inner {
+					.header-right {
+						.burger-icon {
+							.additional {
+								right: vw_size(10, $current);
+							}
+						}
+					}
+
+					.header-left {
+						.cart-img-wrapper {
+							.cart-img {
+								.additional {
+									right: vw_size(14, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-header-wrapper {
+		height: vw_size(134, $current);
+
+		.header {
+			padding-top: vw_size(34, $current);
+			padding-inline: vw_size(34, $current);
+			height: vw_size(134, $current);
+
+			.header-inner {
+				.header-right {
+					.burger-icon {
+						width: vw_size(20, $current);
+
+						.additional {
+							top: vw_size(-6, $current);
+							left: vw_size(10, $current);
+						}
+					}
+				}
+
+				.header-middle {
+					.logo {
+						width: vw_size(34, $current);
+					}
+
+					.header-title {
+						margin-top: vw_size(17, $current);
+						font-size: vw_size(40, $current);
+					}
+				}
+
+				.header-left {
+					gap: vw_size(40, $current);
+
+					.coupon-btn {
+						gap: vw_size(7, $current);
+
+						.coupon-img {
+							.coupon-menu-img {
+								width: vw_size(26, $current);
+							}
+
+							.coupon-text {
+								font-family: $font;
+								font-size: vw_size(17.56, $current);
+								letter-spacing: vw_size(1.23, $current);
+								margin-inline-start: vw_size(7, $current);
+								color: $white;
+							}
+						}
+					}
+
+					.cart-img-wrapper {
+						.cart-img {
+							width: vw_size(30, $current);
+							height: vw_size(30, $current);
+
+							.additional {
+								top: vw_size(-4, $current);
+								left: vw_size(17, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

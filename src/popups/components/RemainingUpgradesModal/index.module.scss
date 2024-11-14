@@ -1,0 +1,284 @@
+@import "src/styles/imports";
+
+$current: $mobile;
+:global(.popup) {
+	:global(.backdrop) {
+		&.upgrades-popup {
+			align-items: flex-end;
+		}
+	}
+}
+:global(.popup) {
+	.upgrades-popup {
+		align-items: flex-end;
+		:global(.popup_wrapper) {
+			position: relative;
+			height: 80vh;
+			background: #ffffff;
+			display: flex;
+			flex-direction: column;
+			transition: all 200ms ease-out;
+			justify-content: flex-start;
+			overflow: hidden;
+			.close-icon-wrapper {
+				cursor: pointer;
+				position: absolute;
+				z-index: 10000;
+				top: vw_size(15, $current);
+				left: vw_size(10, $current);
+				width: vw_size(18, $current);
+				height: vw_size(18, $current);
+			}
+			:global(.popup_content) {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				.remaining-upgrades-wrapper {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					flex: 1;
+					.remaining-upgrades-img {
+						width: vw_size(102, $current);
+						height: vw_size(102, $current);
+
+						margin-top: vw_size(52, $current);
+					}
+					.textWrapper {
+						.text {
+							color: #596b75;
+							text-align: center;
+							font-size: vw_size(16, $current);
+							font-family: $font-bold;
+							margin: 0;
+						}
+					}
+					//}
+					.title,
+					.subtitle {
+						margin: 0;
+						text-align: center;
+					}
+					.subtitle,
+					.text {
+						color: #596b75;
+						font-size: vw_size(16, $current);
+					}
+					.textWrapper {
+						margin-top: vw_size(10, $current);
+
+						margin-bottom: vw_size(35, $current);
+					}
+					.title {
+						margin-top: vw_size(25, $current);
+						font-size: vw_size(22, $current);
+						font-family: $font-medium;
+					}
+					.subtitle {
+						font-family: $font-book;
+						margin-top: vw_size(16, $current);
+					}
+					.actions {
+						margin-top: auto;
+						display: flex;
+						align-items: center;
+						flex-direction: column;
+						margin-bottom: vw_size(51, $current);
+					}
+
+					.continue-close-btn {
+						margin-top: vw_size(24, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		:global(.backdrop) {
+			&.upgrades-popup {
+				align-items: center;
+			}
+		}
+	}
+	:global(.popup) {
+		.upgrades-popup {
+			justify-content: center;
+
+			:global(.popup_wrapper) {
+				height: auto;
+				min-width: vw_size(512, $current);
+				min-height: vw_size(512, $current);
+
+				border-radius: vw_size(9, $current);
+				.close-icon-wrapper {
+					top: vw_size(5, $current);
+					left: vw_size(10, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+				:global(.popup_content) {
+					.remaining-upgrades-wrapper {
+						.remaining-upgrades-img {
+							width: vw_size(102, $current);
+							height: vw_size(102, $current);
+							margin-top: vw_size(52, $current);
+						}
+						.textWrapper {
+							margin-top: vw_size(10, $current);
+							margin-bottom: vw_size(35, $current);
+
+							.text-desktop {
+								text-align: center;
+								color: #31383e;
+								font-size: vw_size(16, $current);
+								font-family: $font-bold;
+								margin: 0;
+							}
+						}
+						.subtitle,
+						.text {
+							font-size: vw_size(16, $current);
+						}
+						.title {
+							margin-top: vw_size(25, $current);
+							font-size: vw_size(22, $current);
+						}
+						.subtitle {
+							margin-top: vw_size(16, $current);
+						}
+						.actions {
+							margin-bottom: vw_size(51, $current);
+						}
+						.continue-close-btn {
+							margin-top: vw_size(24, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		.upgrades-popup {
+			:global(.popup_wrapper) {
+				height: auto;
+				min-width: vw_size(512, $current);
+				min-height: vw_size(512, $current);
+
+				border-radius: vw_size(9, $current);
+				.close-icon-wrapper {
+					top: vw_size(5, $current);
+					left: vw_size(10, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+				:global(.popup_content) {
+					.remaining-upgrades-wrapper {
+						.remaining-upgrades-img {
+							width: vw_size(102, $current);
+							height: vw_size(102, $current);
+							margin-top: vw_size(52, $current);
+						}
+						.subtitle,
+						.title {
+							color: #31383e;
+						}
+						.title {
+							margin-top: vw_size(25, $current);
+							font-size: vw_size(22, $current);
+						}
+						.subtitle {
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(16, $current);
+						}
+						.textWrapper {
+							margin-top: vw_size(10, $current);
+
+							margin-bottom: vw_size(35, $current);
+
+							.text-desktop {
+								font-size: vw_size(16, $current);
+							}
+						}
+						.actions {
+							margin-bottom: vw_size(50, $current);
+						}
+						.continue-close-btn {
+							margin-top: vw_size(35, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_large;
+	:global(.popup) {
+		.upgrades-popup {
+			justify-content: center;
+
+			:global(.popup_wrapper) {
+				height: auto;
+				min-width: vw_size(512, $current);
+				min-height: vw_size(512, $current);
+
+				border-radius: vw_size(9, $current);
+				.close-icon-wrapper {
+					top: vw_size(5, $current);
+					left: vw_size(10, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+				:global(.popup_content) {
+					.remaining-upgrades-wrapper {
+						.remaining-upgrades-img {
+							width: vw_size(102, $current);
+							height: vw_size(102, $current);
+							margin-top: vw_size(52, $current);
+						}
+						.subtitle,
+						.title {
+							color: #31383e;
+						}
+						.title {
+							margin-top: vw_size(25, $current);
+							font-size: vw_size(22, $current);
+						}
+						.subtitle {
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(16, $current);
+						}
+						.textWrapper {
+							margin-top: vw_size(10, $current);
+
+							margin-bottom: vw_size(35, $current);
+
+							.text-desktop {
+								text-align: center;
+							}
+							.text-desktop {
+								color: #31383e;
+								font-size: vw_size(16, $current);
+							}
+						}
+						.actions {
+							margin-bottom: vw_size(50, $current);
+						}
+						.continue-close-btn {
+							margin-top: vw_size(35, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}

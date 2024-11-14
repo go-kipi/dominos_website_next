@@ -1,0 +1,52 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.products-wrapper {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-top: vw_size(25, $current);
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.products-wrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: vw_size(72, $current);
+		gap: vw_size(20, $current);
+		justify-content: center;
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.products-wrapper {
+		margin-top: vw_size(72, $current);
+		margin-inline-start: vw_size(172, $current);
+		margin-inline-end: vw_size(120, $current);
+		justify-content: initial;
+		gap: initial;
+
+		.deal-product-wrapper {
+			flex-basis: 33%;
+			padding-inline-start: vw_size(10, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	.products-wrapper {
+		margin-top: vw_size(72, $current);
+		margin-inline-start: vw_size(200, $current);
+		margin-inline-end: vw_size(150, $current);
+
+		.deal-product-wrapper {
+			flex-basis: 25%;
+			padding-inline-start: vw_size(5, $current);
+		}
+	}
+}

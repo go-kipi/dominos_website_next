@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>badge/small circle</title>
+    <defs>
+        <circle id="path-1" cx="2.90714286" cy="2.90714286" r="2.90714286"></circle>
+        <filter x="-86.0%" y="-51.6%" width="272.0%" height="272.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.801622689   0 0 0 0 0.885166228   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="בילדר_בקשות-מיוחדות_חיווי_מסך-קצר" transform="translate(-325.000000, -429.000000)">
+            <g id="Group-3" transform="translate(20.000000, 421.000000)">
+                <g id="Oval" transform="translate(308.000000, 9.000000)">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <circle stroke="#FFFFFF" stroke-width="1" fill="#017AFF" fill-rule="evenodd" cx="2.90714286" cy="2.90714286" r="3.40714286"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

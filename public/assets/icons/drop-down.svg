@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.36" height="6.715" viewBox="0 0 12.36 6.715">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:none}.cls-2{clip-path:url(#clip-path)}.cls-3{stroke:#30354f;stroke-linecap:round;stroke-width:1.5px}
+        </style>
+        <clipPath id="clip-path">
+            <path d="M0 0h12.36v6.715H0z" class="cls-1"/>
+        </clipPath>
+    </defs>
+    <g id="drop_down" class="cls-2" data-name="drop down">
+        <path id="Path_44" d="M-5897-16347.3s5.414 5.215 5.547 5.215 5.313-5.215 5.313-5.215" class="cls-3" data-name="Path 44" transform="translate(5897.75 16348.055)"/>
+    </g>
+</svg>

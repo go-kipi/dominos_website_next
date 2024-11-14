@@ -1,0 +1,54 @@
+@import '../../../../styles/imports';
+
+/* autocomplete wrapper */
+.auto-wrapper {
+    position: relative;
+    z-index: 40;
+
+    .auto-input {
+        width:100%;
+    }
+    .auto-menu {
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        top:100%;
+        width: 100%;
+        border: 1px solid rgba(0,0,0,0);
+        border-radius: 4px;
+        background-color: #ffffff;
+        transition: max-height 100ms;
+        padding:0;
+        margin:0;
+        opacity: 0;
+        z-index: 100;
+    }
+    .auto-option {
+        display: flex;
+        align-items: center;
+        padding:0 5px;
+        cursor: pointer;
+        z-index: 110;
+    }
+
+    .auto-option.highlight,
+    .auto-option:hover,
+    .auto-option.active {
+        background-color: $react-teal;
+        color: white;
+    }
+
+    &:focus {
+        outline: none;
+    }
+    &.active {
+        .auto-menu {
+            max-height: vw_size(240,$mobile);
+            overflow: scroll;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            opacity: 1;
+            box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+        }
+    }
+}

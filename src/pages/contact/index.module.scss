@@ -1,0 +1,53 @@
+@import '../../styles/imports';
+
+.contact-page-wrapper {
+    padding:vw_size(30, $mobile) vw_size(15, $mobile);
+
+    .field {
+        margin-bottom: vw_size(35,$mobile);
+    }
+    .submit-btn {
+        width: 100%;
+        height:vw_size(30,$mobile);
+    }
+}
+@media (min-width: $media-tablet) {
+    .contact-page-wrapper {
+        width:vw_size(400,$tablet);
+        margin: 0 auto;
+        padding:vw_size(70, $tablet) vw_size(15, $tablet);
+
+        .field {
+            margin-bottom: vw_size(35,$tablet);
+        }
+        .submit-btn {
+            height:vw_size(30,$tablet);
+        }
+    }    
+}
+@media (min-width: $media-desktop) {
+    .contact-page-wrapper {
+        width:vw_size(300,$desktop);
+        padding:vw_size(70, $desktop) vw_size(15, $desktop);
+
+        .field {
+            margin-bottom: vw_size(35,$desktop);
+        }
+        .submit-btn {
+            height:vw_size(30,$desktop);
+        }
+    }
+}
+@media (min-width: $media-desktop-large) {
+    .contact-page-wrapper {
+        width:vw_size(300,$desktop-large);
+        padding:vw_size(70, $desktop-large) vw_size(15, $desktop-large);
+
+        .field {
+            margin-bottom: vw_size(35,$desktop-large);
+        }
+        .submit-btn {
+            height:vw_size(30,$desktop-large);
+        }
+    }
+}

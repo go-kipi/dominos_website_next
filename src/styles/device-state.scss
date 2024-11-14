@@ -1,0 +1,22 @@
+@import './imports';
+
+/* Device State indicator classes - for determining mobile/tablet/desktop */
+.state-indicator {
+    position: relative;
+    z-index: 4;
+}
+@media (min-width: $media-tablet) {
+    .state-indicator {
+        z-index: 3;
+    }
+}
+@media (min-width: $media-desktop) {
+    .state-indicator {
+        z-index: 2;
+    }
+}
+@media (min-width: $media-desktop_large) {
+    .state-indicator {
+        z-index: 1;
+    }
+}

@@ -1,0 +1,105 @@
+@import "settings";
+
+@mixin font-size($px_size, $design_width) {
+	font-size: clamp(
+		12px,
+		vw_size($px_size, $design_width),
+		vw_size($px_size, $design_width)
+	);
+}
+
+@mixin hide-scrollbar() {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@mixin itemPaddingEnd() {
+	padding-inline-end: vw_size(15, $current);
+	@media (min-width: $media-tablet) {
+		$current: $tablet;
+		padding-inline-end: vw_size(15, $current);
+	}
+	@media (min-width: $media-desktop) {
+		$current: $desktop;
+		padding-inline-end: vw_size(23, $current);
+	}
+	@media (min-width: $media-desktop_large) {
+		$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+		padding-inline-end: vw_size(23, $currentSmall);
+	}
+}
+
+@mixin itemTextPaddingEnd() {
+	padding-inline-end: vw_size(5, $current);
+	@media (min-width: $media-tablet) {
+		$current: $tablet;
+		padding-inline-end: vw_size(5, $current);
+	}
+	@media (min-width: $media-desktop) {
+		$current: $desktop;
+		padding-inline-end: vw_size(5, $current);
+	}
+	@media (min-width: $media-desktop) {
+		$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+		padding-inline-end: vw_size(5, $currentSmall);
+	}
+}
+
+@mixin left($value) {
+	:global(.rtl) & {
+		left: $value;
+		right: unset;
+	}
+
+	:global(.ltr) & {
+		right: $value;
+		left: unset;
+	}
+}
+
+@mixin right($value) {
+	:global(.rtl) & {
+		right: $value;
+		left: unset;
+	}
+
+	:global(.ltr) & {
+		left: $value;
+		right: unset;
+	}
+}
+@mixin preventScrollingGapInSafari() {
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+@mixin itemCardDescription() {
+	$current: $mobile;
+	font-size: vw_size(14, $current);
+	color: #b0b0b0;
+	line-height: vw_size(18, $current);
+	font-family: $font-medium;
+
+	@media (min-width: $media-tablet) {
+		$current: $tablet;
+		font-size: vw_size(14, $current);
+		line-height: vw_size(18, $current);
+	}
+	@media (min-width: $media-desktop) {
+		$current: $desktop;
+		font-size: vw_size(14, $current);
+		line-height: vw_size(18, $current);
+		font-family: $font-book;
+	}
+	@media (min-width: $media-desktop_large) {
+		$current: $desktop-max;
+		font-size: vw_size(14, $current);
+		line-height: vw_size(18, $current);
+	}
+}

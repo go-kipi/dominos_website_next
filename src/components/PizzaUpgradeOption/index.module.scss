@@ -1,0 +1,202 @@
+@import "/src/styles/imports";
+$current: 375;
+
+.pizza-upgrade-option {
+	display: flex;
+	// grid-template-columns: 2fr 1fr 2fr;
+	// display: grid;
+	margin-top: vw_size(20, $current);
+	justify-self: center;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	&:last-child {
+		padding-bottom: vw_size(20, $current);
+	}
+
+	&.selected {
+		.price-wrapper {
+			font-family: $font-bold;
+		}
+		.upgrade-checkbox {
+			& > label > span {
+				font-family: $font-bold;
+			}
+		}
+	}
+
+	.upgrade-checkbox {
+		label {
+			flex-wrap: nowrap;
+			align-items: center;
+			gap: vw_size(5, $current);
+			.image-wrapper {
+				width: max-content;
+				height: max-content;
+				margin: 0;
+				img {
+					width: max-content;
+				}
+			}
+		}
+		& > label > span {
+			font-family: $font;
+			color: #d1d1d1;
+			font-size: vw_size(15, $current);
+		}
+	}
+	.price-and-info {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		.info-icon {
+			justify-self: center;
+			height: vw_size(15, $current);
+			width: vw_size(15, $current);
+			margin-inline-start: vw_size(5, $current);
+		}
+		.price-wrapper {
+			justify-self: end;
+			color: #d7d7d7;
+			font-family: $font;
+			font-size: vw_size(15, $current);
+
+			.currency {
+				font-size: vw_size(15, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.pizza-upgrade-option {
+		margin-top: vw_size(20, $current);
+
+		&:last-child {
+			padding-bottom: vw_size(20, $current);
+		}
+		&.selected {
+			.price-wrapper {
+				font-family: $font-bold;
+			}
+			.upgrade-checkbox-wrapper {
+				.upgrade-checkbox {
+					& > label > span {
+						font-family: $font-bold;
+					}
+				}
+			}
+		}
+		.upgrade-checkbox {
+			label {
+				gap: vw_size(5, $current);
+			}
+			& > label > span {
+				font-size: vw_size(15, $current);
+			}
+		}
+		.info-icon {
+			height: vw_size(15, $current);
+			width: vw_size(15, $current);
+		}
+		.price-wrapper {
+			font-size: vw_size(15, $current);
+			.currency {
+				font-size: vw_size(15, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.pizza-upgrade-option {
+		margin-top: vw_size(20, $current);
+
+		&:last-child {
+			padding-bottom: vw_size(20, $current);
+		}
+		.upgrade-checkbox {
+			label {
+				text-align: start;
+				gap: vw_size(10, $current);
+
+				.image-wrapper {
+					width: max-content;
+					height: max-content;
+					margin: 0;
+				}
+			}
+			& > label > span {
+				font-size: vw_size(15, $current);
+			}
+		}
+		.price-and-info {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			.info-icon {
+				height: vw_size(15, $current);
+				width: vw_size(15, $current);
+			}
+			.price-wrapper {
+				font-family: $font;
+				font-size: vw_size(15, $current);
+				.currency {
+					font-size: vw_size(15, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	.pizza-upgrade-option {
+		margin-top: vw_size(20, $current);
+		&:last-child {
+			padding-bottom: vw_size(20, $current);
+		}
+
+		&.selected {
+			.price-wrapper {
+				font-family: $font-bold;
+			}
+			.upgrade-checkbox-wrapper {
+				.upgrade-checkbox {
+					& > label > span {
+						font-family: $font-bold;
+					}
+				}
+			}
+		}
+
+		.upgrade-checkbox-wrapper {
+			gap: vw_size(8, $current);
+			.upgrade-checkbox {
+				label {
+					gap: vw_size(8, $current);
+				}
+				& > label > span {
+					font-size: vw_size(15, $current);
+				}
+			}
+		}
+		.price-and-info {
+			.info-icon {
+				height: vw_size(15, $current);
+				width: vw_size(15, $current);
+				margin-right: vw_size(10, $current);
+			}
+			.price-wrapper {
+				font-size: vw_size(15, $current);
+				.currency {
+					font-size: vw_size(15, $current);
+				}
+			}
+		}
+	}
+}

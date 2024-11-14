@@ -1,0 +1,138 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+.page-404-wrapper {
+	height: 100%;
+	.bg-img {
+		img {
+			object-position: right;
+		}
+	}
+
+	.header-content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.content {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+			z-index: 1000;
+			.logo {
+				margin-top: auto;
+
+				width: vw_size(128, $current);
+			}
+			.title {
+				margin-top: vw_size(32, $current);
+				font-family: $font;
+				color: white;
+				font-size: vw_size(16, $current);
+				line-height: vw_size(30, $current);
+				letter-spacing: -0.16px;
+				text-align: center;
+			}
+			.subtitle {
+				margin-top: vw_size(15, $current);
+				font-family: $font-medium;
+				color: white;
+				font-size: vw_size(24, $current);
+				line-height: vw_size(32, $current);
+				letter-spacing: -0.24px;
+				text-align: center;
+			}
+			.button {
+				margin-top: vw_size(28, $current);
+
+				margin-bottom: vw_size(45, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.page-404-wrapper {
+		.header-content {
+			.content {
+				.logo {
+					width: vw_size(128, $current);
+				}
+				.title {
+					margin-top: vw_size(32, $current);
+
+					font-size: vw_size(16, $current);
+					line-height: vw_size(30, $current);
+				}
+				.subtitle {
+					margin-top: vw_size(15, $current);
+
+					font-size: vw_size(24, $current);
+					line-height: vw_size(32, $current);
+				}
+				.button {
+					margin-top: vw_size(28, $current);
+
+					margin-bottom: vw_size(45, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.page-404-wrapper {
+		.header-content {
+			.content {
+				margin-inline-end: vw_size(194, $desktop_max);
+				margin-inline-start: auto;
+				justify-content: center;
+
+				.title {
+					margin-top: unset;
+
+					font-size: vw_size(16, $current);
+					line-height: vw_size(30, $current);
+				}
+				.subtitle {
+					margin-top: vw_size(26, $current);
+
+					font-size: vw_size(40, $current);
+					line-height: vw_size(48, $current);
+				}
+				.button {
+					margin-top: vw_size(28, $current);
+
+					margin-bottom: unset;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.page-404-wrapper {
+		.header-content {
+			.content {
+				.title {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(30, $current);
+				}
+				.subtitle {
+					margin-top: vw_size(26, $current);
+
+					font-size: vw_size(40, $current);
+					line-height: vw_size(48, $current);
+				}
+				.button {
+					margin-top: vw_size(28, $current);
+				}
+			}
+		}
+	}
+}

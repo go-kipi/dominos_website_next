@@ -1,0 +1,2423 @@
+[
+	{
+		"source": "/%D7%90%D7%A8%D7%95%D7%97%D7%95%D7%AA",
+		"destination": "/menu",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25AA%25D7%25A7%25D7%25A0%25D7%2595%25D7%259F-%25D7%2590%25D7%25AA%25D7%25A8",
+		"destination": "/content/terms-of-use",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8",
+		"destination": "https://api.whatsapp.com/send/?phone=972732487007&text&type=phone_number&app_absent=0",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%96%D7%9E%D7%9F-%D7%A2%D7%9B%D7%A9%D7%99%D7%95",
+		"destination": "/menu",
+		"permanent": true
+	},
+	{
+		"source": "/Facebook",
+		"destination": "https://www.facebook.com/DominosPizzaIsrael",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A0%D7%90%D7%99-%D7%A9%D7%99%D7%9E%D7%95%D7%A9",
+		"destination": "/content/terms-of-use",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A9%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%A7%D7%95%D7%97%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25AA%25D7%25A7%25D7%25A0%25D7%2595%25D7%259F-%25D7%25A4%25D7%25A2%25D7%2599%25D7%259C%25D7%2595%25D7%25AA-%25D7%259E%25D7%2595%25D7%25A0%25D7%2593%25D7%2599%25D7%2590%25D7%259C-%25D7%25A2%25D7%259C-%25D7%2594%25D7%259E%25D7%2592%25D7%25A9-2022",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%A7%D7%A6%D7%AA-%D7%A2%D7%9C%D7%99%D7%A0%D7%95",
+		"destination": "/jobs/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%A6%D7%94%D7%A8%D7%AA-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+		"destination": "/content/privacy-policy",
+		"permanent": true
+	},
+	{
+		"source": "/content/birthdays-events",
+		"destination": "/birthdays-events",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/branches",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%95%D7%AA-%D7%91%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91",
+		"destination": "/branches/Tel-Aviv-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%97%D7%95%D7%9C%D7%95%D7%9F",
+		"destination": "/branches/Holon-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%A7%D7%A8%D7%99%D7%AA-%D7%91%D7%99%D7%90%D7%9C%D7%99%D7%A7",
+		"destination": "/branches/Krayot-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA",
+		"destination": "/branches/Rehovot-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2",
+		"destination": "/branches/Beer-Sheva-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D",
+		"destination": "/branches/Givatayim-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%9C%D7%A6%D7%99%D7%95%D7%9F",
+		"destination": "/branches/Rishon-Lezion-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%97%D7%99%D7%A4%D7%94",
+		"destination": "/branches/Haifa-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%A4%D7%AA%D7%97-%D7%AA%D7%A7%D7%95%D7%95%D7%94",
+		"destination": "/branches/Petah-Tikva-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%91%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F",
+		"destination": "/branches/Modiin-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90",
+		"destination": "/branches/Kfar-Saba-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94",
+		"destination": "/branches/Herzliya-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%A0%D7%AA%D7%A0%D7%99%D7%94",
+		"destination": "/branches/Netanya-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%90%D7%A9%D7%93%D7%95%D7%93",
+		"destination": "/branches/Ashdod-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D",
+		"destination": "/branches/Jerusalem-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%9E%D7%9C%D7%94",
+		"destination": "/branches/Ramla/Ramla",
+		"permanent": true
+	},
+	{
+		"source": "/branches/afula",
+		"destination": "/branches/Afula-City/Afula",
+		"permanent": true
+	},
+	{
+		"source": "/branches/nahariya",
+		"destination": "/branches/Nahariya-City/Nahariya",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%95%D7%A8%D7%95%D7%9B%D7%95%D7%91-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D-%D7%A8%22%D7%92-%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Givatayim-City/Borohov",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%AA%22%D7%90-%D7%94%D7%99%D7%A8%D7%A7%D7%95%D7%9F-%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Tel-Aviv-City/Hayarkon-kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A4%22%D7%AA-%D7%A9%D7%98%D7%9E%D7%A4%D7%A4%D7%A8---%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Petah-Tikva-City/Stampfer",
+		"permanent": true
+	},
+	{
+		"source": "/en/branches/Ashkelon/ashkelon",
+		"destination": "/branches/Ashkelon-city/Ashkelon",
+		"permanent": true
+	},
+	{
+		"source": "/en/branches/nahariya",
+		"destination": "/branches/Nahariya-City/Nahariya",
+		"permanent": true
+	},
+	{
+		"source": "/branches/Ashdod-Kosher",
+		"destination": "/branches/Ashdod-City/Ashdod-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/branches/Ashkelon-Kosher",
+		"destination": "/branches/Ashkelon-city/Ashkelon-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%99%D7%91%D7%A0%D7%94",
+		"destination": "/branches/Yavne/Yavne",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%94%D7%95%D7%93-%D7%94%D7%A9%D7%A8%D7%95%D7%9F",
+		"destination": "/branches/Hod-Hasharon/Hod-Hasharon",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%9E%D7%AA-%D7%92%D7%9F",
+		"destination": "/branches/Ramat-Gan/Ramat-Gan",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%9E%D7%AA-%D7%94%D7%A9%D7%A8%D7%95%D7%9F",
+		"destination": "/branches/Ramat-Hasharon/ramat-hasharon",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%99%D7%9C%D7%AA",
+		"destination": "/branches/Eilat/Eilat",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90",
+		"destination": "/branches/Kfar-Saba-City/Weizmann",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F",
+		"destination": "/branches/Ashkelon-city/Ashkelon-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%A9%D7%93%D7%95%D7%93---%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Ashdod-City/Ashdod-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%A2%D7%A0%D7%A0%D7%94",
+		"destination": "/branches/Raanana-City/raanana",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%AA-%D7%99%D7%9D",
+		"destination": "/branches/Bat-Yam-City/Bat-Yam",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%90%D7%A9-%D7%94%D7%A2%D7%99%D7%9F",
+		"destination": "/branches/Rosh-HaAyin-City/Rosh-HaAyin",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%92%D7%A0%D7%99-%D7%AA%D7%A7%D7%95%D7%95%D7%94",
+		"destination": "/branches/Ganei-Tikva-City/Ganei-Tikva",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%9E%D7%AA-%D7%99%D7%A9%D7%99",
+		"destination": "/branches/Ramat-Yishai-City/Ramat-Yishai",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%94%D7%A8%D7%99%D7%94",
+		"destination": "/branches/Nahariya-City/Nahariya",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%99%D7%94%D7%95%D7%93",
+		"destination": "/branches/Yehud-City/Yehud",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%96%D7%9B%D7%A8%D7%95%D7%9F-%D7%99%D7%A2%D7%A7%D7%91",
+		"destination": "/branches/Zichron-Yaakov-City/Zichron-Yaakov",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A7%D7%A8%D7%9C%D7%99%D7%91%D7%9A",
+		"destination": "/branches/Tel-Aviv-City/Karlibach",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F-%D7%9E%D7%9C%D7%99%D7%91%D7%95",
+		"destination": "/branches/Modiin-City/Malibu",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%93%D7%A8%D7%94",
+		"destination": "/branches/Hadera-City/Hadera",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2-%D7%A8%D7%9E%D7%95%D7%AA-",
+		"destination": "/branches/Beer-Sheva-City/Ramot",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%99%D7%A4%D7%94-%D7%90%D7%99%D7%A0%D7%A9%D7%98%D7%99%D7%99%D7%9F",
+		"destination": "/branches/Haifa-City/Einstein",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2",
+		"destination": "/branches/Beer-Sheva-City/Hebron",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%94%D7%98",
+		"destination": "/branches/Rahat-City/Rahat",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%9E%D7%A8%D7%9B%D7%96",
+		"destination": "/branches/Netanya-City/Netanya-Center",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A4%D7%A8%D7%93%D7%A1-%D7%97%D7%A0%D7%94",
+		"destination": "/branches/Pardes-Hanna-City/Pardes-Hanna",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%AA%22%D7%90-%D7%A0%D7%9E%D7%9C",
+		"destination": "/branches/Tel-Aviv-City/Hayarkon-kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F-%D7%A4%D7%90%D7%A8%D7%A7-%D7%A4%D7%A8%D7%A1",
+		"destination": "/branches/Holon-City/Park-Peres",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F-%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Ashkelon-city/Ashkelon-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%99%D7%A4%D7%94-%D7%A0%D7%95%D7%95%D7%94-%D7%A9%D7%90%D7%A0%D7%9F",
+		"destination": "/branches/Haifa-City/Neve-Shaanan",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%9C%D7%A6%D7%99%D7%95%D7%9F-%D7%9E%D7%A8%D7%9B%D7%96",
+		"destination": "/branches/Rishon-Lezion-City/Rishon-LeZion-Center",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F",
+		"destination": "/branches/Holon-City/Sokolov",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%A6%D7%A8%D7%AA",
+		"destination": "/branches/Nazareth-City/Nazareth",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%9C%D7%A6%D7%99%D7%95%D7%9F-%D7%9E%D7%A2%D7%A8%D7%91",
+		"destination": "/branches/Rishon-Lezion-City/Rishon-LeZion-West",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A7%D7%A8%D7%99%D7%95%D7%AA-%D7%9E%D7%A8%D7%9B%D7%96",
+		"destination": "/branches/Krayot-City/Krayot-Center",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%92%D7%91%D7%A2%D7%94-%D7%A6%D7%A8%D7%A4%D7%AA%D7%99%D7%AA",
+		"destination": "/branches/Jerusalem-City/The-French-Hill",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%9E%D7%AA-%D7%94%D7%97%D7%99%D7%99%D7%9C",
+		"destination": "/branches/Tel-Aviv-City/Ramat Hahayal",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%98%D7%99%D7%9F",
+		"destination": "/branches/Tel-Aviv-City/Florentine",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%A9%D7%93%D7%95%D7%93---%D7%9C%D7%90-%D7%9B%D7%A9%D7%A8",
+		"destination": "/branches/Ashdod-City/Ashdod",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%99%D7%92%D7%90%D7%9C-%D7%90%D7%9C%D7%95%D7%9F",
+		"destination": "/branches/Tel-Aviv-City/Yigal-Allon",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%A4%D7%95%D7%9C%D7%92",
+		"destination": "/branches/Netanya-City/Poleg",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94-%D7%91%D7%9F-%D7%92%D7%95%D7%A8%D7%99%D7%95%D7%9F",
+		"destination": "/branches/Herzliya-City/Ben-Gurion",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94-%D7%A4%D7%99%D7%AA%D7%95%D7%97",
+		"destination": "/branches/Herzliya-City/Herzliya-Pituach",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%99%D7%A4%D7%94-%D7%9E%D7%A8%D7%9B%D7%96-%D7%94%D7%9B%D7%A8%D7%9E%D7%9C",
+		"destination": "/branches/Haifa-City/Carmel-Center",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D-%D7%91%D7%95%D7%A8%D7%95%D7%9B%D7%95%D7%91",
+		"destination": "/branches/Givatayim-City/Borohov",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%AA%D7%9C%D7%A4%D7%99%D7%95%D7%AA",
+		"destination": "/branches/Jerusalem-City/Talpiot",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A4%22%D7%AA-%D7%9B%D7%A4%D7%A8-%D7%92%D7%A0%D7%99%D7%9D---%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Petah-Tikva-City/Kfar-Ganim-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A2%D7%A4%D7%95%D7%9C%D7%94-%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Afula-City/Afula",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A7%D7%A8%D7%99%D7%95%D7%AA-%D7%A7%D7%A8%D7%99%D7%95%D7%9F",
+		"destination": "/branches/Krayot-City/Krayon",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D-%D7%90%D7%9C%D7%95%D7%A3-%D7%A9%D7%93%D7%94",
+		"destination": "/branches/Givatayim-City/Aluf-Sade",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%91%D7%9F-%D7%92%D7%91%D7%99%D7%A8%D7%95%D7%9C",
+		"destination": "/branches/Tel-Aviv-City/Ibn-Gvirol",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A7%D7%93%D7%99%D7%9E%D7%94",
+		"destination": "/branches/Kadima-City/Kadima",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F-%D7%A7%D7%99%D7%99%D7%96%D7%A8",
+		"destination": "/branches/Modiin-City/Kaizer",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%99%D7%AA-%D7%94%D7%9B%D7%A8%D7%9D",
+		"destination": "/branches/Jerusalem-City/Beit-Hakerem",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%9E%D7%96%D7%A8%D7%97",
+		"destination": "/branches/Rishon-Lezion-City/Rishon-LeZion-East",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90-%D7%94%D7%99%D7%A8%D7%95%D7%A7%D7%94",
+		"destination": "/branches/Kfar-Saba-City/Kfar-Saba-Hayeruka",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%99%D7%A4%D7%94-%D7%9E%D7%95%D7%A8%D7%99%D7%94",
+		"destination": "/branches/Haifa-City/Moriah",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%93%D7%A8%D7%95%D7%9D",
+		"destination": "/branches/Rehovot-City/Rehovot-South",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%A4%D7%90%D7%A8%D7%A7-%D7%94%D7%9E%D7%93%D7%A2",
+		"destination": "/branches/Rehovot-City/Park-Hamada",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%9E%D7%AA-%D7%90%D7%91%D7%99%D7%91",
+		"destination": "/branches/Tel-Aviv-City/Ramat-Aviv",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A7%D7%A8%D7%99%D7%95%D7%AA-%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Krayot-City/Krayot-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%9D-%D7%94%D7%9E%D7%95%D7%A9%D7%91%D7%95%D7%AA---%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Petah-Tikva-City/Em-Hamoshavot",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25A1%25D7%25A0%25D7%2599%25D7%25A3-%25D7%25A4%2522%25D7%25AA-%25D7%25A9%25D7%2598%25D7%259E%25D7%25A4%25D7%25A4%25D7%25A8---%25D7%259B%25D7%25A9%25D7%25A8-%25D7%259C%25D7%259E%25D7%2594%25D7%2593%25D7%25A8%25D7%2599%25D7%259F",
+		"destination": "/branches/Petah-Tikva-City/Stampfer",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25A1%25D7%25A0%25D7%2599%25D7%25A3-%25D7%25A0%25D7%25A1-%25D7%25A6%25D7%2599%25D7%2595%25D7%25A0%25D7%2594",
+		"destination": "/branches/Ness-Ziona-City/Ness-Ziona",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25A1%25D7%25A0%25D7%2599%25D7%25A3-%25D7%2599%25D7%25A7%25D7%25A0%25D7%25A2%25D7%259D",
+		"destination": "/branches/Yokneam/Yokneam",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25A1%25D7%25A0%25D7%2599%25D7%25A3-%25D7%259B%25D7%25A8%25D7%259E%25D7%2599%25D7%2590%25D7%259C",
+		"destination": "/branches/Carmiel-City/Carmiel",
+		"permanent": true
+	},
+	{
+		"source": "/chef",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "/chef/gallery.php",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "/chef/forms.php",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "/chef/index.php",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "//chef/birthday.php",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "/chef/albums.php%3Falbum_id%3D2",
+		"destination": "https://jobs.dominos.co.il/chef",
+		"permanent": true
+	},
+	{
+		"source": "/jobs",
+		"destination": "https://jobs.dominos.co.il/jobs",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%94%D7%92%D7%A9%D7%AA-%D7%9E%D7%95%D7%A2%D7%9E%D7%93%D7%95%D7%AA-%D7%A6%D7%95%D7%95%D7%AA-%D7%94%D7%9B%D7%A0%D7%94-%D7%95%D7%AA%D7%A4%D7%A2%D7%95%D7%9C",
+		"destination": "https://jobs.dominos.co.il/jobs",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%94%D7%92%D7%A9%D7%AA-%D7%9E%D7%95%D7%A2%D7%9E%D7%93%D7%95%D7%AA-%D7%9E%D7%A0%D7%94%D7%9C-%D7%9E%D7%A9%D7%9E%D7%A8%D7%AA",
+		"destination": "https://jobs.dominos.co.il/jobs",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%94%D7%92%D7%A9%D7%AA-%D7%9E%D7%95%D7%A2%D7%9E%D7%93%D7%95%D7%AA-%D7%A9%D7%9C%D7%99%D7%97",
+		"destination": "https://jobs.dominos.co.il/jobs",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%9E%D7%A1%D7%9C%D7%95%D7%9C-%D7%A7%D7%99%D7%93%D7%95%D7%9D",
+		"destination": "https://jobs.dominos.co.il/jobs",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%94%D7%92%D7%A9%D7%AA-%D7%9E%D7%95%D7%A2%D7%9E%D7%93%D7%95%D7%AA-%D7%A2%D7%AA%D7%95%D7%93%D7%94-%D7%A0%D7%99%D7%94%D7%95%D7%9C%D7%99%D7%AA",
+		"destination": "https://jobs.dominos.co.il/jobs",
+		"permanent": true
+	},
+	{ "source": "/magazine", "destination": "/", "permanent": true },
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/magazine/Vegan-Pizza", "destination": "/", "permanent": true },
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%25D7%25https%3A/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%2527%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/magazine/Kosher-pizza",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA",
+		"destination": "/content/Family-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/content/Pizza-Toppings/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%A2%D7%91%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+		"destination": "/content/Gluten-Free/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A8%D7%92%D7%A8%D7%99%D7%98%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA",
+		"destination": "/content/Personal-Pizza",
+		"permanent": true
+	},
+	{
+		"source": "/magazine/Personal-Pizza",
+		"destination": "/content/Personal-Pizza",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%97%D7%99%D7%98%D7%94-%D7%9E%D7%9C%D7%90%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%25D7%25A6%2527%25D7%2599%25D7%2596%25D7%2599-%25D7%25A7%25D7%25A8%25D7%2590%25D7%25A1%25D7%2598",
+		"destination": "/content/Cheesy-Crust",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA-%D7%9E%D7%95%D7%A0%D7%93%D7%99%D7%90%D7%9C-%D7%A2%D7%9C-%D7%94%D7%9E%D7%92%D7%A9-2022",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/Ynet---Slot-Machine---%D7%AA%D7%A7%D7%A0%D7%95%D7%9F",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-%D7%99%D7%93%D7%99%D7%A2%D7%95%D7%AA-%D7%90%D7%97%D7%A8%D7%95%D7%A0%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%92%D7%A8%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-Dominos-Challenge",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-XBOX",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-one-click-order",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA-%D7%98%D7%93-2",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA-3-%D7%97%D7%95%D7%93%D7%A9%D7%99%D7%9D-%D7%A9%D7%9C-%D7%A4%D7%99%D7%A6%D7%94-%D7%95%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%AA%D7%A0%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%99%D7%95%D7%A8%D7%95-2016",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%A8%D7%95%D7%97%D7%AA-%D7%A6%D7%99%D7%A4%D7%95%D7%A8%D7%99-%D7%94%D7%98%D7%A8%D7%A3",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-'%D7%94%D7%A1%D7%90%D7%91-%D7%94%D7%91%D7%90'",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA-%D7%9E%D7%95%D7%A0%D7%93%D7%99%D7%90%D7%9C-%D7%A2%D7%9C-%D7%94%D7%9E%D7%92%D7%A9-2022",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%A4%D7%95%D7%9C%D7%92/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%94%D7%95%D7%93-%D7%94%D7%A9%D7%A8%D7%95%D7%9F/l/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%94%D7%95%D7%93-%D7%94%D7%A9%D7%A8%D7%95%D7%9F/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA-3-%D7%97%D7%95%D7%93%D7%A9%D7%99%D7%9D-%D7%A9%D7%9C-%D7%A4%D7%99%D7%A6%D7%94-%D7%95%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%AA%D7%A0%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%99%D7%AA-%D7%94%D7%9B%D7%A8%D7%9D/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F/l/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA-3-%D7%97%D7%95%D7%93%D7%A9%D7%99%D7%9D-%D7%A9%D7%9C-%D7%A4%D7%99%D7%A6%D7%94-%D7%95%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%AA%D7%A0%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-%22-%D7%91%D7%90%D7%A9%D7%A2%D7%A8%D7%98-%22-%E2%80%93-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%9E%D7%A8%D7%9B%D7%96/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%9C%D7%A6%D7%99%D7%95%D7%9F-%D7%9E%D7%A8%D7%9B%D7%96/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%99%D7%AA-%D7%94%D7%9B%D7%A8%D7%9D/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-%22-%D7%91%D7%90%D7%A9%D7%A2%D7%A8%D7%98-%22-%E2%80%93-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%9E%D7%91%D7%A6%D7%A2-Keep-it-Cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%90%D7%AA%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%9E%D7%A9%D7%9C%D7%95%D7%97-%D7%A2%D7%93-%D7%94%D7%A4%D7%94--%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%2522%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA----%22%D7%9E%D7%91%D7%A6%D7%A2-keep-it-cool",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA-3-%D7%97%D7%95%D7%93%D7%A9%D7%99%D7%9D-%D7%A9%D7%9C-%D7%A4%D7%99%D7%A6%D7%94-%D7%95%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%AA%D7%A0%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%94%D7%A9%D7%AA%D7%AA%D7%A4%D7%95%D7%AA-3-%D7%97%D7%95%D7%93%D7%A9%D7%99%D7%9D-%D7%A9%D7%9C-%D7%A4%D7%99%D7%A6%D7%94-%D7%95%D7%92%D7%9C%D7%99%D7%93%D7%94-%D7%9E%D7%AA%D7%A0%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%AA%D7%A7%D7%A0%D7%95%D7%9F-%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%A1%D7%9B%D7%9D-%D7%A4%D7%A9%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%A1%D7%A7-%D7%93%D7%99%D7%9F-%D7%99%D7%A6%D7%95%D7%92%D7%99%D7%AA-%D7%A8%D7%95%D7%96%D7%A0%D7%91%D7%A8%D7%92",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%A1%22%D7%93-%D7%99%D7%A6%D7%95%D7%92%D7%99%D7%AA-%D7%A8%D7%95%D7%96%D7%A0%D7%91%D7%A8%D7%92",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A0%D7%90%D7%99-%D7%A9%D7%99%D7%9E%D7%95%D7%A9---%D7%90%D7%99%D7%99%D7%A4%D7%95%D7%9F",
+		"destination": "/content/terms-of-use",
+		"permanent": true
+	},
+	{
+		"source": "/terms-of-use",
+		"destination": "/content/terms-of-use",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%AA%D7%A0%D7%90%D7%99-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%A7%D7%A8%D7%99%D7%95%D7%AA",
+		"destination": "/branches/Krayot-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D%3Fdeal_id",
+		"destination": "/branches/Jerusalem-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-%D7%97%D7%99%D7%A4%D7%94/jobs/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/branches/Haifa-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94%D7%91%D7%95%D7%A8%D7%92%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%D7%99%D7%A6%D7%94-PRO",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%22%D7%AA-%D7%A9%D7%98%D7%9E%D7%A4%D7%A4%D7%A8---%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Petah-Tikva-City/Stampfer",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A4%22%D7%AA-%D7%9B%D7%A4%D7%A8-%D7%92%D7%A0%D7%99%D7%9D---%D7%9B%D7%A9%D7%A8-%D7%9C%D7%9E%D7%94%D7%93%D7%A8%D7%99%D7%9F",
+		"destination": "/branches/Petah-Tikva-City/Kfar-Ganim-Kosher",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A2%D7%96%D7%A8%D7%94---%D7%91%D7%95%D7%97%D7%A0%D7%99-%D7%97%D7%A0%D7%95%D7%99%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A2%D7%95%D7%9C%D7%9D-%D7%94%D7%AA%D7%95%D7%9B%D7%9F",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%9C%D7%A6%D7%99%D7%95%D7%9F-%D7%9E%D7%A8%D7%9B%D7%96/l/l/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%A4%D7%95%D7%9C%D7%92/jobs/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%A4%D7%95%D7%9C%D7%92/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%9E%D7%A8%D7%9B%D7%96/l/jobs/jobs/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%A0%D7%AA%D7%A0%D7%99%D7%94-%D7%9E%D7%A8%D7%9B%D7%96/jobs/jobs/jobs",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F-%D7%9E%D7%9C%D7%99%D7%91%D7%95/jobs/jobs/%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F-%D7%9E%D7%9C%D7%99%D7%91%D7%95/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9E%D7%95%D7%93%D7%99%D7%A2%D7%99%D7%9F-%D7%9E%D7%9C%D7%99%D7%91%D7%95/jobs/jobs/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90/%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90/jobs",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%A7%D7%A8%D7%99%D7%95%D7%AA",
+		"destination": "/branches/Krayot-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D-%D7%A2%D7%9C-%D7%94%D7%9E%D7%A4%D7%94/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D-%D7%A2%D7%9C-%D7%94%D7%9E%D7%A4%D7%94",
+		"destination": "/branches",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/menu",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA",
+		"destination": "/content/Family-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%94-%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+		"destination": "/content/Gluten-Free/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA",
+		"destination": "/content/Personal-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A2%D7%96%D7%A8%D7%94----HELP",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%95%D7%99%D7%93%D7%90%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%94%D7%A6%D7%94%D7%A8%D7%AA-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%AA-PRO-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%A4%D7%99%D7%A6%D7%94-PRO",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/menu",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A6%2527%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+		"destination": "/privacy-policy",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/menu",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA",
+		"destination": "/content/Family-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A8%D7%92%D7%A8%D7%99%D7%98%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+		"destination": "/content/Gluten-Free/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%A2%D7%91%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA",
+		"destination": "/content/Family-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/jobs",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/l/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%90%D7%99%D7%A9%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/content/Pizza-Toppings/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%A2%D7%91%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/magazine/Pizza-Margarita",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/magazine/Thick-Pizza", "destination": "/", "permanent": true },
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/l/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A8%D7%92%D7%A8%D7%99%D7%98%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+		"destination": "/content/Gluten-Free/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/jobs/%D7%94%D7%A6%D7%94%D7%A8%D7%AA-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/l/jobs/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%25D7%25A4%25D7%2599%25D7%25A6%25D7%25AA-%25D7%2597%25D7%259C%25D7%2591%25D7%2595%25D7%259F-%25D7%259C%25D7%25A1%25D7%25A4%25D7%2595%25D7%25A8%25D7%2598%25D7%2590%25D7%2599%25D7%259D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+		"destination": "/content/Gluten-Free/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94",
+		"destination": "/branches/Herzliya-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/%D7%94%D7%A6%D7%94%D7%A8%D7%AA-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%25D7%25A4%25D7%2599%25D7%25A6%25D7%25AA-%25D7%2597%25D7%259C%25D7%2591%25D7%2595%25D7%259F-%25D7%259C%25D7%25A1%25D7%25A4%25D7%2595%25D7%25A8%25D7%2598%25D7%2590%25D7%2599%25D7%259D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/l/%D7%94%D7%A6%D7%94%D7%A8%D7%AA-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/branches",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/l/jobs",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+		"destination": "/content/Gluten-Free/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%25D7%25A4%25D7%2599%25D7%25A6%25D7%25AA-%25D7%2597%25D7%259C%25D7%2591%25D7%2595%25D7%259F-%25D7%259C%25D7%25A1%25D7%25A4%25D7%2595%25D7%25A8%25D7%2598%25D7%2590%25D7%2599%25D7%259D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%9B%D7%A8%D7%99%D7%9B%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%91%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%94%D7%97%D7%93%D7%A9-%D7%A9%D7%9C%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/jobs/l/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/www.dominos.co.il/jobs/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%253F-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%A2%D7%91%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/l/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/l/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%A2%D7%91%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/l/jobs/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/l/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/l/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%3F-%25D7%25A4%25D7%2599%25D7%25A6%25D7%25AA-%25D7%2597%25D7%259C%25D7%2591%25D7%2595%25D7%259F-%25D7%259C%25D7%25A1%25D7%25A4%25D7%2595%25D7%25A8%25D7%2598%25D7%2590%25D7%2599%25D7%259D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/l/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%93%D7%A7%D7%94",
+		"destination": "/content/Thin-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A4%D7%99%D7%A6%D7%AA-PRO-%E2%80%93-%D7%A4%D7%99%D7%A6%D7%AA-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A8%D7%92%D7%A8%D7%99%D7%98%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/branches",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94",
+		"destination": "/branches/Herzliya-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+		"destination": "/content/privacy-policy",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%94%D7%A6%D7%94%D7%A8%D7%AA-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/content/accessability",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/content/Pizza-Toppings/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D",
+		"destination": "/branches",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%90%D7%A8-%D7%A9%D7%91%D7%A2",
+		"destination": "/branches",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A7%D7%9E%D7%97-%D7%9B%D7%95%D7%A1%D7%9E%D7%99%D7%9F",
+		"destination": "/content/Spelled-Flour-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/l/jobs/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+		"destination": "/content/privacy-policy",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%AA%D7%A4%D7%A8%D7%99%D7%98-%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%94%D7%97%D7%93%D7%A9",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/content/Pizza-Toppings/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/content/Cheesy-Crust/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%9B%D7%A9%D7%A8%D7%94-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/content/Kosher-Pizza/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%A4%D7%99%D7%A6%D7%94-%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%A2%D7%96%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94",
+		"destination": "/branches/Herzliya-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%9E%D7%99-%D7%90%D7%A0%D7%97%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+		"destination": "/content/privacy-policy",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%A0%D7%92%D7%99%D7%A9%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/l/%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%A8%D7%92%D7%A8%D7%99%D7%98%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/l/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8",
+		"destination": "/chef",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/l/%D7%9E%D7%93%D7%99%D7%A0%D7%99%D7%95%D7%AA-%D7%A4%D7%A8%D7%98%D7%99%D7%95%D7%AA",
+		"destination": "/content/privacy-policy",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/l/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1-%D7%9C%D7%9E%D7%A2%D7%9F-%D7%94%D7%A7%D7%94%D7%99%D7%9C%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/jobs/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/jobs",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99%D7%9D/Facebook",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A4%D7%99-%D7%91%D7%A7%D7%A2%D7%AA-%D7%90%D7%95%D7%A0%D7%95",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F/l/l/jobs",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%97%D7%95%D7%9C%D7%95%D7%9F/jobs/jobs/%D7%AA%D7%95%D7%A1%D7%A4%D7%95%D7%AA-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/content/Pizza-Toppings/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%92%D7%91%D7%A2%D7%AA%D7%99%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%91%D7%99%D7%AA-%D7%94%D7%9B%D7%A8%D7%9D/l/%D7%A6'%D7%99%D7%96%D7%99-%D7%A7%D7%A8%D7%90%D7%A1%D7%98",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%A9%D7%93%D7%95%D7%93-%D7%A1%D7%99%D7%98%D7%99",
+		"destination": "/branches/Ashdod-City/Ashdod",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A1%D7%A0%D7%99%D7%A3-%D7%90%D7%A9%D7%93%D7%95%D7%93",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%AA%D7%9B%D7%95%D7%9F-%D7%9C%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%94%D7%99%D7%A8%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%AA%D7%9B%D7%95%D7%9F-%D7%9C%D7%91%D7%A6%D7%A7-%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%AA%D7%9B%D7%95%D7%A0%D7%99-%D7%A4%D7%99%D7%A6%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%AA%D7%9B%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%A6%D7%91-%D7%94%D7%96%D7%9E%D7%A0%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9E%D7%94-%D7%96%D7%94-%D7%A9%D7%A3-%D7%A6%D7%A2%D7%99%D7%A8%3F",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%9B%D7%99%D7%A6%D7%93-%D7%9E%D7%96%D7%9E%D7%99%D7%A0%D7%99%D7%9D%3F",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%99%D7%A6%D7%99%D7%A8%D7%AA-%D7%A7%D7%A9%D7%A8-%D7%94%D7%96%D7%9E%D7%A0%D7%95%D7%AA-%D7%92%D7%93%D7%95%D7%9C%D7%95%D7%AA",
+		"destination": "/large-orders",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%97%D7%93%D7%A9%21-%D7%A4%D7%99%D7%A6%D7%94-%D7%9E%D7%99%D7%A0%D7%99-%D7%9E%D7%A9%D7%A4%D7%97%D7%AA%D7%99%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%A8%D7%9B%D7%91%D7%AA-%D7%A4%D7%99%D7%A6%D7%94",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%A2%D7%A8%D7%95%D7%AA-%D7%9B%D7%9C%D7%9C%D7%99%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%95%D7%A8%D7%90%D7%95%D7%AA-%D7%A9%D7%99%D7%9E%D7%95%D7%A9-%D7%A9%D7%95%D7%91%D7%A8-%D7%91%D7%90-%D7%9C%D7%99-%D7%92%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%94%D7%95%D7%A8%D7%90%D7%95%D7%AA-%D7%9E%D7%99%D7%9E%D7%95%D7%A9-%D7%A9%D7%95%D7%91%D7%A8-%D7%91%D7%99%D7%92-%D7%93%D7%99%D7%9C",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%A4%D7%99%D7%A6%D7%94-%D7%AA%D7%9C-%D7%90%D7%91%D7%99%D7%91",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95%D7%A1-%D7%91%D7%A2%D7%95%D7%9C%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%91%D7%98%D7%99%D7%97%D7%95%D7%95%D7%AA-%D7%91%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%95'%D7%A1",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%91%D7%93%D7%99%D7%A7%D7%94-",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%90%D7%AA%D7%92%D7%A8-%D7%94%D7%A4%D7%99%D7%A6%D7%94-%D7%A1%D7%9C%D7%99%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%90%D7%9E%D7%95%D7%9F-%D7%94%D7%A6%D7%99%D7%91%D7%95%D7%A8",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%90%D7%95%D7%93%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/pic", "destination": "/", "permanent": true },
+	{ "source": "/our-pizzas", "destination": "/", "permanent": true },
+	{
+		"source": "/lunch.php%3Fqs%26utm_medium%3Dbanner%26utm_source%3Dynet%26utm_campaign%3DLunchMunch_May%26utm_content",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/jobs-mobile", "destination": "/", "permanent": true },
+	{
+		"source": "/jobs/%D7%94%D7%92%D7%A9%D7%AA-%D7%9E%D7%95%D7%A2%D7%9E%D7%93%D7%95%D7%AA",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/jobs/%D7%91%D7%97%D7%9F-%D7%90%D7%AA-%D7%A2%D7%A6%D7%9E%D7%9A",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/isracard_explain.pdf", "destination": "/", "permanent": true },
+	{ "source": "/how_to_order.pdf", "destination": "/", "permanent": true },
+	{ "source": "/fb-tabs/contact-mobile", "destination": "/", "permanent": true },
+	{
+		"source": "/fb-tabs/contact/static/terms.pdf",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/fb-tabs/chat", "destination": "/", "permanent": true },
+	{
+		"source": "/_media/userfiles/pshara.pdf",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_media/userfiles/file/accessibility_exemption.pdf",
+		"destination": "/",
+		"permanent": true
+	},
+	{ "source": "/_media/forms/69.docx", "destination": "/", "permanent": true },
+	{
+		"source": "/_ajax/young-chef.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/user.orders.get.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/getProfilesOptions.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/fb.connect.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/email.subscribe.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/coupon.popup.get.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/contact.send.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/_ajax/cities.get.ajax.php",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dmako%26utm_medium%3Dcpm%26utm_campaign%3Dfree_pint",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dgoolge%26utm_medium%3Dgmb%26utm_campaign%3Dcheezy45",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dgoogle%26utm_medium%3Dorganic%26utm_campaign%3Dgmb",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dgoogle%26utm_medium%3Dgmb%26utm_campaign%3Dsurprise_pint",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dgoogle%26utm_medium%3Dgmb%26utm_campaign%3Dpre_passover",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dgoogle%26utm_medium%3Dgmb%26utm_campaign%3D30off",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3Dgoogle%26utm_medium%3Dgmb%26utm_campaign%3D2families80_pickup",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/%3Futm_source%3DGMB%26utm_medium%3Dpost%26utm_campaign%3DPassover-hol-hamoed145",
+		"destination": "/",
+		"permanent": true
+	},
+	{
+		"source": "/branches/Ramat-Yishai",
+		"destination": "/branches/Ramat-Yishai-City",
+		"permanent": true
+	},
+	{
+		"source": "/%D7%A2%D7%A8%D7%9B%D7%99%D7%9D-%D7%AA%D7%96%D7%95%D7%A0%D7%AA%D7%99%D7%99%D7%9D",
+		"destination": "/",
+		"permanent": true
+	}
+]

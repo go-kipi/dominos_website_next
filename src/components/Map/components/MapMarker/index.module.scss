@@ -1,0 +1,122 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+.map-marker-wrapper {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: vw_size(21.5, $current);
+  margin-inline-start: vw_size(-16.5, $current);
+  width: vw_size(33, $current);
+  height: vw_size(43, $current);
+
+  .map-marker-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &.selected {
+      filter: drop-shadow(0 0 1px $white)
+        drop-shadow(0 2px 12px rgba(1, 122, 255, 1));
+      -webkit-filter: drop-shadow(0 0 1px $white)
+        drop-shadow(0 2px 12px rgba(1, 122, 255, 1));
+    }
+
+    &.disabled {
+      cursor: default;
+      opacity: 0.5;
+      filter: unset;
+    }
+    &.cursor {
+      cursor: pointer;
+    }
+  }
+
+  .map-marker-text {
+    background: $white;
+    position: absolute;
+    bottom: 120%;
+    padding: vw_size(5, $current) vw_size(10, $current);
+    border-radius: vw_size(10, $current);
+    width: vw_size(120, $current);
+    text-align: center;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .map-marker-wrapper {
+    bottom: vw_size(21.5, $current);
+    margin-inline-start: vw_size(-16.5, $current);
+    width: vw_size(33, $current);
+    height: vw_size(43, $current);
+
+    .map-marker-text {
+      padding: vw_size(5, $current) vw_size(10, $current);
+      border-radius: vw_size(10, $current);
+      width: vw_size(120, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .map-marker-wrapper {
+    bottom: vw_size(21.5, $current);
+    margin-inline-start: vw_size(-16.5, $current);
+    width: vw_size(33, $current);
+    height: vw_size(43, $current);
+
+    .map-marker-text {
+      padding: vw_size(5, $current) vw_size(10, $current);
+      border-radius: vw_size(10, $current);
+      width: vw_size(120, $current);
+    }
+    .branch-name-wrapper {
+      position: absolute;
+      bottom: -90%;
+      width: vw_size(200, $current);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .branch-name {
+        text-align: center;
+        font-size: vw_size(14, $current);
+        color: #d1d1d1;
+        font-family: $font;
+      }
+      .branch-note {
+        text-align: center;
+        font-size: vw_size(14, $current);
+        color: #d1d1d1;
+        opacity: 0.62;
+        font-family: $font;
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop-max;
+  .map-marker-wrapper {
+    bottom: vw_size(21.5, $current);
+    margin-inline-start: vw_size(-16.5, $current);
+    width: vw_size(33, $current);
+    height: vw_size(43, $current);
+
+    .map-marker-text {
+      padding: vw_size(5, $current) vw_size(10, $current);
+      border-radius: vw_size(10, $current);
+      width: vw_size(120, $current);
+    }
+    .branch-name-wrapper {
+      width: vw_size(200, $current);
+
+      .branch-name,
+      .branch-note {
+        font-size: vw_size(14, $current);
+      }
+    }
+  }
+}

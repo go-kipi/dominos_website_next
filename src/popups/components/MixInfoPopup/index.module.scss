@@ -1,0 +1,183 @@
+@import "src/styles/imports";
+$current: 375;
+.mix-info-popup {
+  :global(.popup_content) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .mix-info-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .pizza-image-wrapper {
+        height: 35vh;
+        width: 35vh;
+
+        margin-top: vw_size(110, $current);
+      }
+      .title-wrapper {
+        width: vw_size(276, $current);
+        margin-bottom: vw_size(35, $current);
+        .mix-info-name {
+          color: white;
+          margin-top: vw_size(25, $current);
+          margin-bottom: vw_size(15, $current);
+          font-size: vw_size(16, $current);
+          font-family: $font-bold;
+        }
+
+        .seperator {
+          align-self: center;
+          height: 1px;
+          border: 1px solid rgba(105, 105, 105, 1);
+          width: 100%;
+        }
+        .mix-description {
+          margin-top: vw_size(15, $current);
+
+          color: #c2c2c2;
+          font-size: vw_size(14, $current);
+          font-family: $font-medium;
+        }
+      }
+
+      .add-mix-btn {
+        margin-top: auto;
+        margin-bottom: vw_size(35, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .mix-info-popup {
+    :global(.popup_content) {
+      .mix-info-wrapper {
+        .pizza-image-wrapper {
+          margin-top: vw_size(110, $current);
+        }
+        .title-wrapper {
+          width: vw_size(500, $current);
+          margin-bottom: vw_size(35, $current);
+          .mix-info-name {
+            margin-top: vw_size(25, $current);
+            margin-bottom: vw_size(15, $current);
+            font-size: vw_size(16, $current);
+          }
+
+          .mix-description {
+            margin-top: vw_size(15, $current);
+
+            font-size: vw_size(14, $current);
+          }
+        }
+
+        .add-mix-btn {
+          margin-bottom: vw_size(35, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  :global(.popup) {
+    :global(.backdrop) {
+      &.mix-info-popup {
+        :global(.popup_wrapper) {
+          width: 100%;
+
+          :global(.popup_content) {
+            width: 100%;
+            .mix-info-wrapper {
+              flex-direction: row-reverse;
+              justify-content: space-around;
+              align-items: center;
+              width: 100%;
+
+              .pizza-image-wrapper {
+                height: vw_size(450, $current);
+                width: vw_size(450, $current);
+
+                margin-top: unset;
+              }
+              .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+              .title-wrapper {
+                width: vw_size(299, $current);
+                margin-bottom: vw_size(35, $current);
+                .mix-info-name {
+                  margin-top: vw_size(25, $current);
+                  margin-bottom: vw_size(15, $current);
+                  font-size: vw_size(16, $current);
+                }
+
+                .mix-description {
+                  margin-top: vw_size(15, $current);
+
+                  font-size: vw_size(14, $current);
+                }
+              }
+
+              .add-mix-btn {
+                margin-bottom: vw_size(35, $current);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_large;
+
+  :global(.popup) {
+    :global(.backdrop) {
+      &.mix-info-popup {
+        :global(.popup_wrapper) {
+          :global(.popup_content) {
+            .mix-info-wrapper {
+              .pizza-image-wrapper {
+                margin-top: vw_size(16, $current);
+                height: vw_size(450, $current);
+                width: vw_size(450, $current);
+              }
+
+              .title-wrapper {
+                width: vw_size(299, $current);
+                margin-bottom: vw_size(35, $current);
+                .mix-info-name {
+                  margin-top: vw_size(25, $current);
+                  margin-bottom: vw_size(15, $current);
+                  font-size: vw_size(16, $current);
+                }
+
+                .mix-description {
+                  margin-top: vw_size(15, $current);
+
+                  font-size: vw_size(14, $current);
+                }
+              }
+
+              .add-mix-btn {
+                margin-bottom: vw_size(35, $current);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

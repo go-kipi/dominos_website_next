@@ -1,0 +1,92 @@
+@import "src/styles/imports";
+
+$current: $mobile;
+
+:global(.ltr) {
+	.message-text {
+		right: unset;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.message-text {
+	pointer-events: none;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 350;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.36);
+	font-family: $font-bold;
+	font-size: vw_size(22, $current);
+	color: white;
+	right: 50%;
+	bottom: vh_size(220, $current);
+	transform: translateX(50%);
+	transition: 400ms ease-in-out;
+	width: 80%;
+	text-align: center;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	&.higher {
+		bottom: vh_size(200, $current);
+	}
+	&.fade-out,
+	&.fade-in {
+		transition: 400ms ease-in-out;
+	}
+	&.fade-out {
+		opacity: 0;
+	}
+	&.fade-in {
+		opacity: 1;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.message-text {
+		z-index: 1;
+		top: vh_size(145, $current);
+		font-size: vw_size(22, $current);
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.message-text {
+			transform: translateX(45%);
+			right: 25%;
+			left: unset;
+		}
+	}
+	.message-text {
+		top: unset;
+		font-size: vw_size(44, $current);
+		width: vw_size(644, $current);
+		right: unset;
+		left: -24%;
+		bottom: 15%;
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	:global(.ltr) {
+		.message-text {
+			transform: translateX(70%);
+			right: 45%;
+			left: unset;
+		}
+	}
+	.message-text {
+		font-size: vw_size(44, $current);
+		width: vw_size(644, $current);
+		left: -7%;
+		bottom: 12%;
+	}
+}

@@ -1,0 +1,230 @@
+@import '/src/styles/imports.scss';
+$current: 375;
+.closed-branch-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .closed-branch-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: vw_size(18, $current);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    .closed-branch-close-btn {
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+
+      .x-btn {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  
+  .animation-wrapper {
+      display: flex;
+      justify-content: center;
+      width: vw_size(144, $current);
+      height: vw_size(97, $current);
+      margin-top: vw_size(40, $current);
+      margin-bottom: vw_size(15, $current);
+    .animation {
+      height: 100%;
+    }
+  }
+  .closed-branch-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .closed-branch-title {
+      line-height: vw_size(37, $current);
+      font-size: vw_size(22, $current);
+      font-family: $font-medium;
+    }
+    .closed-branch-closing-time {
+      line-height: vw_size(26, $current);
+      font-size: vw_size(17, $current);
+      font-family: $font;
+    }
+
+    .closed-branch-calm-message {
+      color: $blackish;
+      margin-top: vw_size(30, $current);
+      width: vw_size(306, $current);
+      font-size: vw_size(17, $current);
+      text-align: center;
+      font-family: $font-book;
+
+      .closed-branch-calm-message-bold {
+        font-family: $font-medium;
+      }
+    }
+
+    .closed-branch-staff {
+      margin-top: vw_size(20, $current);
+      font-size: vw_size(17, $current);
+      font-family: $font;
+    }
+  }
+
+  .closed-branch-button {
+    position: absolute;
+    bottom: vw_size(30, $current);
+    display: flex;
+    padding-inline: vw_size(45, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .closed-branch-wrapper {
+
+    .closed-branch-header {
+      position: absolute;
+      padding: vw_size(18, $current);
+
+      .closed-branch-close-btn {
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+    }
+
+    .animation-wrapper {
+      width: vw_size(144, $current);
+      height: vw_size(97, $current);
+      margin-top: vw_size(40, $current);
+      margin-bottom: vw_size(15, $current);
+    }
+    .closed-branch-body {
+      .closed-branch-title {
+        line-height: vw_size(37, $current);
+        font-size: vw_size(22, $current);
+      }
+      .closed-branch-closing-time {
+        line-height: vw_size(26, $current);
+        font-size: vw_size(17, $current);
+      }
+
+      .closed-branch-calm-message {
+        margin-top: vw_size(30, $current);
+        width: vw_size(306, $current);
+        font-size: vw_size(17, $current);
+      }
+
+      .closed-branch-staff {
+        margin-top: vw_size(20, $current);
+        font-size: vw_size(17, $current);
+      }
+    }
+
+    .closed-branch-button {
+      bottom: vw_size(30, $current);
+      padding-inline: vw_size(45, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+    $current: $desktop;
+  .closed-branch-wrapper {
+
+    .closed-branch-header {
+      padding: vw_size(18, $current);
+
+      .closed-branch-close-btn {
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+    }
+
+    .animation-wrapper {
+      width: vw_size(144, $current);
+      height: vw_size(97, $current);
+      margin-top: vw_size(97, $current);
+      margin-bottom: vw_size(65, $current);
+    }
+    .closed-branch-body {
+      .closed-branch-title {
+        line-height: vw_size(37, $current);
+        font-size: vw_size(22, $current);
+      }
+      .closed-branch-closing-time {
+        line-height: vw_size(26, $current);
+        font-size: vw_size(17, $current);
+      }
+
+      .closed-branch-calm-message {
+        margin-top: vw_size(35, $current);
+        width: vw_size(306, $current);
+        font-size: vw_size(17, $current);
+      }
+
+      .closed-branch-staff {
+        margin-top: vw_size(20, $current);
+        font-size: vw_size(17, $current);
+      }
+    }
+
+    .closed-branch-button {
+      bottom: vw_size(50, $current);
+      padding-inline: vw_size(45, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+    $current: $desktop-max;
+  .closed-branch-wrapper {
+
+    .closed-branch-header {
+      padding: vw_size(18, $current);
+
+      .closed-branch-close-btn {
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+    }
+
+    .animation-wrapper {
+      width: vw_size(144, $current);
+      height: vw_size(97, $current);
+      margin-top: vw_size(97, $current);
+      margin-bottom: vw_size(65, $current);
+    }
+    .closed-branch-body {
+      .closed-branch-title {
+        line-height: vw_size(37, $current);
+        font-size: vw_size(22, $current);
+      }
+      .closed-branch-closing-time {
+        line-height: vw_size(26, $current);
+        font-size: vw_size(17, $current);
+      }
+
+      .closed-branch-calm-message {
+        margin-top: vw_size(35, $current);
+        width: vw_size(306, $current);
+        font-size: vw_size(17, $current);
+      }
+
+      .closed-branch-staff {
+        margin-top: vw_size(20, $current);
+        font-size: vw_size(17, $current);
+      }
+    }
+
+    .closed-branch-button {
+      bottom: vw_size(50, $current);
+      padding-inline: vw_size(45, $current);
+    }
+  }
+}

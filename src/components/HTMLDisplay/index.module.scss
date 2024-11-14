@@ -1,0 +1,14 @@
+.hiddable-scrollhost-container {
+	flex: 1 1;
+	overflow: hidden;
+	.scroll-bar {
+		width: 10px;
+		.scroll-thumb {
+			cursor: default;
+			width: 5px;
+			border-radius: 3px;
+
+			background-color: rgba(217, 217, 217, 1);
+		}
+	}
+}

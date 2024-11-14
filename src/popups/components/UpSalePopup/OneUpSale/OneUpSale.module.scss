@@ -1,0 +1,395 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+:global(.ltr) {
+	.one-up-sale-wrapper {
+		.one-up-sale-content {
+			.up-sale-added-to-basket {
+				.up-sale-vi {
+					left: unset;
+					right: vw_size(121, $current);
+				}
+				.added-to-basket-title {
+					left: unset;
+
+					right: vw_size(87, $current);
+				}
+			}
+		}
+	}
+}
+.one-up-sale-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: vw_size(22, $current);
+	flex: 1;
+	height: 100%;
+	overflow: auto;
+	.image {
+		width: vw_size(287, $current);
+	}
+	.one-up-sale-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+		.one-up-sale-title {
+			font-family: $font-black;
+			font-size: vw_size(21, $current);
+			line-height: vw_size(25, $current);
+			color: $white;
+			margin: 0;
+			margin-top: vw_size(20, $current);
+			width: vw_size(250, $current);
+			text-align: center;
+			font-weight: unset;
+		}
+		.one-up-sale-price-wrapper {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: vw_size(44, $current);
+			.price-text {
+				font-family: $font-bold;
+				color: $white;
+				font-size: vw_size(18, $current);
+				line-height: vw_size(26, $current);
+			}
+			.one-up-sale-price {
+				.price {
+					font-family: $font-bold;
+					color: $white;
+					font-size: vw_size(17, $current);
+					line-height: vw_size(26, $current);
+					.currency {
+						font-size: vw_size(13, $current);
+					}
+				}
+			}
+			.old-price-text {
+				color: rgba(218, 218, 218, 1);
+				margin-inline-start: vw_size(5, $current);
+				font-family: $font-bold;
+				font-size: vw_size(14, $current);
+				line-height: vw_size(26, $current);
+			}
+			.one-up-sale-old-price {
+				.price {
+					color: rgba(218, 218, 218, 1);
+					font-family: $font-bold;
+					margin-inline-start: vw_size(3, $current);
+					font-size: vw_size(17, $current);
+					line-height: vw_size(26, $current);
+					.currency {
+						font-size: vw_size(14, $current);
+					}
+				}
+			}
+		}
+		.actions {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: auto;
+			margin-bottom: vw_size(30, $current);
+
+			.one-up-sale-accept-btn {
+				width: vw_size(264, $current);
+			}
+			.one-up-sale-decline-btn {
+				width: vw_size(264, $current);
+				color: $white;
+				text-align: center;
+				height: vw_size(44, $current);
+			}
+		}
+		.up-sale-added-to-basket {
+			width: vw_size(265, $current);
+			height: vw_size(184, $current);
+			position: relative;
+			.up-sale-confetti {
+				width: 100%;
+			}
+			.up-sale-vi {
+				position: absolute;
+				top: vw_size(57, $current);
+				left: vw_size(121, $current);
+				width: vw_size(33, $current);
+				height: vw_size(33, $current);
+			}
+			.added-to-basket-title {
+				color: $white;
+				font-size: vw_size(16, $current);
+				line-height: vw_size(20, $current);
+				top: vw_size(103, $current);
+				position: absolute;
+				left: vw_size(87, $current);
+				font-family: $font-medium;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.ltr) {
+		.one-up-sale-wrapper {
+			.one-up-sale-content {
+				.up-sale-added-to-basket {
+					.up-sale-vi {
+						right: vw_size(121, $current);
+					}
+					.added-to-basket-title {
+						right: vw_size(87, $current);
+					}
+				}
+			}
+		}
+	}
+	.one-up-sale-wrapper {
+		margin-top: vw_size(22, $current);
+		height: unset;
+
+		.image {
+			width: vw_size(287, $current);
+		}
+		.one-up-sale-content {
+			.one-up-sale-title {
+				font-size: vw_size(21, $current);
+				line-height: vw_size(25, $current);
+				margin-top: vw_size(20, $current);
+				width: unset;
+			}
+			.one-up-sale-price-wrapper {
+				margin-bottom: vw_size(44, $current);
+
+				.price-text {
+					font-size: vw_size(18, $current);
+					line-height: vw_size(26, $current);
+				}
+				.one-up-sale-price {
+					.price {
+						font-size: vw_size(17, $current);
+						line-height: vw_size(26, $current);
+						.currency {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+				.old-price-text {
+					margin-inline-start: vw_size(5, $current);
+					font-size: vw_size(14, $current);
+					line-height: vw_size(26, $current);
+				}
+				.one-up-sale-old-price {
+					.price {
+						margin-inline-start: vw_size(3, $current);
+						font-size: vw_size(17, $current);
+						line-height: vw_size(26, $current);
+						.currency {
+							font-size: vw_size(14, $current);
+						}
+					}
+				}
+			}
+			.actions {
+				margin-top: auto;
+				margin-bottom: vw_size(30, $current);
+				.one-up-sale-accept-btn {
+					width: vw_size(264, $current);
+				}
+				.one-up-sale-decline-btn {
+					width: vw_size(264, $current);
+
+					height: vw_size(44, $current);
+				}
+			}
+			.up-sale-added-to-basket {
+				width: vw_size(265, $current);
+				height: vw_size(184, $current);
+
+				.up-sale-vi {
+					top: vw_size(57, $current);
+					left: vw_size(121, $current);
+					width: vw_size(33, $current);
+					height: vw_size(33, $current);
+				}
+				.added-to-basket-title {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(20, $current);
+					top: vw_size(103, $current);
+					left: vw_size(87, $current);
+				}
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.one-up-sale-wrapper {
+		flex-direction: row-reverse;
+		justify-content: center;
+		margin-top: vw_size(26, $current);
+		height: 100%;
+
+		.image {
+			width: vw_size(339, $current);
+		}
+		.one-up-sale-content {
+			flex: unset;
+			margin-inline-end: vw_size(40, $current);
+			.one-up-sale-title {
+				font-size: vw_size(21, $current);
+				line-height: vw_size(26, $current);
+			}
+			.one-up-sale-price-wrapper {
+				align-items: baseline;
+				margin: unset;
+				.price-text {
+					display: none;
+				}
+				.one-up-sale-price {
+					.price {
+						font-size: vw_size(17, $current);
+						line-height: vw_size(36, $current);
+						.currency {
+							font-size: vw_size(12, $current);
+						}
+					}
+				}
+				.old-price-text {
+					display: none;
+				}
+				.one-up-sale-old-price {
+					margin-inline-start: vw_size(14, $current);
+
+					.price-wrapper {
+						color: $pink;
+
+						.price {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(17, $current);
+							color: $pink;
+							.currency {
+								font-size: vw_size(10, $current);
+							}
+						}
+					}
+				}
+			}
+			.actions {
+				margin-top: vw_size(26, $current);
+				margin-bottom: unset;
+				.one-up-sale-accept-btn {
+					width: vw_size(213, $current);
+					height: vw_size(51, $current);
+				}
+				.one-up-sale-decline-btn {
+					width: vw_size(213, $current);
+					height: unset;
+					margin-top: vw_size(34, $current);
+				}
+			}
+			.up-sale-added-to-basket {
+				width: vw_size(263, $current);
+				height: vw_size(182, $current);
+
+				.up-sale-vi {
+					top: vw_size(63, $current);
+					left: vw_size(121, $current);
+					width: vw_size(26, $current);
+					height: vw_size(19, $current);
+				}
+				.added-to-basket-title {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(20, $current);
+					top: vw_size(102, $current);
+					left: vw_size(87, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.one-up-sale-wrapper {
+		margin-top: vw_size(26, $current);
+
+		.image {
+			width: vw_size(339, $current);
+			height: vw_size(433, $current);
+		}
+		.one-up-sale-content {
+			margin-inline-end: vw_size(40, $current);
+			.one-up-sale-title {
+				font-size: vw_size(21, $current);
+				line-height: vw_size(26, $current);
+				margin-top: unset;
+			}
+			.one-up-sale-price-wrapper {
+				align-items: baseline;
+				.price-text {
+					display: none;
+				}
+				.one-up-sale-price {
+					.price {
+						font-size: vw_size(17, $current);
+						line-height: vw_size(36, $current);
+						.currency {
+							font-size: vw_size(12, $current);
+						}
+					}
+				}
+				.old-price-text {
+					display: none;
+				}
+				.one-up-sale-old-price {
+					margin-inline-start: vw_size(14, $current);
+
+					.price-wrapper {
+						color: $pink;
+
+						.price {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(17, $current);
+							color: $pink;
+							.currency {
+								font-size: vw_size(10, $current);
+							}
+						}
+					}
+				}
+			}
+			.actions {
+				margin-top: vw_size(26, $current);
+				.one-up-sale-accept-btn {
+					width: vw_size(213, $current);
+					height: vw_size(51, $current);
+				}
+				.one-up-sale-decline-btn {
+					width: vw_size(213, $current);
+					height: unset;
+					margin-top: vw_size(34, $current);
+				}
+			}
+			.up-sale-added-to-basket {
+				width: vw_size(263, $current);
+				height: vw_size(182, $current);
+
+				.up-sale-vi {
+					top: vw_size(63, $current);
+					left: vw_size(121, $current);
+					width: vw_size(26, $current);
+					height: vw_size(19, $current);
+				}
+				.added-to-basket-title {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(20, $current);
+					top: vw_size(102, $current);
+					left: vw_size(87, $current);
+				}
+			}
+		}
+	}
+}

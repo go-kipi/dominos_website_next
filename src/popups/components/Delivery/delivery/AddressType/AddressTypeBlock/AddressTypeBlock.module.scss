@@ -1,0 +1,110 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.address-type-block-wrapper {
+	position: relative;
+	width: vw_size(140, $current);
+	height: vw_size(129, $current);
+	border-radius: vw_size(16, $current);
+	border: 1px solid rgba(164, 164, 164, 1);
+	margin-top: vw_size(25, $current);
+	cursor: pointer;
+
+	&:active,
+	&:focus,
+	&:focus-visible {
+		background-color: rgba(248, 251, 255, 1);
+		border: 1px solid $blue;
+	}
+
+	&.selected {
+		border: 1px solid $blue;
+		background-color: rgba(248, 251, 255, 1);
+	}
+
+	.animation-wrapper {
+		position: absolute;
+		top: vw_size(20, $current);
+		width: vw_size(44, $current);
+	}
+
+	.text {
+		position: absolute;
+		bottom: vw_size(10, $current);
+		color: #656565;
+		font-family: $font-book;
+		font-size: vw_size(15, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.address-type-block-wrapper {
+		width: vw_size(140, $current);
+		height: vw_size(129, $current);
+		border-radius: vw_size(16, $current);
+		margin-top: vw_size(20, $current);
+
+		.animation-wrapper {
+			top: vw_size(20, $current);
+			width: vw_size(44, $current);
+		}
+
+		.text {
+			bottom: vw_size(10, $current);
+			font-size: vw_size(15, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.address-type-block-wrapper {
+		width: vw_size(161, $current);
+		height: vw_size(142, $current);
+		border-radius: vw_size(16, $current);
+		margin-top: unset;
+		.animation-wrapper {
+			top: vw_size(23, $current);
+			width: vw_size(44, $current);
+		}
+		//
+		.text {
+			bottom: vw_size(17, $current);
+			font-size: vw_size(15, $current);
+		}
+		&:hover {
+			background-color: rgba(248, 251, 255, 1);
+			border: 1px solid $blue;
+		}
+
+		&:focus-visible {
+			outline: none !important;
+			background-color: rgba(248, 251, 255, 1);
+			border: 1px solid $blue;
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.address-type-block-wrapper {
+		width: vw_size(161, $current);
+		height: vw_size(142, $current);
+		border-radius: vw_size(16, $current);
+		margin: vw_size(10, $current);
+
+		.animation-wrapper {
+			top: vw_size(23, $current);
+			width: vw_size(44, $current);
+		}
+		//
+		.text {
+			bottom: vw_size(17, $current);
+			font-size: vw_size(15, $current);
+		}
+	}
+}

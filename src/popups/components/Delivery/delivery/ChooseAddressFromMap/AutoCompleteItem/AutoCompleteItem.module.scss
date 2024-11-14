@@ -1,0 +1,97 @@
+@import "src/styles/imports";
+
+$current: 375;
+
+.autocomplete-item-wrapper {
+	min-height: vw_size(59, $current);
+	border-bottom: 1px solid rgb(222, 222, 222);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	&:focus-visible {
+		outline: none !important;
+		background-color: rgb(223 223 223);
+	}
+	&:hover {
+		background-color: rgb(223 223 223);
+	}
+	.autocomplete-item {
+		font-size: vw_size(17, $current);
+		font-family: $font-book;
+		color: #949494;
+
+		text-align: right;
+		align-self: center;
+		margin-right: vw_size(15, $current);
+
+		&.has-bold {
+			margin-right: unset;
+		}
+		&.has-space {
+			margin-right: vw_size(5, $current);
+		}
+	}
+	.autocomplete-item-bold {
+		// margin-right: vw_size(3, $current);
+		font-size: vw_size(17, $current);
+		font-family: $font-book;
+		color: black;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.autocomplete-item-wrapper {
+		min-height: vw_size(59, $current);
+		.autocomplete-item {
+			font-size: vw_size(17, $current);
+			margin-right: vw_size(15, $current);
+			&.has-space {
+				margin-right: vw_size(5, $current);
+			}
+		}
+		.autocomplete-item-bold {
+			// margin-right: vw_size(15, $current);
+			font-size: vw_size(17, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.autocomplete-item-wrapper {
+		min-height: vw_size(59, $current);
+		.autocomplete-item {
+			font-size: vw_size(17, $current);
+			margin-right: vw_size(15, $current);
+			&.has-space {
+				margin-right: vw_size(5, $current);
+			}
+		}
+		.autocomplete-item-bold {
+			// margin-right: vw_size(15, $current);
+			font-size: vw_size(17, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-max;
+	.autocomplete-item-wrapper {
+		min-height: vw_size(59, $current);
+		.autocomplete-item {
+			font-size: vw_size(17, $current);
+			margin-right: vw_size(15, $current);
+			&.has-space {
+				margin-right: vw_size(5, $current);
+			}
+		}
+		.autocomplete-item-bold {
+			// margin-right: vw_size(15, $current);
+			font-size: vw_size(17, $current);
+		}
+	}
+}

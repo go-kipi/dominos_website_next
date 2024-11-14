@@ -1,0 +1,610 @@
+@import "/src/styles/imports.scss";
+$current: $mobile;
+.side-dish-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+	background-color: $soft-gray-opacity;
+	border-radius: 20px;
+	width: vw_size(330, $current);
+	min-height: vw_size(160, $current);
+	color: white;
+	&:active {
+		background-color: $soft-gray-opacity-hover;
+	}
+
+	&.rtl {
+		.top-left-icons-wrapper {
+			left: 0;
+			right: unset;
+		}
+	}
+
+	.label-wrapper {
+		display: flex;
+		justify-content: flex-end;
+		position: absolute;
+		bottom: 100%;
+		width: 100%;
+		//left: vw_size(20, $current);
+
+		.label {
+			margin-inline: vw_size(20, $current);
+			background-color: $label-blue;
+			border-radius: vw_size(6, $current) vw_size(6, $current) 0 0;
+			padding-inline: vw_size(10, $current);
+			font-size: vw_size(12, $current);
+			font-family: $font-bold;
+			color: $blackish;
+		}
+	}
+
+	.top-left-icons-wrapper {
+		z-index: 1;
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: flex;
+		flex-direction: row-reverse;
+		height: vw_size(50, $current);
+
+		img {
+			height: 100%;
+			width: auto;
+			object-fit: contain;
+			cursor: pointer;
+
+			&.expand-icon {
+				width: vw_size(40, $current);
+				height: vw_size(40, $current);
+			}
+
+			&.vegan-icon {
+				height: vw_size(40, $current);
+				width: vw_size(40, $current);
+			}
+		}
+	}
+
+	.image-wrapper {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: vw_size(79, $current);
+		height: 100%;
+
+		.side-dish-image {
+			position: absolute;
+			top: 10%;
+			width: vw_size(139, $current);
+		}
+	}
+
+	.leftSide {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: space-between;
+		min-height: inherit;
+		padding: vw_size(20, $current) vw_size(10, $current) vw_size(15, $current);
+
+		.top {
+			.title {
+				font-size: vw_size(16, $current);
+				font-family: $font-medium;
+				margin-bottom: vw_size(8, $current);
+				max-width: vw_size(200, $current);
+				text-align: start;
+			}
+			.description {
+				display: -webkit-box;
+				font-size: vw_size(14, $current);
+				font-family: $font-medium;
+				line-height: vw_size(18, $current);
+				color: #b0b0b0;
+				text-align: start;
+				margin-bottom: vw_size(15, $current);
+			}
+		}
+
+		.bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+
+			.prices-area {
+				display: flex;
+				flex-direction: column;
+				font-family: $font-bold;
+				height: vw_size(39, $current);
+				justify-content: center;
+				&.multi-prices {
+					justify-content: space-between;
+				}
+
+				//font-size: vw_size(17, $current);
+
+				.current-price {
+					align-self: flex-start;
+				}
+
+				.old-price {
+					align-self: flex-start;
+					color: $pink;
+				}
+
+				.comment {
+					color: $pink;
+					font-size: vw_size(12, $current);
+				}
+			}
+
+			.button {
+				width: vw_size(113, $current);
+				height: vw_size(39, $current);
+
+				.btn-text {
+					font-size: vw_size(16, $current);
+				}
+			}
+
+			.out-of-stock-wrapper {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: vw_size(113, $current);
+				height: vw_size(39, $current);
+				.out-of-stock {
+					font-size: vw_size(15, $current);
+					font-family: $font-bold;
+					color: $pink;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.side-dish-wrapper {
+		width: vw_size(330, $current);
+		height: vw_size(160, $current);
+		min-height: unset;
+
+		.label-wrapper {
+			.label {
+				margin-inline: vw_size(20, $current);
+				border-radius: vw_size(6, $current) vw_size(6, $current) 0 0;
+				padding-inline: vw_size(10, $current);
+				font-size: vw_size(12, $current);
+			}
+		}
+
+		.top-left-icons-wrapper {
+			height: vw_size(50, $current);
+
+			img {
+				&.expand-icon {
+					width: vw_size(40, $current);
+					height: vw_size(40, $current);
+				}
+
+				&.vegan-icon {
+					width: vw_size(40, $current);
+					height: vw_size(40, $current);
+				}
+			}
+		}
+
+		.image-wrapper {
+			position: relative;
+			width: vw_size(79, $current);
+
+			.side-dish-image {
+				top: unset;
+				width: vw_size(139, $current);
+			}
+		}
+
+		.leftSide {
+			padding: vw_size(20, $current) vw_size(10, $current) vw_size(15, $current);
+
+			.top {
+				.title {
+					font-size: vw_size(16, $current);
+					margin-bottom: vw_size(8, $current);
+					max-width: vw_size(140, $current);
+				}
+
+				.description {
+					font-size: vw_size(13, $current);
+					line-height: vw_size(18, $current);
+					margin-bottom: unset;
+				}
+			}
+
+			.bottom {
+				.prices-area {
+					height: vw_size(39, $current);
+
+					.comment {
+						font-size: vw_size(12, $current);
+					}
+				}
+
+				.button {
+					width: vw_size(113, $current);
+					height: vw_size(39, $current);
+
+					.btn-text {
+						font-size: vw_size(16, $current);
+					}
+				}
+
+				.out-of-stock-wrapper {
+					width: vw_size(113, $current);
+					height: vw_size(39, $current);
+
+					.out-of-stock {
+						font-size: vw_size(15, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop-large;
+	.side-dish-wrapper {
+		transition: 0.3s;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: $box-shadow-card;
+			background-color: $soft-gray-opacity-hover;
+
+			.image-wrapper {
+				width: vw_size(250, $current);
+				.side-dish-image {
+					height: vw_size(207, $current);
+					transition: 0.3s;
+				}
+			}
+		}
+
+		&.rtl {
+			.label-wrapper {
+				transform-origin: top left;
+				transform: rotate(-90deg) translateX(-100%) translateY(-100%);
+
+				.label {
+					margin-inline: vw_size(20, $current);
+				}
+			}
+
+			.top-left-icons-wrapper {
+				flex-direction: row-reverse;
+				right: unset;
+				left: vw_size(5, $current);
+				font-family: $font-book;
+				img {
+					&.expand-icon {
+						width: vw_size(40, $current);
+						height: vw_size(40, $current);
+						right: vw_size(10, $current);
+					}
+					&.vegan-icon {
+						position: relative;
+					}
+				}
+			}
+
+			.vegan-icon {
+				left: unset;
+				right: vw_size(10, $current);
+			}
+		}
+
+		width: vw_size(297, $current);
+		height: vw_size(283, $current);
+		border-radius: 28px;
+		flex-direction: column;
+		align-items: stretch;
+
+		.label-wrapper {
+			bottom: unset;
+			justify-content: flex-start;
+			transform-origin: top right;
+			transform: rotate(90deg) translateX(90%) translateY(-100%);
+
+			.label {
+				white-space: nowrap;
+				border-radius: vw_size(6, $current) vw_size(6, $current) 0 0;
+				padding-inline: vw_size(10, $current);
+				font-size: vw_size(12, $current);
+			}
+		}
+		.vegan-icon {
+			position: absolute;
+			top: vw_size(6, $current);
+			right: vw_size(6, $current);
+			width: vw_size(40, $current);
+		}
+
+		.top-left-icons-wrapper {
+			right: 0;
+			left: unset;
+			position: absolute;
+			flex-direction: row;
+			align-items: flex-end;
+			height: unset;
+			width: vw_size(40, $current);
+
+			img {
+				&.expand-icon {
+					right: vw_size(5, $current);
+					width: vw_size(40, $current);
+					height: vw_size(40, $current);
+				}
+				&.vegan-icon {
+					display: none;
+					position: relative;
+				}
+			}
+		}
+
+		.vegan-icon {
+			right: unset;
+			left: vw_size(10, $current);
+		}
+
+		.image-wrapper {
+			justify-content: center;
+			align-self: center;
+			height: vw_size(90, $current);
+			width: vw_size(210, $current);
+			transition: 0.3s;
+
+			.side-dish-image {
+				width: 100%;
+				object-fit: contain;
+				height: vw_size(177, $current);
+				left: unset;
+				transition: 0.3s;
+				bottom: 0;
+			}
+		}
+
+		.leftSide {
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			justify-content: space-between;
+			padding: vw_size(10, $current) vw_size(20, $current) vw_size(15, $current);
+
+			.top {
+				.title {
+					font-size: vw_size(20, $current);
+					font-family: $font-medium;
+					margin-bottom: vw_size(8, $current);
+					max-width: unset;
+				}
+
+				.description {
+					font-size: vw_size(14, $current);
+
+					line-height: vw_size(18, $current);
+					font-family: $font-book;
+				}
+			}
+
+			.bottom {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+
+				.prices-area {
+					display: flex;
+					flex-direction: column-reverse;
+					font-family: $font-bold;
+					height: unset;
+
+					.current-price {
+						align-self: flex-start;
+						font-size: vw_size(28, $current);
+
+						.currency {
+							font-size: vw_size(20, $current);
+						}
+					}
+
+					.old-price {
+						font-size: vw_size(20, $current);
+						align-self: flex-start;
+						color: $pink;
+
+						.currency {
+							font-size: vw_size(14, $current);
+						}
+					}
+
+					.comment {
+						color: $pink;
+						font-size: vw_size(12, $current);
+					}
+				}
+
+				.button {
+					width: vw_size(101, $current);
+					height: vw_size(35, $current);
+
+					.btn-text {
+						font-size: vw_size(15, $current);
+					}
+				}
+
+				.out-of-stock-wrapper {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: vw_size(113, $current);
+					height: vw_size(39, $current);
+
+					.out-of-stock {
+						font-size: vw_size(15, $current);
+						font-family: $font-bold;
+						color: $pink;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop_max;
+	.side-dish-wrapper {
+		transition: 0.3s;
+		&.clicked {
+			box-shadow: 0 0 vw_size(10, $current) black;
+		}
+
+		&:hover {
+			.image-wrapper {
+				width: vw_size(250, $current);
+				.side-dish-image {
+					height: vw_size(207, $current);
+				}
+			}
+		}
+
+		&.rtl {
+			.label-wrapper {
+				.label {
+					margin-inline: vw_size(20, $current);
+				}
+			}
+
+			.top-left-icons-wrapper {
+				left: vw_size(5, $current);
+				img {
+					&.expand-icon {
+						width: vw_size(40, $current);
+						height: vw_size(40, $current);
+						right: vw_size(10, $current);
+					}
+				}
+			}
+
+			.vegan-icon {
+				right: vw_size(10, $current);
+			}
+		}
+
+		width: vw_size(297, $current);
+		height: vw_size(283, $current);
+
+		.label-wrapper {
+			top: vw_size(20, $current);
+			transform-origin: top right;
+			transform: rotate(90deg) translateX(90%) translateY(-100%);
+
+			.label {
+				border-radius: vw_size(6, $current) vw_size(6, $current) 0 0;
+				padding-inline: vw_size(10, $current);
+				font-size: vw_size(12, $current);
+			}
+		}
+
+		.vegan-icon {
+			top: vw_size(6, $current);
+			right: vw_size(6, $current);
+			width: vw_size(40, $current);
+		}
+
+		.top-left-icons-wrapper {
+			right: vw_size(5, $current);
+			width: vw_size(40, $current);
+
+			img {
+				&.expand-icon {
+					width: vw_size(40, $current);
+					height: vw_size(40, $current);
+				}
+			}
+		}
+
+		.image-wrapper {
+			width: vw_size(210, $current);
+			align-self: center;
+			height: vw_size(90, $current);
+
+			.side-dish-image {
+				height: vw_size(177, $current);
+			}
+		}
+
+		.leftSide {
+			padding: vw_size(10, $current) vw_size(20, $current) vw_size(15, $current);
+
+			.top {
+				.title {
+					font-size: vw_size(20, $current);
+					margin-bottom: vw_size(8, $current);
+				}
+
+				.description {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(18, $current);
+				}
+			}
+
+			.bottom {
+				.prices-area {
+					.current-price {
+						font-size: vw_size(28, $current);
+
+						.currency {
+							font-size: vw_size(20, $current);
+						}
+					}
+
+					.old-price {
+						font-size: vw_size(20, $current);
+						align-self: flex-start;
+						color: $pink;
+
+						.currency {
+							font-size: vw_size(14, $current);
+						}
+					}
+
+					.comment {
+						color: $pink;
+						font-size: vw_size(12, $current);
+					}
+				}
+
+				.button {
+					width: vw_size(101, $current);
+					height: vw_size(35, $current);
+
+					.btn-text {
+						font-size: vw_size(15, $current);
+					}
+				}
+
+				.out-of-stock-wrapper {
+					width: vw_size(113, $current);
+					height: vw_size(39, $current);
+
+					.out-of-stock {
+						font-size: vw_size(15, $current);
+					}
+				}
+			}
+		}
+	}
+}

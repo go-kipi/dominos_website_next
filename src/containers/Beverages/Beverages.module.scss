@@ -1,0 +1,75 @@
+@import "src/styles/imports";
+$current: 375;
+.beverages-wrapper {
+	.list-wrapper {
+		padding-top: vw_size(50, $current);
+		margin-inline-start: vw_size(20, $current);
+		.item {
+			margin-bottom: vw_size(40, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.beverages-wrapper {
+		.list-wrapper {
+			padding-top: vw_size(50, $current);
+			margin-inline-start: vw_size(40, $current);
+			display: flex;
+			flex-wrap: wrap;
+
+			.item {
+				margin-bottom: vw_size(30, $current);
+				&:nth-of-type(2n) {
+					margin-inline-start: vw_size(40, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.beverages-wrapper {
+		.list-wrapper {
+			padding-top: vw_size(134, $current);
+			margin-inline-start: vw_size(172, $current);
+
+			.item {
+				margin-bottom: vw_size(168, $current);
+				&:nth-of-type(2n) {
+					margin-inline-start: 0;
+				}
+				&:nth-of-type(3n),
+				&:nth-of-type(3n + 2) {
+					margin-inline-start: vw_size(40, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.beverages-wrapper {
+		.list-wrapper {
+			padding-top: vw_size(134, $current);
+			margin-inline-start: vw_size(310, $current);
+
+			.item {
+				margin-bottom: vw_size(108, $current);
+
+				&:nth-of-type(3n),
+				&:nth-of-type(3n + 2) {
+					margin-inline-start: 0;
+				}
+				&:nth-of-type(4n),
+				&:nth-of-type(4n + 2),
+				&:nth-of-type(4n + 3) {
+					margin-inline-start: vw_size(43, $current);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,173 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.no-toppings-actions {
+	width: vw_size(25, $current);
+	height: vw_size(20, $current);
+}
+
+.multiple-options-indicator-wrapper {
+	&.toppings-actions {
+		cursor: pointer;
+		position: relative;
+		height: vw_size(20, $current);
+		width: vw_size(25, $current);
+		.multiple-options-indicator-img {
+			position: relative;
+			left: unset;
+			right: unset;
+		}
+		.options-tooltip-wrapper {
+			top: vw_size(30, $current);
+			left: vw_size(-20, $current);
+
+			.tool-tip-option-wrapper {
+				width: vw_size(106, $current);
+				// width: 100%;
+				background-color: white;
+				color: black;
+			}
+			.options-tooltip-container {
+				// position: relative;
+			}
+			.tooltip-triangle {
+				top: vw_size(-9, $current);
+				border-bottom: vw_size(11, $current) solid #ffff;
+				@include left(vw_size(28, $current));
+			}
+		}
+		&.ltr {
+			.options-tooltip-wrapper {
+				top: vw_size(30, $current);
+				left: vw_size(-57, $current);
+
+				.tooltip-triangle {
+					left: vw_size(66, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.no-toppings-actions {
+		width: vw_size(25, $current);
+		height: vw_size(20, $current);
+	}
+	.multiple-options-indicator-wrapper {
+		&.toppings-actions {
+			height: vw_size(20, $current);
+			width: vw_size(25, $current);
+
+			.options-tooltip-wrapper {
+				top: vw_size(30, $current);
+				left: vw_size(-20, $current);
+
+				.tool-tip-option-wrapper {
+					width: vw_size(106, $current);
+				}
+
+				.tooltip-triangle {
+					top: vw_size(-9, $current);
+					@include left(vw_size(28, $current));
+					border-bottom: vw_size(11, $current) solid #ffff;
+				}
+			}
+			&.ltr {
+				.options-tooltip-wrapper {
+					top: vw_size(30, $current);
+					left: vw_size(-60, $current);
+
+					.tooltip-triangle {
+						left: vw_size(68, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.no-toppings-actions {
+		width: vw_size(25, $current);
+		height: vw_size(20, $current);
+	}
+	.multiple-options-indicator-wrapper {
+		&.toppings-actions {
+			align-self: flex-start;
+			height: vw_size(32, $current);
+			width: vw_size(32, $current);
+			.options-tooltip-wrapper {
+				top: vw_size(37, $current);
+				left: vw_size(-17, $current);
+
+				.tool-tip-option-wrapper {
+					width: vw_size(150, $current);
+				}
+
+				.tooltip-triangle {
+					top: vw_size(-9, $current);
+					border-bottom: vw_size(11, $current) solid #ffff;
+					@include left(vw_size(29, $current));
+				}
+			}
+			&.ltr {
+				.options-tooltip-wrapper {
+					top: vw_size(37, $current);
+					left: vw_size(-108, $current);
+
+					.tooltip-triangle {
+						left: vw_size(120, $current);
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.no-toppings-actions {
+		width: vw_size(25, $current);
+		height: vw_size(20, $current);
+	}
+	.multiple-options-indicator-wrapper {
+		&.toppings-actions {
+			height: vw_size(32, $current);
+			width: vw_size(32, $current);
+
+			.options-tooltip-wrapper {
+				border-radius: vw_size(5, $current);
+				top: vw_size(40, $current);
+				left: vw_size(-25, $current);
+
+				.tool-tip-option-wrapper {
+					width: vw_size(150, $current);
+					justify-content: flex-start;
+					padding-inline-start: vw_size(10, $current);
+				}
+
+				.tooltip-triangle {
+					top: vw_size(-10, $current);
+					@include left(vw_size(37, $current));
+					border-bottom: vw_size(11, $current) solid #ffff;
+				}
+			}
+			&.ltr {
+				.options-tooltip-wrapper {
+					top: vw_size(37, $current);
+					left: vw_size(-110, $current);
+
+					.tooltip-triangle {
+						top: vw_size(-10, $current);
+						left: vw_size(123, $current);
+					}
+				}
+			}
+		}
+	}
+}

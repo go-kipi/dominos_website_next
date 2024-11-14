@@ -1,0 +1,14 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.bit-btn {
+  width: vw_size(240, $current);
+  height: vw_size(40, $current);
+  background: linear-gradient(270deg, #2c5e8b 0%, #39a3b2 100%);
+  border-radius: 4px;
+  margin-top: vw_size(35, $current);
+
+  img {
+    width: vw_size(40, $current);
+  }
+}

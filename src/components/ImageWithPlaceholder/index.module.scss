@@ -1,0 +1,11 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+
+.loaded {
+    transition: 250ms ease-in-out all;
+    opacity: 1;
+}
+.hidden {
+    transition: 250ms ease-in-out all;
+    opacity: 0;
+}

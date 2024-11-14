@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="25px" viewBox="0 0 33 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>master card</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ui-style-guide_1-of2" transform="translate(-670.000000, -7220.000000)">
+            <g id="credit-cards/master-card" transform="translate(670.041667, 7220.750000)">
+                <g id="master-card" transform="translate(0.000000, 0.000000)">
+                    <rect id="Rectangle-Copy-27" fill="#AEAEAE" x="0" y="0" width="32.3970223" height="24" rx="5"></rect>
+                    <g id="credit-card/MASTERCARD" transform="translate(7.225806, 6.000000)" fill="#FFFFFF">
+                        <ellipse id="Oval-Copy" opacity="0.959200904" cx="12.4292709" cy="6" rx="6.15137426" ry="6"></ellipse>
+                        <ellipse id="Oval" opacity="0.8" cx="6.15137426" cy="6" rx="6.15137426" ry="6"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

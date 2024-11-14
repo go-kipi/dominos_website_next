@@ -1,0 +1,82 @@
+@import "src/styles/imports";
+@import "src/styles/imports.scss";
+
+$current: 375;
+.wrapper {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+
+	.container-content {
+		overflow: auto;
+		height: 100%;
+		@include hide-scrollbar();
+	}
+
+	.scrollbar {
+		background-color: transparent;
+		border-left-width: 0;
+		position: absolute;
+		top: 0;
+		@include right(vw_size(7, $current));
+		height: 100%;
+		width: vw_size(3, $current);
+		&.hide {
+			display: none;
+		}
+		.scrollbar-track {
+			height: 100%;
+			@include left(0);
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+		.scrollbar-thumb {
+			background-color: rgba(92, 106, 116, 1);
+			cursor: grab;
+			@include left(0);
+			position: absolute;
+			width: 100%;
+			border-radius: vw_size(10, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.wrapper {
+		.scrollbar {
+			@include right(vw_size(7, $current));
+			width: vw_size(3, $current);
+			.scrollbar-thumb {
+				border-radius: vw_size(10, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.wrapper {
+		.scrollbar {
+			@include right(vw_size(7, $current));
+			width: vw_size(3, $current);
+			.scrollbar-thumb {
+				border-radius: vw_size(10, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop_max;
+	.wrapper {
+		.scrollbar {
+			@include right(vw_size(7, $current));
+			width: vw_size(3, $current);
+			.scrollbar-thumb {
+				border-radius: vw_size(10, $current);
+			}
+		}
+	}
+}

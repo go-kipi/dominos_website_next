@@ -1,0 +1,188 @@
+@import "src/styles/imports.scss";
+
+:global(.popup_content) {
+	.phone {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: vw_size(120, $mobile);
+
+		.image-wrapper {
+			margin-top: vw_size(25, $mobile);
+			width: vw_size(108, $mobile);
+		}
+
+		.phone-input {
+			position: relative;
+			margin: 0 auto;
+			margin-top: vw_size(25, $mobile);
+			display: flex;
+			justify-content: center;
+
+			input {
+				padding-inline-end: unset;
+				padding-bottom: vw_size(4, $mobile);
+				&::placeholder {
+					color: #383940;
+				}
+			}
+			.error_text {
+				top: 170%;
+				width: 100%;
+				text-align: center;
+			}
+		}
+		.suggestion {
+			color: #383940;
+			font-family: EzerDoo-Regular;
+			text-align: center;
+			font-size: vw_size(12, $mobile);
+			margin-top: vw_size(3, $mobile);
+		}
+		.title-label {
+			text-align: center;
+			color: $red;
+			font-family: EzerDoo-Medium;
+			font-size: vw_size(24, $mobile);
+			margin: 0;
+		}
+		.subtitle-label {
+			text-align: center;
+			font-family: EzerDoo-Regular;
+			color: #404042;
+			font-size: vw_size(16, $mobile);
+			margin: 0;
+			margin-top: vw_size(4, $mobile);
+		}
+		.switched-phone-btn {
+			margin-top: vw_size(97, $mobile);
+		}
+		.phone-submit-btn {
+			margin: 0 auto;
+			margin-top: vw_size(39, $mobile);
+		}
+		.opt_send_voicemail_btn {
+			margin: vw_size(10, $mobile) auto 0;
+		}
+		.next-btn {
+			margin: vw_size(120, $mobile) auto 0;
+		}
+	}
+}
+@media (min-width: $media-tablet) {
+	:global(.popup_content) {
+		.phone {
+			padding-bottom: unset;
+
+			.image-wrapper {
+				margin-top: vw_size(13, $tablet);
+				width: vw_size(108, $tablet);
+			}
+			.suggestion {
+				font-size: vw_size(12, $tablet);
+				margin-top: vw_size(3, $tablet);
+			}
+			.title-label {
+				font-size: vw_size(24, $tablet);
+			}
+			.phone-input {
+				margin-top: vw_size(70, $tablet);
+				input {
+					padding-bottom: vw_size(4, $tablet);
+				}
+			}
+			.subtitle-label {
+				font-size: vw_size(16, $tablet);
+			}
+			.phone-submit-btn {
+				margin-top: vw_size(39, $tablet);
+				margin-bottom: vw_size(20, $tablet);
+			}
+			.switched-phone-btn {
+				margin-top: vw_size(80, $tablet);
+			}
+			.opt_send_voicemail_btn {
+				margin: vw_size(15, $tablet) auto 0;
+			}
+			.next-btn {
+				margin-top: vw_size(60, $tablet);
+				display: block;
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	:global(.popup_content) {
+		.phone {
+			.image-wrapper {
+				margin-top: vw_size(45, $desktop_max);
+				width: vw_size(108, $desktop);
+			}
+			.suggestion {
+				font-size: vw_size(12, $desktop);
+			}
+			.title-label {
+				font-size: vw_size(24, $desktop);
+			}
+			.subtitle-label {
+				font-size: vw_size(16, $desktop);
+			}
+			.phone-input {
+				margin-top: vw_size(64, $desktop_max);
+				input {
+					padding-bottom: vw_size(6, $desktop);
+				}
+			}
+			.switched-phone-btn {
+				margin-top: vw_size(80, $desktop);
+			}
+			.phone-submit-btn {
+				width: vw_size(300, $desktop);
+				margin-top: vw_size(70, $desktop);
+				margin-bottom: unset;
+				&-voicemessage {
+					width: vw_size(340, $desktop);
+				}
+			}
+			.opt_send_voicemail_btn {
+				margin-top: vw_size(30, $desktop_max);
+			}
+			.next-btn {
+				margin-top: vw_size(50, $desktop_max);
+			}
+		}
+	}
+}
+@media (min-width: $media-desktop_large) {
+	:global(.popup_content) {
+		.phone {
+			.image-wrapper {
+				width: vw_size(108, $desktop_large);
+			}
+			.suggestion {
+				font-size: vw_size(12, $desktop_large);
+			}
+			.phone-input {
+				input {
+					padding-bottom: vw_size(6, $desktop_large);
+				}
+			}
+			.title-label {
+				font-size: vw_size(24, $desktop_large);
+			}
+			.subtitle-label {
+				font-size: vw_size(16, $desktop_large);
+			}
+			.phone-submit-btn {
+				width: vw_size(300, $desktop_large);
+				margin-top: vw_size(70, $desktop_large);
+				&-voicemessage {
+					width: vw_size(340, $desktop_large);
+				}
+			}
+			.switched-phone-btn {
+				margin-top: vw_size(80, $desktop-max);
+			}
+		}
+	}
+}

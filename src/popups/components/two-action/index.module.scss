@@ -1,0 +1,434 @@
+@import "src/styles/imports.scss";
+//transitions
+
+$current: 375;
+.two-action-popup {
+	:global(.popup_content) {
+		.transition-wrapper {
+			position: relative;
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+		}
+		.slide {
+			&:global(-enter) {
+				top: 100%;
+				position: absolute;
+				width: 100%;
+				&:global(-active) {
+					top: 0;
+					transition: all 350ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+				}
+			}
+			&:global(-exit) {
+				top: 0;
+				position: absolute;
+				width: 100%;
+
+				&:global(-active) {
+					top: 100%;
+					transition: all 350ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+				}
+			}
+		}
+	}
+}
+
+.two-action-popup {
+	&.delete-user {
+		:global(.popup_wrapper) {
+			height: 80vh;
+		}
+		.lotte-wrapper {
+			margin-top: vw_size(20, $current);
+			width: vw_size(110, $current);
+		}
+	}
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	:global(.popup_wrapper) {
+		position: relative;
+		background: #ffffff;
+		display: flex;
+		height: 70vh;
+		flex-direction: column;
+		transition: all 200ms ease-out;
+		justify-content: flex-start;
+		overflow: hidden;
+
+		.close-icon-wrapper {
+			display: block;
+		}
+
+		:global(.popup_content) {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			.transition-wrapper {
+				height: 100%;
+			}
+
+			.lotte-wrapper {
+				padding-bottom: vw_size(5, $current);
+				.lotte {
+				}
+			}
+			.text-wrapper {
+				padding: 0 vw_size(10,$current);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.sub-title {
+					margin-inline-end: 4px;
+					font-family: $font-book;
+					color: rgba(89, 107, 117, 1);
+					font-size: vw_size(16, $current);
+					width: 75%;
+					font-weight: unset;
+					text-align: center;
+					&.delete-user {
+						margin-top: vw_size(25, $current);
+					}
+				}
+				.sub-title-row {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: rgba(89, 107, 117, 1);
+					font-size: vw_size(16, $current);
+					line-height: vw_size(23, $current);
+					margin-top: vw_size(20, $current);
+					margin-bottom: vw_size(10, $current);
+					.sub-title {
+						margin-inline-end: 4px;
+						font-family: $font-book;
+						font-weight: unset;
+					}
+					.add-title {
+						font-family: $font-bold;
+						font-weight: unset;
+					}
+				}
+
+				.title {
+					font-family: $font-medium;
+					font-size: vw_size(22, $current);
+					color: $black;
+					line-height: vw_size(28, $current);
+					//width: vw_size(300, $current);
+					text-align: center;
+					font-weight: unset;
+					&.delete-user {
+						margin-top: vw_size(30, $current);
+					}
+				}
+			}
+
+			.btn-wrap {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-block: vw_size(34, $current);
+				width: 100%;
+
+				.btn {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-inline: vw_size(45, $current);
+					cursor: pointer;
+
+					&.main-btn {
+						border-radius: 22px;
+						margin-bottom: vw_size(26, $current);
+
+						.main-btn-text {
+							font-family: $font-medium;
+							color: $white;
+							font-size: vw_size(14, $current);
+						}
+					}
+				}
+				.sec-btn {
+					margin-bottom: vw_size(30, $current);
+				}
+			}
+		}
+	}
+
+	.update-icon {
+		width: vw_size(141, $current);
+		margin-top: vw_size(40, $current);
+		margin-bottom: vw_size(18, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.two-action-popup {
+		justify-content: center;
+		&.delete-user {
+			:global(.popup_wrapper) {
+				height: vw_size(600, $current);
+			}
+			.lotte-wrapper {
+				margin-top: vw_size(20, $current);
+				width: vw_size(110, $current);
+			}
+		}
+
+		:global(.popup_wrapper) {
+			width: vw_size(512, $current);
+			height: vw_size(512, $current);
+			border-radius: vw_size(9, $current);
+
+			:global(.popup_content) {
+				padding-top: vw_size(20, $current);
+				.lotte-wrapper {
+					padding-bottom: vw_size(5, $current);
+					.lotte {
+					}
+				}
+				.text-wrapper {
+					.sub-title {
+						margin-inline-end: 4px;
+						font-size: vw_size(16, $current);
+
+						&.delete-user {
+							margin-top: vw_size(25, $current);
+						}
+					}
+					.sub-title-row {
+						color: rgba(89, 107, 117, 1);
+						font-size: vw_size(16, $current);
+						line-height: vw_size(23, $current);
+						margin-top: vw_size(20, $current);
+						margin-bottom: vw_size(10, $current);
+						.sub-title {
+						}
+						.add-title {
+							font-family: $font-bold;
+						}
+					}
+
+					.title {
+						font-size: vw_size(22, $current);
+						line-height: vw_size(28, $current);
+						&.delete-user {
+							margin-top: vw_size(25, $current);
+						}
+					}
+				}
+				.btn-wrap {
+					margin-block: unset;
+					margin-top: vw_size(34, $current);
+
+					.btn {
+						margin-inline: vw_size(45, $current);
+
+						&.main-btn {
+							margin-bottom: vw_size(26, $current);
+
+							.main-btn-text {
+								font-size: vw_size(14, $current);
+							}
+						}
+					}
+					.sec-btn {
+						margin-bottom: vw_size(30, $current);
+					}
+				}
+			}
+		}
+		.update-icon {
+			width: vw_size(141, $current);
+			margin-top: vw_size(40, $current);
+			margin-bottom: vw_size(18, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.two-action-popup {
+		&.delete-user {
+			:global(.popup_wrapper) {
+				height: vw_size(512, $current);
+			}
+			.lotte-wrapper {
+				margin-top: unset;
+				width: vw_size(150, $current);
+			}
+		}
+		:global(.popup_wrapper) {
+			width: vw_size(512, $current);
+			height: vw_size(512, $current);
+			border-radius: vw_size(9, $current);
+			.close-icon-wrapper {
+				top: vw_size(5, $current);
+				left: vw_size(10, $current);
+				width: vw_size(18, $current);
+				height: vw_size(18, $current);
+			}
+
+			:global(.popup_content) {
+				width: vw_size(512, $current);
+				height: vw_size(512, $current);
+				padding-top: vw_size(20, $current);
+				.lotte-wrapper {
+					padding-bottom: vw_size(5, $current);
+					.lotte {
+					}
+				}
+				.text-wrapper {
+					padding: unset;
+					margin-bottom: vw_size(40, $current);
+					.sub-title {
+						margin-inline-end: 4px;
+						font-size: vw_size(16, $current);
+
+						&.delete-user {
+							margin-top: vw_size(25, $current);
+						}
+					}
+					.sub-title-row {
+						color: rgba(89, 107, 117, 1);
+						font-size: vw_size(16, $current);
+						line-height: vw_size(25, $current);
+						margin-top: vw_size(20, $current);
+						margin-bottom: vw_size(10, $current);
+						.sub-title {
+						}
+						.add-title {
+							font-family: $font-bold;
+						}
+					}
+
+					.title {
+						font-size: vw_size(22, $current);
+						line-height: vw_size(33, $current);
+						padding: 0 vw_size(100, $current);
+						&.delete-user {
+							margin-top: vw_size(25, $current);
+						}
+					}
+				}
+				.btn-wrap {
+					margin-top: unset;
+
+					.btn {
+						margin-inline: vw_size(45, $current);
+
+						&.main-btn {
+							margin-bottom: vw_size(26, $current);
+							font-size: vw_size(20, $current);
+							line-height: vw_size(29, $current);
+							.main-btn-text {
+								font-size: vw_size(14, $current);
+							}
+						}
+					}
+				}
+			}
+		}
+		.update-icon {
+			width: vw_size(141, $current);
+			margin-top: vw_size(40, $current);
+			margin-bottom: vw_size(27, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.popup) {
+		.two-action-popup {
+			&.delete-user {
+				:global(.popup_wrapper) {
+					height: vw_size(612, $current);
+				}
+				.lotte-wrapper {
+					width: vw_size(150, $current);
+				}
+			}
+			:global(.popup_wrapper) {
+				width: vw_size(612, $current);
+				height: vw_size(612, $current);
+				margin: 0 auto;
+				border-radius: vw_size(9, $current);
+				.close-icon-wrapper {
+					top: vw_size(5, $current);
+					left: vw_size(10, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+
+				:global(.popup_content) {
+					width: vw_size(612, $current);
+					height: vw_size(612, $current);
+					min-width: vw_size(612, $current);
+					padding-top: vw_size(20, $current);
+					.lotte-wrapper {
+						padding-bottom: vw_size(5, $current);
+						.lotte {
+						}
+					}
+					.text-wrapper {
+						margin-bottom: vw_size(40, $current);
+						.sub-title {
+							margin-inline-end: 4px;
+							font-size: vw_size(16, $current);
+
+							&.delete-user {
+								margin-top: vw_size(10, $current);
+							}
+						}
+						.sub-title-row {
+							color: rgba(89, 107, 117, 1);
+							font-size: vw_size(16, $current);
+							line-height: vw_size(23, $current);
+							margin-top: vw_size(20, $current);
+							margin-bottom: vw_size(10, $current);
+							.sub-title {
+							}
+							.add-title {
+								font-family: $font-bold;
+							}
+						}
+
+						.title {
+							font-size: vw_size(22, $current);
+							line-height: vw_size(33, $current);
+							padding: 0 vw_size(60, $current);
+							width: vw_size(420, $current);
+						}
+					}
+					.btn-wrap {
+						.btn {
+							margin-inline: vw_size(45, $current);
+
+							&.main-btn {
+								margin-bottom: vw_size(26, $current);
+								font-size: vw_size(20, $current);
+								line-height: vw_size(29, $current);
+								.main-btn-text {
+									font-size: vw_size(14, $current);
+								}
+							}
+						}
+					}
+				}
+			}
+			.update-icon {
+				width: vw_size(141, $current);
+				margin-top: vw_size(40, $current);
+				margin-bottom: vw_size(27, $current);
+			}
+		}
+	}
+}

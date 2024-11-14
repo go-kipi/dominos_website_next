@@ -1,0 +1,120 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.text-area-wrapper {
+  border: 1px solid rgba(148, 148, 148, 1);
+  border-radius: 10px;
+  height: vw_size(90, $current);
+  padding-inline-start: vw_size(12, $current);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &.focus {
+    border-color: rgba(1, 122, 255, 1);
+  }
+
+  &.error {
+    border-color: $red;
+  }
+  .placeholder {
+    color: #949494;
+    font-size: vw_size(17, $current);
+    transition: all 100ms ease-out;
+    font-family: $font;
+    &.focus {
+      color: rgba(1, 122, 255, 1);
+    }
+    &.has-value {
+      font-size: vw_size(13, $current);
+    }
+  }
+  .textarea {
+    border: none;
+    color: black;
+    font-family: $font;
+    height: vw_size(60, $current);
+    width: 100%;
+    font-size: vw_size(17, $current);
+
+    @include hide-scrollbar();
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .error-text {
+    position: absolute;
+    top: 100%;
+    color: $red;
+    font-family: $font;
+
+    font-size: vw_size(14, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .text-area-wrapper {
+    height: vw_size(90, $current);
+    padding-inline-start: vw_size(12, $current);
+
+    .placeholder {
+      font-size: vw_size(17, $current);
+      &.has-value {
+        font-size: vw_size(13, $current);
+      }
+    }
+    .textarea {
+      height: vw_size(60, $current);
+      font-size: vw_size(17, $current);
+    }
+    .error-text {
+      font-size: vw_size(14, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .text-area-wrapper {
+    height: vw_size(90, $current);
+    padding-inline-start: vw_size(12, $current);
+
+    .placeholder {
+      font-size: vw_size(17, $current);
+      &.has-value {
+        font-size: vw_size(13, $current);
+      }
+    }
+    .textarea {
+      height: vw_size(60, $current);
+      font-size: vw_size(17, $current);
+    }
+    .error-text {
+      font-size: vw_size(14, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  .text-area-wrapper {
+    height: vw_size(90, $current);
+    padding-inline-start: vw_size(12, $current);
+
+    .placeholder {
+      font-size: vw_size(17, $current);
+      &.has-value {
+        font-size: vw_size(13, $current);
+      }
+    }
+    .textarea {
+      height: vw_size(60, $current);
+      font-size: vw_size(17, $current);
+    }
+    .error-text {
+      font-size: vw_size(14, $current);
+    }
+  }
+}

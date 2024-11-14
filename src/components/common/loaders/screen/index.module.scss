@@ -1,0 +1,60 @@
+@import "../../../../styles/imports";
+
+$animation-duration: 500ms;
+.loader_wrapper {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0.3);
+	width: 100vw;
+	height: 100vh;
+	z-index: 100000;
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+
+	.loader {
+		width: 100px;
+		height: 100px;
+	}
+	&.animate {
+		opacity: 0;
+		&.animate-in,
+		&.animate-out {
+			animation-duration: $animation-duration;
+			animation-timing-function: ease-in-out;
+			animation-fill-mode: forwards;
+		}
+
+		&.animate-in {
+			animation-name: animate-wrapper-in;
+		}
+
+		&.animate-out {
+			animation-name: animate-wrapper-out;
+		}
+	}
+}
+
+@keyframes animate-wrapper-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes animate-wrapper-out {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,144 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+.header-tab-navigator-wrapper {
+	display: flex;
+	justify-content: center;
+	width: vw_size(265, $current);
+	height: 100%;
+
+	.tabs-wrapper {
+		@include hide-scrollbar;
+		display: flex;
+		align-items: center;
+		position: relative;
+		height: 100%;
+		overflow-x: scroll;
+		margin: 0;
+		scroll-behavior: smooth;
+
+		.tab-wrapper {
+			white-space: nowrap;
+			height: 100%;
+			font-family: $font-book;
+			font-size: vw_size(15, $current);
+			padding: 0 vw_size(10, $current);
+			color: white;
+			cursor: pointer;
+
+			&:disabled {
+				cursor: default;
+			}
+
+			&:disabled {
+				color: #b0b0b0;
+			}
+		}
+		.indicator {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: vw_size(3, $current);
+			background-color: $dominos-red;
+			width: vw_size(31, $current);
+			transition: 0.3s;
+		}
+	}
+}
+.title {
+	width: 100%;
+	text-align: center;
+	font-family: $font;
+	font-size: vw_size(14, $current);
+	color: white;
+	letter-spacing: -0.2px;
+	&.back-showing {
+		padding-inline-start: unset;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.header-tab-navigator-wrapper {
+		flex: 1;
+		justify-content: center;
+		.tabs-wrapper {
+			.tab-wrapper {
+				font-size: vw_size(15, $current);
+				padding: 0 vw_size(10, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(31, $current);
+			}
+		}
+	}
+	.title {
+		font-size: vw_size(14, $current);
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.header-tab-navigator-wrapper {
+		flex: unset;
+		width: vw_size(1050, $current);
+
+		.tabs-wrapper {
+			.tab-wrapper {
+				font-size: vw_size(18, $current);
+				padding: 0 vw_size(10, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(50, $current);
+			}
+		}
+	}
+	.title {
+		font-size: vw_size(18, $current);
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_large;
+	.header-tab-navigator-wrapper {
+		flex: unset;
+		width: vw_size(1500, $current);
+
+		.tabs-wrapper {
+			.tab-wrapper {
+				font-size: vw_size(18, $current);
+				padding: 0 vw_size(10, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(50, $current);
+			}
+		}
+	}
+	.title {
+		font-size: vw_size(18, $current);
+	}
+}
+
+@media (min-width: $media-desktop_max) {
+	$current: $desktop-max;
+	.header-tab-navigator-wrapper {
+		flex: unset;
+		width: vw_size(1500, $current);
+
+		.tabs-wrapper {
+			.tab-wrapper {
+				font-size: vw_size(18, $current);
+				padding: 0 vw_size(10, $current);
+			}
+			.indicator {
+				height: vw_size(3, $current);
+				width: vw_size(50, $current);
+			}
+		}
+	}
+	.title {
+		font-size: vw_size(18, $current);
+	}
+}

@@ -1,0 +1,182 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.discount-wrapper {
+	border-radius: 14px;
+	border: dashed rgba(255, 255, 255, 0.5);
+	border-width: 2px;
+	width: vw_size(330, $current);
+	min-height: vw_size(71, $current);
+	margin-top: vw_size(16, $current);
+	padding: vw_size(10, $current);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.discount-right {
+		width: 60%;
+		display: flex;
+		align-items: center;
+
+		.coupon-icon {
+			flex-shrink: 0;
+			width: vw_size(28, $current);
+			height: vw_size(28, $current);
+		}
+		.coupon-text-wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-inline-start: vw_size(14, $current);
+			.coupon-text {
+				font-family: $font;
+				font-size: vw_size(14, $current);
+				color: white;
+				letter-spacing: 0.17px;
+				line-height: 17px;
+				line-break: normal;
+			}
+		}
+	}
+	.discount-left {
+		width: 30%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.coupon-difference {
+		direction: ltr;
+		text-align: center;
+		border-radius: 3px;
+		background-color: #ffb200;
+		padding: vw_size(3, $current);
+		height: vw_size(20, $current);
+		font-family: $font-bold;
+		font-size: vw_size(12, $current);
+	}
+	.coupon-delete {
+		cursor: pointer;
+		width: vw_size(16, $current);
+		height: vw_size(16, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.discount-wrapper {
+		width: 100%;
+		min-height: vw_size(71, $current);
+		margin-top: vw_size(16, $current);
+		padding: vw_size(10, $current);
+		.discount-right {
+			width: 60%;
+			.coupon-icon {
+				width: vw_size(28, $current);
+				height: vw_size(28, $current);
+			}
+			.coupon-text-wrapper {
+				padding-inline-start: vw_size(14, $current);
+
+				.coupon-text {
+					font-size: vw_size(14, $current);
+					letter-spacing: 0.17px;
+					line-height: 17px;
+				}
+			}
+		}
+		.discount-left {
+			width: 30%;
+		}
+		.coupon-difference {
+			border-radius: 3px;
+			padding: vw_size(3, $current);
+			height: vw_size(20, $current);
+			font-size: vw_size(12, $current);
+		}
+		.coupon-delete {
+			width: vw_size(16, $current);
+			height: vw_size(16, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.discount-wrapper {
+		min-height: vw_size(71, $current);
+		margin-top: vw_size(16, $current);
+		padding: vw_size(10, $current);
+		.discount-right {
+			align-items: center;
+			width: 79%;
+			.coupon-icon {
+				width: vw_size(32, $current);
+				height: vw_size(32, $current);
+			}
+			.coupon-text-wrapper {
+				padding-inline-start: vw_size(14, $current);
+				.coupon-text {
+					font-size: vw_size(12, $current);
+					letter-spacing: 0.14px;
+					line-height: 22px;
+					font-family: $font;
+				}
+			}
+		}
+		.discount-left {
+			width: 21%;
+		}
+		.coupon-difference {
+			border-radius: 3px;
+			padding: vw_size(3, $current);
+			height: vw_size(20, $current);
+			font-size: vw_size(12, $current);
+			background-color: unset;
+			color: #ffb200;
+		}
+		.coupon-delete {
+			width: vw_size(16, $current);
+			height: vw_size(16, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-large;
+	.discount-wrapper {
+		min-height: vw_size(71, $current);
+		margin-top: vw_size(16, $current);
+		padding: vw_size(10, $current);
+		.discount-right {
+			width: 79%;
+			.coupon-icon {
+				width: vw_size(32, $current);
+				height: vw_size(32, $current);
+			}
+			.coupon-text-wrapper {
+				padding-inline-start: vw_size(14, $current);
+
+				.coupon-text {
+					font-size: vw_size(12, $current);
+				}
+				.coupon-disclaimers {
+					line-height: vw_size(14, $current);
+					font-size: vw_size(12, $current);
+
+					margin-top: vw_size(3, $current);
+				}
+			}
+		}
+		.discount-left {
+		}
+		.coupon-difference {
+			border-radius: 3px;
+			padding: vw_size(3, $current);
+			height: vw_size(20, $current);
+			font-size: vw_size(12, $current);
+		}
+		.coupon-delete {
+			width: vw_size(16, $current);
+			height: vw_size(16, $current);
+		}
+	}
+}

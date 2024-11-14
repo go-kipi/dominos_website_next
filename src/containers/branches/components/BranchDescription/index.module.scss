@@ -1,0 +1,224 @@
+@import "src/styles/imports.scss";
+
+$current: $mobile;
+
+.branch-description-container {
+	display: flex;
+	flex-direction: column;
+	width: vw_size(286.5, $current);
+
+	.opening-hours-container {
+		.opening-hours-title {
+			font-family: $font-bold;
+			letter-spacing: vw_size(0.45, $current);
+			font-size: vw_size(15, $current);
+			margin: 0;
+			margin-bottom: vw_size(12, $current);
+		}
+
+		.opening-hours-data {
+			font-family: $font-book;
+			font-size: vw_size(15, $current);
+			letter-spacing: vw_size(0.3, $current);
+			color: $light-grey-text;
+
+			p {
+				margin-block-start: 0;
+				margin-block-end: 0;
+			}
+		}
+	}
+
+	.description {
+		font-family: $font-book;
+		font-size: vw_size(15, $current);
+		letter-spacing: vw_size(0.3, $current);
+		color: $light-grey-text;
+		margin-top: vw_size(14, $current);
+
+		p {
+			margin-block-start: 0;
+			margin-block-end: vw_size(5, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.branch-description-container {
+		width: vw_size(678, $current);
+
+		.opening-hours-container {
+			.opening-hours-title {
+				letter-spacing: vw_size(0.45, $current);
+				font-size: vw_size(15, $current);
+				margin-bottom: vw_size(12, $current);
+			}
+
+			.opening-hours-data {
+				font-size: vw_size(15, $current);
+				letter-spacing: vw_size(0.3, $current);
+			}
+		}
+
+		.description {
+			font-size: vw_size(15, $current);
+			letter-spacing: vw_size(0.3, $current);
+			margin-top: vw_size(14, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.branch-description-container {
+		width: 100%;
+		position: relative;
+
+		.branch-top-details {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+
+			.image {
+				aspect-ratio: 16 / 9;
+
+				width: vw_size(170, $current);
+				object-fit: fill;
+				margin-inline-end: vw_size(43.5, $current);
+			}
+		}
+
+		.details-container {
+			display: flex;
+			align-items: flex-start;
+
+			.details {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		.opening-hours-container {
+			.title {
+				font-family: $font-bold;
+				font-size: vw_size(15, $current);
+				letter-spacing: vw_size(0.45, $current);
+				margin: 0;
+				margin-bottom: vw_size(4, $current);
+				padding: 0;
+				padding-inline-start: 12px;
+			}
+
+			.opening-hours-wrapper {
+				display: flex;
+				flex-direction: column;
+				height: 6vh;
+			}
+
+			.opening-hours-data {
+				font-size: vw_size(15, $current);
+				letter-spacing: vw_size(0.3, $current);
+				margin-top: unset;
+				padding-inline-start: 12px;
+			}
+		}
+
+		.description-wrapper {
+			height: vw_size(90, $current);
+			//padding-bottom: vw_size(50, $current);
+			display: flex;
+			position: relative;
+		}
+
+		.description {
+			font-size: vw_size(15, $current);
+			letter-spacing: vw_size(0.3, $current);
+			margin-top: unset;
+			padding-inline-start: 12px;
+
+			p {
+				margin-block-end: vw_size(5, $current);
+			}
+
+		}
+
+		.gradient {
+			width: 100%;
+			height: vw_size(50, $current);
+			position: absolute;
+			pointer-events: none;
+
+			&.top {
+				background-image: linear-gradient(0deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 255, 255, 1) 100%);
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 10;
+			}
+
+			&.bottom {
+				background-image: linear-gradient(-180deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 255, 255, 1) 100%);
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 10;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+
+	.branch-description-container {
+		.branch-top-details {
+			.image {
+				height: vw_size(139, $current);
+				width: vw_size(248.4, $current);
+				margin-inline-end: vw_size(43.5, $current);
+			}
+		}
+
+		.opening-hours-container {
+			.title {
+				font-size: vw_size(15, $current);
+				letter-spacing: vw_size(0.45, $current);
+				margin-bottom: vw_size(4, $current);
+			}
+
+			.opening-hours-data {
+				font-size: vw_size(15, $current);
+				letter-spacing: vw_size(0.3, $current);
+				margin-top: vw_size(14, $current);
+				padding-inline-end: vw_size(30, $current);
+
+			}
+		}
+
+		.description-wrapper {
+			height: vw_size(210, $current);
+			padding-bottom: vw_size(50, $current);
+			margin-top: vw_size(14, $current);
+		}
+
+		.description {
+			font-size: vw_size(15, $current);
+			letter-spacing: vw_size(0.3, $current);
+		}
+
+		.gradient {
+			height: vw_size(50, $current);
+
+			&.bottom {
+				bottom: vw_size(40, $current);
+			}
+		}
+	}
+}

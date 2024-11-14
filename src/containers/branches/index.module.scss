@@ -1,0 +1,92 @@
+@import "src/styles/imports.scss";
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.background-image {
+		display: none;
+	}
+
+	.map-wrapper {
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		z-index: 4000;
+	}
+
+	.top-gradient {
+		position: fixed;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+
+		background-image: linear-gradient(
+			-180deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		width: 100vw;
+		height: vw_size(316, $current);
+		z-index: 4100;
+	}
+
+	.container {
+		position: relative;
+		padding-bottom: vw_size(50, $current);
+		.custom-breadcrumbs {
+			position: relative;
+			z-index: 4200;
+			margin-inline-start: vw_size(37, $current);
+		}
+
+		.branches-wrapper {
+			position: relative;
+			z-index: 4200;
+			background-color: white;
+			height: vw_size(541, $current);
+			margin-top: vw_size(26, $current);
+
+			box-shadow: 10px 2px 30px 0 rgba(0, 0, 0, 0.56);
+			border-radius: vw_size(14, $current);
+			transition: width 300ms ease-out;
+			width: vw_size(460, $current);
+			margin-inline-start: vw_size(86, $current);
+
+			&.big {
+				width: vw_size(890, $current);
+				transition: width 300ms ease-out;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_large;
+
+	.top-gradient {
+		height: vw_size(316, $current);
+	}
+
+	.container {
+		padding-bottom: vw_size(50, $current);
+		.custom-breadcrumbs {
+			margin-inline-start: vw_size(37, $current);
+		}
+
+		.branches-wrapper {
+			height: vw_size(541, $current);
+			margin-top: vw_size(26, $current);
+
+			border-radius: vw_size(14, $current);
+			width: vw_size(460, $current);
+			margin-inline-start: vw_size(86, $current);
+
+			&.big {
+				width: vw_size(890, $current);
+			}
+		}
+	}
+}

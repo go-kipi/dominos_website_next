@@ -1,0 +1,491 @@
+@import "src/styles/imports";
+
+$current: 375;
+@mixin disabled {
+	opacity: 0.3;
+	pointer-events: none;
+}
+
+.personal-builder {
+	font-size: vw_size(16, $current);
+	color: white;
+	height: 82vh;
+	overflow: auto;
+
+	.title-wrapper {
+		position: absolute;
+		top: vw_size(20, $current);
+		left: 40%;
+
+		.title {
+			text-align: center;
+			font-family: EzerDoo-Regular;
+			font-size: vw_size(14, $current);
+			line-height: vw_size(16, $current);
+		}
+	}
+
+	.subtitle {
+		text-align: center;
+		font-family: EzerDoo-Medium;
+		font-size: vw_size(20, $current);
+	}
+
+	.pizzas-wrapper {
+		.pizza-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&.disabled {
+				cursor: unset;
+				.pizzas-img-wrapper {
+					@include disabled;
+				}
+				.text-wrapper {
+					.pizzas-title,
+					.price-title {
+						@include disabled;
+					}
+					.out-of-stock {
+						font-family: $font-medium;
+						color: $pink;
+						font-size: vw_size(13, $current);
+					}
+				}
+			}
+
+			&:not(last-child) {
+				margin-top: vw_size(10, $current);
+			}
+
+			.pizzas-img-wrapper {
+				width: vw_size(156, $current);
+				height: vw_size(155, $current);
+
+				&.extra > img {
+					width: vw_size(156, $current);
+					height: vw_size(155, $current);
+				}
+
+				&.family > img {
+					width: vw_size(129, $current);
+					height: vw_size(128, $current);
+					margin: auto;
+				}
+
+				&.personal > img {
+					width: vw_size(101, $current);
+					height: vw_size(100, $current);
+					margin: auto;
+					margin-top: 15%;
+				}
+			}
+
+			.text-wrapper {
+				margin-inline-start: vw_size(18, $current);
+				width: vw_size(120, $current);
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				.price-wrapper {
+					display: flex;
+					flex-direction: row;
+					gap: vw_size(10, $current);
+				}
+
+				.pizzas-title {
+					font-family: $font;
+					font-size: vw_size(18, $current);
+					color: white;
+					line-height: vw_size(28, $current);
+					margin: 0;
+				}
+
+				.price-bracket {
+					font-family: $font-medium;
+					color: #d7d7d7;
+					justify-content: flex-start;
+					font-size: vw_size(16, $current);
+					line-height: vw_size(38.5, $current);
+				}
+
+				.price-title {
+					font-family: $font-medium;
+					color: #d7d7d7;
+					justify-content: flex-start;
+					font-size: vw_size(16, $current);
+					line-height: vw_size(38.5, $current);
+					&.blank {
+						margin-bottom: vw_size(20, $current);
+					}
+					.decimal-price {
+						font-size: vw_size(12, $current);
+					}
+				}
+
+				.marked {
+					color: $dominos-red;
+				}
+			}
+
+			.plus-btn-wrapper {
+				margin-inline-start: vw_size(18, $current);
+
+				width: vw_size(99, $current);
+				height: vw_size(36, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.personal-builder {
+		font-size: vw_size(16, $current);
+
+		.title-wrapper {
+			top: vw_size(20, $current);
+
+			.title {
+				font-size: vw_size(14, $current);
+				line-height: vw_size(16, $current);
+			}
+		}
+
+		.subtitle {
+			font-size: vw_size(20, $current);
+		}
+
+		.pizzas-wrapper {
+			.pizza-wrapper {
+				&:not(last-child) {
+					margin-top: vw_size(40, $current);
+				}
+
+				&.disabled {
+					.text-wrapper {
+						.out-of-stock {
+							font-size: vw_size(13, $current);
+						}
+					}
+				}
+
+				.pizzas-img-wrapper {
+					width: vw_size(156, $current);
+					height: vw_size(155, $current);
+
+					&.extra > img {
+						width: vw_size(156, $current);
+						height: vw_size(155, $current);
+					}
+
+					&.family > img {
+						width: vw_size(129, $current);
+						height: vw_size(128, $current);
+					}
+
+					&.personal > img {
+						width: vw_size(101, $current);
+						height: vw_size(100, $current);
+					}
+				}
+
+				.text-wrapper {
+					margin-inline-start: vw_size(18, $current);
+					width: vw_size(120, $current);
+
+					.price-wrapper {
+						gap: vw_size(10, $current);
+					}
+
+					.pizzas-title {
+						font-family: $font;
+						font-size: vw_size(18, $current);
+						line-height: vw_size(28, $current);
+					}
+					.price-bracket {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(38.5, $current);
+					}
+
+					.price-title {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(38.5, $current);
+						.decimal-price {
+							font-size: vw_size(12, $current);
+						}
+						&.blank {
+							margin-bottom: vw_size(30, $current);
+						}
+					}
+				}
+
+				.plus-btn-wrapper {
+					margin-inline-start: vw_size(18, $current);
+
+					width: vw_size(99, $current);
+					height: vw_size(36, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.personal-builder {
+			.subtitle {
+				text-align: left;
+			}
+		}
+	}
+	.personal-builder {
+		.title-wrapper {
+			top: vw_size(20, $current);
+			left: 45%;
+		}
+
+		.title {
+			font-size: vw_size(14, $current);
+			line-height: vw_size(16, $current);
+
+			&::after {
+				content: "";
+				border: 1px solid rgba(101, 101, 101, 1);
+				position: absolute;
+				top: vw_size(62, $current);
+				right: -740%;
+				height: 1px;
+				width: vw_size(1196, $current);
+			}
+		}
+
+		.subtitle {
+			text-align: right;
+			font-size: vw_size(35, $current);
+			font-family: EzerDoo-Medium;
+			margin-inline-start: vw_size(120, $current);
+			margin-top: vw_size(30, $current);
+			margin-bottom: vw_size(70, $current);
+		}
+
+		.pizzas-wrapper {
+			margin: revert;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-evenly;
+			align-items: center;
+			padding-top: revert;
+			overflow: scroll;
+			@include hide-scrollbar();
+
+			.pizza-wrapper {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				&.disabled {
+					.text-wrapper {
+						.out-of-stock {
+							margin-top: vw_size(5, $current);
+							font-size: vw_size(18, $current);
+						}
+					}
+				}
+
+				&:not(last-child) {
+					margin-top: revert;
+				}
+
+				&:nth-child(n) {
+					margin: auto vw_size(20, $current);
+				}
+
+				.pizzas-img-wrapper {
+					width: vw_size(345, $current);
+					height: vw_size(345, $current);
+
+					&.extra > img {
+						width: vw_size(345, $current);
+						height: vw_size(345, $current);
+					}
+
+					&.family > img {
+						width: vw_size(295, $current);
+						height: vw_size(295, $current);
+						margin-top: 14%;
+					}
+
+					&.personal > img {
+						width: vw_size(231, $current);
+						height: vw_size(231, $current);
+						margin-top: 32%;
+					}
+				}
+
+				.button-text-wrapper {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.text-wrapper {
+					margin: unset;
+
+					align-items: center;
+					margin-top: vw_size(35, $current);
+					width: vw_size(120, $current);
+
+					.price-wrapper {
+						gap: vw_size(10, $current);
+					}
+
+					.pizzas-title {
+						font-size: vw_size(18, $current);
+						line-height: vw_size(28, $current);
+					}
+					.price-bracket {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(38, $current);
+					}
+
+					.price-title {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(38, $current);
+						.decimal-price {
+							font-size: vw_size(12, $current);
+						}
+						&.blank {
+							margin-bottom: vw_size(32, $current);
+						}
+					}
+				}
+
+				.plus-btn-wrapper {
+					margin: unset;
+					position: absolute;
+					bottom: vw_size(85, $current);
+					height: vw_size(40, $current);
+					width: vw_size(41, $current);
+					background-color: $blue;
+					border-radius: 100%;
+					padding: vw_size(9, $current);
+
+					&:hover {
+						background-color: rgba(0, 104, 218, 1);
+					}
+
+					&:active {
+						background-color: rgba(0, 88, 186, 1);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-max;
+	.personal-builder {
+		.title-wrapper {
+			top: vw_size(20, $current);
+			left: 45%;
+		}
+
+		.title {
+			font-size: vw_size(14, $current);
+			line-height: vw_size(16, $current);
+
+			&::after {
+				top: vw_size(62, $current);
+				right: -740%;
+				width: vw_size(1196, $current);
+			}
+		}
+
+		.subtitle {
+			font-size: vw_size(35, $current);
+			font-family: EzerDoo-Medium;
+
+			margin-bottom: vw_size(70, $current);
+			margin-top: vw_size(90, $current);
+		}
+
+		.pizzas-wrapper {
+			.pizza-wrapper {
+				&:nth-child(n) {
+					margin: auto vw_size(0, $current);
+				}
+
+				&.disabled {
+					.text-wrapper {
+						.out-of-stock {
+							margin-top: vw_size(5, $current);
+							font-size: vw_size(18, $current);
+						}
+					}
+				}
+
+				.pizzas-img-wrapper {
+					width: vw_size(345, $current);
+					height: vw_size(345, $current);
+
+					&.extra > img {
+						width: vw_size(345, $current);
+						height: vw_size(345, $current);
+					}
+
+					&.family > img {
+						width: vw_size(295, $current);
+						height: vw_size(295, $current);
+						margin-top: 14%;
+					}
+
+					&.personal > img {
+						width: vw_size(231, $current);
+						height: vw_size(231, $current);
+						margin-top: 32%;
+					}
+				}
+
+				.text-wrapper {
+					margin-top: vw_size(60, $current);
+					width: vw_size(120, $current);
+
+					.price-wrapper {
+						gap: vw_size(10, $current);
+					}
+
+					.pizzas-title {
+						font-size: vw_size(18, $current);
+						line-height: vw_size(28, $current);
+					}
+					.price-bracket {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(38, $current);
+					}
+
+					.price-title {
+						font-size: vw_size(16, $current);
+						line-height: vw_size(38, $current);
+						.decimal-price {
+							font-size: vw_size(12, $current);
+						}
+						&.blank {
+							margin-bottom: vw_size(32, $current);
+						}
+					}
+				}
+
+				.plus-btn-wrapper {
+					bottom: vw_size(110, $current);
+					height: vw_size(40, $current);
+					width: vw_size(41, $current);
+					padding: vw_size(9, $current);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,122 @@
+@import "../../../styles/imports";
+
+.general-msg {
+	font-size: vw_size(16, $mobile);
+
+	:global(.popup_wrapper) {
+		position: relative;
+		min-width: vw_size(290, $mobile);
+		height: auto;
+		background: #ffffff;
+		border-radius: 4px;
+		padding: vw_size(50, $mobile) vw_size(15, $mobile) vw_size(30, $mobile);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		transition: all 200ms ease-out;
+		transform: translateY(-40%);
+
+		&.active {
+			transform: translateY(0);
+		}
+		&.done {
+			transform: none;
+		}
+	}
+	.x_close_icon {
+		position: absolute;
+		top: vw_size(5, $mobile);
+		left: vw_size(10, $mobile);
+
+		&:before {
+			content: "\d7";
+			font-size: vw_size(30, $mobile);
+			color: #000000;
+		}
+	}
+	:global(.popup_content) {
+		text-align: center;
+		min-height: vw_size(130, $mobile);
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
+	}
+	.accept-btn {
+		width: 50%;
+		padding: vw_size(5, $mobile);
+		margin: 0 auto;
+	}
+}
+@media (min-width: $media-tablet) {
+	.general-msg {
+		font-size: vw_size(16, $tablet);
+
+		:global(.popup_wrapper) {
+			min-width: vw_size(290, $tablet);
+			padding: vw_size(50, $tablet) vw_size(15, $tablet) vw_size(30, $tablet);
+		}
+		.x_close_icon {
+			top: vw_size(5, $tablet);
+			left: vw_size(10, $tablet);
+
+			&:before {
+				font-size: vw_size(30, $tablet);
+			}
+		}
+		:global(.popup_content) {
+			min-height: vw_size(130, $tablet);
+		}
+		.accept-btn {
+			padding: vw_size(5, $tablet);
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	.general-msg {
+		font-size: vw_size(16, $desktop);
+
+		:global(.popup_wrapper) {
+			min-width: vw_size(290, $desktop);
+			padding: vw_size(50, $desktop) vw_size(15, $desktop) vw_size(30, $desktop);
+		}
+		.x_close_icon {
+			top: vw_size(5, $desktop);
+			left: vw_size(10, $desktop);
+
+			&:before {
+				font-size: vw_size(30, $desktop);
+			}
+		}
+		:global(.popup_content) {
+			min-height: vw_size(130, $desktop);
+		}
+		.accept-btn {
+			padding: vw_size(5, $desktop);
+		}
+	}
+}
+@media (min-width: $media-desktop-large) {
+	.general-msg {
+		font-size: vw_size(16, $desktop-large);
+
+		:global(.popup_wrapper) {
+			min-width: vw_size(290, $desktop-large);
+			padding: vw_size(50, $desktop-large) vw_size(15, $desktop-large)
+				vw_size(30, $desktop-large);
+		}
+		.x_close_icon {
+			top: vw_size(5, $desktop-large);
+			left: vw_size(10, $desktop-large);
+
+			&:before {
+				font-size: vw_size(30, $desktop-large);
+			}
+		}
+		:global(.popup_content) {
+			min-height: vw_size(130, $desktop-large);
+		}
+		.accept-btn {
+			padding: vw_size(5, $desktop-large);
+		}
+	}
+}

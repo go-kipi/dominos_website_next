@@ -1,0 +1,473 @@
+@import "src/styles/imports.scss";
+$current: 375;
+:global(.ltr) {
+	.pizzas-wrapper {
+		.build-pizza-wrapper {
+			.build-pizza-card {
+				.build-pizza-image {
+					transform: scaleX(-1);
+					left: vw_size(-40, $current);
+					right: unset;
+				}
+				.build-pizzas-checkbox {
+					left: unset;
+					right: vw_size(10, $current);
+				}
+				.build-pizza-content {
+					.build-pizza-content-title {
+						text-align: left;
+					}
+					.build-pizza-content-subtitle {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}
+.pizzas-wrapper {
+	height: 100%;
+	position: relative;
+	margin-top: vw_size(30, $current);
+	.build-pizza-wrapper {
+		margin-inline-start: vw_size(24, $current);
+		margin-bottom: vw_size(44, $current);
+
+		.build-pizza-card {
+			position: relative;
+			background-color: rgba(92, 106, 116, 0.4);
+			width: vw_size(330, $current);
+			height: vw_size(109, $current);
+			border-radius: vw_size(20, $current);
+			padding-top: vw_size(23, $current);
+			margin-top: vw_size(22, $current);
+			padding-inline-start: vw_size(7, $current);
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				background-color: $soft-gray-opacity-hover;
+
+				box-shadow: $box-shadow-card;
+			}
+			&:active {
+				background-color: $soft-gray-opacity-hover;
+			}
+
+			.build-pizzas-checkbox {
+				position: absolute;
+				left: vw_size(10, $current);
+				bottom: vw_size(7, $current);
+				height: vw_size(25, $current);
+				width: vw_size(25, $current);
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.build-pizza-image {
+				position: absolute;
+				top: vw_size(-10, $current);
+				right: vw_size(-40, $current);
+				width: vw_size(116, $current);
+				height: vw_size(140, $current);
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+				//height: vw_size(165, $current);
+			}
+			.build-pizza-content {
+				padding-inline-start: vw_size(80, $current);
+				.build-pizza-content-title {
+					margin: 0;
+					color: $white;
+					font-family: $font-medium;
+					font-size: vw_size(16, $current);
+					text-align: right;
+					font-weight: unset;
+				}
+				.build-pizza-content-subtitle {
+					margin: 0;
+					color: #c2c2c2;
+					font-family: $font-medium;
+					font-size: vw_size(14, $current);
+					width: vw_size(200, $current);
+					margin-top: vw_size(15, $current);
+					text-align: right;
+					font-weight: unset;
+				}
+			}
+		}
+	}
+
+	.recommended-pizzas {
+		margin-inline-start: vw_size(24, $current);
+		.title-wrapper {
+		}
+		.pizzas {
+			margin-top: vw_size(26, $current);
+			.pizza-wrapper {
+				border-radius: 30px;
+				margin-bottom: vw_size(40, $current);
+			}
+		}
+	}
+
+	.bottom-gradient {
+		position: fixed;
+		bottom: 0%;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		opacity: 0;
+		pointer-events: none;
+		background: rgb(0, 0, 0);
+		background: linear-gradient(rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%);
+		transition: 0.2s;
+
+		&.fade-in {
+			opacity: 1;
+		}
+	}
+
+	.pizzas-continue-button-mobile {
+		position: fixed;
+		margin-inline: auto;
+		left: 0;
+		right: 0;
+		bottom: vw_size(75, $current);
+		width: vw_size(325, $current);
+		z-index: 3;
+	}
+
+	.pizzas-continue-button {
+		background-color: $blue;
+		width: vw_size(70, $current);
+		height: vw_size(70, $current);
+		border-radius: 50%;
+		position: fixed;
+		left: vw_size(20, $current);
+		bottom: vw_size(60, $current);
+		img {
+			width: vw_size(24, $current);
+			height: vw_size(24, $current);
+			object-fit: contain;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.ltr) {
+		.pizzas-wrapper {
+			.build-pizza-wrapper {
+				.build-pizza-card {
+					.build-pizza-image {
+						left: vw_size(-30, $current);
+						right: unset;
+					}
+				}
+			}
+		}
+	}
+
+	.pizzas-wrapper {
+		margin-top: vw_size(32, $current);
+		.build-pizza-wrapper {
+			margin-inline-start: vw_size(24, $current);
+			margin-bottom: vw_size(44, $current);
+			.build-pizza-card {
+				width: vw_size(700, $current);
+				height: vw_size(109, $current);
+				border-radius: vw_size(20, $current);
+				padding-top: vw_size(23, $current);
+				margin-top: vw_size(22, $current);
+				padding-inline-start: vw_size(7, $current);
+
+				.build-pizzas-checkbox {
+					position: relative;
+					left: vw_size(-340, $current);
+					bottom: vw_size(-40, $current);
+					height: vw_size(42, $current);
+					width: vw_size(42, $current);
+				}
+
+				.build-pizza-image {
+					top: vw_size(-10, $current);
+					right: vw_size(-35, $current);
+					width: vw_size(116, $current);
+					height: vw_size(140, $current);
+				}
+				.build-pizza-content {
+					padding-inline-start: vw_size(90, $current);
+					.build-pizza-content-title {
+						font-size: vw_size(16, $current);
+					}
+					.build-pizza-content-subtitle {
+						font-size: vw_size(12, $current);
+						width: vw_size(200, $current);
+						margin-top: vw_size(15, $current);
+					}
+				}
+			}
+		}
+		.recommended-pizzas {
+			margin-inline-start: vw_size(24, $current);
+			.title-wrapper {
+				top: vw_size(50, $current);
+			}
+			.pizzas {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: vw_size(26, $current);
+				.pizza-wrapper {
+					&:nth-child(2n) {
+						margin-inline-start: vw_size(40, $current);
+					}
+					margin-bottom: vw_size(40, $current);
+				}
+			}
+		}
+
+		.pizzas-continue-button-mobile {
+			bottom: vw_size(75, $current);
+			width: vw_size(325, $current);
+		}
+
+		.pizzas-continue-button {
+			width: vw_size(70, $current);
+			height: vw_size(70, $current);
+			left: vw_size(20, $current);
+			bottom: vw_size(60, $current);
+			img {
+				width: vw_size(24, $current);
+				height: vw_size(24, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.pizzas-wrapper {
+			.build-pizza-wrapper {
+				.build-pizza-card {
+					.build-pizza-image {
+						left: vw_size(-40, $current);
+						right: unset;
+					}
+				}
+			}
+		}
+	}
+
+	.pizzas-wrapper {
+		position: relative;
+		margin-inline-start: vw_size(171, $current);
+		margin-top: vw_size(50, $current);
+		.pizzas-head {
+			display: flex;
+			margin-bottom: vw_size(40, $current);
+		}
+		.build-pizza-wrapper {
+			margin-inline-start: 0;
+			order: 1;
+			margin-bottom: 0;
+
+			.build-pizza-card {
+				width: vw_size(469, $desktop-large);
+				height: vw_size(109, $desktop-large);
+				border-radius: vw_size(20, $desktop-large);
+				padding-top: vw_size(23, $desktop-large);
+				margin-top: vw_size(22, $desktop-large);
+				padding-inline-start: vw_size(7, $desktop-large);
+				.build-pizzas-checkbox {
+					left: vw_size(-40, $desktop-large);
+					bottom: vw_size(-40, $desktop-large);
+					height: vw_size(32, $desktop-large);
+					width: vw_size(32, $desktop-large);
+				}
+				.build-pizza-image {
+					top: vw_size(-30, $desktop-large);
+					right: vw_size(-40, $desktop-large);
+					width: vw_size(172, $desktop-large);
+					height: vw_size(172, $desktop-large);
+				}
+				.build-pizza-content {
+					padding-inline-start: vw_size(100, $current);
+					.build-pizza-content-title {
+						font-size: vw_size(17, $desktop-large);
+					}
+					.build-pizza-content-subtitle {
+						font-size: vw_size(14, $desktop-large);
+						width: vw_size(269, $desktop-large);
+						margin-top: vw_size(10, $desktop-large);
+						font-family: $font-book;
+					}
+				}
+			}
+		}
+		.recommended-pizzas {
+			margin-inline-start: 0;
+			.title-wrapper {
+				position: relative;
+				top: unset;
+			}
+			.head {
+				width: vw_size(982, $current);
+				display: flex;
+				padding-bottom: vw_size(16, $current);
+				justify-content: space-between;
+				border-bottom: 1px solid rgba(101, 101, 101, 1);
+			}
+			.pizzas {
+				margin-top: vw_size(130, $current);
+				.pizza-wrapper {
+					&:nth-child(2n) {
+						margin-inline-start: 0;
+					}
+					&:nth-child(3n),
+					&:nth-child(3n + 2) {
+						margin-inline-start: vw_size(43, $current);
+					}
+					margin-bottom: vw_size(132, $current);
+				}
+			}
+		}
+
+		.pizzas-continue-button {
+			width: vw_size(70, $current);
+			height: vw_size(70, $current);
+			left: vw_size(45, $current);
+			bottom: vw_size(45, $current);
+			img {
+				width: vw_size(24, $current);
+				height: vw_size(24, $current);
+			}
+		}
+	}
+	:global(.ltr) {
+		.build-pizza-wrapper {
+			.build-pizza-card {
+				.build-pizzas-checkbox {
+					left: vw_size(40, $current);
+				}
+			}
+		}
+		.pizzas-wrapper {
+			.pizzas-continue-button {
+				left: unset;
+				right: vw_size(45, $current);
+				& > img {
+					transform: scaleX(-1);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.ltr) {
+		.pizzas-wrapper {
+			.build-pizza-wrapper {
+				.build-pizza-card {
+					.build-pizza-image {
+						left: vw_size(-40, $current);
+						right: unset;
+					}
+				}
+			}
+		}
+	}
+
+	.pizzas-wrapper {
+		margin-inline-start: vw_size(310, $current);
+		margin-top: vw_size(50, $current);
+		.build-pizza-wrapper {
+			.build-pizza-card {
+				width: vw_size(650, $current);
+				height: vw_size(109, $current);
+				border-radius: vw_size(20, $current);
+				padding-top: vw_size(23, $current);
+				margin-top: vw_size(22, $current);
+				padding-inline-start: vw_size(7, $current);
+				.build-pizzas-checkbox {
+					left: vw_size(-40, $current);
+					bottom: vw_size(-40, $current);
+					height: vw_size(32, $current);
+					width: vw_size(32, $current);
+				}
+				.build-pizza-image {
+					top: vw_size(-30, $current);
+					right: vw_size(-40, $current);
+					width: vw_size(172, $current);
+					height: vw_size(172, $current);
+				}
+				.build-pizza-content {
+					padding-inline-start: vw_size(130, $current);
+					.build-pizza-content-title {
+						font-size: vw_size(17, $current);
+					}
+					.build-pizza-content-subtitle {
+						font-size: vw_size(14, $current);
+						width: vw_size(450, $current);
+						margin-top: vw_size(10, $current);
+					}
+				}
+			}
+		}
+		.recommended-pizzas {
+			.head {
+				width: vw_size(1380, $current);
+				padding-bottom: vw_size(16, $current);
+			}
+			.pizzas {
+				margin-top: vw_size(130, $current);
+				.pizza-wrapper {
+					&:nth-child(3n),
+					&:nth-child(3n + 2) {
+						margin-inline-start: 0;
+					}
+					&:nth-child(4n),
+					&:nth-child(4n + 2),
+					&:nth-child(4n + 3) {
+						margin-inline-start: vw_size(65, $current);
+					}
+					margin-bottom: vw_size(132, $current);
+				}
+			}
+		}
+		.pizzas-continue-button {
+			width: vw_size(70, $current);
+			height: vw_size(70, $current);
+			left: vw_size(45, $current);
+			bottom: vw_size(45, $current);
+			img {
+				width: vw_size(24, $current);
+				height: vw_size(24, $current);
+			}
+		}
+	}
+	:global(.ltr) {
+		.build-pizza-wrapper {
+			.build-pizza-card {
+				.build-pizzas-checkbox {
+					left: vw_size(40, $current);
+				}
+			}
+		}
+		.pizzas-wrapper {
+			.pizzas-continue-button {
+				right: vw_size(85, $current);
+			}
+		}
+	}
+}

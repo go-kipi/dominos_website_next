@@ -1,0 +1,24 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [
+			{
+				"appID": "65Z74326K8.il.co.dominos.iDominos",
+				"paths": [
+					"NOT /bit-payment",
+					"NOT /cart",
+					"NOT /menu",
+					"NOT /chef",
+					"NOT /jobs",
+					"NOT /branches/*",
+					"/*"
+				]
+			}
+		]
+	},
+	"webcredentials": {
+		"apps": [
+			"65Z74326K8.il.co.dominos.iDominos"
+		]
+	}
+}

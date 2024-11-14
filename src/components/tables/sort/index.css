@@ -1,0 +1,26 @@
+.sort {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+}
+.sort .spinner {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+}
+.sort .spinner.up {
+    border-width: 0 5px 8.7px 5px;
+    border-color: transparent transparent #bbb transparent;
+}
+.sort .spinner.up.active {
+    border-color: transparent transparent #ffffff transparent;
+}
+.sort .spinner.down {
+    border-width: 8.7px 5px 0 5px;
+    border-color: #bbb transparent transparent transparent;
+}
+.sort .spinner.down.active {
+    border-color: #ffffff transparent transparent transparent;
+}

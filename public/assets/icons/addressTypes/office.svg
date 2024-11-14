@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="66px" viewBox="0 0 44 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/illustrated/big/2</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="משלוח---כתובת-אחרת-סוג-הכתובת" transform="translate(-709.000000, -449.000000)">
+            <g id="component/big-square+icon-copy-2" transform="translate(650.500000, 424.000000)">
+                <g id="small-square/icon+text/בית-פרטי" transform="translate(29.000000, 18.229508)">
+                    <g id="icons/illustrated/big/2" transform="translate(30.500000, 7.000000)">
+                        <g id="Group-17-Copy" transform="translate(0.274910, 4.877049)">
+                            <rect id="Rectangle-Copy-11" fill="#017AFF" x="17.5" y="23.1" width="5.95" height="5.95"></rect>
+                            <rect id="Rectangle-Copy-12" fill="#F5002E" x="11.55" y="11.2" width="23.45" height="5.95"></rect>
+                            <rect id="Rectangle-Copy-13" fill="#017AFF" transform="translate(9.100000, 37.625000) scale(1, -1) translate(-9.100000, -37.625000) " x="5.95" y="34.65" width="6.3" height="5.95"></rect>
+                            <rect id="Rectangle-Copy-22" fill="#C2C2C2" x="20.3" y="40.6" width="2.8" height="15.05"></rect>
+                            <rect id="Rectangle-Copy-23" fill="#C2C2C2" x="5.6" y="40.6" width="2.8" height="15.05"></rect>
+                            <path d="M38.4037586,7.80572473 L38.4037586,55.7637536 L2.38081833,55.7637536 L2.38081833,7.80572473 L38.4037586,7.80572473 Z M32.5478516,4.02578157 L32.5478516,7.70697088 L8.09478231,7.70697088 L8.09478231,4.02578157 L32.5478516,4.02578157 Z M20.7131194,-2.05635509e-12 L20.7131194,3.7689619 M0,55.7637536 L40.95,55.7637536" id="Combined-Shape" stroke="#2F383F" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M35,34.479859 L6.3,34.479859 L6.3,28.6478606 L35,28.6478606 L35,22.8158621 L6.3,22.8158621 L6.3,16.9838636 L35,16.9838636 L35,55.2955983 L35,11.2 L6.3,11.2 L6.3,55.2955983 L6.3,40.3118575 L35,40.3118575 L13.9002011,40.2402479 L13.9002011,55.65 L20.5968677,55.65 L20.5968677,40.2402479 L27.2935344,40.2402479 L27.2935344,55.65 M11.9653552,40.2402479 L12.0348594,11.2 L17.7748594,11.2 L17.7053552,40.2402479 L23.4453552,40.2402479 L23.5148594,11.2 L29.2548594,11.2 L29.1853552,40.2402479" id="Shape" stroke="#2F383F" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

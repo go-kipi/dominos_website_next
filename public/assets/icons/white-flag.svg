@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="15px" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/outline/chef</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="פיצות-קבועות_קאונטר+באדגים" transform="translate(-338.000000, -83.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="componrnts/cards/headline/icon+text-copy" transform="translate(157.000000, 83.000000)">
+                <g id="icons/outline/chef" transform="translate(181.000000, 0.000000)">
+                    <path d="M1.61764706,0 C1.95876411,-6.26621858e-17 2.23529412,0.276530007 2.23529412,0.617647059 L2.235,1.553 L11.5,1.55357143 L9.24720142,4.08090508 C9.11036068,4.23438158 9.03346025,4.44305075 9.03346025,4.66071429 C9.03346025,4.87837782 9.11036068,5.08704699 9.24720142,5.2405235 L11.5,7.76785714 L2.235,7.767 L2.23529412,13.8823529 C2.23529412,14.22347 1.95876411,14.5 1.61764706,14.5 C1.27653001,14.5 1,14.22347 1,13.8823529 L1,0.617647059 C1,0.276530007 1.27653001,6.26621858e-17 1.61764706,0 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

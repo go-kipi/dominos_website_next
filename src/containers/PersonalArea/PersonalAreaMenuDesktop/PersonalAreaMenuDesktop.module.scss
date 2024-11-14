@@ -1,0 +1,149 @@
+@import "src/styles/imports.scss";
+$current: $desktop;
+.personal-area-menu-desktop-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: vw_size(290, $current);
+	padding-inline-start: vw_size(40, $current);
+	margin-top: vw_size(30, $current);
+	position: relative;
+	z-index: 1;
+	.personal-area-menu-desktop-greeting-wrapper {
+		h3 {
+			all: unset;
+		}
+		display: flex;
+		flex-direction: column;
+		.greeting {
+			font-family: $font;
+			font-size: vw_size(33, $current);
+			line-height: vw_size(35, $current);
+			color: $white;
+			letter-spacing: 0.66px;
+		}
+		.name {
+			font-family: $font-bold;
+			font-size: vw_size(33, $current);
+			line-height: vw_size(35, $current);
+			color: $white;
+			letter-spacing: 0.66px;
+		}
+	}
+	.menu-list-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-top: vw_size(10, $current);
+		.menu-item {
+			display: flex;
+			margin-top: vw_size(52, $current);
+			.selceted {
+				display: none;
+			}
+			.not-selected {
+				display: block;
+			}
+			&.active {
+				.title {
+					font-family: $font-bold;
+				}
+				.selceted {
+					display: block;
+				}
+				.not-selected {
+					display: none;
+				}
+			}
+			.icon-wrapper {
+				width: vw_size(17, $current);
+			}
+			.title {
+				font-family: $font;
+				color: $white;
+				font-size: vw_size(15, $current);
+				margin-inline-start: vw_size(19, $current);
+			}
+		}
+	}
+	.account-wrapper {
+		display: flex;
+		margin-top: auto;
+		margin-bottom: vw_size(35, $current);
+
+		.logout {
+			cursor: pointer;
+			display: flex;
+
+			.logout-icon-wrapper {
+				width: vw_size(17, $current);
+			}
+			.logout-text {
+				margin-inline-start: vw_size(14, $current);
+				font-size: vw_size(13, $current);
+				font-family: $font-medium;
+				color: $white;
+			}
+		}
+		.delete-account-btn {
+			font-size: vw_size(13, $current);
+			font-family: $font-medium;
+			margin-inline-start: vw_size(27, $current);
+			text-decoration: underline;
+			color: $white;
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.personal-area-menu-desktop-wrapper {
+		width: vw_size(400, $current);
+		padding-inline-start: vw_size(40, $current);
+		margin-top: vw_size(52, $current);
+		.personal-area-menu-desktop-greeting-wrapper {
+			.greeting {
+				font-size: vw_size(33, $current);
+				line-height: vw_size(35, $current);
+			}
+			.name {
+				font-family: $font-bold;
+				font-size: vw_size(33, $current);
+				line-height: vw_size(35, $current);
+			}
+		}
+		.menu-list-wrapper {
+			margin-top: vw_size(10, $current);
+			.menu-item {
+				margin-top: vw_size(52, $current);
+				&.active {
+					.title {
+						font-family: $font-bold;
+					}
+				}
+				.icon-wrapper {
+					width: vw_size(17, $current);
+				}
+				.title {
+					font-size: vw_size(15, $current);
+					margin-inline-start: vw_size(19, $current);
+				}
+			}
+		}
+		.account-wrapper {
+			margin-bottom: vw_size(35, $current);
+
+			.logout {
+				.logout-icon-wrapper {
+					width: vw_size(17, $current);
+				}
+				.logout-text {
+					margin-inline-start: vw_size(14, $current);
+					font-size: vw_size(13, $current);
+				}
+			}
+			.delete-account-btn {
+				font-size: vw_size(13, $current);
+				margin-inline-start: vw_size(27, $current);
+			}
+		}
+	}
+}

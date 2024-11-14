@@ -1,0 +1,380 @@
+@import "/src/styles/imports";
+$current: 375;
+.switch-mix-popup {
+	:global(.popup_wrapper) {
+		:global(.popup_content) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.mix-img-wrapper {
+				margin-top: vw_size(30, $current);
+				// width: vw_size(300, $current);
+			}
+			.buttons-wrapper {
+				margin-top: vw_size(50, $current);
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+
+				.another-time {
+					text-align: center;
+					width: 100%;
+					color: $white;
+					font-family: $font;
+					font-size: vw_size(13, $current);
+					line-height: vw_size(28, $current);
+					margin-top: vw_size(20, $current);
+				}
+			}
+
+			.mix-right-side {
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.toppings-pizza-img {
+					.topping-coverage-on-pizza {
+						width: 85%;
+						height: 85%;
+						position: absolute;
+					}
+				}
+				.header-title {
+					margin-top: vw_size(55, $current);
+					font-family: $font-book;
+					font-size: vw_size(20, $current);
+					line-height: vw_size(27, $current);
+					color: $white;
+				}
+
+				.description {
+					font-size: vw_size(13, $current);
+					font-family: $font-bold;
+					line-height: vw_size(30, $current);
+					color: $label-blue;
+				}
+			}
+
+			.mix-left-side {
+				margin-top: vw_size(35, $current);
+				.mix-img-wrapper {
+					position: relative;
+					width: vw_size(266, $current);
+					height: vw_size(267.5, $current);
+				}
+
+				.buttons-wrapper {
+					margin-top: vw_size(50, $current);
+
+					.continue_button {
+						margin-inline: auto;
+						position: relative;
+						left: 0;
+						right: 0;
+					}
+					.another-time {
+						text-align: center;
+						width: 100%;
+						color: $white;
+						font-family: $font;
+						font-size: vw_size(13, $current);
+						line-height: vw_size(28, $current);
+						margin-top: vw_size(20, $current);
+					}
+				}
+			}
+
+			.buttons-wrapper {
+				.another-time {
+					cursor: pointer;
+					text-align: center;
+					width: 100%;
+					color: $white;
+					font-family: $font;
+				}
+			}
+			.toppings-pizza-img {
+				position: relative;
+				height: 35vh;
+				width: 35vh;
+				margin: auto;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+
+				.topping-coverage-on-pizza {
+					position: absolute;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+					overflow: hidden;
+					opacity: 1;
+
+					img {
+						position: absolute;
+						width: 90%;
+						height: 90%;
+						object-fit: cover;
+						transform-origin: center;
+						&.q1 {
+							transform: rotate(0deg);
+						}
+						&.q2 {
+							transform: rotate(90deg);
+						}
+						&.q3 {
+							transform: rotate(180deg);
+						}
+						&.q4 {
+							transform: rotate(-90deg);
+						}
+						&.q1,
+						&.q2,
+						&.q3,
+						&.q4 {
+							transition: ease-in-out 175ms;
+							scale: unset;
+							opacity: unset;
+							&:global(.animated) {
+								scale: 1.45;
+								opacity: 0.5;
+								transition: ease-in-out 175ms;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.switch-mix-popup {
+		:global(.popup_wrapper) {
+			:global(.popup_content) {
+				.mix-img-wrapper {
+					margin-top: vw_size(5, $current);
+					width: vw_size(300, $current);
+				}
+				.buttons-wrapper {
+					margin-top: vw_size(50, $current);
+
+					.continue_button {
+					}
+					.another-time {
+						font-size: vw_size(13, $current);
+						line-height: vw_size(28, $current);
+						margin-top: vw_size(20, $current);
+					}
+				}
+
+				.mix-right-side {
+					.header-title {
+						margin-top: vw_size(55, $current);
+						font-size: vw_size(20, $current);
+						line-height: vw_size(27, $current);
+					}
+
+					.description {
+						font-size: vw_size(13, $current);
+						line-height: vw_size(30, $current);
+					}
+				}
+
+				.mix-left-side {
+					margin-top: vw_size(35, $current);
+					.mix-img-wrapper {
+						width: vw_size(266, $current);
+						height: vw_size(267.5, $current);
+					}
+
+					.buttons-wrapper {
+						margin-top: vw_size(50, $current);
+						.another-time {
+							font-size: vw_size(13, $current);
+							line-height: vw_size(28, $current);
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+				.toppings-pizza-img {
+					height: vw_size(268, $current);
+					width: vw_size(266, $current);
+					margin-top: vw_size(22, $current);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	$pizzaSize: 450;
+
+	.switch-mix-popup {
+		:global(.popup_wrapper) {
+			:global(.popup_content) {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: flex-start;
+
+				padding-inline: vw_size(100, $current);
+				padding-block: vw_size(85, $current);
+
+				.mix-right-side {
+					text-align: center;
+					width: vw_size(435, $current);
+					height: vw_size(435, $current);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					.header-title {
+						margin-top: vw_size(55, $current);
+						font-family: $font-medium;
+						font-size: vw_size(24, $current);
+						line-height: vw_size(30, $current);
+					}
+
+					.description {
+						font-size: vw_size(15, $current);
+						line-height: vw_size(30, $current);
+						letter-spacing: vw_size(1, $current);
+					}
+
+					.buttons-wrapper {
+						margin-top: vw_size(50, $current);
+
+						.continue_button {
+							margin-inline: auto;
+							position: relative;
+							left: 0;
+							right: 0;
+						}
+						.another-time {
+							font-size: vw_size(15, $current);
+							line-height: vw_size(10, $current);
+							margin-top: vw_size(38, $current);
+						}
+					}
+				}
+
+				.mix-left-side {
+					margin-top: unset;
+					.mix-img-wrapper {
+						margin-top: unset;
+						width: vw_size(435, $current);
+						height: vw_size(435, $current);
+						.toppings-pizza-img {
+							width: vw_size(435, $current);
+							height: vw_size(435, $current);
+
+							.topping-coverage-on-pizza {
+								width: 85%;
+								height: 85%;
+							}
+						}
+					}
+
+					.buttons-wrapper {
+						margin-top: vw_size(50, $current);
+
+						.continue_button {
+							margin-inline: auto;
+							position: relative;
+							left: 0;
+							right: 0;
+						}
+						.another-time {
+							text-align: center;
+							width: 100%;
+							color: $white;
+							font-family: $font;
+							font-size: vw_size(13, $current);
+							line-height: vw_size(28, $current);
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+				.toppings-pizza-img {
+					height: vw_size($pizzaSize, $desktop-large);
+					width: vw_size($pizzaSize, $desktop-large);
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-large;
+	$pizzaSize: 450;
+
+	.switch-mix-popup {
+		:global(.popup_wrapper) {
+			:global(.popup_content) {
+				padding-inline: vw_size(250, $current);
+				padding-block: vw_size(100, $current);
+
+				.mix-right-side {
+					width: vw_size(435, $current);
+					height: vw_size(435, $current);
+
+					.header-title {
+						margin-top: vw_size(55, $current);
+						font-size: vw_size(24, $current);
+						line-height: vw_size(30, $current);
+					}
+
+					.description {
+						font-size: vw_size(15, $current);
+						line-height: vw_size(30, $current);
+						letter-spacing: vw_size(1, $current);
+					}
+
+					.buttons-wrapper {
+						margin-top: vw_size(50, $current);
+
+						.another-time {
+							font-size: vw_size(15, $current);
+							line-height: vw_size(10, $current);
+							margin-top: vw_size(38, $current);
+						}
+					}
+				}
+
+				.mix-left-side {
+					.mix-img-wrapper {
+						width: vw_size(435, $current);
+						height: vw_size(435, $current);
+					}
+
+					.buttons-wrapper {
+						margin-top: vw_size(50, $current);
+
+						.another-time {
+							font-size: vw_size(13, $current);
+							line-height: vw_size(28, $current);
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}

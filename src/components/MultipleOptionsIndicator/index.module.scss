@@ -1,0 +1,79 @@
+@import "src/styles/imports";
+
+$current: 375;
+.multiple-options-indicator-wrapper {
+	position: relative;
+
+	.multiple-options-indicator-img {
+		height: vw_size(20, $current);
+		width: vw_size(25, $current);
+	}
+	.multiple-options-changes-img {
+		position: absolute;
+		left: vw_size(-4, $current);
+		top: vw_size(-1, $current);
+		// height: vw_size(12, $current);
+		height: auto;
+		width: vw_size(13, $current);
+	}
+}
+
+:global(.ltr) {
+	.multiple-options-indicator-wrapper {
+		.multiple-options-changes-img {
+			left: unset;
+			right: vw_size(-4, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.multiple-options-indicator-wrapper {
+		.multiple-options-indicator-img {
+			left: vw_size(-3, $current);
+			height: vw_size(20, $current);
+			width: vw_size(25, $current);
+		}
+		.multiple-options-changes-img {
+			left: vw_size(-3, $current);
+			top: vw_size(-3, $current);
+
+			height: vw_size(12, $current);
+			width: vw_size(13, $current);
+		}
+	}
+}
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.multiple-options-indicator-wrapper {
+		.multiple-options-indicator-img {
+			left: vw_size(-3, $current);
+			height: vw_size(32, $current);
+			width: vw_size(32, $current);
+		}
+		.multiple-options-changes-img {
+			left: vw_size(-5, $current);
+			top: vw_size(45, $current);
+			height: vw_size(12, $current);
+			width: vw_size(13, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.multiple-options-indicator-wrapper {
+		.multiple-options-indicator-img {
+			left: vw_size(-3, $current);
+			height: vw_size(32, $current);
+			width: vw_size(32, $current);
+		}
+		.multiple-options-changes-img {
+			left: vw_size(-5, $current);
+			top: vw_size(45, $current);
+			height: vw_size(12, $current);
+			width: vw_size(13, $current);
+		}
+	}
+}

@@ -1,0 +1,257 @@
+@import "src/styles/imports.scss";
+$current: 375;
+:global(.ltr) {
+  .branch-with-location-wrapper {
+    .note-km-wrapper {
+      .distance-wrapper {
+        .navigation-icon-wrapper {
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
+}
+.branch-with-location-wrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &.disabled {
+    .branch-name {
+      opacity: 0.46;
+    }
+    .branch-address {
+      opacity: 0.46;
+    }
+    .note-km-wrapper {
+      .distance-wrapper {
+        .navigation-icon-wrapper {
+          opacity: 0.46;
+        }
+        .km {
+          opacity: 0.46;
+        }
+      }
+    }
+  }
+
+  .branch-name {
+    font-size: vw_size(15, $current);
+    color: $black;
+    margin-top: vw_size(19, $current);
+    font-family: $font-bold;
+  }
+  .branch-address {
+    font-size: vw_size(15, $current);
+    color: #717171;
+    margin-top: vw_size(5, $current);
+    font-family: $font;
+  }
+  .note-km-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: vw_size(45, $current);
+    margin-top: vw_size(5, $current);
+    align-items: center;
+    .note-wrapper {
+      display: flex;
+      align-items: center;
+      .clock-wrapper {
+        width: vw_size(13, $current);
+      }
+      .note {
+        margin-inline-start: vw_size(7, $current);
+        font-family: $font;
+        width: vw_size(133, $current);
+        font-size: vw_size(15, $current);
+        &.note-open {
+          color: $blue;
+        }
+        &.note-close {
+          color: $red;
+        }
+      }
+    }
+    .distance-wrapper {
+      display: flex;
+      .navigation-icon-wrapper {
+        width: vw_size(18, $current);
+      }
+      .km {
+        margin-inline-start: vw_size(3, $current);
+        color: #717171;
+        font-family: $font;
+        font-size: vw_size(15, $current);
+        line-height: vw_size(18, $current);
+      }
+    }
+  }
+  .comment-wrapper {
+    display: flex;
+    .comment-text {
+      color: #404d57;
+      font-size: vw_size(13, $current);
+      line-height: vw_size(15, $current);
+      &.comment {
+        width: vw_size(202, $current);
+        margin-inline-start: vw_size(9, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .branch-with-location-wrapper {
+    .branch-name {
+      font-size: vw_size(15, $current);
+      margin-top: vw_size(19, $current);
+    }
+    .branch-address {
+      font-size: vw_size(15, $current);
+
+      margin-top: vw_size(5, $current);
+    }
+    .note-km-wrapper {
+      height: vw_size(45, $current);
+      margin-top: vw_size(5, $current);
+      .note-wrapper {
+        .clock-wrapper {
+          width: vw_size(13, $current);
+        }
+        .note {
+          margin-inline-start: vw_size(7, $current);
+
+          width: vw_size(133, $current);
+          font-size: vw_size(15, $current);
+        }
+      }
+      .distance-wrapper {
+        .navigation-icon-wrapper {
+          width: vw_size(18, $current);
+        }
+        .km {
+          margin-inline-start: vw_size(3, $current);
+
+          font-size: vw_size(15, $current);
+          line-height: vw_size(18, $current);
+        }
+      }
+    }
+    .comment-wrapper {
+      .comment-text {
+        font-size: vw_size(13, $current);
+        line-height: vw_size(15, $current);
+        &.comment {
+          width: vw_size(202, $current);
+          margin-inline-start: vw_size(9, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .branch-with-location-wrapper {
+    .branch-name {
+      font-size: vw_size(15, $current);
+      margin-top: vw_size(19, $current);
+    }
+    .branch-address {
+      font-size: vw_size(15, $current);
+
+      margin-top: vw_size(5, $current);
+    }
+    .note-km-wrapper {
+      height: vw_size(45, $current);
+      margin-top: vw_size(5, $current);
+      .note-wrapper {
+        .clock-wrapper {
+          width: vw_size(13, $current);
+        }
+        .note {
+          margin-inline-start: vw_size(10, $current);
+
+          width: vw_size(133, $current);
+          font-size: vw_size(15, $current);
+        }
+      }
+      .distance-wrapper {
+        .navigation-icon-wrapper {
+          width: vw_size(19, $current);
+        }
+        .km {
+          margin-inline-start: vw_size(3, $current);
+
+          font-size: vw_size(15, $current);
+          line-height: vw_size(18, $current);
+        }
+      }
+    }
+    .comment-wrapper {
+      .comment-text {
+        font-size: vw_size(13, $current);
+        line-height: vw_size(15, $current);
+        &.comment {
+          width: vw_size(222, $current);
+          margin-inline-start: vw_size(9, $current);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  .branch-with-location-wrapper {
+    .branch-name {
+      font-size: vw_size(15, $current);
+      margin-top: vw_size(19, $current);
+    }
+    .branch-address {
+      font-size: vw_size(15, $current);
+
+      margin-top: vw_size(5, $current);
+    }
+    .note-km-wrapper {
+      height: vw_size(45, $current);
+      margin-top: vw_size(5, $current);
+      .note-wrapper {
+        .clock-wrapper {
+          width: vw_size(13, $current);
+        }
+        .note {
+          margin-inline-start: vw_size(10, $current);
+
+          width: vw_size(133, $current);
+          font-size: vw_size(15, $current);
+        }
+      }
+      .distance-wrapper {
+        .navigation-icon-wrapper {
+          width: vw_size(19, $current);
+        }
+        .km {
+          margin-inline-start: vw_size(3, $current);
+
+          font-size: vw_size(15, $current);
+          line-height: vw_size(18, $current);
+        }
+      }
+    }
+    .comment-wrapper {
+      .comment-text {
+        font-size: vw_size(13, $current);
+        line-height: vw_size(15, $current);
+        &.comment {
+          width: vw_size(222, $current);
+          margin-inline-start: vw_size(9, $current);
+        }
+      }
+    }
+  }
+}

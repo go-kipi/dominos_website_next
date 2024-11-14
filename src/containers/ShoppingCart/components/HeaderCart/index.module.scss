@@ -1,0 +1,198 @@
+@import "../../../../styles/imports";
+
+$current: 375;
+
+.header-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: vw_size(10, $current);
+	padding-inline: vw_size(24, $current);
+	z-index: 100;
+	height: vw_size(80, $current);
+	&::before {
+		top: 0;
+		left: 0;
+		width: 100%;
+		position: absolute;
+		content: "";
+		background-image: linear-gradient(-180deg, black 0%, rgba(0, 0, 0, 0) 100%);
+		height: vw_size(150, $current);
+		pointer-events: none;
+	}
+
+	.back-wrapper,
+	.delete-wrapper {
+		z-index: 101;
+		.trash-img {
+			height: vw_size(20, $current);
+		}
+	}
+	.title-wrapper {
+		z-index: 101;
+	}
+
+	.arrow-img-wrapper {
+		margin-top: vw_size(0, $current);
+
+		padding: vw_size(15, $current);
+		img {
+			width: vw_size(19, $current);
+		}
+	}
+
+	.header-title {
+		font-family: $font;
+		font-size: vw_size(16, $current);
+		letter-spacing: 1px;
+		line-height: vw_size(32, $current);
+		color: $white;
+
+		margin-top: vw_size(15, $current);
+	}
+	.dots-wrapper {
+		justify-content: flex-end;
+		padding-top: vw_size(15, $current);
+	}
+	.tool-tip-option-wrapper {
+		background-color: rgba(56, 65, 79, 0.9);
+	}
+	.toppings-actions-wrapper {
+		width: vw_size(150, $current);
+	}
+	.toppings-actions {
+		width: vw_size(25, $current);
+		height: vw_size(20, $current);
+		position: relative;
+		left: unset;
+		right: unset;
+		.toppings-actions-tooltip {
+			top: vw_size(28, $current);
+			left: vw_size(-13, $current);
+			.tooltip-triangle {
+				top: vw_size(-10, $current);
+				left: vw_size(20, $current);
+			}
+		}
+
+		&.ltr {
+			.toppings-actions-tooltip {
+				left: unset;
+				right: vw_size(-13, $current);
+				.tooltip-triangle {
+					left: unset;
+					right: vw_size(18, $current);
+				}
+			}
+		}
+	}
+	.options-wrapper {
+		border-radius: 5px;
+	}
+}
+
+:global(.ltr) {
+	.header-wrapper {
+		.arrow-img {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.header-wrapper {
+		padding-top: vw_size(34, $current);
+		padding-inline: vw_size(24, $current);
+		height: vw_size(120, $current);
+		&::before {
+			height: vw_size(150, $current);
+		}
+		.delete-wrapper {
+			.trash-img {
+				height: vw_size(20, $current);
+			}
+		}
+		.arrow-img-wrapper {
+			padding: vw_size(15, $current);
+
+			img {
+				width: vw_size(19, $current);
+			}
+		}
+		.header-title {
+			font-size: vw_size(14, $current);
+			line-height: vw_size(32, $current);
+			margin-inline-start: vw_size(-30, $current);
+			margin-top: vw_size(15, $current);
+		}
+		.toppings-actions-wrapper {
+			width: vw_size(150, $current);
+		}
+		.toppings-actions {
+			width: vw_size(25, $current);
+			height: vw_size(20, $current);
+
+			.toppings-actions-tooltip {
+				top: vw_size(28, $current);
+				left: vw_size(-13, $current);
+				.tooltip-triangle {
+					top: vw_size(-10, $current);
+					left: vw_size(20, $current);
+				}
+			}
+
+			&.ltr {
+				.toppings-actions-tooltip {
+					right: vw_size(-18, $current);
+					.tooltip-triangle {
+						right: vw_size(19, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.header-wrapper {
+		padding-top: vw_size(37, $current);
+		padding-inline: vw_size(40, $current);
+		&::before {
+			background: unset;
+			display: none;
+			height: unset;
+		}
+		height: unset;
+		background-image: unset;
+		pointer-events: none;
+
+		.dominos-logo {
+			pointer-events: all;
+			cursor: pointer;
+			width: vw_size(133, $current);
+			height: vw_size(28, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-max;
+
+	.header-wrapper {
+		padding-top: vw_size(37, $current);
+		padding-inline: vw_size(40, $current);
+
+		.dominos-logo {
+			width: vw_size(133, $current);
+			height: vw_size(28, $current);
+		}
+	}
+}

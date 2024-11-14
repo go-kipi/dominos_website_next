@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="30px" viewBox="0 0 31 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Cart Copy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="main-tracker-hat" transform="translate(-401.000000, -86.000000)" stroke="#FFFFFF">
+            <g id="tools-and-textes" transform="translate(92.000000, 63.000000)">
+                <g id="Cart-Copy" transform="translate(309.630682, 23.000000)">
+                    <g id="tracker/hat" transform="translate(2.500000, 3.000000)">
+                        <g id="Group" stroke-width="1.53">
+                            <path d="M19.375,6.59004606 C19.375,3.13826637 16.2969577,0 12.5,0 C8.70304235,0 5.625,3.13826637 5.625,6.59004606" id="Path" stroke-linecap="round"></path>
+                            <path d="M22,13.5900461 L22,21.5223388 C22,22.5959804 21.1296416,23.4663388 20.056,23.4663388 L4.944,23.4663388 C3.87035845,23.4663388 3,22.5959804 3,21.5223388 L3,13.5900461 L3,13.5900461" id="Path" stroke-linecap="round"></path>
+                            <path d="M6.17342423,3.61216014 C5.79706656,3.51598879 5.40413249,3.46504606 5,3.46504606 C2.23857625,3.46504606 0,5.84353333 0,8.77754606 C0,10.6967633 0.957847088,12.3782811 2.39332699,13.3118717" id="Path" stroke-linecap="round"></path>
+                            <path d="M24.9234242,3.61216014 C24.5470666,3.51598879 24.1541325,3.46504606 23.75,3.46504606 C20.9885763,3.46504606 18.75,5.84353333 18.75,8.77754606 C18.75,10.6967633 19.7078471,12.3782811 21.143327,13.3118717" id="Path" stroke-linecap="round" transform="translate(21.836712, 8.388459) scale(-1, 1) translate(-21.836712, -8.388459) "></path>
+                            <line x1="3.125" y1="18.4650461" x2="21.875" y2="18.4650461" id="Line-16" stroke-linecap="square"></line>
+                        </g>
+                        <path d="M6,10.75 C6.07143805,11.4957465 6.22258068,12.1398301 6.45342789,12.6822507 C6.6842751,13.2246714 6.94979914,13.7472545 7.25,14.25" id="Path-65" stroke-width="1.35" stroke-linecap="round"></path>
+                        <path d="M17.75,10.75 C17.821438,11.4957465 17.9725807,12.1398301 18.2034279,12.6822507 C18.4342751,13.2246714 18.6997991,13.7472545 19,14.25" id="Path-65" stroke-width="1.35" stroke-linecap="round" transform="translate(18.375000, 12.500000) scale(-1, 1) translate(-18.375000, -12.500000) "></path>
+                        <line x1="12.5625" y1="10.75" x2="12.5625" y2="14.25" id="Path-66" stroke-width="1.35" stroke-linecap="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

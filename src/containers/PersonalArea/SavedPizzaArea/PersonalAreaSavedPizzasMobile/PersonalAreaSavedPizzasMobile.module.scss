@@ -1,0 +1,42 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.personal-area-saved-pizzas-mobile {
+  margin-top: vw_size(32, $current);
+  .personal-area-saved-pizzas-title {
+    padding-inline-start: vw_size(33, $current);
+  }
+  .personal-area-saved-pizzas-wrapper {
+    padding-inline-start: vw_size(33, $current);
+
+    padding-bottom: vw_size(40, $current);
+    display: flex;
+    margin-top: vw_size(21, $current);
+
+    overflow-x: scroll;
+
+    @include hide-scrollbar();
+    .saved-pizza-item {
+      margin-inline-end: vw_size(12, $current);
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .personal-area-saved-pizzas-mobile {
+    margin-top: vw_size(32, $current);
+    .personal-area-saved-pizzas-title {
+      padding-inline-start: vw_size(33, $current);
+      padding-bottom: vw_size(30, $current);
+    }
+    .personal-area-saved-pizzas-wrapper {
+      padding-inline-start: vw_size(33, $current);
+      margin: vw_size(21, $current) 0;
+      .saved-pizza-item {
+        margin-inline-end: vw_size(12, $current);
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@import "src/styles/imports";
+$current: 375;
+
+.product-wrapper {
+	width: vw_size(376, $current);
+	height: vw_size(438, $current);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.product-img {
+		position: relative;
+		margin-top: vw_size(18, $current);
+		width: vw_size(375, $current);
+		&.multi {
+			width: vw_size(243.75, $current);
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	.product-button {
+		margin: auto;
+		margin-top: vw_size(35, $current);
+		width: vw_size(264, $current);
+		height: vw_size(43, $current);
+		&.small {
+			position: absolute;
+			width: vw_size(100, $current);
+			height: vw_size(38, $current);
+			bottom: 0;
+			@include left(0);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.product-wrapper {
+		width: vw_size(376, $current);
+		height: vw_size(438, $current);
+		.product-img {
+			margin-top: vw_size(18, $current);
+			width: vw_size(375, $current);
+			&.multi {
+				width: vw_size(330, $current);
+			}
+		}
+		.product-button {
+			margin-top: vw_size(35, $current);
+			width: vw_size(264, $current);
+			height: vw_size(43, $current);
+			&.small {
+				width: vw_size(100, $current);
+				height: vw_size(38, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.product-wrapper {
+		width: vw_size(503, $current);
+		height: vw_size(494, $current);
+		flex-direction: column;
+		.product-img {
+			margin-top: vw_size(40, $current);
+			width: vw_size(583, $current);
+
+			&.multi {
+				width: vw_size(501, $current);
+			}
+		}
+		.product-button {
+			position: unset;
+			margin-top: vw_size(40, $current);
+			width: vw_size(281, $current);
+			height: vw_size(51, $current);
+			&.small {
+				width: unset;
+				height: unset;
+			}
+			.button-text {
+				font-family: $font;
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.product-wrapper {
+		width: vw_size(503, $current);
+		height: vw_size(494, $current);
+		&.single {
+			width: vw_size(583, $current);
+		}
+		.product-img {
+			margin-top: vw_size(40, $current);
+			width: vw_size(650, $current);
+			&.multi {
+				width: vw_size(501, $current);
+			}
+		}
+		.product-button {
+			margin-top: vw_size(40, $current);
+			width: vw_size(281, $current);
+			height: vw_size(51, $current);
+		}
+	}
+}

@@ -1,0 +1,169 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.coupon-popup {
+  :global(.popup_content) {
+    .transition-wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+    .fade-in {
+      &:global(-enter) {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &:global(-active) {
+          opacity: 1;
+          transition: all 350ms ease-in-out;
+        }
+      }
+      &:global(-exit) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        opacity: 1;
+        &:global(-active) {
+          opacity: 1;
+        }
+      }
+    }
+    .fade-out {
+      &:global(-enter) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        opacity: 1;
+        &:global(-active) {
+          opacity: 1;
+        }
+      }
+      &:global(-exit) {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        &:global(-active) {
+          opacity: 0;
+          transition: all 350ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+:global(.popup) {
+  .coupon-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &:global(.ERROR_COUPON) {
+      :global(.popup_wrapper) {
+        height: 50vh;
+      }
+    }
+    :global(.popup_wrapper) {
+      position: relative;
+      height: 80vh;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      transition: all 200ms ease-out;
+      justify-content: flex-start;
+      overflow: hidden;
+
+      .close-icon-wrapper {
+        cursor: pointer;
+        position: absolute;
+        z-index: 10000;
+        top: vw_size(15, $current);
+        left: vw_size(10, $current);
+        width: vw_size(18, $current);
+        height: vw_size(18, $current);
+      }
+      :global(.popup_content) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .transition-wrapper {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  :global(.popup) {
+    :global(.backdrop):global(.slidePopup) {
+      &.coupon-popup {
+        justify-content: center;
+
+        :global(.popup_wrapper) {
+          height: vw_size(512, $current);
+          width: vw_size(512, $current);
+          :global(.popup_content) {
+            overflow: auto;
+          }
+          border-radius: vw_size(9, $current);
+          .close-icon-wrapper {
+            top: vw_size(5, $current);
+            left: vw_size(10, $current);
+            width: vw_size(18, $current);
+            height: vw_size(18, $current);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  :global(.popup) {
+    :global(.backdrop):global(.slidePopup) {
+      &.coupon-popup {
+        :global(.popup_wrapper) {
+          height: vw_size(512, $current);
+          width: vw_size(512, $current);
+
+          border-radius: vw_size(9, $current);
+          .close-icon-wrapper {
+            top: vw_size(5, $current);
+            left: vw_size(10, $current);
+            width: vw_size(18, $current);
+            height: vw_size(18, $current);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  :global(.popup) {
+    :global(.backdrop):global(.slidePopup) {
+      &.coupon-popup {
+        :global(.popup_wrapper) {
+          height: vw_size(512, $current);
+          width: vw_size(512, $current);
+
+          border-radius: vw_size(9, $current);
+          .close-icon-wrapper {
+            top: vw_size(5, $current);
+            left: vw_size(10, $current);
+            width: vw_size(18, $current);
+            height: vw_size(18, $current);
+          }
+        }
+      }
+    }
+  }
+}

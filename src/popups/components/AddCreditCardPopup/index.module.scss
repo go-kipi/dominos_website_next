@@ -1,0 +1,88 @@
+@import "src/styles/imports";
+
+$current: $desktop;
+
+@media (min-width: $media-desktop) {
+  :global(.popup) {
+    .add-credit-card-popup {
+      :global(.popup_wrapper) {
+        background-color: $white;
+        width: vw_size(512, $current);
+        height: vw_size(602, $current);
+        border-radius: 10px;
+        padding-top: 0;
+
+        :global(.popup_content) {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          position: relative;
+          .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .header-title {
+              font-family: $font;
+              color: $red;
+              width: 100%;
+              text-align: center;
+              font-size: vw_size(18, $current);
+            }
+
+            .close-icon {
+              position: absolute;
+              width: vw_size(20, $current);
+              height: vw_size(20, $current);
+              left: vw_size(20, $current);
+              cursor: pointer;
+            }
+          }
+
+          .iframe-wrapper {
+            margin-top: vw_size(77, $current);
+            width: vw_size(400, $current);
+            height: vw_size(380, $current);
+            iframe {
+              height: 100%;
+              width: 100%;
+              border: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  $current: $desktop-max;
+  :global(.popup) {
+    .add-credit-card-popup {
+      :global(.popup_wrapper) {
+        width: vw_size(512, $current);
+        height: vw_size(602, $current);
+
+        :global(.popup_content) {
+          .header-container {
+            .header-title {
+              font-size: vw_size(18, $current);
+            }
+            .close-icon {
+              width: vw_size(20, $current);
+              height: vw_size(20, $current);
+            }
+          }
+
+          .iframe-wrapper {
+            margin-top: vw_size(77, $current);
+            width: vw_size(400, $current);
+            height: vw_size(380, $current);
+          }
+        }
+      }
+    }
+  }
+}

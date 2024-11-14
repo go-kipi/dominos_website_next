@@ -1,0 +1,119 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.checkbox {
+	&.checkbox-wrapper {
+		&.styled {
+			label {
+				.label {
+					font-family: $font;
+					display: flex;
+					align-items: flex-start;
+					font-size: vw_size(15, $current);
+					letter-spacing: vw_size(0.15, $current);
+					color: $placeholder-gray;
+					margin-inline-start: vw_size(5, $current);
+					line-height: 100%;
+				}
+
+				.link {
+					margin-inline-start: vw_size(11, $current);
+					color: $blue-btn;
+					text-decoration: underline;
+					font-family: $font;
+					font-size: vw_size(15, $current);
+					line-height: 100%;
+					&.no-space {
+						margin: 0;
+					}
+				}
+				.image-wrapper {
+					width: vw_size(19, $current);
+					height: vw_size(19, $current);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.checkbox {
+		&.checkbox-wrapper {
+			&.styled {
+				label {
+					.label {
+						font-size: vw_size(15, $current);
+						letter-spacing: vw_size(0.15, $current);
+						margin-inline-start: vw_size(5, $current);
+					}
+
+					.link {
+						font-size: vw_size(15, $current);
+
+						margin-inline-start: vw_size(11, $current);
+					}
+					.image-wrapper {
+						width: vw_size(19, $current);
+						height: vw_size(19, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.checkbox {
+		&.checkbox-wrapper {
+			&.styled {
+				label {
+					.label {
+						font-size: vw_size(15, $current);
+						letter-spacing: vw_size(0.15, $current);
+						margin-inline-start: vw_size(5, $current);
+					}
+
+					.link {
+						font-size: vw_size(15, $current);
+						margin-inline-start: vw_size(11, $current);
+					}
+					.image-wrapper {
+						width: vw_size(19, $current);
+						height: vw_size(19, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.checkbox {
+		&.checkbox-wrapper {
+			&.styled {
+				label {
+					.label {
+						font-size: vw_size(15, $current);
+						letter-spacing: vw_size(0.15, $current);
+						margin-inline-start: vw_size(5, $current);
+					}
+
+					.link {
+						font-size: vw_size(15, $current);
+
+						margin-inline-start: vw_size(11, $current);
+					}
+					.image-wrapper {
+						width: vw_size(19, $current);
+						height: vw_size(19, $current);
+					}
+				}
+			}
+		}
+	}
+}

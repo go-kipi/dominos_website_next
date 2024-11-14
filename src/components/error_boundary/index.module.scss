@@ -1,0 +1,48 @@
+@import "src/styles/imports.scss";
+$current: 375;
+.error-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  .title {
+    font-size: vw_size(20, $current);
+    font-family: $font;
+    margin-bottom: vw_size(30, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .error-page-wrapper {
+    .title {
+      font-size: vw_size(25, $current);
+      margin-bottom: vw_size(30, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+
+  .error-page-wrapper {
+    .title {
+      font-size: vw_size(28, $current);
+      margin-bottom: vw_size(30, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  .error-page-wrapper {
+    .title {
+      font-size: vw_size(28, $current);
+      margin-bottom: vw_size(30, $current);
+    }
+  }
+}

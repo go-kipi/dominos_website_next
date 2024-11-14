@@ -1,0 +1,126 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.prices-wrap {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	.price-wrapper-block {
+		width: vw_size(50, $current);
+
+		display: flex;
+		&:nth-child(1) {
+			margin-inline-end: vw_size(6, $current);
+		}
+	}
+
+	.price {
+		font-family: $font-bold;
+		font-size: vw_size(12, $current);
+		color: $white;
+		line-height: vw_size(21, $current);
+
+		.currency {
+			font-size: vw_size(6, $current);
+			line-height: vw_size(15, $current);
+		}
+
+		&.old {
+			color: $pink;
+
+			.price {
+				color: $pink;
+			}
+		}
+	}
+	.include {
+		font-family: $font-medium;
+		font-size: vw_size(12, $current);
+		color: white;
+		letter-spacing: 1px;
+		line-height: vw_size(21, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.prices-wrap {
+		.price-wrapper-block {
+			width: vw_size(50, $current);
+			&:nth-child(1) {
+				margin-inline-end: vw_size(6, $current);
+			}
+		}
+		.price {
+			font-size: vw_size(12, $current);
+			line-height: vw_size(21, $current);
+
+			.currency {
+				font-size: vw_size(6, $current);
+				line-height: vw_size(15, $current);
+			}
+
+			&.old {
+			}
+		}
+		.include {
+			font-size: vw_size(12, $current);
+			line-height: vw_size(21, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.prices-wrap {
+		.price-wrapper-block {
+			width: vw_size(70, $current);
+			&:nth-child(1) {
+				margin-inline-end: vw_size(12, $current);
+			}
+		}
+		.price {
+			font-size: vw_size(15, $current);
+			line-height: vw_size(21, $current);
+
+			.currency {
+				font-size: vw_size(12, $current);
+				line-height: vw_size(18, $current);
+			}
+		}
+		.include {
+			font-size: vw_size(15, $current);
+			line-height: vw_size(21, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	$currentSmall: $desktop-max * 0.8; // adding 20 precnet to all page
+
+	.prices-wrap {
+		.price-wrapper-block {
+			width: vw_size(80, $current);
+			&:nth-child(1) {
+				margin-inline-end: vw_size(12, $currentSmall);
+			}
+		}
+		.price {
+			font-size: vw_size(15, $currentSmall);
+			line-height: vw_size(21, $current);
+
+			.currency {
+				font-size: vw_size(12, $currentSmall);
+				line-height: vw_size(12, $currentSmall);
+			}
+		}
+		.include {
+			font-size: vw_size(15, $currentSmall);
+			line-height: vw_size(21, $current);
+		}
+	}
+}

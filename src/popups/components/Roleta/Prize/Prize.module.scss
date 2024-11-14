@@ -1,0 +1,288 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+:global(.ltr) {
+	.prize-wrapper {
+		.mobile-wrapper {
+			.confetti-animation {
+				top: vw_size(50, $current);
+			}
+		}
+	}
+}
+
+.prize-wrapper {
+	flex: 1;
+	z-index: 100;
+	.mobile-wrapper {
+		flex: 1;
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		.prize-img {
+			width: 100%;
+			margin-top: vw_size(70, $current);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-self: center;
+			position: relative;
+			height: vw_size(250, $current);
+			z-index: 1;
+
+			img {
+				display: block;
+				margin-inline: auto;
+				width: vw_size(250, $current);
+			}
+
+			:global(.lf-player-container) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: vw_size(300, $current);
+				height: 100%;
+				z-index: 101;
+			}
+		}
+		.won-wrapper {
+			position: absolute;
+			left: 0;
+			top: vw_size(314, $current);
+			display: flex;
+			flex-direction: column;
+			width: vw_size(363, $current);
+			.won-title {
+				font-family: $font-book;
+				font-size: vw_size(16, $current);
+				line-height: vw_size(20, $current);
+				color: $white;
+				text-align: center;
+			}
+			.prize-title {
+				font-family: $font-medium;
+				font-size: vw_size(23, $current);
+				line-height: vw_size(28, $current);
+				color: $white;
+				text-align: center;
+			}
+		}
+		.expiration-date-wrapper {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: vw_size(420, $current);
+			left: vw_size(130, $current);
+			width: vw_size(106, $current);
+			.expiration-date {
+				font-family: $font-book;
+				font-size: vw_size(14, $current);
+				line-height: vw_size(25, $current);
+				color: $white;
+				text-align: center;
+			}
+		}
+		.actions {
+			display: flex;
+			justify-content: center;
+			width: vw_size(284, $current);
+			position: absolute;
+			top: vw_size(495, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.prize-wrapper {
+		.mobile-wrapper {
+			.prize-img {
+				margin-top: vw_size(70, $current);
+				height: vw_size(214, $current);
+
+				img {
+					width: vw_size(250, $current);
+				}
+
+				:global(.lf-player-container) {
+					width: vw_size(300, $current);
+				}
+			}
+			.won-wrapper {
+				width: vw_size(363, $current);
+				top: vw_size(314, $current);
+				left: vw_size(200, $current);
+				.won-title {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(20, $current);
+				}
+				.prize-title {
+					font-size: vw_size(23, $current);
+					line-height: vw_size(28, $current);
+				}
+			}
+			.expiration-date-wrapper {
+				top: vw_size(483, $current);
+				left: vw_size(330, $current);
+				width: vw_size(106, $current);
+				.expiration-date {
+					font-size: vw_size(14, $current);
+					line-height: vw_size(25, $current);
+				}
+			}
+			.actions {
+				width: vw_size(284, $current);
+				top: vw_size(577, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.prize-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		.desktop-wrapper {
+			flex: 1;
+			display: flex;
+			padding-inline: vw_size(50, $current);
+			.right-side {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				.won-wrapper {
+					display: flex;
+					flex-direction: column;
+					width: vw_size(342, $current);
+
+					.won-title {
+						font-family: $font-book;
+						font-size: vw_size(29, $current);
+						line-height: vw_size(36, $current);
+						color: $white;
+						text-align: center;
+					}
+					.prize-title {
+						font-family: $font-medium;
+						font-size: vw_size(41, $current);
+						line-height: vw_size(50, $current);
+						color: $white;
+						text-align: center;
+					}
+				}
+				.expiration-date-wrapper {
+					display: flex;
+					justify-content: center;
+
+					margin-top: vw_size(17, $current);
+					.expiration-date {
+						margin-inline: vw_size(5, $current);
+						font-family: $font-book;
+						font-size: vw_size(14, $current);
+						line-height: vw_size(40, $current);
+						color: $white;
+						text-align: center;
+						.date {
+							margin-inline-start: vw_size(8, $current);
+						}
+					}
+				}
+				.actions {
+					display: flex;
+					justify-content: center;
+					margin-top: vw_size(17, $current);
+					width: vw_size(306, $current);
+					height: vw_size(50, $current);
+				}
+			}
+			.left-side {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				.prize-img {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: vw_size(330, $current);
+					height: vw_size(318, $current);
+					position: relative;
+					img {
+						width: vw_size(300, $current);
+						height: vw_size(300, $current);
+						object-fit: contain;
+					}
+					:global(.lf-player-container) {
+						position: absolute;
+						width: vw_size(400, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.prize-wrapper {
+		.desktop-wrapper {
+			padding-inline: vw_size(150, $current);
+			.right-side {
+				position: relative;
+				//bottom: vw_size(100, $current);
+				.won-wrapper {
+					.won-title {
+						font-size: vw_size(29, $current);
+						line-height: vw_size(36, $current);
+					}
+					.prize-title {
+						font-size: vw_size(41, $current);
+						line-height: vw_size(50, $current);
+					}
+				}
+				.expiration-date-wrapper {
+					margin-top: vw_size(17, $current);
+					.expiration-date {
+						font-size: vw_size(14, $current);
+						line-height: vw_size(40, $current);
+
+						.date {
+							margin-inline-start: vw_size(8, $current);
+						}
+					}
+				}
+				.actions {
+					margin-top: vw_size(17, $current);
+					width: vw_size(306, $current);
+					height: vw_size(50, $current);
+				}
+			}
+
+			.left-side {
+				.prize-img {
+					width: vw_size(330, $current);
+					height: vw_size(318, $current);
+					img {
+						width: vw_size(300, $current);
+						height: vw_size(300, $current);
+					}
+					:global(.lf-player-container) {
+						width: vw_size(400, $current);
+					}
+				}
+			}
+		}
+	}
+}

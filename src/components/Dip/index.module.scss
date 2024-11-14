@@ -1,0 +1,282 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+
+.dip-container {
+	position: relative;
+	width: vw_size(330, $current);
+	height: vw_size(108, $current);
+	background-color: rgba(92, 106, 116, 0.4);
+	border-radius: vw_size(20, $current);
+
+	.image-container {
+		position: absolute;
+		@include right(-24%);
+		top: 50%;
+		transform: translateY(-54%);
+		width: vw_size(180, $current);
+
+		.dip-image {
+			width: 100%;
+			filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+		}
+	}
+
+	.main-content {
+		position: absolute;
+		@include right(vw_size(80, $current));
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		height: 100%;
+		padding-block-start: vw_size(18, $current);
+		padding-block-end: vw_size(25, $current);
+		color: white;
+		font-family: $font-medium;
+		font-size: vw_size(16, $current);
+		letter-spacing: vw_size(0.16, $current);
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		.price-container {
+			.old-price {
+				font-size: vw_size(14, $current);
+				color: $dominos-red;
+
+				.price {
+					font-size: vw_size(14, $current);
+					.line-through {
+						background-color: $dominos-red;
+					}
+				}
+			}
+			.price-placeholder {
+				opacity: 0;
+			}
+		}
+	}
+
+	.counter-container {
+		position: absolute;
+		@include left(vw_size(20, $current));
+		bottom: vw_size(20, $current);
+		width: vw_size(98, $current);
+		height: vw_size(31, $current);
+
+		.counter-button {
+			height: 100%;
+			background-color: transparent;
+			border: 1px solid rgba(255, 255, 255, 0.439);
+			border-radius: vw_size(50, $current);
+
+			.action-btn {
+				&:active {
+					background-color: rgba(255, 255, 255, 0.25);
+				}
+			}
+		}
+
+		.out-of-stock {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			color: $pink;
+			font-family: $font-bold;
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.dip-container {
+		width: vw_size(330, $current);
+		height: vw_size(108, $current);
+		border-radius: vw_size(20, $current);
+
+		.image-container {
+			width: vw_size(180, $current);
+
+			.dip-image {
+				filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+			}
+		}
+
+		.main-content {
+			@include right(vw_size(80, $current));
+			padding-block-start: vw_size(18, $current);
+			padding-block-end: vw_size(23, $current);
+			font-size: vw_size(16, $current);
+			letter-spacing: vw_size(0.16, $current);
+
+			.price-container {
+				.price {
+					font-size: vw_size(14, $current);
+				}
+
+				.old-price {
+					font-size: vw_size(14, $current);
+					color: $dominos-red;
+				}
+			}
+		}
+
+		.counter-container {
+			@include left(vw_size(20, $current));
+			bottom: vw_size(20, $current);
+			width: vw_size(98, $current);
+			height: vw_size(31, $current);
+
+			.counter-button {
+				border-radius: vw_size(50, $current);
+
+				.action-btn {
+					&:active {
+						background-color: rgba(255, 255, 255, 0.25);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	:global(.ltr) {
+		.dip-container {
+			.image-container {
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	.dip-container {
+		width: vw_size(297, $current);
+		height: vw_size(197, $current);
+		border-radius: vw_size(28, $current);
+
+		.image-container {
+			position: absolute;
+			top: -75%;
+			@include right(50%);
+			transform: translateX(50%);
+			width: vw_size(328, $current);
+
+			.dip-image {
+				width: 100%;
+				filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+			}
+		}
+
+		.main-content {
+			position: absolute;
+			@include right(6%);
+			bottom: 12%;
+			display: flex;
+			flex-direction: column;
+			justify-content: unset;
+			gap: vw_size(20, $current);
+			align-items: flex-start;
+			height: max-content;
+			padding-block: 0;
+			font-size: vw_size(20, $current);
+			letter-spacing: vw_size(0.16, $current);
+			font-family: $font;
+
+			.price-container {
+				.old-price {
+					font-size: vw_size(18, $current);
+					color: $dominos-red;
+				}
+
+				.price {
+					font-size: vw_size(18, $current);
+				}
+
+				.price-placeholder {
+					font-size: vw_size(16, $current);
+				}
+			}
+		}
+
+		.counter-container {
+			position: absolute;
+			@include left(vw_size(20, $current));
+			bottom: vw_size(20, $current);
+			width: vw_size(98, $current);
+			height: vw_size(31, $current);
+
+			.counter-button {
+				border-radius: vw_size(50, $current);
+
+				.action-btn {
+					&:active {
+						background-color: rgba(255, 255, 255, 0.25);
+					}
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.25);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop_max;
+
+	.dip-container {
+		width: vw_size(297, $current);
+		height: vw_size(197, $current);
+		border-radius: vw_size(28, $current);
+
+		.image-container {
+			width: vw_size(328, $current);
+
+			.dip-image {
+				filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+			}
+		}
+
+		.main-content {
+			gap: vw_size(20, $current);
+			font-size: vw_size(20, $current);
+			letter-spacing: vw_size(0.16, $current);
+
+			.price-container {
+				.old-price {
+					font-size: vw_size(20, $current);
+				}
+
+				.price {
+					font-size: vw_size(20, $current);
+				}
+			}
+		}
+
+		.counter-container {
+			left: vw_size(20, $current);
+			bottom: vw_size(20, $current);
+			width: vw_size(98, $current);
+			height: vw_size(31, $current);
+
+			.counter-button {
+				border-radius: vw_size(50, $current);
+
+				.action-btn {
+					&:active {
+						background-color: rgba(255, 255, 255, 0.25);
+					}
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.25);
+					}
+				}
+			}
+		}
+	}
+}

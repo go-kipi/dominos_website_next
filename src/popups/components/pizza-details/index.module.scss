@@ -1,0 +1,629 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+:global(.ltr) {
+	:global(.popup) {
+		.pizzas-details {
+			:global(.popup_wrapper) {
+				:global(.popup_content) {
+					.pizzas-details-container {
+						.name-edit-wrapper {
+							.pizzas-name-icon-wrapper {
+								transform: scaleX(-1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+:global(.popup) {
+	.pizzas-details {
+		:global(.popup_wrapper) {
+			position: relative;
+
+			width: 100%;
+
+			height: 100%;
+
+			:global(.popup_content) {
+				.content {
+					margin-top: vw_size(30, $current);
+
+					padding-bottom: vw_size(150, $current);
+				}
+
+				.separator {
+					background-color: #828282;
+					height: 1px;
+					width: vw_size(305, $current);
+					margin: vw_size(10, $current) auto;
+				}
+
+				.pizzas-img-wrapper {
+					position: relative;
+					margin: auto;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: vw_size(270, $current);
+					height: vw_size(270, $current);
+
+					.edit-icon-wrapper {
+						position: absolute;
+						width: vw_size(40, $current);
+						height: vw_size(40, $current);
+						bottom: vw_size(20, $current);
+						left: vw_size(30, $current);
+					}
+				}
+
+				.pizzas-details-container {
+					display: flex;
+					flex-direction: column;
+					padding-inline: vw_size(35, $current);
+
+					.name-edit-wrapper {
+						position: relative;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						align-self: center;
+						width: 100%;
+
+						.edit-wrapper {
+							display: flex;
+							align-items: center;
+						}
+
+						.pizzas-name-icon-wrapper {
+							cursor: pointer;
+							width: vw_size(16, $current);
+							height: vw_size(16, $current);
+							margin-inline-start: vw_size(8, $current);
+						}
+
+						.pizzas-name {
+							color: white;
+							font-family: $font-bold;
+							font-size: vw_size(16, $current);
+							line-height: vw_size(25, $current);
+							max-width: vw_size(130, $current);
+							margin: vw_size(15, $current) 0;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+							overflow: hidden;
+						}
+					}
+
+					.pizza-dough-size-wrapper {
+						text-align: right;
+						color: white;
+						font-size: vw_size(14, $current);
+						font-family: $font;
+						line-height: vw_size(24, $current);
+					}
+
+					.price-wrapper {
+						align-self: flex-start;
+						display: flex;
+						margin-top: vw_size(5, $current);
+
+						.old-price {
+							color: $pink;
+							margin-inline-start: vw_size(12, $current);
+						}
+					}
+				}
+
+				.toppings-list-wrapper {
+					position: relative;
+
+					.toppings-list {
+						display: flex;
+						white-space: nowrap;
+						overflow: scroll;
+						padding-top: vw_size(10, $current);
+						padding-inline: vw_size(35, $current);
+						@include hide-scrollbar;
+
+						.topping-selector-wrapper {
+							&:first-of-type {
+								margin-inline-start: 0;
+							}
+						}
+
+						.linear-gradient-left {
+							position: absolute;
+							pointer-events: none;
+							left: 0;
+							bottom: 0;
+							z-index: 10000;
+							padding-top: vw_size(10, $current);
+							height: vw_size(109, $current);
+							width: vw_size(60, $current);
+
+							background-image: linear-gradient(
+								-270deg,
+								rgba(0, 0, 0, 1) 0%,
+								rgba(0, 0, 0, 0) 100%
+							);
+						}
+
+						.linear-gradient-right {
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							pointer-events: none;
+							z-index: 10000;
+							padding-top: vw_size(10, $current);
+							height: vw_size(109, $current);
+							width: vw_size(60, $current);
+
+							background-image: linear-gradient(
+								-270deg,
+								rgba(0, 0, 0, 0) 0%,
+								rgba(0, 0, 0, 1) 100%
+							);
+						}
+					}
+				}
+
+				.note {
+					color: #c2c2c2;
+					font-family: $font;
+				}
+
+				.pizzas-instructions {
+					display: block;
+					font-size: vw_size(12, $current);
+					letter-spacing: vw_size(1.5, $current);
+					margin-inline-start: vw_size(35, $current);
+				}
+
+				.linear-gradient-bottom {
+					bottom: 0;
+					position: absolute;
+					width: 100%;
+					height: vw_size(150, $current);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-image: linear-gradient(
+						-180deg,
+						rgba(0, 0, 0, 0) 0%,
+						rgba(0, 0, 0, 1) 100%
+					);
+				}
+			}
+
+			.linear-gradient-bottom {
+				z-index: 10000;
+				bottom: 0;
+				position: absolute;
+				width: 100%;
+				height: vw_size(150, $current);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-image: linear-gradient(
+					-180deg,
+					rgba(0, 0, 0, 0) 0%,
+					rgba(0, 0, 0, 1) 100%
+				);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	:global(.popup) {
+		.pizzas-details {
+			:global(.popup_wrapper) {
+				:global(.popup_content) {
+					.content {
+						margin-top: vw_size(30, $current);
+
+						padding-bottom: vw_size(120, $current);
+					}
+
+					.separator {
+						width: vw_size(628, $current);
+						margin: vw_size(10, $current) auto;
+					}
+
+					.pizzas-img-wrapper {
+						width: vw_size(270, $current);
+						height: vw_size(270, $current);
+
+						.edit-icon-wrapper {
+							width: vw_size(40, $current);
+							height: vw_size(40, $current);
+							bottom: vw_size(20, $current);
+							left: vw_size(30, $current);
+						}
+					}
+
+					.pizzas-details-container {
+						padding-inline: vw_size(70, $current);
+
+						.name-edit-wrapper {
+							.pizzas-name-icon-wrapper {
+								margin-inline-start: vw_size(8, $current);
+								width: vw_size(16, $current);
+								height: vw_size(16, $current);
+							}
+
+							.pizzas-name {
+								font-size: vw_size(16, $current);
+								line-height: vw_size(25, $current);
+								max-width: vw_size(130, $current);
+								margin: vw_size(15, $current) 0;
+							}
+						}
+
+						.pizza-dough-size-wrapper {
+							font-size: vw_size(14, $current);
+							line-height: vw_size(24, $current);
+						}
+
+						.price-wrapper {
+							margin-top: vw_size(5, $current);
+
+							.old-price {
+								margin-inline-start: vw_size(12, $current);
+							}
+						}
+					}
+
+					.toppings-list-wrapper {
+						.toppings-list {
+							padding-top: vw_size(10, $current);
+							padding-inline: vw_size(70, $current);
+
+							.linear-gradient-left {
+								transform: translateY(vw_size(-20, $current));
+								padding-top: vw_size(10, $current);
+								height: vw_size(120, $current);
+								width: vw_size(60, $current);
+							}
+
+							.linear-gradient-right {
+								transform: translateY(vw_size(-20, $current));
+								padding-top: vw_size(10, $current);
+								height: vw_size(120, $current);
+								width: vw_size(60, $current);
+							}
+						}
+					}
+
+					.pizzas-instructions {
+						font-size: vw_size(12, $current);
+						letter-spacing: vw_size(2, $current);
+						margin-inline-start: vw_size(70, $current);
+					}
+				}
+
+				.linear-gradient-bottom {
+					margin-top: vw_size(26, $current);
+					height: vw_size(120, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	:global(.popup) {
+		.pizzas-details {
+			:global(.popup_wrapper) {
+				:global(.popup_content) {
+					.content {
+						margin-top: vw_size(30, $current);
+						padding-bottom: vw_size(100, $current);
+						display: flex;
+						justify-content: center;
+					}
+
+					.pizzas-details-wrapper {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						padding-top: vw_size(100, $current);
+
+						.details-right {
+							display: flex;
+							flex-direction: column;
+							width: vw_size(340, $current);
+							// .slider-wrapper {
+							//   position: relative;
+							//   .toppings-swiper {
+							//     :global(.swiper-wrapper) {
+							//       align-items: baseline;
+							//       display: flex;
+							//     }
+							//     :global(.swiper-slide) {
+
+							//     }
+							//   }
+							//   .arrows {
+							//     .arrow {
+							//       width: vw_size(35, $current);
+							//       height: vw_size(35, $current);
+							//     }
+							//     .next-arrow-wrapper, .prev-arrow-wrapper {
+							//       position: absolute;
+							//       bottom: vw_size(140, $current)
+							//     }
+							//     .prev-arrow-wrapper {
+							//       right: vw_size(-60, $current);
+							//     }
+							//     .next-arrow-wrapper {
+							//       left: vw_size(-60, $current);
+							//     }
+							//   }
+							//   .on-swiper {
+							//     align-self: flex-start;
+							//     margin-block: vw_size(25, $current);
+							//   }
+							// }
+
+							.separator {
+								width: 100%;
+								margin: vw_size(10, $current) auto;
+							}
+
+							.pizzas-details-container {
+								padding: 0;
+
+								.name-edit-wrapper {
+									.pizzas-name-icon-wrapper {
+										margin-inline-start: vw_size(8, $current);
+										width: vw_size(16, $current);
+										height: vw_size(16, $current);
+									}
+
+									.pizzas-name {
+										font-size: vw_size(16, $current);
+										line-height: vw_size(25, $current);
+										max-width: vw_size(130, $current);
+										margin: vw_size(15, $current) 0;
+									}
+								}
+
+								.pizza-dough-size-wrapper {
+									margin-right: 0;
+
+									font-size: vw_size(14, $current);
+									line-height: vw_size(24, $current);
+								}
+
+								.right-price-wrapper {
+									margin-right: unset;
+									display: flex;
+									justify-content: space-between;
+									align-items: center;
+
+									.price-wrapper {
+										margin-top: vw_size(5, $current);
+
+										.old-price {
+											margin-inline-start: vw_size(12, $current);
+										}
+									}
+
+									.transparent-counter-button-wrapper {
+										width: vw_size(103, $current);
+									}
+								}
+							}
+
+							.toppings-list {
+								padding-top: vw_size(10, $current);
+								padding-inline: 0;
+								padding-bottom: vw_size(15, $current);
+
+								display: flex;
+								overflow: unset;
+
+								.topping-selector-wrapper {
+									&:first-of-type {
+										margin-inline-start: 0;
+									}
+								}
+
+								.linear-gradient-left {
+									transform: translateY(vw_size(-20, $current));
+									padding-top: vw_size(10, $current);
+									height: vw_size(120, $current);
+									width: vw_size(60, $current);
+								}
+
+								.linear-gradient-right {
+									transform: translateY(vw_size(-20, $current));
+									padding-top: vw_size(10, $current);
+									height: vw_size(120, $current);
+									width: vw_size(60, $current);
+								}
+							}
+
+							.actions {
+								display: flex;
+								width: 100%;
+								justify-content: center;
+								align-items: center;
+							}
+
+							.add-to-cart-btn {
+								display: flex;
+								justify-content: center;
+								margin-top: vw_size(67, $current);
+							}
+						}
+
+						.details-left {
+							margin-inline-start: vw_size(95, $current);
+
+							.pizzas-img-wrapper {
+								width: vw_size(457, $current);
+								height: vw_size(457, $current);
+
+								.edit-icon-wrapper {
+									width: vw_size(40, $current);
+									height: vw_size(40, $current);
+									bottom: vw_size(50, $current);
+									left: vw_size(40, $current);
+								}
+							}
+						}
+					}
+
+					.pizzas-instructions {
+						font-size: vw_size(12, $current);
+						letter-spacing: vw_size(2, $current);
+						margin-inline-start: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop_large;
+
+	:global(.popup) {
+		.pizzas-details {
+			:global(.popup_wrapper) {
+				:global(.popup_content) {
+					.content {
+						margin-top: vw_size(30, $current);
+						padding-bottom: vw_size(100, $current);
+					}
+
+					.pizzas-details-wrapper {
+						padding-top: unset;
+
+						.details-right {
+							width: vw_size(340, $current);
+							// .slider-wrapper {
+							//   .arrows {
+							//     .arrow {
+							//       width: vw_size(35, $current);
+							//       height: vw_size(35, $current);
+							//     }
+							//     .next-arrow-wrapper, .prev-arrow-wrapper {
+							//       bottom: vw_size(160, $current)
+							//     }
+							//     .prev-arrow-wrapper {
+							//       right: vw_size(-60, $current);
+							//     }
+							//     .next-arrow-wrapper {
+							//       left: vw_size(-60, $current);
+							//     }
+							//   }
+							// }
+							.separator {
+								margin: vw_size(10, $current) auto;
+							}
+
+							.pizzas-details-container {
+								.name-edit-wrapper {
+									.pizzas-name-icon-wrapper {
+										margin-inline-start: vw_size(8, $current);
+										width: vw_size(16, $current);
+										height: vw_size(16, $current);
+									}
+
+									.pizzas-name {
+										font-size: vw_size(16, $current);
+										line-height: vw_size(25, $current);
+										max-width: vw_size(130, $current);
+										margin: vw_size(15, $current) 0;
+									}
+								}
+
+								.pizza-dough-size-wrapper {
+									font-size: vw_size(14, $current);
+									line-height: vw_size(24, $current);
+								}
+
+								.right-price-wrapper {
+									margin-right: unset;
+									display: flex;
+									justify-content: space-between;
+									align-items: center;
+
+									.price-wrapper {
+										margin-top: vw_size(5, $current);
+
+										.old-price {
+											margin-inline-start: vw_size(12, $current);
+										}
+									}
+
+									.transparent-counter-button-wrapper {
+										width: vw_size(103, $current);
+									}
+								}
+							}
+
+							.toppings-list {
+								padding-top: vw_size(10, $current);
+								padding-bottom: vw_size(15, $current);
+
+								.linear-gradient-left {
+									transform: translateY(vw_size(-20, $current));
+									padding-top: vw_size(10, $current);
+									height: vw_size(120, $current);
+									width: vw_size(60, $current);
+								}
+
+								.linear-gradient-right {
+									transform: translateY(vw_size(-20, $current));
+									padding-top: vw_size(10, $current);
+									height: vw_size(120, $current);
+									width: vw_size(60, $current);
+								}
+							}
+
+							.add-to-cart-btn {
+								margin-top: vw_size(67, $current);
+							}
+						}
+
+						.details-left {
+							margin-inline-start: vw_size(95, $current);
+
+							.pizzas-img-wrapper {
+								width: vw_size(457, $current);
+								height: vw_size(457, $current);
+
+								.edit-icon-wrapper {
+									width: vw_size(40, $current);
+									height: vw_size(40, $current);
+									bottom: vw_size(50, $current);
+									left: vw_size(40, $current);
+								}
+							}
+						}
+					}
+
+					.pizzas-instructions {
+						font-size: vw_size(12, $current);
+						letter-spacing: vw_size(2, $current);
+						margin-inline-start: 0;
+					}
+				}
+			}
+		}
+	}
+}

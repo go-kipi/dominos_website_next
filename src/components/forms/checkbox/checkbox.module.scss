@@ -1,0 +1,101 @@
+@import "../../../styles/imports.scss";
+
+$margin-size: 2;
+$image-size: 15;
+.checkbox-wrapper {
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	margin: 0 - vw_size($margin-size, $mobile);
+
+	input {
+		margin: 0 vw_size($margin-size, $mobile);
+	}
+
+	&.styled {
+		input {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			.image-wrapper {
+				margin: 0 vw_size($margin-size, $mobile);
+				width: vw_size($image-size, $mobile);
+				height: vw_size($image-size, $mobile);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	.checkbox-wrapper {
+		margin: 0 - vw_size($margin-size, $tablet);
+
+		input {
+			margin: 0 vw_size($margin-size, $tablet);
+		}
+
+		&.styled {
+			input {
+				margin: unset;
+			}
+
+			label .image-wrapper {
+				margin: 0 vw_size($margin-size, $tablet);
+				width: vw_size($image-size, $tablet);
+				height: vw_size($image-size, $tablet);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	.checkbox-wrapper {
+		margin: 0 - vw_size($margin-size, $desktop);
+
+		input {
+			margin: 0 vw_size($margin-size, $desktop);
+		}
+
+		&.styled {
+			input {
+				margin: unset;
+			}
+
+			label .image-wrapper {
+				margin: 0 vw_size($margin-size, $desktop);
+				width: vw_size($image-size, $desktop);
+				height: vw_size($image-size, $desktop);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	.checkbox-wrapper {
+		margin: 0 - vw_size($margin-size, $desktop-large);
+
+		input {
+			margin: 0 vw_size($margin-size, $desktop-large);
+		}
+
+		&.styled {
+			input {
+				margin: unset;
+			}
+
+			label .image-wrapper {
+				margin: 0 vw_size($margin-size, $desktop-large);
+				width: vw_size($image-size, $desktop-large);
+				height: vw_size($image-size, $desktop-large);
+			}
+		}
+	}
+}

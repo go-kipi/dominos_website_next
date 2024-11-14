@@ -1,0 +1,91 @@
+#cg-tx-info,#cg-header-wrapper,#cg-header,#cg-form-title,#cg-clear,#cg-cancel, #cg-form-group-user-data-1, .text-danger, .custom-checkbox .checkmark, #cg-pm-title, #cg-pm-options, #cg-footer{
+    display:none;
+}
+.custom-checkbox .switch {
+    margin-bottom: 15px;
+}
+.custom-checkbox .switch input {
+    opacity: unset;
+    width: 20px;
+    height: 35px;
+}
+.form-control-label {
+    line-height: unset;
+}
+.cg-input{
+    transition: unset;
+    padding: unset;
+    border:unset;
+    border-bottom:1px solid rgb(148, 148, 148);
+    border-radius:0;
+    font-size:17px
+}
+.col-3, .col-6 {
+    max-width: unset;
+}
+#cg-form-group-personal-id, #cg-form-group-card-number {
+    flex: 0 0 100%;
+}
+#cg-form-group-cvv {
+    flex: 0 0 40%;
+    margin-right: 20px;
+}
+#cg-form-group-expMonth, #cg-form-group-expYear {
+    flex: 0 0 25%;
+}
+.col-6 {
+    flex: 0 0 45%;
+}
+.cg-input:focus{
+    border: none;
+    border-bottom:1px solid #306ddb;
+}
+.cg-input.invalidInput, .cg-input.invalidInput:focus{
+    border-bottom:1px solid rgb(245, 0, 46);
+}
+.form-group .form-control-label  {
+    margin-bottom: 0px;
+}
+/* {} */
+#cg-submit-btn{
+    background:#306ddb;
+    height:44px;
+    width:284px;
+    border-radius:22px;
+    font-size:16px;
+    color:#fff;
+    font-weight:unset;
+    margin: auto;
+}
+.cg-label-input>span,  #label-personal-id{
+    color:#949494;
+    font-size:13px;
+}
+#cg-container {
+    border: none;
+}
+#cg-tx-container{
+    padding:unset;
+}
+#tns-box-label {
+    color: #949494;
+    font-size: 15px;
+}
+#cg-form-group-cvv {
+    flex: 0 0 42%;
+}
+.cg-input {
+    height: 25px;
+}
+.cg-form-controls .row {
+    margin: unset;
+}
+.form-group {
+    min-height: 70px;
+}
+#cg-form {
+    padding-inline: 9vw;
+}
+input:focus {
+    outline: unset;   
+}

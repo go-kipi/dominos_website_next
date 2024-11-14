@@ -1,0 +1,176 @@
+@import "src/styles/imports";
+$current: 375;
+:global(.popup) {
+	.vegan-pizza-popup {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		:global(.popup_wrapper) {
+			height: 50vh;
+			position: relative;
+			padding: vw_size(20, $current);
+
+			:global(.popup_content) {
+				.vegan-pizza-wrapper {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					.vegan-pizza-img {
+						margin: auto;
+						margin-top: vw_size(20, $current);
+						width: vw_size(169, $current);
+						height: vw_size(132, $current);
+					}
+					.vegan-pizza-title {
+						font-family: $font-medium;
+						font-size: vw_size(22, $current);
+						text-align: center;
+						margin-top: vw_size(15, $current);
+					}
+					.vegan-pizza-subtitle {
+						color: #5c6a74;
+						text-align: center;
+						font-family: $font-book;
+						font-size: vw_size(16, $current);
+						margin-top: vw_size(10, $current);
+					}
+					.ok-btn {
+						margin: auto;
+						margin-top: vw_size(20, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		.vegan-pizza-popup {
+			:global(.popup_wrapper) {
+				border-radius: vw_size(9, $current);
+				width: vw_size(412, $current);
+				height: vw_size(412, $current);
+				position: relative;
+				padding: vw_size(20, $current);
+
+				:global(.popup_content) {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.vegan-pizza-wrapper {
+						.vegan-pizza-img {
+							margin: auto;
+							margin-top: vw_size(20, $current);
+							width: vw_size(169, $current);
+							height: vw_size(132, $current);
+						}
+						.vegan-pizza-title {
+							font-family: $font-medium;
+							font-size: vw_size(22, $current);
+							text-align: center;
+							margin-top: vw_size(15, $current);
+						}
+						.vegan-pizza-subtitle {
+							color: #5c6a74;
+							text-align: center;
+							font-family: $font-book;
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(10, $current);
+						}
+						.ok-btn {
+							margin: auto;
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		.vegan-pizza-popup {
+			:global(.popup_wrapper) {
+				border-radius: vw_size(9, $current);
+				width: vw_size(412, $current);
+				height: vw_size(412, $current);
+				padding: vw_size(20, $current);
+
+				:global(.popup_content) {
+					.vegan-pizza-wrapper {
+						.vegan-pizza-img {
+							margin: auto;
+							margin-top: vw_size(20, $current);
+							width: vw_size(169, $current);
+							height: vw_size(132, $current);
+						}
+						.vegan-pizza-title {
+							font-family: $font-medium;
+							font-size: vw_size(22, $current);
+							text-align: center;
+							margin-top: vw_size(15, $current);
+						}
+						.vegan-pizza-subtitle {
+							color: #5c6a74;
+							text-align: center;
+							font-family: $font-book;
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(10, $current);
+						}
+						.ok-btn {
+							margin: auto;
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	:global(.popup) {
+		.vegan-pizza-popup {
+			:global(.popup_wrapper) {
+				border-radius: vw_size(9, $current);
+				height: vw_size(412, $current);
+				width: vw_size(412, $current);
+				padding: vw_size(20, $current);
+
+				:global(.popup_content) {
+					.vegan-pizza-wrapper {
+						.vegan-pizza-img {
+							margin: auto;
+							margin-top: vw_size(20, $current);
+							width: vw_size(169, $current);
+							height: vw_size(132, $current);
+						}
+						.vegan-pizza-title {
+							font-family: $font-medium;
+							font-size: vw_size(22, $current);
+							text-align: center;
+							margin-top: vw_size(15, $current);
+						}
+						.vegan-pizza-subtitle {
+							color: #5c6a74;
+							text-align: center;
+							font-family: $font-book;
+							font-size: vw_size(16, $current);
+							margin-top: vw_size(10, $current);
+						}
+						.ok-btn {
+							margin: auto;
+							margin-top: vw_size(20, $current);
+						}
+					}
+				}
+			}
+		}
+	}
+}

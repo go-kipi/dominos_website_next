@@ -1,0 +1,49 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+
+.add-credit-card-wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: vw_size(10, $current);
+    height: 80%;
+    border-top-left-radius: vw_size(25, $current);
+    border-top-right-radius: vw_size(25, $current);
+    background-color: $white;
+    width: 100%;
+    flex: 1;
+    padding-inline: vw_size(46, $current);
+    padding-top: vw_size(40, $current);
+    overflow: auto;
+
+    .iframe {
+      border: unset;
+      width: 100vw;
+      min-height: 90vh;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .add-credit-card-wrap {
+
+    .body {
+      margin-top: vw_size(10, $current);
+      border-top-left-radius: vw_size(25, $current);
+      border-top-right-radius: vw_size(25, $current);
+      padding-inline: vw_size(46, $current);
+      padding-top: vw_size(40, $current);
+
+      .iframe {
+        min-height: 90vh;
+      }
+    }
+  }
+}

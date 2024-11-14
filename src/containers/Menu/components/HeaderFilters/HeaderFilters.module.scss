@@ -1,0 +1,84 @@
+@import "src/styles/imports";
+$current: 375;
+
+.header-filters-container {
+	position: fixed;
+	z-index: 999;
+	white-space: nowrap;
+	top: vw_size(80, $current);
+	pointer-events: all;
+	display: flex;
+	justify-content: center;
+
+	// in this class there is a transperent border and text - after the animaition done this is remove (this is only for the size of the animaition))
+	.initial-filter-animaition {
+		position: absolute;
+		border: white 1px solid;
+		border-radius: vw_size(14, $current);
+		margin-inline-start: vw_size(30, $current);
+		color: transparent;
+		width: max-content;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 vw_size(15, $current) vw_size(2, $current) vw_size(17, $current);
+	}
+
+	.header-filters {
+		width: 100vw;
+	}
+
+	.header-filters-wrapper {
+		display: flex;
+
+		padding-inline-start: vw_size(30, $current);
+		overflow-x: scroll;
+		@include hide-scrollbar();
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.header-filters-container {
+		top: vw_size(90, $current);
+
+		.header-filters-wrapper {
+			padding-inline-start: vw_size(6.5, $current);
+			justify-content: center;
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.header-filters-container {
+		position: sticky;
+		top: vw_size(20, $current);
+		width: 80vw;
+		.header-filters {
+			width: 80vw;
+		}
+
+		margin: vw_size(-40, $current) auto 0;
+		.header-filters-wrapper {
+			justify-content: center;
+			margin-top: vw_size(15, $current);
+			padding-inline-start: vw_size(6.5, $current);
+			gap: vw_size(10, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_large;
+	.header-filters-container {
+		top: vw_size(20, $current);
+		margin: vw_size(-40, $current) auto 0;
+
+		.header-filters-wrapper {
+			padding-inline-start: vw_size(6.5, $current);
+			gap: vw_size(10, $current);
+		}
+	}
+}

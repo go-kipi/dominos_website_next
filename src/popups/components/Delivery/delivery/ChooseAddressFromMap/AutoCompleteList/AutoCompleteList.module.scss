@@ -1,0 +1,59 @@
+@import "src/styles/imports";
+
+$current: 375;
+.autocomplete-list {
+  position: absolute;
+  z-index: 10005; // go over everything;
+  box-shadow: 1px 4px 30px 0 rgba(157, 181, 217, 0.75);
+  width: vw_size(284, $current);
+  background-color: white;
+  top: 100%;
+  overflow: hidden;
+  .hiddable-scrollhost-container {
+    .scrollhost {
+      max-height: vw_size(230, $current);
+    }
+  }
+  .autocomplete-menu {
+    height: 100%;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .autocomplete-list {
+    width: vw_size(284, $current);
+    .hiddable-scrollhost-container {
+      .scrollhost {
+        max-height: vw_size(230, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  .autocomplete-list {
+    width: vw_size(340, $current);
+    .hiddable-scrollhost-container {
+      .scrollhost {
+        max-height: vw_size(230, $current);
+      }
+    }
+    .autocomplete-menu {
+      // height: 100%;
+    }
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  $current: $desktop-max;
+  .autocomplete-list {
+    width: vw_size(340, $current);
+    .hiddable-scrollhost-container {
+      .scrollhost {
+        max-height: vw_size(230, $current);
+      }
+    }
+  }
+}

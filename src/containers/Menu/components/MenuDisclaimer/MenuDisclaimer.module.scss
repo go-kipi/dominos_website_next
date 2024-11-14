@@ -1,0 +1,112 @@
+@import "src/styles/imports";
+$current: 375;
+.disclaimer-container {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+
+	&.hide {
+		transition: all 0.3s ease-in-out;
+		bottom: -100%;
+	}
+
+	.wrapper {
+		display: flex;
+		background-color: rgba(0, 0, 0, 0.85);
+		width: 100%;
+
+		justify-content: space-between;
+		align-items: center;
+		padding: vw_size(7, $current);
+
+		//right: 50%;
+		//transform: translateX(50%);
+		right: 0;
+		left: 0;
+		margin-inline: auto;
+		.content {
+			width: vw_size(300, $current);
+			color: #d1d1d1;
+			font-family: $font-book;
+			font-size: vw_size(14, $current);
+			line-height: vw_size(17, $current);
+			letter-spacing: 0.14px;
+			text-align: center;
+		}
+		.filler,
+		.close-icon {
+			padding: vw_size(3, $current);
+			cursor: pointer;
+			width: vw_size(18, $current);
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.disclaimer-container {
+		.wrapper {
+			width: vw_size(700, $current);
+			padding: vw_size(7, $current);
+
+			.content {
+				width: vw_size(390, $current);
+				font-size: vw_size(14, $current);
+				line-height: vw_size(17, $current);
+			}
+
+			.filler,
+			.close-icon {
+				padding: vw_size(3, $current);
+
+				width: vw_size(18, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.disclaimer-container {
+		.wrapper {
+			width: vw_size(644, $current);
+			padding: vw_size(13, $current);
+
+			.content {
+				width: vw_size(534, $current);
+				font-size: vw_size(15, $current);
+				line-height: vw_size(18, $current);
+			}
+
+			.filler,
+			.close-icon {
+				padding: vw_size(8, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.disclaimer-container {
+		.wrapper {
+			width: vw_size(644, $current);
+			padding: vw_size(13, $current);
+
+			.content {
+				width: vw_size(534, $current);
+				font-size: vw_size(15, $current);
+				line-height: vw_size(18, $current);
+			}
+
+			.filler,
+			.close-icon {
+				padding: vw_size(8, $current);
+
+				width: vw_size(28, $current);
+			}
+		}
+	}
+}

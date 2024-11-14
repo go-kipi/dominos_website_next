@@ -1,0 +1,166 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+:global(.ltr) {
+  .saved-pizza-card-wrapper {
+    .product-tool-tip-icon {
+      right: vw_size(15, $current);
+      left: unset;
+    }
+  }
+}
+
+.saved-pizza-card-wrapper {
+  background-color: rgba(92, 106, 116, 0.4);
+  width: vw_size(146, $current);
+  height: vw_size(96, $current);
+  padding-bottom: vw_size(10, $current);
+  padding-inline-start: vw_size(13, $current);
+  border-radius: vw_size(16, $current);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    background-color: $soft-gray-opacity-hover;
+
+    box-shadow: $box-shadow-card;
+  }
+  &.disabled {
+    background-color: rgba(92, 106, 116, 0.2);
+    .saved-pizza-title {
+      opacity: 0.5;
+    }
+  }
+
+  .saved-pizza-title {
+    margin-top: vw_size(10, $current);
+    font-size: vw_size(16, $current);
+    line-height: vw_size(17, $current);
+    font-family: $font-medium;
+    color: $white;
+    width: 100%;
+    text-align: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .product-price {
+    color: $white;
+    font-family: $font-bold;
+    font-size: vw_size(17, $current);
+    align-self: flex-start;
+    &.old-price {
+      color: $pink;
+    }
+  }
+  .product-tool-tip-icon {
+    position: absolute;
+    left: vw_size(15, $current);
+    bottom: vw_size(10, $current);
+    width: vw_size(18, $current);
+    height: vw_size(18, $current);
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  :global(.ltr) {
+    .saved-pizza-card-wrapper {
+      .product-tool-tip-icon {
+        right: vw_size(15, $current);
+      }
+    }
+  }
+  .saved-pizza-card-wrapper {
+    width: vw_size(146, $current);
+    height: vw_size(96, $current);
+    padding-bottom: vw_size(10, $current);
+    padding-inline-start: vw_size(13, $current);
+    border-radius: vw_size(16, $current);
+    .saved-pizza-title {
+      margin-top: vw_size(10, $current);
+      font-size: vw_size(16, $current);
+      line-height: vw_size(20, $current);
+    }
+
+    .product-price {
+      font-size: vw_size(17, $current);
+    }
+    .product-tool-tip-icon {
+      left: vw_size(15, $current);
+      bottom: vw_size(10, $current);
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop-large;
+  :global(.ltr) {
+    .saved-pizza-card-wrapper {
+      .product-tool-tip-icon {
+        right: vw_size(15, $current);
+      }
+    }
+  }
+  .saved-pizza-card-wrapper {
+    width: vw_size(142, $current);
+    height: vw_size(110, $current);
+    padding-bottom: 0;
+    padding-inline-start: vw_size(19, $current);
+    border-radius: vw_size(16, $current);
+    .saved-pizza-title {
+      margin-top: vw_size(20, $current);
+      font-size: vw_size(16, $current);
+      line-height: vw_size(20, $current);
+    }
+
+    .product-price {
+      font-size: vw_size(17, $current);
+      align-self: flex-start;
+      padding-bottom: vw_size(12, $current);
+      // display: none;
+    }
+    .product-tool-tip-icon {
+      left: vw_size(15, $current);
+      bottom: vw_size(10, $current);
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+  :global(.ltr) {
+    .saved-pizza-card-wrapper {
+      .product-tool-tip-icon {
+        right: vw_size(15, $current);
+      }
+    }
+  }
+  .saved-pizza-card-wrapper {
+    width: vw_size(142, $current);
+    height: vw_size(110, $current);
+
+    padding-inline-start: vw_size(19, $current);
+    border-radius: vw_size(16, $current);
+    .saved-pizza-title {
+      margin-top: vw_size(20, $current);
+      font-size: vw_size(16, $current);
+      line-height: vw_size(20, $current);
+    }
+    .product-price {
+      font-size: vw_size(17, $current);
+      padding-bottom: vw_size(12, $current);
+    }
+    .product-tool-tip-icon {
+      left: vw_size(15, $current);
+      bottom: vw_size(10, $current);
+      width: vw_size(18, $current);
+      height: vw_size(18, $current);
+    }
+  }
+}

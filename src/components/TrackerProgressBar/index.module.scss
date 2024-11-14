@@ -1,0 +1,306 @@
+@import "src/styles/imports";
+
+$current: $mobile;
+:global(.ltr) {
+	.progress-bar-wrapper {
+		.step-wrapper {
+			.step-name {
+				left: 11%;
+			}
+		}
+	}
+}
+.progress-bar-wrapper {
+	position: absolute;
+	bottom: 38%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: row;
+	width: vw_size(289, $current);
+	z-index: 150;
+	.progress-point {
+		background-color: rgba(216, 216, 216, 1);
+		width: vw_size(10, $current);
+		height: vw_size(10, $current);
+		border-radius: vw_size(10, $current);
+	}
+	.step-wrapper {
+		position: relative;
+		flex: 0.5 0.5 auto;
+		.step-inner-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.progress-bar {
+				flex: 1;
+				background-color: rgba(216, 216, 216, 1);
+				height: vw_size(2.5, $current);
+				width: 100%;
+			}
+		}
+		.step-name {
+			position: absolute;
+			color: #d1d1d1;
+			font-family: $font-book;
+			font-size: vw_size(12, $current);
+			top: vw_size(17, $current);
+			left: 35%;
+			line-height: vw_size(19, $current);
+			letter-spacing: vw_size(-0.36, $current);
+			&.active {
+				color: rgba(49, 56, 62, 1);
+			}
+			&.selected {
+				color: black;
+				font-family: $font-bold;
+				font-size: vw_size(16, $current);
+			}
+		}
+	}
+	.active-progress-line-wrapper {
+		position: absolute;
+		width: vw_size(289, $current);
+		height: vw_size(10, $current);
+		.active-progress-line {
+			position: absolute;
+			top: vw_size(-2.5, $current);
+			border: 6px solid rgba(245, 0, 46, 1);
+			border-radius: 12px;
+			box-shadow: 0 2px 7px 0 rgba(255, 255, 255, 0.45),
+				0 2px 4px 0 rgba(245, 0, 46, 0.5);
+			transition: all 500ms ease-in;
+		}
+		.active-progress-bar-lottie-anim {
+			position: absolute;
+			transition: all 500ms ease-in;
+
+			.tracker-lottie {
+				position: absolute;
+				top: vw_size(-65, $current);
+				transform: translateX(50%);
+				height: vw_size(73, $current);
+				width: vw_size(73, $current);
+				overflow: unset !important;
+				&::before {
+					content: "";
+					position: absolute;
+					top: 5%;
+					left: 15%;
+					height: 70%;
+					width: 70%;
+					border-radius: 50%;
+					box-shadow: 0 4px 20px 0 rgba(245, 0, 46, 1);
+				}
+			}
+		}
+	}
+}
+
+:global(.ltr) {
+	.progress-bar-wrapper {
+		bottom: 33%;
+		.active-progress-line-wrapper {
+			.active-progress-bar-lottie-anim {
+				.tracker-lottie {
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.progress-bar-wrapper {
+		position: unset;
+		margin: vw_size(65, $current) auto;
+		align-self: center;
+		transform: unset;
+		width: vw_size(289, $current);
+		.progress-point {
+			width: vw_size(10, $current);
+			height: vw_size(10, $current);
+			border-radius: vw_size(10, $current);
+		}
+		.step-wrapper {
+			.step-inner-wrapper {
+				.progress-bar {
+					height: vw_size(2.5, $current);
+					width: 100%;
+				}
+			}
+			.step-name {
+				top: vw_size(20, $current);
+				font-size: vw_size(14, $current);
+				left: 35%;
+				line-height: vw_size(19, $current);
+				letter-spacing: vw_size(-0.36, $current);
+				&.selected {
+					font-size: vw_size(16, $current);
+				}
+			}
+		}
+		.active-progress-line-wrapper {
+			width: vw_size(289, $current);
+			.active-progress-line {
+				top: vw_size(-2.5, $current);
+				border: 7px solid rgba(245, 0, 46, 1);
+				border-radius: 12px;
+			}
+			.active-progress-bar-lottie-anim {
+				.tracker-lottie {
+					top: vw_size(-65, $current);
+					height: vw_size(73, $current);
+					width: vw_size(73, $current);
+					// box-shadow: 0 3px 10px 0 rgba(245, 0, 46, 1) inherit;
+				}
+			}
+		}
+	}
+	:global(.ltr) {
+		.progress-bar-wrapper {
+			bottom: 30%;
+			.active-progress-line-wrapper {
+				.active-progress-bar-lottie-anim {
+					.tracker-lottie {
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.progress-bar-wrapper {
+			.step-wrapper {
+				.step-name {
+					left: 8%;
+				}
+			}
+		}
+	}
+	.progress-bar-wrapper {
+		position: relative;
+		margin: unset;
+		margin-top: vw_size(140, $current);
+		align-self: center;
+		transform: unset;
+		width: vw_size(289, $current);
+		bottom: unset;
+		left: unset;
+		.progress-point {
+			width: vw_size(10, $current);
+			height: vw_size(10, $current);
+			border-radius: vw_size(10, $current);
+		}
+		.step-wrapper {
+			.step-inner-wrapper {
+				.progress-bar {
+					height: vw_size(2.5, $current);
+					width: 100%;
+				}
+			}
+			.step-name {
+				top: vw_size(20, $current);
+				font-size: vw_size(14, $current);
+				left: 35%;
+				line-height: vw_size(19, $current);
+				letter-spacing: vw_size(-0.36, $current);
+				&.selected {
+					font-size: vw_size(16, $current);
+				}
+			}
+		}
+		.active-progress-line-wrapper {
+			width: vw_size(289, $current);
+			.active-progress-line {
+				top: vw_size(-2.5, $current);
+				border: 7px solid rgba(245, 0, 46, 1);
+				border-radius: 12px;
+			}
+			.active-progress-bar-lottie-anim {
+				.tracker-lottie {
+					top: vw_size(-65, $current);
+					height: vw_size(73, $current);
+					width: vw_size(73, $current);
+					// box-shadow: 0 3px 10px 0 rgba(245, 0, 46, 1) inherit;
+				}
+			}
+		}
+	}
+	:global(.ltr) {
+		.progress-bar-wrapper {
+			bottom: unset;
+			.active-progress-line-wrapper {
+				.active-progress-bar-lottie-anim {
+					.tracker-lottie {
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	.progress-bar-wrapper {
+		position: unset;
+		margin-top: vw_size(155, $current);
+		align-self: center;
+		transform: unset;
+		width: vw_size(289, $current);
+		.progress-point {
+			width: vw_size(10, $current);
+			height: vw_size(10, $current);
+			border-radius: vw_size(10, $current);
+		}
+		.step-wrapper {
+			.step-inner-wrapper {
+				.progress-bar {
+					height: vw_size(2.5, $current);
+					width: 100%;
+				}
+			}
+			.step-name {
+				top: vw_size(20, $current);
+				left: 35%;
+				font-size: vw_size(14, $current);
+				line-height: vw_size(19, $current);
+				letter-spacing: vw_size(-0.36, $current);
+				&.selected {
+					font-size: vw_size(16, $current);
+				}
+			}
+		}
+		.active-progress-line-wrapper {
+			width: vw_size(289, $current);
+			.active-progress-line {
+				top: vw_size(-2.5, $current);
+				border: 7px solid rgba(245, 0, 46, 1);
+				border-radius: 12px;
+			}
+			.active-progress-bar-lottie-anim {
+				.tracker-lottie {
+					top: vw_size(-65, $current);
+
+					height: vw_size(73, $current);
+					width: vw_size(73, $current);
+					// box-shadow: 0 3px 10px 0 rgba(245, 0, 46, 1) inherit;
+				}
+			}
+		}
+	}
+	:global(.ltr) {
+		.progress-bar-wrapper {
+			.active-progress-line-wrapper {
+				.active-progress-bar-lottie-anim {
+					.tracker-lottie {
+					}
+				}
+			}
+		}
+	}
+}

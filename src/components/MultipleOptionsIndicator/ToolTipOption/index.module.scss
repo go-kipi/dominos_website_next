@@ -1,0 +1,142 @@
+@import "src/styles/imports";
+
+$current: 375;
+
+.tool-tip-option-wrapper {
+	height: vw_size(53, $current);
+	display: flex;
+	cursor: pointer;
+	position: relative;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.304);
+	width: 100%;
+	justify-content: flex-start;
+	width: vw_size(170, $current);
+
+	&:active {
+		background-color: rgba(143, 159, 170, 0.4);
+	}
+
+	&:not(:last-child) {
+		&::after {
+			content: "";
+			width: 100%;
+			position: absolute;
+			height: 1px;
+			background-color: rgba(255, 255, 255, 0.255);
+			bottom: 0;
+		}
+	}
+
+	.option-wrapper {
+		display: flex;
+		padding-inline-start: vw_size(10, $current);
+
+		.extra-data {
+			font-family: $font;
+			position: absolute;
+			left: vw_size(14, $current);
+			font-size: vw_size(12, $current);
+			color: white;
+		}
+		.option-img {
+			height: vw_size(16, $current);
+			width: vw_size(14, $current);
+		}
+		.option-text {
+			font-size: vw_size(12, $current);
+			font-family: $font;
+			text-align: right;
+			padding-inline-start: vw_size(25, $current);
+		}
+		.option-changes-text {
+			color: white;
+			font-size: vw_size(12, $current);
+			font-family: $font;
+			margin-inline-start: vw_size(5, $current);
+		}
+	}
+	&.has-changes {
+		background-color: rgba(143, 159, 170, 0.65);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	.tool-tip-option-wrapper {
+		width: vw_size(170, $current);
+		height: vw_size(53, $current);
+		justify-content: center;
+
+		.option-wrapper {
+			padding: vw_size(10, $current);
+
+			.option-img {
+				height: vw_size(16, $current);
+				width: vw_size(14, $current);
+			}
+			.option-text {
+				font-size: vw_size(12, $current);
+				padding-inline-start: vw_size(25, $current);
+			}
+			.option-changes-text {
+				font-size: vw_size(12, $current);
+				margin-inline-start: vw_size(5, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	.tool-tip-option-wrapper {
+		width: vw_size(170, $current);
+		height: vw_size(53, $current);
+
+		.option-wrapper {
+			padding: vw_size(10, $current);
+
+			.option-img {
+				height: vw_size(16, $current);
+				width: vw_size(14, $current);
+			}
+			.option-text {
+				font-size: vw_size(12, $current);
+				margin-inline-start: unset;
+				padding: unset;
+				text-align: center;
+			}
+			.option-changes-text {
+				font-size: vw_size(12, $current);
+				margin-inline-start: vw_size(5, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	.tool-tip-option-wrapper {
+		width: vw_size(170, $current);
+		height: vw_size(53, $current);
+
+		.option-wrapper {
+			padding: vw_size(10, $current);
+
+			.option-img {
+				height: vw_size(16, $current);
+				width: vw_size(14, $current);
+			}
+			.option-text {
+				font-size: vw_size(12, $current);
+				margin-inline-start: vw_size(10, $current);
+			}
+			.option-changes-text {
+				font-size: vw_size(12, $current);
+				margin-inline-start: vw_size(5, $current);
+			}
+		}
+	}
+}

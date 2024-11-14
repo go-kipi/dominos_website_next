@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/outline/expand copy 3</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ui-style-guide_2-of-2" transform="translate(-1171.000000, -612.000000)">
+            <g id="icons/outline/expand-copy-3" transform="translate(1171.000000, 612.000000)">
+                <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
+                <g id="Group" transform="translate(14.562500, 14.562500)" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.75">
+                    <line x1="0" y1="11.5" x2="4.10714286" y2="7.39285714" id="Path-3"></line>
+                    <polyline id="Path-4" points="0 7.80357143 0 11.5 3.69642857 11.5"></polyline>
+                    <polyline id="Path-4" transform="translate(9.651786, 1.848214) scale(-1, -1) translate(-9.651786, -1.848214) " points="7.80357143 -1.60506529e-14 7.80357143 3.69642857 11.5 3.69642857"></polyline>
+                    <line x1="7.39285714" y1="4.10714286" x2="11.5" y2="-3.64787565e-15" id="Path-3" transform="translate(9.446429, 2.053571) scale(-1, -1) translate(-9.446429, -2.053571) "></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

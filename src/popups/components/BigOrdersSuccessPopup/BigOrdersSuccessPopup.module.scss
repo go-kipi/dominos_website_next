@@ -1,0 +1,34 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+.big-orders-success {
+  :global(.popup_wrapper) {
+    position: relative;
+    height: 80vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    transition: all 200ms ease-out;
+    justify-content: flex-start;
+    :global(.popup_content) {
+      overflow-y: hidden;
+    }
+  }
+  &:global(.backdrop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+
+  .big-orders-success {
+    :global(.popup_wrapper) {
+      height: 57vh;
+      width: vw_size(500, $current);
+    }
+  }
+}

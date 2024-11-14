@@ -1,0 +1,172 @@
+@import "src/styles/imports.scss";
+$current: 375;
+
+:global(.popup) {
+	.pizza-not-in-meal {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		:global(.popup_wrapper) {
+			min-height: 52vh;
+
+			:global(.popup_content) {
+				height: 100%;
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+				.info-icon-wrapper {
+					width: vw_size(108, $current);
+					margin-top: vw_size(46, $current);
+				}
+				.content {
+					font-family: $font-medium;
+					color: black;
+					font-size: vw_size(20, $current);
+					line-height: vw_size(33, $current);
+					width: vw_size(222, $current);
+					text-align: center;
+					margin-top: vw_size(17, $current);
+				}
+				.subtext-wrapper {
+					display: flex;
+					height: vw_size(200, $current);
+					.subtext-content {
+						font-family: $font-book;
+						color: #596b75;
+						font-size: vw_size(16, $current);
+						line-height: vw_size(30, $current);
+						width: vw_size(251, $current);
+						text-align: center;
+						margin-top: vw_size(15, $current);
+					}
+				}
+				.button {
+					margin-top: auto;
+					margin-bottom: vw_size(42, $current);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+
+	:global(.popup) {
+		.pizza-not-in-meal {
+			:global(.popup_wrapper) {
+				height: unset;
+				min-width: vw_size(450, $current);
+				min-height: vw_size(480, $current);
+
+				:global(.popup_content) {
+					.info-icon-wrapper {
+						width: vw_size(108, $current);
+						margin-top: vw_size(56, $current);
+					}
+					.content {
+						font-size: vw_size(20, $current);
+						line-height: vw_size(33, $current);
+						width: vw_size(222, $current);
+						margin-top: vw_size(27, $current);
+					}
+					.subtext-wrapper {
+						height: vw_size(200, $current);
+						.subtext-content {
+							font-size: vw_size(16, $current);
+							line-height: vw_size(30, $current);
+							width: vw_size(251, $current);
+							margin-top: vw_size(35, $current);
+						}
+					}
+					.button {
+						margin-bottom: vw_size(42, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+
+	:global(.popup) {
+		.pizza-not-in-meal {
+			:global(.popup_wrapper) {
+				min-width: vw_size(450, $current);
+				min-height: vw_size(450, $current);
+
+				:global(.popup_content) {
+					.info-icon-wrapper {
+						width: vw_size(108, $current);
+						margin-top: vw_size(56, $current);
+						&:focus-visible {
+							outline: unset !important;
+
+							outline-offset: unset !important;
+							// i used important because of accessibility
+						}
+					}
+					.content {
+						font-family: $font;
+						font-size: vw_size(22, $current);
+						line-height: vw_size(36, $current);
+						width: vw_size(222, $current);
+						margin-top: vw_size(27, $current);
+					}
+					.subtext-wrapper {
+						height: vw_size(200, $current);
+						.subtext-content {
+							font-size: vw_size(16, $current);
+							line-height: vw_size(30, $current);
+							width: vw_size(251, $current);
+							margin-top: vw_size(35, $current);
+						}
+					}
+					.button {
+						margin-bottom: vw_size(42, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+
+	:global(.popup) {
+		.pizza-not-in-meal {
+			:global(.popup_wrapper) {
+				min-width: vw_size(450, $current);
+				min-height: vw_size(450, $current);
+
+				:global(.popup_content) {
+					.info-icon-wrapper {
+						width: vw_size(108, $current);
+						margin-top: vw_size(56, $current);
+					}
+					.content {
+						font-size: vw_size(22, $current);
+						line-height: vw_size(36, $current);
+						width: vw_size(222, $current);
+						margin-top: vw_size(27, $current);
+					}
+					.subtext-wrapper {
+						height: vw_size(200, $current);
+						.subtext-content {
+							font-size: vw_size(16, $current);
+							line-height: vw_size(30, $current);
+							width: vw_size(251, $current);
+							margin-top: vw_size(35, $current);
+						}
+					}
+					.button {
+						margin-bottom: vw_size(42, $current);
+					}
+				}
+			}
+		}
+	}
+}

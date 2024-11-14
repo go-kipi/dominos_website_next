@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/!</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="פרטים-אישיים" transform="translate(-312.000000, -424.000000)">
+            <g id="Group-4" transform="translate(41.000000, 374.000000)">
+                <g id="icon/!" transform="translate(271.000000, 50.000000)">
+                    <g id="Group-2">
+                        <rect id="Rectangle" fill="#949494" x="0" y="0" width="17" height="17" rx="8.5"></rect>
+                        <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="7.05263158 3.57894737 9.84210558 3.57894737 9.84210558 5.17693381 9.28421078 9.69298246 7.72210534 9.69298246 7.16421054 5.17693381 7.16421054 3.57894737"></polygon>
+                    </g>
+                    <g id="Group-8" transform="translate(7.052632, 10.915789)" fill="#FFFFFF" fill-rule="nonzero">
+                        <g id="Group-7">
+                            <path d="M1.394737,1.83421053 C0.643724769,1.83421053 0,1.41093117 0,0.917105263 C0,0.423279352 0.643724769,0 1.394737,0 C2.14574923,0 2.789474,0.423279352 2.789474,0.917105263 C2.789474,1.41093117 2.14574923,1.83421053 1.394737,1.83421053 Z" id="Path"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,219 @@
+@import "/src/styles/imports.scss";
+$current: 375;
+
+.bundle-builder-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    margin-top: vw_size(30, $current);
+    margin-bottom: vw_size(38, $current);
+    color: $white;
+    font-family: $font-book;
+    font-size: vw_size(20, $current);
+
+    .title-bold {
+      font-family: $font-bold;
+    }
+  }
+
+  .tags-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: vw_size(27, $current);
+    margin-bottom: vw_size(33, $current);
+  }
+
+  .bundle-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: vw_size(75, $current);
+    & > * {
+      margin: vw_size(20, $current) 0;
+    }
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .bundle-builder-wrapper {
+    .tags-wrapper {
+      margin-top: vw_size(44, $current);
+      margin-bottom: vw_size(40, $current);
+    }
+    .title {
+      margin-top: vw_size(30, $current);
+      margin-bottom: vw_size(38, $current);
+      font-size: vw_size(20, $current);
+    }
+
+    .bundle-items-wrapper {
+      width: vw_size(641, $current);
+      flex-direction: row;
+      align-items: unset;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      flex-basis: auto;
+
+      & > * {
+        margin: unset;
+        margin-top: vw_size(20, $current);
+        width: vw_size(297, $current);
+        height: vw_size(307, $current);
+      }
+
+      & > *:nth-child(1),
+      & > *:nth-child(2) {
+        margin-left: unset;
+      }
+
+      & > *:nth-of-type(2n + 1) {
+        margin-left: vw_size(45, $current);
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: 1280;
+  .bundle-builder-wrapper {
+    .tags-wrapper {
+      margin-top: vw_size(44, $current);
+      margin-bottom: vw_size(40, $current);
+    }
+    .title {
+      margin-top: vw_size(30, $current);
+      margin-bottom: vw_size(38, $current);
+      font-size: vw_size(20, $current);
+    }
+
+    .bundle-items-wrapper {
+      padding-inline: unset;
+      margin-block: unset;
+      padding-bottom: 30vh;
+
+      width: vw_size(1023, $current);
+      flex-direction: row;
+      align-items: unset;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      flex-basis: auto;
+
+      & > * {
+        margin: unset;
+        margin-top: vw_size(58, $current);
+        height: vw_size(307, $current);
+        width: vw_size(297, $current);
+      }
+
+      & > *:nth-child(1),
+      & > *:nth-child(2),
+      & > *:nth-child(3) {
+        margin-top: vw_size(45, $current);
+      }
+
+      & > *:nth-child(3n + 3) {
+        margin-left: 0;
+      }
+
+      & > *:nth-child(3n + 1),
+      & > *:nth-child(3n + 2) {
+        margin-left: vw_size(55, $current);
+      }
+    }
+  }
+  :global(.ltr) {
+    .bundle-builder-wrapper {
+      .bundle-items-wrapper {
+        & > *:nth-child(3n + 3) {
+          margin-left: unset;
+        }
+
+        & > *:nth-child(3n + 1),
+        & > *:nth-child(3n + 2) {
+          margin-right: vw_size(55, $current);
+          margin-left: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  $current: $desktop-max;
+  .bundle-builder-wrapper {
+    .tags-wrapper {
+      margin-top: vw_size(44, $current);
+      margin-bottom: vw_size(40, $current);
+    }
+
+    .title {
+      margin-top: vw_size(30, $current);
+      margin-bottom: vw_size(38, $current);
+      font-size: vw_size(20, $current);
+    }
+
+    .bundle-items-wrapper {
+      width: vw_size(1330, $current);
+      margin-inline: auto;
+      flex-direction: row;
+      align-items: unset;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      flex-basis: auto;
+
+      & > * {
+        margin: unset;
+        margin-top: vw_size(30, $current);
+        height: vw_size(307, $current);
+        width: vw_size(297, $current);
+      }
+
+      & > *:nth-child(3n + 1),
+      & > *:nth-child(3n + 2),
+      & > *:nth-child(3n + 3) {
+        margin-left: unset;
+      }
+
+      & > *:nth-child(1),
+      & > *:nth-child(2),
+      & > *:nth-child(3),
+      & > *:nth-child(4) {
+        margin: unset;
+      }
+
+      & > *:nth-child(4n + 1),
+      & > *:nth-child(4n + 2),
+      & > *:nth-child(4n + 3) {
+        margin-left: vw_size(47, $current);
+      }
+    }
+  }
+  :global(.ltr) {
+    .bundle-builder-wrapper {
+      .bundle-items-wrapper {
+        & > *:nth-child(3n + 1),
+        & > *:nth-child(3n + 2),
+        & > *:nth-child(3n + 3) {
+          margin-right: unset;
+        }
+
+        & > *:nth-child(1),
+        & > *:nth-child(2),
+        & > *:nth-child(3),
+        & > *:nth-child(4) {
+          margin: unset;
+        }
+
+        & > *:nth-child(4n + 1),
+        & > *:nth-child(4n + 2),
+        & > *:nth-child(4n + 3) {
+          margin-right: vw_size(47, $current);
+          margin-left: unset;
+        }
+      }
+    }
+  }
+}

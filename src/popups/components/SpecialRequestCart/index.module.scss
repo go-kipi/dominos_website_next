@@ -1,0 +1,454 @@
+@import "src/styles/imports.scss";
+//transitions
+
+$current: 375;
+.two-action-popup {
+	:global(.popup_content) {
+		.container {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: space-between;
+		}
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.title {
+			font-family: $font;
+			color: $red;
+			font-size: vw_size(18, $current);
+			line-height: vw_size(20, $current);
+			margin-bottom: vw_size(45, $current);
+		}
+
+		.input-container {
+			width: vw_size(284, $current);
+			margin-bottom: vw_size(40, $current);
+
+			.field {
+				.custom-placeholder {
+					font-family: $font;
+					color: $placeholder-gray;
+					font-size: vw_size(17, $current);
+
+					&.focus-custom-placeholder {
+						font-size: vw_size(13, $current);
+						color: $blue;
+					}
+
+					&.animated {
+						font-size: vw_size(13, $current);
+					}
+				}
+				input {
+					font-family: $font-medium;
+					font-size: vw_size(17, $current);
+					color: black;
+				}
+			}
+
+			.words-left {
+				display: flex;
+				justify-content: flex-end;
+				font-family: $font-bold;
+				font-size: vw_size(12, $current);
+				color: $ash-gray;
+				letter-spacing: vw_size(0.84, $current);
+				margin-top: vw_size(2, $current);
+			}
+		}
+
+		.bottom-container {
+			margin-top: vw_size(23, $current);
+			width: vw_size(284, $current);
+
+			.bottom-title {
+				font-family: $font-bold;
+				font-size: vw_size(14, $current);
+				letter-spacing: 0.14px;
+				color: $soft-gray;
+			}
+
+			.inputs-container {
+				display: flex;
+				justify-content: space-between;
+				margin-top: vw_size(35, $current);
+				margin-bottom: vw_size(48, $current);
+				.field {
+					width: vw_size(133, $current);
+					.custom-placeholder {
+						font-family: $font;
+						color: $placeholder-gray;
+						font-size: vw_size(17, $current);
+
+						&.focus-custom-placeholder {
+							font-size: vw_size(13, $current);
+							color: $blue;
+						}
+
+						&.animated {
+							font-size: vw_size(13, $current);
+						}
+					}
+					input {
+						font-family: $font-medium;
+						font-size: vw_size(17, $current);
+						color: black;
+					}
+				}
+			}
+
+			.btn {
+			}
+		}
+		.actions {
+			display: flex;
+
+			justify-content: center;
+			margin-bottom: vw_size(45, $current);
+		}
+	}
+}
+
+:global(.popup) {
+	.two-action-popup {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		:global(.popup_wrapper) {
+			position: relative;
+			height: 80vh !important;
+			background: #ffffff;
+			display: flex;
+			flex-direction: column;
+			transition: all 200ms ease-out;
+			justify-content: flex-start;
+			overflow: hidden;
+
+			.close-icon-wrapper {
+				display: block !important;
+			}
+
+			:global(.popup_content) {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				padding-top: vw_size(20, $current);
+			}
+		}
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	:global(.popup) {
+		.two-action-popup {
+			justify-content: center;
+
+			:global(.popup_wrapper) {
+				min-width: vw_size(450, $current);
+				min-height: 0 !important;
+				max-height: 82% !important;
+				height: vw_size(563, $current) !important;
+				border-radius: vw_size(9, $current);
+
+				.close-icon-wrapper {
+					top: vw_size(5, $current);
+					left: vw_size(10, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+				.close-icon-wrapper {
+					position: absolute;
+					left: vw_size(21, $current);
+					top: vw_size(21, $current);
+				}
+
+				:global(.popup_content) {
+					overflow: auto;
+					padding-top: vw_size(20, $current);
+
+					.title {
+						font-size: vw_size(18, $current);
+						line-height: vw_size(20, $current);
+
+						margin-bottom: vw_size(48, $current);
+					}
+
+					.input-container {
+						width: vw_size(343, $current);
+						margin-bottom: vw_size(40, $current);
+
+						.field {
+							.custom-placeholder {
+								font-size: vw_size(17, $current);
+
+								&.focus-custom-placeholder {
+									font-size: vw_size(13, $current);
+								}
+
+								&.animated {
+									font-size: vw_size(13, $current);
+								}
+							}
+							input {
+								font-size: vw_size(17, $current);
+							}
+						}
+
+						.words-left {
+							font-size: vw_size(12, $current);
+							letter-spacing: vw_size(0.84, $current);
+							margin-top: vw_size(2, $current);
+						}
+					}
+
+					.bottom-container {
+						margin-top: vw_size(23, $current);
+						width: vw_size(343, $current);
+
+						.bottom-title {
+							font-size: vw_size(14, $current);
+						}
+
+						.inputs-container {
+							margin-top: vw_size(35, $current);
+							margin-bottom: vw_size(48, $current);
+
+							.field {
+								width: vw_size(159, $current);
+								.custom-placeholder {
+									font-family: $font;
+									color: $placeholder-gray;
+									font-size: vw_size(17, $current);
+
+									&.focus-custom-placeholder {
+										font-size: vw_size(13, $current);
+										color: $blue;
+									}
+
+									&.animated {
+										font-size: vw_size(13, $current);
+									}
+								}
+								input {
+									font-family: $font-medium;
+									font-size: vw_size(17, $current);
+									color: black;
+								}
+							}
+						}
+					}
+					.actions {
+						margin-bottom: vw_size(45, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.popup) {
+		.two-action-popup {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				min-height: 0 !important;
+				max-height: 82% !important;
+				height: vw_size(563, $current) !important;
+				border-radius: vw_size(9, $current);
+				.close-icon-wrapper {
+					top: vw_size(25, $current);
+					left: vw_size(20, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+
+				:global(.popup_content) {
+					padding-top: vw_size(34, $current);
+
+					.title {
+						font-size: vw_size(18, $current);
+						line-height: vw_size(20, $current);
+
+						margin-bottom: vw_size(62, $current);
+					}
+
+					.input-container {
+						width: vw_size(343, $current);
+						margin-bottom: vw_size(40, $current);
+
+						.field {
+							.custom-placeholder {
+								font-size: vw_size(17, $current);
+
+								&.focus-custom-placeholder {
+									font-size: vw_size(13, $current);
+								}
+
+								&.animated {
+									font-size: vw_size(13, $current);
+								}
+							}
+							input {
+								font-size: vw_size(17, $current);
+							}
+						}
+
+						.words-left {
+							font-size: vw_size(12, $current);
+							letter-spacing: vw_size(0.84, $current);
+							margin-top: vw_size(2, $current);
+						}
+					}
+
+					.bottom-container {
+						margin-top: vw_size(23, $current);
+						width: vw_size(343, $current);
+
+						.bottom-title {
+							font-size: vw_size(14, $current);
+						}
+
+						.inputs-container {
+							margin-top: vw_size(35, $current);
+							margin-bottom: vw_size(48, $current);
+							.field {
+								width: vw_size(159, $current);
+								.custom-placeholder {
+									font-family: $font;
+									color: $placeholder-gray;
+									font-size: vw_size(17, $current);
+
+									&.focus-custom-placeholder {
+										font-size: vw_size(13, $current);
+										color: $blue;
+									}
+
+									&.animated {
+										font-size: vw_size(13, $current);
+									}
+								}
+								input {
+									font-family: $font-medium;
+									font-size: vw_size(17, $current);
+									color: black;
+								}
+							}
+						}
+					}
+					.actions {
+						margin-bottom: vw_size(45, $current);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	:global(.popup) {
+		.two-action-popup {
+			:global(.popup_wrapper) {
+				min-width: vw_size(512, $current);
+				width: vw_size(512, $current) !important;
+				min-height: 0 !important;
+				max-height: 82% !important;
+				height: vw_size(563, $current) !important;
+				margin: 0 auto;
+				border-radius: vw_size(9, $current);
+				.close-icon-wrapper {
+					top: vw_size(25, $current);
+					left: vw_size(20, $current);
+					width: vw_size(18, $current);
+					height: vw_size(18, $current);
+				}
+
+				:global(.popup_content) {
+					padding-top: vw_size(34, $current);
+
+					.title {
+						font-size: vw_size(18, $current);
+						line-height: vw_size(20, $current);
+						bottom: vw_size(48, $current);
+						margin-bottom: vw_size(62, $current);
+					}
+
+					.input-container {
+						width: vw_size(343, $current);
+						margin-bottom: vw_size(40, $current);
+
+						.field {
+							.custom-placeholder {
+								font-size: vw_size(17, $current);
+
+								&.focus-custom-placeholder {
+									font-size: vw_size(13, $current);
+								}
+
+								&.animated {
+									font-size: vw_size(13, $current);
+								}
+							}
+							input {
+								font-size: vw_size(17, $current);
+							}
+						}
+
+						.words-left {
+							font-size: vw_size(12, $current);
+							letter-spacing: vw_size(0.84, $current);
+							margin-top: vw_size(2, $current);
+						}
+					}
+
+					.bottom-container {
+						margin-top: vw_size(23, $current);
+						width: vw_size(343, $current);
+
+						.bottom-title {
+							font-size: vw_size(14, $current);
+						}
+
+						.inputs-container {
+							margin-top: vw_size(35, $current);
+							margin-bottom: vw_size(48, $current);
+							.field {
+								width: vw_size(159, $current);
+								.custom-placeholder {
+									font-family: $font;
+									color: $placeholder-gray;
+									font-size: vw_size(17, $current);
+
+									&.focus-custom-placeholder {
+										font-size: vw_size(13, $current);
+										color: $blue;
+									}
+
+									&.animated {
+										font-size: vw_size(13, $current);
+									}
+								}
+								input {
+									font-family: $font-medium;
+									font-size: vw_size(17, $current);
+									color: black;
+								}
+							}
+						}
+					}
+					.actions {
+						margin-bottom: vw_size(45, $current);
+					}
+				}
+			}
+		}
+	}
+}

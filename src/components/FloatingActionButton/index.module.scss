@@ -1,0 +1,37 @@
+@import "src/styles/imports.scss";
+$current: $mobile;
+
+.floating-action-btn-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: vw_size(123, $current);
+	background-color: rgba(18, 24, 30, 1);
+	border: vw_size(1.28, $current) solid rgba(151, 151, 151, 1);
+	box-shadow: 3px 4px 10px 0 rgba(0, 0, 0, 0.54);
+	border-radius: vw_size(19, $current);
+
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.floating-action-btn-wrapper {
+		width: vw_size(123, $current);
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.floating-action-btn-wrapper {
+		width: vw_size(123, $current);
+		cursor: pointer;
+		color: red;
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop-max;
+	.floating-action-btn-wrapper {
+		width: vw_size(123, $current);
+	}
+}

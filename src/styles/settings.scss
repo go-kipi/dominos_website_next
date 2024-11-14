@@ -1,0 +1,72 @@
+/* colors */
+$background-color: #f3f8fd;
+$background-color: #ffffff;
+$popup-background: #e8dfbc;
+$loader-color: #000000;
+$text-color: #000000;
+$grey-divider: #e7e8e4;
+$dark-grey: #565555;
+$text-black: #0c0803;
+$grey: #828282;
+$dark-color: #252525;
+$dark-red: #656565;
+$silver: #c2c2c2;
+
+$react-teal: #61dafb;
+$orange: #ff4500;
+$gray-disabled: #b2b2b2;
+/* color pallet */
+$dominos-divider-gray: rgba(151, 151, 151, 0.4);
+$dominos-gray: #4d4d4d;
+$dominos-red: rgb(245, 0, 46);
+$red: #f5002e;
+$blue: #017aff;
+$white: #ffffff;
+$black: #000000;
+$disabled-grey: #bdbdbd;
+$charcoal: rgba(56, 65, 79, 1);
+$timberwolf: #d7d7d7;
+$cadet-grey: rgba(143, 159, 170, 0.4);
+$coverage-gray: rgb(77, 77, 77);
+$nero: rgba(37, 37, 37, 1);
+$soft-gray: rgba(92, 106, 116, 1);
+$soft-gray-opacity: rgba(92, 106, 116, 0.4);
+$text-gray: #c2c2c2;
+$light-grey: rgba(209, 209, 209, 0.6);
+$light-grey-text: rgba(113, 113, 133, 1);
+$pink: #ff2e5d;
+$grey-hover: rgba(122, 132, 140, 1);
+$true-blue: rgba(3, 98, 203, 1);
+$label-blue: rgba(65, 201, 243, 1);
+$blackish: #31383e;
+$separator-color: rgba(101, 101, 101, 0.65);
+$yellow-marker: rgba(255, 178, 0, 1);
+$grey-border: rgba(130, 130, 130, 0.45);
+$blue-btn: rgb(1, 122, 255);
+$darker-white: rgba(228, 241, 255, 1);
+$ash-gray: rgba(180, 180, 180, 1);
+$placeholder-gray: rgba(148, 148, 148, 1);
+$payneGrey: rgba(64, 64, 66, 1);
+$lightBlack: rgba(64, 77, 87, 1);
+$lavender-blush: rgba(255, 242, 244, 1);
+$font: "EzerDoo-Regular";
+$font-black: "EzerDoo-Black";
+$font-book: "EzerDoo-Book";
+$font-bold: "EzerDoo-Bold";
+$font-medium: "EzerDoo-Medium";
+$soft-gray-opacity-hover: rgba(92, 106, 116, 0.45);
+
+/* break points */
+$mobile: 375;
+$tablet: 768;
+$desktop: 1200;
+$desktop_large: 1500;
+$desktop-max: 1920;
+
+/* media queries */
+$media-tablet: $tablet + px;
+$media-desktop: $desktop + px;
+$media-desktop_large: $desktop_large + px;
+$media-desktop_max: $desktop-max + px;
+
+$box-shadow-card: 0px 12px 35px -1px rgba(0, 0, 0, 0.54);

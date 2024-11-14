@@ -1,0 +1,128 @@
+@import "src/styles/imports";
+
+$current: $mobile;
+.tracker-notification-wrapper {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 5999;
+	top: vw_size(10, $current);
+	height: vw_size(76, $current);
+	width: vw_size(339, $current);
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: vw_size(24, $current);
+	right: 50%;
+	transform: translateX(50%);
+	cursor: pointer;
+	touch-action: none;
+	transition: 300ms ease-in-out;
+	.tracker-notification-msg {
+		text-align: center;
+		user-select: none;
+		display: block;
+		color: rgba(0, 0, 0, 0.93);
+		font-size: vw_size(15, $current);
+		font-family: $font-medium;
+		padding-inline: vw_size(20, $current);
+	}
+	&.hidden-top {
+		top: vw_size(-100, $current);
+	}
+	&.hidden-left {
+		transform: unset;
+		right: 100%;
+	}
+	&.hidden-right {
+		transform: unset;
+		right: -100%;
+	}
+	&.hidden-bottom {
+		top: vw_size(150, $current);
+		opacity: 0;
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.tracker-notification-wrapper {
+		top: vw_size(10, $current);
+		height: vw_size(76, $current);
+		width: vw_size(339, $current);
+		border-radius: vw_size(24, $current);
+		z-index: 6000;
+		.tracker-notification-msg {
+			font-size: vw_size(15, $current);
+			padding-inline: vw_size(20, $current);
+		}
+		&.hidden {
+			top: vw_size(-100, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	:global(.ltr) {
+		.tracker-notification-wrapper {
+			.close-icon {
+				left: unset;
+				right: vw_size(37, $current);
+			}
+		}
+	}
+	.tracker-notification-wrapper {
+		opacity: 0.88;
+		cursor: unset;
+		border-radius: unset;
+		top: vw_size(0, $current);
+		border-bottom-left-radius: vw_size(30, $current);
+		border-bottom-right-radius: vw_size(30, $current);
+		background-color: white;
+		height: vw_size(60, $current);
+		width: vw_size(761, $current);
+		.tracker-notification-msg {
+			padding-inline: unset;
+			font-size: vw_size(16, $current);
+		}
+		.close-icon {
+			position: absolute;
+			left: vw_size(37, $current);
+			cursor: pointer;
+			width: vw_size(25, $current);
+			height: vw_size(25, $current);
+		}
+		&.hidden {
+			top: vw_size(-100, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	:global(.ltr) {
+		.tracker-notification-wrapper {
+			.close-icon {
+				left: unset;
+				right: vw_size(37, $current);
+			}
+		}
+	}
+	.tracker-notification-wrapper {
+		border-bottom-left-radius: vw_size(30, $current);
+		border-bottom-right-radius: vw_size(30, $current);
+		height: vw_size(60, $current);
+		width: vw_size(761, $current);
+		.tracker-notification-msg {
+			font-size: vw_size(16, $current);
+		}
+		.close-icon {
+			left: vw_size(37, $current);
+			width: vw_size(25, $current);
+			height: vw_size(25, $current);
+		}
+		&.hidden {
+			top: vw_size(-100, $current);
+		}
+	}
+}

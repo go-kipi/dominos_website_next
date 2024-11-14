@@ -1,0 +1,7 @@
+export const HTTP_STATUS = {
+	START: "START",
+	END: "END",
+	SUCCESS: "SUCCESS",
+	FAILED: "FAILED",
+	REJECT: "REJECT",
+};

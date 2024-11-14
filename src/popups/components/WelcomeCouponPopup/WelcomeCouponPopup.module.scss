@@ -1,0 +1,58 @@
+@import "src/styles/imports.scss";
+
+$current: $mobile;
+.welcome-coupon {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  :global(.popup_wrapper) {
+    height: 80vh;
+    background: #ffffff;
+    transition: all 200ms ease-out;
+  }
+}
+
+@media (min-width: $media-tablet) {
+  $current: $tablet;
+  .welcome-coupon {
+    justify-content: center;
+
+    :global(.popup_wrapper) {
+      min-width: vw_size(450, $current);
+      height: vw_size(580, $current);
+
+      border-radius: vw_size(9, $current);
+    }
+  }
+}
+
+@media (min-width: $media-desktop) {
+  $current: $desktop;
+  :global(.popup) {
+    :global(.backdrop):global(.slidePopup).welcome-coupon {
+      :global(.popup_wrapper) {
+        min-width: vw_size(512, $current);
+        height: vw_size(550, $current);
+
+        border-radius: vw_size(9, $current);
+      }
+    }
+  }
+}
+@media (min-width: $media-desktop_large) {
+  $current: $desktop_max;
+
+  :global(.popup) {
+    :global(.backdrop):global(.slidePopup).welcome-coupon {
+      :global(.popup_wrapper) {
+        min-width: vw_size(512, $current);
+        height: vw_size(550, $current);
+
+        border-radius: vw_size(9, $current);
+      }
+    }
+  }
+}

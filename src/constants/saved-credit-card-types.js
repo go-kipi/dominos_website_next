@@ -1,0 +1,2 @@
+export const SAVED_CREDIT_CARDS = 'SAVED_CREDIT_CARDS';
+export const ADD_CREDIT_CARD = 'ADD_CREDIT_CARD';

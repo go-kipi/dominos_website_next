@@ -1,0 +1,200 @@
+@import "/src/styles/imports";
+$current: 375;
+.dough-type-wrapper {
+	cursor: pointer;
+	width: vw_size(69, $current);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: vw_size(20, $current);
+	&.disabled {
+		pointer-events: none;
+		.dough-type-image-wrapper {
+			opacity: 0.4;
+		}
+		.dough-type-title {
+			.text,
+			.dough-type-comment {
+				opacity: 0.4;
+			}
+		}
+	}
+
+	.dough-type-image-wrapper {
+		border-radius: 50%;
+		width: vw_size(60, $current);
+		height: vw_size(60, $current);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&.selected {
+			background-color: $dominos-red;
+			box-shadow: 0 vw_size(8, $current) vw_size(8, $current)
+				rgba(255, 0, 33, 0.63);
+		}
+
+		.dough-type-image {
+			width: vw_size(55, $current);
+			height: vw_size(55, $current);
+			object-fit: cover;
+		}
+	}
+
+	.dough-type-title {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		font-size: vw_size(13, $current);
+		font-family: $font;
+		margin-top: vw_size(20, $current);
+		.dough-type-outofstock {
+			font-family: $font-medium;
+			color: $pink;
+			font-size: vw_size(13, $current);
+		}
+		.text {
+			&.selected {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.dough-type-selected-text {
+		text-align: center;
+		font-size: vw_size(13, $current);
+		font-family: $font;
+	}
+
+	.dough-type-comment {
+		font-family: $font;
+		color: $timberwolf;
+		line-height: vw_size(20, $current);
+		font-size: vw_size(11, $current);
+	}
+}
+
+@media (min-width: $media-tablet) {
+	$current: $tablet;
+	.dough-type-wrapper {
+		width: vw_size(69, $current);
+		margin-top: vw_size(20, $current);
+		.dough-type-image-wrapper {
+			width: vw_size(60, $current);
+			height: vw_size(60, $current);
+
+			&.selected {
+				box-shadow: 0 vw_size(8, $current) vw_size(8, $current)
+					rgba(255, 0, 33, 0.63);
+			}
+
+			.dough-type-image {
+				width: vw_size(55, $current);
+				height: vw_size(55, $current);
+			}
+		}
+
+		.dough-type-title {
+			font-size: vw_size(13, $current);
+			margin-top: vw_size(20, $current);
+			.dough-type-outofstock {
+				font-size: vw_size(13, $current);
+			}
+		}
+
+		.dough-type-selected-text {
+			font-size: vw_size(13, $current);
+		}
+
+		.dough-type-comment {
+			line-height: vw_size(20, $current);
+			font-size: vw_size(11, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: 1280;
+	.dough-type-wrapper {
+		width: vw_size(69, $current);
+		margin-top: unset;
+		&:hover {
+			.dough-type-image-wrapper {
+				background-color: rgba(255, 255, 255, 0.08);
+
+				&.selected {
+					background-color: $dominos-red;
+				}
+			}
+		}
+		.dough-type-image-wrapper {
+			width: vw_size(70, $current);
+			height: vw_size(70, $current);
+
+			&.selected {
+				box-shadow: 0 vw_size(8, $current) vw_size(8, $current)
+					rgba(255, 0, 33, 0.63);
+			}
+
+			.dough-type-image {
+				width: vw_size(55, $current);
+				height: vw_size(55, $current);
+			}
+		}
+
+		.dough-type-title {
+			font-size: vw_size(13, $current);
+			margin-top: vw_size(20, $current);
+			.dough-type-outofstock {
+				font-size: vw_size(13, $current);
+			}
+		}
+
+		.dough-type-selected-text {
+			font-size: vw_size(13, $current);
+		}
+
+		.dough-type-comment {
+			line-height: vw_size(20, $current);
+			font-size: vw_size(11, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop-large) {
+	$current: $desktop-large;
+	.dough-type-wrapper {
+		width: vw_size(69, $current);
+		.dough-type-image-wrapper {
+			width: vw_size(70, $current);
+			height: vw_size(70, $current);
+
+			&.selected {
+				box-shadow: 0 vw_size(8, $current) vw_size(8, $current)
+					rgba(255, 0, 33, 0.63);
+			}
+
+			.dough-type-image {
+				width: vw_size(55, $current);
+				height: vw_size(55, $current);
+			}
+		}
+
+		.dough-type-title {
+			font-size: vw_size(13, $current);
+			margin-top: vw_size(20, $current);
+			.dough-type-outofstock {
+				font-size: vw_size(13, $current);
+			}
+		}
+
+		.dough-type-selected-text {
+			font-size: vw_size(13, $current);
+		}
+
+		.dough-type-comment {
+			line-height: vw_size(20, $current);
+			font-size: vw_size(11, $current);
+		}
+	}
+}
