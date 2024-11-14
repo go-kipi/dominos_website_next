@@ -19,6 +19,15 @@ $current: 375;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				width: 400px;
+
+				pre {
+					width: 300px;
+					margin: 0;
+					white-space: pre-wrap; /* Since CSS 2.1 */
+					word-wrap: break-word; /* Internet Explorer 5.5+ */
+					overflow-wrap: break-word; /* Modern browsers */
+				}
 				.general-api-error-img {
 					width: vw_size(109, $current);
 					height: vw_size(107, $current);

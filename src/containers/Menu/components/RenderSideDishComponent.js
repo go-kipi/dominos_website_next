@@ -58,6 +58,7 @@ function RenderSideDishComponent(props) {
 		buttonTabIndex,
 		className = "",
 		pizzaCategory = "",
+		priceOverride,
 	} = props;
 
 	const [disableClick, setDisableClick] = useState(false);
@@ -783,6 +784,7 @@ function RenderSideDishComponent(props) {
 			productClick={(selectItemEvent, viewEvent)}
 			buttonTabIndex={buttonTabIndex}
 			className={className}
+			priceOverride={priceOverride}
 		/>
 	);
 }

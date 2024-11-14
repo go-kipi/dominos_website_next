@@ -317,7 +317,7 @@ function Payment(props) {
 		Api.deletePayment({
 			payload,
 			onSuccess: () => {
-				// getPayments();
+				getPayments();
 			},
 		});
 	}
@@ -328,7 +328,7 @@ function Payment(props) {
 			payload,
 			onSuccess: () => {
 				typeof callback === "function" && callback();
-				// getPayments();
+				getPayments();
 			},
 		});
 	}
@@ -530,7 +530,7 @@ function Payment(props) {
 						params={currentScreen.params}
 						goBackToChoosePayment={() => {
 							goBackToChoosePayment();
-							// getPayments();
+							getPayments();
 						}}
 						method={giftCardMethod}
 						leftToPay={leftToPay}

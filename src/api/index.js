@@ -19,6 +19,7 @@ import { GeneralService } from "services/GeneralService";
 import { publish } from "services/events";
 import { EVENTS } from "constants/events";
 import { HTTP_STATUS } from "constants/httpStatus";
+import moment from "moment";
 
 const DEFAULT_REQUEST_HEADERS = {
 	"Content-Type": "application/json",
@@ -209,7 +210,6 @@ class ApiManager {
 				if (isOnClient()) {
 					publish(EVENTS.HTTP_REQUEST, HTTP_STATUS.FAILED);
 					this.global.store.dispatch(Actions.setLoader(false));
-					console.log("catch error:", error);
 				}
 
 				if (error?.response?.status >= 500 && shouldUseDefault500) {
@@ -227,9 +227,18 @@ class ApiManager {
 					}
 				}
 
+				const timeStamp = moment();
+
+				//! Temporary payload - for SEO purpose
+				const generalFailurePayload = {
+					methodName,
+					error: JSON.stringify(error),
+				};
+
 				onFailure
 					? onFailure(error?.response?.data ?? error.message)
-					: this.onFailure(error?.response?.data ?? error.message);
+					: this.onFailure(generalFailurePayload); //! Temporary payload - for SEO purpose
+				// : this.onFailure(error?.response?.data ?? error.message); // TODO: Return this simple msg after SEO checks done
 				typeof callback === "function" && callback(error);
 
 				this.#callNextInQueue(error?.response?.status, uuid);
@@ -419,19 +428,34 @@ class ApiManager {
 
 	#onSuccess = () => {};
 
-	onFailure = (response) => {
-		let text = "";
-		if (typeof response === "string") {
-			text = response;
-		} else {
-			const translations = this.global.store.getState().translations;
+	// onFailure = (response) => {
+	// 	let text = "";
+	// 	if (typeof response === "string") {
+	// 		text = response;
+	// 	} else {
+	// 		const translations = this.global.store.getState().translations;
 
-			const id = response?.message?.id;
-			text = translations[id] || id || "תקלת שרת, אנא נסה שנית מאוחר יותר";
-		}
+	// 		const id = response?.message?.id;
+	// 		text = translations[id] || id || "תקלת שרת, אנא נסה שנית מאוחר יותר";
+	// 	}
 
-		const payload = { text };
-		this.openErrorPopup(payload);
+	// 	const payload = { text };
+	// 	this.openErrorPopup(payload);
+	// };
+
+	onFailure = (payload) => {
+		console.log("payload", payload);
+		// const { methodName, timeStamp, payload, url } = payload;
+		publish(EVENTS.HTTP_REQUEST, HTTP_STATUS.END);
+
+		this.global.store.dispatch(Actions.setLoader(false));
+
+		this.global.store.dispatch(
+			Actions.addPopup({
+				type: popups.API_ERROR,
+				payload,
+			}),
+		);
 	};
 
 	handle500 = (uuid = undefined) => {
@@ -678,7 +702,7 @@ class ApiManager {
 			callback: props.callback,
 			shouldUseDefault500: shouldUseDefault500,
 		};
-
+		// console.log("methodName", methodName);
 		if (!shouldExecuteNow) {
 			QueueManager.addRequestToQueue(requestData, methodName);
 			this.#tryToCall();

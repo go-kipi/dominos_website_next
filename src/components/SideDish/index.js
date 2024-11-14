@@ -50,9 +50,14 @@ const SideDish = (props) => {
 		productClick,
 		buttonTabIndex = TAB_INDEX_DEFAULT,
 		className = "",
+		priceOverride,
 	} = props;
 
 	const deviceState = useSelector((store) => store.deviceState);
+	const displayDecimalPoint = useSelector(
+		(store) =>
+			store.globalParams?.displayDecimalPoints?.result?.displayDecimalPoints,
+	);
 	const { notDesktop } = deviceState;
 	const imageRef = useRef(null);
 	const translate = useTranslate();
@@ -174,6 +179,8 @@ const SideDish = (props) => {
 		);
 	};
 
+	console.log("priceOverride", priceOverride);
+
 	const clickedClass = clicked ? styles["clicked"] : "";
 	const isRTL = LanguageDirectionService.isRTL() ? styles["rtl"] : "";
 
@@ -259,6 +266,30 @@ const SideDish = (props) => {
 							styles["prices-area"],
 							showPriceBeforeDiscount ? styles["multi-prices"] : "",
 						)}>
+						{priceOverride ? (
+							<div className={styles["price-override"]}>
+								{isRTL ? (
+									<>
+										<span className={styles["price"]}>
+											{(!notDesktop ? "[ " : "") +
+												priceOverride.toFixed(displayDecimalPoint)}
+										</span>
+										<span className={styles["currency"]}>
+											{"₪ +" + (!notDesktop ? " ]" : "")}
+										</span>
+									</>
+								) : (
+									<>
+										<span className={styles["currency"]}>
+											{(!notDesktop ? "[ " : "") + "+ ₪"}
+										</span>
+										<span className={styles["price"]}>
+											{priceOverride + (!notDesktop ? " ]" : "")}
+										</span>
+									</>
+								)}
+							</div>
+						) : null}
 						{!isInBuilder && (
 							<Price
 								className={styles["current-price"]}
@@ -278,6 +309,7 @@ const SideDish = (props) => {
 						)}
 						{comment && <div className={styles["comment"]}>{comment}</div>}
 					</div>
+
 					<div className={styles["button-wrapper"]}>
 						{isBuilderRecommended ? renderOutOfStock() : renderButton()}
 					</div>

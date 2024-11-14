@@ -847,6 +847,30 @@ export const apiIsrFailureLogs = createSlice({
 Slices.push(apiIsrFailureLogs);
 
 /* --------------------------------------------------------------- */
+export const reduxCheck = createSlice({
+	name: "reduxCheck",
+	initialState: {
+		reduxStart: null,
+		apiCalls: [],
+		apiResponse: [],
+	},
+	reducers: {
+		startRedux: (state, action) => {
+			return { ...state, reduxStart: action.payload };
+		},
+		addApiCall: (state, action) => {
+			return { ...state, apiCalls: [...state.apiCalls, action.payload] };
+		},
+		addApiResponse: (state, action) => {
+			return { ...state, apiResponse: [...state.apiResponse, action.payload] };
+		},
+	},
+	extraReducers: {
+		[HYDRATE]: (state, action) => defaultHYDRATE(state, action, "reduxCheck"),
+	},
+});
+Slices.push(reduxCheck);
+/* --------------------------------------------------------------- */
 
 export const deepLinkCouponSlice = createSlice({
 	name: "deepLinkCoupon",

@@ -50,6 +50,7 @@ function PizzasBuilder(props) {
 		trigger = "",
 		itemCategory,
 		itemCategory2,
+		priceOverrides,
 	} = props;
 	const recommendedPizzasTitleRef = useRef(null);
 	const dispatch = useDispatch();
@@ -165,6 +166,22 @@ function PizzasBuilder(props) {
 	};
 
 	function RenderItem(item, index) {
+		function findPrice(productIds) {
+			const override = Object.values(priceOverrides) && priceOverrides[stepIndex];
+			const foundProductId = productIds.find(
+				(productId) => productId in override.products,
+			);
+
+			if (foundProductId) {
+				return (
+					Number(override.products[foundProductId]) > 0 &&
+					override.products[foundProductId]
+				);
+
+			}
+			return null;
+		}
+		const price = priceOverrides && findPrice(item?.productIds);
 		// NOTE: DO NOT REMOVE isInBuilder prop!
 		return (
 			<div
@@ -188,6 +205,7 @@ function PizzasBuilder(props) {
 					isLastTab={isLastTab}
 					onEndSale={onEndSale}
 					pizzaCategory={ITEM_CATEGORY.SPECIAL}
+					priceOverride={price}
 				/>
 			</div>
 		);

@@ -119,6 +119,27 @@ $current: $mobile;
 				font-family: $font-bold;
 				height: vw_size(39, $current);
 				justify-content: center;
+
+				.price-override {
+					margin-top: vw_size(10, $current);
+					display: flex;
+					justify-content: flex-start;
+					align-items: baseline;
+					.currency {
+						font-family: $font-medium;
+						font-size: vw_size(11.5, $current);
+						color: rgba(255, 255, 255, 1);
+						letter-spacing: 0.17px;
+					}
+					.price {
+						font-family: $font-medium;
+						font-size: vw_size(16.5, $current);
+						color: rgba(255, 255, 255, 1);
+						letter-spacing: 0.17px;
+						margin-left: vw_size(5, $current);
+					}
+				}
+
 				&.multi-prices {
 					justify-content: space-between;
 				}
@@ -227,6 +248,21 @@ $current: $mobile;
 			.bottom {
 				.prices-area {
 					height: vw_size(39, $current);
+
+					.price-override {
+						margin-block: vw_size(7, $current);
+						.currency {
+							font-size: vw_size(11.5, $current);
+							color: rgba(255, 255, 255, 1);
+							letter-spacing: 0.17px;
+						}
+						.price {
+							font-size: vw_size(16.5, $current);
+							color: rgba(255, 255, 255, 1);
+							letter-spacing: 0.17px;
+							margin-left: vw_size(5, $current);
+						}
+					}
 
 					.comment {
 						font-size: vw_size(12, $current);
@@ -411,6 +447,21 @@ $current: $mobile;
 					font-family: $font-bold;
 					height: unset;
 
+					.price-override {
+						margin-block: vw_size(7, $current);
+						.currency {
+							font-size: vw_size(16.5, $current);
+							color: rgba(255, 255, 255, 1);
+							letter-spacing: 0.17px;
+						}
+						.price {
+							font-size: vw_size(16.5, $current);
+							color: rgba(255, 255, 255, 1);
+							letter-spacing: 0.17px;
+							margin-left: vw_size(5, $current);
+						}
+					}
+
 					.current-price {
 						align-self: flex-start;
 						font-size: vw_size(28, $current);
@@ -563,6 +614,20 @@ $current: $mobile;
 
 			.bottom {
 				.prices-area {
+					.price-override {
+						margin-block: vw_size(7, $current);
+						.currency {
+							font-size: vw_size(16.5, $current);
+							color: rgba(255, 255, 255, 1);
+							letter-spacing: 0.17px;
+						}
+						.price {
+							font-size: vw_size(16.5, $current);
+							color: rgba(255, 255, 255, 1);
+							letter-spacing: 0.17px;
+							margin-left: vw_size(5, $current);
+						}
+					}
 					.current-price {
 						font-size: vw_size(28, $current);
 

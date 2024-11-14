@@ -1,6 +1,22 @@
 import axios from "axios";
+import moment from "moment";
+import Actions from "redux/actions";
 
 const ServerApiManager = (function () {
+	const globalData = {
+		store: null,
+	};
+
+	function setGlobalStore(store) {
+		globalData.store = store;
+	}
+
+	function dispatch(action) {
+		if (globalData.store && action) {
+			globalData.store.dispatch(action);
+		}
+	}
+
 	const apiData = {
 		url: "",
 		cdn: "",
@@ -53,11 +69,18 @@ const ServerApiManager = (function () {
 
 	async function execute({ payload, settings }, methodName, method = "post") {
 		const config = generateRequest(payload, settings, methodName, method);
+		const timeStamp = moment().toString();
+		dispatch(Actions.addApiCall({ methodName, timeStamp }));
 
 		console.log("url", config.url);
 
 		try {
 			const response = await axios(config);
+			if (response?.status === 200) {
+				dispatch(
+					Actions.addApiResponse({ methodName, timeStamp, data: response.data }),
+				);
+			}
 			return response;
 		} catch (error) {
 			console.error("Error in execute:", error);
@@ -65,7 +88,7 @@ const ServerApiManager = (function () {
 		}
 	}
 
-	return { execute, setApiUrl, setCdn, setAccessToken };
+	return { execute, setApiUrl, setCdn, setAccessToken, setGlobalStore };
 })();
 
 export default ServerApiManager;

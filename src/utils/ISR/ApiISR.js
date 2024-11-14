@@ -3,12 +3,16 @@ import { getLanguageFromLocale } from "utils/functions";
 
 import localTranslations from "translations.json";
 import ServerRequests from "api/server-requests";
+import ServerApiManager from "api/serverApiManager";
 
 const ApiISR = (() => {
 	async function init(store = undefined) {
 		if (store) {
 			ServerRequests.setGlobalStore(store);
+			ServerApiManager.setGlobalStore(store);
+			store.dispatch(Actions.startRedux(true));
 		}
+
 		await ServerRequests.getServerValidateVersion();
 		await ServerRequests.connect();
 	}
@@ -17,7 +21,7 @@ const ApiISR = (() => {
 		const language = getLanguageFromLocale(locale);
 		ServerRequests.dispatch(Actions.setLanguage(language));
 
-		getTranslations(language);
+		await getTranslations(language);
 
 		await ServerRequests.getLinks(language);
 

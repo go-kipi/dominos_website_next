@@ -25,7 +25,10 @@ function ApiErrorPopup(props) {
 		enableClickOutside = true,
 		showCloseIcon = true,
 		animateOutCallback = () => {},
+		methodName,
+		error,
 	} = payload;
+
 	const isLoading = useSelector((store) => store.loaderState);
 	const dispatch = useDispatch();
 
@@ -64,7 +67,8 @@ function ApiErrorPopup(props) {
 						alt="error-icon"
 					/>
 				</div>
-				<h1
+				{/* // TODO: Return this simple msg after SEO checks done */}
+				{/* <h1
 					tabIndex={0}
 					aria-live={"polite"}
 					className={styles["general-api-error-title"]}>
@@ -74,7 +78,11 @@ function ApiErrorPopup(props) {
 					className={styles["general-api-error-message"]}
 					tabIndex={0}>
 					{text}
-				</p>
+				</p> */}
+				{/* // ! Temporary payload - for SEO purpose */}
+				<h3>Method name: {methodName}</h3>
+				<pre className={styles["data-payload"]}>error: {error}</pre>
+
 				<div className={styles["actions"]}>
 					{has2Buttons ? (
 						<AnimatedCapsule
