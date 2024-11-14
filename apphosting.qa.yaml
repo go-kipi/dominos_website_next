@@ -5,11 +5,11 @@ runConfig:
 
 env:
   -   variable: NEXT_PUBLIC_APP_HOST
-  value: https://ver-api.heilasystems.com/
-  availability:
-    -   BUILD
+      value: https://ver-api.heilasystems.com/
+      availability:
+      -   BUILD
 
   -   variable: NEXT_PUBLIC_APP_MAP_API_KEY
-  value: AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04
-  availability:
-    -   BUILD
+      value: AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04
+      availability:
+      -   BUILD
