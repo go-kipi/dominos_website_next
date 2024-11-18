@@ -28,8 +28,8 @@ env:
         -   BUILD
         - RUNTIME
 
-  -   variable: 6Le83UopAAAABxxMZUclOsBoYXrsa3cods4b3I6
-      value: 900
+  -   variable: NEXT_PUBLIC_APP_CAPTCHA_KEY
+      value: 6Le83UopAAAABxxMZUclOsBoYXrsa3cods4b3I6
       availability:
         -   BUILD
         - RUNTIME
