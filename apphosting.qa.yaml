@@ -15,3 +15,21 @@ env:
       availability:
       -   BUILD
       - RUNTIME
+
+  -   variable: NEXT_PUBLIC_ISR_REVALIDATE
+      value: 900
+      availability:
+        -   BUILD
+        - RUNTIME
+
+  -   variable: NEXT_PUBLIC_APP_UUID
+      value: inmanage-employee
+      availability:
+        -   BUILD
+        - RUNTIME
+
+  -   variable: 6Le83UopAAAABxxMZUclOsBoYXrsa3cods4b3I6
+      value: 900
+      availability:
+        -   BUILD
+        - RUNTIME
