@@ -15,11 +15,12 @@ COPY . .
 # Set environment to production
 ENV NODE_ENV=production
 
+ENV NEXT_PUBLIC_APP_HOST="https://ver-api.heilasystems.com/"
 # Build the Next.js app
 RUN npm run build
 
 # Expose port
-EXPOSE 8080
+EXPOSE 3000
 
 # Start the Next.js app
 CMD ["npm", "start"]
