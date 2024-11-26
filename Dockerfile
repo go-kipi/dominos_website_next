@@ -1,26 +1,25 @@
-# Use Node.js LTS as the base image
 FROM node:18-slim
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package files
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
 # Copy all project files
 COPY . .
 
-# Build the Next.js application
-RUN npm run build
-
-# Expose the port Cloud Run will use
-EXPOSE 8080
-
 # Set environment to production
 ENV NODE_ENV=production
 
-# Start the Next.js application
+# Build the Next.js app
+RUN npm run build
+
+# Expose port
+EXPOSE 8080
+
+# Start the Next.js app
 CMD ["npm", "start"]
