@@ -26,6 +26,8 @@ steps:
       - '--allow-unauthenticated'
       - '--update-env-vars'
       - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
+      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
+      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
 
 images:
   - 'gcr.io/$PROJECT_ID/dominos-website-next'
