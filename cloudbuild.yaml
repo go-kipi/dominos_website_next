@@ -10,8 +10,6 @@ steps:
   # Step 3: Deploy the container to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    env:
-      - 'NEXT_PUBLIC_APP_HOST="https://ver-api.heilasystems.com/"x'
     args:
       - 'run'
       - 'deploy'
@@ -23,6 +21,8 @@ steps:
       - '--region'
       - 'me-west1' # Change to your preferred region
       - '--allow-unauthenticated'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
 
 images:
   - 'gcr.io/$PROJECT_ID/dominos-website-next'
