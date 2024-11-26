@@ -26,3 +26,4 @@ steps:
 
 images:
   - 'gcr.io/$PROJECT_ID/dominos-website-next'
+
