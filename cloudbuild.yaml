@@ -19,7 +19,7 @@ steps:
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-central1' # Change to your preferred region
+      - 'me-west1' # Change to your preferred region
       - '--allow-unauthenticated'
 
 images:
