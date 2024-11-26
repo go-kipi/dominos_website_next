@@ -11,7 +11,7 @@ COPY package.json yarn.lock ./
 COPY . .
 
 # Build the Next app
-RUN npm build
+RUN npm run build
 
 # Serve the production build
-CMD ["npm", "start"]
+CMD ["npm","run", "start"]
