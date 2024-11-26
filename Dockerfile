@@ -8,4 +8,3 @@ RUN yarn install \\
     --production=true
 RUN yarn build
 CMD ["yarn", "start"]
-
