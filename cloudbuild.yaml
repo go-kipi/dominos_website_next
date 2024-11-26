@@ -1,0 +1,35 @@
+runConfig:
+  cpu: 1
+  memoryMiB: 512
+  concurrency: 5
+
+env:
+  -   variable: NEXT_PUBLIC_APP_HOST
+      value: "https://ver-api.heilasystems.com/"
+      availability:
+      -   BUILD
+      - RUNTIME
+
+  -   variable: NEXT_PUBLIC_APP_MAP_API_KEY
+      value: "AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04"
+      availability:
+      -   BUILD
+      - RUNTIME
+
+  -   variable: NEXT_PUBLIC_ISR_REVALIDATE
+      value: 900
+      availability:
+        -   BUILD
+        - RUNTIME
+
+  -   variable: NEXT_PUBLIC_APP_UUID
+      value: inmanage-employee
+      availability:
+        -   BUILD
+        - RUNTIME
+
+  -   variable: NEXT_PUBLIC_APP_CAPTCHA_KEY
+      value: 6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6
+      availability:
+        -   BUILD
+        - RUNTIME
