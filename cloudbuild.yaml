@@ -3,10 +3,13 @@ name: Deploy to Cloud Run
 options:
   logging: CLOUD_LOGGING_ONLY
 
-steps:
+#steps:
   # Step 1: Build the Docker image
+#  - name: 'gcr.io/cloud-builders/docker'
+#    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dominos-website-next', '.']
+steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dominos-website-next', '.']
+    args: [ 'build', '-t', 'me-west1-docker.pkg.dev/$PROJECT_ID/dominos_website_next/dominos-website-next', '.' ]
 
   # Step 2: Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
