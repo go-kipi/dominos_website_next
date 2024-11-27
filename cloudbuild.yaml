@@ -23,6 +23,8 @@ steps:
       - 'managed'
       - '--region'
       - 'me-west1' # Change to your preferred region
+      - '--ingress'
+      - 'internal-and-cloud-load-balancing'
       - '--allow-unauthenticated'
       - '--update-env-vars'
       - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
@@ -30,7 +32,10 @@ steps:
       - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
       - '--update-env-vars'
       - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
-
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
 images:
   - 'gcr.io/$PROJECT_ID/dominos-website-next'
 
