@@ -24,23 +24,38 @@
 ## Start the Next.js app
 #CMD ["npm", "start"]
 
-# Use Node.js as the base image
-FROM node:18.17.0-alpine
+FROM node:18-alpine as base
+RUN apk add --no-cache g++ make py3-pip libc6-compat
+WORKDIR /app
+COPY package*.json ./
+EXPOSE 3000
 
-# Set the working directory in the container
+FROM base as builder
+WORKDIR /app
+COPY . .
+RUN npm run build
+
+
+FROM base as production
 WORKDIR /app
 
-# Copy package.json and yarn.lock to the container
-COPY package.json yarn.lock ./
+ENV NODE_ENV=production
+RUN npm ci
 
-# Install dependencies
-RUN yarn install --frozen-lockfile
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+USER nextjs
 
-# Copy the app's source code to the container
+
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+
+CMD npm start
+
+FROM base as dev
+ENV NODE_ENV=development
+RUN npm install
 COPY . .
-
-# Build the Next app
-RUN yarn build
-
-# Serve the production build
-CMD ["yarn", "start"]
+CMD npm run dev
