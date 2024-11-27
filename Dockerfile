@@ -1,65 +1,26 @@
-#FROM node:18-slim
-#
-## Set working directory
-#WORKDIR /app
-#
-## Copy package files
-#COPY package*.json ./
-#
-## Install dependencies
-#RUN npm install
-#
-## Copy all project files
-#COPY . .
-#
-## Set environment to production
-#ENV NODE_ENV=production
-#
-## Build the Next.js app
-#RUN npm run build
-#
-## Expose port
-#EXPOSE 8080
-#
-## Start the Next.js app
-#CMD ["npm", "start"]
-#
+FROM node:18-slim
 
-# Install dependencies only when needed
-FROM node:18-alpine AS deps
+# Set working directory
 WORKDIR /app
 
-# Install git and other necessary tools
-RUN apk add --no-cache git
+# Copy package files
+COPY package*.json ./
 
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+# Install dependencies
+RUN npm install
 
-# Rebuild the source code only when needed
-FROM node:18-alpine AS builder
-WORKDIR /app
-
-# Install git again in case it's needed in the builder
-RUN apk add --no-cache git
-
+# Copy all project files
 COPY . .
-COPY --from=deps /app/node_modules ./node_modules
-RUN yarn build
 
-# Production image, copy all the files and run the app
-FROM node:18-alpine AS runner
-WORKDIR /app
+# Set environment to production
+ENV NODE_ENV=production
 
-ENV NODE_ENV production
-
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
+# Build the Next.js app
+RUN npm run build
 
 # Expose port
 EXPOSE 8080
 
-CMD ["yarn", "start"]
-
+# Start the Next.js app
+CMD ["npm", "start"]
 
