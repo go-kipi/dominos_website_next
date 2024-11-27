@@ -5,15 +5,15 @@ options:
 
 steps:
 #   Step 1: Build the Docker image
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: ' Build the Docker image'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/dominos-website-next', '.']
 
   # Step 2: Push the Docker image to Container Registry
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'Push the Docker image to Container Registry'
     args: ['push', 'gcr.io/$PROJECT_ID/dominos-website-next']
 
   # Step 3: Deploy the container to Cloud Run
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  - name: 'Deploy the container to Cloud Run gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
       - 'run'
