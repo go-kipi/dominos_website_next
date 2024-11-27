@@ -25,33 +25,29 @@
 #CMD ["npm", "start"]
 #
 # Stage 1: Build the Next.js application
-FROM node:18 AS builder
+
+# Stage 1: Build dependencies and cache
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Copy only package files first to cache dependencies
 COPY package.json package-lock.json ./
-RUN npm install --frozen-lockfile
+RUN npm ci --frozen-lockfile
 
-# Copy the rest of the app and build it
+# Copy the rest of the files and build the app
 COPY . .
 RUN npm run build
 
-# Stage 2: Create the production-ready image
-FROM node:18-slim AS runner
+# Stage 2: Prepare the production image
+FROM node:18-alpine AS runner
 
 WORKDIR /app
 
-# Install only production dependencies
-COPY package.json package-lock.json ./
-RUN npm install --production --frozen-lockfile
+# Copy the build output
+COPY --from=builder /app/ ./
 
-# Copy built app from the builder stage
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./next.config.js
-COPY --from=builder /app/package.json ./package.json
-
-# Expose the port and set Next.js to start
 EXPOSE 8080
+
 CMD ["npm", "run", "start"]
+
