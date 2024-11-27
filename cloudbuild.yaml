@@ -1,5 +1,10 @@
+name: Deploy to Cloud Run
+
 options:
   logging: CLOUD_LOGGING_ONLY
+
+dockerize-and-deploy:
+  runs-on: ubuntu-latest
 
 steps:
   # Step 1: Build the Docker image
@@ -36,6 +41,8 @@ steps:
       - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
       - '--update-env-vars'
       - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ENV_TYPE=usa'
 images:
   - 'gcr.io/$PROJECT_ID/dominos-website-next'
 
