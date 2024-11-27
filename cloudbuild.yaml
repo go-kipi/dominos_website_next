@@ -3,9 +3,6 @@ name: Deploy to Cloud Run
 options:
   logging: CLOUD_LOGGING_ONLY
 
-dockerize-and-deploy:
-  runs-on: ubuntu-latest
-
 steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
