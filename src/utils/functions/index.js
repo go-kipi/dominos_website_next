@@ -755,7 +755,6 @@ export function getRecaptchaToken() {
 							resolve(token);
 						})
 						.catch((err) => {
-							console.log("errrr: ",err)
 							resolve(false);
 						});
 				});
