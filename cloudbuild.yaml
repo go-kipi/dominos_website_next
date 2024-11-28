@@ -37,7 +37,7 @@ name: Deploy to Cloud Run
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  env: ["NEXT_PUBLIC_APP_CAPTCHA_KEY", "NEXT_PUBLIC_APP_HOST"]
+  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
 
 steps:
   - name: 'ubuntu'
