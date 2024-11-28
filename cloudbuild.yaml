@@ -8,6 +8,11 @@ steps:
     args: ['install']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--tag=gcr.io/$PROJECT_ID/dominos-website-next', '.']
+  - name: 'ubuntu'
+    args: ['echo', 'Done']
+  - name: 'ubuntu'
+    args: ['echo', '$NEXT_PUBLIC_APP_CAPTCHA_KEY']
+
 images: ['gcr.io/$PROJECT_ID/dominos-website-next']
 
 
