@@ -37,8 +37,18 @@ name: Deploy to Cloud Run
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  automapSubstitutions: true
 
 steps:
+  - name: 'ubuntu'
+    script: |
+      #!/usr/bin/env bash
+      echo "CAPTCHA_KEY: $NEXT_PUBLIC_APP_CAPTCHA_KEY"
+  - name: 'ubuntu'
+    script: |
+      #!/usr/bin/env bash
+      echo "Your project ID is $PROJECT_ID"
+
 #   Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/dominos-website-next', '.']
