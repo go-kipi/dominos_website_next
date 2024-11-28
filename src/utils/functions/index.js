@@ -747,8 +747,6 @@ export function getRecaptchaToken() {
 		if (window.grecaptcha) {
 			try {
 				window.grecaptcha.ready(function () {
-					// temp
-					console.log("process.env.NEXT_PUBLIC_APP_CAPTCHA_KEY",process.env.NEXT_PUBLIC_APP_CAPTCHA_KEY)
 					window.grecaptcha
 						.execute(process.env.NEXT_PUBLIC_APP_CAPTCHA_KEY, { action: "submit" })
 						.then((token) => {
