@@ -27,8 +27,7 @@ const DEFAULT_REQUEST_HEADERS = {
 const { publicRuntimeConfig } = getConfig();
 const version = publicRuntimeConfig?.version;
 const recaptchaMethods = [
-	//temp
-	// "verifyOtp",
+	"verifyOtp",
 	"validateCoupon",
 	"setCustomerDetails",
 	"contactUs",
