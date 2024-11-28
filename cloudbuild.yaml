@@ -37,7 +37,7 @@ name: Deploy to Cloud Run
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  automapSubstitutions: true
+#  automapSubstitutions: true
 
 steps:
 #   Step 1: Build the Docker image
@@ -80,6 +80,4 @@ steps:
       - 'NEXT_PUBLIC_ENV_TYPE=usa'
 images:
   - 'gcr.io/$PROJECT_ID/dominos-website-next'
-substitutions:
-  NEXT_PUBLIC_APP_CAPTCHA_KEY: "6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
 
