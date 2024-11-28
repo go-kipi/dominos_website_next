@@ -27,7 +27,8 @@ const DEFAULT_REQUEST_HEADERS = {
 const { publicRuntimeConfig } = getConfig();
 const version = publicRuntimeConfig?.version;
 const recaptchaMethods = [
-	"verifyOtp",
+	//temp
+	// "verifyOtp",
 	"validateCoupon",
 	"setCustomerDetails",
 	"contactUs",
@@ -139,8 +140,6 @@ class ApiManager {
 
 		if (recaptchaMethods.includes(apiCallName)) {
 			let recaptcha_token = await getRecaptchaToken();
-			// temp
-			console.log('recaptcha_token: ',recaptcha_token)
 			if (!settings.data) {
 				settings.data = {};
 			}
