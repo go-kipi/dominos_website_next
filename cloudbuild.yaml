@@ -2,11 +2,9 @@ name: Deploy to Cloud Run
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
+  env: ["NEXT_PUBLIC_APP_HOST=$NEXT_PUBLIC_APP_HOST", "NEXT_PUBLIC_APP_CAPTCHA_KEY=$NEXT_PUBLIC_APP_CAPTCHA_KEY"]
 
 steps:
-  - name: 'ubuntu'
-    args: ['echo', 'XXXXXX, after 600s']
   #   Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/dominos-website-next', '.']
