@@ -2,7 +2,7 @@ name: Deploy to Cloud Run
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  env: ["NEXT_PUBLIC_APP_HOST=$NEXT_PUBLIC_APP_HOST", "NEXT_PUBLIC_APP_CAPTCHA_KEY=$NEXT_PUBLIC_APP_CAPTCHA_KEY"]
+  env: ["NEXT_PUBLIC_APP_HOST=", "NEXT_PUBLIC_APP_CAPTCHA_KEY="]
 
 steps:
   #   Step 1: Build the Docker image
