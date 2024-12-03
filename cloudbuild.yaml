@@ -26,7 +26,7 @@ steps:
       - '--platform'
       - 'managed'
       - '--region'
-      - 'me-west1' # Change to your preferred region
+      - 'europe-west4' # Change to your preferred region me-west1
       - '--ingress'
       - 'internal-and-cloud-load-balancing'
       - '--allow-unauthenticated'
