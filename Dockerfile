@@ -32,7 +32,7 @@
 #CMD [ "npm", "start" ]
 
 
-FROM node:12-slim
+FROM node:16-slim
 RUN mkdir /app
 COPY package.json /app/
 WORKDIR /app
