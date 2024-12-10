@@ -32,14 +32,50 @@
 #CMD [ "npm", "start" ]
 
 
-FROM node:14-slim
-RUN mkdir /app
-COPY package.json /app/
+#FROM node:16-slim
+#RUN mkdir /app
+#COPY package.json /app/
+#WORKDIR /app
+#COPY . ./
+#
+#ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
+#RUN npm install
+#RUN npm run build
+#EXPOSE 8080
+#CMD ["npm", "start"]
+
+
+# Base image for building the app
+FROM node:16-slim AS builder
 WORKDIR /app
+
+# Copy only the necessary files for dependency installation
+COPY package.json package-lock.json* ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files
 COPY . ./
 
-ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
-RUN npm install
+# Build the Next.js application
 RUN npm run build
+
+# Production image
+FROM node:16-slim
+WORKDIR /app
+
+# Copy build output and necessary files from the builder
+COPY --from=builder /app/package.json /app/package-lock.json* ./
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+
+# Install production dependencies only
+RUN npm install --production
+
+# Expose port and set environment variables
 EXPOSE 8080
+ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
+
+# Run the application
 CMD ["npm", "start"]
