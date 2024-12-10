@@ -53,19 +53,19 @@ steps:
     args:
       - build
       - '-t'
-      - '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
       - .
   - name: gcr.io/cloud-builders/docker
     args:
       - push
-      - '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
   - name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - 'run'
       - 'deploy'
       - 'dominos-website-next'
       - '--image'
-      - '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
       - '--platform'
       - 'managed'
       - '--region'
@@ -88,5 +88,5 @@ steps:
     entrypoint: gcloud
 timeout: 1200s
 images:
-  - '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/$_SERVICE_NAME:$COMMIT_SHA'
+  - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
 
