@@ -95,7 +95,7 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
-  # Install dependencies and build the Next.js app
+  # Step 1: Install dependencies and build Next.js app
   - name: 'node:16-slim'
     id: 'Install dependencies and build app'
     entrypoint: bash
@@ -105,7 +105,7 @@ steps:
         npm install
         npm run build
 
-  # Package the pre-built app into a Docker image
+  # Step 2: Copy pre-built files and build Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Build Docker image'
     args:
@@ -113,15 +113,17 @@ steps:
       - '-t'
       - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
       - .
+    # Pass pre-built files as artifacts
+    dir: .  # Ensure Docker build context includes .next and public directories
 
-  # Push the Docker image to Artifact Registry
+  # Step 3: Push Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Push Docker image'
     args:
       - push
       - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
 
-  # Deploy the Docker image to Cloud Run
+  # Step 4: Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'Deploy to Cloud Run'
     args:

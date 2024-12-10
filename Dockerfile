@@ -106,20 +106,25 @@
 ## Start the app in production mode
 #CMD ["npm", "start"]
 # Base image for building the app
-FROM node:16-slim AS builder
-WORKDIR /app
-COPY package.json package-lock.json* ./
-RUN npm install
-COPY . ./
-RUN npm run build
+FROM node:16-slim
 
-# Production image using distroless
-FROM me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:latest
+# Set working directory
 WORKDIR /app
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
+
+# Copy only necessary files for runtime
+COPY package.json package-lock.json* ./
+RUN npm install --production
+
+# Copy pre-built files
+COPY .next ./.next
+COPY public ./public
+
+# Set environment variables
 ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
+
+# Expose the app's port
 EXPOSE 8080
-CMD ["./node_modules/.bin/next", "start"]
+
+# Start the application
+CMD ["npm", "start"]
+
