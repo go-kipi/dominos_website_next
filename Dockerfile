@@ -114,7 +114,7 @@ COPY . ./
 RUN npm run build
 
 # Production image using distroless
-FROM gcr.io/distroless/nodejs:16
+FROM me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:latest
 WORKDIR /app
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/package.json ./package.json
