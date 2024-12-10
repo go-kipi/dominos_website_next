@@ -45,59 +45,48 @@
 #images:
 #  - 'gcr.io/$PROJECT_ID/dominos-website-next'
 
-#options:
-#  logging: CLOUD_LOGGING_ONLY
-#  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
-#steps:
-#  - name: gcr.io/cloud-builders/docker
-#    args:
-#      - build
-#      - '-t'
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#      - .
-#  - name: gcr.io/cloud-builders/docker
-#    args:
-#      - push
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
-#    args:
-#      - 'run'
-#      - 'deploy'
-#      - 'dominos-website-next'
-#      - '--image'
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#      - '--platform'
-#      - 'managed'
-#      - '--region'
-#      - 'me-west1' # Change to your preferred region me-west1
-#      - '--ingress'
-#      - 'internal-and-cloud-load-balancing'
-#      - '--allow-unauthenticated'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_ENV_TYPE=usa'
-#    entrypoint: gcloud
-#timeout: 1200s
-#images:
-#  - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#
-
-
-steps:
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
-    id: 'Install dependencies'
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build']
-    id: 'Build application'
 options:
-  cache: false
+  logging: CLOUD_LOGGING_ONLY
+  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '-t'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - 'run'
+      - 'deploy'
+      - 'dominos-website-next'
+      - '--image'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - 'me-west1' # Change to your preferred region me-west1
+      - '--ingress'
+      - 'internal-and-cloud-load-balancing'
+      - '--allow-unauthenticated'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ENV_TYPE=usa'
+    entrypoint: gcloud
+timeout: 1200s
+images:
+  - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+
