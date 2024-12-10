@@ -92,168 +92,40 @@
 #
 
 
-#options:
-#  logging: CLOUD_LOGGING_ONLY
-#steps:
-#  # Step 1: Install dependencies and build Next.js app
-#  - name: 'node:16-slim'
-#    id: 'Install dependencies and build app'
-#    entrypoint: bash
-#    args:
-#      - '-c'
-#      - |
-#        npm install
-#        npm run build
-#
-#  # Step 2: Copy pre-built files and build Docker image
-#  - name: 'gcr.io/cloud-builders/docker'
-#    id: 'Build Docker image'
-#    args:
-#      - build
-#      - '-t'
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#      - .
-#    # Pass pre-built files as artifacts
-#    dir: .  # Ensure Docker build context includes .next and public directories
-#
-#  # Step 3: Push Docker image
-#  - name: 'gcr.io/cloud-builders/docker'
-#    id: 'Push Docker image'
-#    args:
-#      - push
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#
-#  # Step 4: Deploy to Cloud Run
-#  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#    id: 'Deploy to Cloud Run'
-#    args:
-#      - 'run'
-#      - 'deploy'
-#      - 'dominos-website-next'
-#      - '--image'
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#      - '--platform'
-#      - 'managed'
-#      - '--region'
-#      - 'me-west1'
-#      - '--ingress'
-#      - 'internal-and-cloud-load-balancing'
-#      - '--allow-unauthenticated'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_ENV_TYPE=usa'
-#    entrypoint: gcloud
-#timeout: 1200s
-#images:
-#  - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-
-
-
-#options:
-#  logging: CLOUD_LOGGING_ONLY
-#
-#steps:
-#  # Step 1: Install dependencies and resolve conflicts
-#  - name: 'node:16-slim'
-#    id: 'Install dependencies and resolve conflicts'
-#    entrypoint: bash
-#    args:
-#      - '-c'
-#      - |
-#        npm install --legacy-peer-deps
-#
-#  # Step 2: Build the Docker image
-#  - name: 'gcr.io/cloud-builders/docker'
-#    id: 'Build Docker image'
-#    args:
-#      - build
-#      - '-t'
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#      - .
-#    env:
-#      - "NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/"
-#      - "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
-#
-#  # Step 3: Push Docker image
-#  - name: 'gcr.io/cloud-builders/docker'
-#    id: 'Push Docker image'
-#    args:
-#      - push
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#
-#  # Step 4: Deploy to Cloud Run
-#  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#    id: 'Deploy to Cloud Run'
-#    args:
-#      - 'run'
-#      - 'deploy'
-#      - 'dominos-website-next'
-#      - '--image'
-#      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-#      - '--platform'
-#      - 'managed'
-#      - '--region'
-#      - 'me-west1'
-#      - '--ingress'
-#      - 'internal-and-cloud-load-balancing'
-#      - '--allow-unauthenticated'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
-#      - '--update-env-vars'
-#      - 'NEXT_PUBLIC_ENV_TYPE=usa'
-#    entrypoint: gcloud
-#
-#timeout: 1200s
-#
-#images:
-#  - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
-
-
-
-
-
-
-
+options:
+  logging: CLOUD_LOGGING_ONLY
 steps:
-  # Step 1: Use Buildpacks to create the container image
-  - name: gcr.io/buildpacks/builder
+  # Step 1: Install dependencies and build Next.js app
+  - name: 'node:16-slim'
+    id: 'Install dependencies and build app'
+    entrypoint: bash
     args:
-      - pack
+      - '-c'
+      - |
+        npm install
+        npm run build
+
+  # Step 2: Copy pre-built files and build Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'Build Docker image'
+    args:
       - build
-      - '--builder=gcr.io/buildpacks/builder:v1'
-      - '--path=.'
-      - '--env'
-      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
-      - '--env'
-      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
       - '-t'
       - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+      - .
+    # Pass pre-built files as artifacts
+    dir: .  # Ensure Docker build context includes .next and public directories
 
-  # Step 2: Push the container image to Artifact Registry
+  # Step 3: Push Docker image
   - name: 'gcr.io/cloud-builders/docker'
+    id: 'Push Docker image'
     args:
       - push
       - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
 
-  # Step 3: Deploy the application to Cloud Run
+  # Step 4: Deploy to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'Deploy to Cloud Run'
     args:
       - 'run'
       - 'deploy'
@@ -264,13 +136,22 @@ steps:
       - 'managed'
       - '--region'
       - 'me-west1'
+      - '--ingress'
+      - 'internal-and-cloud-load-balancing'
       - '--allow-unauthenticated'
       - '--update-env-vars'
       - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
       - '--update-env-vars'
       - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
-
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ENV_TYPE=usa'
+    entrypoint: gcloud
 timeout: 1200s
-
 images:
   - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
