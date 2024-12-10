@@ -32,17 +32,17 @@
 #CMD [ "npm", "start" ]
 
 
-#FROM node:16-slim
-#RUN mkdir /app
-#COPY package.json /app/
-#WORKDIR /app
-#COPY . ./
-#
-#ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
-#RUN npm install
-#RUN npm run build
-#EXPOSE 8080
-#CMD ["npm", "start"]
+FROM node:16-slim
+RUN mkdir /app
+COPY package.json /app/
+WORKDIR /app
+COPY . ./
+
+ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
+RUN npm install
+RUN npm run build
+EXPOSE 8080
+CMD ["npm", "start"]
 
 
 ## Base image for building the app
@@ -106,25 +106,25 @@
 ## Start the app in production mode
 #CMD ["npm", "start"]
 # Base image for building the app
-FROM node:16-slim
-
-# Set working directory
-WORKDIR /app
-
-# Copy only necessary files for runtime
-COPY package.json package-lock.json* ./
-RUN npm install --production
-
-# Copy pre-built files
-COPY .next ./.next
-COPY public ./public
-
-# Set environment variables
-ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
-
-# Expose the app's port
-EXPOSE 8080
-
-# Start the application
+#FROM node:16-slim
+#
+## Set working directory
+#WORKDIR /app
+#
+## Copy only necessary files for runtime
+#COPY package.json package-lock.json* ./
+#RUN npm install --production
+#
+## Copy pre-built files
+#COPY .next ./.next
+#COPY public ./public
+#
+## Set environment variables
+#ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
+#
+## Expose the app's port
+#EXPOSE 8080
+#
+## Start the application
 CMD ["npm", "start"]
 
