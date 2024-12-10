@@ -80,28 +80,46 @@
 ## Run the application
 #CMD ["npm", "start"]
 
-FROM node:16-slim
-
-# Create app directory
+#FROM node:16-slim
+#
+## Create app directory
+#WORKDIR /app
+#
+## Copy only package and lock files first
+#COPY package.json package-lock.json* ./
+#
+## Install dependencies
+#RUN npm install
+#
+## Copy the rest of the application files
+#COPY . ./
+#
+## Build the application
+#RUN npm run build
+#
+## Expose the port
+#EXPOSE 8080
+#
+## Set environment variable
+#ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
+#
+## Start the app in production mode
+#CMD ["npm", "start"]
+# Base image for building the app
+FROM node:16-slim AS builder
 WORKDIR /app
-
-# Copy only package and lock files first
 COPY package.json package-lock.json* ./
-
-# Install dependencies
 RUN npm install
-
-# Copy the rest of the application files
 COPY . ./
-
-# Build the application
 RUN npm run build
 
-# Expose the port
-EXPOSE 8080
-
-# Set environment variable
+# Production image using distroless
+FROM gcr.io/distroless/nodejs:16
+WORKDIR /app
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
 ENV NEXT_PUBLIC_APP_CAPTCHA_KEY="6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"
-
-# Start the app in production mode
-CMD ["npm", "start"]
+EXPOSE 8080
+CMD ["./node_modules/.bin/next", "start"]
