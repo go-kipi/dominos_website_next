@@ -2,15 +2,17 @@ name: Deploy to Cloud Run
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
+#  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
 
 steps:
-  - name: 'ubuntu'
-    args: ['echo', 'starting, after 600s']
-  #   Step 1: Build the Docker image
-  - name: 'buildpacksio/pack'
-    entrypoint: 'pack'
-    args: ['build', '-t', 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website', '.']
+  # Step 1: Build the container image using Google Cloud Buildpacks
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [
+      'builds',
+      'submit',
+      '--tag',
+      'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:latest'
+    ]
   # Step 2: Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website']
