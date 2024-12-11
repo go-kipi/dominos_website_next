@@ -48,7 +48,7 @@ steps:
 images:
   - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
 
-timeout: '1200s'
+
 #options:
 #  logging: CLOUD_LOGGING_ONLY
 #  env: ["NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/", "NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6"]
