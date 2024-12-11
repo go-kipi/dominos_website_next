@@ -190,12 +190,29 @@ steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args:
-      - "run"
-      - "deploy"
-      - "myapi"
-      - "--image"
-      - "me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:$COMMIT_SHA"
-      - "--region"
-      - "asia-east1"
+      - 'run'
+      - 'deploy'
+      - 'dominos-website-next'
+      - '--image'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - 'me-west1'
+      - '--ingress'
+      - 'internal-and-cloud-load-balancing'
+      - '--allow-unauthenticated'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_MAP_API_KEY=AIzaSyCx6hd0AWOUm2c_PwcEYVxyPA-NEB4Ou04'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ISR_REVALIDATE=900'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_APP_UUID=inmanage-employee'
+      - '--update-env-vars'
+      - 'NEXT_PUBLIC_ENV_TYPE=usa'
 images:
   - "me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:$COMMIT_SHA"
