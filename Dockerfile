@@ -175,18 +175,30 @@
 ## Start the Next.js app
 #CMD ["npm", "start"]
 
-# Use the official Google Cloud Buildpacks base builder
-FROM gcr.io/buildpacks/builder:v1
+# Use a lightweight Node.js image
+FROM node:16-slim
 
-# Set environment variables required for the build
-ENV NEXT_PUBLIC_APP_HOST=https://ver-api.heilasystems.com/
-ENV NEXT_PUBLIC_APP_CAPTCHA_KEY=6Le83UopAAAAABxxMZUciOsBoYXrsa3cods4b3I6
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=8080
 
-# Copy application source to the build context
-COPY . /workspace
+# Create and set the app directory
+WORKDIR /app
 
-# Entrypoint for Buildpacks to detect and build your application
-ENTRYPOINT [ "/cnb/lifecycle/creator" ]
+# Copy package.json and package-lock.json first to leverage Docker cache
+COPY package.json package-lock.json ./
 
-# Specify the output image tag (this is optional and primarily for local testing)
-CMD [ "--app", ".", "--run-image", "gcr.io/buildpacks/builder:run", "--launch-cache", "/cache", "--image", "gcr.io/my-project/my-image" ]
+# Install only production dependencies
+RUN npm install --only=production
+
+# Copy the rest of the application
+COPY . .
+
+# Build the Next.js app
+RUN npm run build
+
+# Expose the port for Cloud Run
+EXPOSE 8080
+
+# Start the Next.js production server
+CMD ["npm", "start"]
