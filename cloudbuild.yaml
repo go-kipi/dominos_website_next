@@ -167,7 +167,8 @@
 ##  - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
 
 
-
+options:
+  logging: CLOUD_LOGGING_ONLY
 steps:
   # Step 1: Prepare the environment by setting permissions for directories and files
   - name: 'gcr.io/cloud-builders/bash'
