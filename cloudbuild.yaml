@@ -6,14 +6,22 @@ options:
 
 steps:
   # Step 1: Build the container image using Google Cloud Buildpacks
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: [
-      'builds',
-      'submit',
-      '--tag',
-      'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:latest'
-    ]
-  # Step 2: Push the Docker image to Container Registry
+  # Step 1: Install dependencies
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  # Step 2: Build the application
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '-t'
+      - 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website'
+      - .
+
+Step 2: Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website']
 
