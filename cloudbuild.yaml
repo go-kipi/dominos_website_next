@@ -194,7 +194,7 @@ steps:
     args:
       - '-c'
       - |
-        /bin/sh -c /usr/local/bin/pack build me-west1-docker.pkg.dev/cms-qa-9260/firebaseapphosting-images/dominos-web-site-test:build-2024-11-26-001 \
+        /bin/sh -c /usr/local/bin/pack build me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website:latest \
         --network cloudbuild \
         --builder gcr.io/buildpacks/firebase-app-hosting-22/builder:a6002037d9ff7a22269e62f3e3438e516cb1ea4a \
         --path "$(cat /config/build-directory.txt)" \
