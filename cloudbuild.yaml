@@ -8,7 +8,8 @@ steps:
   - name: 'ubuntu'
     args: ['echo', 'starting, after 600s']
   #   Step 1: Build the Docker image
-  - name: 'gcr.io/cloud-builders/pack'
+  - name: 'buildpacksio/pack'
+    entrypoint: 'pack'
     args: ['build', '-t', 'me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website', '.']
   # Step 2: Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
