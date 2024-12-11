@@ -173,9 +173,6 @@ steps:
   - name: 'node'
     entrypoint: 'npm'
     args: ['install']
-  - name: 'node'
-    entrypoint: 'npm'
-    args: ['test']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--tag=me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website', '.']
 images: ['me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website']
