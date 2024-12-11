@@ -201,11 +201,7 @@ steps:
         --volume output_bundle:/output_bundle:rw \
         --trust-builder \
         --env-file /env/vars_with_secret_values \
-        --env X_GOOGLE_TARGET_PLATFORM=fah \
-        --env FIREBASE_OUTPUT_BUNDLE_DIR=/output_bundle \
-        --env FIREBASE_APP_HOSTING=1 \
-        --env GOOGLE_BUILDABLE="$(cat /config/relative-project-directory.txt)" \
-        --env FIREBASE_WEBAPP_CONFIG={"apiKey":"AIzaSyDWlzEVJu0xdylHOPMs7MrPumgtJZLSKqk","appId":"1:990840206620:web:c3167b6c8906f249aab6d9"}
+
 
   # Step 4: Publish the app to Cloud Run (using the processed apphosting.yaml)
   - name: 'gcr.io/cloud-builders/bash'
@@ -216,10 +212,3 @@ steps:
         --apphostingyaml_filepath /yaml/apphostingyaml_processed \
         --output_bundle_dir /output_bundle \
         --output_filepath "$BUILDER_OUTPUT/output"
-
-# Optional: Add substitution for project and region
-substitutions:
-  _PROJECT_ID: cms-qa-9260
-  _REGION: me-west1
-
-timeout: '1200s'
