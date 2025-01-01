@@ -1,0 +1,86 @@
+@import "src/styles/imports.scss";
+
+$current: 375;
+.gift-card-wrapper {
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	.body {
+		width: 103vw;
+		height: 70vh;
+		padding-block: vw_size(20, $current);
+		.iframe {
+			border: none;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.verifone-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: vw_size(70, $current);
+
+	& > * {
+		margin-block: vw_size(20, $current);
+		width: 75%;
+	}
+}
+
+@media (min-width: $media-desktop) {
+	$current: $desktop;
+	.gift-card-wrapper {
+		height: vw_size(400, $current);
+		display: flex;
+		flex-direction: column;
+		margin-top: vw_size(4, $current);
+
+		.title {
+			color: white;
+			font-family: $font-medium;
+			font-size: vw_size(20, $current);
+			color: $dominos-red;
+			text-align: center;
+		}
+		.body {
+			width: 100%;
+			padding: unset;
+			.iframe {
+				height: vw_size(480, $current);
+			}
+		}
+	}
+
+	.verifone-wrapper {
+		margin-top: vw_size(70, $current);
+
+		& > * {
+			margin-block: vw_size(20, $current);
+		}
+	}
+}
+
+@media (min-width: $media-desktop_large) {
+	$current: $desktop_max;
+	.gift-card-wrapper {
+		height: vw_size(541, $current);
+		.title {
+			font-size: vw_size(20, $current);
+		}
+		.body {
+			.iframe {
+				height: vw_size(480, $current);
+			}
+		}
+	}
+
+	.verifone-wrapper {
+		margin-top: vw_size(70, $current);
+
+		& > * {
+			margin-block: vw_size(20, $current);
+		}
+	}
+}
