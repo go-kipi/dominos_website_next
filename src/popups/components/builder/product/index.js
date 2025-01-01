@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./index.module.scss";
@@ -30,6 +30,8 @@ import TransparentCounterButton from "components/TransparentCounterButton/Transp
 import MaxFreeDipsMessage from "components/MaxFreeDipsMessage";
 import DipsExtraPrice from "components/DipsExtraPrice";
 import usePreventRageClick from "hooks/usePreventRageClick";
+import HiddableScroolBar from "components/HiddableScrollBar/HiddableScrollBar";
+import Scrollbar from "components/Scrollbar";
 
 export default function ProductDetails(props) {
 	const {
@@ -62,6 +64,7 @@ export default function ProductDetails(props) {
 	const deviceState = useSelector((store) => store.deviceState);
 	const saleObj = useSelector((store) => store.cartItem);
 	const step = stepIndex;
+	const listRef = useRef();
 	const currentProductTemplate = useSelector(
 		(store) => store.currentProductTemplate,
 	);
@@ -334,55 +337,57 @@ export default function ProductDetails(props) {
 		errorText: errorBtnText,
 		isError: showErrorBtn,
 		isBtnOnForm: true,
+		className: styles["product-submit-button"],
 		extraStyles: styles,
 		state: true,
 		disabled: isSubmitDisabled,
 	};
 
+	const renderSection = () => {
+		return components.map((section, index) => {
+			return (
+				<RenderSection
+					max={section.max}
+					min={section.min}
+					menuId={Array.isArray(section.menuId) ? section.menuId[0] : section.menuId}
+					onChange={onChange}
+					isIdInList={isIdInList}
+					subItems={subItems}
+					isSale={isSale}
+					key={"section-" + index}
+					overrides={overrides}
+					product={product?.nameUseCases?.Title}
+					handleCounterChange={handleCounterChange}
+					form={form}
+					components={components}
+					onDipsAmountChange={onDipsAmountChange}
+				/>
+			);
+		});
+	};
+
 	return (
 		<div className={styles["builder-product-details-wrapper"]}>
+			<div className={styles["content-body"]}>
+				<div className={styles["title-wrapper"]}>
+					<h3 className={styles["title"]}>{product?.nameUseCases?.Title}</h3>
+				</div>
+				{product?.description && (
+					<div className={styles["description-wrapper"]}>
+						<p className={styles["description"]}>{product?.description}</p>
+					</div>
+				)}
+				{hasComponents && renderSection()}
+				{deviceState.isDesktop && Button({ btnProps })}
+			</div>
+
 			<div className={styles["product-image-wrapper"]}>
 				<img
 					src={image}
 					aria-hidden={true}
 				/>
 			</div>
-			<div className={styles["right-side"]}>
-				<div className={styles["content-body"]}>
-					<div className={styles["title-wrapper"]}>
-						<h3 className={styles["title"]}>{product?.nameUseCases?.Title}</h3>
-					</div>
-					{product?.description && (
-						<div className={styles["description-wrapper"]}>
-							<p className={styles["description"]}>{product?.description}</p>
-						</div>
-					)}
-					{hasComponents &&
-						components.map((section, index) => {
-							return (
-								<RenderSection
-									max={section.max}
-									min={section.min}
-									menuId={
-										Array.isArray(section.menuId) ? section.menuId[0] : section.menuId
-									}
-									onChange={onChange}
-									isIdInList={isIdInList}
-									subItems={subItems}
-									isSale={isSale}
-									key={"section-" + index}
-									overrides={overrides}
-									product={product?.nameUseCases?.Title}
-									handleCounterChange={handleCounterChange}
-									form={form}
-									components={components}
-									onDipsAmountChange={onDipsAmountChange}
-								/>
-							);
-						})}
-				</div>
-				{deviceState.isDesktop && Button({ btnProps })}
-			</div>
+
 			{deviceState.notDesktop && Button({ btnProps })}
 		</div>
 	);
@@ -405,6 +410,7 @@ function RenderSection(props) {
 		components,
 		onDipsAmountChange,
 	} = props;
+	const listRef = useRef();
 	const [focusedElement, setFocusedElement] = useState(false);
 	const [dipsAmount, setDipsAmount] = useState(null);
 	const menu = useGetMenuData({ id: menuId, isInBuilder: true });
@@ -426,7 +432,6 @@ function RenderSection(props) {
 			onDipsAmountChange(dipsAmount, menuId, components);
 		}, 100);
 	}, [form, dipsAmount]);
-
 	function onChangeHandler(e) {
 		const name = e.target.name;
 		const id = e.target.id;
@@ -459,6 +464,34 @@ function RenderSection(props) {
 		}, 0);
 	};
 
+	const renderElementsItem = () => {
+		return menu?.elements.map((option) => {
+			const isSelected = isIdInList(menuId, option.id);
+			const totalItemsSelected = getTotalItemsCounter();
+			const isMaxReached = sectionMax <= totalItemsSelected;
+			return (
+				<RenderItem
+					key={`${menuId}-${option.id}`}
+					option={option}
+					isSelected={isSelected}
+					menuId={menuId}
+					onChangeHandler={onChangeHandler}
+					onBlur={onBlur}
+					isMaxReached={isMaxReached}
+					onFocus={onFocus}
+					overrides={overrides}
+					ariaBase={srText}
+					counter={form[menuId]?.[option.id]?.counter}
+					onCounterChange={(newValue) =>
+						handleCounterChange(menuId, option.id, newValue)
+					}
+					totalItemsSelected={totalItemsSelected}
+					isOnlyOneToSelect={isOnlyOneToSelect}
+				/>
+			);
+		});
+	};
+
 	const srText = createAccessibilityText(product, title);
 	return (
 		<div
@@ -470,33 +503,9 @@ function RenderSection(props) {
 			/>
 			<div
 				className={styles["checkboxs"]}
-				onKeyDown={(event) => handleKeyPress(event, onKeyDown)}>
-				{hasElements &&
-					menu?.elements.map((option) => {
-						const isSelected = isIdInList(menuId, option.id);
-						const totalItemsSelected = getTotalItemsCounter();
-						const isMaxReached = sectionMax <= totalItemsSelected;
-						return (
-							<RenderItem
-								key={`${menuId}-${option.id}`}
-								option={option}
-								isSelected={isSelected}
-								menuId={menuId}
-								onChangeHandler={onChangeHandler}
-								onBlur={onBlur}
-								isMaxReached={isMaxReached}
-								onFocus={onFocus}
-								overrides={overrides}
-								ariaBase={srText}
-								counter={form[menuId]?.[option.id]?.counter}
-								onCounterChange={(newValue) =>
-									handleCounterChange(menuId, option.id, newValue)
-								}
-								totalItemsSelected={totalItemsSelected}
-								isOnlyOneToSelect={isOnlyOneToSelect}
-							/>
-						);
-					})}
+				onKeyDown={(event) => handleKeyPress(event, onKeyDown)}
+				ref={listRef}>
+				{hasElements && <Scrollbar>{renderElementsItem()}</Scrollbar>}
 			</div>
 		</div>
 	);
@@ -576,14 +585,16 @@ function RenderItem(props) {
 
 			{!isOnlyOneToSelect && (
 				<div className={styles["btnsWrapper"]}>
-					{!isMaxReached && (
-						<DipsExtraPrice
-							option={option}
-							overrides={overrides}
-							isTotalItemsSelectedBitMaxQtty={isTotalItemsSelectedBitMaxQtty}
-							hasOverides={hasOverides}
-						/>
-					)}
+					<div className={styles["dipPrice"]}>
+						{!isMaxReached && (
+							<DipsExtraPrice
+								option={option}
+								overrides={overrides}
+								isTotalItemsSelectedBitMaxQtty={isTotalItemsSelectedBitMaxQtty}
+								hasOverides={hasOverides}
+							/>
+						)}
+					</div>
 
 					<TransparentCounterButton
 						value={counter}

@@ -185,7 +185,14 @@ export default function ToppingsBuilder(props) {
 		isMixPizza = false,
 	} = params;
 
-	const isSquarePizza = !["classic", "", "spelt"].includes(isSquare);
+	const isSquarePizza = ![
+		"classic",
+		"",
+		"spelt",
+		"volcano_reg",
+		"volcano_cachioapepe",
+		"volcano_roze",
+	].includes(isSquare);
 	const allowCopyToNextSteps = steps?.[stepIndex]?.allowCopyToNextSteps ?? false;
 	const [focusElement, setFocusElement] = useState(false);
 	const filterRef = useRef();
@@ -202,7 +209,8 @@ export default function ToppingsBuilder(props) {
 	const [distance, setDistance] = React.useState(-1);
 	const [activeRow, setActiveRow] = React.useState(0);
 
-	useDipsManager(stepIndex, isSale, TRIGGER.MENU);
+	const userInteractWithDips = useRef(false);
+	useDipsManager(stepIndex, isSale, TRIGGER.MENU, userInteractWithDips.current);
 
 	const [showCoverageOptions, setShowCoverageOptions] = React.useState(false);
 	const [selectedToppingRect, setSelectedToppingRect] = React.useState();
@@ -272,9 +280,11 @@ export default function ToppingsBuilder(props) {
 	);
 	const isMixTopping =
 		selectedToppingProduct.meta === META_ENUM.MIX_TOPPING_ITEM;
-
 	const allowedQuartersTopping = selectedToppingProduct?.allowedQuarters ?? [];
-	const isVolcanoPizza = pizza.meta === META_ENUM.VOLCANO_PIZZA;
+	const isVolcanoPizza =
+		pizza.meta === META_ENUM.VOLCANO_PIZZA ||
+		pizza.meta === META_ENUM.VOLCANO_ROZE_PIZZA ||
+		pizza.meta === META_ENUM.VOLCANO_CACIO_PIZZA;
 	const isPersonalPizza = pizza.meta === META_ENUM.PERSONAL_PIZZA;
 	const defaultFilter = toppingsFilters?.defaultElement;
 	const allToppings = useGetMenuData({ id: defaultFilter, isInBuilder: true });
@@ -401,10 +411,11 @@ export default function ToppingsBuilder(props) {
 			catalogProducts[selectedPizzaId]["templateId"]
 		) {
 			getToppingList(catalogProducts[selectedPizzaId].templateId);
+			const isVeganPizza = PizzaTreeService.isPizzaVegan(selectedTopping);
+			setVegan(isVeganPizza);
 		} else {
 			const onSuccess = (res) => {
 				const templateId = res.product[selectedPizzaId].templateId;
-
 				getToppingList(templateId);
 			};
 			if (selectedPizzaId) {
@@ -414,7 +425,18 @@ export default function ToppingsBuilder(props) {
 				});
 			}
 		}
-	}, [selectedPizzaId]);
+
+		return () => {
+			dispatch(
+				Actions.updateDough({
+					step: stepIndex ?? 0,
+					data: {
+						vegan: false,
+					},
+				}),
+			);
+		};
+	}, []);
 
 	useEffect(() => {
 		const host = document.getElementById("scroll-host");
@@ -933,7 +955,6 @@ export default function ToppingsBuilder(props) {
 						} else {
 							setIsNextToppingPayed(false);
 						}
-
 						dispatch(Actions.setCartItem(payload.item));
 					}
 				},
@@ -1077,6 +1098,37 @@ export default function ToppingsBuilder(props) {
 		);
 	};
 
+	const switchPizzaId = (pizzaId, product) => {
+		setVegan((prevValue) => !prevValue);
+		if (!vegan) {
+			openVeganPopup();
+		}
+		getToppingList(product);
+		dispatch(
+			Actions.updateDough({
+				step: stepIndex ?? 0,
+				data: {
+					vegan: dough?.vegan !== undefined ? !dough.vegan : true,
+				},
+			}),
+		);
+		if (pizzaId) {
+			const item = PizzaBuilderService.switchPizzaId(
+				saleObj,
+				stepIndex,
+				pizzaId,
+				null,
+				isSale,
+			);
+			dispatch(
+				Actions.setPizzaId({
+					step: stepIndex ?? 0,
+					id: pizzaId,
+				}),
+			);
+			dispatch(Actions.setCartItem(item));
+		}
+	};
 	const handleOnVeganPress = () => {
 		const { possiblePizzas } = params;
 
@@ -1123,34 +1175,18 @@ export default function ToppingsBuilder(props) {
 					!res.overallstatus ||
 					res.overallstatus === VALIDATION_STATUS.INCOMPLETE
 				) {
-					setVegan((prevValue) => !prevValue);
-					if (!vegan) {
-						openVeganPopup();
-					}
-					dispatch(
-						Actions.updateDough({
-							step: stepIndex ?? 0,
-							data: {
-								vegan: dough?.vegan !== undefined ? !dough.vegan : true,
+					const productTemplateId = catalogProducts?.[pizzaId]?.templateId;
+					if (productTemplateId) {
+						switchPizzaId(pizzaId, productTemplateId);
+					} else {
+						const payload = { productIds: [pizzaId] };
+						Api.getProducts({
+							payload,
+							onSuccess: (res) => {
+								const fetchedProductTemplateId = res?.product?.[pizzaId]?.templateId;
+								switchPizzaId(pizzaId, fetchedProductTemplateId);
 							},
-						}),
-					);
-
-					if (pizzaId) {
-						const item = PizzaBuilderService.switchPizzaId(
-							saleObj,
-							stepIndex,
-							pizzaId,
-							null,
-							isSale,
-						);
-						dispatch(
-							Actions.setPizzaId({
-								step: stepIndex ?? 0,
-								id: pizzaId,
-							}),
-						);
-						dispatch(Actions.setCartItem(item));
+						});
 					}
 				}
 			},
@@ -1579,6 +1615,7 @@ export default function ToppingsBuilder(props) {
 					isSale,
 					stepIndex,
 					dipsAmountInCart,
+					onAddDip: () => (userInteractWithDips.current = true),
 					initialCartItem: initialCartItem.current,
 				},
 			}),

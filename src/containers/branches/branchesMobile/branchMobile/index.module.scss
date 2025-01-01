@@ -3,178 +3,178 @@
 $current: $mobile;
 
 :global(.ltr) {
-  .container {
-    .popup-like {
-      .branches-area {
-        .arrow-icon {
-          transform: scaleX(-1);
-        }
-      }
-    }
-  }
+	.container {
+		.popup-like {
+			.branches-area {
+				.arrow-icon {
+					transform: scaleX(-1);
+				}
+			}
+		}
+	}
 }
 
 .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 
-  .popup-like {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    margin-top: auto;
-    overflow: hidden;
-    border-top-left-radius: vw_size(25, $current);
-    border-top-right-radius: vw_size(25, $current);
-    background-color: $white;
-    width: 100%;
-    height: 60vh;
+	.popup-like {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 1;
+		margin-top: auto;
+		overflow: hidden;
+		border-top-left-radius: vw_size(25, $current);
+		border-top-right-radius: vw_size(25, $current);
+		background-color: $white;
+		width: 100%;
+		height: 60vh;
 
-    transition: 150ms ease-out;
-    position: relative;
+		transition: 150ms ease-out;
+		position: relative;
 
-    &.start {
-      &::before {
-        opacity: 0;
-      }
-    }
+		&.start {
+			&::before {
+				opacity: 0;
+			}
+		}
 
-    &::before {
-      content: "";
-      background-image: linear-gradient(
-                      0deg,
-                      rgba(255, 255, 255, 0) 0%,
-                      rgba(255, 255, 255, 1) 100%
-      );
-      width: 100%;
-      position: absolute;
-      top: 0;
-      height: vw_size(115, $current);
-      pointer-events: none;
-      border-top-left-radius: vw_size(25, $current);
-      border-top-right-radius: vw_size(25, $current);
-    }
+		&::before {
+			content: "";
+			background-image: linear-gradient(
+				0deg,
+				rgba(255, 255, 255, 0) 0%,
+				rgba(255, 255, 255, 1) 100%
+			);
+			width: 100%;
+			position: absolute;
+			top: 0;
+			height: vw_size(115, $current);
+			pointer-events: none;
+			border-top-left-radius: vw_size(25, $current);
+			border-top-right-radius: vw_size(25, $current);
+		}
 
-    .content {
-      overflow-y: auto;
-      @include hide-scrollbar();
-      padding-top: vw_size(40, $current);
-      padding-bottom: vw_size(100, $current);
-    }
+		.content {
+			overflow-y: auto;
+			@include hide-scrollbar();
+			padding-top: vw_size(40, $current);
+			padding-bottom: vw_size(100, $current);
+		}
 
-    .horizontal-separator {
-      width: 100%;
-      padding: vw_size(0.5, $current) 0;
-      background-color: $light-grey;
-      margin: vw_size(22, $current) 0;
-    }
+		.horizontal-separator {
+			width: 100%;
+			padding: vw_size(0.5, $current) 0;
+			background-color: $light-grey;
+			margin: vw_size(22, $current) 0;
+		}
 
-    .branches-area {
-      display: flex;
-      cursor: pointer;
-      margin-top: vw_size(10, $current);
-      margin-inline-end: auto;
+		.branches-area {
+			display: flex;
+			cursor: pointer;
+			margin-top: vw_size(10, $current);
+			margin-inline-end: auto;
 
-      &:active {
-        text-decoration: underline;
-        text-decoration-color: $blue;
-      }
+			&:active {
+				text-decoration: underline;
+				text-decoration-color: $blue;
+			}
 
-      .icon {
-        margin-inline-end: vw_size(4, $current);
-        width: vw_size(34, $current);
-        height: vw_size(24, $current);
-      }
+			.icon {
+				margin-inline-end: vw_size(4, $current);
+				width: vw_size(34, $current);
+				height: vw_size(24, $current);
+			}
 
-      .arrow-icon {
-        height: vw_size(24, $current);
-        width: vw_size(18, $current);
-      }
+			.arrow-icon {
+				height: vw_size(24, $current);
+				width: vw_size(18, $current);
+			}
 
-      .branches-area-text {
-        font-family: $font;
-        font-size: vw_size(15, $current);
-        color: $blue;
-      }
-    }
+			.branches-area-text {
+				font-family: $font;
+				font-size: vw_size(15, $current);
+				color: $blue;
+			}
+		}
 
-    .button-wrapper {
-      pointer-events: none;
-      position: fixed;
-      bottom: 0;
-      background-image: linear-gradient(
-                      -180deg,
-                      rgba(255, 255, 255, 0) 0%,
-                      rgba(255, 255, 255, 1) 100%
-      );
-      width: 100vw;
-      height: vw_size(120, $current);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+		.button-wrapper {
+			pointer-events: none;
+			position: fixed;
+			bottom: 0;
+			background-image: linear-gradient(
+				-180deg,
+				rgba(255, 255, 255, 0) 0%,
+				rgba(255, 255, 255, 1) 100%
+			);
+			width: 100vw;
+			height: vw_size(120, $current);
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-      .custom-btn {
-        pointer-events: all;
-      }
-    }
-  }
+			.custom-btn {
+				pointer-events: all;
+			}
+		}
+	}
 }
 
 @media (min-width: $media-tablet) {
-  $current: $tablet;
-  .container {
-    .popup-like {
-      border-top-left-radius: vw_size(25, $current);
-      border-top-right-radius: vw_size(25, $current);
+	$current: $tablet;
+	.container {
+		.popup-like {
+			border-top-left-radius: vw_size(25, $current);
+			border-top-right-radius: vw_size(25, $current);
 
-      &::before {
-        height: vw_size(115, $current);
-        border-top-left-radius: vw_size(25, $current);
-        border-top-right-radius: vw_size(25, $current);
-      }
+			&::before {
+				height: vw_size(115, $current);
+				border-top-left-radius: vw_size(25, $current);
+				border-top-right-radius: vw_size(25, $current);
+			}
 
-      .content {
-        padding-top: vw_size(40, $current);
-        padding-bottom: vw_size(100, $current);
-      }
+			.content {
+				padding-top: vw_size(40, $current);
+				padding-bottom: vw_size(100, $current);
+			}
 
-      .horizontal-separator {
-        width: 100%;
-        padding: vw_size(0.5, $current) 0;
-        margin: vw_size(22, $current) 0;
-      }
+			.horizontal-separator {
+				width: 100%;
+				padding: vw_size(0.5, $current) 0;
+				margin: vw_size(22, $current) 0;
+			}
 
-      .branches-area {
-        margin-top: vw_size(10, $current);
-        margin-inline-end: auto;
+			.branches-area {
+				margin-top: vw_size(10, $current);
+				margin-inline-end: auto;
 
-        .icon {
-          margin-inline-end: vw_size(4, $current);
-          width: vw_size(34, $current);
-          height: vw_size(24, $current);
-        }
+				.icon {
+					margin-inline-end: vw_size(4, $current);
+					width: vw_size(34, $current);
+					height: vw_size(24, $current);
+				}
 
-        .arrow-icon {
-          height: vw_size(24, $current);
-          width: vw_size(18, $current);
-        }
+				.arrow-icon {
+					height: vw_size(24, $current);
+					width: vw_size(18, $current);
+				}
 
-        .branches-area-text {
-          font-size: vw_size(15, $current);
-        }
-      }
-    }
+				.branches-area-text {
+					font-size: vw_size(15, $current);
+				}
+			}
+		}
 
-    .button-wrapper {
-      height: vw_size(120, $current);
-    }
-  }
+		.button-wrapper {
+			height: vw_size(120, $current);
+		}
+	}
 }
 
 @media (min-width: $media-desktop) {
-  .container {
-    display: none;
-  }
+	.container {
+		display: none;
+	}
 }

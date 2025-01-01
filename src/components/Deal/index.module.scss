@@ -20,7 +20,7 @@ $current: $mobile;
 			height: vw_size(180, $current);
 			overflow: hidden;
 			position: relative;
-			border-radius: 25px 25px 0 0 ;
+			border-radius: 25px 25px 0 0;
 
 			.image {
 				width: 100%;
@@ -155,7 +155,7 @@ $current: $mobile;
 	$current: $desktop-large;
 	.deal-wrapper {
 		width: vw_size(300, $current);
-		height: vw_size(350, $current);
+		height: vw_size(360, $current);
 		background-color: $soft-gray-opacity;
 		border-radius: 20px;
 		margin-bottom: vw_size(20, $current);
@@ -251,7 +251,7 @@ $current: $mobile;
 	.deal-wrapper {
 		margin-bottom: vw_size(54, $current);
 		width: vw_size(300, $current);
-		height: vw_size(350, $current);
+		height: vw_size(360, $current);
 
 		.top {
 			.image-wrapper {

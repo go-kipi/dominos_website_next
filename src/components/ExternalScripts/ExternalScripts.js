@@ -6,46 +6,6 @@ import BitService from "services/Bit";
 export default function ExternalScripts() {
 	const router = useRouter();
 
-	// useEffect(() => {
-	// 	if (router.pathname === "/") {
-	// 		var script = document.createElement("script");
-	// 		script.type = "text/javascript";
-	// 		script.defer = "defer";
-	// 		script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
-	// 		script.setAttribute(
-	// 			"integrity",
-	// 			"sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne",
-	// 		);
-	// 		script.setAttribute("crossorigin", "anonymous");
-	// 		document.getElementsByTagName("body")[0].appendChild(script);
-	// 	}
-	// }, []);
-
-	//The Script Loads Only When DOM is Ready -  This prevents errors like Cannot set properties of null.
-	//If this solution dident bring a good answer to the fail in the log rocket then need to search another solotion.
-	//issue: https://inmanage.atlassian.net/browse/DOMNEW-6515
-	useEffect(() => {
-		if (router.pathname === "/") {
-			const loadScript = () => {
-				const script = document.createElement("script");
-				script.type = "text/javascript";
-				script.defer = true;
-				script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
-				script.integrity =
-					"sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne";
-				script.crossOrigin = "anonymous";
-				document.body.appendChild(script);
-			};
-
-			if (document.readyState === "complete") {
-				loadScript();
-			} else {
-				window.addEventListener("load", loadScript);
-				return () => window.removeEventListener("load", loadScript);
-			}
-		}
-	}, [router.pathname]);
-
 	return (
 		<>
 			<Script

@@ -29,7 +29,6 @@ function useShowMarketing() {
 						subTitle: translate("marketing_benefit_text"),
 						mainBtnText: translate("marketing_benefit_main-btn"),
 						subBtnText: translate("marketing_benefit_secondery-btn"),
-						isLottie: true,
 						mainBtnFunc: () => {
 							function onSuccess(res) {
 								handleCallback();
@@ -53,7 +52,6 @@ function useShowMarketing() {
 						subTitle: "",
 						mainBtnText: translate("updatePopup_updateMe"),
 						subBtnText: translate("updatePopup_noThanks"),
-						isLottie: true,
 						mainBtnFunc: () => {
 							function onSuccess(res) {
 								handleCallback();

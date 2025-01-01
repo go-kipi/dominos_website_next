@@ -104,7 +104,6 @@ const Deal = (props) => {
 					ariaDescription={id}
 					ariaLabelAdd={translate("accessibility_ariaLabel_add")}
 					ariaLabelRemove={translate("accessibility_ariaLabel_remove")}
-					focusOnLayout
 				/>
 			);
 		}

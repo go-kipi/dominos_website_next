@@ -68,6 +68,7 @@ import usePromotionalAndOperationalPopups from "hooks/usePromotionalAndOperation
 import PizzaBuilderService from "services/PizzaBuilderService";
 import { update } from "@react-spring/web";
 import useCartItem from "hooks/useCartItem";
+import Button from "components/button";
 
 const BurgerMenu = dynamic(() => import("containers/header/BurgerMenu"), {
 	loading: () => <div />,
@@ -302,7 +303,6 @@ const RenderShoppingCart = (props) => {
 			showIdentificationPopup(() => showMarketing(goToPayment));
 		}
 	}
-
 	const showUpSales = () => {
 		dispatch(
 			Actions.addPopup({
@@ -310,7 +310,11 @@ const RenderShoppingCart = (props) => {
 				payload: {
 					onFinish: () => {
 						setTimeout(() => {
-							onFinish();
+							if (didntReachMinimumPrice) {
+								typeof openMinimumPricePopup === "function" && openMinimumPricePopup();
+							} else {
+								onFinish();
+							}
 						}, 400);
 					},
 				},
@@ -319,15 +323,15 @@ const RenderShoppingCart = (props) => {
 	};
 
 	const handlePaymentPress = () => {
-		if (didntReachMinimumPrice) {
-			return (
-				typeof openMinimumPricePopup === "function" && openMinimumPricePopup()
-			);
-		} else if (itemWithDisclaimers) {
+		if (itemWithDisclaimers) {
 			return renderUnresolvedCartItems();
 		}
 		if (order?.isShownedUpSales) {
-			onFinish();
+			if (didntReachMinimumPrice) {
+				typeof openMinimumPricePopup === "function" && openMinimumPricePopup();
+			} else {
+				onFinish();
+			}
 		} else {
 			showUpSales();
 		}
@@ -726,15 +730,30 @@ const RenderShoppingCart = (props) => {
 				{/*    BUTTON    */}
 				{deviceState.notDesktop && !isEmptyBasket ? (
 					<div className={styles["actions"]}>
-						<BlueButton
-							className={styles["blue-btn-wrap"]}
-							text={translate("cart_to_order")}
-							isEmptyBasket={isEmptyBasket}
-							onClick={() => navigationHelper(SHOPPING_CART_SCREEN_TYPES.PAYMENT)}
-							price={cartItems?.totalBeforeDiscount}
-							priceAfterSale={cartItems?.total}
-							showPriceBeforeDiscount={cartItems?.showTotalBeforeDiscount}
-						/>
+						{isCountItemIsZero ? (
+							<Button
+								className={styles["blue-btn-wrap"]}
+								textClassName={styles["blue-btn-wrap-inner"]}
+								onClick={() => navigationHelper(SHOPPING_CART_SCREEN_TYPES.PRODUCT)}
+								text={
+									hasOrder
+										? isCountItemIsZero
+											? translate("cart_start_ordering_noActiveOrder")
+											: translate("cart_start_ordering")
+										: translate("cart_start_ordering_noActiveOrder")
+								}
+							/>
+						) : (
+							<BlueButton
+								className={styles["blue-btn-wrap"]}
+								text={translate("cart_to_order")}
+								isEmptyBasket={isEmptyBasket}
+								onClick={() => navigationHelper(SHOPPING_CART_SCREEN_TYPES.PAYMENT)}
+								price={cartItems?.totalBeforeDiscount}
+								priceAfterSale={cartItems?.total}
+								showPriceBeforeDiscount={cartItems?.showTotalBeforeDiscount}
+							/>
+						)}
 						<CartDisclaimer />
 						<div className={styles["gradient"]}></div>
 					</div>

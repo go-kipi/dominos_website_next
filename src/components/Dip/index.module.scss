@@ -17,7 +17,9 @@ $current: 375;
 
 		.dip-image {
 			width: 100%;
-			filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+			filter: drop-shadow(
+				0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3)
+			);
 		}
 	}
 
@@ -98,7 +100,9 @@ $current: 375;
 			width: vw_size(180, $current);
 
 			.dip-image {
-				filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+				filter: drop-shadow(
+					0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3)
+				);
 			}
 		}
 
@@ -165,7 +169,9 @@ $current: 375;
 
 			.dip-image {
 				width: 100%;
-				filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+				filter: drop-shadow(
+					0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3)
+				);
 			}
 		}
 
@@ -236,7 +242,9 @@ $current: 375;
 			width: vw_size(328, $current);
 
 			.dip-image {
-				filter: drop-shadow(0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3));
+				filter: drop-shadow(
+					0 vw_size(4, $current) vw_size(18, $current) rgba(0, 0, 0, 0.3)
+				);
 			}
 		}
 

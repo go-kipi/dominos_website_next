@@ -24,7 +24,6 @@ $image-size: 15;
 			display: flex;
 			align-items: center;
 			justify-content: flex-start;
-
 			.image-wrapper {
 				margin: 0 vw_size($margin-size, $mobile);
 				width: vw_size($image-size, $mobile);
@@ -45,6 +44,10 @@ $image-size: 15;
 		&.styled {
 			input {
 				margin: unset;
+			}
+
+			label {
+				min-height: unset;
 			}
 
 			label .image-wrapper {

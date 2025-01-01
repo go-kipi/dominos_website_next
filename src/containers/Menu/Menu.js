@@ -202,8 +202,7 @@ function Menu() {
 			{!hasPopups && (
 				<div
 					className={clsx(
-						styles["content-wrapper"],
-						isInitialRender && styles[animationClass],
+						isInitialRender ? styles[animationClass] : styles["content-wrapper"],
 					)}>
 					<RenderScreen />
 				</div>

@@ -238,7 +238,6 @@ export default function HomePage() {
 
 	function onOrderButtonsClick(isPickup) {
 		const { verifiedOTP } = Store.getState().userData; // For preventing user data clousre (getting prev user when login from drawer)
-
 		const method = !verifiedOTP ? "already_sign_up" : "first_time_on_app";
 		AnalyticsService.onBoardingMethod(method);
 		AnalyticsService.homepage("order funnel");
@@ -406,16 +405,12 @@ const DevShit = ({ props }) => {
 	const randomPopup = () => {
 		dispatch(
 			Actions.addPopup({
-				type: popups.MARKETING_SUBSCRIPTION,
+				type: popups.API_ERROR,
 				payload: {
-					type: MARKETING_TYPES.PRESENT_POPUP,
-					title: translate("marketing_get_benefit_title"),
-					addTitle: translate("marketing_get_benefit_add_title"),
-					subTitle: translate("marketing_get_benefit_disclaimer"),
-					mainBtnText: translate("marketing_get_benefit_btn"),
-					isLottie: true,
-					mainBtnFunc: () => {},
-					subBtnFunc: () => {},
+					title: translate("errorPopup_title"),
+					text: translate("errorPopup_generalMessage"),
+					button1Text: translate("errorPopup_tryAgain"),
+					button2Text: translate("errorPopup_abort"),
 				},
 			}),
 		);

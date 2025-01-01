@@ -26,14 +26,15 @@ const CounterButton = (props) => {
 		focusOnLayout = false,
 		btnStyle = {},
 		pressedClass,
+		isFromSwiper = false,
 	} = props;
-  
+
 	const styles = (className) => {
-	  	return (basic[className] ?? "") + " " + (extraStyles[className] ?? "");
+		return (basic[className] ?? "") + " " + (extraStyles[className] ?? "");
 	};
-  
+
 	const chosenPressedClass = pressedClass || styles("action-btn-pressed");
-	
+
 	const translate = useTranslate();
 	const pressedButton = useRef();
 	const addButtonRef = useRef();
@@ -41,15 +42,15 @@ const CounterButton = (props) => {
 	const [currentCount, setCurrentCount] = useState(value);
 	const [debounceDisabled, setDebounceDisabled] = useState(false);
 	const [pressedState, setPressedState] = useState("none");
-	
+
 	const handleTouch = (type) => {
 		setPressedState(type);
 	};
-	
+
 	const handleTouchEnd = () => {
 		setPressedState("none");
 	};
-	
+
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setCurrentCount(value);
@@ -80,17 +81,17 @@ const CounterButton = (props) => {
 	}, [debounceDisabled]);
 
 	useEffect(() => {
-		if (focusOnLayout) {
+		if (focusOnLayout && !isFromSwiper) {
 			addButtonRef.current?.focus();
 		}
 	}, [focusOnLayout]);
-	
-    const getPressedStyle = (buttonType) => {
-        if (pressedState === buttonType) {
-            return chosenPressedClass;
-        }
-        return "";
-    };
+
+	const getPressedStyle = (buttonType) => {
+		if (pressedState === buttonType) {
+			return chosenPressedClass;
+		}
+		return "";
+	};
 
 	const debounceButtonClick = (type) => {
 		setDebounceDisabled(true);
@@ -125,9 +126,11 @@ const CounterButton = (props) => {
 			className={clsx(styles("counter-button-wrapper"), className, disabledClass)}>
 			<button
 				ref={addButtonRef}
-				const className = {clsx(
-					styles("action-btn"), btnStyle,
-					getPressedStyle("increment")
+				const
+				className={clsx(
+					styles("action-btn"),
+					btnStyle,
+					getPressedStyle("increment"),
 				)}
 				onClick={(e) => increase(e)}
 				disabled={disabled || (max && value >= max) || debounceDisabled}
@@ -150,9 +153,11 @@ const CounterButton = (props) => {
 			/>
 			<button
 				ref={removeButtonRef}
-				const className = {clsx(
-					styles("action-btn"), btnStyle,
-					getPressedStyle("decrement")
+				const
+				className={clsx(
+					styles("action-btn"),
+					btnStyle,
+					getPressedStyle("decrement"),
 				)}
 				onClick={(e) => decrease(e)}
 				disabled={disabled || (min && value <= min) || debounceDisabled}

@@ -13,7 +13,6 @@ import STACK_TYPES from "constants/stack-types";
 import PAYMENT_SCREEN_TYPES from "constants/PaymentScreenTypes";
 import Api from "api/requests";
 
-import { PAYMENT_METHODS_ACTIONS } from "constants/payments-methods-types";
 import styles from "./Payment.module.scss";
 
 import BackBlack from "/public/assets/icons/back-black.svg";
@@ -24,7 +23,6 @@ import NoUser from "./NoUser/NoUser";
 import clsx from "clsx";
 import useIsSafari from "hooks/useIsSafari";
 import useTranslate from "hooks/useTranslate";
-import GiftCard from "./GiftCard/GiftCard";
 import GeneralHeader from "components/GeneralHeader/GeneralHeader";
 import AnalyticsService from "../../../utils/analyticsService/AnalyticsService";
 import {
@@ -52,6 +50,7 @@ import EmarsysService from "utils/analyticsService/EmarsysService";
 import { ITEM_CATEGORY, ITEM_CATEGORY2 } from "constants/AnalyticsTypes";
 import ChooseGiftCard from "./ChooseGiftCard/ChooseGiftCard";
 import DominosLoader from "components/DominosLoader/DominosLoader";
+import GiftCardPaymentScreen from "./GiftCardPaymentScreen/GiftCardPaymentScreen";
 
 function Payment(props) {
 	const deviceState = useSelector((store) => store.deviceState);
@@ -322,10 +321,6 @@ function Payment(props) {
 
 				setPayedGiftCards(giftCards);
 			}
-			let filteredGiftCardMethod = data.paymentTypes?.filter(
-				(method) => method.action === PAYMENT_METHODS_ACTIONS.GIFT_CARD,
-			)[0];
-			setGiftCardMethod(filteredGiftCardMethod);
 
 			if (
 				Array.isArray(promoPopups) &&
@@ -337,6 +332,27 @@ function Payment(props) {
 			}
 		}
 	};
+
+	function onGiftCardDelete(uuid) {
+		const payload = { id: uuid };
+		Api.deletePayment({
+			payload,
+			onSuccess: () => {
+				getPayments();
+			},
+		});
+	}
+
+	function onGiftCardUpdate(uuid, price, callback) {
+		const payload = { uuid, total: Number(price) };
+		Api.changePaymentSum({
+			payload,
+			onSuccess: () => {
+				typeof callback === "function" && callback();
+				getPayments();
+			},
+		});
+	}
 
 	const onAddCreditCardChange = (iframeUrl) => {
 		setStack({
@@ -561,7 +577,7 @@ function Payment(props) {
 				// console.log("vvv giftCardMethod", giftCardMethod);
 				// console.log("vvv currentScreen.params.method", currentScreen.params.method);
 				return (
-					<GiftCard
+					<GiftCardPaymentScreen
 						params={currentScreen.params}
 						goBackToChoosePayment={() => {
 							goBackToChoosePayment();
@@ -569,6 +585,7 @@ function Payment(props) {
 						}}
 						method={giftCardMethod || currentScreen.params.method}
 						leftToPay={leftToPay}
+						submitOrder={submitOrder}
 					/>
 				);
 			case PAYMENT_SCREEN_TYPES.NO_USER:
@@ -590,6 +607,7 @@ function Payment(props) {
 					<ChooseGiftCard
 						setStack={setStack}
 						params={currentScreen.params}
+						onGiftCardSelect={(item) => setGiftCardMethod(item)}
 					/>
 				);
 
@@ -634,10 +652,10 @@ function Payment(props) {
 			payload,
 			onSuccess: (res) => {
 				function callback() {
-					dispatch(Actions.setLoader(false));
 					dispatch(Actions.setDontShowMarketingModal(false));
 					dispatch(Actions.setDontShowPeresntMarketingModal(false));
 					dispatch(Actions.resetSpecialRequest());
+					dispatch(Actions.setLoader(false));
 				}
 				typeof onPaymentDone === "function" && onPaymentDone(res, callback);
 			},

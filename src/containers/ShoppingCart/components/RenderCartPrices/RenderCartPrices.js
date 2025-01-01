@@ -11,7 +11,12 @@ function RenderPrices({
 	className = "",
 }) {
 	return (
-		<div className={clsx(styles["prices-wrap"], className)}>
+		<div
+			className={clsx(
+				styles["prices-wrap"],
+				styles["price-specifier"],
+				className,
+			)}>
 			<div className={styles["price-wrapper-block"]}>
 				{showPriceBeforeDiscount ? (
 					<Price
@@ -46,7 +51,7 @@ function RenderInculde({
 	const translate = useTranslate();
 
 	return !newPrice ? (
-		<div className={styles["prices-wrap"]}>
+		<div className={clsx(styles["prices-wrap"], styles["price-specifier"])}>
 			<div className={styles["price-wrapper-block"]} />
 
 			<div className={styles["price-wrapper-block"]}>

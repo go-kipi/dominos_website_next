@@ -9,7 +9,6 @@ $current: 375;
 	display: flex;
 	justify-content: center;
 	align-items: end;
-	padding-bottom: vw_size(3, $current);
 }
 
 @media (min-width: $media-tablet) {
@@ -18,7 +17,6 @@ $current: 375;
 	.extra-price-dip {
 		font-size: vw_size(12, $current);
 		line-height: vw_size(20, $current);
-		padding-bottom: vw_size(3, $current);
 	}
 }
 
@@ -28,7 +26,6 @@ $current: 375;
 	.extra-price-dip {
 		font-size: vw_size(12, $current);
 		line-height: vw_size(20, $current);
-		padding-bottom: vw_size(3, $current);
 	}
 }
 
@@ -38,6 +35,5 @@ $current: 375;
 	.extra-price-dip {
 		font-size: vw_size(13, $current);
 		line-height: vw_size(20, $current);
-		padding-bottom: vw_size(7, $current);
 	}
 }

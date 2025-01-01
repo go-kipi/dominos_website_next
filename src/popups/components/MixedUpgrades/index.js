@@ -10,7 +10,7 @@ import styles from "./index.module.scss";
 
 import { UPSALES_TYPES } from "constants/upsales-types";
 import { TAB_INDEX_HIDDEN } from "constants/accessibility-types";
-import { Pizza } from "../builder/Pizza";
+import { LOTTIE_ANIMATIONS, Pizza } from "../builder/Pizza";
 
 import BlurPopup from "popups/Presets/BlurPopup";
 import Button from "components/button";
@@ -62,6 +62,7 @@ function MixedUpgradesPopup(props) {
 	const [isValid, setIsValid] = useState(true);
 	const [selectedOptions, setSelectedOptions] = useState([]);
 	const [shouldShow, setShouldShow] = useState(false);
+	const [lottie, setLottie] = useState(LOTTIE_ANIMATIONS.CHESSYCRUST_OUT);
 	const initialCartItem = useRef();
 	const initialBuilderState = useRef();
 
@@ -154,9 +155,14 @@ function MixedUpgradesPopup(props) {
 			promoProductId,
 			isSale,
 		);
+		lottie === LOTTIE_ANIMATIONS.CHESSYCRUST_OUT
+			? setLottie(LOTTIE_ANIMATIONS.CHESSYCRUST_IN)
+			: setLottie(LOTTIE_ANIMATIONS.CHESSYCRUST_OUT);
 
 		return { item, step: `change dough - ${productId}` };
 	};
+
+	// console.log("lottie", lottie);
 
 	const showErrorModal = () => {
 		dispatch(
@@ -392,7 +398,9 @@ function MixedUpgradesPopup(props) {
 					pizzaId={pizzaId}
 					coverages={coverages}
 					isAnimatedCoverage={true}
+					lottie={lottie}
 				/>
+
 				{(deviceState.isMobile || deviceState.isTablet) && renderUpgradeList()}
 				{(deviceState.isMobile || deviceState.isTablet) && renderButtons()}
 			</div>

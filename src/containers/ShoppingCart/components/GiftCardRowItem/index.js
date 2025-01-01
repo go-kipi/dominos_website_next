@@ -17,6 +17,9 @@ import Price from "components/Price";
 import useTranslate from "hooks/useTranslate";
 import Button from "components/button";
 import Actions from "redux/actions";
+import { getFullMediaUrl } from "utils/functions";
+import { MEDIA_TYPES } from "constants/media-types";
+import { MEDIA_ENUM } from "constants/media-enum";
 
 const GIFT_CARD_MINIMUM = 0.09;
 
@@ -34,7 +37,9 @@ export default function GiftCardRowItem(props) {
 	const [currentPrice, setCurrentPrice] = useState(price ?? 0);
 	const [balance, setBalance] = useState(currentPrice);
 	const deviceState = useSelector((store) => store.deviceState);
-	const paymentsPaid = useSelector((store) => store.payments?.paid);
+	const payments = useSelector((store) => store.payments);
+	const paymentsPaid = payments?.paid;
+	const paymentsType = payments?.paymentTypes;
 	const totalBasket = useSelector((store) => store.cartData?.total);
 	const [isErrorStyle, setIsErrorStyle] = useState(false);
 	const dispatch = useDispatch();
@@ -113,6 +118,22 @@ export default function GiftCardRowItem(props) {
 		return currPayment;
 	}
 
+	function findPaymentTypeByMethod(method) {
+		return paymentsType?.find((payment) => payment.id === method);
+	}
+
+	function getPaymentImg() {
+		const currPayment = findCurrPayment();
+		const paymentsType = findPaymentTypeByMethod(currPayment?.method);
+		const imgUrl = getFullMediaUrl(
+			paymentsType,
+			MEDIA_TYPES.MENU,
+			MEDIA_ENUM.SELECTED_WEB,
+		);
+
+		return imgUrl;
+	}
+
 	function onEditPress() {
 		setIsEdit(true);
 	}
@@ -156,7 +177,7 @@ export default function GiftCardRowItem(props) {
 				<div className={styles["gift-card-icon-digits"]}>
 					<div className={styles["card-brand-icon"]}>
 						<img
-							src={"https://cdn.aboohi.net/media/buyme.png"}
+							src={getPaymentImg()}
 							alt=""
 						/>
 					</div>

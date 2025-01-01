@@ -437,7 +437,7 @@ function DifferentAddressForm(props) {
 		const addressType =
 			(isPoi ? "poi" : "address") + "/" + (form?.addressType).toLowerCase();
 
-		const address = isPoi ? "" : fullAddress;
+		const address = fullAddress;
 		const street = isPoi ? fullAddress : form.address?.street;
 		const payload = {
 			address,

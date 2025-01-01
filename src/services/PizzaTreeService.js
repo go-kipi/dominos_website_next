@@ -422,7 +422,6 @@ class PizzaTree {
 			) {
 				return builderTypes.DOUGH;
 			}
-
 			const isEqual = (arr = []) => {
 				return arr.every((value) => value === arr[0]);
 			};
@@ -436,7 +435,6 @@ class PizzaTree {
 			let hasDifferentSizePizza = false;
 			const fields = ["size", "type", "extra", "option", "vegan"];
 			const pizzaSizes = possiblePizzas.map((p) => p[doughMatrixEnum.SIZE]);
-
 			hasDifferentSizePizza = !isEqualSize(pizzaSizes);
 			let pizzaObj = fatherEntity?.subitems?.[stepIndex];
 			// If its edit we skip the dough update because we already have the data in redux.
@@ -512,23 +510,6 @@ class PizzaTree {
 			return builderTypes.TOPPINGS;
 		});
 	}
-
-	//  getPizzaProdutId(pizza) {
-	//   if (typeof pizza === 'object' ) {
-	//     if (typeof pizza.productId === 'string' && pizza.productId.length > 0) {
-	//       return pizza.productId
-	//     }
-	//     else if (typeof pizza.subs === 'object' && Object.keys(pizza.subs).length > 0) {
-	//       const isSingle = isSinglePizza(pizza);
-	//       if (isSingle) {
-	//         return getPizzaProdutId(pizza[0])
-	//       }
-	//       else {
-
-	//       }
-	//     }
-	//   }
-	// }
 }
 
 const PizzaTreeService = new PizzaTree();

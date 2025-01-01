@@ -393,7 +393,8 @@ $current: 375;
 								}
 								&:disabled {
 									&:hover {
-										opacity: 1;
+										background-color: transparent;
+										opacity: 0.5;
 									}
 								}
 								&:hover {

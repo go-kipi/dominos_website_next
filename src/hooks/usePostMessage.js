@@ -10,7 +10,7 @@ function usePostMessage(onSuccess, onError) {
 	const dispatch = useDispatch();
 
 	const handleError = (message) => {
-		typeof onError === "function" && onError();
+		typeof onError === "function" && onError(message);
 
 		dispatch(
 			Actions.addPopup({

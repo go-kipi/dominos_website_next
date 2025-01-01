@@ -464,7 +464,7 @@ const BuilderPopup = (props) => {
 						}, ANIMATION_TIMEOUT * 2);
 
 						const addToCartTiming = setTimeout(() => {
-							CartService.addToCart(payload, null, () => {}, true, TRIGGER.MENU);
+							CartService.addToCart(payload, null, () => {}, true, TRIGGER.BENEFIT);
 							clearTimeout(addToCartTiming);
 						}, ANIMATION_TIMEOUT * 3);
 					});

@@ -325,12 +325,16 @@ function RenderSideDishComponent(props) {
 						);
 						dispatch(Actions.setCartItem(newCartItem));
 					} else {
-						if (prevPizzaId !== newPizzaId && isEdit) {
-							return renderResetToppingModal(() => {
-								dispatch(Actions.setIsUserAgreeToReset(true));
+						if (prevPizzaId !== newPizzaId) {
+							if (isEdit) {
+								return renderResetToppingModal(() => {
+									dispatch(Actions.setIsUserAgreeToReset(true));
+									resetCartItemToppings(newPizzaId);
+									moveToNextStack(possiblePizzas, id);
+								});
+							} else {
 								resetCartItemToppings(newPizzaId);
-								moveToNextStack(possiblePizzas, id);
-							});
+							}
 						}
 					}
 				}

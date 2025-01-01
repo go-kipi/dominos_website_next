@@ -33,7 +33,7 @@ function getCSPHeaders() {
     https://www.googletagmanager.com https://www.google-analytics.com https://cdn.lr-intake.com ${google}
     https://googleads.g.doubleclick.net https://analytics.tiktok.com https://connect.facebook.net 
     https://static.hotjar.com https://websdk.appsflyer.com https://www.clarity.ms https://script.hotjar.com
-    https://www.gstatic.com 'unsafe-eval' https://cdn.lr-intake.com 'unsafe-inline' https://bringthemhomenow.net
+    https://www.gstatic.com 'unsafe-eval' https://cdn.lr-intake.com 'unsafe-inline'
     https://cdn.scarabresearch.com https://static.scarabresearch.com;
     style-src 'self' 'unsafe-inline' ${google};
     font-src 'self' data: https://fonts.gstatic.com;

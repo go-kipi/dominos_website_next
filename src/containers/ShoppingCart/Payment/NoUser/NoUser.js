@@ -41,7 +41,13 @@ function NoUser(props) {
 			Actions.addPopup({
 				type: popupTypes.UPSALE,
 				payload: {
-					onFinish: () => onFinish(),
+					onFinish: () => {
+						if (didntReachMinimumPrice) {
+							typeof openMinimumPricePopup === "function" && openMinimumPricePopup();
+						} else {
+							onFinish();
+						}
+					},
 				},
 			}),
 		);
@@ -69,20 +75,23 @@ function NoUser(props) {
 	}
 
 	function onBtnClick() {
-		if (didntReachMinimumPrice) {
-			return (
-				typeof openMinimumPricePopup === "function" && openMinimumPricePopup()
-			);
-		} else if (itemWithDisclaimers) {
+		if (itemWithDisclaimers) {
 			return renderUnresolvedCartItems();
 		}
 
 		if (order?.isShownedUpSales) {
-			onFinish();
+			if (didntReachMinimumPrice) {
+				typeof openMinimumPricePopup === "function" && openMinimumPricePopup();
+			} else {
+				onFinish();
+			}
 		} else {
 			showUpSales();
 		}
-		dispatch(Actions.setCartApproved(true));
+		if (!didntReachMinimumPrice) {
+			dispatch(Actions.setCartApproved(true));
+		}
+
 		typeof beginCheckoutEvent === "function" && beginCheckoutEvent();
 	}
 

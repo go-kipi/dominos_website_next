@@ -319,6 +319,7 @@ export function CreditCardButton(props) {
 	const id = PAYMENT_METHODS.CREDIT_CARD;
 
 	function onClickHandler() {
+		dispatch(Actions.setLoader(true));
 		// if (isCreditModalOpen) return;
 		// dispatch(Actions.setIsCreditModalOpen(true));
 		let isStopper = false;
@@ -334,7 +335,6 @@ export function CreditCardButton(props) {
 			onClick({ id, currency: paymentMethod.defaultCurrency });
 		typeof onClickButton === "function" &&
 			onClickButton({ currency: paymentMethod.defaultCurrency });
-
 		const [items, listData] = getItemsAndListData();
 		const newList = {
 			...listData,

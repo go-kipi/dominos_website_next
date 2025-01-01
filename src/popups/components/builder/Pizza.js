@@ -8,14 +8,24 @@ import { useDispatch, useSelector } from "react-redux";
 import Actions from "redux/actions";
 import {
 	getFullMediaUrl,
+	getisSqurePizza,
 	getPizzaImageByMeta,
 	getPizzaToppingTypeByMeta,
+	isSqurePizza,
 	notEmptyObject,
 	VibrateDevice,
 } from "utils/functions";
 import Topping from "./Topping";
 import useMenus from "hooks/useMenus";
 import ActionTypes from "constants/menus-action-types";
+import LottieAnimation from "components/LottieAnimation";
+import CheesyCrustLottie from "animations/cheesy-crust-anim.json";
+import CheesyCrustLottieReverse from "animations/cheesy-crust-anim-rev.json";
+
+export const LOTTIE_ANIMATIONS = {
+	CHESSYCRUST_IN: "CHESSYCRUST_IN",
+	CHESSYCRUST_OUT: "CHESSYCRUST_OUT",
+};
 
 const PizzaRef = (props, ref) => {
 	const {
@@ -28,13 +38,12 @@ const PizzaRef = (props, ref) => {
 		isAnimatedCoverage = false,
 		isAllowedQuarters = true,
 		pizzaId = "",
+		lottie = null,
 	} = props;
-
 	const pizza = useMenus(pizzaId, ActionTypes.PRODUCT);
 
 	const initialPizzaImg = getPizzaImageByMeta(pizza.meta);
 	const toppingsType = getPizzaToppingTypeByMeta(pizza.meta);
-
 	const dispatch = useDispatch();
 	const catalogProducts = useSelector(
 		(store) => store.menusData.catalogProducts,
@@ -58,7 +67,7 @@ const PizzaRef = (props, ref) => {
 		}, 1000);
 
 		return () => clearTimeout(timer);
-	}, [pizzaImg]);
+	}, [pizzaImg, pizza]);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -177,18 +186,39 @@ const PizzaRef = (props, ref) => {
 		);
 	};
 
+	const getLottieSrc = () => {
+		switch (lottie) {
+			case LOTTIE_ANIMATIONS.CHESSYCRUST_IN:
+				return CheesyCrustLottie;
+			case LOTTIE_ANIMATIONS.CHESSYCRUST_OUT:
+				return CheesyCrustLottieReverse;
+			default:
+				return null;
+		}
+	};
+
+	const renderPizza = () => {
+		const isSqurePizza = getisSqurePizza(pizza.meta);
+		return lottie && !isSqurePizza ? (
+			<LottieAnimation
+				className={styles["lottie"]}
+				animation={getLottieSrc()}
+			/>
+		) : (
+			<img
+				src={pizzaImg.src}
+				alt={"base pizza"}
+			/>
+		);
+	};
+
 	return (
 		<div
 			ref={ref}
 			id="toppings-pizza-img"
 			aria-hidden={true}
 			className={clsx(extraPizzaStyles("toppings-pizza-img"))}>
-			{
-				<img
-					src={pizzaImg.src}
-					alt={"base pizza"}
-				/>
-			}
+			{renderPizza()}
 			{showTutorial &&
 				!notEmptyObject(coverages) &&
 				!hasShownTutorialRef.current &&

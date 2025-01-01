@@ -19,7 +19,7 @@ export default function MinimumPricePopup(props) {
 
 	const messageKey = "BasketDidNotReachMinimumSum";
 
-	let message = translate(messageKey).replace("{minSaleAmount}", `${minPrice}`);
+	let message = translate(messageKey).replace("{MinBasket}", `${minPrice}`);
 
 	if (isPickup) {
 		message = message.replace("{subServiceType}", translate("pickup_label"));

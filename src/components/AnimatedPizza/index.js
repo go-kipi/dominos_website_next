@@ -10,6 +10,9 @@ import clsx from "clsx";
 
 import RegularPizzaFoldAnimation from "animations/RegularPizzaFold.json";
 import SquarePizzaFoldAnimation from "animations/SquarePizzaFold.json";
+import VolcanoPizzaFoldAnimation from "animations/VolcanoPizzaFold.json";
+import VolcanoRozePizzaFoldAnimation from "animations/VolcanoRozePizzaFold.json";
+import VolcanoCacioPizzaFoldAnimation from "animations/VolcanoCacioPizzaFold.json";
 
 import { Player } from "@lottiefiles/react-lottie-player";
 
@@ -18,25 +21,38 @@ const AnimatedPizzaRef = (props, ref) => {
 
 	useImperativeHandle(
 		ref,
-		() => {
-			return {
-				reverse,
-				play,
-			};
-		},
+		() => ({
+			reverse,
+			play,
+		}),
 		[type],
 	);
 
 	const classic = RegularPizzaFoldAnimation;
 	const glutenFree = SquarePizzaFoldAnimation;
+	const volcanoRegular = VolcanoPizzaFoldAnimation;
+	const volcanoRoze = VolcanoRozePizzaFoldAnimation;
+	const volcanoCacio = VolcanoCacioPizzaFoldAnimation;
 
 	const [classicClassName, setClassicClassName] = useState(styles["hide"]);
 	const [glutenFreeClassName, setGlutenFreeClassName] = useState(styles["hide"]);
+	const [volcanoRegularClassName, setVolcanoRegularClassName] = useState(
+		styles["hide"],
+	);
+	const [volcanoRozeClassName, setVolcanoRozeClassName] = useState(
+		styles["hide"],
+	);
+	const [volcanoCacioClassName, setVolcanoCacioClassName] = useState(
+		styles["hide"],
+	);
 
 	const eventSent = useRef(false);
 
 	const classicRef = useRef();
 	const glutenFreeRef = useRef();
+	const volcanoRegularRef = useRef();
+	const volcanoRozeRef = useRef();
+	const volcanoCacioRef = useRef();
 
 	const callbackRef = useRef();
 
@@ -68,29 +84,53 @@ const AnimatedPizzaRef = (props, ref) => {
 	};
 
 	function setLottieProps(direction, callback, shouldPlay = true) {
-		glutenFreeRef.current?.setDirection(direction);
-		classicRef.current?.setDirection(direction);
-
-		if (shouldPlay) {
-			glutenFreeRef?.current?.play();
-			classicRef?.current?.play();
-		}
+		[
+			glutenFreeRef,
+			classicRef,
+			volcanoRegularRef,
+			volcanoRozeRef,
+			volcanoCacioRef,
+		].forEach((ref) => {
+			ref.current?.setDirection(direction);
+			shouldPlay && ref.current?.play();
+		});
 
 		const callBackFnc = () => {
-			glutenFreeRef?.current?.pause();
-			classicRef?.current?.pause();
+			[
+				glutenFreeRef,
+				classicRef,
+				volcanoRegularRef,
+				volcanoRozeRef,
+				volcanoCacioRef,
+			].forEach((ref) => ref.current?.pause());
 			typeof callback === "function" && callback();
 		};
 		callbackRef.current = callBackFnc;
 	}
 
 	function setClassName(type) {
-		if (type === "glutenFree") {
-			setClassicClassName(styles["hide"]);
-			setGlutenFreeClassName("");
-		} else {
-			setClassicClassName("");
-			setGlutenFreeClassName(styles["hide"]);
+		setClassicClassName(styles["hide"]);
+		setGlutenFreeClassName(styles["hide"]);
+		setVolcanoRegularClassName(styles["hide"]);
+		setVolcanoRozeClassName(styles["hide"]);
+		setVolcanoCacioClassName(styles["hide"]);
+
+		switch (type) {
+			case "glutenFree":
+				setGlutenFreeClassName("");
+				break;
+			case "volcano_reg":
+				setVolcanoRegularClassName("");
+				break;
+			case "volcano_roze":
+				setVolcanoRozeClassName("");
+				break;
+			case "volcano_cachioapepe":
+				setVolcanoCacioClassName("");
+				break;
+			default:
+				setClassicClassName("");
+				break;
 		}
 	}
 
@@ -103,7 +143,9 @@ const AnimatedPizzaRef = (props, ref) => {
 	};
 
 	return (
-		<div className={styles["image-wrapper"]} aria-hidden={true}>
+		<div
+			className={styles["image-wrapper"]}
+			aria-hidden={true}>
 			<Player
 				src={classic}
 				loop={false}
@@ -127,6 +169,45 @@ const AnimatedPizzaRef = (props, ref) => {
 				lottieRef={(instance) => {
 					if (glutenFreeRef) {
 						glutenFreeRef.current = instance;
+					}
+				}}
+			/>
+			<Player
+				src={volcanoRegular}
+				loop={false}
+				autoplay={false}
+				keepLastFrame
+				className={clsx(styles["img"], volcanoRegularClassName)}
+				onEvent={eventHandler}
+				lottieRef={(instance) => {
+					if (volcanoRegularRef) {
+						volcanoRegularRef.current = instance;
+					}
+				}}
+			/>
+			<Player
+				src={volcanoRoze}
+				loop={false}
+				autoplay={false}
+				keepLastFrame
+				className={clsx(styles["img"], volcanoRozeClassName)}
+				onEvent={eventHandler}
+				lottieRef={(instance) => {
+					if (volcanoRozeRef) {
+						volcanoRozeRef.current = instance;
+					}
+				}}
+			/>
+			<Player
+				src={volcanoCacio}
+				loop={false}
+				autoplay={false}
+				keepLastFrame
+				className={clsx(styles["img"], volcanoCacioClassName)}
+				onEvent={eventHandler}
+				lottieRef={(instance) => {
+					if (volcanoCacioRef) {
+						volcanoCacioRef.current = instance;
 					}
 				}}
 			/>

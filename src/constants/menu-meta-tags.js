@@ -28,6 +28,8 @@ export const META_ENUM = {
 	KITS_UI_MENU: "kitzUiMenu",
 	SQUARE_PIZZA: "previewSquarePizza",
 	VOLCANO_PIZZA: "previewVolcanoPizza",
+	VOLCANO_ROZE_PIZZA: "previewVolcanoRozePizza",
+	VOLCANO_CACIO_PIZZA: "previewVolcanoCacioPizza",
 	PERSONAL_PIZZA: "previewPersonalPizza",
 	EXTRA_PIZZA: "previewExtraPizza",
 	ROUND_PIZZA: "previewRoundPizza",

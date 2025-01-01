@@ -116,6 +116,11 @@ $current: 375;
 						object-fit: cover;
 						margin-block-start: vw_size(10, $current);
 					}
+					.lottie {
+						width: vw_size(315, $current);
+						height: vw_size(315, $current);
+						margin-block-start: vw_size(10, $current);
+					}
 
 					.topping-coverage-on-pizza {
 						position: absolute;
@@ -258,6 +263,11 @@ $current: 375;
 
 					.toppings-pizza-img {
 						img {
+							width: vw_size(300, $current);
+							height: vw_size(300, $current);
+							margin-block-start: vw_size(20, $current);
+						}
+						.lottie {
 							width: vw_size(300, $current);
 							height: vw_size(300, $current);
 							margin-block-start: vw_size(20, $current);
@@ -409,6 +419,10 @@ $current: 375;
 							height: vw_size(500, $current);
 							object-fit: cover;
 						}
+						.lottie {
+							width: vw_size(500, $current);
+							height: vw_size(500, $current);
+						}
 						.topping-coverage-on-pizza {
 							img {
 								width: 80%;
@@ -492,7 +506,7 @@ $current: 375;
 				}
 
 				.upgrade-left-side {
-					margin-top: vw_size(70, $current);
+					margin-top: vw_size(140, $current);
 
 					.toppings-pizza-img {
 						width: vw_size(500, $current);
@@ -500,6 +514,10 @@ $current: 375;
 							width: vw_size(500, $current);
 							height: vw_size(500, $current);
 							object-fit: cover;
+						}
+						.lottie {
+							width: vw_size(500, $current);
+							height: vw_size(500, $current);
 						}
 
 						.topping-coverage-on-pizza {

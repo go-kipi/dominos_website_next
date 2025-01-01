@@ -5,4 +5,6 @@ export const PAYMENT_METHODS_ACTIONS = {
 	APPLE_PAY: "applePay",
 	GIFT_CARD: "giftCardPayment",
 	BIT: "bit",
+	CIBUS: "Cibus",
+	VERIPHONE: "verifone",
 };

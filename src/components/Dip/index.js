@@ -130,7 +130,8 @@ function Dip(props) {
 							ariaDescription={id}
 							focusOnLayout
 							btnStyle={styles["action-btn"]}
-							pressedClass = {styles["action-btn-pressed"]}
+							pressedClass={styles["action-btn-pressed"]}
+							isFromSwiper
 						/>
 					)}
 				</div>

@@ -14,6 +14,7 @@ $current: 375;
 		}
 		.dough-type-title {
 			.text,
+			.dough-type-discription,
 			.dough-type-comment {
 				opacity: 0.4;
 			}
@@ -68,9 +69,18 @@ $current: 375;
 
 	.dough-type-comment {
 		font-family: $font;
-		color: $timberwolf;
+		color: $gray-discription;
 		line-height: vw_size(20, $current);
 		font-size: vw_size(11, $current);
+	}
+
+	.dough-type-discription {
+		margin-block: 5px;
+		font-family: $font;
+		color: $gray-discription;
+		line-height: vw_size(14, $current);
+		letter-spacing: vw_size(-0.6, $current);
+		font-size: vw_size(13, $current);
 	}
 }
 
@@ -109,6 +119,13 @@ $current: 375;
 		.dough-type-comment {
 			line-height: vw_size(20, $current);
 			font-size: vw_size(11, $current);
+		}
+		.dough-type-discription {
+			margin-block: 5px;
+			font-family: $font;
+			line-height: vw_size(14, $current);
+			letter-spacing: vw_size(-0.6, $current);
+			font-size: vw_size(13, $current);
 		}
 	}
 }
@@ -158,6 +175,13 @@ $current: 375;
 			line-height: vw_size(20, $current);
 			font-size: vw_size(11, $current);
 		}
+		.dough-type-discription {
+			margin-block: 5px;
+			font-family: $font;
+			line-height: vw_size(14, $current);
+			letter-spacing: vw_size(-0.6, $current);
+			font-size: vw_size(13, $current);
+		}
 	}
 }
 
@@ -195,6 +219,13 @@ $current: 375;
 		.dough-type-comment {
 			line-height: vw_size(20, $current);
 			font-size: vw_size(11, $current);
+		}
+		.dough-type-discription {
+			margin-block: 5px;
+			font-family: $font;
+			line-height: vw_size(14, $current);
+			letter-spacing: vw_size(-0.6, $current);
+			font-size: vw_size(13, $current);
 		}
 	}
 }

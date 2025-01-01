@@ -16,8 +16,11 @@ function AddCreditCardFullScreenPopup(props) {
 	const [_, setPaymentStack] = useStack(STACK_TYPES.PAYEMNT);
 	const ref = useRef();
 	const dispatch = useDispatch();
-
 	const translate = useTranslate();
+
+	useEffect(() => {
+		dispatch(Actions.setLoader(false));
+	}, [dispatch]);
 
 	usePostMessage(onSuccess, onError);
 

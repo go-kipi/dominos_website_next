@@ -11,14 +11,14 @@ import useTranslate from "hooks/useTranslate";
 
 function ApplePay(props) {
 	const { setStack, submitOrder } = props;
-	const { paymentMethods, leftToPay } = props.params;
+	const { paymentMenu, leftToPay } = props.params;
 	const translate = useTranslate();
 
 	function onApplePaymentSuccess(appleSession, data) {
-		const applePayMethod = paymentMethods.filter(
-			(paymentMethod) => paymentMethod.id === PAYMENT_METHODS.APPLE_PAY,
+		const applePayMethod = paymentMenu.filter(
+			(paymentMenu) => paymentMenu.id === PAYMENT_METHODS.APPLE_PAY,
 		)[0];
-		console.log("got apay data", data);
+
 		const payload = {
 			paymentMethod: applePayMethod.id,
 			amount: leftToPay,
@@ -38,13 +38,11 @@ function ApplePay(props) {
 		Api.addPayment({
 			payload,
 			onSuccess: (res) => {
-				console.log("success", res);
 				appleSession?.completePayment(window.ApplePaySession.STATUS_SUCCESS);
 
 				typeof submitOrder === "function" && submitOrder();
 			},
 			onFailure: (res) => {
-				console.log("failure", res);
 				appleSession?.completePayment(window.ApplePaySession.STATUS_FAILURE);
 				setStack({
 					type: PAYMENT_SCREEN_TYPES.CHOSSE_PAYMENT,
@@ -52,7 +50,6 @@ function ApplePay(props) {
 				});
 			},
 			onRejection: (res) => {
-				console.log("rejection", res);
 				appleSession?.completePayment(window.ApplePaySession.STATUS_FAILURE);
 				setStack({
 					type: PAYMENT_SCREEN_TYPES.CHOSSE_PAYMENT,

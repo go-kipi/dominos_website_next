@@ -1,19 +1,19 @@
 @import "/src/styles/imports.scss";
 @import "src/components/MaxFreeDipsMessage/index.module.scss";
+@import "/src/popups/components/builder/index.module.scss";
 
 $current: 375;
 
 .builder-product-details-wrapper {
 	margin-inline: auto;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	align-items: center;
 	width: vw_size(300, $current);
-	height: 100vh;
-	overflow: auto;
+	overflow: hidden;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
-	padding-bottom: vw_size(120, $current);
+	padding-bottom: vw_size(80, $current);
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -21,8 +21,8 @@ $current: 375;
 
 	.product-image-wrapper {
 		width: 100%;
-		margin-top: vw_size(50, $current);
-		margin-bottom: vw_size(20, $current);
+		// margin-top: vw_size(50, $current);
+		// margin-bottom: vw_size(20, $current);
 	}
 
 	.title-wrapper {
@@ -73,95 +73,112 @@ $current: 375;
 		}
 	}
 
-	.choose-wrapper {
+	.content-body {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 		width: 100%;
-		border-top: 1px solid rgba(105, 105, 105, 1);
-		padding-top: vw_size(15, $current);
-		margin-top: vw_size(15, $current);
-		.item-title {
-			margin: 0;
-			font-family: $font-medium;
-			font-size: vw_size(16, $current);
-			line-height: vw_size(25, $current);
-			color: $white;
-		}
+		.choose-wrapper {
+			width: 100%;
+			border-top: 1px solid rgba(105, 105, 105, 1);
+			padding-top: vw_size(15, $current);
+			margin-top: vw_size(15, $current);
 
-		.checkboxs {
 			display: flex;
-			flex-wrap: wrap;
-			.item-container {
-				display: flex;
-				width: 100%;
-				justify-content: space-between;
-				margin-top: vw_size(20, $current);
+			flex-direction: column;
+			overflow: hidden;
 
-				.option-checkbox {
-					align-items: center;
-					position: relative;
-					width: 50%;
+			.item-title {
+				margin: 0;
+				font-family: $font-medium;
+				font-size: vw_size(16, $current);
+				line-height: vw_size(25, $current);
+				color: $white;
+			}
+
+			.checkboxs {
+				&::-webkit-scrollbar {
+					display: none;
+				}
+				flex-wrap: wrap;
+				overflow-y: auto;
+				margin-top: vw_size(10, $current);
+
+				.item-container {
+					padding-inline-start: vw_size(20, $current);
 					display: flex;
-					justify-content: flex-start;
-					cursor: pointer;
+					width: 100%;
+					justify-content: space-between;
+					margin-bottom: vw_size(15, $current);
 
-					.image-wrapper {
+					.option-checkbox {
+						align-items: center;
+						position: relative;
 						width: auto;
-						height: auto;
-					}
-					.img {
-						width: vw_size(30, $current);
-						height: unset;
-						margin: auto;
-						position: absolute;
-						top: vw_size(-4, $current);
-						
-					}
+						display: flex;
+						justify-content: flex-start;
+						cursor: pointer;
 
-					&.selecetd {
-						.label {
-							color: $white;
-							font-family: $font-bold;
+						.image-wrapper {
+							width: auto;
+							height: auto;
 						}
-					}
+						.img {
+							width: vw_size(30, $current);
+							height: unset;
+							margin: auto;
+						}
 
-					&.disabled {
-						pointer-events: none;
-						cursor: unset;
-					}
+						&.selecetd {
+							.label {
+								color: $white;
+								font-family: $font-bold;
+							}
+						}
 
-					.label {
-						color: #d1d1d1;
-						margin-inline-start: vw_size(30, $current);
-						font-size: vw_size(13, $current);
-						line-height: vw_size(20, $current);
-						font-family: $font;
 						&.disabled {
-							opacity: 0.5;
+							pointer-events: none;
+							cursor: unset;
 						}
 
-						&.out-of-stock {
-							color: #ff2e5d;
-							position: absolute;
-							top: auto;
-							bottom: -15px;
-							margin: 0;
-							@include right(vw_size(34, $current));
-							white-space: nowrap;
-							overflow: hidden;
-							max-width: 100%;
+						.label {
+							color: #d1d1d1;
+							margin-inline-start: vw_size(0, $current);
+							font-size: vw_size(13, $current);
+							line-height: vw_size(20, $current);
+							font-family: $font;
+							&.disabled {
+								opacity: 0.5;
+							}
+
+							&.out-of-stock {
+								color: #ff2e5d;
+								position: absolute;
+								top: auto;
+								bottom: -15px;
+								margin: 0;
+								@include right(vw_size(34, $current));
+								white-space: nowrap;
+								overflow: hidden;
+								max-width: 100%;
+							}
 						}
 					}
 				}
 
 				.btnsWrapper {
 					display: flex;
-					// align-items: center;
-
-					justify-content: space-between;
-					width: 50%;
+					width: auto;
+					gap: vw_size(5, $current);
+					.dipPrice {
+						margin-block: auto;
+						white-space: nowrap;
+					}
 					.counter {
+						justify-items: center;
 						margin-inline-start: auto;
 						display: flex;
-						align-items: center;
+						margin-block: auto;
 						width: vw_size(80, $current);
 						height: vw_size(25, $current);
 						opacity: 0;
@@ -214,18 +231,24 @@ $current: 375;
 
 	.builder-product-details-wrapper {
 		width: vw_size(500, $current);
+		margin-block-start: vw_size(40, $current);
 
-		// height: vw_size(750, $current);
+		display: flex;
+		flex-direction: column;
+		margin-bottom: vw_size(75, $current);
+		height: auto;
+		overflow-y: hidden;
 
-		padding-bottom: vw_size(120, $current);
+		padding-bottom: 0;
 
 		.product-image-wrapper {
-			margin-top: vw_size(50, $current);
-			margin-bottom: vw_size(20, $current);
+			width: 60%;
+			margin-top: vw_size(0, $current);
+			margin-bottom: vw_size(0, $current);
 		}
 
 		.title-wrapper {
-			margin-top: vw_size(23, $current);
+			// margin-top: vw_size(23, $current);
 
 			.title {
 				font-size: vw_size(16, $current);
@@ -254,56 +277,46 @@ $current: 375;
 				line-height: vw_size(24, $current);
 			}
 		}
+		.content-body {
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			.choose-wrapper {
+				padding-top: vw_size(8, $current);
+				.item-title {
+					font-size: vw_size(16, $current);
+					line-height: vw_size(25, $current);
+				}
 
-		.choose-wrapper {
-			padding-top: vw_size(8, $current);
-			.item-title {
-				font-size: vw_size(16, $current);
-				line-height: vw_size(25, $current);
-			}
+				.checkboxs {
+					// display: flex;
+					flex: 1;
+					overflow-y: auto;
+					padding-bottom: vw_size(20, $current);
 
-			.checkboxs {
-				margin-bottom: vw_size(18, $current);
+					.item-container {
+						margin-bottom: vw_size(12, $current);
+						padding-inline-start: vw_size(12, $current);
+						.option-checkbox {
+							.img {
+								width: vw_size(30, $current);
+							}
 
-				.item-container {
-					margin-top: vw_size(12, $current);
+							.label {
+								margin-inline-start: vw_size(8, $current);
+								font-size: vw_size(13, $current);
+								line-height: vw_size(20, $current);
 
-					.option-checkbox {
-						padding-inline-end: vw_size(40, $current);
-						
-
-						.img {
-							position: relative;
-							top: vw_size(0, $current);;
-							width: vw_size(30, $current);
-						}
-
-						.label {
-							margin-inline-start: vw_size(8, $current);
-							font-size: vw_size(13, $current);
-							line-height: vw_size(20, $current);
-
-							&.out-of-stock {
-								//not neccecry
-
-								// color: #ff2e5d;
-								// position: absolute;
-								// top: auto;
-								// bottom: -15px;
-								// margin: 0;
-								// @include right(vw_size(34, $current));
-								// border: 1px solid red;
-								// white-space: nowrap;
-								// overflow: hidden;
-								// max-width: 100%;
+								&.out-of-stock {
+								}
 							}
 						}
-					}
 
-					.btnsWrapper {
-						.counter {
-							width: vw_size(87, $current);
-							height: vw_size(30, $current);
+						.btnsWrapper {
+							.counter {
+								width: vw_size(87, $current);
+								height: vw_size(30, $current);
+							}
 						}
 					}
 				}
@@ -316,28 +329,15 @@ $current: 375;
 	$current: $desktop_max;
 
 	.builder-product-details-wrapper {
-		margin-top: vw_size(60, $current);
-		flex-direction: row-reverse;
+		margin-block: 0;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		width: vw_size(1200, $current);
-		height: unset;
-		overflow: auto;
+		height: 100%;
 		padding-bottom: unset;
 
-		.right-side {
-			margin-inline-end: vw_size(75, $current);
-
-			.actions {
-				position: unset;
-				background: unset;
-				height: unset;
-			}
-		}
-
 		.product-image-wrapper {
-			height: vw_size(650, $current);
-			width: vw_size(650, $current);
+			flex: 1;
 			margin-top: unset;
 			display: flex;
 			justify-content: center;
@@ -345,9 +345,10 @@ $current: 375;
 		}
 
 		.content-body {
-			height: vw_size(480, $current);
-			width: vw_size(550, $current);
-
+			flex: 1;
+			margin-inline-end: vw_size(75, $current);
+			overflow-y: hidden;
+			margin-block: auto;
 			.title-wrapper {
 				.title {
 					font-size: vw_size(30, $current);
@@ -403,6 +404,13 @@ $current: 375;
 
 			.choose-wrapper {
 				padding-top: vw_size(16, $current);
+				overflow-y: auto;
+				display: flex;
+				margin-top: vw_size(15, $current);
+				overflow: hidden;
+				margin-block-end: vw_size(20, $current);
+				padding-block-end: vw_size(70, $current);
+				height: vw_size(600, $current);
 
 				.item-title {
 					font-size: vw_size(24, $current);
@@ -410,19 +418,17 @@ $current: 375;
 					letter-spacing: vw_size(2, $current);
 				}
 				.checkboxs {
-					margin-bottom: vw_size(18, $current);
+					margin-bottom: vw_size(0, $current);
+					padding: 0;
 					gap: 10px;
+
 					.item-container {
-						margin-top: vw_size(15, $current);
-						
-
+						padding-inline-start: vw_size(25, $current);
+						margin-bottom: vw_size(15, $current);
 						.option-checkbox {
-							padding-inline-end: vw_size(20, $current);
-
+							width: auto;
 							.img {
 								width: vw_size(44, $current);
-								position: relative;
-								top: vw_size(0, $current);;
 								padding-inline-end: unset;
 							}
 
@@ -432,8 +438,6 @@ $current: 375;
 								line-height: vw_size(24, $current);
 								&.out-of-stock {
 									color: #ff2e5d;
-									// position: absolute;
-									// top: vw_size(30, $current);
 									margin: 0;
 									@include right(vw_size(59, $current));
 								}
@@ -449,6 +453,14 @@ $current: 375;
 						}
 					}
 				}
+			}
+
+			.product-submit-button {
+				position: unset;
+				bottom: unset;
+				margin: 0;
+				-webkit-margin-before: 0;
+				margin-block-start: vw_size(-80, $current);
 			}
 		}
 	}

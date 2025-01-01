@@ -90,7 +90,6 @@ $timeout: 300ms;
 		display: flex;
 		width: 100%;
 		bottom: vw_size(60, $current);
-
 		&:global(.animated) {
 			transition: 0.2s;
 		}
@@ -136,7 +135,6 @@ $timeout: 300ms;
 				}
 				.builder-button-wrapper {
 					bottom: vw_size(-80, $current);
-
 					&.slide-in {
 						bottom: vw_size(40, $current);
 					}
@@ -156,7 +154,6 @@ $timeout: 300ms;
 				}
 				.builder-button-wrapper {
 					bottom: vw_size(-80, $current);
-
 					&.slide-in {
 						bottom: vw_size(100, $current);
 					}

@@ -94,7 +94,6 @@ function OneUpSaleProduct(props) {
 	}
 	const srText = createAccessibilityText(
 		product?.nameUseCases?.Title,
-		// translate("upsale_product_inPrice"),
 		`${price}${getCurrencySign(currency)}`,
 		showPriceBeforeDiscount &&
 			createAccessibilityText(
@@ -122,11 +121,6 @@ function OneUpSaleProduct(props) {
 				<div
 					className={styles["one-up-sale-price-wrapper"]}
 					aria-hidden={true}>
-					<span
-						className={styles["price-text"]}
-						aria-hidden={true}>
-						{translate("upsale_product_inPrice")}
-					</span>
 					<Price
 						readPrice={true}
 						value={price}

@@ -3,9 +3,11 @@ import jwtDecode from "jwt-decode";
 import builderTypes from "constants/builder-types";
 import doughMatrixEnum from "constants/doughMatrixEnum";
 
-import RegularEnd from "/public/assets/gifs/regular/end.png";
+import RegularEnd from "/public/assets/gifs/regular/frame-end.png";
 import SquareEnd from "/public/assets/gifs/square/end.png";
-import VolcanoEnd from "/public/assets/gifs/volcano/end.png";
+import VolcanoEnd from "/public/assets/gifs/volcano/front-volcano.png";
+import VolcanoRozeEnd from "/public/assets/gifs/volcano/front-volcano-roze.png";
+import VolcanoCacioEnd from "/public/assets/gifs/volcano/front-volcano-cacio.png";
 
 import PizzaTreeService from "services/PizzaTreeService";
 import { META_ENUM } from "constants/menu-meta-tags";
@@ -580,12 +582,19 @@ export function getInitialScreen(pizzaId) {
 }
 
 export function getPizzaImageByMeta(meta) {
+	console.log("meta", meta);
 	switch (meta) {
 		case META_ENUM.SQUARE_PIZZA:
 			return SquareEnd;
 
 		case META_ENUM.VOLCANO_PIZZA:
 			return VolcanoEnd;
+
+		case META_ENUM.VOLCANO_ROZE_PIZZA:
+			return VolcanoRozeEnd;
+
+		case META_ENUM.VOLCANO_CACIO_PIZZA:
+			return VolcanoCacioEnd;
 
 		case META_ENUM.ROUND_PIZZA:
 		case META_ENUM.EXTRA_PIZZA:
@@ -601,12 +610,18 @@ export function getPizzaToppingTypeByMeta(meta) {
 			return MEDIA_ENUM.TOPPINGS_SQUARE;
 
 		case META_ENUM.VOLCANO_PIZZA:
+		case META_ENUM.VOLCANO_CACIO_PIZZA:
+		case META_ENUM.VOLCANO_ROZE_PIZZA:
 		case META_ENUM.ROUND_PIZZA:
 		case META_ENUM.EXTRA_PIZZA:
 		case META_ENUM.PERSONAL_PIZZA:
 		default:
 			return MEDIA_ENUM.TOPPINGS_ROUND;
 	}
+}
+
+export function getisSqurePizza(meta) {
+	return meta === META_ENUM.SQUARE_PIZZA;
 }
 
 export function getPizzaImage(type, size = "family") {
@@ -629,21 +644,15 @@ export function getPizzaImage(type, size = "family") {
 	return pizzaImage;
 }
 
-// export function isSafariBrowser() {
-// 	const browser = navigator.userAgent.match(
-// 		/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i,
-// 	)[1];
-// 	return browser.toLocaleLowerCase() === "safari";
-// }
-
 export function isSafariBrowser() {
 	const userAgent = typeof navigator !== "undefined" && navigator.userAgent;
+
 	if (userAgent) {
 		const match = userAgent.match(
 			/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i,
 		);
-		const browser = match ? match[1] : "";
-		return browser.toLowerCase() === "safari";
+		const browser = match && match[1] ? match[1].toLowerCase() : "";
+		return browser === "safari";
 	}
 	return false;
 }
@@ -752,7 +761,7 @@ export function getRecaptchaToken() {
 						.then((token) => {
 							resolve(token);
 						})
-						.catch((err) => {
+						.catch(() => {
 							resolve(false);
 						});
 				});

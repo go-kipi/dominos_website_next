@@ -30,6 +30,7 @@ $current: 375;
 
 :global(.ltr) {
 	.menu-filters-wrapper {
+		z-index: 100000;
 		left: unset;
 		right: vw_size(16, $current);
 		.red-circle {

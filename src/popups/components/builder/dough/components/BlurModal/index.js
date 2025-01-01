@@ -86,9 +86,9 @@ const OptionsModal = (props) => {
 			? createAccessibilityText(
 					translate("accessibility_doughBuilder_type").replace(
 						"{doughType}",
-						translate(`pizzaSelection-${dough.type}`),
+						translate(`#pizzaSelection_${dough.type}`),
 					),
-					translate(`pizzaSelection-${dough.extra}`),
+					translate(`#pizzaSelection_${dough.extra}`),
 			  )
 			: "";
 

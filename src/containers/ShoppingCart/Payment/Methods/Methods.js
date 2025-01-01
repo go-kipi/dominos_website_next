@@ -86,6 +86,13 @@ function Methods(props) {
 					: filteredList.filter(
 							(method) => method.id !== PAYMENT_METHODS_ACTIONS.APPLE_PAY,
 					  );
+
+				// TODO: if you dont want verifone or cibus
+				// filteredList = filteredList.filter(
+				// 	(method) =>
+				// 		method.id !== PAYMENT_METHODS_ACTIONS.CIBUS &&
+				// 		method.id !== PAYMENT_METHODS_ACTIONS.VERIPHONE,
+				// );
 			}
 
 			setFilteredPaymentList(filteredList);
@@ -104,7 +111,6 @@ function Methods(props) {
 		if (numberOfMethods === 1) {
 			return filteredPaymentList.map((item) => renderMethod(item, "large"));
 		}
-
 		filteredPaymentList.forEach((item) => {
 			let selectedSize = null;
 
@@ -290,6 +296,7 @@ function Methods(props) {
 	function onGiftCardClick() {
 		const payload = { type: PAYMENT_SCREEN_TYPES.GIFT_CARD_OPTIONS, params: {} };
 		setStack(payload);
+		// dispatch(Actions.setLoader(true));
 	}
 
 	function onClickByActionType(actionType, id) {
@@ -300,7 +307,6 @@ function Methods(props) {
 			[PAYMENT_METHODS.APPLE_PAY]: (data) => onApplePayPress(data),
 			[PAYMENT_METHODS.CASH]: () => onCashClick(),
 		};
-
 		switch (actionType) {
 			case "payment":
 				if (paymentActions[id]) {
@@ -311,7 +317,10 @@ function Methods(props) {
 				}
 
 			case "subMenu":
-				return () => onGiftCardClick();
+				return () => {
+					onGiftCardClick();
+					// dispatch(Actions.setLoader(false));
+				};
 
 			default:
 				return () => {
@@ -329,7 +338,6 @@ function Methods(props) {
 		const extraData = paymentMethodData?.extraData;
 
 		const promoPopups = paymentMethodData?.popups;
-		console.log("promoPopups", promoPopups);
 		const onClickButton = onClickByActionType(actionType, method);
 		const btnProps = {
 			size,

@@ -77,7 +77,7 @@ function BigOrdersForm(props) {
 
 	useEffect(() => {
 		if (user) {
-			setForm(prevForm => ({
+			setForm((prevForm) => ({
 				...prevForm,
 				name: {
 					...prevForm.name,
@@ -321,6 +321,9 @@ function BigOrdersForm(props) {
 	const showErrorBtn = showErrorBtnHandler();
 
 	const menuFileName = isRTL ? "Large-Menu" : "Large-Menu-English";
+	const kosherMenuFileName = isRTL
+		? "Large-Menu-Kosher"
+		: "Large-Menu-Kosher-English";
 	return (
 		<div className={styles["big-orders-form-container"]}>
 			<div className={styles["header"]}>
@@ -331,13 +334,13 @@ function BigOrdersForm(props) {
 			</div>
 			<div className={styles["menus"]}>
 				<MenuButton
-					href={`/static/${menuFileName}.jpeg`}
-					filename={"Large-Menu.jpeg"}
+					href={`/static/${menuFileName}.pdf`}
+					filename={"Large-Menu.pdf"}
 					title={translate("BigOrders_form_menu_regular")}
 				/>
 				<MenuButton
-					href={"/static/Large-Menu-Kosher.jpeg"}
-					filename={"Large-Menu-Kosher.jpeg"}
+					href={`/static/${kosherMenuFileName}.pdf`}
+					filename={"Large-Menu-Kosher.pdf"}
 					title={translate("BigOrders_form_menu_kosher")}
 				/>
 			</div>

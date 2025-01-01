@@ -35,6 +35,7 @@ const DoughType = (props) => {
 	const hasOptions = options ? notEmptyObject(options) : false;
 	const translate = useTranslate();
 	const pizza = useMenus(id, ActionTypes.PRODUCT);
+	const doughDiscription = pizza?.nameUseCases?.PizzaProductSelectionDescription;
 	const isOutOfStock = typeof pizza === "object" ? pizza?.outOfStock : false;
 	useEffect(() => {
 		if (shouldFocus) {
@@ -80,9 +81,16 @@ const DoughType = (props) => {
 						{selectedText ? selectedText : text}
 					</div>
 
+					{doughDiscription && (
+						<div className={clsx(styles["dough-type-discription"])}>
+							{doughDiscription}
+						</div>
+					)}
+
 					{comment && (
 						<div className={clsx(styles["dough-type-comment"])}>{comment}</div>
 					)}
+
 					{!inModal && (isOutOfStock || !isChildrenInStock) ? (
 						<div className={styles["dough-type-outofstock"]}>
 							{translate("builderModal_doughBuilder_outOfStock_dough")}

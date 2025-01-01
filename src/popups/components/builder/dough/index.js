@@ -38,7 +38,6 @@ import { Store } from "redux/store";
 import { META_ENUM } from "constants/menu-meta-tags";
 import SRContent from "../../../../components/accessibility/srcontent";
 import { createAccessibilityText } from "../../../../components/accessibility/acfunctions";
-import useMenus from "hooks/useMenus";
 import ActionTypes from "constants/menus-action-types";
 import EmarsysService from "utils/analyticsService/EmarsysService";
 import TWO_ACTION_TYPES from "constants/two-actions-popup-types";
@@ -77,6 +76,7 @@ const DoughBuilder = (props) => {
 		subItemsFromParams = null,
 		doughKey,
 	} = params;
+
 	// TODO: Handle mix pizza in builder and duplicate mix pizza; also fix edit.
 	const stackDir = useSelector((store) => store.stackState.direction);
 	const animatedPizzaRef = useRef();
@@ -98,7 +98,6 @@ const DoughBuilder = (props) => {
 	const pizzaId = useSelector(
 		(store) => store.builder.pizzaId?.[stepIndex ?? 0],
 	);
-
 	const isDoughNotExist =
 		dough && dough.hasOwnProperty("type") && typeof dough["type"] === "undefined";
 
@@ -112,8 +111,6 @@ const DoughBuilder = (props) => {
 	const selectedPizzaId = useSelector(
 		(store) => store.builder.pizzaId?.[stepIndex],
 	);
-	const pizza = useMenus(selectedPizzaId, ActionTypes.PRODUCT);
-	const pizzaImg = getPizzaImageByMeta(pizza.meta);
 	const user = useSelector((store) => store.userData);
 	const userAgreedReset = useSelector((store) => store.userAgreeToReset);
 	const isSingleMixPizza = isMixPizza && isFromPizzas;
@@ -143,7 +140,10 @@ const DoughBuilder = (props) => {
 					: "filterDoughOptions"
 		  ](possiblePizzas, doughSize, doughTypesArr, doughExtras)
 		: undefined;
-	const doughType = builder["dough"]?.[stepIndex]?.["type"];
+	const doughTypeInitial = builder["dough"]?.[stepIndex]?.["type"];
+	const doughType =
+		doughTypeInitial ??
+		(builder?.selectedSize === "volcano" ? "volcano_reg" : undefined);
 	const doughExtra = builder["dough"]?.[stepIndex]?.["extra"];
 	const doughOption = builder["dough"]?.[stepIndex]?.["option"];
 	const finalPossiblePizzas = useMemo(
@@ -413,7 +413,14 @@ const DoughBuilder = (props) => {
 	};
 
 	const showDuplicatePopup = (coverages) => {
-		const isSquarePizza = !["classic", "", "spelt"].includes(dough.type);
+		const isSquarePizza = ![
+			"classic",
+			"",
+			"spelt",
+			"volcano_reg",
+			"volcano_cachioapepe",
+			"volcano_roze",
+		].includes(dough.type); //need to add: !volcano-classic + !volcano-rose + !volcano-spicy
 		const pizza = getFinalPizza();
 		const possiblePizzas = PizzaTreeService.getPossiblePizzasById(
 			pizza.productId,
@@ -1071,14 +1078,14 @@ const DoughBuilder = (props) => {
 					const srText = createAccessibilityText(
 						translate("accessibility_doughBuilder_type").replace(
 							"{doughType}",
-							translate(`pizzaSelection-${name === "type" ? item : dough.type}`),
+							translate(`#pizzaSelection_${name === "type" ? item : dough.type}`),
 						),
-						name === "extra" && translate(`pizzaSelection-${item}`),
+						name === "extra" && translate(`#pizzaSelection_${item}`),
 						hasOptions &&
 							options.includes(dough.option) &&
 							translate("accessibility_doughBuilder_flavor").replace(
 								"{flavor}",
-								translate(`pizzaSelection-${dough.option}`),
+								translate(`#pizzaSelection_${dough.option}`),
 							),
 						comment &&
 							comment
@@ -1093,14 +1100,14 @@ const DoughBuilder = (props) => {
 								id={id}
 								name={name}
 								image={getDoughImage(item)}
-								text={translate("pizzaSelection-" + item)}
+								text={translate("#pizzaSelection_" + item)}
 								value={item}
 								info={translate("pizzaSelection-info-" + item)}
 								comment={comment}
 								onChange={onDoughChange}
 								selected={isSelected}
 								selectedText={
-									optionText ? translate(`pizzaSelection-${optionText}`) : undefined
+									optionText ? translate(`#pizzaSelection_${optionText}`) : undefined
 								}
 								hasOptions={hasOptions}
 								options={options}
@@ -1115,6 +1122,11 @@ const DoughBuilder = (props) => {
 	};
 
 	const getTitle = () => {
+		const doughBuilderTitle =
+			doughKey === "volcano"
+				? translate("builderModal_doughBuilder_volcano_dough")
+				: translate("builderModal_doughBuilder_which_dough");
+
 		return (
 			<h1
 				className={clsx(
@@ -1122,7 +1134,7 @@ const DoughBuilder = (props) => {
 					shouldFadeOut ? styles["fade-out"] : "",
 					shouldFadeIn ? styles["fade-in"] : "",
 				)}>
-				{translate("builderModal_doughBuilder_which_dough")}
+				{doughBuilderTitle}
 			</h1>
 		);
 	};
@@ -1130,8 +1142,6 @@ const DoughBuilder = (props) => {
 	const onPizzaImageLoad = () => {
 		if (dough) {
 			setPizzaClassName(styles["down-without-transition"]);
-			// foldPizza(fadeInDoughTypes);
-		} else {
 		}
 		foldPizza(fadeInDoughTypes);
 	};

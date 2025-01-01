@@ -252,6 +252,7 @@ const BundleBuilder = (props) => {
 			isLastTab,
 			priceOverrides,
 			index,
+			stepIndex,
 		};
 
 		switch (meta) {
@@ -385,19 +386,17 @@ const RenderSideDishItem = (props) => {
 		item = {},
 		onChange = () => {},
 		isSelected = false,
-
+		stepIndex,
 		priceOverrides,
 		index,
 	} = props;
-	const Product = useMenus(item.id, item.actionType);
 
+	const Product = useMenus(item.id, item.actionType);
 	function findPrice(productId) {
-		for (const override of priceOverrides) {
-			if (productId in override.products) {
-				return override.products[productId];
-			}
+		const override = priceOverrides[stepIndex]?.products;
+		for (const key in override) {
+			if (productId === key) return override[key];
 		}
-		return null;
 	}
 
 	const price = findPrice(Product?.id);

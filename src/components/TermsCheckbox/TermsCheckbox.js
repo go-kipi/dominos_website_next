@@ -8,6 +8,7 @@ import { CHECKBOX_VARAINTS } from "constants/checkbox-variants";
 import DynamicLink from "components/dynamic_link";
 import { useDispatch, useSelector } from "react-redux";
 import Actions from "redux/actions";
+import LanguageDirectionService from "services/LanguageDirectionService";
 
 const TermsCheckbox = forwardRef((props, ref) => {
 	const { name = "terms", value, onChange, onFocus, onBlur } = props;
@@ -42,29 +43,30 @@ const TermsCheckbox = forwardRef((props, ref) => {
 			onFocus={onFocus}
 			onBlur={onBlur}
 			ariaLabel={screenReaderContent()}>
-			<span
-				className={styles["label"]}
-				aria-hidden={true}>
-				{translate("term_i_accept")}
-			</span>
-			<DynamicLink
-				link={terms}
-				className={styles["link"]}
-				onClick={closeAllPopups}>
-				{translate("terms_termOfService")}
-			</DynamicLink>
-
-			<span
-				className={styles["label"]}
-				aria-hidden={true}>
-				{translate("and")}
-			</span>
-			<DynamicLink
-				link={privacy}
-				className={`${styles["link"]} ${styles["no-space"]}`}
-				onClick={closeAllPopups}>
-				{translate("privacy__label")}
-			</DynamicLink>
+			<div className={styles["terms-and-conds-container"]}>
+				<span
+					className={styles["label"]}
+					aria-hidden={true}>
+					{translate("term_i_accept")}
+				</span>
+				<DynamicLink
+					link={terms}
+					className={`${styles["link"]} ${styles["no-space"]} ${LanguageDirectionService.isRTL() && styles["terms-link-rtl"]}`}
+					onClick={closeAllPopups}>
+					{translate("terms_termOfService")}
+				</DynamicLink>
+				<span
+					className={styles["label"]}
+					aria-hidden={true}>
+					{translate("and")}
+				</span>
+				<DynamicLink
+					link={privacy}
+					className={`${styles["link"]} ${styles["no-space"]}`}
+					onClick={closeAllPopups}>
+					{translate("privacy__label")}
+				</DynamicLink>
+			</div>
 		</Checkbox>
 	);
 });

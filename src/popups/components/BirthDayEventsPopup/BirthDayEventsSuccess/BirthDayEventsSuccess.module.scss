@@ -1,84 +1,83 @@
 @import "src/styles/imports.scss";
 $current: 375;
 .birthday-success-wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 70vh;
-  overflow: auto;
-  .image-wrapper {
-    width: vw_size(307, $current);
-  }
-  .texts-wrapper {
-    margin-top: vw_size(38, $current);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .text {
-      color: $blue;
-      font-size: vw_size(26, $current);
-      line-height: vw_size(28, $current);
-      letter-spacing: -0.52px;
-      font-family: $font-book;
-      &.text-bold {
-        font-family: $font-bold;
-      }
-    }
-  }
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 70vh;
+	overflow: auto;
+	.image-wrapper {
+		width: vw_size(307, $current);
+	}
+	.texts-wrapper {
+		margin-top: vw_size(38, $current);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.text {
+			color: $blue;
+			font-size: vw_size(26, $current);
+			line-height: vw_size(28, $current);
+			letter-spacing: -0.52px;
+			font-family: $font-book;
+			&.text-bold {
+				font-family: $font-bold;
+			}
+		}
+	}
 }
 
 @media (min-width: $media-tablet) {
-  $current: $tablet;
-  .birthday-success-wrapper {
-    height: 70vh;
+	$current: $tablet;
+	.birthday-success-wrapper {
+		height: 70vh;
 
-    .image-wrapper {
-      width: vw_size(205, $current);
-    }
-    .texts-wrapper {
-      margin-top: vw_size(38, $current);
+		.image-wrapper {
+			width: vw_size(205, $current);
+		}
+		.texts-wrapper {
+			margin-top: vw_size(38, $current);
 
-      .text {
-        font-size: vw_size(26, $current);
-        line-height: vw_size(28, $current);
-      }
-    }
-  }
+			.text {
+				font-size: vw_size(26, $current);
+				line-height: vw_size(28, $current);
+			}
+		}
+	}
 }
 
 @media (min-width: $media-desktop) {
-  $current: $desktop;
-  .birthday-success-wrapper {
-    height: unset;
-    .image-wrapper {
-      margin-top: vw_size(20, $current);
-      width: vw_size(279, $current);
-    }
-    .texts-wrapper {
-      margin-top: vw_size(38, $current);
+	$current: $desktop;
+	.birthday-success-wrapper {
+		height: unset;
+		.image-wrapper {
+			margin-top: vw_size(20, $current);
+			width: vw_size(279, $current);
+		}
+		.texts-wrapper {
+			margin-top: vw_size(38, $current);
 
-      .text {
-        font-size: vw_size(26, $current);
-        line-height: vw_size(28, $current);
-      }
-    }
-  }
+			.text {
+				font-size: vw_size(26, $current);
+				line-height: vw_size(28, $current);
+			}
+		}
+	}
 }
 
 @media (min-width: $media-desktop_large) {
-  $current: $desktop_max;
-  .birthday-success-wrapper {
-    .image-wrapper {
-      margin-top: vw_size(20, $current);
-      width: vw_size(279, $current);
-    }
-    .texts-wrapper {
-      margin-top: vw_size(38, $current);
+	$current: $desktop_max;
+	.birthday-success-wrapper {
+		.image-wrapper {
+			margin-top: vw_size(20, $current);
+			width: vw_size(279, $current);
+		}
+		.texts-wrapper {
+			margin-top: vw_size(38, $current);
 
-      .text {
-        font-size: vw_size(26, $current);
-        line-height: vw_size(28, $current);
-      }
-    }
-  }
+			.text {
+				font-size: vw_size(26, $current);
+			}
+		}
+	}
 }

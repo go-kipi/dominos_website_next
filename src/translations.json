@@ -782,7 +782,6 @@
 	"upsale_product_addToCartAcceptBtn_label": "הוספה לסל",
 	"upsale_product_continueAcceptBtn_label": "המשך",
 	"upsale_product_declineBtn_label": "לא, תודה",
-	"upsale_product_inPrice": "ב-",
 	"upsale_product_insteadPrice": "במקום",
 	"upsalepopup_subtitle": "לפני שנמשיך,",
 	"upsalepopup_title": "אפשר להציע לך עוד משהו?",
@@ -936,5 +935,9 @@
 	"general_select_dips": " ( רטבים לבחירתך)",
 	"btnErrorWithCounter": "יש לך עוד {counter} רטבים לבחירה",
 	"btnErrorWithOneDips": "יש לך עוד רוטב אחד לבחירה",
-	"giftCartRow_errorMessage_aboveLeftToPatWithGC": "סכום התשלום גבוה מהסכום שיש לשלם"
+	"giftCartRow_errorMessage_aboveLeftToPatWithGC": "סכום התשלום גבוה מהסכום שיש לשלם",
+	"veriphon_input_placeholder": "מספר כרטיס",
+	"veriphon_empty_input_error": "שדה חובה",
+	"veriphone_submit_btn": "אישור",
+	"builderModal_doughBuilder_volcano_dough": "איזה טעם?"
 }

@@ -26,9 +26,8 @@ function ApiErrorPopup(props) {
 		showCloseIcon = true,
 		animateOutCallback = () => {},
 		methodName,
-		timeStamp,
-		dataPayload,
-		url,
+		error,
+		type = "REGULAR",
 	} = payload;
 
 	const isLoading = useSelector((store) => store.loaderState);
@@ -54,6 +53,45 @@ function ApiErrorPopup(props) {
 
 	const has2Buttons = button1Text && button2Text;
 
+	const renderRegularContent = () => {
+		return (
+			<>
+				<h1
+					tabIndex={0}
+					aria-live={"polite"}
+					className={styles["general-api-error-title"]}>
+					{title}
+				</h1>
+				<p
+					className={styles["general-api-error-message"]}
+					tabIndex={0}>
+					{text}
+				</p>
+			</>
+		);
+	};
+
+	const renderServerContent = () => {
+		return (
+			<>
+				<h3>Method name: {methodName}</h3>
+				<p className={styles["data-payload"]}>error: {error}</p>
+			</>
+		);
+	};
+
+	const errorContent = () => {
+		switch (type) {
+			case "REGULAR":
+				// ! Temporary payload - for SEO purpose
+				return renderRegularContent();
+
+			default:
+				// TODO: Return this simple msg after SEO checks done
+				return renderServerContent();
+		}
+	};
+
 	return (
 		<SlidePopup
 			id={props.id}
@@ -69,19 +107,7 @@ function ApiErrorPopup(props) {
 						alt="error-icon"
 					/>
 				</div>
-				{/* // TODO: Return this simple msg after SEO checks done */}
-				<h1
-					tabIndex={0}
-					aria-live={"polite"}
-					className={styles["general-api-error-title"]}>
-					{title}
-				</h1>
-				<p
-					className={styles["general-api-error-message"]}
-					tabIndex={0}>
-					{text}
-				</p>
-				{/* // ! Temporary payload - for SEO purpose */}
+				{errorContent()}
 				<div className={styles["actions"]}>
 					{has2Buttons ? (
 						<AnimatedCapsule

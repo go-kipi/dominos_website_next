@@ -11,7 +11,8 @@ const noIndexPages = [
 	"benefits",
 ];
 
-const defaultTitle = "דומינו׳ס פיצה";
+// const defaultTitle = "דומינו׳ס פיצה";
+const defaultTitle = "Domino's Pizza";
 
 function MetaTags({ path }) {
 	let shouldIndex = true;
@@ -52,7 +53,7 @@ function MetaTags({ path }) {
 			/>
 			<meta
 				name="robots"
-				content={metaIndexValue}
+				content={"noindex"}
 			/>
 			<link
 				rel="icon"

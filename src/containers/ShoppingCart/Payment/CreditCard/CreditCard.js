@@ -42,6 +42,7 @@ function CreditCard(props) {
 	);
 	const [shouldFadeTitle, setShouldFadeTitle] = useState(false);
 	const [showDone, setShowDone] = useState(false);
+	const [disbaledPayment, setDisbaledPayment] = useState(false);
 	const [selectedCreditCard, setSelectedCreditCard] = useState(-1);
 	const creditCardListRef = useRef(null);
 	const dispatch = useDispatch();
@@ -64,6 +65,7 @@ function CreditCard(props) {
 		if (savedCreditCards.length > 0) {
 			setSelectedCreditCard(savedCreditCards[0]);
 		}
+		dispatch(Actions.setLoader(false));
 	}, []);
 
 	function getCardIndex(offset, isSingleCard = false, cardsLength) {
@@ -92,6 +94,7 @@ function CreditCard(props) {
 	}
 
 	function payWithCreditCard(card) {
+		setDisbaledPayment(true);
 		setShouldFadeTitle(true);
 		const payload = {
 			paymentMethod: PAYMENT_METHODS.CREDIT_CARD,
@@ -100,7 +103,7 @@ function CreditCard(props) {
 			extraData: { token: card.token },
 		};
 
-		Api.addPayment({ payload, onSuccess });
+		Api.addPayment({ payload, onSuccess, onFailure });
 
 		function onSuccess(data) {
 			dispatch(
@@ -112,10 +115,18 @@ function CreditCard(props) {
 				}),
 			);
 			typeof submitOrder === "function" && submitOrder();
+			setDisbaledPayment(false);
+			// dispatch(Actions.setLoader(false));
+		}
+
+		function onFailure(res) {
+			dispatch(Actions.setLoader(false));
 		}
 	}
 
 	function onAddCreditCardPress() {
+		dispatch(Actions.setLoader(true));
+
 		const payload = {
 			paymentMethod: PAYMENT_METHODS.CREDIT_CARD,
 			amount: leftToPay,
@@ -125,9 +136,11 @@ function CreditCard(props) {
 		Api.addPayment({
 			payload,
 			onSuccess: onSuccess,
+			onFailure: onFailure,
 		});
 
 		function onSuccess(data) {
+			dispatch(Actions.setLoader(false));
 			const iframeUrl = data.extraData.frameUrl;
 			if (deviceState.isMobile) {
 				dispatch(
@@ -145,9 +158,18 @@ function CreditCard(props) {
 				typeof onAddCreditCard === "function" && onAddCreditCard(iframeUrl);
 			}
 		}
+
+		function onFailure(res) {
+			dispatch(Actions.setLoader(false));
+		}
 	}
 
 	function onCreditCardSelect(card) {
+		if (disbaledPayment) {
+			dispatch(Actions.setLoader(false));
+			return;
+		}
+
 		setSelectedCreditCard(card);
 		if (typeof card === "object") {
 			if (!card.expired) {
@@ -207,6 +229,16 @@ function CreditCard(props) {
 		);
 	}
 
+	function handleOnClick() {
+		if (disbaledPayment) return;
+
+		if (selectedCreditCard === -1) {
+			onAddCreditCardPress();
+		} else {
+			payWithCreditCard(selectedCreditCard);
+		}
+	}
+
 	function renderButtonOrLottie() {
 		return (
 			<>
@@ -220,15 +252,11 @@ function CreditCard(props) {
 				)}
 				<div className={styles["actions"]}>
 					<Button
-						onClick={() =>
-							selectedCreditCard === -1
-								? onAddCreditCardPress()
-								: payWithCreditCard(selectedCreditCard)
-						}
+						onClick={handleOnClick}
 						// className={styles["pay-btn"]}
 						errorText={translate("creditCard_payment_addNewCard_btnErrorLabel")}
 						isError={selectedCreditCard !== -1 && selectedCreditCard?.expired}
-						disabled={selectedCreditCard?.expired}
+						disabled={selectedCreditCard?.expired || disbaledPayment}
 						text={
 							selectedCreditCard === -1
 								? translate("creditCard_payment_addNewCard_btnLabel")

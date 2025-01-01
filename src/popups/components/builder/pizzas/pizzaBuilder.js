@@ -356,7 +356,14 @@ function PizzasBuilder(props) {
 		doughPossiblePizzas,
 		pizzaId,
 	) {
-		const isSquarePizza = !["classic", "", "spelt"].includes(type);
+		const isSquarePizza = ![
+			"classic",
+			"",
+			"spelt",
+			"volcano_reg",
+			"volcano_cachioapepe",
+			"volcano_roze",
+		].includes(type);
 
 		const pizza = catalogProducts[pizzaId];
 
@@ -482,6 +489,15 @@ function PizzasBuilder(props) {
 									});
 								nextTab();
 							} else {
+								typeof setStack === "function" &&
+									setStack({
+										type: builderTypes.TOPPINGS,
+										params: {
+											possiblePizzas,
+											pizzaType: dough?.type,
+											isSquare: dough?.type,
+										},
+									});
 								const newPayload = { item };
 								typeof onEndSale === "function" && onEndSale(newPayload);
 							}

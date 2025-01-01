@@ -7,5 +7,6 @@ const PAYMENT_METHODS = {
 	GIFT_CARD: "giftMenu",
 	TAV_PLUS: "tavPlus",
 	BUY_ME: "buyMe",
+	VERIFONE: "verifone",
 };
 export default PAYMENT_METHODS;

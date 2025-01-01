@@ -193,7 +193,7 @@ function PromotionalImagePopup(props) {
 		<FullScreenPopup
 			id={props.id}
 			ref={ref}
-			background={isMobile ? MobileBG : ""}
+			background={""}
 			className={styles["promo-image-popup-wrapper"]}>
 			{!hideCloseButton ? (
 				<button

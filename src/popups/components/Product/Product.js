@@ -24,6 +24,7 @@ import { notEmptyObject } from "utils/functions";
 import EmarsysService from "utils/analyticsService/EmarsysService";
 import MaxFreeDipsMessage from "components/MaxFreeDipsMessage/index";
 import DipsExtraPrice from "components/DipsExtraPrice";
+import Scrollbar from "components/Scrollbar";
 
 export default function ProductPopup(props) {
 	const ref = useRef();
@@ -292,6 +293,7 @@ export default function ProductPopup(props) {
 			showCloseIcon
 			className={styles["product-popup"]}>
 			{showTopGradient && <div className={styles["linear-gradient-top"]} />}
+
 			<div
 				className={styles["scroll-view"]}
 				onScroll={onScrollList}>
@@ -301,103 +303,99 @@ export default function ProductPopup(props) {
 						alt={""}
 					/>
 				</div>
-				<div className={styles["right-side"]}>
-					<div className={styles["content-body"]}>
-						<div className={styles["title-wrapper"]}>
-							<h3 className={styles["title"]}>{title}</h3>
-							{deviceState.notDesktop && (
-								<TransparentCounterButton
-									ariaTitle={title}
-									className={styles["counter"]}
-									value={quantity}
-									onChange={onQuantityChange}
+				<div className={styles["content-body"]}>
+					<div className={styles["title-wrapper"]}>
+						<h3 className={styles["title"]}>{title}</h3>
+						{deviceState.notDesktop && (
+							<TransparentCounterButton
+								ariaTitle={title}
+								className={styles["counter"]}
+								value={quantity}
+								onChange={onQuantityChange}
+								extraStyles={styles}
+								min={1}
+								max={max}
+							/>
+						)}
+					</div>
+					<div className={styles["prices-wrapper"]}>
+						<div className={styles["prices"]}>
+							{price && (
+								<Price
+									value={price}
+									className={styles["product-price"]}
+									currency="shekel"
 									extraStyles={styles}
-									min={1}
-									max={max}
 								/>
 							)}
-						</div>
-						<div className={styles["prices-wrapper"]}>
-							<div className={styles["prices"]}>
-								{price && (
+							{showPriceBeforeDiscount && (
+								<div className={styles["old-price-wrapper"]}>
 									<Price
-										value={price}
-										className={styles["product-price"]}
+										value={oldPrice}
+										className={clsx(styles["product-price"], styles["product-price-old"])}
 										currency="shekel"
 										extraStyles={styles}
+										mark={true}
 									/>
-								)}
-								{showPriceBeforeDiscount && (
-									<div className={styles["old-price-wrapper"]}>
-										<Price
-											value={oldPrice}
-											className={clsx(
-												styles["product-price"],
-												styles["product-price-old"],
-											)}
-											currency="shekel"
-											extraStyles={styles}
-											mark={true}
-										/>
-									</div>
-								)}
-							</div>
-							{deviceState.isDesktop && price && (
-								<TransparentCounterButton
-									ariaTitle={title}
-									className={styles["counter"]}
-									value={quantity}
-									onChange={onQuantityChange}
-									extraStyles={styles}
-									min={1}
-									max={max}
-								/>
+								</div>
 							)}
 						</div>
-
-						{deviceState.isDesktop && itemDescription && (
-							<div className={styles["description-wrapper"]}>
-								<p className={styles["description"]}>{itemDescription}</p>
-							</div>
-						)}
-
-						{hasComponents &&
-							currentProductTemplate.components.map((section, index) => {
-								return (
-									<RenderSection
-										max={section.max}
-										min={section.min}
-										menuId={
-											Array.isArray(section.menuId) ? section.menuId[0] : section.menuId
-										}
-										onChange={onChange}
-										isIdInList={isIdInList}
-										key={"section-" + index}
-										hasOverrides={hasOverrides}
-										overrides={currentProductTemplate?.priceOverrides}
-										components={currentProductTemplate?.components}
-										handleCounterChange={handleCounterChange}
-										form={form}
-										onDipsAmountChange={onDipsAmountChange}
-									/>
-								);
-							})}
-					</div>
-					{deviceState.isDesktop && (
-						<div className={styles["actions"]}>
-							<Button
-								text={translate("productPopup_acceptBtn")}
-								className={styles["accept-btn"]}
-								onClick={() => addToBasket()}
-								isBtnOnForm={true}
-								isError={showErrorBtn}
-								errorText={errorBtnText}
+						{deviceState.isDesktop && price && (
+							<TransparentCounterButton
+								ariaTitle={title}
+								className={styles["counter"]}
+								value={quantity}
+								onChange={onQuantityChange}
 								extraStyles={styles}
+								min={1}
+								max={max}
 							/>
+						)}
+					</div>
+
+					{deviceState.isDesktop && itemDescription && (
+						<div className={styles["description-wrapper"]}>
+							<p className={styles["description"]}>{itemDescription}</p>
 						</div>
 					)}
+
+					{hasComponents &&
+						currentProductTemplate.components.map((section, index) => {
+							return (
+								<RenderSection
+									max={section.max}
+									min={section.min}
+									menuId={
+										Array.isArray(section.menuId) ? section.menuId[0] : section.menuId
+									}
+									onChange={onChange}
+									isIdInList={isIdInList}
+									key={"section-" + index}
+									hasOverrides={hasOverrides}
+									overrides={currentProductTemplate?.priceOverrides}
+									components={currentProductTemplate?.components}
+									handleCounterChange={handleCounterChange}
+									form={form}
+									onDipsAmountChange={onDipsAmountChange}
+								/>
+							);
+						})}
 				</div>
 			</div>
+			{deviceState.isDesktop && (
+				<div className={styles["actions"]}>
+					<Button
+						text={translate("productPopup_acceptBtn")}
+						className={styles["accept-btn"]}
+						onClick={() => addToBasket()}
+						isBtnOnForm={true}
+						isError={showErrorBtn}
+						errorText={errorBtnText}
+						extraStyles={styles}
+						pointerEvents="auto"
+					/>
+				</div>
+			)}
 			{deviceState.notDesktop && (
 				<div className={styles["actions"]}>
 					<Button
@@ -430,6 +428,7 @@ function RenderSection(props) {
 		components,
 		onDipsAmountChange,
 	} = props;
+	const listRef = useRef();
 	const menu = useGetMenuData({ id: menuId, showLoader: false });
 	const [focusElement, setFocusElement] = useState(false);
 	const [dipsAmount, setDipsAmount] = useState(null);
@@ -478,6 +477,34 @@ function RenderSection(props) {
 		}, 0);
 	};
 
+	const renderElements = () => {
+		return menu?.elements.map((option) => {
+			const isSelected = isIdInList(menuId, option.id);
+			const totalItemsSelected = getTotalItemsCounter();
+			const isMaxReached = sectionMax <= totalItemsSelected;
+			return (
+				<RenderItem
+					key={`${menuId}-${option.id}`}
+					option={option}
+					isSelected={isSelected}
+					menuId={menuId}
+					counter={form[menuId]?.[option.id]?.counter}
+					onCounterChange={(newValue) => {
+						handleCounterChange(menuId, option.id, newValue);
+					}}
+					isMaxReached={isMaxReached}
+					onChangeHandler={onChangeHandler}
+					onFocus={onFocus}
+					onBlur={onBlur}
+					overrides={overrides}
+					hasOverrides={hasOverrides}
+					totalItemsSelected={totalItemsSelected}
+					isOnlyOneToSelect={isOnlyOneToSelect}
+				/>
+			);
+		});
+	};
+
 	return (
 		<div
 			className={styles["choose-wrapper"]}
@@ -488,33 +515,9 @@ function RenderSection(props) {
 			/>
 			<div
 				className={styles["checkboxs"]}
-				onKeyDown={(event) => handleKeyPress(event, onKeyDown)}>
-				{hasElements &&
-					menu?.elements.map((option) => {
-						const isSelected = isIdInList(menuId, option.id);
-						const totalItemsSelected = getTotalItemsCounter();
-						const isMaxReached = sectionMax <= totalItemsSelected;
-						return (
-							<RenderItem
-								key={`${menuId}-${option.id}`}
-								option={option}
-								isSelected={isSelected}
-								menuId={menuId}
-								counter={form[menuId]?.[option.id]?.counter}
-								onCounterChange={(newValue) => {
-									handleCounterChange(menuId, option.id, newValue);
-								}}
-								isMaxReached={isMaxReached}
-								onChangeHandler={onChangeHandler}
-								onFocus={onFocus}
-								onBlur={onBlur}
-								overrides={overrides}
-								hasOverrides={hasOverrides}
-								totalItemsSelected={totalItemsSelected}
-								isOnlyOneToSelect={isOnlyOneToSelect}
-							/>
-						);
-					})}
+				onKeyDown={(event) => handleKeyPress(event, onKeyDown)}
+				ref={listRef}>
+				{hasElements && <Scrollbar>{renderElements()}</Scrollbar>}
 			</div>
 		</div>
 	);
@@ -591,14 +594,16 @@ function RenderItem(props) {
 			/>
 			{!isOnlyOneToSelect && (
 				<div className={styles["btnsWrapper"]}>
-					{!isMaxReached && (
-						<DipsExtraPrice
-							option={option}
-							overrides={overrides}
-							isTotalItemsSelectedBitMaxQtty={isTotalItemsSelectedBitMaxQtty}
-							hasOverides={hasOverides}
-						/>
-					)}
+					<div className={styles["dipPrice"]}>
+						{!isMaxReached && (
+							<DipsExtraPrice
+								option={option}
+								overrides={overrides}
+								isTotalItemsSelectedBitMaxQtty={isTotalItemsSelectedBitMaxQtty}
+								hasOverides={hasOverides}
+							/>
+						)}
+					</div>
 
 					<TransparentCounterButton
 						value={counter}

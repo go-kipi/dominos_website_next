@@ -19,11 +19,22 @@ import XIcon from "/public/assets/icons/x-icon-white.svg";
 import Button from "components/button";
 import useUpdateEffect from "hooks/useUpdateEffect";
 import MaxFreeDipsMessage from "components/MaxFreeDipsMessage";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
 function Dips(props) {
 	const cartItem = useSelector((store) => store.cartItem);
 	const { id, payload } = props;
-	const { dipsMenuId, isSale, isEdit, stepIndex = 0, initialCartItem } = payload;
+	const {
+		dipsMenuId,
+		isSale,
+		isEdit,
+		stepIndex = 0,
+		initialCartItem,
+		onAddDip,
+	} = payload;
 
 	const deviceState = useSelector((store) => store.deviceState);
 	const saleObj = useSelector((store) => store.cartItem);
@@ -88,13 +99,27 @@ function Dips(props) {
 					isSale={isSale}
 					stepIndex={stepIndex}
 					isNextDipsInCharge={isNextDipsInCharge}
+					onAddDip={onAddDip}
 				/>
 			</div>
 		);
 	};
 
 	const renderDips = () => {
-		return (
+		return deviceState.isDesktop ? (
+			<Swiper
+				modules={[Navigation]}
+				navigation={true}
+				slidesPerView={deviceState.isLaptop ? 3 : 5}
+				initialSlide={items.length - 1}
+				className={styles["swiper-container"]}>
+				{items.map((item, index) => (
+					<SwiperSlide className={styles["swiper-item"]}>
+						{RenderItem(item, index)}
+					</SwiperSlide>
+				))}
+			</Swiper>
+		) : (
 			<div className={styles["list-container"]}>
 				{items.map((item, index) => RenderItem(item, index))}
 			</div>
@@ -180,7 +205,7 @@ function Dips(props) {
 export default Dips;
 
 function RenderDip(props) {
-	const { item, isSale, stepIndex, isNextDipsInCharge } = props;
+	const { item, isSale, stepIndex, isNextDipsInCharge, onAddDip } = props;
 	const dispatch = useDispatch();
 	const product = useMenus(item.id, item.actionType);
 	const imgUrl = getFullMediaUrl(item, MEDIA_TYPES.PRODUCT, MEDIA_ENUM.IN_MENU);
@@ -217,6 +242,7 @@ function RenderDip(props) {
 	};
 
 	function onIncrement() {
+		onAddDip();
 		setIsCounterDisabled(true);
 
 		const updatedCartItem = PizzaBuilderService.addDip(

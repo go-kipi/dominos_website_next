@@ -14,7 +14,8 @@ export default function BackgroundImage({ className = "", src }) {
 		? DesktopBackgroud
 		: MobileBackgroud;
 	const width = deviceState.isDesktop ? 1920 : 1119;
-	const height = 1080;
+	const height = 1500;
+
 	return (
 		<div className={clsx(styles["background-img"], className)}>
 			<Image

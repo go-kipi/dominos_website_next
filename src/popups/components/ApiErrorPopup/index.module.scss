@@ -19,6 +19,10 @@ $current: 375;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				.data-payload {
+					text-align: center;
+					width: 100%;
+				}
 
 				.general-api-error-img {
 					width: vw_size(109, $current);

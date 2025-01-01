@@ -2,15 +2,32 @@
 $current: $mobile;
 
 .tags-container {
-	width: vw_size(286, $current);
+	width: vw_size(330, $current);
+	position: relative;
 	.tags {
 		display: flex;
 		justify-content: space-between;
+
+		:global {
+			.swiper-button-prev,
+			.swiper-button-next {
+				color: #4d4d4d;
+
+				&::after {
+					font-size: vw_size(15, $current);
+				}
+			}
+
+			.swiper-button-disabled {
+				display: none;
+			}
+		}
 		.tag {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			text-align: center;
 
 			.icon {
 				height: vw_size(27, $current);
@@ -51,6 +68,7 @@ $current: $mobile;
 		width: 100%;
 		justify-content: flex-start;
 		margin-bottom: vw_size(23, $current);
+
 		.tags {
 			justify-content: flex-start;
 			.tag {

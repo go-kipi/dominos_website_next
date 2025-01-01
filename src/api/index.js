@@ -212,22 +212,38 @@ class ApiManager {
 				}
 
 				if (error?.response?.status >= 500 && shouldUseDefault500) {
-					// handle 500 error
+					if (parseInt(process.env["NEXT_PUBLIC_API_MODAL_ENABLED"])) {
+						const generalFailurePayload = {
+							methodName: settings?.url,
+							error: JSON.stringify(error),
+						};
+						this.onFailureServer(generalFailurePayload);
+					} else {
+						switch (methodName) {
+							case "submitActiveOrder":
+								return this.hande500Submit(uuid);
 
-					switch (methodName) {
-						case "submitActiveOrder":
-							return this.hande500Submit(uuid);
+							case "trackOrder":
+								return this.handle500TrackOrder(uuid);
 
-						case "trackOrder":
-							return this.handle500TrackOrder(uuid);
-
-						default:
-							return this.handle500(uuid);
+							default:
+								return this.handle500(uuid);
+						}
 					}
 				}
-				onFailure
-					? onFailure(error?.response?.data ?? error.message)
-					: this.onFailure(error?.response?.data ?? error.message);
+
+				if (parseInt(process.env["NEXT_PUBLIC_API_MODAL_ENABLED"])) {
+					const generalFailurePayload = {
+						methodName,
+						error: JSON.stringify(error),
+						type: "SERVER",
+					};
+					this.onFailureServer(generalFailurePayload);
+				} else {
+					onFailure
+						? onFailure(error?.response?.data ?? error.message)
+						: this.onFailure(error?.response?.data ?? error.message);
+				}
 
 				typeof callback === "function" && callback(error);
 

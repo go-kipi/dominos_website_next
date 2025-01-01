@@ -18,7 +18,15 @@ export default function ChooseQuarterPopup(props) {
 	const topping = useMenus(selectedToppingId, ActionTypes.PRODUCT);
 	const { nameUseCases } = topping;
 	const isSquarePizza =
-		typeof isSquare === "string" && !["classic", "", "spelt"].includes(isSquare);
+		typeof isSquare === "string" &&
+		![
+			"classic",
+			"",
+			"spelt",
+			"volcano_reg",
+			"volcano_cachioapepe",
+			"volcano_roze",
+		].includes(isSquare);
 	const handleOnCoverageAdd = (quarter) => {
 		const res = { q1: 0, q2: 0, q3: 0, q4: 0 };
 		res[quarter] = 1;

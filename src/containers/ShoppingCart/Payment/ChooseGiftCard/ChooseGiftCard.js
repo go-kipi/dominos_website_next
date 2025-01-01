@@ -1,49 +1,21 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ChooseGiftCard.module.scss";
 import useTranslate from "hooks/useTranslate";
-import ChooseGiftCartFromList from "./ChooseGiftCartFromList/ChooseGiftCartFromList";
-import { useSelector } from "react-redux";
 
-function ChooseGiftCard({ paymentMethods, setStack = () => {} }) {
+import { useSelector } from "react-redux";
+import { getFullMediaUrl } from "utils/functions";
+import { MEDIA_TYPES } from "constants/media-types";
+import { MEDIA_ENUM } from "constants/media-enum";
+import PAYMENT_SCREEN_TYPES from "constants/PaymentScreenTypes";
+
+function ChooseGiftCard({
+	paymentMethods,
+	setStack = () => {},
+	onGiftCardSelect,
+}) {
 	const payments = useSelector((store) => store.payments);
 	const translate = useTranslate();
-	const [giftCards, setGiftCards] = useState([]);
-	const [selectedGiftCard, setSelectedGiftCard] = useState(null);
-
-	// useEffect(() => {
-	// 	const paymentsMenu = payments.paymentsMenu;
-	// 	const paymentTypes = payments.paymentTypes;
-
-	// 	console.log("paymentsMenu", paymentsMenu);
-	// 	console.log("paymentTypes", paymentTypes);
-	// 	const digitalPayments = paymentsMenu.find((menu) => menu.id === "giftMenu");
-
-	// 	let giftMenuElements = [];
-
-	// 	if (digitalPayments) {
-	// 		const subMenu = digitalPayments.elements.find(
-	// 			(element) => element.actionType === "subMenu",
-	// 		);
-	// 		if (subMenu) {
-	// 			const giftMenuId = subMenu.id;
-	// 			const giftMenu = paymentsMenu.find((menu) => menu.id === giftMenuId);
-	// 			if (giftMenu) {
-	// 				giftMenuElements = giftMenu.elements;
-	// 			}
-	// 		}
-	// 	}
-
-	// 	const matchedPaymentTypes = giftMenuElements
-	// 		.map((giftElement) => {
-	// 			const matchingPaymentType = paymentTypes.find((paymentType) => {
-	// 				return paymentType.id === giftElement.id;
-	// 			});
-	// 			return matchingPaymentType;
-	// 		})
-	// 		.filter((paymentType) => paymentType !== undefined);
-
-	// 	setGiftCards(matchedPaymentTypes);
-	// }, []);
+	const [giftCardsTypes, setGiftCardsTypes] = useState([]);
 
 	useEffect(() => {
 		const paymentsMenu = payments.paymentsMenu;
@@ -52,8 +24,11 @@ function ChooseGiftCard({ paymentMethods, setStack = () => {} }) {
 		const digitalPaymentsMenu = paymentsMenu.find(
 			(menu) => menu.id === "" || menu.id === "digitalPayments",
 		);
+		const giftCardsPaymentsMenu = paymentsMenu.find(
+			(menu) => menu.id === "giftMenu",
+		);
 
-		if (digitalPaymentsMenu) {
+		if (digitalPaymentsMenu && giftCardsPaymentsMenu) {
 			const subMenuElement = digitalPaymentsMenu.elements.find(
 				(element) => element.actionType === "subMenu",
 			);
@@ -70,14 +45,19 @@ function ChooseGiftCard({ paymentMethods, setStack = () => {} }) {
 						})
 						.filter((paymentType) => paymentType !== undefined);
 
-					setGiftCards(matchedPaymentTypes);
+					setGiftCardsTypes(matchedPaymentTypes);
 				}
 			}
 		}
 	}, [payments]);
 
 	const handleGiftCardSelect = (item) => {
-		setSelectedGiftCard(item);
+		const payload = {
+			type: PAYMENT_SCREEN_TYPES.GIFT_CARD,
+			params: { method: item },
+		};
+		setStack(payload);
+		onGiftCardSelect(item);
 	};
 
 	return (
@@ -88,28 +68,27 @@ function ChooseGiftCard({ paymentMethods, setStack = () => {} }) {
 				{translate("choose_gift_card_title")}
 			</h1>
 			<div className={styles["gift_card_list"]}>
-				{giftCards?.map((giftCard) => (
+				{giftCardsTypes?.map((giftCardType) => (
 					<GiftCardItem
-						key={giftCard.id}
-						item={giftCard}
+						key={giftCardType.id}
+						item={giftCardType}
+						itemMenu={giftCardType}
 						onSelect={handleGiftCardSelect}
 					/>
 				))}
 			</div>
-			{selectedGiftCard && (
-				<ChooseGiftCartFromList
-					giftCard={selectedGiftCard}
-					setStack={setStack}
-				/>
-			)}
 		</div>
 	);
 }
 
 export default ChooseGiftCard;
 
-function GiftCardItem({ item, onSelect }) {
-	const imgUrl = "https://cdn.aboohi.net/media/buyme.png";
+function GiftCardItem({ item, itemMenu, onSelect }) {
+	const imgUrl = getFullMediaUrl(
+		itemMenu,
+		MEDIA_TYPES.MENU,
+		MEDIA_ENUM.SELECTED_WEB,
+	);
 
 	return (
 		<button

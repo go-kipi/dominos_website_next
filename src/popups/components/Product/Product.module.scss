@@ -42,11 +42,12 @@ $current: 375;
 				}
 
 				.scroll-view {
+					display: flex;
+					flex-direction: column;
+					margin-bottom: vw_size(80, $current);
 					width: vw_size(275, $current);
-
-					height: 100vh;
-					overflow: auto;
-					padding-bottom: vw_size(120, $current);
+					height: auto;
+					overflow-y: hidden;
 					@include hide-scrollbar();
 
 					.product-image-wrapper {
@@ -92,114 +93,118 @@ $current: 375;
 						}
 					}
 
-					// .description-wrapper {
-					// 	width: 100%;
-					// 	border-top: 1px solid rgba(105, 105, 105, 1);
-					// 	margin-top: vw_size(18, $current);
-					// 	padding-block: vw_size(8, $current);
+					.content-body {
+						position: relative;
+						display: flex;
+						flex-direction: column;
+						overflow: hidden;
 
-					// 	.description {
-					// 		padding: 0;
-					// 		margin: 0;
-					// 		font-family: $font-medium;
-					// 		font-size: vw_size(14, $current);
-					// 		line-height: vw_size(24, $current);
-					// 		color: #c2c2c2;
-					// 	}
-					// }
-
-					.choose-wrapper {
-						width: 100%;
-						border-top: 1px solid rgba(130, 130, 130, 1);
-						padding-top: vw_size(16, $current);
-						.item-title {
-							margin: 0;
-							font-family: $font-medium;
-							font-size: vw_size(16, $current);
-							line-height: vw_size(25, $current);
-							color: $white;
-						}
-
-						// bombom
-						.checkboxs {
-							flex-wrap: wrap;
-							margin-bottom: vw_size(18, $current);
+						.choose-wrapper {
+							display: flex;
 							flex-direction: column;
-							.item-container {
+							overflow: hidden;
+							width: 100%;
+							border-top: 1px solid rgba(130, 130, 130, 1);
+							padding-top: vw_size(16, $current);
+
+							.item-title {
+								margin: 0;
+								font-family: $font-medium;
+								font-size: vw_size(16, $current);
+								line-height: vw_size(25, $current);
+								color: $white;
+							}
+
+							.checkboxs {
 								display: flex;
-								width: 100%;
-								justify-content: space-between;
-								margin-top: vw_size(7, $current);
-								.option-checkbox {
-									width: 50%;
-									flex-wrap: wrap;
-									margin-bottom: vw_size(2, $current);
-									cursor: pointer;
-									.img {
-										position: absolute;
-										top: vw_size(8, $current);
-										// border: 1px solid red;
-										width: vw_size(30, $current);
-										height: unset;
+								flex-direction: column;
+								flex: 1;
+								overflow-y: auto;
+								@include hide-scrollbar();
+								.item-container {
+									&:last-child {
+										padding-bottom: vw_size(25, $current);
 									}
 
-									&.selecetd {
-										.label {
-											color: $white;
-											font-family: $font-bold;
+									padding-inline-start: vw_size(13, $current);
+									display: flex;
+									width: 100%;
+									justify-content: space-between;
+									margin-top: vw_size(10, $current);
+
+									.option-checkbox {
+										width: auto;
+										margin-bottom: vw_size(2, $current);
+										cursor: pointer;
+										.img {
+											position: absolute;
+											top: vw_size(-4, $current);
+											width: vw_size(30, $current);
+											height: unset;
 										}
-									}
 
-									&.disabled {
-										cursor: unset;
-										pointer-events: none;
-									}
-
-									position: relative;
-
-									.label {
-										color: #d1d1d1;
-										margin-inline-start: vw_size(20, $current);
-										margin-top: vw_size(12, $current);
-										font-size: vw_size(13, $current);
-										line-height: vw_size(20, $current);
-										font-family: $font;
+										&.selecetd {
+											.label {
+												flex-wrap: nowrap;
+												color: $white;
+												font-family: $font-bold;
+											}
+										}
 
 										&.disabled {
-											opacity: 0.5;
+											cursor: unset;
+											pointer-events: none;
 										}
 
-										&.out-of-stock {
-											color: #ff2e5d;
-											position: absolute;
-											top: auto;
-											bottom: -15px;
-											margin: 0;
-											@include right(vw_size(38, $current));
-											white-space: nowrap;
-											overflow: hidden;
-											max-width: 100%;
+										position: relative;
+
+										.label {
+											color: #d1d1d1;
+											margin-inline-start: vw_size(20, $current);
+											font-size: vw_size(13, $current);
+											line-height: vw_size(20, $current);
+											font-family: $font;
+											display: flex;
+											flex-wrap: nowrap;
+											&.disabled {
+												opacity: 0.5;
+											}
+
+											&.out-of-stock {
+												color: #ff2e5d;
+												position: absolute;
+												top: auto;
+												bottom: -15px;
+												margin: 0;
+												@include right(vw_size(38, $current));
+												white-space: nowrap;
+												overflow: hidden;
+												max-width: 100%;
+											}
 										}
 									}
-								}
 
-								.btnsWrapper {
-									display: flex;
-
-									justify-content: space-between;
-									width: 50%;
-									.counter {
-										margin-inline-start: auto;
-										margin-top: auto;
+									.btnsWrapper {
 										display: flex;
-										align-items: center;
-										width: vw_size(80, $current);
-										height: vw_size(25, $current);
-										opacity: 0;
-										transition: opacity 0.3s ease-in-out;
-									}
-									.show-counter {
-										opacity: 1;
+										justify-content: space-between;
+										gap: vw_size(5, $current);
+										.dipPrice {
+											margin-block: auto;
+											white-space: nowrap;
+										}
+										.counter {
+											margin-inline-start: auto;
+											margin-block: auto;
+											display: flex;
+											align-items: center;
+											width: vw_size(80, $current);
+											height: vw_size(25, $current);
+											opacity: 0;
+											transition: opacity 0.3s ease-in-out;
+										}
+										.show-counter {
+											opacity: 1;
+										}
 									}
 								}
 							}
@@ -215,6 +220,10 @@ $current: 375;
 						rgba(0, 0, 0, 1) 100%,
 						rgba(0, 0, 0, 1) 100%
 					);
+					pointer-events: none;
+					height: 100%;
+					width: 100%;
+
 					position: fixed;
 					bottom: 0;
 
@@ -223,13 +232,16 @@ $current: 375;
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					z-index: 1000;
+					z-index: 998;
+					.accept-btn {
+						pointer-events: all;
 
-					.error {
-						background-color: $red;
+						&.error {
+							background-color: $red;
 
-						.btn-text {
-							color: $white;
+							.btn-text {
+								color: $white;
+							}
 						}
 					}
 				}
@@ -256,13 +268,22 @@ $current: 375;
 					}
 
 					.scroll-view {
+						display: flex;
+						flex-direction: column;
+						margin-bottom: vw_size(90, $current);
 						width: vw_size(500, $current);
-						height: vw_size(750, $current);
-
-						padding-bottom: vw_size(120, $current);
+						height: auto;
+						overflow-y: hidden;
 
 						.product-image-wrapper {
+							width: 50%;
+							margin: auto;
 							margin-top: vw_size(50, $current);
+						}
+
+						.counter {
+							width: vw_size(98, $current);
+							height: vw_size(39, $current);
 						}
 
 						.title-wrapper {
@@ -287,58 +308,68 @@ $current: 375;
 							}
 						}
 
-						// .description-wrapper {
-						// 	margin-top: vw_size(18, $current);
-						// 	padding-block: vw_size(8, $current);
+						.content-body {
+							display: flex;
+							flex-direction: column;
+							overflow: hidden;
+							.choose-wrapper {
+								display: flex;
+								flex-direction: column;
+								overflow: hidden;
+								width: 100%;
+								border-top: 1px solid rgba(130, 130, 130, 1);
+								padding-top: vw_size(16, $current);
+								flex-direction: column;
+								.item-title {
+									font-size: vw_size(16, $current);
+									line-height: vw_size(25, $current);
+								}
 
-						// 	.description {
-						// 		font-size: vw_size(14, $current);
-						// 		line-height: vw_size(24, $current);
-						// 	}
-						// }
+								.checkboxs {
+									display: flex;
+									flex-direction: column;
+									flex: 1;
+									overflow-y: auto;
+									padding-bottom: 0;
 
-						.choose-wrapper {
-							padding-top: vw_size(16, $current);
+									.item-container {
+										padding-inline-start: vw_size(20, $current);
+										margin-bottom: vw_size(5, $current);
+										margin-top: vw_size(7, $current);
 
-							.item-title {
-								font-size: vw_size(16, $current);
-								line-height: vw_size(25, $current);
-							}
-
-							.checkboxs {
-								margin-bottom: vw_size(18, $current);
-								.item-container {
-									margin-bottom: vw_size(5, $current);
-									margin-top: vw_size(7, $current);
-									.option-checkbox {
-										margin-bottom: vw_size(2, $current);
-										.img {
-											width: vw_size(30, $current);
-										}
-
-										.label {
-											margin-inline-start: vw_size(20, $current);
-											margin-top: vw_size(5, $current);
-											font-size: vw_size(13, $current);
-											line-height: vw_size(20, $current);
-
-											&.out-of-stock {
-												color: #ff2e5d;
+										.option-checkbox {
+											margin-bottom: vw_size(2, $current);
+											width: 80%;
+											.img {
 												position: absolute;
-												top: auto;
-												bottom: -15px;
-												margin: 0;
-												@include right(vw_size(38, $current));
-												white-space: nowrap;
-												overflow: hidden;
-												max-width: 100%;
+												top: 0;
+												width: vw_size(30, $current);
+											}
+
+											.label {
+												// margin-inline-start: vw_size(20, $current);
+												margin-top: vw_size(5, $current);
+												font-size: vw_size(13, $current);
+												line-height: vw_size(20, $current);
+
+												&.out-of-stock {
+													color: #ff2e5d;
+													position: absolute;
+													top: auto;
+													bottom: -15px;
+													margin: 0;
+													@include right(vw_size(38, $current));
+													white-space: nowrap;
+													overflow: hidden;
+													max-width: 100%;
+												}
 											}
 										}
-									}
-									.btnsWrapper {
-										.counter {
-											width: vw_size(87, $current);
-											height: vw_size(30, $current);
+										.btnsWrapper {
+											.counter {
+												width: vw_size(87, $current);
+												height: vw_size(30, $current);
+											}
 										}
 									}
 								}
@@ -401,8 +432,9 @@ $current: 375;
 						flex-direction: row-reverse;
 						justify-content: space-between;
 						align-items: center;
+
 						width: vw_size(1200, $current);
-						height: unset;
+						height: 100%;
 						overflow: auto;
 						padding-bottom: unset;
 						margin: auto;
@@ -423,9 +455,9 @@ $current: 375;
 							justify-content: center;
 							align-items: center;
 						}
-
 						.content-body {
-							height: vw_size(600, $current);
+							z-index: 999;
+							max-height: vh_size(1200, $current);
 							width: vw_size(450, $current);
 							margin-inline-end: vw_size(30, $current);
 							.title-wrapper {
@@ -487,10 +519,9 @@ $current: 375;
 								}
 							}
 
-							margin-bottom: vw_size(50, $current);
 							.choose-wrapper {
 								padding-top: vw_size(16, $current);
-
+								height: vw_size(700, $current);
 								.item-title {
 									font-size: vw_size(24, $current);
 									line-height: vw_size(30, $current);
@@ -498,19 +529,20 @@ $current: 375;
 								}
 
 								.checkboxs {
-									margin-bottom: vw_size(18, $current);
-									flex-direction: row;
-									flex-wrap: wrap;
+									display: flex;
+									flex-direction: column;
+									flex: 1;
+									overflow-y: auto;
+									padding-bottom: 0;
 
 									.item-container {
+										padding-inline-start: vw_size(20, $current);
 										margin-bottom: vw_size(5, $current);
 										width: 100%;
+
 										.option-checkbox {
-											width: 50%;
-											width: unset;
-											height: 100%;
+											width: 60%;
 											font-size: vw_size(13, $current);
-											margin-top: vw_size(10, $current);
 											.img {
 												width: vw_size(44, $current);
 												position: absolute;
@@ -541,7 +573,6 @@ $current: 375;
 										}
 
 										.btnsWrapper {
-											width: 50%;
 											.counter {
 												width: vw_size(110, $current);
 												height: vw_size(40, $current);
@@ -557,8 +588,9 @@ $current: 375;
 					}
 				}
 				.actions {
-					width: 100%;
+					width: 100vw;
 					height: vw_size(112, $current);
+					padding-inline-end: vw_size(740, $current);
 
 					.accept-btn {
 						.error {

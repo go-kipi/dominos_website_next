@@ -223,9 +223,10 @@ $current: $mobile;
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					width: vw_size(70, $current);
-					height: vw_size(38, $current);
+					width: vw_size(220, $current);
+					height: vw_size(45, $current);
 					margin: auto;
+					margin-top: vw_size(40, $current);
 				}
 
 				.save-pizza-lottie {
@@ -877,7 +878,7 @@ $current: $mobile;
 
 				.save-pizza-btn {
 					margin-top: vw_size(15, $current);
-					width: vw_size(70, $current);
+					width: vw_size(140, $current);
 					height: vw_size(38, $current);
 				}
 
@@ -1120,7 +1121,7 @@ $current: $mobile;
 
 				.save-pizza-btn {
 					margin-top: vw_size(15, $current);
-					width: vw_size(70, $current);
+					width: vw_size(140, $current);
 					height: vw_size(38, $current);
 				}
 

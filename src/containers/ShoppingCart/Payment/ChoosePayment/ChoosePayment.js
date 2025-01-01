@@ -57,8 +57,6 @@ function ChoosePayment(props) {
 	const selectedMethod = useSelector((store) => store.selectedMethod);
 	const payments = useSelector((store) => store.payments);
 
-	//TODO: TRY TO IMPLEMENT THIS: when the use delete all the gift cards this is return to the page - choose payment
-
 	useEffect(() => {
 		if (payments?.paid?.length === 0) {
 			const payload = { type: PAYMENT_SCREEN_TYPES.CHOSSE_PAYMENT, params: {} };
@@ -113,7 +111,9 @@ function ChoosePayment(props) {
 							params: { loaderText: "defaultPaymentLoaderText" },
 						})
 					}
-					onLoadPaymentData={(data) => onGPayPaymentSuccess(data)}
+					onLoadPaymentData={(data) => {
+						onGPayPaymentSuccess(data);
+					}}
 					onError={(err) => {
 						console.error("Google Pay error", err);
 						setStack({ type: PAYMENT_SCREEN_TYPES.CHOSSE_PAYMENT, params: {} });
@@ -127,6 +127,10 @@ function ChoosePayment(props) {
 					onReadyToPayChange={(res) => {
 						document.querySelector(".gpay-card-info-container")?.focus();
 						console.log("ready to pay", res);
+						dispatch(Actions.setLoader(true));
+
+						if (res.isButtonVisible && res.isReadyToPay)
+							dispatch(Actions.setLoader(false));
 					}}
 				/>
 			);
@@ -224,10 +228,6 @@ function ChoosePayment(props) {
 
 			{paymentMenu.length > 0 ? renderMethods() : null}
 
-			{/* : isLeftToPay
-				 ? renderThereIsNothingMoreToPay() */}
-
-			{/* Custom Payment Button */}
 			{getCurrentCustomButton()}
 		</div>
 	);
@@ -238,7 +238,6 @@ export default ChoosePayment;
 export function RenderRowLeftToPay() {
 	const payments = useSelector((store) => store.payments);
 	const cartItems = useSelector((store) => store.cartData);
-	console.log("payments", payments);
 	const paidGiftCards = payments?.paid;
 	const leftToPay = payments?.leftToPay;
 
@@ -280,7 +279,7 @@ export function RenderRowLeftToPay() {
 			},
 		});
 	}
-	console.log("paidGiftCards", paidGiftCards);
+	"paidGiftCards", paidGiftCards;
 	return paidGiftCards.length > 0 ? (
 		<div className={styles["gift-cards-list-container"]}>
 			<div className={styles["gradient-top-list"]}></div>
