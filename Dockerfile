@@ -9,7 +9,7 @@
 #RUN npm run build
 #EXPOSE 8080
 #CMD ["npm", "start"]
-
+#c
 FROM node:20-slim
 RUN apt-get update && apt-get install -y git && apt-get clean
 RUN mkdir /app
