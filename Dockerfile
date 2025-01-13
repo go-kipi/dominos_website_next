@@ -11,6 +11,7 @@
 #CMD ["npm", "start"]
 
 FROM node:20-slim
+RUN apt-get update && apt-get install -y git && apt-get clean
 RUN mkdir /app
 COPY package.json yarn.lock /app/
 WORKDIR /app
