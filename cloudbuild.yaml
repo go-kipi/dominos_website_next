@@ -169,6 +169,7 @@
 
 options:
   logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'
 #steps:
 #  - name: 'node'
 #    entrypoint: 'npm'
@@ -177,7 +178,6 @@ options:
 #    args: ['build', '--tag=me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website', '.']
 #images: ['me-west1-docker.pkg.dev/cms-qa-9260/cloud-run-source-deploy/dominos_website_next/dominos-website']
 #
-
 
 steps:
   # Build the container image
