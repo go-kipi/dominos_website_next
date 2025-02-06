@@ -169,7 +169,7 @@
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  machineType: 'E2_STANDARD_2'
+  machineType: 'E2_MEDIUM'
 #steps:
 #  - name: 'node'
 #    entrypoint: 'npm'
